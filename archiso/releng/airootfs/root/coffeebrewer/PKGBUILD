@@ -1,0 +1,42 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
+# Contributor: Anton Hvornum <anton@hvornum.se>
+# Contributor: demostanis worlds <demostanis@protonmail.com>
+
+pkgname=coffeebrewer
+pkgver=2.5.1
+#pkgver=$(git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g')
+pkgrel=1
+pkgdesc="Just another guided/automated Arch Linux installer with a twist, based on archinstall"
+arch=(any)
+url="https://github.com/Project-X-Mods/coffeebrewer"
+license=(GPL3)
+depends=(python)
+makedepends=(python-build python-installer python-flit python-setuptools python-sphinx python-wheel)
+provides=(python-coffeebrewer)
+conflicts=(python-coffeebrewer)
+replaces=(python-coffeebrewer)
+source=(
+  $pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz
+  $pkgname-$pkgver.tar.gz.sig::$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz.sig
+)
+
+prepare() {
+  cd $pkgname-$pkgver
+  # use real directories for examples and profiles, as symlinks do not work
+  # with flit or setuptools PEP517 backends
+  rm -fv $pkgname/{examples,profiles}
+  mv -v examples profiles $pkgname/
+}
+
+build() {
+  cd $pkgname-$pkgver
+  python -m build --wheel --no-isolation
+  PYTHONDONTWRITEBYTECODE=1 make man -C docs
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -vDm 644 docs/_build/man/coffeebrewer.1 -t "$pkgdir/usr/share/man/man1/"
+}
