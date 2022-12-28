@@ -801,6 +801,7 @@ printf "%bEnsuring correct DM is set.\n" "$*"
 arch-chroot /mnt pacman -Syu
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
 arch-chroot /mnt systemctl enable lightdm
+rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 
 osfinished="yes"
 
@@ -828,6 +829,7 @@ arch-chroot /mnt pacman -Syu
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
 arch-chroot /mnt systemctl enable lightdm
 arch-chroot /mnt xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
+rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 
 osfinished="yes"
 
@@ -855,6 +857,7 @@ printf "%bEnsuring correct DM is set.\n" "$*"
 arch-chroot /mnt pacman -Syu
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
 arch-chroot /mnt systemctl enable lightdm
+rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 
 osfinished="yes"
 
