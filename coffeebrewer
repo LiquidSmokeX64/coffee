@@ -66,7 +66,7 @@ rebootcheck=""
 
 baseapps=" amd-ucode apparmor archinstall arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools espeakup ethtool exfatprogs f2fs-tools fatresize fsarchiver gnu-netcat gpart gpm gptfdisk grml-zsh-config grub hdparm hyperv intel-ucode irssi iw iwd jfsutils kitty-terminfo less lftp libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell livecd-sounds lsscsi lvm2 lynx man-db man-pages mc mdadm memtest86+ mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano nbd ndisc6 net-tools networkmanager nfs-utils nilfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone parted partimage pcsclite ppp pptpclient pv qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo syslinux systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant wvdial xfsprogs xl2tpd zsh"
 
-coffeeapps=" alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 atril base-devel bash-completion bash-language-server blueman bluez-libs cabextract caja chrony clang cmake colord cpupower cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine gtk-engines hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse  power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo syslinux systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vlc vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd system-config-printer ttf-freefont xscreensaver xautolock"
+coffeeapps=" alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo syslinux systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vlc vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd"
 
 gnomeapps=" gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
@@ -76,7 +76,7 @@ cinnamonapps=" cinnamon cinnamon-translations geary gnome-calculator gnome-color
 
 mateapps=" engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter"
 
-xfceapps=" arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
+xfceapps=" arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
 
 lxdeapps=" lxde lxde-common lxdm lxpanel lxsession mousepad xcompmgr xdg-desktop-portal-lxqt"
 
@@ -334,15 +334,7 @@ case $swapcheck in
 esac
 done
 
-if [ "$swapcheck" = "1" ]; then
-    printf "%b\nEnter swap size in GB\n" "$*"
-    read -r swapsize1
-    swapsize="+""$((swapsize1))G"
-    swap1=$swapsize
-elif [ "$swapcheck" = "2" ]; then
-    swapsize="+""$((RAM*MULTIPLIER))M"
-    swap1=$swapsize
-fi
+
 
 
 while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ]; do
@@ -554,6 +546,16 @@ if [ "$RAM" -gt 32768  ]; then    # if RAM is more than 32 GB
     fi
 fi
 
+if [ "$swapcheck" = "1" ]; then
+    printf "%b\nEnter swap size in GB\n" "$*"
+    read -r swapsize1
+    swapsize="+""$((swapsize1))G"
+    swap1=$swapsize
+elif [ "$swapcheck" = "2" ]; then
+    swapsize="+""$((RAM*MULTIPLIER))M"
+    swap1=$swapsize
+fi
+
 rampasscheck="1"
 
 done
@@ -561,7 +563,9 @@ done
 }
 
 format_disks (){
+while [ "$command1finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
+
 printf "%b\nFormatting Partitions\n" "$*"
 printf "%bg\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nw\n" "$*" | fdisk -W always $drive0
 mkfs.fat -F32 $boot0
@@ -578,13 +582,19 @@ printf "%b\nEnable Repos\n" "$*"
 pacman -Sy --noconfirm archlinux-keyring
 pacman -Syy
 
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 }
 
 base_install (){
 while [ "$pacstrapfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-pacstrap /mnt $baseapps
-then
+pacstrap /mnt $baseapps --ignore jack2  --ignore pulseaudio*
 pacstrapfinished="1"
 else
 pacstrapfinished="0"
@@ -593,6 +603,9 @@ done
 }
 
 set_locale (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 arch-chroot /mnt /bin/bash <<"EOT"
 printf "%b\nSetting Locale\n" "$*"
@@ -611,11 +624,20 @@ EOT
 
 cp --dereference /etc/resolv.conf /mnt/etc/
 arch-chroot /mnt pacman -Syu --noconfirm
+
+command1finished="1"
+else
+command1finished="0"
 fi
+done
+command1finished="0"
 
 }
 
 set_passwords (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 arch-chroot /mnt pacman -Syy
 arch-chroot /mnt pacman -Sy --noconfirm archlinux-keyring
@@ -632,52 +654,72 @@ printf "%b\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" "$*" >> 
 printf "%bCreating Links\n" "$*" 
 genfstab -U /mnt >> /mnt/etc/fstab
 
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 }
 
 desktop_install (){
 
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
 if [ $desktop0 = "gnome" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
+arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps  --ignore jack2  --ignore pulseaudio*
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl enable gdm
 
 elif [ $desktop0 = "kde" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
+arch-chroot /mnt pacman -Sy --noconfirm $kdeapps --ignore jack2 --ignore pulseaudio*
 arch-chroot /mnt systemctl enable sddm
 
 elif [ $desktop0 = "cinnamon" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
+arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps --ignore jack2 --ignore pulseaudio*
 arch-chroot /mnt systemctl enable lightdm
 
 elif [ $desktop0 = "mate" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $mateapps
+arch-chroot /mnt pacman -Sy --noconfirm $mateapps --ignore jack2 --ignore pulseaudio*
 arch-chroot /mnt systemctl enable lightdm
 
 elif [ $desktop0 = "lxde" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
+arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps --ignore jack2 --ignore pulseaudio*
 arch-chroot /mnt systemctl enable lxdm 
 
 elif [ $desktop0 = "lxqt" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
+arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps --ignore jack2 --ignore pulseaudio*
 arch-chroot /mnt systemctl enable sddm
 
 elif [ $desktop0 = "xfce" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
+arch-chroot /mnt pacman -Sy --noconfirm $xfceapps --ignore jack2 --ignore pulseaudio*
 arch-chroot /mnt systemctl enable lightdm
 
 elif [ $desktop0 = "deepin" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
+arch-chroot /mnt pacman -Sy --noconfirm $deepinapps --ignore jack2 --ignore pulseaudio*
 arch-chroot /mnt systemctl enable lightdm
 
 fi
+
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
+
+
 
 
 }
@@ -685,8 +727,7 @@ fi
 coffee_install (){
 while [ "$pacsmanfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
-then
+arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps --ignore jack2 --ignore pulseaudio*
 pacmanfinished="1"
 else
 pacmanfinished="0"
@@ -697,6 +738,9 @@ done
 
 java_install (){
 
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
 java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
 if [[ -z $java1 ]] ; then
     echo "I'm broken :("
@@ -704,9 +748,19 @@ fi
 
 arch-chroot /mnt archlinux-java set $java1
 
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 }
 
 vmware_install (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 if [ $vmwareon = "yes" ]; then
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y vmware-workstation
@@ -719,9 +773,20 @@ printf "%b\n[Unit]\nDescription=VMware Networks\nWants=vmware-networks-configura
 arch-chroot /mnt systemctl enable vmware-networks-server.service vmware-usbarbitrator.service vmware.service
 fi
 
+
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 }
 
 snapd_install (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 if [ $snapon = "yes" ]; then
 printf "%b3\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd
@@ -730,9 +795,19 @@ arch-chroot /mnt systemctl enable snapd.apparmor
 arch-chroot /mnt systemctl enable snapd
 fi
 
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 }
 
 bootloader_install (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 if [ "$grub0" = "true" ]; then
 
@@ -821,9 +896,20 @@ fi
 
 #-Bootloader-End
 
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
+
 }
 
 gpu_install (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 if [ $gpu0 = "nvidia" ]; then
 printf "%b\nSystemD-Bootloader UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
@@ -835,6 +921,13 @@ printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integri
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
 arch-chroot /mnt pacman -Sy --noconfirm corectrl
 fi
+
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
 
 }
 
@@ -915,7 +1008,6 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
   elif [ "$desktop0" = "deepin" ]; then
      printf "%b1\n" "$*"
   fi
-then
 yayinstallfinished="1"
 else
 yayinstallfinished="0"
@@ -925,6 +1017,9 @@ done
 }
 
 secureboot_install (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 if [ $sbpass0 = "yes" ]; then
 printf "%bGenerating CoffeeLinux Secure-Boot keys for your machine\n" "$*"
@@ -965,44 +1060,94 @@ arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.servi
 
 fi
 
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 }
 
 
 homedir_fix (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 printf "%bAttempting to fix the home directory automatically now...\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm xdg-user-dirs
 arch-chroot /mnt xdg-user-dirs-update
 printf "%bCleaning up\n" "$*"
 
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 }
 
 lightdm_fix (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 arch-chroot /mnt pacman -Syu
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
 arch-chroot /mnt systemctl enable lightdm
 
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 }
 
 lightdm_fix_deepin (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 arch-chroot /mnt pacman -Syu
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-deepin-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
 arch-chroot /mnt systemctl enable lightdm
 
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 }
 
 lightdm_fix_xfce (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
 arch-chroot /mnt systemctl enable lightdm
 arch-chroot /mnt xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
 rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 }
 
 success_check (){
+
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
 
 if [ $native1 = "yes" ]; then
   mkdir -p /mnt/usr/share/wallpapers/coffee/
@@ -1040,9 +1185,12 @@ elif [ "$rebootcheck" != "1" ]; then
 exit
 fi
 
-umount -R /mnt
-reboot
-
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
 
 }
 
@@ -1062,39 +1210,24 @@ case $installationcheck in
   #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 
+while [ "$installationcheck" != "1" ]; do
 if [ "$installationcheck" = "1" ]; then 
 questionare
-then
 set_swap
-then
 format_disks
-then
 base_install
-then
 set_locale
-then
 set_passwords
-then
 desktop_install
-then
 coffee_install
-then
 java_install
-then
 vmware_install
-then
 snap_install
-then
 bootloader_install
-then
 gpu_install
-then
 yay_install
-then
 secureboot_install
-then
 homedir_fix
-then
  if [ "$desktop0" = "cinnamon" ] && [ "$desktop0" = "mate" ]; then
   lightdm_fix
  elif [ "$desktop0" = "xfce" ]; then
@@ -1102,10 +1235,13 @@ then
  elif [ "$desktop0" = "xfce" ]; then
   lightdm_fix_deepin 
  fi
-then
 success_check
-then
 printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-elif [ "$installationcheck" != "1" ]; then 
+installationcheck="1"
+else
+installationcheck="0"
 exit
 fi
+done
+umount -R /mnt
+reboot
