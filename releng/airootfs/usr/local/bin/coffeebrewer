@@ -2,7 +2,23 @@
 
 #-Predefine blank variables (to be redefined later)
 user01=""
+user1=""
 command0=""
+command1=""
+command2=""
+command3=""
+command4=""
+command5=""
+command6=""
+command7=""
+command8=""
+command9=""
+command10=""
+command11=""
+command12=""
+command13=""
+command14=""
+command15=""
 rootusercheck=""
 usercheck=""
 user00=""
@@ -40,7 +56,6 @@ system0=""
 hostname0=""
 drivename0=""
 hibernationpasscheck=""
-command0=""
 HIBERNATING=""
 RAM=""
 MULTIPLIER=""
@@ -76,11 +91,11 @@ cinnamonapps=" cinnamon cinnamon-translations geary gnome-calculator gnome-color
 
 mateapps=" engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter"
 
-xfceapps=" arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
+xfceapps=" arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad lightdm lightdm-slick-greeter pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
 
 lxdeapps=" lxde lxde-common lxdm lxpanel lxsession mousepad xcompmgr xdg-desktop-portal-lxqt"
 
-lxqtapps=" lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt "
+lxqtapps=" lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt "
 
 deepinapps=" deepin deepin-anything-arch deepin-extra lightdm lightdm-deepin-greeter"
 
@@ -334,9 +349,6 @@ case $swapcheck in
 esac
 done
 
-
-
-
 while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ]; do
 #
 printf "%b\nWhat desktop environment do you want?\n" "$*"
@@ -513,6 +525,9 @@ fi
 
 set_swap (){
 
+while [ "$command0finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
 if [ "$hibernationpasscheck" = "1" ]; then
 HIBERNATING="1"
 fi
@@ -560,6 +575,13 @@ rampasscheck="1"
 
 done
 
+command0finished="1"
+else
+command0finished="0"
+fi
+done
+command0finished="0"
+
 }
 
 format_disks (){
@@ -594,7 +616,7 @@ command1finished="0"
 base_install (){
 while [ "$pacstrapfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-pacstrap /mnt $baseapps --ignore jack2  --ignore pulseaudio*
+pacstrap /mnt $baseapps --ignore jack2  --ignore pulseaudio* --ignore pipewire-media*
 pacstrapfinished="1"
 else
 pacstrapfinished="0"
@@ -604,7 +626,7 @@ done
 
 set_locale (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command2finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 arch-chroot /mnt /bin/bash <<"EOT"
@@ -625,18 +647,18 @@ EOT
 cp --dereference /etc/resolv.conf /mnt/etc/
 arch-chroot /mnt pacman -Syu --noconfirm
 
-command1finished="1"
+command2finished="1"
 else
-command1finished="0"
+command2finished="0"
 fi
 done
-command1finished="0"
+command2finished="0"
 
 }
 
 set_passwords (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command3finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 arch-chroot /mnt pacman -Syy
@@ -654,80 +676,76 @@ printf "%b\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" "$*" >> 
 printf "%bCreating Links\n" "$*" 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-command1finished="1"
+command3finished="1"
 else
-command1finished="0"
+command3finished="0"
 fi
 done
-command1finished="0"
+command3finished="0"
 
 }
 
 desktop_install (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command4finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ $desktop0 = "gnome" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps  --ignore jack2  --ignore pulseaudio*
+arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps  --ignore jack2  --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl enable gdm
 
 elif [ $desktop0 = "kde" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm $kdeapps --ignore jack2 --ignore pulseaudio*
+arch-chroot /mnt pacman -Sy --noconfirm $kdeapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable sddm
 
 elif [ $desktop0 = "cinnamon" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps --ignore jack2 --ignore pulseaudio*
+arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable lightdm
 
 elif [ $desktop0 = "mate" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $mateapps --ignore jack2 --ignore pulseaudio*
+arch-chroot /mnt pacman -Sy --noconfirm $mateapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable lightdm
 
 elif [ $desktop0 = "lxde" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps --ignore jack2 --ignore pulseaudio*
+arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable lxdm 
 
 elif [ $desktop0 = "lxqt" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps --ignore jack2 --ignore pulseaudio*
+arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable sddm
 
 elif [ $desktop0 = "xfce" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $xfceapps --ignore jack2 --ignore pulseaudio*
+arch-chroot /mnt pacman -Sy --noconfirm $xfceapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable lightdm
 
 elif [ $desktop0 = "deepin" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $deepinapps --ignore jack2 --ignore pulseaudio*
+arch-chroot /mnt pacman -Sy --noconfirm $deepinapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable lightdm
 
 fi
 
-command1finished="1"
+command4finished="1"
 else
-command1finished="0"
+command4finished="0"
 fi
 done
-command1finished="0"
-
-
-
-
+command4finished="0"
 
 }
 
 coffee_install (){
-while [ "$pacsmanfinished" != "1" ]; do
+while [ "$pacmanfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps --ignore jack2 --ignore pulseaudio*
+arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 pacmanfinished="1"
 else
 pacmanfinished="0"
@@ -738,7 +756,7 @@ done
 
 java_install (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command5finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
@@ -748,18 +766,18 @@ fi
 
 arch-chroot /mnt archlinux-java set $java1
 
-command1finished="1"
+command5finished="1"
 else
-command1finished="0"
+command5finished="0"
 fi
 done
-command1finished="0"
+command5finished="0"
 
 }
 
 vmware_install (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command6finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ $vmwareon = "yes" ]; then
@@ -774,18 +792,18 @@ arch-chroot /mnt systemctl enable vmware-networks-server.service vmware-usbarbit
 fi
 
 
-command1finished="1"
+command6finished="1"
 else
-command1finished="0"
+command6finished="0"
 fi
 done
-command1finished="0"
+command6finished="0"
 
 }
 
 snapd_install (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command7finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ $snapon = "yes" ]; then
@@ -795,18 +813,18 @@ arch-chroot /mnt systemctl enable snapd.apparmor
 arch-chroot /mnt systemctl enable snapd
 fi
 
-command1finished="1"
+command7finished="1"
 else
-command1finished="0"
+command7finished="0"
 fi
 done
-command1finished="0"
+command7finished="0"
 
 }
 
 bootloader_install (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command8finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$grub0" = "true" ]; then
@@ -896,19 +914,19 @@ fi
 
 #-Bootloader-End
 
-command1finished="1"
+command8finished="1"
 else
-command1finished="0"
+command8finished="0"
 fi
 done
-command1finished="0"
+command8finished="0"
 
 
 }
 
 gpu_install (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command9finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ $gpu0 = "nvidia" ]; then
@@ -922,12 +940,12 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 arch-chroot /mnt pacman -Sy --noconfirm corectrl
 fi
 
-command1finished="1"
+command9finished="1"
 else
-command1finished="0"
+command9finished="0"
 fi
 done
-command1finished="0"
+command9finished="0"
 
 }
 
@@ -1018,7 +1036,7 @@ done
 
 secureboot_install (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command10finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ $sbpass0 = "yes" ]; then
@@ -1060,19 +1078,19 @@ arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.servi
 
 fi
 
-command1finished="1"
+command10finished="1"
 else
-command1finished="0"
+command10finished="0"
 fi
 done
-command1finished="0"
+command10finished="0"
 
 }
 
 
 homedir_fix (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command11finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 printf "%bAttempting to fix the home directory automatically now...\n" "$*"
@@ -1080,54 +1098,54 @@ arch-chroot /mnt pacman -Sy --noconfirm xdg-user-dirs
 arch-chroot /mnt xdg-user-dirs-update
 printf "%bCleaning up\n" "$*"
 
-command1finished="1"
+command11finished="1"
 else
-command1finished="0"
+command11finished="0"
 fi
 done
-command1finished="0"
+command11finished="0"
 
 }
 
 lightdm_fix (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command12finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 arch-chroot /mnt pacman -Syu
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
 arch-chroot /mnt systemctl enable lightdm
 
-command1finished="1"
+command12finished="1"
 else
-command1finished="0"
+command12finished="0"
 fi
 done
-command1finished="0"
+command12finished="0"
 
 }
 
 lightdm_fix_deepin (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command13finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 arch-chroot /mnt pacman -Syu
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-deepin-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
 arch-chroot /mnt systemctl enable lightdm
 
-command1finished="1"
+command13finished="1"
 else
-command1finished="0"
+command13finished="0"
 fi
 done
-command1finished="0"
+command13finished="0"
 
 }
 
 lightdm_fix_xfce (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command14finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
@@ -1135,18 +1153,18 @@ arch-chroot /mnt systemctl enable lightdm
 arch-chroot /mnt xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
 rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 
-command1finished="1"
+command14finished="1"
 else
-command1finished="0"
+command14finished="0"
 fi
 done
-command1finished="0"
+command14finished="0"
 
 }
 
 success_check (){
 
-while [ "$command1finished" != "1" ]; do
+while [ "$command15finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ $native1 = "yes" ]; then
@@ -1185,12 +1203,12 @@ elif [ "$rebootcheck" != "1" ]; then
 exit
 fi
 
-command1finished="1"
+command15finished="1"
 else
-command1finished="0"
+command15finished="0"
 fi
 done
-command1finished="0"
+command15finished="0"
 
 }
 
@@ -1209,8 +1227,6 @@ case $installationcheck in
   *) printf "%b\nLet's exit.\n" "$*" ;;
   #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
-
-while [ "$installationcheck" != "1" ]; do
 if [ "$installationcheck" = "1" ]; then 
 questionare
 set_swap
@@ -1238,10 +1254,10 @@ homedir_fix
 success_check
 printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
 installationcheck="1"
+umount -R /mnt
+reboot
 else
 installationcheck="0"
 exit
 fi
-done
-umount -R /mnt
-reboot
+
