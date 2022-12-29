@@ -4,13 +4,13 @@
 
 We believe using your PC should be as easy as a sip of coffee, so we fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 
-CoffeeLinux is basically Arch Linux, but has been made easy for anyone to install and use. 
+CoffeeLinux is basically Arch Linux, but has been made easy for anyone to install and use for just about anything, but excells in gaming in perticular. 
 The idea here is to have everything ready for you right away.
 
 It asks a few simple questions to customize the OS to your liking, then you just wait for the reboot. Everything is downloaded and installed on the system for the system. 
 Everything that really can be given a user choice has been. This is still YOUR OS YOUR WAY. We have just made simpler to install with minimal hiccups.
 
-Simply type "coffeebrewer" to begin installation.
+Simply type "coffeebrewer osinstall" to begin installation.
 
 Notable Feature: Secure-Boot support is available to install on the OS [via SystemD-Bootloader ONLY] (however it does not boot the ISO itself in Secure-Boot mode)
 
@@ -24,7 +24,7 @@ A ton of critical and optional dependencies resolved for most packages.
 
 Additional firmware from mkinitcpio-firmware to eliminate most default kernel module warnings.
 
-Coffee-Manager tool/script for easy updates and application management. (type: "coffee-manager" in a terminal) 
+coffeebrewer toolbox for easy updates and application management. (type: "coffeebrewer toolbox" in a terminal) 
 
 Latest Controller and Graphics drivers.
 
