@@ -4,13 +4,13 @@
 
 We believe using your PC should be as easy as a sip of coffee, so we fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 
-CoffeeLinux is basically Arch Linux, but has been made easy for anyone to install and use for just about anything, but excells in gaming in perticular. 
+CoffeeLinux is basically Arch Linux, but has been made easy for anyone to install and use. 
 The idea here is to have everything ready for you right away.
 
 It asks a few simple questions to customize the OS to your liking, then you just wait for the reboot. Everything is downloaded and installed on the system for the system. 
 Everything that really can be given a user choice has been. This is still YOUR OS YOUR WAY. We have just made simpler to install with minimal hiccups.
 
-Simply type "coffeebrewer osinstall" to begin installation.
+Simply type "coffeebrewer" to begin installation.
 
 Notable Feature: Secure-Boot support is available to install on the OS [via SystemD-Bootloader ONLY] (however it does not boot the ISO itself in Secure-Boot mode)
 
@@ -24,7 +24,7 @@ A ton of critical and optional dependencies resolved for most packages.
 
 Additional firmware from mkinitcpio-firmware to eliminate most default kernel module warnings.
 
-coffeebrewer toolbox for easy updates and application management. (type: "coffeebrewer toolbox" in a terminal) 
+Coffee-Manager tool/script for easy updates and application management. (type: "coffee-manager" in a terminal) 
 
 Latest Controller and Graphics drivers.
 
@@ -42,7 +42,7 @@ Proper GPU drivers installed (AMD or Nvidia).
 
 True Zero-Out Drive formatting (if selected).
 
-Yaru/Ubuntu theming for Gnome with Yaru sessions. (with Ubuntu Dock and Icons)
+Yaru/Ubuntu theming for Gnome ( active by default in Yaru sessions). (with Ubuntu Dock and Icons)
 
 GDM customization App. (Login Screen of Gnome DE)
 
@@ -64,7 +64,25 @@ Syslinux bootloader on .iso only for additional VM client support (ie: VMware Pl
 
 Just use Etcher to write the iso to usb, and go. Easy-peezy.
 
-===============================================================
-
+=======================================================
 Like, Share, and Enjoy. My Linux is the cure to the distro war.
-================================================================
+=======================================================
+
+To build your own iso:
+
+Install archiso first.
+
+Then open a terminal an issue the following commands.
+
+git clone https://github.com/Project-X-Mods/coffeelinux-sources.git
+
+sudo mkarchiso -v -w ~/work/ ~/out/ ~/coffeelinux-sources/releng/
+
+Iso will be created in ~/out/ (home directory /out)
+
+=======================================================
+Join us on Discord: https://discord.gg/6Pz43wP
+We love hearing what you thing of our project, or have suggestions (polite ones)
+=======================================================
+
+
