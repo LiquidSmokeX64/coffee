@@ -2,23 +2,23 @@
 
 #-Predefine blank variables (to be redefined later)
 user01=""
-user1=""
-command0=""
-command1=""
-command2=""
-command3=""
-command4=""
-command5=""
-command6=""
-command7=""
-command8=""
-command9=""
-command10=""
-command11=""
-command12=""
-command13=""
-command14=""
-command15=""
+command0finished=""
+command1finished=""
+command2finished=""
+command3finished=""
+command4finished=""
+command5finished=""
+command6finished=""
+command7finished=""
+command8finished=""
+command9finished=""
+command10finished=""
+command11finished=""
+command12finished=""
+command13finished=""
+command14finished=""
+command15finished=""
+command16finished=""
 rootusercheck=""
 usercheck=""
 user00=""
@@ -76,7 +76,6 @@ zerout0=""
 grubcheck=""
 questionspassed=""
 java1=""
-osfinished=""
 rebootcheck=""
 
 baseapps=" amd-ucode apparmor archinstall arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools espeakup ethtool exfatprogs f2fs-tools fatresize fsarchiver gnu-netcat gpart gpm gptfdisk grml-zsh-config grub hdparm hyperv intel-ucode irssi iw iwd jfsutils kitty-terminfo less lftp libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell livecd-sounds lsscsi lvm2 lynx man-db man-pages mc mdadm memtest86+ mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano nbd ndisc6 net-tools networkmanager nfs-utils nilfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone parted partimage pcsclite ppp pptpclient pv qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo syslinux systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant wvdial xfsprogs xl2tpd zsh"
@@ -616,7 +615,7 @@ command1finished="0"
 base_install (){
 while [ "$pacstrapfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-pacstrap /mnt $baseapps --ignore jack2  --ignore pulseaudio* --ignore pipewire-media*
+pacstrap /mnt "$baseapps" --ignore jack2  --ignore pulseaudio* --ignore pipewire-media*
 pacstrapfinished="1"
 else
 pacstrapfinished="0"
@@ -692,43 +691,43 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ $desktop0 = "gnome" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps  --ignore jack2  --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm "$gnomeapps"  --ignore jack2  --ignore pulseaudio* --ignore pipewire-media* --ignore mutter
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl enable gdm
 
 elif [ $desktop0 = "kde" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm $kdeapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm "$kdeapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable sddm
 
 elif [ $desktop0 = "cinnamon" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm "$cinnamonapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable lightdm
 
 elif [ $desktop0 = "mate" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $mateapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm "$mateapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable lightdm
 
 elif [ $desktop0 = "lxde" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm "$lxdeapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable lxdm 
 
 elif [ $desktop0 = "lxqt" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm "$lxqtapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable sddm
 
 elif [ $desktop0 = "xfce" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $xfceapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm "$xfceapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable lightdm
 
 elif [ $desktop0 = "deepin" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $deepinapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm "$deepinapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 arch-chroot /mnt systemctl enable lightdm
 
 fi
@@ -745,7 +744,7 @@ command4finished="0"
 coffee_install (){
 while [ "$pacmanfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm "$coffeeapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
 pacmanfinished="1"
 else
 pacmanfinished="0"
@@ -760,11 +759,11 @@ while [ "$command5finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
-if [[ -z $java1 ]] ; then
+if [ -z "$java1" ] ; then
     echo "I'm broken :("
 fi
 
-arch-chroot /mnt archlinux-java set $java1
+arch-chroot /mnt archlinux-java set "$java1"
 
 command5finished="1"
 else
@@ -980,6 +979,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-session
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
+     printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
      printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
   elif [ "$desktop0" = "kde" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
@@ -1215,8 +1215,6 @@ command15finished="0"
 #=================================================
 #-Main
 #=================================================
-osinstall (){
-
 while [ "$command16finished" != "1" ]; do
 
 printf "%b\n Would you like to install Coffee Linux? \n" "$*"
@@ -1229,30 +1227,30 @@ case $installationcheck in
   #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 if [ "$installationcheck" = "1" ]; then 
-questionare
-set_swap
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-java_install
-vmware_install
-snapd_install
-bootloader_install
-gpu_install
-yay_install
-secureboot_install
-homedir_fix
+questionare "$@"
+set_swap "$@"
+format_disks "$@"
+base_install "$@"
+set_locale "$@"
+set_passwords "$@"
+desktop_install "$@"
+coffee_install "$@"
+java_install "$@"
+vmware_install "$@"
+snapd_install "$@"
+bootloader_install "$@"
+gpu_install "$@"
+yay_install "$@"
+secureboot_install "$@"
+homedir_fix "$@"
  if [ "$desktop0" = "cinnamon" ] && [ "$desktop0" = "mate" ]; then
-  lightdm_fix
+  lightdm_fix "$@"
  elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
+  lightdm_fix_xfce "$@"
  elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_deepin 
+  lightdm_fix_deepin "$@"
  fi
-success_check
+success_check "$@"
 printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
 installationcheck="1"
 command16finished="1"
@@ -1260,20 +1258,6 @@ umount -R /mnt
 reboot
 else
 installationcheck="0"
-command16finished="0"
-exit
-fi
-done
-
-}
-
-#============================
-#End-Main
-#============================
-#Toolbox
-#============================
-toolbox (){
-
 while [ "$returncheck" != "1" ]; do
 #-Main-Menu
 while [ "$updatecheck" != "1" ] && [ "$updatecheck" != "2" ] && [ "$updatecheck" != "3" ] && [ "$updatecheck" != "4" ] && [ "$updatecheck" != "5" ]; do 
@@ -1432,7 +1416,8 @@ fi
 done
 #-End-Script
 exit
+fi
+done
 
-}
-
-exit
+#============================
+#End-Main
