@@ -1,105 +1,24 @@
 #!/bin/sh
 
-#-Predefine blank variables (to be redefined later)
-user01=""
-command0finished=""
-command1finished=""
-command2finished=""
-command3finished=""
-command4finished=""
-command5finished=""
-command6finished=""
-command7finished=""
-command8finished=""
-command9finished=""
-command10finished=""
-command11finished=""
-command12finished=""
-command13finished=""
-command14finished=""
-command15finished=""
-command16finished=""
-rootusercheck=""
-usercheck=""
-user00=""
-userpasscheck=""
-userpass00=""
-userpass0=""
-rootpasscheck=""
-userpass1=""
-userpass01=""
-sbpasscheck=""
-sbpass0=""
-uefipasscheck=""
-uefipass00=""
-uefipass0=""
-namepasscheck=""
-name00=""
-name0=""
-name2passcheck=""
-name01=""
-name1=""
-nativepasscheck=""
-native1=""
-driveXpasscheck=""
-driveX=""
-drive=""
-boot=""
-swap=""
-system=""
-drive0=""
-pfx=""
-drive0=""
-boot0=""
-swap0=""
-system0=""
-hostname0=""
-drivename0=""
-hibernationpasscheck=""
-HIBERNATING=""
-RAM=""
-MULTIPLIER=""
-rampasscheck=""
-swapcheck=""
-swapsize=""
-swap1=""
-desktopcheck=""
-desktop0=""
-snapcheck=""
-snapon=""
-vmwarecheck=""
-vmwareon=""
-gpucheck=""
-gpu0=""
-zeroutcheck=""
-zerout0=""
-grubcheck=""
-questionspassed=""
-java1=""
-rebootcheck=""
+baseapps="amd-ucode apparmor archinstall arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config grub hdparm hyperv intel-ucode iwd jfsutils kitty-terminfo libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell man-db man-pages mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano net-tools networkmanager nfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone pcsclite ppp pptpclient qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo syslinux systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh"
 
-baseapps=" amd-ucode apparmor archinstall arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools espeakup ethtool exfatprogs f2fs-tools fatresize fsarchiver gnu-netcat gpart gpm gptfdisk grml-zsh-config grub hdparm hyperv intel-ucode irssi iw iwd jfsutils kitty-terminfo less lftp libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell livecd-sounds lsscsi lvm2 lynx man-db man-pages mc mdadm memtest86+ mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano nbd ndisc6 net-tools networkmanager nfs-utils nilfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone parted partimage pcsclite ppp pptpclient pv qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo syslinux systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant wvdial xfsprogs xl2tpd zsh"
+coffeeapps="alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo syslinux systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vlc vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd"
 
-coffeeapps=" alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo syslinux systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vlc vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd"
+gnomeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
-gnomeapps=" gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
+kdeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 knewstuff kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
 
-kdeapps=" appstream-qt ark colord-kde discount gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 kidletime kirigami2 knewstuff kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
+cinnamonapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk"
 
-cinnamonapps=" cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk"
+mateapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter"
 
-mateapps=" engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter"
+xfceapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad lightdm lightdm-slick-greeter pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
 
-xfceapps=" arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad lightdm lightdm-slick-greeter pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
+lxdeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lxde lxde-common lxdm lxpanel lxsession mousepad xcompmgr xdg-desktop-portal-lxqt"
 
-lxdeapps=" lxde lxde-common lxdm lxpanel lxsession mousepad xcompmgr xdg-desktop-portal-lxqt"
+lxqtapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt "
 
-lxqtapps=" lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt "
-
-deepinapps=" deepin deepin-anything-arch deepin-extra lightdm lightdm-deepin-greeter"
-
-#Define functions--
-
+deepinapps="deepin deepin-anything-arch deepin-extra lightdm lightdm-deepin-greeter wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack"
 
 questionare (){
 
@@ -615,7 +534,7 @@ command1finished="0"
 base_install (){
 while [ "$pacstrapfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-pacstrap /mnt "$baseapps" --ignore jack2  --ignore pulseaudio* --ignore pipewire-media*
+pacstrap /mnt $baseapps
 pacstrapfinished="1"
 else
 pacstrapfinished="0"
@@ -689,45 +608,51 @@ desktop_install (){
 while [ "$command4finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ $desktop0 = "gnome" ]; then 
+if [ "$desktop0" = "gnome" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm "$gnomeapps"  --ignore jack2  --ignore pulseaudio* --ignore pipewire-media* --ignore mutter
+arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps --ignore mutter
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl enable gdm
 
-elif [ $desktop0 = "kde" ]; then 
+elif [ "$desktop0" = "kde" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm "$kdeapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
 arch-chroot /mnt systemctl enable sddm
 
-elif [ $desktop0 = "cinnamon" ]; then
+elif [ "$desktop0" = "cinnamon" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$cinnamonapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
+#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 arch-chroot /mnt systemctl enable lightdm
 
-elif [ $desktop0 = "mate" ]; then
+elif [ "$desktop0" = "mate" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$mateapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm $mateapps
+#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 arch-chroot /mnt systemctl enable lightdm
 
-elif [ $desktop0 = "lxde" ]; then
+elif [ "$desktop0" = "lxde" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$lxdeapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
+#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 arch-chroot /mnt systemctl enable lxdm 
 
-elif [ $desktop0 = "lxqt" ]; then
+elif [ "$desktop0" = "lxqt" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$lxqtapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
+#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 arch-chroot /mnt systemctl enable sddm
 
-elif [ $desktop0 = "xfce" ]; then
+elif [ "$desktop0" = "xfce" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$xfceapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
+#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 arch-chroot /mnt systemctl enable lightdm
 
-elif [ $desktop0 = "deepin" ]; then
+elif [ "$desktop0" = "deepin" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$deepinapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
+#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 arch-chroot /mnt systemctl enable lightdm
 
 fi
@@ -744,7 +669,7 @@ command4finished="0"
 coffee_install (){
 while [ "$pacmanfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm "$coffeeapps" --ignore jack2 --ignore pulseaudio* --ignore pipewire-media*
+arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
 pacmanfinished="1"
 else
 pacmanfinished="0"
@@ -759,7 +684,7 @@ while [ "$command5finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
-if [ -z "$java1" ] ; then
+if [[ -z "$java1" ]] ; then
     echo "I'm broken :("
 fi
 
@@ -1179,7 +1104,7 @@ if [ "$native1" = "yes" ]; then
   cp /opt/config.conf /mnt/opt/
   mkdir -p /mnt/home/"$user01"/.config/neofetch/
   cp /opt/config.conf /mnt/home/"$user01"/.config/neofetch/config.conf
-  cp /usr/local/bin/coffeebrewer /mnt/opt/
+  cp /usr/local/bin/coffeebrewer /mnt/usr/local/bin/
   arch-chroot /mnt chmod a+x /usr/local/bin/coffeebrewer
 fi
 
@@ -1227,193 +1152,37 @@ case $installationcheck in
   #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 if [ "$installationcheck" = "1" ]; then 
-questionare "$@"
-set_swap "$@"
-format_disks "$@"
-base_install "$@"
-set_locale "$@"
-set_passwords "$@"
-desktop_install "$@"
-coffee_install "$@"
-java_install "$@"
-vmware_install "$@"
-snapd_install "$@"
-bootloader_install "$@"
-gpu_install "$@"
-yay_install "$@"
-secureboot_install "$@"
-homedir_fix "$@"
+questionare
+set_swap
+format_disks
+base_install
+set_locale
+set_passwords
+desktop_install
+coffee_install
+java_install
+vmware_install
+snapd_install
+bootloader_install
+gpu_install
+yay_install
+secureboot_install
+homedir_fix
  if [ "$desktop0" = "cinnamon" ] && [ "$desktop0" = "mate" ]; then
-  lightdm_fix "$@"
+  lightdm_fix
  elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce "$@"
+  lightdm_fix_xfce
  elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_deepin "$@"
+  lightdm_fix_deepin
  fi
-success_check "$@"
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+success_check
+#printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
 installationcheck="1"
 command16finished="1"
 umount -R /mnt
 reboot
 else
 installationcheck="0"
-while [ "$returncheck" != "1" ]; do
-#-Main-Menu
-while [ "$updatecheck" != "1" ] && [ "$updatecheck" != "2" ] && [ "$updatecheck" != "3" ] && [ "$updatecheck" != "4" ] && [ "$updatecheck" != "5" ]; do 
-printf "%b\n What would you like to do?\n" "$*"
-printf "%b\n1 - Update the OS.\n" "$*"
-printf "%b\n2 - Update Snap-Store Apps.\n" "$*"
-printf "%b\n3 - View OS Information.\n" "$*"
-printf "%b\n4 - Install an Application.\n" "$*"
-printf "%b\n5 - Uninstall an Application.\n" "$*"
-read -r updatecheck
-case $updatecheck in
-  1) printf "%b\nYay for OS updates.\n" "$*" ;;
-  2) printf "%b\nYay for Snap updates.\n" "$*" ;;
-  3) printf "%b\nCheckin the specs..\n" "$*" ;;
-  4) printf "%b\nLet's install something..\n" "$*" ;;
-  5) printf "%b\nLet's uninstall something..\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again.\n" "$*" ;;
-esac
-done
-
-if [ "$updatecheck" = "1" ]; then
-sudo pacman -Syu
-exit
-elif [ "$updatecheck" = "2" ]; then
-sudo snap refresh
-exit
-elif [ "$updatecheck" = "3" ]; then
-neofetch
-exit
-elif [ "$updatecheck" = "4" ]; then
-#
-#-Application-Installer
-printf "%b\n2 - Application Installer Starting...\n" "$*"
-while [ "$appnamecheck" != "1" ]; do 
-printf "%b\n What application would you like to install\n" "$*"
-read -r appname
-printf "%b\n$appname.\n Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r appnamecheck
-case $appnamecheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-if [ "$appnamecheck" = "1" ]; then 
-app01=" $appname "
-fi
-while [ "$paknamecheck" != "1" ] && [ "$paknamecheck" != "2" ] && [ "$paknamecheck" != "3" ]; do 
-printf "%b\n Which package manager should install it?\n" "$*"
-printf "%b\n1 - Pacman\n" "$*"
-printf "%b\n2 - Yay/AUR\n" "$*"
-printf "%b\n3 - Snap\n" "$*"
-read -r paknamecheck
-
-if [ "$paknamecheck" = "1" ]; then
-pakname="Ahh.. good ol Pacman.\n"
-elif [ "$paknamecheck" = "2" ]; then
-pakname="Yay is good.\n"
-elif [ "$paknamecheck" = "3" ]; then
-pakname="Snap it is.\n"
-fi
-#
-case $paknamecheck in
-  1) printf "%b\n$pakname\n" "$*" ;;
-  2) printf "%b\n $pakname\n" "$*" ;;
-  3) printf "%b\n$pakname\n" "$*" ;;
-  *) printf "%b\nUnrecognized option\n" "$*" ;;
-esac
-done
-if [ "$paknamecheck" = "1" ]; then 
-sudo pacman -Sy "$app01"
-exit
-elif [ "$paknamecheck" = "2" ]; then
-yay --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y "$app01"
-exit
-elif [ "$paknamecheck" = "3" ]; then
-sudo snap install "$app01"
-exit
-fi
-#End Application- Installer
-
-elif [ "$updatecheck" = "5" ]; then
-
-#-Application-Uninstaller
-printf "%b\n2 - Application Uninstaller Starting...\n" "$*"
-while [ "$appnamecheck" != "1" ]; do 
-printf "%b\n What application would you like to uninstall\n" "$*"
-read -r appname
-printf "%b\n$appname.\n Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r appnamecheck
-case $appnamecheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-if [ "$appnamecheck" = "1" ]; then 
-app01=$appname
-fi
-while [ "$paknamecheck" != "1" ] && [ "$paknamecheck" != "2" ] && [ "$paknamecheck" != "3" ]; do 
-printf "%b\n Which package manager should uninstall it?\n" "$*"
-printf "%b\n1 - Pacman\n" "$*"
-printf "%b\n2 - Yay/AUR\n" "$*"
-printf "%b\n3 - Snap\n" "$*"
-read -r paknamecheck
-
-if [ "$paknamecheck" = "1" ]; then
-pakname="Ahh.. good ol Pacman.\n"
-elif [ "$paknamecheck" = "2" ]; then
-pakname="Yay is good.\n"
-elif [ "$paknamecheck" = "3" ]; then
-pakname="Snap it is.\n"
-fi
-#
-case $paknamecheck in
-  1) printf "%b\n$pakname\n" "$*" ;;
-  2) printf "%b\n $pakname\n" "$*" ;;
-  3) printf "%b\n$pakname\n" "$*" ;;
-  *) printf "%b\nUnrecognized option\n" "$*" ;;
-esac
-done
-if [ "$paknamecheck" = "1" ]; then 
-sudo pacman -R "$app01"
-exit
-elif [ "$paknamecheck" = "2" ]; then
-yay --remove "$app01"
-exit
-elif [ "$paknamecheck" = "3" ]; then
-sudo snap remove "$app01"
-exit
-fi
-
-#End Application- Uninstaller
-
-fi
-printf "%b\n Would you like to return to the Main Menu?\n" "$*"
-printf "%b\n1 - No\n" "$*"
-printf "%b\n2 - Yes\n" "$*"
-read -r returncheck
-case $returncheck in
-  1) printf "%b\nExiting\n" "$*" ;;
-  2) printf "%b\nReturning to Main..\n" "$*" ;;
-  #3) printf "%b\n$pakname\n" "$*" ;;
-  *) printf "%b\nUnrecognized option\n" "$*" ;;
-esac
-if [ "$returncheck" = "1" ]; then 
-echo ""
-elif [ "$returncheck" = "2" ]; then
-echo ""
-fi
-
-done
 #-End-Script
 exit
 fi
