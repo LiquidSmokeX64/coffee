@@ -24,8 +24,6 @@ A ton of critical and optional dependencies resolved for most packages.
 
 Additional firmware from mkinitcpio-firmware to eliminate most default kernel module warnings.
 
-Coffee-Manager tool/script for easy updates and application management. (type: "coffee-manager" in a terminal) 
-
 Latest Controller and Graphics drivers.
 
 Latest Linux Kernel and basic drivers.
@@ -35,6 +33,7 @@ Bluetooth Support.
 Latest Gamescope and MangoHud.
 
 Newest Gnome, KDE, Cinnamon, Mate, LXDE, LXQT, and XFCE Desktops. (You get to choose along the way)
+(or if DE's aren't your thing.. i3 is also available)
 
 Yay AUR package manager (Terminal only).
 
@@ -80,9 +79,10 @@ sudo mkarchiso -v -w ~/work/ ~/out/ ~/coffeelinux-sources/releng/
 
 Iso will be created in ~/out/ (home directory /out)
 
-=======================================================
+===============================================
+
 Join us on Discord: https://discord.gg/6Pz43wP
-We love hearing what you thing of our project, or have suggestions (polite ones)
-=======================================================
+We love hearing what you thing of our project, 
+or have suggestions (polite ones)
 
-
+===============================================
