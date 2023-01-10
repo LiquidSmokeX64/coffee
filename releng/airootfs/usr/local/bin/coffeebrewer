@@ -2,7 +2,7 @@
 
 baseapps="amd-ucode system-config-printer apparmor archinstall mlocate arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config grub hdparm hyperv intel-ucode iwd jfsutils kitty-terminfo libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell man-db man-pages mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano net-tools networkmanager nfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone pcsclite ppp pptpclient qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo syslinux systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh"
 
-coffeeapps="firefox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo syslinux systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vlc vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd"
+coffeeapps="firefox rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo syslinux systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd"
 
 gnomeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
@@ -22,7 +22,7 @@ deepinapps="polkit polkit-gnome gnome-keyring libsecret deepin gtk3 gtk4 deepin-
 
 i3apps="polkit polkit-gnome gnome-keyring libsecret gnome-text-editor gnome-console gnome-system-monitor nautilus i3-wm i3lock gtk3 i3status i3blocks micro lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-swayapps="gnome-disk-utility xed htop nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks micro sway swaybg swayidle swayimg swaylock wlroots seatd feh foot wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi j4-dmenu-desktop xdg-desktop-portal-gtk"
+swayapps="gnome-icon-theme-extras gnome-themes-extra adapta-gtk-theme arc-gtk-theme arc-icon-theme gnome-disk-utility thunderbird gnome-calculator gnome-photos gnome-calendar gnome-text-editor gnome-console gnome-system-monitor nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi j4-dmenu-desktop xdg-desktop-portal-gtk"
 
 cutefishapps="polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-kwin-plugins cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
@@ -690,7 +690,7 @@ if [ $gpu0 = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable gdm cups
+arch-chroot /mnt systemctl enable gdm
 
 elif [ "$desktop0" = "kde" ]; then 
 
@@ -704,7 +704,7 @@ if [ $gpu0 = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable sddm cups
+arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "cinnamon" ]; then
 
@@ -719,7 +719,7 @@ if [ $gpu0 = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable lightdm cups
+arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "mate" ]; then
 
@@ -734,7 +734,7 @@ if [ $gpu0 = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable lightdm cups
+arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "lxde" ]; then
 
@@ -749,7 +749,7 @@ if [ $gpu0 = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable lxdm cups
+arch-chroot /mnt systemctl enable lxdm
 
 elif [ "$desktop0" = "lxqt" ]; then
 
@@ -764,7 +764,7 @@ if [ $gpu0 = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable sddm cups
+arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "xfce" ]; then
 
@@ -779,7 +779,7 @@ if [ $gpu0 = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable lightdm cups
+arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "deepin" ]; then
 
@@ -794,7 +794,7 @@ if [ $gpu0 = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable lightdm cups
+arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "i3" ]; then
 
@@ -809,27 +809,26 @@ if [ $gpu0 = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable lightdm cups
+arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "sway" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $swayapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
+#arch-chroot /mnt systemctl enable gdm
 #mkdir -p /mnt/home/$user01/.config/sway/
 cp /opt/config /mnt/etc/sway/config
 printf "%b\nif [ -z ""\$"\{DISPLAY\}" ] && [ ""\$"\{XDG_VTNR\}" -eq 1 ]; then\nexec sway\nfi\n" "$*" >> /mnt/etc/profile
 
 if [ $gpu0 = "nvidia" ]; then
-printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/home/$user01/.config/sway/config
+printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /etc/sway/config
 fi
 if [ $gpu0 = "vm" ]; then
-printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/home/$user01/.config/sway/config
+printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /etc/sway/config
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable cups
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 
 
@@ -845,7 +844,7 @@ if [ $gpu0 = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable sddm cups
+arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "budgie" ]; then
 
@@ -859,7 +858,7 @@ gpu0="amd"
 fi
 
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-arch-chroot /mnt systemctl enable lightdm cups
+arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "enlightenment" ]; then
 
@@ -872,7 +871,7 @@ gpu0="amd"
 fi
 
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-arch-chroot /mnt systemctl enable lightdm cups
+arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "awesome" ]; then
 
@@ -886,7 +885,7 @@ gpu0="amd"
 fi
 
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-arch-chroot /mnt systemctl enable lightdm cups
+arch-chroot /mnt systemctl enable lightdm
 
 fi
 
@@ -945,7 +944,9 @@ printf "%b1\n[Unit]\nDescription=VMware USB Arbitrator\nRequires=vmware.service\
 
 printf "%b\n[Unit]\nDescription=VMware Networks\nWants=vmware-networks-configuration.service\nAfter=vmware-networks-configuration.service\n[Service]\nType=forking\nExecStartPre=-/sbin/modprobe vmnet\nExecStart=/usr/bin/vmware-networks --start\nExecStop=/usr/bin/vmware-networks --stop\n[Install]\nWantedBy=multi-user.target\n" "$*" >> /mnt/etc/systemd/system/vmware-networks-server.service
 
-arch-chroot /mnt systemctl enable vmware-networks-server.service vmware-usbarbitrator.service vmware.service
+arch-chroot /mnt systemctl enable vmware-networks-server.service
+arch-chroot /mnt systemctl enable vmware-usbarbitrator.service
+arch-chroot /mnt systemctl enable vmware.service
 
 fi
 
@@ -1063,9 +1064,9 @@ printf "%b\ndefault arch.conf\ntimeout 3\nconsole-mode keep\neditor no\n" "$*" >
 EOT
 
 if [ $native1 = "yes" ]; then
-printf "%btitle Coffee-Linux 'Nevermore' (14.2.7)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Nevermore' (14.2.8)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 elif [ $native1 = "no" ]; then
-printf "%btitle Coffee-Linux 'Nevermore' (14.2.7-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Nevermore' (14.2.8-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -1185,8 +1186,8 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
      printf "%b1\n" "$*"
   elif [ "$desktop0" = "lxqt" ]; then
      printf "%b1\n" "$*"
-  elif [ "$desktop0" = "deepin" ]; then
-     printf "%b1\n" "$*"
+  elif [ "$desktop0" = "sway" ]; then
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y swaysettings-git
   fi
 yayinstallfinished="1"
 else
@@ -1229,13 +1230,27 @@ arch-chroot /mnt cp MOK.cer /boot/
 arch-chroot /mnt cp MOK.crt /boot/
 arch-chroot /mnt cp MOK.key /boot/
 arch-chroot /mnt pacman -Sy
-arch-chroot /mnt systemctl enable apparmor systemd-boot-update.service dhcpcd cronie chronyd NetworkManager firewalld
+arch-chroot /mnt systemctl enable apparmor
+arch-chroot /mnt systemctl enable systemd-boot-update.service
+arch-chroot /mnt systemctl enable dhcpcd
+arch-chroot /mnt systemctl enable cronie
+arch-chroot /mnt systemctl enable chronyd
+arch-chroot /mnt systemctl enable NetworkManager
+arch-chroot /mnt systemctl enable firewalld
+arch-chroot /mnt systemctl enable cups
 arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
 
 elif [ $sbpass0 = "no" ]; then
 printf "%b\nAdding AppArmor\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm apparmor
-arch-chroot /mnt systemctl enable apparmor systemd-boot-update.service dhcpcd cronie chronyd NetworkManager firewalld
+arch-chroot /mnt systemctl enable apparmor
+arch-chroot /mnt systemctl enable systemd-boot-update.service
+arch-chroot /mnt systemctl enable dhcpcd
+arch-chroot /mnt systemctl enable cronie
+arch-chroot /mnt systemctl enable chronyd
+arch-chroot /mnt systemctl enable NetworkManager
+arch-chroot /mnt systemctl enable firewalld
+arch-chroot /mnt systemctl enable cups
 arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
 
 fi
@@ -1370,6 +1385,7 @@ done
 command15finished="0"
 
 }
+
 #=================================================
 #-Main
 #=================================================
