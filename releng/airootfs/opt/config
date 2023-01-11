@@ -217,8 +217,8 @@ bar {
 include /etc/sway/config.d/*
 
 exec_always xrandr --output $(xrandr | grep -m 1 XWAYLAND | awk '{print $1;}') --primary
-exec_always j4-dmenu-desktop --dmenu=bemenu -i --nb #3f3f3f --nf #dcdccc --fn pango:Monospace Regular 12 --term=kgx
+exec_always j4-dmenu-desktop --dmenu=dmenu -i --nb #3f3f3f --nf #dcdccc --fn pango:Monospace Regular 12 --term=kgx
 output * bg /usr/share/backgrounds/gnome/coffeewall03.jpg fill
 output * adaptive_sync on
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#output * mode 1920x1080@144.001Hz
+#output * mode 1920x1080@144.001Hz scale 1.0
