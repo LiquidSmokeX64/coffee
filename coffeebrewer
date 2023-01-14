@@ -6,24 +6,6 @@ coffeeapps="sddm sddm-kcm boost-libs gtk-update-icon-cache hwinfo kconfig kcorea
 
 questionare (){
 
-while [ "$rootusercheck" != "1" ]; do
-printf "%b\nWARNING: THIS INSTALLER SCRIPT MUST BE RAN AS ROOT USER.\nAre you the root user?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r rootusercheck
-case $rootusercheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's exit, only root can perform arch-chroot operations\n" "$*" ;;
-  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-
-if [ "$rootusercheck" = "1" ]; then 
-printf "%b\nExcellent. Let's proceed.\n" "$*"
-elif [ "$rootusercheck" != "1" ]; then 
-exit
-fi
-done
-
 while [ "$usercheck" != "1" ]; do
 printf "%b\nSet your Username.\n" "$*"
 read -r user00
@@ -659,6 +641,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y swaysettings-git
+printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y github-desktop
 yayinstallfinished="1"
 else
 yayinstallfinished="0"
@@ -770,8 +753,10 @@ if [ "$native1" = "yes" ]; then
   cp /opt/os-release /mnt/etc/
   cp /opt/lsb-release /mnt/etc/
   cp -r /opt/* /mnt/opt/
+  cp /opt/sway.desktop /mnt/usr/share/wayland-sessions/
   cp /usr/local/bin/coffeebrewer /mnt/usr/local/bin/
-  arch-chroot /mnt chmod 750 /usr/local/bin/coffeebrewer
+  arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer
+  arch-chroot /mnt chmod 755 /usr/share/wayland-sessions/sway.desktop
 fi
 
 printf "%b\n Did the installer complete sussessfully? \n" "$*"
