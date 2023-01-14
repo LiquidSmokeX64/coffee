@@ -2,7 +2,7 @@
 
 baseapps="amd-ucode system-config-printer apparmor archinstall mlocate arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config grub hdparm hyperv intel-ucode iwd jfsutils kitty-terminfo libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell man-db man-pages mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano net-tools networkmanager nfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone pcsclite ppp pptpclient qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo syslinux systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh"
 
-coffeeapps="python-pyqt5 gnome-calculator cinnamon cinnamon-translations polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt kde-applications-meta kdevelop-python kgamma5 knewstuff kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session ark colord-kde lightdm lightdm-slick-greeter gnome gnome-photos gnome-color-manager gnome-system-monitor gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gtk xdg-desktop-portal-gnome xdg-desktop-portal-kde xdg-desktop-portal-lxqt gnome-software arc-gtk-theme pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4 engrampa eom marco mozo orca pluma i3-wm i3lock i3status i3blocks rofi nautilus dmenu gnome-icon-theme-extras gnome-themes-extra adapta-gtk-theme arc-icon-theme thunderbird egl-wayland xorg-xwayland bemenu bemenu-wayland cutefish-calculator cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-kwin-plugins cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish budgie-control-center budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver awesome awesome-terminal-fonts bemenu-x11 bemenu-ncurses sway swaybg swayidle swayimg swaylock wlroots seatd j4-dmenu-desktop lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab lxde lxde-common lxdm lxpanel lxsession xcompmgr ruby perl lua firefox rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo syslinux systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd xfconf vlc"
+coffeeapps="sddm sddm-kcm boost-libs gtk-update-icon-cache hwinfo kconfig kcoreaddons ki18n kiconthemes kio kpmcore libpwquality polkit-qt5 qt5-svg qt5-xmlpatterns solid squashfs-tools yaml-cpp boost git qt5-tools qt5-translations python-pyqt5 polkit libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt kde-applications-meta kdevelop-python kgamma5 knewstuff kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session ark colord-kde gnome-color-manager gnome-keyring gnome-menus gtk4 xdg-desktop-portal-kde arc-gtk-theme dmenu adapta-gtk-theme arc-icon-theme thunderbird egl-wayland xorg-xwayland bemenu bemenu-wayland bemenu-ncurses sway swaybg swayidle swayimg swaylock wlroots seatd j4-dmenu-desktop wofi oxygen-icons pavucontrol-qt pcmanfm-qt ruby perl lua firefox rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr elfutils exfatprogs expat extra-cmake-modules firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt5 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd xfconf vlc"
 
 questionare (){
 
@@ -322,36 +322,11 @@ esac
 done
 if [ "$fscheck" = "1" ]; then
 fs0="ext4"
+questionspassed="yes"
 elif [ "$fscheck" = "2" ]; then
 fs0="btrfs"
-fi
-
-while [ "$grubcheck" != "1" ] && [ "$grubcheck" != "2" ] && [ "$grubcheck" != "3" ]; do
-printf "%b\nWould you like GRUB or SystemD-Bootloader?\nGRUB is more compatible with VMs.\nUnofficial Installs MUST use SystemD and be using actual hardware.\n" "$*"
-printf "%b\n1 - GRUB UEFI version\n" "$*"
-printf "%b\n2 - GRUB BIOS/MBR version\n" "$*"
-printf "%b\n3 - SystemD-Bootloader UEFI-Only( for Secure-Boot option or Sway)\n" "$*"
-read -r grubcheck
-case $grubcheck in
-  1) printf "%b\nPerfect.\n" "$*" ;;
-  2) printf "%b\nGreat Choice.\n" "$*" ;;
-  3) printf "%b\nGood Choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again.\n" "$*" ;;
-esac
-done
-
-if [ "$grubcheck" = "1" ]; then
-grub0="true"
-questionspassed="yes"
-elif [ "$grubcheck" = "2" ]; then
-grub0="true2"
-questionspassed="yes"
-elif [ "$grubcheck" = "3" ]; then
-grub0="false"
 questionspassed="yes"
 fi
-
-
 }
 
 set_swap (){
@@ -510,7 +485,7 @@ printf "%b$userpass0\n$userpass0\n" "$*" | arch-chroot /mnt passwd "$user01"
 printf "%b$hostname0\n" "$*" >> /mnt/etc/hostname
 printf "%b\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" "$*" >> /mnt/etc/hosts
 printf "%bCreating Links\n" "$*" 
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -L /mnt >> /mnt/etc/fstab
 
 command3finished="1"
 else
@@ -525,13 +500,9 @@ coffee_install (){
 while [ "$pacmanfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
-#arch-chroot /mnt systemctl enable lightdm
+arch-chroot /mnt systemctl preset-all
+arch-chroot /mnt systemctl disable systemd-networkd systemd-resolved
 cp /opt/config /mnt/etc/sway/
-rm -r /mnt/usr/share/wayland-sessions/gnome*
-rm -r /mnt/usr/share/xsessions/openbox*
-#rm -r /mnt/usr/share/wayland-sessions/sway*
-rm -r /mnt/usr/share/xsessions/gnome*
-rm -r /mnt/usr/share/xsessions/i3-with*
 pacmanfinished="1"
 else
 pacmanfinished="0"
@@ -618,94 +589,23 @@ bootloader_install (){
 while [ "$command8finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$grub0" = "true" ]; then
-
-if [ $gpu0 = "nvidia" ]; then
-
-printf "%b\nGRUB UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
-
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings grub os-prober
-cp /opt/grub-nvidia /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
-EOT
-
-elif [ $gpu0 = "amd" ]; then
-
-printf "%b\nGRUB UEFI for AMD selected.\n" "$*"
-
-arch-chroot /mnt pacman -Sy --noconfirm corectrl grub os-prober
-cp /opt/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-pacman -Sy --noconfirm 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
-EOT
-
-fi
-
-elif [ "$grub0" = "true2" ]; then
-
-if [ $gpu0 = "nvidia" ]; then
-
-printf "%b\nGRUB BIOS for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
-
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings grub os-prober
-cp /opt/grub-nvidia /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-pacman -Sy --noconfirm
-mkinitcpio -P
-EOT
-
-arch-chroot /mnt grub-install --target=i386-pc $drive0
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
-elif [ $gpu0 = "amd" ]; then
-
-printf "%b\nGRUB BIOS for AMD selected.\n" "$*"
-
-
-arch-chroot /mnt pacman -Sy --noconfirm corectrl grub os-prober
-cp /opt/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-pacman -Sy --noconfirm
-EOT
-
-arch-chroot /mnt grub-install --target=i386-pc $drive0
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
-fi
-
-elif [ "$grub0" = "false" ]; then
 
 arch-chroot /mnt /bin/bash <<"EOT"
 printf "%bInstalling SystemD-Bootloader UEFI\n" "$*"
 mkinitcpio -P
 bootctl install
-printf "%b\ndefault arch.conf\ntimeout 3\nconsole-mode keep\neditor no\n" "$*" > /boot/loader/loader.conf
+printf "%b\ndefault arch.conf\ntimeout 15\nconsole-mode keep\neditor no\n" "$*" > /boot/loader/loader.conf
 EOT
 
 if [ $native1 = "yes" ]; then
-printf "%btitle Coffee-Linux 'Opus' (15.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Praxus' (16.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b\nlinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 
-fi
-
 #-Bootloader-End
 
 command8finished="1"
-else
-command8finished="0"
 fi
 done
 command8finished="0"
@@ -746,6 +646,8 @@ while [ "$yayinstallfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 printf "%b3\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y pamac-aur
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ckbcomp
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
@@ -755,26 +657,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-appindicator
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-desktop-icons-ng
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-session
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y gdm-settings
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
-printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y swaysettings-git
 yayinstallfinished="1"
 else
@@ -816,8 +699,6 @@ cp /opt/999-sign_kernel_for_secureboot.hook /mnt/etc/pacman.d/hooks/999-sign_ker
 arch-chroot /mnt cp MOK.cer /boot/
 arch-chroot /mnt cp MOK.crt /boot/
 arch-chroot /mnt cp MOK.key /boot/
-arch-chroot /mnt pacman -R --noconfirm lightdm lightdm-settings lightdm-slick-greeter mint-artwork
-arch-chroot /mnt pacman -Sy --noconfirm gdm
 arch-chroot /mnt systemctl enable apparmor
 arch-chroot /mnt systemctl enable systemd-boot-update.service
 arch-chroot /mnt systemctl enable dhcpcd
@@ -826,14 +707,12 @@ arch-chroot /mnt systemctl enable chronyd
 arch-chroot /mnt systemctl enable NetworkManager
 arch-chroot /mnt systemctl enable firewalld
 arch-chroot /mnt systemctl enable cups
-arch-chroot /mnt systemctl enable gdm
+arch-chroot /mnt systemctl enable sddm
 arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
 
 elif [ $sbpass0 = "no" ]; then
 printf "%b\nAdding AppArmor\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm apparmor
-arch-chroot /mnt pacman -R --noconfirm lightdm lightdm-settings lightdm-slick-greeter mint-artwork
-arch-chroot /mnt pacman -Sy --noconfirm gdm
 arch-chroot /mnt systemctl enable apparmor
 arch-chroot /mnt systemctl enable systemd-boot-update.service
 arch-chroot /mnt systemctl enable dhcpcd
@@ -842,7 +721,7 @@ arch-chroot /mnt systemctl enable chronyd
 arch-chroot /mnt systemctl enable NetworkManager
 arch-chroot /mnt systemctl enable firewalld
 arch-chroot /mnt systemctl enable cups
-arch-chroot /mnt systemctl enable gdm
+arch-chroot /mnt systemctl enable sddm
 arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
 
 fi
@@ -885,14 +764,14 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$native1" = "yes" ]; then
   mkdir -p /mnt/usr/share/wallpapers/coffee/
-  mkdir -p /mnt/usr/share/backgrounds/gnome/
+#  mkdir -p /mnt/usr/share/backgrounds/gnome/
   cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
-  cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
+#  cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
   cp /opt/os-release /mnt/etc/
   cp /opt/lsb-release /mnt/etc/
   cp -r /opt/* /mnt/opt/
   cp /usr/local/bin/coffeebrewer /mnt/usr/local/bin/
-  arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer
+  arch-chroot /mnt chmod 750 /usr/local/bin/coffeebrewer
 fi
 
 printf "%b\n Did the installer complete sussessfully? \n" "$*"
@@ -908,6 +787,8 @@ esac
 if [ "$rebootcheck" = "1" ]; then 
 printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
 elif [ "$rebootcheck" != "1" ]; then 
+umount -R /mnt
+swapoff $swap0
 exit
 fi
 
@@ -957,8 +838,6 @@ umount -R /mnt
 reboot
 else
 installationcheck="0"
-umount -R /mnt
-swapoff $swap0
 #-End-Script
 exit
 fi
