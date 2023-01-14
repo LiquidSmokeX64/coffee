@@ -121,9 +121,10 @@ wvdial
 xfsprogs
 xl2tpd
 zsh
-gnome
-polkit-gnome
-gnome-keyring
+plasma
+plasma-nm
+plasma-meta
+polkit-qt5
 xorg-server
 xdg-user-dirs
 bash-completion
@@ -135,10 +136,10 @@ pipewire-pulse
 wireplumber
 git
 yay
-gnome-console
+konsole
 neofetch
 noto-fonts
 onboard
 zenity
 spectacle
-gdm
+sddm
