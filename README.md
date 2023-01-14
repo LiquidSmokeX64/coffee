@@ -1,4 +1,4 @@
-# Coffee Linux v.15.0.0 "Opus"
+# Coffee Linux v.16.0.0 "Praxus"
 
 ![Screenshot_20221209_223429](https://user-images.githubusercontent.com/8603363/206835846-3e6e3eab-7632-471e-8a88-d2ffb548faa9.png)
 
@@ -18,17 +18,15 @@ Notable Feature: Secure-Boot support is available to install on the OS [via Syst
 
 =========================================================================
 
-A Prismatic Environment (15 Desktop/WM Sessions* in one) with GDM Login/Session Manager.
+KDE Desktop Environment and Sway WM (for non-DE lovers)
 
-Prismatic Session selection. Change DE/WM anytime, no reinstallation needed.
+All password/s for live environment are "coffee"
 
-*=Session choices include: Awesome*** , Budgie, Cutefish, Cinnamon** , i3, KDE/Openbox, LXDE, LXQT, Plasma (KDE)** ,Sway*** , XFCE, Yaru (Gnome)**
-**= includes multiple session types
-***= WM only (no Desktop)
+Install with the installer on the liveuser desktop.
 
 =========================================================================
 
-Java, Wine, Protontricks, DXVK, Vulkan, Steam, Discord, and Firefox setup.
+Java, Wine, Protontricks, DXVK, Vulkan, Steam, Discord, Heroic (Epic/GOG) games Launcher, Lutris and Firefox setup.
 
 Ext4 and BTRFS options for compatibility with some hardware.
 
@@ -46,10 +44,6 @@ Latest Gamescope and MangoHud.
 
 Yay AUR package manager (Terminal only).
 
-Yaru/Ubuntu/Mint and Arc theming packages installed. (with Ubuntu Dock and Icons on Yaru sessions)
-
-GDM settings app. (Login Screen)
-
 Sway settings GUI app. (Good to have)
 
 Pamac GUI Package Manager.
@@ -58,11 +52,7 @@ Snap-Store support (if selected)
 
 VMware Workstation/Player (if selected)
 
-Choice of Bootloader (SystemD-Bootloader UEFI w/secure-boot support or Grub UEFI or BIOS/MBR w/o secure-boot)
-
-Syslinux bootloader on .iso only for additional VM client support (ie: VMware Player).
-
-And of course all the default apps for all DE/WMs are manditory installed.
+SystemD-Bootloader UEFI w/secure-boot support 
 
 Just use Etcher to write the iso to usb, and go. Easy-peezy.
 
@@ -78,7 +68,7 @@ Then open a terminal an issue the following commands.
 
 git clone https://github.com/Project-X-Mods/coffeelinux-sources.git
 
-sudo mkarchiso -v -w ~/work/ ~/out/ ~/coffeelinux-sources/releng/
+sudo mkarchiso -v -w ~/work/ -o ~/out/ ~/coffeelinux-sources/releng/
 
 Iso will be created in ~/out/ (home directory /out)
 
