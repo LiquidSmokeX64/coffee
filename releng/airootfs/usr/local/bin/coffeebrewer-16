@@ -580,7 +580,7 @@ printf "%b\ndefault arch.conf\ntimeout 15\nconsole-mode keep\neditor no\n" "$*" 
 EOT
 
 if [ $native1 = "yes" ]; then
-printf "%btitle Coffee-Linux 'Praxus' (16.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Koffee-Linux 'Quark' (17.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b\nlinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -656,7 +656,7 @@ while [ "$command10finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ $sbpass0 = "yes" ]; then
-printf "%bGenerating CoffeeLinux Secure-Boot keys for your machine\n" "$*"
+printf "%bGenerating KoffeeLinux Secure-Boot keys for your machine\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm efitools mokutil sbsigntools apparmor sbctl
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y shim-signed
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y preloader-signed
