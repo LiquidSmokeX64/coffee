@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment[en_US]=Invokes the classic coffeebrewer script
 Comment=Invokes the classic coffeebrewer script
-Exec=su -c 'coffeebrewer-16' root
+Exec=su -c 'coffeebrewer' root
 GenericName[en_US]=Installs KoffeeLinux to a PC (classic)
 GenericName=Installs KoffeeLinux to a PC (classic)
 Icon=/usr/share/icons/breeze-dark/apps/32/yast-sw_single.svg

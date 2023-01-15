@@ -5,7 +5,7 @@ iso_name="koffeelinux"
 iso_label="KOFFEEISO_$(date +%Y%m)"
 iso_publisher="Project X Mods"
 iso_application="Koffee Linux Live/Rescue CD"
-iso_version="Quark-17.0.0-$(date +%Y.%m.%d)"
+iso_version="Praxus-16.0.0-$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito')
@@ -24,7 +24,6 @@ file_permissions=(
   ["/usr/local/bin/Installation_guide"]="0:0:755"
   ["/usr/local/bin/livecd-sound"]="0:0:755"
   ["/usr/local/bin/coffeebrewer"]="0:0:755"
-  ["/usr/local/bin/coffeebrewer-16"]="0:0:755"
-  ["/etc/skel/Desktop/coffeebrewer.desktop"]="0:0:755"
-  ["/etc/skel/Desktop/coffeebrewernew.desktop"]="0:0:755"
+    ["/etc/skel/Desktop/coffeebrewer.desktop"]="0:0:755"
+
 )
