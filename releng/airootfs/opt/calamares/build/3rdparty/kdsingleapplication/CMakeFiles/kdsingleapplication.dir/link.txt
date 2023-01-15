@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../libkdsingleapplication.a CMakeFiles/kdsingleapplication.dir/kdsingleapplication_autogen/mocs_compilation.cpp.o CMakeFiles/kdsingleapplication.dir/kdsingleapplication.cpp.o CMakeFiles/kdsingleapplication.dir/kdsingleapplication_localsocket.cpp.o
+/usr/bin/ranlib ../../libkdsingleapplication.a

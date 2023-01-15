@@ -1,0 +1,19 @@
+Determining if the function ped_file_system_clobber exists failed with the following output:
+Change Dir: /home/fahr/calamares/build/CMakeFiles/CMakeScratch/TryCompile-FueBnf
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_aa5b7/fast && /usr/bin/make  -f CMakeFiles/cmTC_aa5b7.dir/build.make CMakeFiles/cmTC_aa5b7.dir/build
+make[1]: Entering directory '/home/fahr/calamares/build/CMakeFiles/CMakeScratch/TryCompile-FueBnf'
+Building C object CMakeFiles/cmTC_aa5b7.dir/CheckFunctionExists.c.o
+/usr/bin/cc  -I/usr/include/parted -DCHECK_FUNCTION_EXISTS=ped_file_system_clobber -std=gnu99 -o CMakeFiles/cmTC_aa5b7.dir/CheckFunctionExists.c.o -c /home/fahr/calamares/build/CMakeFiles/CMakeScratch/TryCompile-FueBnf/CheckFunctionExists.c
+Linking C executable cmTC_aa5b7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa5b7.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=ped_file_system_clobber CMakeFiles/cmTC_aa5b7.dir/CheckFunctionExists.c.o -o cmTC_aa5b7  /usr/lib/libparted.so /usr/lib/libparted-fs-resize.so 
+/usr/bin/ld: CMakeFiles/cmTC_aa5b7.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `ped_file_system_clobber'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_aa5b7.dir/build.make:101: cmTC_aa5b7] Error 1
+make[1]: Leaving directory '/home/fahr/calamares/build/CMakeFiles/CMakeScratch/TryCompile-FueBnf'
+make: *** [Makefile:127: cmTC_aa5b7/fast] Error 2
+
+
+

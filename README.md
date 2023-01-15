@@ -1,8 +1,10 @@
-# Koffee Linux v.17.0.0 "Quark"
+# Coffee Linux v.16.0.0 "Praxus"
+
+![Screenshot_20221209_223429](https://user-images.githubusercontent.com/8603363/206835846-3e6e3eab-7632-471e-8a88-d2ffb548faa9.png)
 
 We believe using your PC should be as easy as a sip of coffee, so we fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 
-KoffeeLinux is a spin of Arch, but has been made easy for anyone to install and use for nearly anything.
+CoffeeLinux is a spin of Arch, but has been made easy for anyone to install and use for nearly anything. 
 The idea here is to have everything ready for you right away.
 
 It asks a few simple questions to customize the OS to your liking, then you just wait for the reboot. Everything is downloaded and installed on the system for the system. 
@@ -20,9 +22,7 @@ KDE Desktop Environment and Sway WM (for non-DE lovers)
 
 All password/s for live environment are "coffee"
 
-Install with one of the installers on the liveuser desktop.
-
-(GUI version of the installer is still experimental)
+Install with the installer on the liveuser desktop.
 
 =========================================================================
 
