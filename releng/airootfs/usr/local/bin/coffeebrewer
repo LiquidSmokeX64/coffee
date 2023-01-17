@@ -1,13 +1,9 @@
 #!/bin/sh
 
-baseapps="amd-ucode system-config-printer apparmor archinstall mlocate arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config grub hdparm hyperv intel-ucode iwd jfsutils kitty-terminfo libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell man-db man-pages mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano net-tools networkmanager nfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone pcsclite ppp pptpclient qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo syslinux systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh"
-
-coffeeapps="sddm sddm-kcm boost-libs gtk-update-icon-cache hwinfo kconfig kcoreaddons ki18n kiconthemes kio kpmcore libpwquality polkit-qt5 qt5-svg qt5-xmlpatterns solid squashfs-tools yaml-cpp boost git qt5-tools qt5-translations python-pyqt5 polkit libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt kde-applications-meta kdevelop-python kgamma5 knewstuff kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session ark colord-kde gnome-color-manager gnome-keyring gnome-menus gtk4 xdg-desktop-portal-kde arc-gtk-theme dmenu adapta-gtk-theme arc-icon-theme thunderbird egl-wayland xorg-xwayland bemenu bemenu-wayland bemenu-ncurses sway swaybg swayidle swayimg swaylock wlroots seatd j4-dmenu-desktop wofi oxygen-icons pavucontrol-qt ruby perl lua firefox rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr elfutils exfatprogs expat extra-cmake-modules firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt5 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd xfconf vlc"
-
 questionare (){
 
 while [ "$usercheck" != "1" ]; do
-printf "%b\nSet your Username.\n" "$*"
+printf "%b\nEnter your Username for post installation setup..\n" "$*"
 read -r user00
 printf "%b\n$user00. Is this correct?\n" "$*"
 printf "%b\n1 - yes\n" "$*"
@@ -19,12 +15,12 @@ case $usercheck in
   #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 done
-if [ "$usercheck" = "1" ]; then 
+if [ "$usercheck" = "1" ]; then
 user01=$user00
 fi
 #
 while [ "$userpasscheck" != "1" ]; do
-printf "%b\nSet your User Password.\n" "$*"
+printf "%b\nEnter your User Password for post installation setup..\n" "$*"
 read -r userpass00
 printf "%b\n$userpass00. Is this correct?\n" "$*"
 printf "%b\n1 - yes\n" "$*"
@@ -36,14 +32,13 @@ case $userpasscheck in
   #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 done
-if [ "$userpasscheck" = "1" ]; then 
+if [ "$userpasscheck" = "1" ]; then
 userpass0=$userpass00
 fi
 
-
 #
 while [ "$rootpasscheck" != "1" ]; do
-printf "%b\nSet your Root Password.\n" "$*"
+printf "%b\neEnter your Root Password for post installation setup..\n" "$*"
 read -r userpass01
 printf "%b\n$userpass01. Is this correct?\n" "$*"
 printf "%b\n1 - yes\n" "$*"
@@ -55,11 +50,9 @@ case $rootpasscheck in
   #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 done
-if [ "$rootpasscheck" = "1" ]; then 
+if [ "$rootpasscheck" = "1" ]; then
 userpass1=$userpass01
 fi
-
-#
 
 while [ "$sbpasscheck" != "1" ] && [ "$sbpasscheck" != "2" ]; do
 printf "%b\nWould you like to enable Secure-Boot in the OS?\n" "$*"
@@ -96,52 +89,15 @@ esac
 done
 fi
 
-if [ "$uefipasscheck" = "1" ]; then 
+if [ "$uefipasscheck" = "1" ]; then
 uefipass0=$uefipass00
 fi
-
-while [ "$namepasscheck" != "1" ]; do
-printf "%b\nSet your PC name.\n" "$*"
-read -r name00
-printf "%b\n$name00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r namepasscheck
-case $namepasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-if [ "$namepasscheck" = "1" ]; then
-name0=$name00
-fi
-
-#
-while [ "$name2passcheck" != "1" ]; do
-printf "%b\nSet your HardDrive Label (OS Partition Label).\n" "$*"
-read -r name01
-printf "%b\n$name01. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r name2passcheck
-case $name2passcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-if [ "$name2passcheck" = "1" ]; then
-name1=$name01
-fi
-
-native1=yes
 
 while [ "$driveXpasscheck" != "1" ]; do
 printf "%b\nListing Storage Devices for you.\n" "$*"
 fdisk -l
 printf "%b\n" "$*"
-printf "%b\nWhich drive do you want Coffee Linux to install to?\n" "$*"
+printf "%b\nWhich drive do you want Coffee Linux to install secure-boot to?\n" "$*"
 printf "%b\n1 - NVME0N1" "$*"
 printf "%b\n2 - NVME1N1" "$*"
 printf "%b\n3 - SDA" "$*"
@@ -201,33 +157,8 @@ swap0=$drive0$swap
 system0=$drive0$system
 hostname0=$name0
 drivename0=$name1
-else
-exit
+native1="yes"
 fi
-
-while [ "$swapcheck" != "1" ] && [ "$swapcheck" != "2" ]; do
-printf "%b\nSetting up swap size, do you want to manually configure or auto configure it based on your RAM size ?\n" "$*"
-printf "%b\n1 - Manual\n" "$*"
-printf "%b\n2 - Auto\n" "$*"
-read -r swapcheck 
-case $swapcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-
-while [ "$hibernationpasscheck" != "1" ] && [ "$hibernationpasscheck" != "2" ]; do
-printf "%b\nWould you like to enable hibernation?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r hibernationpasscheck
-case $hibernationpasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again.\n" "$*" ;;
-esac
-done
 
 while [ "$snapcheck" != "1" ] && [ "$snapcheck" != "2" ]; do
 printf "%b\nWould you like Snap-Store support (Snapd) ?\n" "$*"
@@ -284,212 +215,14 @@ esac
 done
 if [ "$gpucheck" = "1" ]; then
 gpu0="amd"
+questionspassed="yes"
 elif [ "$gpucheck" = "2" ]; then
 gpu0="nvidia"
+questionspassed="yes"
 elif [ "$gpucheck" = "3" ]; then
 gpu0="vm"
-fi
-
-while [ "$fscheck" != "1" ] && [ "$fscheck" != "2" ]; do
-printf "%b\nWould you like Ext4 or BTRFS Filesystem type?\n" "$*"
-printf "%b\n1 - Ext4\n" "$*"
-printf "%b\n2 - BTRFS\n" "$*"
-
-read -r fscheck
-case $fscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nA good choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-if [ "$fscheck" = "1" ]; then
-fs0="ext4"
-questionspassed="yes"
-elif [ "$fscheck" = "2" ]; then
-fs0="btrfs"
 questionspassed="yes"
 fi
-}
-
-set_swap (){
-
-while [ "$command0finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$hibernationpasscheck" = "1" ]; then
-HIBERNATING="1"
-fi
-
-while [ "$rampasscheck" != "1" ]; do
-
-RAM=$(free -m | grep Mem | awk '{print $2}')
-
-if [ "$RAM" -gt 2048 ] && [ "$RAM" -lt 8192 ]; then # if RAM is between 2 and 8 GB
-    
-    if [ "$HIBERNATING" = "1" ]; then
-        MULTIPLIER="3"
-    else
-        MULTIPLIER="2"
-    fi
-fi
-
-if [ "$RAM" -gt 8192 ] && [ "$RAM" -lt 16384 ]; then # if RAM is between 8 and 16 GB
-    if [ "$HIBERNATING" = "1" ]; then
-        MULTIPLIER="2"
-    else
-        MULTIPLIER="1"
-    fi
-fi
-
-if [ "$RAM" -gt 32768  ]; then    # if RAM is more than 32 GB
-    if [ "$HIBERNATING" = "1" ]; then
-        MULTIPLIER="1"
-    else
-        MULTIPLIER="05"
-    fi
-fi
-
-if [ "$swapcheck" = "1" ]; then
-    printf "%b\nEnter swap size in GB\n" "$*"
-    read -r swapsize1
-    swapsize="+""$((swapsize1))G"
-    swap1=$swapsize
-elif [ "$swapcheck" = "2" ]; then
-    swapsize="+""$((RAM*MULTIPLIER))M"
-    swap1=$swapsize
-fi
-
-rampasscheck="1"
-
-done
-
-command0finished="1"
-else
-command0finished="0"
-fi
-done
-command0finished="0"
-
-}
-
-format_disks (){
-while [ "$command1finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-printf "%b\nFormatting Partitions\n" "$*"
-printf "%bg\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nw\n" "$*" | fdisk -W always $drive0
-mkfs.fat -F32 $boot0
-mkswap $swap0
-swapon $swap0
-
-if [ "$fs0" = "btrfs" ]; then
-mkfs.btrfs -f -L $drivename0 $system0
-elif [ "$fs0" = "ext4" ]; then
-mkfs.ext4 -L $drivename0 $system0
-fi
-printf "%b\nMounting Disks\n" "$*"
-mount $system0 /mnt
-mkdir /mnt/boot
-mount $boot0 /mnt/boot
-printf "%b\nEnable Repos\n" "$*"
-#printf "%b\n[multilib]\nInclude = /etc/pacman.d/mirrorlist
-#printf "%b\n[andontie-aur]\nServer = https://aur.andontie.net/\$arch\nSigLevel = Never\n" "$*" >> /etc/pacman.conf
-pacman -Sy --noconfirm archlinux-keyring
-pacman -Syy
-
-command1finished="1"
-else
-command1finished="0"
-fi
-done
-command1finished="0"
-
-}
-
-base_install (){
-while [ "$pacstrapfinished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-pacstrap /mnt $baseapps
-pacstrapfinished="1"
-else
-pacstrapfinished="0"
-fi
-done
-}
-
-set_locale (){
-
-while [ "$command2finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-arch-chroot /mnt /bin/bash <<"EOT"
-printf "%b\nSetting Locale\n" "$*"
-ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
-hwclock --systohc
-printf "%b\nen_US ISO-8859-1\nen_US.UTF-8 UTF-8\n" "$*" >> /etc/locale.gen
-printf "%b\nKEYMAP=us\n" "$*" >> /etc/vconsole.conf
-printf "%b\nLANG=en_US.UTF-8" "$*" >> /etc/locale.conf
-export LANG=en_US.UTF-8
-locale-gen
-cd /
-printf "%b\n%%"w"heel ALL=(ALL:ALL) NOPASSWD: ALL\n" "$*" > /etc/sudoers.d/wheel
-mkinitcpio -P
-
-EOT
-
-cp --dereference /etc/resolv.conf /mnt/etc/
-arch-chroot /mnt pacman -Syu --noconfirm
-
-command2finished="1"
-else
-command2finished="0"
-fi
-done
-command2finished="0"
-
-}
-
-set_passwords (){
-
-while [ "$command3finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-arch-chroot /mnt pacman -Syy
-arch-chroot /mnt pacman -Sy --noconfirm archlinux-keyring
-cp /etc/pacman.conf /mnt/etc/pacman.conf
-arch-chroot /mnt pacman -Syy
-printf "%b\nSet Root Password\n" "$*"
-printf "%b$userpass1\n$userpass1\n" "$*" | arch-chroot /mnt passwd 
-printf "%bAdding User Account\n" "$*"
-arch-chroot /mnt useradd -m -G wheel,audio,video,users,power,storage --badname "$user01" 
-printf "%b\nSet User Password\n" "$*"
-printf "%b$userpass0\n$userpass0\n" "$*" | arch-chroot /mnt passwd "$user01"
-printf "%b$hostname0\n" "$*" >> /mnt/etc/hostname
-printf "%b\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" "$*" >> /mnt/etc/hosts
-printf "%bCreating Links\n" "$*" 
-genfstab -L /mnt >> /mnt/etc/fstab
-
-command3finished="1"
-else
-command3finished="0"
-fi
-done
-command3finished="0"
-
-}
-
-coffee_install (){
-while [ "$pacmanfinished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-networkd systemd-resolved
-cp /opt/config /mnt/etc/sway/
-pacmanfinished="1"
-else
-pacmanfinished="0"
-fi
-done
 
 }
 
@@ -554,7 +287,6 @@ printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 arch-chroot /mnt systemctl enable snapd.apparmor
 arch-chroot /mnt systemctl enable snapd
 
-
 fi
 
 command7finished="1"
@@ -563,35 +295,6 @@ command7finished="0"
 fi
 done
 command7finished="0"
-
-}
-
-bootloader_install (){
-
-while [ "$command8finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-
-arch-chroot /mnt /bin/bash <<"EOT"
-printf "%bInstalling SystemD-Bootloader UEFI\n" "$*"
-mkinitcpio -P
-bootctl install
-printf "%b\ndefault arch.conf\ntimeout 15\nconsole-mode keep\neditor no\n" "$*" > /boot/loader/loader.conf
-EOT
-
-if [ $native1 = "yes" ]; then
-printf "%btitle Koffee-Linux 'Praxus' (16.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
-fi
-
-printf "%b\nlinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
-
-#-Bootloader-End
-
-command8finished="1"
-fi
-done
-command8finished="0"
-
 
 }
 
@@ -604,10 +307,10 @@ if [ $gpu0 = "nvidia" ]; then
 printf "%b\nSystemD-Bootloader UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
-printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%b\noptions rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 elif [ $gpu0 = "amd" ]; then
 printf "%b\nSystemD-Bootloader UEFI for AMD selected.\nInstalling amdgpu-fan and corectrl" "$*"
-printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%b\noptions rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
 arch-chroot /mnt pacman -Sy --noconfirm corectrl
 fi
@@ -620,9 +323,6 @@ done
 command9finished="0"
 
 }
-
-
-
 
 yay_install (){
 while [ "$yayinstallfinished" != "1" ]; do
@@ -643,7 +343,6 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y swaysettings-git
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y github-desktop
-
 yayinstallfinished="1"
 else
 yayinstallfinished="0"
@@ -658,7 +357,8 @@ while [ "$command10finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ $sbpass0 = "yes" ]; then
-printf "%bGenerating KoffeeLinux Secure-Boot keys for your machine\n" "$*"
+
+printf "%bGenerating CoffeeLinux Secure-Boot keys for your machine\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm efitools mokutil sbsigntools apparmor sbctl
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y shim-signed
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y preloader-signed
@@ -684,29 +384,12 @@ cp /opt/999-sign_kernel_for_secureboot.hook /mnt/etc/pacman.d/hooks/999-sign_ker
 arch-chroot /mnt cp MOK.cer /boot/
 arch-chroot /mnt cp MOK.crt /boot/
 arch-chroot /mnt cp MOK.key /boot/
-arch-chroot /mnt systemctl enable apparmor
-arch-chroot /mnt systemctl enable systemd-boot-update.service
-arch-chroot /mnt systemctl enable dhcpcd
-arch-chroot /mnt systemctl enable cronie
-arch-chroot /mnt systemctl enable chronyd
-arch-chroot /mnt systemctl enable NetworkManager
-arch-chroot /mnt systemctl enable firewalld
-arch-chroot /mnt systemctl enable cups
-arch-chroot /mnt systemctl enable sddm
+
 arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
 
 elif [ $sbpass0 = "no" ]; then
 printf "%b\nAdding AppArmor\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm apparmor
-arch-chroot /mnt systemctl enable apparmor
-arch-chroot /mnt systemctl enable systemd-boot-update.service
-arch-chroot /mnt systemctl enable dhcpcd
-arch-chroot /mnt systemctl enable cronie
-arch-chroot /mnt systemctl enable chronyd
-arch-chroot /mnt systemctl enable NetworkManager
-arch-chroot /mnt systemctl enable firewalld
-arch-chroot /mnt systemctl enable cups
-arch-chroot /mnt systemctl enable sddm
 arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
 
 fi
@@ -771,9 +454,9 @@ case $rebootcheck in
   #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 
-if [ "$rebootcheck" = "1" ]; then 
+if [ "$rebootcheck" = "1" ]; then
 printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-elif [ "$rebootcheck" != "1" ]; then 
+elif [ "$rebootcheck" != "1" ]; then
 umount -R /mnt
 swapoff $swap0
 exit
@@ -802,18 +485,11 @@ case $installationcheck in
   *) printf "%b\nLet's exit.\n" "$*" ;;
   #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
-if [ "$installationcheck" = "1" ]; then 
+if [ "$installationcheck" = "1" ]; then
 questionare
-set_swap
-format_disks
-base_install
-set_locale
-set_passwords
-coffee_install
 java_install
 vmware_install
 snapd_install
-bootloader_install
 gpu_install
 yay_install
 secureboot_install

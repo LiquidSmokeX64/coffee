@@ -1,4 +1,4 @@
-# Coffee Linux v.16.0.0 "Praxus"
+# Koffee Linux v.17.0.0 "Quark"
 
 ![Screenshot_20221209_223429](https://user-images.githubusercontent.com/8603363/206835846-3e6e3eab-7632-471e-8a88-d2ffb548faa9.png)
 
@@ -22,7 +22,8 @@ KDE Desktop Environment and Sway WM (for non-DE lovers)
 
 All password/s for live environment are "coffee"
 
-Install with the installer on the liveuser desktop.
+Install OS with the "(classic)" installer on the liveuser desktop.
+(GUI installer is still EXPERIMENTAL, may still have some bugs)
 
 =========================================================================
 
@@ -44,7 +45,7 @@ Latest Gamescope and MangoHud.
 
 Yay AUR package manager (Terminal only).
 
-Sway settings GUI app. (Good to have)
+Sway settings GUI app. (Good to have) (sway-nvidia for nvidia gpus)
 
 Pamac GUI Package Manager.
 
