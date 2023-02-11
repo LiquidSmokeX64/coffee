@@ -1,6 +1,4 @@
-# Koffee Linux v.17.0.0 "Quark"
-
-![Screenshot_20221209_223429](https://user-images.githubusercontent.com/8603363/206835846-3e6e3eab-7632-471e-8a88-d2ffb548faa9.png)
+# Coffee Linux v.20.0.0 "Tower"
 
 We believe using your PC should be as easy as a sip of coffee, so we fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 
@@ -18,12 +16,7 @@ Notable Feature: Secure-Boot support is available to install on the OS [via Syst
 
 =========================================================================
 
-KDE Desktop Environment and Sway WM (for non-DE lovers)
-
-All password/s for live environment are "coffee"
-
-Install OS with the "(classic)" installer on the liveuser desktop.
-(GUI installer is still EXPERIMENTAL, may still have some bugs)
+Choice of almost any Desktop Environment and WMs (for non-DE lovers)
 
 =========================================================================
 
@@ -55,6 +48,8 @@ VMware Workstation/Player (if selected)
 
 SystemD-Bootloader UEFI w/secure-boot support 
 
+Lots of Themes and Wallpapers depending on your DE/WM.
+
 Just use Etcher to write the iso to usb, and go. Easy-peezy.
 
 =======================================================
@@ -67,9 +62,9 @@ Install archiso first.
 
 Then open a terminal an issue the following commands.
 
-git clone https://github.com/Project-X-Mods/coffeelinux-sources.git
+git clone https://github.com/Project-X-Mods/coffeelinux.git
 
-sudo mkarchiso -v -w ~/work/ -o ~/out/ ~/coffeelinux-sources/releng/
+sudo mkarchiso -v -w ~/work/ -o ~/out/ ~/coffeelinux/releng/
 
 Iso will be created in ~/out/ (home directory /out)
 
