@@ -2,15 +2,15 @@
 
 baseapps="amd-ucode system-config-printer apparmor archinstall mlocate arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config grub hdparm hyperv intel-ucode iwd jfsutils kitty-terminfo libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell man-db man-pages mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano net-tools networkmanager nfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone pcsclite ppp pptpclient qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo syslinux systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh"
 
-coffeeapps="firefox rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo syslinux systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd"
+coffeeapps="firefox rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt5 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam-native-runtime sudo syslinux systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd vlc"
 
 gnomeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
-kdeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 knewstuff kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
+kdeapps="wireplumber pipewire-pulse pipewire pipewire-alsa polkit-qt5 pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 knewstuff kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
 
-cinnamonapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk xed"
+cinnamonapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations gnome-extra gnome-shell gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
 
-mateapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter xed"
+mateapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter gnome-text-editor"
 
 xfceapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad lightdm lightdm-slick-greeter pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
 
@@ -18,39 +18,21 @@ lxdeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lxde l
 
 lxqtapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt "
 
-deepinapps="polkit polkit-gnome gnome-keyring libsecret deepin gtk3 gtk4 deepin-anything-arch deepin-kwin deepin-extra lightdm lightdm-deepin-greeter wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack"
+deepinapps="polkit polkit-gnome gnome-keyring gnome-extra libsecret deepin gtk3 gtk4 deepin-anything-arch deepin-kwin deepin-extra lightdm lightdm-deepin-greeter wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack"
 
 i3apps="polkit polkit-gnome gnome-keyring libsecret gnome-text-editor gnome-console gnome-system-monitor nautilus i3-wm i3lock gtk3 i3status i3blocks micro lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-swayapps="sddm gnome-disk-utility gnome-calculator gnome-photos xed htop nautilus polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks micro sway swaybg swayidle swayimg swaylock wlroots seatd feh foot wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-console j4-dmenu-desktop xdg-desktop-portal-gtk"
+swayapps="sddm gnome-extra gnome-disk-utility gnome-calculator gnome-photos gnome-text-editor htop nautilus polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks micro sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-console j4-dmenu-desktop xdg-desktop-portal-gtk"
 
 cutefishapps="polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-kwin-plugins cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-budgieapps="polkit polkit-gnome gnome-keyring libsecret budgie-control-center gtk3 budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+budgieapps="polkit polkit-gnome gnome-keyring gnome-extra gnome-shell libsecret budgie-control-center gtk3 budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver lightdm lightdm-gtk-greeter rofi gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
 awesomeapps="polkit polkit-gnome gnome-keyring libsecret awesome xterm gtk3 awesome-terminal-fonts lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-enlightenmentapps="polkit polkit-gnome gnome-keyring libsecret enlightenment gtk3 lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+enlightenmentapps="polkit polkit-gnome gnome-keyring libsecret enlightenment gtk3 lightdm lightdm-gtk-greeter rofi wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
 questionare (){
-
-while [ "$rootusercheck" != "1" ]; do
-printf "%b\nWARNING: THIS INSTALLER SCRIPT MUST BE RAN AS ROOT USER.\nAre you the root user?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r rootusercheck
-case $rootusercheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's exit, only root can perform arch-chroot operations\n" "$*" ;;
-  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-
-if [ "$rootusercheck" = "1" ]; then 
-printf "%b\nExcellent. Let's proceed.\n" "$*"
-elif [ "$rootusercheck" != "1" ]; then 
-exit
-fi
-done
 
 while [ "$usercheck" != "1" ]; do
 printf "%b\nSet your Username.\n" "$*"
@@ -1064,9 +1046,9 @@ printf "%bdefault arch.conf\ntimeout 10\nconsole-mode keep\neditor no\n" "$*" > 
 EOT
 
 if [ $native1 = "yes" ]; then
-printf "%btitle Coffee-Linux 'Tower' (20.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Tower' (20.0.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 elif [ $native1 = "no" ]; then
-printf "%btitle Coffee-Linux 'Tower' (20.0.0-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Tower' (20.0.1-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -1093,7 +1075,7 @@ if [ "$questionspassed" = "yes" ]; then
 if [ $gpu0 = "nvidia" ]; then
 printf "%b\nSystemD-Bootloader UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia-git
 printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 elif [ $gpu0 = "amd" ]; then
 printf "%b\nSystemD-Bootloader UEFI for AMD selected.\nInstalling amdgpu-fan and corectrl" "$*"
@@ -1129,6 +1111,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
+printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 
   if [ "$desktop0" = "gnome" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
@@ -1160,6 +1143,10 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
      #arch-chroot /mnt sudo -Su $user01 yay --nodiffmenu --noremovemake --answerclean y  --answerdiff y --answeredit y --answerupgrade y gnome-calendar-linuxmint &&
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
      #rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
+     arch-chroot /mnt pacman -Rdd lightdm-settings lightdm-slick-greeter lightdm
+     printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
+     rm -r /mnt/usr/share/wayland-sessions/gnome*
+     rm -r /mnt/usr/share/xsessions/gnome*
   elif [ "$desktop0" = "mate" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-screensaver-hacks
@@ -1190,7 +1177,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
   elif [ "$desktop0" = "lxqt" ]; then
      printf "%b1\n" "$*"
   elif [ "$desktop0" = "sway" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-settings
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-settings-git
      mkdir -p /mnt/usr/share/wayland-sessions/
      cp /opt/sway.desktop /mnt/usr/share/wayland-sessions/sway.desktop
      chmod +x /mnt/usr/share/wayland-sessions/sway.desktop

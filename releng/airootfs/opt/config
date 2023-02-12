@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term gnome-console
+set $term gnome-terminal
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -217,7 +217,7 @@ bar {
 include /etc/sway/config.d/*
 
 exec_always xrandr --output $(xrandr | grep -m 1 XWAYLAND | awk '{print $1;}') --primary
-exec_always j4-dmenu-desktop --dmenu=bemenu --nb #3f3f3f --nf #dcdccc --fn pango:Monospace Regular 12 --term=gnome-console
+exec_always j4-dmenu-desktop --dmenu=bemenu --nb #3f3f3f --nf #dcdccc --fn pango:Monospace Regular 12 --term=gnome-terminal
 output * bg /usr/share/backgrounds/gnome/coffeewall03.jpg fill
 output * adaptive_sync on
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
