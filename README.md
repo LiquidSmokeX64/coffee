@@ -1,4 +1,4 @@
-# Coffee Linux v.20.0.1 "Tower"
+# Coffee Linux v.20.1.0 "Tower"
 
 We believe using your PC should be as easy as a sip of coffee, so we fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 

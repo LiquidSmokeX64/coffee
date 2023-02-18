@@ -1,4 +1,3 @@
-DISTRIB_ID="coffee"
-DISTRIB_LIKE_ID="arch"
+DISTRIB_ID="Coffee"
 DISTRIB_RELEASE="rolling"
-DISTRIB_DESCRIPTION="Coffee Linux v.20.0.1 (Tower)"
+DISTRIB_DESCRIPTION="Coffee Linux v.20.1.0 (Tower)"

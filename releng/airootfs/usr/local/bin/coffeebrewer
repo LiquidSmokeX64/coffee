@@ -1,14 +1,14 @@
 #!/bin/sh
 
-baseapps="amd-ucode system-config-printer apparmor archinstall mlocate arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config grub hdparm hyperv intel-ucode iwd jfsutils kitty-terminfo libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell man-db man-pages mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano net-tools networkmanager nfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone pcsclite ppp pptpclient qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo syslinux systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh"
+baseapps="amd-ucode device-mapper gettext xz dosfstools efibootmgr freetype2 fuse2 libisoburn lzop mtools autogen help2man python rsync texinfo ttf-dejavu system-config-printer apparmor archinstall mlocate arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config hdparm hyperv intel-ucode iwd jfsutils kitty-terminfo libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell man-db man-pages mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano net-tools networkmanager nfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone pcsclite ppp pptpclient qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh"
 
-coffeeapps="firefox rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt5 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam-native-runtime sudo syslinux systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd vlc"
+coffeeapps="boost-libs qt5 qt6 gtk-update-icon-cache hwinfo libpwquality qt5-svg qt5-xmlpatterns solid squashfs-tools yaml-cpp boost extra-cmake-modules git qt5-tools qt5-translations firefox rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt5 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam-native-runtime sudo systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd vlc"
 
 gnomeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
-kdeapps="wireplumber pipewire-pulse pipewire pipewire-alsa polkit-qt5 pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 knewstuff kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
+kdeapps="kconfig kcoreaddons ki18n kiconthemes kio kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa polkit-qt5 pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 knewstuff qt5 qt6 plasma plasma-nm kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
 
-cinnamonapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations gnome-extra gnome-shell gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
+cinnamonapps="polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
 
 mateapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter gnome-text-editor"
 
@@ -90,7 +90,7 @@ fi
 #
 
 while [ "$sbpasscheck" != "1" ] && [ "$sbpasscheck" != "2" ]; do
-printf "%b\nWould you like to enable Secure-Boot in the OS?\n" "$*"
+printf "%b\nWould you like to enable Secure-Boot in the OS? (requires systemd-bootloader)\n" "$*"
 printf "%b\n1 - yes\n" "$*"
 printf "%b\n2 - no\n" "$*"
 read -r sbpasscheck
@@ -464,7 +464,7 @@ while [ "$grubcheck" != "1" ] && [ "$grubcheck" != "2" ] && [ "$grubcheck" != "3
 printf "%b\nWould you like GRUB or SystemD-Bootloader?\nGRUB is more compatible with VMs.\nUnofficial Installs MUST use SystemD and be using actual hardware.\n" "$*"
 printf "%b\n1 - GRUB UEFI version\n" "$*"
 printf "%b\n2 - GRUB BIOS/MBR version\n" "$*"
-printf "%b\n3 - SystemD-Bootloader UEFI-Only\n" "$*"
+printf "%b\n3 - SystemD-Bootloader UEFI-Only (for secure-boot installations.)\n" "$*"
 read -r grubcheck
 case $grubcheck in
   1) printf "%b\nPerfect.\n" "$*" ;;
@@ -662,7 +662,7 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$desktop0" = "gnome" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $gnomeapps
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -676,7 +676,7 @@ arch-chroot /mnt systemctl enable gdm
 
 elif [ "$desktop0" = "kde" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $kdeapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -690,7 +690,7 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "cinnamon" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $cinnamonapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -705,7 +705,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "mate" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $mateapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $mateapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -720,7 +720,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "lxde" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $lxdeapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -735,7 +735,7 @@ arch-chroot /mnt systemctl enable lxdm
 
 elif [ "$desktop0" = "lxqt" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $lxqtapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -750,7 +750,7 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "xfce" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $xfceapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -765,7 +765,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "deepin" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $deepinapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -780,7 +780,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "i3" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $i3apps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $i3apps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -795,7 +795,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "sway" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $swayapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $swayapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -816,7 +816,7 @@ fi
 
 elif [ "$desktop0" = "cutefish" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $cutefishapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $cutefishapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -830,7 +830,7 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "budgie" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $budgieapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $budgieapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -844,7 +844,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "enlightenment" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $enlightenmentapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $enlightenmentapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
@@ -857,7 +857,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "awesome" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $awesomeapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $awesomeapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -883,7 +883,7 @@ command4finished="0"
 coffee_install (){
 while [ "$pacmanfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
+arch-chroot /mnt pacman -Sy --noconfirm --needed $coffeeapps
 pacmanfinished="1"
 else
 pacmanfinished="0"
@@ -976,8 +976,13 @@ if [ $gpu0 = "nvidia" ]; then
 
 printf "%b\nGRUB UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
 
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings grub os-prober
-cp /opt/grub-nvidia /mnt/etc/default/
+arch-chroot /mnt pacman -S --needed --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
+printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm kcm-grub2
+
+arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
+#cp /opt/grub-nvidia /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
@@ -989,8 +994,11 @@ elif [ $gpu0 = "amd" ]; then
 
 printf "%b\nGRUB UEFI for AMD selected.\n" "$*"
 
-arch-chroot /mnt pacman -Sy --noconfirm corectrl grub os-prober
-cp /opt/grub /mnt/etc/default/
+arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
+printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm kcm-grub2
+#cp /opt/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
@@ -1007,8 +1015,13 @@ if [ $gpu0 = "nvidia" ]; then
 
 printf "%b\nGRUB BIOS for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
 
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings grub os-prober
-cp /opt/grub-nvidia /mnt/etc/default/
+arch-chroot /mnt pacman -S --needed --noconfirm libadwaita grub os-prober breeze-grub terminus-font
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
+printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm kcm-grub2
+
+arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
+#cp /opt/grub-nvidia /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 pacman -Sy --noconfirm
@@ -1023,8 +1036,11 @@ elif [ $gpu0 = "amd" ]; then
 printf "%b\nGRUB BIOS for AMD selected.\n" "$*"
 
 
-arch-chroot /mnt pacman -Sy --noconfirm corectrl grub os-prober
-cp /opt/grub /mnt/etc/default/
+arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
+printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm kcm-grub2
+#cp /opt/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
@@ -1042,13 +1058,14 @@ arch-chroot /mnt /bin/bash <<"EOT"
 printf "%bInstalling SystemD-Bootloader UEFI\n" "$*"
 mkinitcpio -P
 bootctl install
-printf "%bdefault arch.conf\ntimeout 10\nconsole-mode keep\neditor no\n" "$*" > /boot/loader/loader.conf
 EOT
 
+printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
+
 if [ $native1 = "yes" ]; then
-printf "%btitle Coffee-Linux 'Tower' (20.0.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Tower' (20.1.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 elif [ $native1 = "no" ]; then
-printf "%btitle Coffee-Linux 'Tower' (20.0.1-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Tower' (20.1.0-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -1074,14 +1091,14 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ $gpu0 = "nvidia" ]; then
 printf "%b\nSystemD-Bootloader UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
+arch-chroot /mnt pacman -Sy --noconfirm --needed nvidia-open opencl-nvidia nvidia-utils nvidia-settings
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia-git
 printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 elif [ $gpu0 = "amd" ]; then
 printf "%b\nSystemD-Bootloader UEFI for AMD selected.\nInstalling amdgpu-fan and corectrl" "$*"
 printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
-arch-chroot /mnt pacman -Sy --noconfirm corectrl
+arch-chroot /mnt pacman -Sy --needed --noconfirm corectrl
 fi
 
 command9finished="1"
@@ -1113,6 +1130,10 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
+
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ckbcomp-bin
+
   if [ "$desktop0" = "gnome" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
@@ -1125,7 +1146,8 @@ printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-session
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
-     #printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
+     arch-chroot /mnt pacman -Rdd mutter
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
      printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
      rm -r /mnt/usr/share/wayland-sessions/gnome*
      rm -r /mnt/usr/share/xsessions/gnome*
@@ -1350,8 +1372,8 @@ if [ "$native1" = "yes" ]; then
   cp -r /opt/* /mnt/opt/
 #  mkdir -p /mnt/etc/neofetch/
 #  cp /opt/config.conf /mnt/etc/neofetch/config.conf
-  cp /usr/local/bin/coffeebrewer /mnt/usr/local/bin/
-  arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer
+#  cp /usr/local/bin/coffeebrewer /mnt/usr/local/bin/
+#  arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer
   #arch-chroot /mnt chmod 755 /home/$user01/.config/neofetch/config.conf
 fi
 

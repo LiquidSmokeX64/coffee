@@ -1,0 +1,21 @@
+[Desktop Entry]
+Comment[en_US]=Invokes the coffeebrewer script
+Comment=Invokes the coffeebrewer script
+Categories=Utilities;System;
+Exec=su -c 'coffeebrewer' root
+Keywords=system;installer;
+GenericName[en_US]=Installs CoffeeLinux to a PC
+GenericName=Installs CoffeeLinux to a PC
+Icon=/usr/share/icons/breeze-dark/apps/32/yast-sw_single.svg
+Name[en_US]=Install CoffeeLinux
+Name=Install CoffeeLinux
+Path=/usr/local/bin
+StartupNotify=true
+Terminal=true
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
