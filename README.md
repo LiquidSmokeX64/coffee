@@ -13,10 +13,12 @@ The whole OS is downloaded and preconfigured (default settings) piece by piece o
  NO Updates that take forever. No drivers to setup (in most cases), It simply works out of the box similar to Windows but less corporate "sign your privacy away mumbo jumbo", or any of the other ridiculous crap in the Windows License terms you have to agree to just to use the OS at all. My OS is just as easy to use, faster in most cases, less prone to failure, has no need to defrag EVER, is less exposed to virus/malware automatically, and best of all free and open-source for everyone.
 
 This OS is NOT developed by a team of developers, or any company whatsoever. Just me (LiquidSmokeX64), cause I feel I should be the guy that lights the way to a better, more feature rich, faster, user choice based computing experience than even some more major Linux Distributions (ie:Ubuntu or Manjaro) provide. Somebody had to do it, might as well be me. 
-But more aggressively.. My goal is to outpace Windows. Gaming is the only area Windows can do better in vary few cases at this point, many games actually run better on Vulkan API as opposed to MS Direct X. You get more stability in trade for a few fps in most cases. Worth it. (Sorry, bit of a rant there lol)
+But more aggressively.. My goal is to outpace Windows. Gaming is the only area Windows can do better in vary few cases at this point, many games actually run better on Vulkan API as opposed to MS Direct X. You get more stability in trade for a few fps in most cases. Worth it. Turning on the SteamPlay compatibility options in Steams settings is not rocket science. (Sorry, bit of a rant there lol)
 
-Note: Gnome, KDE and Cinnamon are the most polished out of the DEs, and recommended for the full Coffee Linux experience. Other DEs are included as options but may have unknown bugs / issues and are generally unsupported by Coffee Linux officially. Use at your own risk.
+Note: Gnome, KDE and Cinnamon are the most polished out of the DEs, and recommended for the full Coffee Linux experience. Other DEs are included as options but may have unknown bugs / issues and are generally unsupported by Coffee Linux officially. Use at your own risk. These are simply to provide all possible choices for possible future improvements to them without a need for multiple isos.
 (Installation speed is solely based on your network speed)
+
+The installer itself is a handcrafted (POSIX compliant) shell script, not multiple files, only one single file, it does everything typically done via the typical oversized/overly complex installers (ie: calamares) used by literally all other Linux distributions. 
 
 It asks a few simple questions to customize the OS to your liking, then you just wait for the reboot. Everything is downloaded and installed on the system for the system. 
 Everything that really can be given a user choice has been. This is YOUR OS YOUR WAY. We have just made simpler to install with minimal hiccups as a "daily driver".
@@ -34,6 +36,10 @@ Choice of almost any Desktop Environment and WMs (for non-DE lovers)
 =========================================================================
 
 Java, Wine, Protontricks, DXVK, Vulkan, Steam, Discord, Heroic (Epic/GOG) games Launcher, Lutris and Firefox setup.
+
+Functional Grub2 System Settings module for KDE.
+
+Calamares-Git ready in KDE due to specific deps requiring Plasma.
 
 Ext4 and BTRFS options for compatibility with some hardware.
 
