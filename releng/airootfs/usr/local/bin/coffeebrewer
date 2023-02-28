@@ -8,7 +8,7 @@ gnomeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm g
 
 kdeapps="kconfig kcoreaddons ki18n kiconthemes kio kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa polkit-qt5 pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 knewstuff qt5 qt6 plasma plasma-nm kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
 
-cinnamonapps="polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
+cinnamonapps="polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-terminal gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
 
 mateapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter gnome-text-editor"
 
@@ -979,7 +979,6 @@ printf "%b\nGRUB UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*
 arch-chroot /mnt pacman -S --needed --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
-printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm kcm-grub2
 
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
 #cp /opt/grub-nvidia /mnt/etc/default/
@@ -997,7 +996,6 @@ printf "%b\nGRUB UEFI for AMD selected.\n" "$*"
 arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
-printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm kcm-grub2
 #cp /opt/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
@@ -1018,7 +1016,6 @@ printf "%b\nGRUB BIOS for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*
 arch-chroot /mnt pacman -S --needed --noconfirm libadwaita grub os-prober breeze-grub terminus-font
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
-printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm kcm-grub2
 
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
 #cp /opt/grub-nvidia /mnt/etc/default/
@@ -1039,7 +1036,7 @@ printf "%b\nGRUB BIOS for AMD selected.\n" "$*"
 arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
-printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm kcm-grub2
+
 #cp /opt/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
@@ -1063,9 +1060,9 @@ EOT
 printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ $native1 = "yes" ]; then
-printf "%btitle Coffee-Linux 'Tower' (20.1.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Tower' (20.1.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 elif [ $native1 = "no" ]; then
-printf "%btitle Coffee-Linux 'Tower' (20.1.0-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Tower' (20.1.1-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -1146,13 +1143,17 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-session
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
-     arch-chroot /mnt pacman -Rdd mutter
+     arch-chroot /mnt pacman -Rdd --noconfirm mutter
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
      printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
      rm -r /mnt/usr/share/wayland-sessions/gnome*
      rm -r /mnt/usr/share/xsessions/gnome*
   elif [ "$desktop0" = "kde" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
+     if [ "$grub0" = "true" ] do;
+     printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm kcm-grub2
+     done
+     fi
   elif [ "$desktop0" = "cinnamon" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
@@ -1165,8 +1166,8 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
      #arch-chroot /mnt sudo -Su $user01 yay --nodiffmenu --noremovemake --answerclean y  --answerdiff y --answeredit y --answerupgrade y gnome-calendar-linuxmint &&
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
      #rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
-     arch-chroot /mnt pacman -Rdd lightdm-settings lightdm-slick-greeter lightdm
-     printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
+     arch-chroot /mnt pacman -Rdd --noconfirm lightdm-settings
+     #printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
      rm -r /mnt/usr/share/wayland-sessions/gnome*
      rm -r /mnt/usr/share/xsessions/gnome*
   elif [ "$desktop0" = "mate" ]; then

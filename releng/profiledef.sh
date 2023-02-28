@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="coffeelinux-20.1.0"
+iso_name="coffeelinux-20.1.1"
 iso_label="COFFEE_$(date +%Y%m)"
 iso_publisher="Coffee Linux <https://github.com/Project-X-Mods/coffeelinux>"
 iso_application="Coffee Linux Live/Rescue CD"
