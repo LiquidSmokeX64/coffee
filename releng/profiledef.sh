@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="coffeelinux-20.1.1"
+iso_name="coffeelinux-20.1.2"
 iso_label="COFFEE_$(date +%Y%m)"
 iso_publisher="Coffee Linux <https://github.com/Project-X-Mods/coffeelinux>"
 iso_application="Coffee Linux Live/Rescue CD"
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
-bootmodes=('uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito')
+bootmodes=('uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito'
+           'bios.syslinux.mbr' 'bios.syslinux.eltorito')
 arch="x86_64"
 pacman_conf="pacman.conf"
 airootfs_image_type="squashfs"
