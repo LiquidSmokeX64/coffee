@@ -1,6 +1,6 @@
 NAME="CoffeeLinux"
 PRETTY_NAME="Coffee Linux"
-VERSION_ID="20.2.0"
+VERSION_ID="20.2.3"
 VERSION_CODENAME="Tower"
 ID="arch"
 BUILD_ID="Tower"
