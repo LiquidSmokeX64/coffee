@@ -1,4 +1,4 @@
-# Coffee Linux v.20.2.4 "Tower"
+# Coffee Linux v.21.0.1 "Umber"
 
 I believe using your PC should be as easy as a sip of coffee, so I fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 
@@ -36,7 +36,7 @@ Latest Linux Kernel and broad spectrum set of drivers.
 
 Bluetooth Support.
 
-Latest Gamescope and MangoHud.
+Latest Gamescope from SteamOS.
 
 Yay AUR package manager (Terminal only).
 
