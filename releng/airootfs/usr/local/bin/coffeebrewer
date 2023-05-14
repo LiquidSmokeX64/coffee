@@ -263,87 +263,87 @@ done
 
 clear
 
-#while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ]; do
-#
-#printf "%b\nWhat desktop environment do you want?\n" "$*"
-#printf "%b\n1 - Gnome\n" "$*"
-#printf "%b\n2 - KDE\n" "$*"
-#printf "%b\n3 - Cinnamon\n" "$*"
-#printf "%b\n4 - Mate\n" "$*"
-#printf "%b\n5 - LXDE\n" "$*"
-#printf "%b\n6 - LXQT\n" "$*"
-#printf "%b\n7 - XFCE\n" "$*"
-#printf "%b\n8 - Deepin - WIP May not work. \n" "$*"
-#printf "%b\n9 - i3\n" "$*"
-#printf "%b\n10 - Sway\n" "$*"
-#printf "%b\n11 - Cutefish\n" "$*"
-#printf "%b\n12 - Budgie\n" "$*"
-#printf "%b\n13 - Enlightenment\n" "$*"
-#printf "%b\n14 - Awesome\n" "$*"
+while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ]; do
 
-#read -r desktopcheck
-#case $desktopcheck in
-#  1) printf "%b\nPerfect\n" "$*" ;;
-#  2) printf "%b\nA good choice.\n" "$*" ;;
-#  3) printf "%b\nA good choice.\n" "$*" ;;
-#  4) printf "%b\nA good choice.\n" "$*" ;;
-#  5) printf "%b\nA good choice.\n" "$*" ;;
-#  6) printf "%b\nA good choice.\n" "$*" ;;
-#  7) printf "%b\nA good choice.\n" "$*" ;;
-#  8) printf "%b\nA brave choice.\n" "$*" ;;
-#  9) printf "%b\nA super choice.\n" "$*" ;;
-#  10) printf "%b\nA super choice.\n" "$*" ;;
-#  11) printf "%b\nA super choice.\n" "$*" ;;
-#  12) printf "%b\nA super choice.\n" "$*" ;;
-#  13) printf "%b\nA super choice.\n" "$*" ;;
-#  14) printf "%b\nA super choice.\n" "$*" ;;
-#  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-#esac
-#done
+printf "%b\nWhat desktop environment do you want?\n" "$*"
+printf "%b\n1 - Gnome\n" "$*"
+printf "%b\n2 - KDE\n" "$*"
+printf "%b\n3 - Cinnamon\n" "$*"
+printf "%b\n4 - Mate\n" "$*"
+printf "%b\n5 - LXDE\n" "$*"
+printf "%b\n6 - LXQT\n" "$*"
+printf "%b\n7 - XFCE\n" "$*"
+printf "%b\n8 - Deepin - WIP May not work. \n" "$*"
+printf "%b\n9 - i3\n" "$*"
+printf "%b\n10 - Sway\n" "$*"
+printf "%b\n11 - Cutefish\n" "$*"
+printf "%b\n12 - Budgie\n" "$*"
+printf "%b\n13 - Enlightenment\n" "$*"
+printf "%b\n14 - Awesome\n" "$*"
 
-#if [ "$desktopcheck" = "1" ]; then
+read -r desktopcheck
+case $desktopcheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nA good choice.\n" "$*" ;;
+  3) printf "%b\nA good choice.\n" "$*" ;;
+  4) printf "%b\nA good choice.\n" "$*" ;;
+  5) printf "%b\nA good choice.\n" "$*" ;;
+  6) printf "%b\nA good choice.\n" "$*" ;;
+  7) printf "%b\nA good choice.\n" "$*" ;;
+  8) printf "%b\nA brave choice.\n" "$*" ;;
+  9) printf "%b\nA super choice.\n" "$*" ;;
+  10) printf "%b\nA super choice.\n" "$*" ;;
+  11) printf "%b\nA super choice.\n" "$*" ;;
+  12) printf "%b\nA super choice.\n" "$*" ;;
+  13) printf "%b\nA super choice.\n" "$*" ;;
+  14) printf "%b\nA super choice.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+esac
+done
+
+if [ "$desktopcheck" = "1" ]; then
 desktop0="gnome"
 
-#elif [ "$desktopcheck" = "2" ]; then
-#desktop0="kde"
+elif [ "$desktopcheck" = "2" ]; then
+desktop0="kde"
 
-#elif [ "$desktopcheck" = "3" ]; then
-#desktop0="cinnamon"
+elif [ "$desktopcheck" = "3" ]; then
+desktop0="cinnamon"
 
-#elif [ "$desktopcheck" = "4" ]; then
-#desktop0="mate"
+elif [ "$desktopcheck" = "4" ]; then
+desktop0="mate"
 
-#elif [ "$desktopcheck" = "5" ]; then
-#desktop0="lxde"
+elif [ "$desktopcheck" = "5" ]; then
+desktop0="lxde"
 
-#elif [ "$desktopcheck" = "6" ]; then
-#desktop0="lxqt"
+elif [ "$desktopcheck" = "6" ]; then
+desktop0="lxqt"
 
-#elif [ "$desktopcheck" = "7" ]; then
-#desktop0="xfce"
+elif [ "$desktopcheck" = "7" ]; then
+desktop0="xfce"
 
-#elif [ "$desktopcheck" = "8" ]; then
-#desktop0="deepin"
+elif [ "$desktopcheck" = "8" ]; then
+desktop0="deepin"
 
-#elif [ "$desktopcheck" = "9" ]; then
-#desktop0="i3"
+elif [ "$desktopcheck" = "9" ]; then
+desktop0="i3"
 
-#elif [ "$desktopcheck" = "10" ]; then
-#desktop0="sway"
+elif [ "$desktopcheck" = "10" ]; then
+desktop0="sway"
 
-#elif [ "$desktopcheck" = "11" ]; then
-#desktop0="cutefish"
+elif [ "$desktopcheck" = "11" ]; then
+desktop0="cutefish"
 
-#elif [ "$desktopcheck" = "12" ]; then
-#desktop0="budgie"
+elif [ "$desktopcheck" = "12" ]; then
+desktop0="budgie"
 
-#elif [ "$desktopcheck" = "13" ]; then
-#desktop0="enlightenment"
+elif [ "$desktopcheck" = "13" ]; then
+desktop0="enlightenment"
 
-#elif [ "$desktopcheck" = "14" ]; then
-#desktop0="awesome"
+elif [ "$desktopcheck" = "14" ]; then
+desktop0="awesome"
 
-#fi
+fi
 
 clear
 
@@ -1026,7 +1026,7 @@ if [ $gpu0 = "nvidia" ]; then
 
 printf "%b\nGRUB BIOS for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
 
-arch-chroot /mnt pacman -S --needed --noconfirm libadwaita grub os-prober breeze-grub terminus-font
+arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
 
@@ -1073,7 +1073,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ $native1 = "yes" ]; then
-printf "%btitle Coffee-Linux 'Umber' (21.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Umber' (21.0.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 #elif [ $native1 = "no" ]; then
 #printf "%btitle Coffee-Linux 'Tower' (20.2.4-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
@@ -1161,14 +1161,14 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
-     #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-session
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-session
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
-     #arch-chroot /mnt pacman -Rdd --noconfirm mutter
-     #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
+     arch-chroot /mnt pacman -Rdd --noconfirm mutter
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
      printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
-     #rm -r /mnt/usr/share/wayland-sessions/gnome*
-     #rm -r /mnt/usr/share/xsessions/gnome*
+     rm -r /mnt/usr/share/wayland-sessions/gnome*
+     rm -r /mnt/usr/share/xsessions/gnome*
   elif [ "$desktop0" = "kde" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
      if [ "$grub0" = "true" ]; then
@@ -1395,9 +1395,9 @@ while [ "$command15finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$native1" = "yes" ]; then
-  #mkdir -p /mnt/usr/share/wallpapers/coffee/
+  mkdir -p /mnt/usr/share/wallpapers/coffee/
   mkdir -p /mnt/usr/share/backgrounds/gnome/
-  #cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
+  cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
   cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
   cp /opt/os-release /mnt/etc/
   cp /opt/lsb-release /mnt/etc/
