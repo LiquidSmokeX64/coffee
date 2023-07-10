@@ -221,4 +221,4 @@ exec_always j4-dmenu-desktop --dmenu=bemenu --nb #3f3f3f --nf #dcdccc --fn pango
 output * bg /usr/share/backgrounds/gnome/coffeewall03.jpg fill
 output * adaptive_sync on
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#output * mode 1920x1080@144.001Hz scale 1.0
+output * mode 1920x1080@165.001Hz scale 1.0
