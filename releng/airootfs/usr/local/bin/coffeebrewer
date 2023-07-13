@@ -34,6 +34,78 @@ enlightenmentapps="yay polkit polkit-gnome gnome-keyring libsecret enlightenment
 
 questionare (){
 
+while [ "$netcheck00" != "1" ]; do
+
+printf "%b\nWhat type of network do you have?\n" "$*"
+printf "%b\n1 - Ethernet\n" "$*"
+printf "%b\n2 - Wifi\n" "$*"
+read -r netcheck00
+case $netcheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
+esac
+done
+if [ "$netcheck00" = "1" ]; then
+netpass00=ethernet
+elif [ "$netcheck00" = "2" ]; then
+netpass00=wifi
+fi
+
+if [ "$netpass00" = "ethernet" ]; then
+printf "%b\nNo Wifi, skipping this part.\n" "$*"
+elif [ "$netpass00" = "wifi" ]; then
+while [ "$wifipasscheck" != "1" ]; do
+printf "%b\nSet your Wifi device ID. (Usually 'wlan0')\n" "$*"
+read -r wifi00
+printf "%b\n$wifi00. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r wifipasscheck
+case $wifipasscheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+esac
+done
+fi
+
+if [ "$netpass00" = "ethernet" ]; then
+printf "%b\nNo Wifi, skipping this part.\n" "$*"
+elif [ "$netpass00" = "wifi" ]; then
+while [ "$ssidcheck" != "1" ]; do
+printf "%b\nSet your Network SSID.\n" "$*"
+read -r ssid00
+printf "%b\n$ssid00. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r ssidcheck
+case $ssidcheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+esac
+done
+fi
+
+if [ "$netpass00" = "ethernet" ]; then
+printf "%b\nNo Wifi, skipping this part.\n" "$*"
+elif [ "$netpass00" = "wifi" ]; then
+while [ "$netpasswordcheck" != "1" ]; do
+printf "%b\nEnter your Wifi password.\n" "$*"
+read -r netpassword00
+printf "%b\n$netpassword00. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r netpasswordcheck
+case $netpasswordcheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+esac
+done
+fi
+
 clear
 
 while [ "$usercheck" != "1" ]; do
@@ -537,6 +609,27 @@ command0finished="0"
 
 }
 
+set_network (){
+
+wifi0="$wifi00"
+ssid0="$ssid00"
+netpassword0="$netpassword00"
+
+while [ "$command17finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+#- Set variables for iwctl
+if [ "$netpass00" = "wifi" ]; then
+printf "%bstation $wifi0 connect $ssid0\n$netpassword0\nexit\n" "$*" | iwctl
+else
+printf "%b\nNo wifi selected, moving on.." "$*"
+fi
+
+fi
+command17finished="1"
+done
+command17finished="0"
+}
+
 format_disks (){
 
 clear
@@ -545,20 +638,20 @@ while [ "$command1finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 printf "%b\nFormatting Partitions\n" "$*"
-printf "%bg\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nw\n" "$*" | fdisk -W always $drive0
-mkfs.fat -F32 $boot0
-mkswap $swap0
-swapon $swap0
+printf "%bg\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nw\n" "$*" | fdisk -W always "drive0"
+mkfs.fat -F32 "$boot0"
+mkswap "$swap0"
+swapon "$swap0"
 
 if [ "$fs0" = "btrfs" ]; then
-mkfs.btrfs -f -L $drivename0 $system0
+mkfs.btrfs -f -L "$drivename0" "$system0"
 elif [ "$fs0" = "ext4" ]; then
-mkfs.ext4 -L $drivename0 $system0
+mkfs.ext4 -L "$drivename0" "$system0"
 fi
 printf "%b\nMounting Disks\n" "$*"
-mount $system0 /mnt
+mount "$system0" /mnt
 mkdir /mnt/boot
-mount $boot0 /mnt/boot
+mount "$boot0" /mnt/boot
 printf "%b\nEnable Repos\n" "$*"
 #printf "%b\n[multilib]\nInclude = /etc/pacman.d/mirrorlist
 #printf "%b\n[andontie-aur]\nServer = https://aur.andontie.net/\$arch\nSigLevel = Never\n" "$*" >> /etc/pacman.conf
@@ -581,7 +674,7 @@ clear
 while [ "$pacstrapfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 #dd if=/dev/sda/arch/x86_64/airootfs.sfs of=$drive0 bs=1M status=progress 
-pacstrap /mnt $baseapps
+pacstrap /mnt "$baseapps"
 pacstrapfinished="1"
 else
 pacstrapfinished="0"
@@ -637,9 +730,9 @@ arch-chroot /mnt pacman -Syy
 printf "%b\nSet Root Password\n" "$*"
 printf "%b$userpass1\n$userpass1\n" "$*" | arch-chroot /mnt passwd 
 printf "%bAdding User Account\n" "$*"
-arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01 
+arch-chroot /mnt useradd -m -G wheel,audio,video,users "$user01" 
 printf "%b\nSet User Password\n" "$*"
-printf "%b$userpass0\n$userpass0\n" "$*" | arch-chroot /mnt passwd $user01
+printf "%b$userpass0\n$userpass0\n" "$*" | arch-chroot /mnt passwd "$user01"
 printf "%b$hostname0\n" "$*" >> /mnt/etc/hostname
 printf "%b\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" "$*" >> /mnt/etc/hosts
 printf "%bCreating Links\n" "$*" 
@@ -663,13 +756,13 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$desktop0" = "gnome" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
+arch-chroot /mnt pacman -Sy --noconfirm "$gnomeapps"
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -677,13 +770,13 @@ arch-chroot /mnt systemctl enable gdm
 
 elif [ "$desktop0" = "kde" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
+arch-chroot /mnt pacman -Sy --noconfirm "$kdeapps"
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -691,14 +784,14 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "cinnamon" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
+arch-chroot /mnt pacman -Sy --noconfirm "$cinnamonapps"
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -706,14 +799,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "mate" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $mateapps
+arch-chroot /mnt pacman -Sy --noconfirm "$mateapps"
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -721,14 +814,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "lxde" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
+arch-chroot /mnt pacman -Sy --noconfirm "$lxdeapps"
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -736,14 +829,14 @@ arch-chroot /mnt systemctl enable lxdm
 
 elif [ "$desktop0" = "lxqt" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
+arch-chroot /mnt pacman -Sy --noconfirm "$lxqtapps"
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -751,14 +844,14 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "xfce" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
+arch-chroot /mnt pacman -Sy --noconfirm "$xfceapps"
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -766,14 +859,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "deepin" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
+arch-chroot /mnt pacman -Sy --noconfirm "$deepinapps"
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -781,14 +874,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "i3" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $i3apps
+arch-chroot /mnt pacman -Sy --noconfirm "$i3apps"
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -796,7 +889,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "sway" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $swayapps
+arch-chroot /mnt pacman -Sy --noconfirm "$swayapps"
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -804,10 +897,10 @@ arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 cp /opt/config /mnt/etc/sway/config
 printf "%b\nif [ -z ""\$"\{DISPLAY\}" ] && [ ""\$"\{XDG_VTNR\}" -eq 1 ]; then\nexec sway\nfi\n" "$*" >> /mnt/etc/profile
 
-if [ $gpu0 = "nvidia" ]; then
+if [ "$gpu0" = "nvidia" ]; then
 printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/sway/config
 fi
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/sway/config
 gpu0="amd"
 fi
@@ -818,13 +911,13 @@ arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 
 elif [ "$desktop0" = "cutefish" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $cutefishapps
+arch-chroot /mnt pacman -Sy --noconfirm "$cutefishapps"
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 #arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -832,12 +925,12 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "budgie" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $budgieapps
+arch-chroot /mnt pacman -Sy --noconfirm "$budgieapps"
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -846,11 +939,11 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "enlightenment" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $enlightenmentapps
+arch-chroot /mnt pacman -Sy --noconfirm "$enlightenmentapps"
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -859,12 +952,12 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "awesome" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $awesomeapps
+arch-chroot /mnt pacman -Sy --noconfirm "$awesomeapps"
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
 
-if [ $gpu0 = "vm" ]; then
+if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
@@ -888,7 +981,7 @@ clear
 
 while [ "$pacmanfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
+arch-chroot /mnt pacman -Sy --noconfirm "$coffeeapps"
 pacmanfinished="1"
 else
 pacmanfinished="0"
@@ -927,7 +1020,7 @@ clear
 while [ "$command6finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ $vmwareon = "yes" ]; then
+if [ "$vmwareon" = "yes" ]; then
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y vmware-workstation
 printf "%b1\n[Unit]\nDescription=VMware daemon\nRequires=vmware-usbarbitrator.service\nBefore=vmware-usbarbitrator.service\nAfter=network.target\n[Service]\nExecStart=/etc/init.d/vmware start\nExecStop=/etc/init.d/vmware stop\nPIDFile=/var/lock/subsys/vmware\nRemainAfterExit=yes\n[Install]\nWantedBy=multi-user.target\n" "$*" >> /mnt/etc/systemd/system/vmware.service
 
@@ -958,7 +1051,7 @@ clear
 while [ "$command7finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ $snapon = "yes" ]; then
+if [ "$snapon" = "yes" ]; then
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd-glib
 arch-chroot /mnt systemctl enable snapd.apparmor
@@ -985,13 +1078,13 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$grub0" = "true" ]; then
 
-if [ $gpu0 = "nvidia" ]; then
+if [ "$gpu0" = "nvidia" ]; then
 
 printf "%b\nGRUB UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
 
 arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
 #cp /opt/grub-nvidia /mnt/etc/default/
@@ -1002,13 +1095,13 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 EOT
 
-elif [ $gpu0 = "amd" ]; then
+elif [ "$gpu0" = "amd" ]; then
 
 printf "%b\nGRUB UEFI for AMD selected.\n" "$*"
 
 arch-chroot /mnt pacman -S --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 #cp /opt/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
@@ -1022,13 +1115,13 @@ fi
 
 elif [ "$grub0" = "true2" ]; then
 
-if [ $gpu0 = "nvidia" ]; then
+if [ "$gpu0" = "nvidia" ]; then
 
 printf "%b\nGRUB BIOS for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
 
 arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
 #cp /opt/grub-nvidia /mnt/etc/default/
@@ -1038,17 +1131,17 @@ pacman -Sy --noconfirm
 mkinitcpio -P
 EOT
 
-arch-chroot /mnt grub-install --target=i386-pc $drive0
+arch-chroot /mnt grub-install --target=i386-pc "$drive0"
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
-elif [ $gpu0 = "amd" ]; then
+elif [ "$gpu0" = "amd" ]; then
 
 printf "%b\nGRUB BIOS for AMD selected.\n" "$*"
 
 
 arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm update-grub
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
 #cp /opt/grub /mnt/etc/default/
 
@@ -1057,7 +1150,7 @@ mkinitcpio -P
 pacman -Sy --noconfirm
 EOT
 
-arch-chroot /mnt grub-install --target=i386-pc $drive0
+arch-chroot /mnt grub-install --target=i386-pc "$drive0"
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 fi
@@ -1072,8 +1165,8 @@ EOT
 
 printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
-if [ $native1 = "yes" ]; then
-printf "%btitle Coffee-Linux 'Umber' (21.0.3)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+if [ "$native1" = "yes" ]; then
+printf "%btitle Coffee-Linux 'Umber' (21.1.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 #elif [ $native1 = "no" ]; then
 #printf "%btitle Coffee-Linux 'Tower' (20.2.4-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
@@ -1101,14 +1194,14 @@ clear
 while [ "$command9finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ $gpu0 = "nvidia" ]; then
+if [ "$gpu0" = "nvidia" ]; then
 printf "%b\nSystemD-Bootloader UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
-if [ $desktop0 = "sway" ]; then
+if [ "$desktop0" = "sway" ]; then
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
 fi
 printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
-elif [ $gpu0 = "amd" ]; then
+elif [ "$gpu0" = "amd" ]; then
 printf "%b\nSystemD-Bootloader UEFI for AMD selected.\nInstalling amdgpu-fan and corectrl" "$*"
 printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
@@ -1172,7 +1265,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
   elif [ "$desktop0" = "kde" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
      if [ "$grub0" = "true" ]; then
-     printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm kcm-grub2
+     printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm kcm-grub2
      fi
   elif [ "$desktop0" = "cinnamon" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
@@ -1240,7 +1333,7 @@ clear
 while [ "$command10finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ $sbpass0 = "yes" ]; then
+if [ "$sbpass0" = "yes" ]; then
 printf "%bGenerating CoffeeLinux Secure-Boot keys for your machine\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm efitools mokutil sbsigntools apparmor sbctl
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y shim-signed
@@ -1252,12 +1345,12 @@ printf "%b$uefipass0\n$uefipass0\n" "$*" | arch-chroot /mnt mokutil --password
 arch-chroot /mnt cp /usr/share/preloader-signed/PreLoader.efi /boot/EFI/systemd
 arch-chroot /mnt cp /usr/share/preloader-signed/HashTool.efi /boot/EFI/systemd
 arch-chroot /mnt cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/loader.efi
-arch-chroot /mnt efibootmgr --unicode --disk $drive0 --part 1 --create --label "PreLoader" --loader /EFI/systemd/PreLoader.efi
+arch-chroot /mnt efibootmgr --unicode --disk "$drive0" --part 1 --create --label "PreLoader" --loader /EFI/systemd/PreLoader.efi
 
 arch-chroot /mnt mv /boot/EFI/BOOT/BOOTx64.EFI /boot/EFI/BOOT/grubx64.efi
 arch-chroot /mnt cp /usr/share/shim-signed/shimx64.efi /boot/EFI/BOOT/BOOTx64.EFI
 arch-chroot /mnt cp /usr/share/shim-signed/mmx64.efi /boot/EFI/BOOT/
-arch-chroot /mnt efibootmgr --unicode --disk $drive0 --part 1 --create --label "Shim" --loader /EFI/BOOT/BOOTx64.EFI
+arch-chroot /mnt efibootmgr --unicode --disk "$drive0" --part 1 --create --label "Shim" --loader /EFI/BOOT/BOOTx64.EFI
 
 arch-chroot /mnt openssl req -newkey rsa:4096 -nodes -keyout MOK.key -new -x509 -sha256 -days 3650 -subj "/CN=my Machine Owner Key/" -out MOK.crt
 arch-chroot /mnt openssl x509 -outform DER -in MOK.crt -out MOK.cer
@@ -1278,7 +1371,7 @@ arch-chroot /mnt systemctl enable firewalld
 arch-chroot /mnt systemctl enable cups
 arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
 
-elif [ $sbpass0 = "no" ]; then
+elif [ "$sbpass0" = "no" ]; then
 printf "%b\nAdding AppArmor\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm apparmor
 arch-chroot /mnt systemctl enable apparmor
@@ -1312,8 +1405,8 @@ if [ "$questionspassed" = "yes" ]; then
 
 printf "%bAttempting to fix the home directory automatically now...\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm xdg-user-dirs
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su $user01 yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
 arch-chroot /mnt xdg-user-dirs-update
 printf "%bCleaning up\n" "$*"
 
@@ -1456,6 +1549,7 @@ esac
 if [ "$installationcheck" = "1" ]; then 
 questionare
 set_swap
+set_network
 format_disks
 base_install
 set_locale
