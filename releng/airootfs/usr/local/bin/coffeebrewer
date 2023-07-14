@@ -1,12 +1,15 @@
 #!/bin/sh
 
-baseapps="amd-ucode device-mapper gettext xz dosfstools efibootmgr freetype2 fuse2 libisoburn lzop mtools autogen help2man python rsync texinfo ttf-dejavu system-config-printer apparmor archinstall mlocate arch-install-scripts b43-fwcutter base base-devel bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient dhcpcd diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config hdparm hyperv intel-ucode iwd jfsutils kitty-terminfo libfido2 libusb-compat linux linux-atm linux-firmware linux-firmware-marvell man-db man-pages mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools nano net-tools networkmanager nfs-utils nmap ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools openvpn partclone pcsclite ppp pptpclient qemu-guest-agent refind reflector reiserfsprogs rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools sudo systemd-resolvconf tcpdump terminus-font testdisk texinfo tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils vim vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh"
+baseapps="amd-ucode mkinitcpio texinfo base base-devel dhcpcd intel-ucode iwd linux linux-atm linux-firmware linux-firmware-marvell man-db man-pages nano networkmanager nmap sudo"
+
+
+baseapps2="device-mapper gettext xz dosfstools efibootmgr freetype2 fuse2 libisoburn lzop mtools autogen help2man python rsync ttf-dejavu system-config-printer net-tools nfs-utils systemd-resolvconf tcpdump terminus-font testdisk ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils openvpn partclone pcsclite ppp pptpclient qemu-guest-agent vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools apparmor archinstall mlocate arch-install-scripts b43-fwcutter bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config hdparm hyperv jfsutils kitty-terminfo libfido2 libusb-compat"
 
 coffeeapps="boost-libs qt6-3d qt6-base gtk-update-icon-cache hwinfo libpwquality qt6-svg solid squashfs-tools yaml-cpp boost extra-cmake-modules git qt6-tools qt6-translations rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-opencl-mesa lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opencl-mesa opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam-native-runtime sudo systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd vlc"
 
 gnomeapps="yay wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
-kdeapps="libpulse yay kconfig kcoreaddons ki18n kiconthemes kio kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 knewstuff qt6 plasma plasma-nm kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
+kdeapps="yay phonon-qt5-gstreamer gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kconfig kcoreaddons ki18n kiconthemes kio kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 knewstuff qt6 plasma plasma-nm kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
 
 cinnamonapps="yay polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-terminal gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
 
@@ -34,7 +37,7 @@ enlightenmentapps="yay polkit polkit-gnome gnome-keyring libsecret enlightenment
 
 questionare (){
 
-while [ "$netcheck00" != "1" ]; do
+while [ "$netcheck00" != "1" ] && [ "$netcheck00" != "2" ]; do
 
 printf "%b\nWhat type of network do you have?\n" "$*"
 printf "%b\n1 - Ethernet\n" "$*"
@@ -58,6 +61,7 @@ elif [ "$netpass00" = "wifi" ]; then
 while [ "$wifipasscheck" != "1" ]; do
 printf "%b\nSet your Wifi device ID. (Usually 'wlan0')\n" "$*"
 read -r wifi00
+wifi0=$wifi00
 printf "%b\n$wifi00. Is this correct?\n" "$*"
 printf "%b\n1 - yes\n" "$*"
 printf "%b\n2 - no\n" "$*"
@@ -76,6 +80,7 @@ elif [ "$netpass00" = "wifi" ]; then
 while [ "$ssidcheck" != "1" ]; do
 printf "%b\nSet your Network SSID.\n" "$*"
 read -r ssid00
+ssid0=$ssid00
 printf "%b\n$ssid00. Is this correct?\n" "$*"
 printf "%b\n1 - yes\n" "$*"
 printf "%b\n2 - no\n" "$*"
@@ -94,6 +99,7 @@ elif [ "$netpass00" = "wifi" ]; then
 while [ "$netpasswordcheck" != "1" ]; do
 printf "%b\nEnter your Wifi password.\n" "$*"
 read -r netpassword00
+netpassword0=$netpassword00
 printf "%b\n$netpassword00. Is this correct?\n" "$*"
 printf "%b\n1 - yes\n" "$*"
 printf "%b\n2 - no\n" "$*"
@@ -611,15 +617,11 @@ command0finished="0"
 
 set_network (){
 
-wifi0="$wifi00"
-ssid0="$ssid00"
-netpassword0="$netpassword00"
-
 while [ "$command17finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 #- Set variables for iwctl
 if [ "$netpass00" = "wifi" ]; then
-printf "%bstation $wifi0 connect $ssid0\n$netpassword0\nexit\n" "$*" | iwctl
+printf "%b\n" "$*" | iwctl --passphrase $netpassword0 station $wifi0 connect $ssid0
 else
 printf "%b\nNo wifi selected, moving on.." "$*"
 fi
@@ -638,8 +640,9 @@ while [ "$command1finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 printf "%b\nFormatting Partitions\n" "$*"
-printf "%bg\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nw\n" "$*" | fdisk -W always "drive0"
-mkfs.fat -F32 "$boot0"
+printf "%bg\nn\n1\n\n\nt\n19\nw\n" "$*" | fdisk -W always "$drive0"
+printf "%bg\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nw\n" "$*" | fdisk -W always "$drive0"
+mkfs.vfat -F 32 "$boot0"
 mkswap "$swap0"
 swapon "$swap0"
 
@@ -674,7 +677,8 @@ clear
 while [ "$pacstrapfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 #dd if=/dev/sda/arch/x86_64/airootfs.sfs of=$drive0 bs=1M status=progress 
-pacstrap /mnt "$baseapps"
+pacstrap /mnt $baseapps
+arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $baseapps2
 pacstrapfinished="1"
 else
 pacstrapfinished="0"
@@ -730,9 +734,9 @@ arch-chroot /mnt pacman -Syy
 printf "%b\nSet Root Password\n" "$*"
 printf "%b$userpass1\n$userpass1\n" "$*" | arch-chroot /mnt passwd 
 printf "%bAdding User Account\n" "$*"
-arch-chroot /mnt useradd -m -G wheel,audio,video,users "$user01" 
+arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01 
 printf "%b\nSet User Password\n" "$*"
-printf "%b$userpass0\n$userpass0\n" "$*" | arch-chroot /mnt passwd "$user01"
+printf "%b$userpass0\n$userpass0\n" "$*" | arch-chroot /mnt passwd $user01
 printf "%b$hostname0\n" "$*" >> /mnt/etc/hostname
 printf "%b\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" "$*" >> /mnt/etc/hosts
 printf "%bCreating Links\n" "$*" 
@@ -756,7 +760,7 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$desktop0" = "gnome" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm "$gnomeapps"
+arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -770,7 +774,7 @@ arch-chroot /mnt systemctl enable gdm
 
 elif [ "$desktop0" = "kde" ]; then 
 
-arch-chroot /mnt pacman -Sy --noconfirm "$kdeapps"
+arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -784,7 +788,7 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "cinnamon" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$cinnamonapps"
+arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -799,7 +803,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "mate" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$mateapps"
+arch-chroot /mnt pacman -Sy --noconfirm $mateapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -814,7 +818,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "lxde" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$lxdeapps"
+arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -829,7 +833,7 @@ arch-chroot /mnt systemctl enable lxdm
 
 elif [ "$desktop0" = "lxqt" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$lxqtapps"
+arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -844,7 +848,7 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "xfce" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$xfceapps"
+arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -859,7 +863,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "deepin" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$deepinapps"
+arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -874,7 +878,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "i3" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$i3apps"
+arch-chroot /mnt pacman -Sy --noconfirm $i3apps
 
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -889,7 +893,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "sway" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$swayapps"
+arch-chroot /mnt pacman -Sy --noconfirm $swayapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -911,7 +915,7 @@ arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 
 elif [ "$desktop0" = "cutefish" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$cutefishapps"
+arch-chroot /mnt pacman -Sy --noconfirm $cutefishapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -925,7 +929,7 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "budgie" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$budgieapps"
+arch-chroot /mnt pacman -Sy --noconfirm $budgieapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -939,7 +943,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "enlightenment" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$enlightenmentapps"
+arch-chroot /mnt pacman -Sy --noconfirm $enlightenmentapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
@@ -952,7 +956,7 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "awesome" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm "$awesomeapps"
+arch-chroot /mnt pacman -Sy --noconfirm $awesomeapps
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -981,7 +985,7 @@ clear
 
 while [ "$pacmanfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm "$coffeeapps"
+arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
 pacmanfinished="1"
 else
 pacmanfinished="0"
@@ -1166,7 +1170,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Umber' (21.1.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Umber' (21.1.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 #elif [ $native1 = "no" ]; then
 #printf "%btitle Coffee-Linux 'Tower' (20.2.4-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
@@ -1499,8 +1503,8 @@ if [ "$native1" = "yes" ]; then
 #  cp -r /opt/* /mnt/opt/
 #  mkdir -p /mnt/etc/neofetch/
 #  cp /opt/config.conf /mnt/etc/neofetch/config.conf
-#  cp /usr/local/bin/coffeebrewer /mnt/usr/local/bin/
-#  arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer
+  cp /usr/local/bin/coffeebrewer /mnt/usr/local/bin/
+  arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer
 #  arch-chroot /mnt chmod 755 /home/$user01/.config/neofetch/config.conf
 fi
 
@@ -1517,6 +1521,9 @@ esac
 if [ "$rebootcheck" = "1" ]; then 
 printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
 elif [ "$rebootcheck" != "1" ]; then 
+umount -R /mnt
+swapoff "$swap0"
+printf "%bg\nn\n1\n\n\nt\n19\nw\n" "$*" | fdisk -W always "$drive0"
 exit
 fi
 
@@ -1536,6 +1543,7 @@ command15finished="0"
 clear
 
 while [ "$command16finished" != "1" ]; do
+cp /opt/lsb-release /etc/lsb-release
 
 printf "%b\n Would you like to install Coffee Linux? \n" "$*"
 printf "%b\n1 - yes\n" "$*"
