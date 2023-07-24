@@ -1250,17 +1250,17 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ckbcomp-bin
 
   if [ "$desktop0" = "gnome" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-appindicator
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-desktop-icons-ng
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-session
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-appindicator
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-desktop-icons-ng
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-session
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
      arch-chroot /mnt pacman -Rdd --noconfirm mutter
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
      printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
