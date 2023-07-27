@@ -1,4 +1,4 @@
-# Coffee Linux v.21.1.5 "Umber"
+# Coffee Linux v.21.1.6 "Umber"
 
 I believe using your PC should be as easy as a sip of coffee, so I fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 
@@ -27,8 +27,6 @@ Java, Wine, Protontricks, DXVK, Vulkan, Steam, Discord, Heroic (Epic/GOG) Games 
 Ext4 and BTRFS options for compatibility with some hardware.
 
 A ton of critical and optional dependencies resolved for most common packages.
-
-Additional firmware from mkinitcpio-firmware to eliminate most default kernel module warnings.
 
 Latest Controller and Graphics drivers (AMD/Nvidia).
 
