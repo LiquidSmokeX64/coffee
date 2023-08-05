@@ -1,4 +1,4 @@
-# Coffee Linux v.22.0.1 "Verona"
+# Coffee Linux v.22.0.2 "Verona"
 
 I believe using your PC should be as easy as a sip of coffee, so I fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 
@@ -28,7 +28,7 @@ Ext4 and BTRFS options for compatibility with some hardware.
 
 A ton of critical and optional dependencies resolved for most common packages.
 
-Latest Controller and Graphics drivers (AMD/Nvidia).
+Latest Graphics drivers for AMD or Nvidia.
 
 Latest Linux Kernel and broad spectrum set of drivers.
 

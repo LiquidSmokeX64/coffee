@@ -30,6 +30,8 @@ elif [ "$netcheck00" = "2" ]; then
 netpass00=wifi
 fi
 
+clear
+
 if [ "$netpass00" = "ethernet" ]; then
 printf "%b\nNo Wifi, skipping this part.\n" "$*"
 elif [ "$netpass00" = "wifi" ]; then
@@ -49,6 +51,8 @@ esac
 done
 fi
 
+clear
+
 if [ "$netpass00" = "ethernet" ]; then
 printf "%b\nNo Wifi, skipping this part.\n" "$*"
 elif [ "$netpass00" = "wifi" ]; then
@@ -67,6 +71,8 @@ case $ssidcheck in
 esac
 done
 fi
+
+clear
 
 if [ "$netpass00" = "ethernet" ]; then
 printf "%b\nNo Wifi, skipping this part.\n" "$*"
@@ -530,6 +536,8 @@ command0finished="0"
 
 }
 
+clear
+
 set_network (){
 
 while [ "$command17finished" != "1" ]; do
@@ -539,12 +547,14 @@ if [ "$netpass00" = "wifi" ]; then
 
 rfkill unblock all
 printf "%b\n" "$*" | iwctl device $wifi0 set-property Powered on
+printf "%b\nPowering on wifi device for a minute.." "$*"
+sleep 5
 printf "%b\n" "$*" | iwctl --passphrase $netpassword0 station $wifi0 connect $ssid0
-printf "%b\n" "$*"
+printf "%b\nEnsuring we have a connection..." "$*"
 sleep 10
 pacman -Syy
 else
-printf "%b\nNo wifi selected, moving on.\n" "$*"
+printf "%b\nNo wifi selected, preparing for launch..\n" "$*"
 sleep 10
 pacman -Syy
 fi
@@ -601,6 +611,9 @@ while [ "$pacstrapfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 #dd if=/dev/sda/arch/x86_64/airootfs.sfs of=$drive0 bs=1M status=progress 
 pacstrap /mnt $baseapps
+
+clear
+
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 pacstrapfinished="1"
 else
@@ -683,9 +696,18 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$desktop0" = "gnome" ]; then 
 
+clear
 arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
+clear
+sleep 5
+printf "%b\nCopying yay package..\n" "$*"
+sleep 5
 cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+printf "%b\nInstalling yay.\n" "$*"
 arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+sleep 2
+printf "%b\nInstalled yay successfully.\n" "$*"
+clear
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -699,9 +721,18 @@ arch-chroot /mnt systemctl enable gdm
 
 elif [ "$desktop0" = "kde" ]; then 
 
+clear
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
+clear
+sleep 5
+printf "%b\nCopying yay package..\n" "$*"
+sleep 5
 cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+printf "%b\nInstalling yay.\n" "$*"
 arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+sleep 2
+printf "%b\nInstalled yay successfully.\n" "$*"
+clear
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -711,205 +742,6 @@ gpu0="amd"
 fi
 
 arch-chroot /mnt systemctl enable sddm
-
-elif [ "$desktop0" = "cinnamon" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-elif [ "$desktop0" = "mate" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $mateapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-elif [ "$desktop0" = "lxde" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lxdm
-
-elif [ "$desktop0" = "lxqt" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable sddm
-
-elif [ "$desktop0" = "xfce" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-elif [ "$desktop0" = "deepin" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-elif [ "$desktop0" = "i3" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $i3apps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-elif [ "$desktop0" = "sway" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $swayapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-#mkdir -p /mnt/home/$user01/.config/sway/
-cp /opt/config /mnt/etc/sway/config
-printf "%b\nif [ -z ""\$"\{DISPLAY\}" ] && [ ""\$"\{XDG_VTNR\}" -eq 1 ]; then\nexec sway\nfi\n" "$*" >> /mnt/etc/profile
-
-if [ "$gpu0" = "nvidia" ]; then
-printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/sway/config
-fi
-if [ "$gpu0" = "vm" ]; then
-printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/sway/config
-gpu0="amd"
-fi
-
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-
-
-elif [ "$desktop0" = "cutefish" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $cutefishapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable sddm
-
-elif [ "$desktop0" = "budgie" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $budgieapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-arch-chroot /mnt systemctl enable lightdm
-
-elif [ "$desktop0" = "enlightenment" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $enlightenmentapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-arch-chroot /mnt systemctl enable lightdm
-
-elif [ "$desktop0" = "awesome" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $awesomeapps
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-#arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-#arch-chroot /mnt pacman -R --noconfirm pipewire-media-session jack2 pulseaudio
-arch-chroot /mnt systemctl enable lightdm
 
 fi
 
@@ -1000,6 +832,7 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$snapon" = "yes" ]; then
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd
+clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd-glib
 arch-chroot /mnt systemctl enable snapd.apparmor
 arch-chroot /mnt systemctl enable snapd
@@ -1113,7 +946,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Verona' (22.0.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Verona' (22.0.2)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 #elif [ $native1 = "no" ]; then
 #printf "%btitle Coffee-Linux 'Tower' (20.2.4-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
@@ -1144,10 +977,14 @@ if [ "$questionspassed" = "yes" ]; then
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b\nSystemD-Bootloader UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
-printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+ if [ "$grub0" = "false" ]; then
+  printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+ fi
 elif [ "$gpu0" = "amd" ]; then
 printf "%b\nSystemD-Bootloader UEFI for AMD selected.\nInstalling amdgpu-fan and corectrl" "$*"
-printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+ if [ "$grub0" = "false" ]; then
+  printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+ fi
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
 arch-chroot /mnt pacman -Sy --noconfirm corectrl
 fi
@@ -1171,46 +1008,74 @@ clear
 while [ "$yayinstallfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 arch-chroot /mnt pacman -Rdd --noconfirm archlinux-appstream-data
+clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y pamac-aur
+clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
+clear
 #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
+clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
+clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
+clear
+#printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
+clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
+clear
 #printf "%b1 2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mangohud
 #printf "%b3\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y benchmark
 #printf "%b3\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gamescope
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
+clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
 #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xone-dkms
 #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xone-dongle-firmware
+clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
+clear
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
+clear
 #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
-
+clear
 #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ckbcomp-bin
-
+clear
   if [ "$desktop0" = "gnome" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-appindicator
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-desktop-icons-ng
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-session
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
+     clear
      arch-chroot /mnt pacman -Rdd --noconfirm mutter
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
+     clear
      printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
+     clear
      rm -r /mnt/usr/share/wayland-sessions/gnome*
      rm -r /mnt/usr/share/xsessions/gnome*
   elif [ "$desktop0" = "kde" ]; then
+     clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
      if [ "$grub0" = "true" ]; then
+     clear
      printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm kcm-grub2
      fi
   fi
