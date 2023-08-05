@@ -4,35 +4,35 @@ baseapps="amd-ucode mkinitcpio texinfo base base-devel dhcpcd intel-ucode iwd li
 
 baseapps2="device-mapper gettext xz dosfstools efibootmgr freetype2 fuse2 libisoburn lzop mtools autogen help2man python rsync ttf-dejavu system-config-printer net-tools nfs-utils systemd-resolvconf tcpdump terminus-font testdisk ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils openvpn partclone pcsclite ppp pptpclient qemu-guest-agent vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools apparmor archinstall mlocate arch-install-scripts b43-fwcutter bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config hdparm hyperv jfsutils kitty-terminfo libfido2 libusb-compat"
 
-coffeeapps="boost-libs qt6-3d qt6-base gtk-update-icon-cache hwinfo libpwquality qt6-svg solid squashfs-tools yaml-cpp boost extra-cmake-modules git qt6-tools qt6-translations rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam-native-runtime sudo systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader yay zenity zstd vlc opencl-clhpp opencl-clover-mesa opencl-headers opencl-rusticl-mesa"
+coffeeapps="boost-libs qt6-3d qt6-base gtk-update-icon-cache mangohud gamescope hwinfo libpwquality qt6-svg solid squashfs-tools yaml-cpp boost extra-cmake-modules git qt6-tools qt6-translations rhythmbox alsa-lib alsa-plugins amd-ucode archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam-native-runtime sudo systemd terminus-font tesseract-data-eng ttf-liberation ttf-ms-fonts ttf-vista-fonts udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-clover-mesa opencl-headers opencl-rusticl-mesa"
 
-gnomeapps="yay libpulse noto-fonts noto-fonts-emoji gtk3 phonon-qt5-gstreamer gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
+gnomeapps="libpulse noto-fonts noto-fonts-emoji gtk3 phonon-qt5-gstreamer gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
-kdeapps="yay phonon-qt5-gstreamer gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kconfig kcoreaddons ki18n kiconthemes kio kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 knewstuff qt6 plasma plasma-nm kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
+kdeapps="phonon-qt5-gstreamer gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kconfig kcoreaddons ki18n kiconthemes kio kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 knewstuff qt6 plasma plasma-nm kscreen kuserfeedback kvantum plasma-framework plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
 
-cinnamonapps="yay polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-terminal gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
+cinnamonapps="polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-terminal gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
 
-mateapps="yay polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter gnome-text-editor"
+mateapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter gnome-text-editor"
 
-xfceapps="yay polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad lightdm lightdm-slick-greeter pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
+xfceapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad lightdm lightdm-slick-greeter pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
 
-lxdeapps="yay wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lxde lxde-common lxdm lxpanel lxsession mousepad xcompmgr xdg-desktop-portal-lxqt"
+lxdeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lxde lxde-common lxdm lxpanel lxsession mousepad xcompmgr xdg-desktop-portal-lxqt"
 
-lxqtapps="yay wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt "
+lxqtapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt "
 
-deepinapps="yay polkit polkit-gnome gnome-keyring gnome-extra libsecret deepin gtk3 gtk4 deepin-anything-arch deepin-kwin deepin-extra lightdm lightdm-deepin-greeter wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack"
+deepinapps="polkit polkit-gnome gnome-keyring gnome-extra libsecret deepin gtk3 gtk4 deepin-anything-arch deepin-kwin deepin-extra lightdm lightdm-deepin-greeter wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack"
 
-i3apps="yay polkit polkit-gnome gnome-keyring libsecret gnome-text-editor gnome-console gnome-system-monitor nautilus i3-wm i3lock gtk3 i3status i3blocks micro lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+i3apps="polkit polkit-gnome gnome-keyring libsecret gnome-text-editor gnome-console gnome-system-monitor nautilus i3-wm i3lock gtk3 i3status i3blocks micro lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-swayapps="yay sddm gnome-disk-utility gedit htop nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-terminal gnome-themes-extra gnome-tweaks j4-dmenu-desktop xdg-desktop-portal-gtk"
+swayapps="sddm gnome-disk-utility gedit htop nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-terminal gnome-themes-extra gnome-tweaks j4-dmenu-desktop xdg-desktop-portal-gtk"
 
-cutefishapps="yay polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-kwin-plugins cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+cutefishapps="polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-kwin-plugins cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-budgieapps="yay polkit polkit-gnome gnome-keyring gnome-extra gnome-shell libsecret budgie-control-center gtk3 budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver lightdm lightdm-gtk-greeter rofi gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+budgieapps="polkit polkit-gnome gnome-keyring gnome-extra gnome-shell libsecret budgie-control-center gtk3 budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver lightdm lightdm-gtk-greeter rofi gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-awesomeapps="yay polkit polkit-gnome gnome-keyring libsecret awesome xterm gtk3 awesome-terminal-fonts lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+awesomeapps="polkit polkit-gnome gnome-keyring libsecret awesome xterm gtk3 awesome-terminal-fonts lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-enlightenmentapps="yay polkit polkit-gnome gnome-keyring libsecret enlightenment gtk3 lightdm lightdm-gtk-greeter rofi wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+enlightenmentapps="polkit polkit-gnome gnome-keyring libsecret enlightenment gtk3 lightdm lightdm-gtk-greeter rofi wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
 questionare (){
 
@@ -77,7 +77,7 @@ if [ "$netpass00" = "ethernet" ]; then
 printf "%b\nNo Wifi, skipping this part.\n" "$*"
 elif [ "$netpass00" = "wifi" ]; then
 while [ "$ssidcheck" != "1" ]; do
-printf "%b\nSet your Network SSID.\n" "$*"
+printf "%b\nSet your Network SSID (Your network name).\n" "$*"
 read -r ssid00
 ssid0=$ssid00
 printf "%b\n$ssid00. Is this correct?\n" "$*"
@@ -662,7 +662,7 @@ printf "%b\nEnable Repos\n" "$*"
 #printf "%b\n[multilib]\nInclude = /etc/pacman.d/mirrorlist
 #printf "%b\n[andontie-aur]\nServer = https://aur.andontie.net/\$arch\nSigLevel = Never\n" "$*" >> /etc/pacman.conf
 pacman -Sy --noconfirm archlinux-keyring
-pacman -Syy
+pacman -Syy --noconfirm
 
 command1finished="1"
 else
@@ -730,10 +730,10 @@ clear
 while [ "$command3finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-arch-chroot /mnt pacman -Syy
+arch-chroot /mnt pacman -Syy --noconfirm
 arch-chroot /mnt pacman -Sy --noconfirm archlinux-keyring
 cp /etc/pacman.conf /mnt/etc/pacman.conf
-arch-chroot /mnt pacman -Syy
+arch-chroot /mnt pacman -Syy --noconfirm
 printf "%b\nSet Root Password\n" "$*"
 printf "%b$userpass1\n$userpass1\n" "$*" | arch-chroot /mnt passwd 
 printf "%bAdding User Account\n" "$*"
@@ -764,6 +764,8 @@ if [ "$questionspassed" = "yes" ]; then
 if [ "$desktop0" = "gnome" ]; then 
 
 arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -778,7 +780,8 @@ arch-chroot /mnt systemctl enable gdm
 elif [ "$desktop0" = "kde" ]; then 
 
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
-
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -792,7 +795,8 @@ arch-chroot /mnt systemctl enable sddm
 elif [ "$desktop0" = "cinnamon" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
-
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -807,7 +811,8 @@ arch-chroot /mnt systemctl enable lightdm
 elif [ "$desktop0" = "mate" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $mateapps
-
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -822,7 +827,8 @@ arch-chroot /mnt systemctl enable lightdm
 elif [ "$desktop0" = "lxde" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
-
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -837,7 +843,8 @@ arch-chroot /mnt systemctl enable lxdm
 elif [ "$desktop0" = "lxqt" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
-
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -852,7 +859,8 @@ arch-chroot /mnt systemctl enable sddm
 elif [ "$desktop0" = "xfce" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
-
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -867,7 +875,8 @@ arch-chroot /mnt systemctl enable lightdm
 elif [ "$desktop0" = "deepin" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
-
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -882,7 +891,8 @@ arch-chroot /mnt systemctl enable lightdm
 elif [ "$desktop0" = "i3" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $i3apps
-
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -897,6 +907,8 @@ arch-chroot /mnt systemctl enable lightdm
 elif [ "$desktop0" = "sway" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $swayapps
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -919,6 +931,8 @@ arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 elif [ "$desktop0" = "cutefish" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $cutefishapps
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -933,6 +947,8 @@ arch-chroot /mnt systemctl enable sddm
 elif [ "$desktop0" = "budgie" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $budgieapps
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -947,6 +963,8 @@ arch-chroot /mnt systemctl enable lightdm
 elif [ "$desktop0" = "enlightenment" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $enlightenmentapps
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
@@ -960,6 +978,8 @@ arch-chroot /mnt systemctl enable lightdm
 elif [ "$desktop0" = "awesome" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $awesomeapps
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 #arch-chroot /mnt systemctl enable systemd-user-sessions systemd-logind
@@ -1094,7 +1114,7 @@ arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
-#cp /opt/grub-nvidia /mnt/etc/default/
+cp /opt/grub-nvidia/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
@@ -1109,7 +1129,7 @@ printf "%b\nGRUB UEFI for AMD selected.\n" "$*"
 arch-chroot /mnt pacman -S --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-#cp /opt/grub /mnt/etc/default/
+cp /opt/grub-amd/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
@@ -1131,7 +1151,7 @@ arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
-#cp /opt/grub-nvidia /mnt/etc/default/
+cp /opt/grub-nvidia/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 pacman -Sy --noconfirm
@@ -1150,7 +1170,7 @@ arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prob
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
-#cp /opt/grub /mnt/etc/default/
+cp /opt/grub-amd/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
@@ -1173,7 +1193,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Umber' (21.1.7)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Verona' (22.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 #elif [ $native1 = "no" ]; then
 #printf "%btitle Coffee-Linux 'Tower' (20.2.4-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
@@ -1234,16 +1254,16 @@ clear
 while [ "$yayinstallfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 arch-chroot /mnt pacman -Rdd --noconfirm archlinux-appstream-data
-printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y pamac-aur
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y pamac-aur
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
 #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
-printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
-printf "%b1 2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mangohud
-printf "%b3\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y benchmark
-printf "%b3\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gamescope
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
+#printf "%b1 2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mangohud
+#printf "%b3\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y benchmark
+#printf "%b3\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gamescope
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
 #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xone-dkms
@@ -1252,7 +1272,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
 
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ckbcomp-bin
+#printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ckbcomp-bin
 
   if [ "$desktop0" = "gnome" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
@@ -1284,7 +1304,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
      printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
+     #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
      #arch-chroot /mnt sudo -Su $user01 yay --nodiffmenu --noremovemake --answerclean y  --answerdiff y --answeredit y --answerupgrade y gnome-calendar-linuxmint &&
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
      #rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
@@ -1301,7 +1321,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
      printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
+     #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
      #arch-chroot /mnt sudo -Su $user01 yay --nodiffmenu --noremovemake --answerclean y  --answerdiff y --answeredit y --answerupgrade y gnome-calendar-linuxmint &&
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
      #rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
@@ -1313,7 +1333,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
      printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
+     #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
      #arch-chroot /mnt sudo -Su $user01 yay --nodiffmenu --noremovemake --answerclean y  --answerdiff y --answeredit y --answerupgrade y gnome-calendar-linuxmint &&
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
      #rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
@@ -1369,7 +1389,7 @@ cp /opt/999-sign_kernel_for_secureboot.hook /mnt/etc/pacman.d/hooks/999-sign_ker
 arch-chroot /mnt cp MOK.cer /boot/
 arch-chroot /mnt cp MOK.crt /boot/
 arch-chroot /mnt cp MOK.key /boot/
-arch-chroot /mnt pacman -Sy
+arch-chroot /mnt pacman -Sy --noconfirm
 arch-chroot /mnt systemctl enable apparmor
 arch-chroot /mnt systemctl enable systemd-boot-update.service
 arch-chroot /mnt systemctl enable dhcpcd
@@ -1435,7 +1455,7 @@ clear
 while [ "$command12finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-arch-chroot /mnt pacman -Syu
+arch-chroot /mnt pacman -Syu --noconfirm
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
 arch-chroot /mnt systemctl enable lightdm
 
@@ -1455,7 +1475,7 @@ clear
 while [ "$command13finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-arch-chroot /mnt pacman -Syu
+arch-chroot /mnt pacman -Syu --noconfirm
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-deepin-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
 arch-chroot /mnt systemctl enable lightdm
 
@@ -1503,13 +1523,13 @@ if [ "$native1" = "yes" ]; then
   cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
   cp /opt/os-release /mnt/etc/
   cp /opt/lsb-release /mnt/etc/
-  cp /opt/chrome-egmafekfmcnknbdlbfbhafbllplmjlhn-Default.desktop /mnt/usr/share/applications/chrome-egmafekfmcnknbdlbfbhafbllplmjlhn-Default.desktop
-  chmod +x /mnt/usr/share/applications/chrome-egmafekfmcnknbdlbfbhafbllplmjlhn-Default.desktop
-  cp -r /opt/* /mnt/opt/
+  #cp /opt/chrome-egmafekfmcnknbdlbfbhafbllplmjlhn-Default.desktop /mnt/usr/share/applications/chrome-egmafekfmcnknbdlbfbhafbllplmjlhn-Default.desktop
+  #chmod +x /mnt/usr/share/applications/chrome-egmafekfmcnknbdlbfbhafbllplmjlhn-Default.desktop
+  #cp -r /opt/* /mnt/opt/
 #  mkdir -p /mnt/etc/neofetch/
 #  cp /opt/config.conf /mnt/etc/neofetch/config.conf
-  cp /usr/local/bin/coffeebrewer /mnt/usr/local/bin/
-  arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer
+  #cp /usr/local/bin/coffeebrewer /mnt/usr/local/bin/
+  #arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer
 #  arch-chroot /mnt chmod 755 /home/$user01/.config/neofetch/config.conf
 fi
 
@@ -1524,7 +1544,8 @@ case $rebootcheck in
 esac
 
 if [ "$rebootcheck" = "1" ]; then 
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+#printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+printf "%b\n" "$*"
 elif [ "$rebootcheck" != "1" ]; then 
 umount -R /mnt
 swapoff "$swap0"

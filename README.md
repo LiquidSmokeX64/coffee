@@ -1,4 +1,4 @@
-# Coffee Linux v.21.1.7 "Umber"
+# Coffee Linux v.22.0.0 "Verona"
 
 I believe using your PC should be as easy as a sip of coffee, so I fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 
@@ -8,10 +8,10 @@ CoffeeLinux is a spin of Arch, but has been made easy for anyone to install and 
 The idea here is to have everything ready for you right away. No updating after installation.
 The whole OS is downloaded and preconfigured (default settings) piece by piece on demand by the installer so it is up to date immediately.
 
-Gnome is the default Desktop Environment for stability reasons while many others are available if desired.
+There is no default Desktop Environment for the installer while many are available if desired..
 (Installation speed is solely based on your network speed)
 
-The installer itself is a handcrafted (fully POSIX compliant) shell script, not multiple files, only one single file, it does everything typically done via the typical oversized/overly complex installers (ie: calamares) used by literally all other Linux distributions. 
+The installer itself is a handcrafted shell script, not multiple files, only one single file, it does everything typically done via the typical oversized/overly complex installers (ie: calamares) used by literally all other Linux distributions. 
 
 It asks a few simple questions to customize the OS to your liking, then you just wait for the reboot. Everything is downloaded and installed on the system for the system. 
 Everything that really can be given a user choice has been. I have just made things simpler to install with minimal hiccups as a "daily driver".
@@ -34,7 +34,7 @@ Latest Linux Kernel and broad spectrum set of drivers.
 
 Bluetooth Support.
 
-Latest Gamescope from SteamOS.
+Latest Gamescope & Mangohud from SteamOS.
 
 Yay AUR package manager (Terminal only).
 
