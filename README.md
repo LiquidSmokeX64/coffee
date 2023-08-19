@@ -1,4 +1,4 @@
-# Coffee Linux v.22.0.2 "Verona"
+# Coffee Linux v.22.0.3"Verona"
 
 I believe using your PC should be as easy as a sip of coffee, so I fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 
@@ -48,8 +48,10 @@ Hibernation Support (if selected)
 
 Grub bootloader (no secure-boot support) or SystemD-Bootloader UEFI w/secure-boot support 
 
-Just use Etcher to write the iso to usb, and go. Easy-peezy.
-
+Just use Etcher to write the iso to usb, and go. Easy-peezy
+============================================
+Known issues...
+RTW8852BE Wifi adapter may not work. [Found in many Lenovo Laptops] (lwfinger rtw89 package added, but seems ineffective)
 ============================================
 
 Like, Share, and Enjoy. My Linux is the cure to the distro war.
