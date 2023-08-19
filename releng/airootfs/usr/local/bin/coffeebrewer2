@@ -633,7 +633,7 @@ pacstrap /mnt $baseapps
 clear
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 	
-	if [ $wifidevice0 = "realtek" ]; then
+	if [ $wifiadapter0 = "realtek" ]; then
 	arch-chroot /mnt /bin/bash <<"EOT"
 	cd /opt/
 	git clone https://github.com/lwfinger/rtw89.git
