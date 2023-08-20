@@ -659,6 +659,9 @@ insmod rtw_8852be.ko
 modprobe -v rtw89pci
 modprobe -v rtw_8852b
 modprobe -v rtw_8852be
+cp -r /lib/modules/6.4.11-arch1-1/kernel/drivers/net/wireless/realtek/rtw89/* /lib/firmware/rtw89/
+cp -r /lib/modules/6.4.11-arch1-1/kernel/drivers/net/wireless/realtek/rtw89/* /usr/lib/firmware/rtw89/
+cp -r /lib/modules/6.4.11-arch1-1/kernel/drivers/net/wireless/realtek/rtw89/* /usr/lib/modules/6.4.11-arch1-1/kernel/drivers/net/wireless/realtek/rtw89/
 #insmod /lib/modules/6.4.11-arch1-1/kernel/drivers/net/wireless/realtek/rtw89/rtw_8852be.ko
 cd
 rm -r /opt/rtw89/
