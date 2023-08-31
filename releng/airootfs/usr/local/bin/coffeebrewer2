@@ -4,7 +4,7 @@ baseapps="amd-ucode mkinitcpio texinfo base base-devel dhcpcd intel-ucode iwd li
 
 baseapps2="git device-mapper gettext xz dosfstools efibootmgr freetype2 fuse2 libisoburn lzop mtools autogen help2man python rsync ttf-dejavu system-config-printer net-tools nfs-utils systemd-resolvconf tcpdump terminus-font testdisk ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils openvpn partclone pcsclite ppp pptpclient qemu-guest-agent vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools apparmor archinstall mlocate arch-install-scripts b43-fwcutter bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config hdparm hyperv jfsutils kitty-terminfo libfido2 libusb-compat linux linux-headers"
 
-coffeeapps="glfw-wayland mangohud gamescope vulkan-validation-layers npm boost-libs qt6-3d qt6-base gtk-update-icon-cache hwinfo libpwquality qt6-svg solid squashfs-tools yaml-cpp boost extra-cmake-modules git qt6-tools qt6-translations rhythmbox alsa-lib alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam-native-runtime sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-clover-mesa opencl-headers opencl-rusticl-mesa"
+coffeeapps="glfw-wayland mangohud gamescope vulkan-validation-layers npm boost-libs qt6-3d qt6-base gtk-update-icon-cache hwinfo libpwquality qt6-svg solid squashfs-tools yaml-cpp boost extra-cmake-modules git qt6-tools qt6-translations rhythmbox alsa-lib alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless kcmutils lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libreoffice-fresh libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako python-pyqt6 qt6 qt6-imageformats qt6-multimedia-ffmpeg qt6-wayland samba shellcheck shotwell steam sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-clover-mesa opencl-headers opencl-rusticl-mesa"
 
 gnomeapps="libpulse noto-fonts noto-fonts-emoji gtk3 phonon-qt5-gstreamer gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
@@ -645,31 +645,7 @@ pacstrap /mnt $baseapps
 clear
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 	
-if [ $wifiadapter0 = "realtek" ]; then
-arch-chroot /mnt /bin/bash <<"EOT"
-cd /opt/
-git clone https://github.com/lwfinger/rtw89.git
-cd /opt/rtw89
-make
-make install
-insmod rtw89core.ko
-insmod rtw89pci.ko
-insmod rtw_8852b.ko
-insmod rtw_8852be.ko
-modprobe -v rtw89pci
-modprobe -v rtw_8852b
-modprobe -v rtw_8852be
-cp -r /lib/modules/6.4.11-arch1-1/kernel/drivers/net/wireless/realtek/rtw89/* /lib/firmware/rtw89/
-cp -r /lib/modules/6.4.11-arch1-1/kernel/drivers/net/wireless/realtek/rtw89/* /usr/lib/firmware/rtw89/
-cp -r /lib/modules/6.4.11-arch1-1/kernel/drivers/net/wireless/realtek/rtw89/* /usr/lib/modules/6.4.11-arch1-1/kernel/drivers/net/wireless/realtek/rtw89/
-#insmod /lib/modules/6.4.11-arch1-1/kernel/drivers/net/wireless/realtek/rtw89/rtw_8852be.ko
-cd
-rm -r /opt/rtw89/
-mkinitcpio -P
-	
-EOT
-	
-fi
+
 
 pacstrapfinished="1"
 else
@@ -802,6 +778,22 @@ fi
 
 arch-chroot /mnt systemctl enable sddm
 
+fi
+
+if [ $wifiadapter0 = "realtek" ]; then
+clear
+sleep 5
+printf "%b\nCopying realtek dkms packages..\n" "$*"
+sleep 5
+cp /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst /mnt/opt/
+cp /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst /mnt/opt/
+printf "%b\nInstalling drealtek dkms packages.\n" "$*"
+arch-chroot /mnt pacman -U --noconfirm /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst
+sleep 2
+printf "%b\nInstalled realtek dkms packages successfully.\n" "$*"
+clear
+	
 fi
 
 command4finished="1"
@@ -1005,7 +997,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Verona' (22.0.2)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Verona' (22.0.4)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 #elif [ $native1 = "no" ]; then
 #printf "%btitle Coffee-Linux 'Tower' (20.2.4-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
@@ -1072,7 +1064,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
 clear
-#printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
 clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
 clear
@@ -1095,7 +1087,7 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodi
 clear
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 clear
-#printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
 clear
 #printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ckbcomp-bin
 clear
