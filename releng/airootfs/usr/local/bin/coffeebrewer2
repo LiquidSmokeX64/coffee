@@ -59,6 +59,8 @@ fi
 done
 clear
 
+rfkill unblock all
+iwctl station list
 printf "%b\nSet your Wifi device ID. (Usually 'wlan0')\n" "$*"
 read -r wifi00
 wifi0=$wifi00
@@ -80,6 +82,7 @@ if [ "$netpass00" = "ethernet" ]; then
 printf "%b\nNo Wifi, skipping this part.\n" "$*"
 elif [ "$netpass00" = "wifi" ]; then
 while [ "$ssidcheck" != "1" ]; do
+iwctl station $wifi0 get-networks
 printf "%b\nSet your Network SSID (Your network name).\n" "$*"
 read -r ssid00
 ssid0=$ssid00
@@ -605,7 +608,7 @@ if [ "$questionspassed" = "yes" ]; then
 
 printf "%b\nFormatting Partitions\n" "$*"
 printf "%bg\nn\n1\n\n\nt\n20\nw\n" "$*" | fdisk -W always "$drive0"
-printf "%bg\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n20\nw\n" "$*" | fdisk -W always "$drive0"
+printf "%bg\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nt\n3\n20\nw\n" "$*" | fdisk -W always "$drive0"
 mkfs.vfat -F 32 "$boot0"
 mkswap "$swap0"
 swapon "$swap0"
@@ -997,7 +1000,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Verona' (22.0.4)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Verona' (23.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 #elif [ $native1 = "no" ]; then
 #printf "%btitle Coffee-Linux 'Tower' (20.2.4-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
