@@ -8,7 +8,7 @@ CoffeeLinux is a spin of Arch, but has been made easy for anyone to install and 
 The idea here is to have everything ready for you right away. No updating after installation.
 The whole OS is downloaded and preconfigured (default settings) piece by piece on demand by the installer so it is up to date immediately.
 
-Gnome and KDE are the only Desktop Environments available.
+Gnome and KDE are the only tested Desktop Environments, though many are available to try.
 (Installation speed is solely based on your network speed)
 
 The installer itself is a handcrafted shell script, not multiple files, only one single file, it does everything typically done via the typical oversized/overly complex installers (ie: calamares) used by literally all other Linux distributions. 
@@ -51,7 +51,7 @@ Grub bootloader (no secure-boot support) or SystemD-Bootloader UEFI w/secure-boo
 Just use Etcher to write the iso to usb, and go. Easy-peezy
 ============================================
 Known issues...
-RTW8852BE Wifi adapter may not work. [Found in many Lenovo Laptops] (lwfinger rtw89 package added, but seems ineffective)
+RTW8852BE Wifi adapter may not work. [Found in many Lenovo Laptops] (lwfinger rtw89 packages added, but seems ineffective so far)
 ============================================
 
 Like, Share, and Enjoy. My Linux is the cure to the distro war.
