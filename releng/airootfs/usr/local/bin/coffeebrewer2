@@ -24,7 +24,7 @@ deepinapps="polkit polkit-gnome gnome-keyring gnome-extra libsecret deepin gtk3 
 
 i3apps="polkit polkit-gnome gnome-keyring libsecret gnome-text-editor gnome-console gnome-system-monitor nautilus i3-wm i3lock gtk3 i3status i3blocks micro lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-swayapps="sddm gnome-disk-utility gedit htop nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-terminal gnome-themes-extra gnome-tweaks j4-dmenu-desktop xdg-desktop-portal-gtk"
+swayapps="gnome-control-center gnome-disk-utility gedit htop nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-terminal gnome-themes-extra gnome-tweaks j4-dmenu-desktop xdg-desktop-portal-gtk"
 
 cutefishapps="polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-kwin-plugins cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
@@ -1376,7 +1376,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Verona' (23.0.2)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Verona' (23.0.3)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 #elif [ $native1 = "no" ]; then
 #printf "%btitle Coffee-Linux 'Tower' (20.2.4-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
@@ -1557,10 +1557,10 @@ clear
   elif [ "$desktop0" = "lxqt" ]; then
      printf "%b1\n" "$*"
   elif [ "$desktop0" = "sway" ]; then
-     mkdir -p /mnt/usr/share/wayland-sessions/
-     cp /opt/sway.desktop /mnt/usr/share/wayland-sessions/sway.desktop
-     chmod +x /mnt/usr/share/wayland-sessions/sway.desktop
-     arch-chroot /mnt systemctl enable sddm
+     #mkdir -p /mnt/usr/share/wayland-sessions/
+     #cp /opt/sway.desktop /mnt/usr/share/wayland-sessions/sway.desktop
+     #chmod +x /mnt/usr/share/wayland-sessions/sway.desktop
+     #arch-chroot /mnt systemctl enable sddm
   fi
 yayinstallfinished="1"
 else
