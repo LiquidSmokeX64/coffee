@@ -279,3 +279,7 @@ gnome-text-editor
 gtk4
 polkit-gnome
 xdg-desktop-portal-gnome
+gnome-shell-extension-arc-menu
+gnome-shell-extension-dash-to-panel
+gnome-shell-extension-appindicator
+gnome-shell-extension-gtile
