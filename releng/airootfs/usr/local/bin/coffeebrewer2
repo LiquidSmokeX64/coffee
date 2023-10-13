@@ -1376,7 +1376,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Verona' (23.0.5)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Verona' (23.0.6)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 #elif [ $native1 = "no" ]; then
 #printf "%btitle Coffee-Linux 'Tower' (20.2.4-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
@@ -1730,8 +1730,8 @@ if [ "$questionspassed" = "yes" ]; then
 if [ "$native1" = "yes" ]; then
   mkdir -p /mnt/usr/share/wallpapers/coffee/
   mkdir -p /mnt/usr/share/backgrounds/gnome/
-  cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
-  cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
+  cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
+  cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
   cp /opt/os-release /mnt/etc/
   cp /opt/lsb-release /mnt/etc/
   #cp /opt/chrome-egmafekfmcnknbdlbfbhafbllplmjlhn-Default.desktop /mnt/usr/share/applications/chrome-egmafekfmcnknbdlbfbhafbllplmjlhn-Default.desktop
