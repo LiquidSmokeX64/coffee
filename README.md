@@ -1,8 +1,8 @@
-# Coffee Linux v.23.1.0 "Verona"
+# Coffee Linux v.23.1.1 "Verona"
 
 I believe using your PC should be as easy as a sip of coffee, so I fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
 
-The goal here with Coffee Linux is specifically to outpace Windows OS in gaming specifically, but retains full functionality otherwise of course.
+The goal here with Coffee Linux is specifically to be a gaming powerhouse OS, but is still perfectly capable of normal tasks as well.
 
 CoffeeLinux is a spin of Arch, but has been made easy for anyone to install and use for nearly anything. 
 The idea here is to have everything ready for you right away. No updating after installation.
