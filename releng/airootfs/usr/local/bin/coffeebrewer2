@@ -1191,7 +1191,6 @@ clear
 while [ "$pacmanfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
-break
 pacmanfinished="1"
 else
 pacmanfinished="0"
@@ -1743,7 +1742,7 @@ command14finished="0"
 
 success_check (){
 
-#clear
+clear
 
 while [ "$command15finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
