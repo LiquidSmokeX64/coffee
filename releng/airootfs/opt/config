@@ -35,10 +35,10 @@ set $menu dmenu_path | j4-dmenu-desktop | xargs swaymsg exec --
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+#         timeout 300 'swaylock -f -c 000000' \
+#         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#         before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -63,13 +63,13 @@ set $menu dmenu_path | j4-dmenu-desktop | xargs swaymsg exec --
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+c exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+x kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+z exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -79,10 +79,10 @@ set $menu dmenu_path | j4-dmenu-desktop | xargs swaymsg exec --
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -219,7 +219,7 @@ include /etc/sway/config.d/*
 exec_always rfkill unblock all
 exec_always xrandr --output $(xrandr | grep -m 1 XWAYLAND | awk '{print $1;}') --primary
 exec_always j4-dmenu-desktop --dmenu=dmenu -i --nb #3f3f3f --nf #dcdccc --fn pango:Monospace Regular 12 --term=gnome-terminal
-output * bg /usr/share/backgrounds/gnome/coffeewall03.jpg fill
+output * bg /usr/share/backgrounds/gnome/adwaita-d.jpg fill
 output * adaptive_sync on
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 output * mode 1920x1080@60.001Hz scale 1.0
