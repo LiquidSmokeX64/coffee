@@ -12,13 +12,13 @@ kdeapps="phonon-qt5-gstreamer gnu-free-fonts pyside2 cronie tesseract-data-eng q
 
 cinnamonapps="polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-terminal gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
 
-mateapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-menu mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter gnome-text-editor"
+mateapps="mate-polkit polkit libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter gnome-text-editor"
 
 xfceapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad lightdm lightdm-slick-greeter pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
 
 lxdeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lxde lxde-common lxdm lxpanel lxsession mousepad xcompmgr xdg-desktop-portal-lxqt"
 
-lxqtapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt "
+lxqtapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt"
 
 deepinapps="polkit polkit-gnome gnome-keyring gnome-extra libsecret deepin gtk3 gtk4 deepin-anything-arch deepin-kwin deepin-extra lightdm lightdm-deepin-greeter wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack"
 
@@ -26,7 +26,7 @@ i3apps="polkit polkit-gnome gnome-keyring libsecret gnome-text-editor gnome-cons
 
 swayapps="sddm gnome-disk-utility gnome-text-editor htop nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-terminal gnome-themes-extra gnome-tweaks j4-dmenu-desktop xdg-desktop-portal-gtk"
 
-cutefishapps="polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-kwin-plugins cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+cutefishapps="polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
 budgieapps="polkit polkit-gnome gnome-keyring gnome-extra gnome-shell libsecret budgie-control-center gtk3 budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver lightdm lightdm-gtk-greeter rofi gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
@@ -1389,10 +1389,10 @@ mkinitcpio -P
 bootctl install
 EOT
 
-printf "%bdefault arch.conf\ntimeout 15\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
+printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Verona' (23.1.7)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Verona' (23.1.8)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 #elif [ $native1 = "no" ]; then
 #printf "%btitle Coffee-Linux 'Tower' (20.2.4-Unofficial)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
@@ -1547,6 +1547,7 @@ clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-screensaver-hacks
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-tweak
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-menu
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
