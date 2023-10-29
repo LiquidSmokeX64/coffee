@@ -11,6 +11,8 @@ The whole OS is downloaded and preconfigured (default settings) piece by piece o
 Gnome and KDE are the only tested Desktop Environments, though many are available to try.
 (Installation speed is solely based on your network speed)
 
+NOTE: Live Environment password is always "coffee" (required to login, and use the installer)
+
 The installer itself is a handcrafted shell script, not multiple files, only one single file, it does everything typically done via the typical oversized/overly complex installers (ie: calamares) used by literally all other Linux distributions. 
 
 It asks a few simple questions to customize the OS to your liking, then you just wait for the reboot. Everything is downloaded and installed on the system for the system. 
