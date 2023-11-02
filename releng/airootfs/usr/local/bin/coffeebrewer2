@@ -4,7 +4,7 @@ baseapps="amd-ucode mkinitcpio texinfo base base-devel dhcpcd intel-ucode iwd li
 
 baseapps2="git device-mapper gettext xz dosfstools efibootmgr freetype2 fuse2 libisoburn lzop mtools autogen help2man python rsync ttf-dejavu system-config-printer net-tools nfs-utils systemd-resolvconf tcpdump terminus-font testdisk ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils openvpn partclone pcsclite ppp pptpclient qemu-guest-agent vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools apparmor archinstall mlocate arch-install-scripts b43-fwcutter bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config hdparm hyperv jfsutils kitty-terminfo libfido2 libusb-compat linux linux-headers"
 
-coffeeapps="glfw-wayland mangohud gamescope vulkan-validation-layers npm boost-libs gtk-update-icon-cache hwinfo libpwquality squashfs-tools yaml-cpp boost extra-cmake-modules git rhythmbox alsa-lib alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers discord dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lutris make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako samba shellcheck shotwell steam sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wine wine-gecko wine-mono winetricks wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-clover-mesa opencl-headers opencl-rusticl-mesa"
+coffeeapps="glfw-wayland vulkan-validation-layers npm boost-libs gtk-update-icon-cache hwinfo libpwquality squashfs-tools yaml-cpp boost extra-cmake-modules git rhythmbox alsa-lib alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako samba shellcheck shotwell  sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-clover-mesa opencl-headers opencl-rusticl-mesa"
 
 gnomeapps="gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
@@ -43,7 +43,7 @@ clear
 printf "%b\nWhat type of network do you have?\n" "$*"
 printf "%b\n1 - Ethernet\n" "$*"
 printf "%b\n2 - Wifi\n" "$*"
-printf "%b\n2 - I have already connected to the internet\n" "$*"
+printf "%b\n3 - I have already connected to the internet\n" "$*"
 read -r netcheck00
 case $netcheck00 in
   1) printf "%b\nPerfect\n" "$*" ;;
@@ -455,6 +455,7 @@ while [ "$hibernationpasscheck" != "1" ] && [ "$hibernationpasscheck" != "2" ]; 
 printf "%b\nWould you like to enable hibernation?\n" "$*"
 printf "%b\n1 - yes\n" "$*"
 printf "%b\n2 - no\n" "$*"
+
 read -r hibernationpasscheck
 case $hibernationpasscheck in
   1) printf "%b\nPerfect\n" "$*" ;;
@@ -465,47 +466,161 @@ done
 
 clear
 
-while [ "$browsercheck" != "1" ] && [ "$browsercheck" != "2" ] && [ "$browsercheck" != "3" ]; do
-printf "%b\nWhat web browser do you prefer?\n" "$*"
+while [ "$webcheck00" != "1" ] && [ "$webcheck00" != "2" ] && [ "$webcheck00" != "3" ]; do
+
+clear
+
+printf "%b\nWhat type of network do you have?\n" "$*"
 printf "%b\n1 - Google Chrome\n" "$*"
 printf "%b\n2 - Firefox\n" "$*"
 printf "%b\n3 - Microsoft Edge\n" "$*"
-read -r $browsercheck
-case $browsercheck in
+read -r webcheck00
+case $webcheck00 in
   1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nExcellent.\n" "$*" ;;
-  3) printf "%b\nExcellent.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again.\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  3) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
 esac
 done
+if [ "$webcheck00" = "1" ]; then
+webbrowser00=chrome
+elif [ "$webcheck00" = "2" ]; then
+webbrowser00=firefox
+elif [ "$webcheck00" = "3" ]; then
+webbrowser00=edge
+fi
 
 clear
 
-while [ "$heroiccheck" != "1" ] && [ "$heroiccheck" != "2" ]; do
-printf "%b\nWould you like Heroic Games Launcher for Epic Games and GOG support?\n" "$*"
-printf "%b\n1 - Yes\n" "$*"
-printf "%b\n2 - No\n" "$*"
-read -r $heroiccheck
-case $heroiccheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nExcellent.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again.\n" "$*" ;;
-esac
-done
+while [ "$heroiccheck00" != "1" ] && [ "$heroiccheck00" != "2" ]; do
 
 clear
 
-while [ "$githubcheck" != "1" ] && [ "$githubcheck" != "2" ]; do
-printf "%b\nWould you like Github Desktop app installed?\n" "$*"
+printf "%b\nWould you like to install Heroic Games Launcher for Epic Games and GoG games?\n" "$*"
 printf "%b\n1 - Yes\n" "$*"
 printf "%b\n2 - No\n" "$*"
-read -r $githubcheck
-case $githubcheck in
+read -r heroiccheck00
+case $heroiccheck00 in
   1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nExcellent.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again.\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
 esac
 done
+if [ "$heroiccheck00" = "1" ]; then
+epicon00=yes
+elif [ "$heroiccheck00" = "2" ]; then
+epicon00=no
+fi
+
+clear
+
+while [ "$githubcheck00" != "1" ] && [ "$githubcheck00" != "2" ]; do
+
+clear
+
+printf "%b\nWould you like to install Github Desktop app?\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r githubcheck00
+case $githubcheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
+esac
+done
+if [ "$githubcheck00" = "1" ]; then
+giton00=yes
+elif [ "$githubcheck00" = "2" ]; then
+giton00=no
+fi
+
+clear
+
+while [ "$steamcheck00" != "1" ] && [ "$steamcheck00" != "2" ]; do
+
+clear
+
+printf "%b\nWould you like to install Steam Desktop?\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r steamcheck00
+case $steamcheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
+esac
+done
+if [ "$steamcheck00" = "1" ]; then
+steamon00=yes
+elif [ "$steamcheck00" = "2" ]; then
+steamon00=no
+fi
+
+clear
+
+while [ "$discordcheck00" != "1" ] && [ "$discordcheck00" != "2" ]; do
+
+clear
+
+printf "%b\nWould you like to install Discord app?\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r discordcheck00
+case $discordcheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
+esac
+done
+if [ "$discordcheck00" = "1" ]; then
+discordon00=yes
+elif [ "$discordcheck00" = "2" ]; then
+discordon00=no
+fi
+
+clear
+
+while [ "$lutrischeck00" != "1" ] && [ "$lutrischeck00" != "2" ]; do
+
+clear
+
+printf "%b\nWould you like to install Lutris app?\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r lutrischeck00
+case $lutrischeck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
+esac
+done
+if [ "$lutrischeck00" = "1" ]; then
+lutrison00=yes
+elif [ "$lutrischeck00" = "2" ]; then
+lutrison00=no
+fi
+
+clear
+
+while [ "$officecheck00" != "1" ] && [ "$officecheck00" != "2" ]; do
+
+clear
+
+printf "%b\nWould you like to install LibreOffice app bundle?\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r officecheck00
+case $officecheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
+esac
+done
+if [ "$officecheck00" = "1" ]; then
+officeon00=yes
+elif [ "$officecheck00" = "2" ]; then
+officeon00=no
+fi
 
 clear
 
@@ -732,31 +847,22 @@ if [ "$questionspassed" = "yes" ]; then
 
 printf "%b\nFormatting Partitions\n" "$*"
 printf "%bg\nn\n1\n\n\nt\n20\nw\n" "$*" | fdisk -W always "$drive0"
-clear
 printf "%bg\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nt\n3\n20\nw\n" "$*" | fdisk -W always "$drive0"
-clear
 mkfs.vfat -F 32 "$boot0"
-clear
 mkswap "$swap0"
 swapon "$swap0"
-clear
 
 if [ "$fs0" = "btrfs" ]; then
 mkfs.btrfs -f -L "$drivename0" "$system0"
-clear
 elif [ "$fs0" = "ext4" ]; then
 mkfs.ext4 -L "$drivename0" "$system0"
-clear
 fi
 printf "%b\nMounting Disks\n" "$*"
 mount "$system0" /mnt
 mkdir /mnt/boot
 mount "$boot0" /mnt/boot
-clear
 pacman -Sy --noconfirm archlinux-keyring
-clear
 pacman -Syy --noconfirm
-clear
 
 command1finished="1"
 else
@@ -1283,13 +1389,13 @@ clear
 while [ "$command18finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$browsercheck" = "1" ]; then
+if [ "$webbrowser00" = "chrome" ]; then
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
 clear
-elif [ "$browsercheck" = "2" ]; then
-arch-chroot /mnt pacman -Sy firefox
+elif [ "$webbrowser00" = "firefox" ]; then
+arch-chroot /mnt pacman -Sy --noconfirm firefox
 clear
-elif [ "$browsercheck" = "3" ]; then
+elif [ "$webbrowser00" = "edge" ]; then
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge-stable
 clear
 fi
@@ -1303,6 +1409,102 @@ command18finished="0"
 
 }
 
+office_install (){
+
+clear
+
+while [ "$command24finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
+if [ "$officeon00" = "yes" ]; then
+arch-chroot /mnt pacman -Sy --noconfirm libreoffice-fresh
+clear
+fi
+
+command24finished="1"
+else
+command24finished="0"
+fi
+done
+command24finished="0"
+
+}
+
+steam_install (){
+
+clear
+
+while [ "$command21finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
+if [ "$steamon00" = "yes" ]; then
+arch-chroot /mnt pacman -Sy --noconfirm mangohud gamescope steam wine wine-gecko wine-mono winetricks
+clear
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
+clear
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
+clear
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
+clear
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
+clear
+fi
+
+command21finished="1"
+else
+command21finished="0"
+fi
+done
+command21finished="0"
+
+}
+
+discord_install (){
+
+clear
+
+while [ "$command22finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
+if [ "$discordon00" = "yes" ]; then
+arch-chroot /mnt pacman -Sy --noconfirm discord
+clear
+fi
+
+command22finished="1"
+else
+command22finished="0"
+fi
+done
+command22finished="0"
+
+}
+
+lutris_install (){
+
+clear
+
+while [ "$command23finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
+if [ "$lutrison00" = "yes" ]; then
+arch-chroot /mnt pacman -Sy --noconfirm lutris wine wine-gecko wine-mono winetricks
+clear
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
+clear
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
+clear
+fi
+
+command23finished="1"
+else
+command23finished="0"
+fi
+done
+command23finished="0"
+
+}
+
 heroic_install (){
 
 clear
@@ -1310,10 +1512,15 @@ clear
 while [ "$command19finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$heroiccheck" = "1" ]; then
+if [ "$epicon00" = "yes" ]; then
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
 clear
-elif [ "$heroiccheck" = "2" ]; then
+arch-chroot /mnt pacman -Sy --noconfirm wine wine-gecko wine-mono winetricks
+clear
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
+clear
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
+elif [ "$epicon00" = "no" ]; then
 printf "%b\nHeroic not selected, moving on." "$*"
 clear
 fi
@@ -1334,10 +1541,10 @@ clear
 while [ "$command20finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$githubcheck" = "1" ]; then
+if [ "$giton00" = "yes" ]; then
 printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 clear
-elif [ "$githubcheck" = "2" ]; then
+elif [ "$giton00" = "no" ]; then
 printf "%b\nGithub Desktop not selected, moving on." "$*"
 clear
 fi
@@ -1491,7 +1698,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.2.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.2.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -1562,14 +1769,6 @@ clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
 clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
 clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
 clear
@@ -1932,6 +2131,10 @@ coffee_install
 java_install
 vmware_install
 browser_install
+office_install
+steam_install
+discord_install
+lutris_install
 heroic_install
 github_install
 snapd_install
