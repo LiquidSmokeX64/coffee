@@ -1729,6 +1729,8 @@ bootloader_install () {
                 elif [ "$gpuon0" = "amd" ]; then
                     arch-chroot /mnt pacman -S --noconfirm corectrl
                     cp /opt/grub-amd/grub /mnt/etc/default/
+                elif [ "$gpuon0" = "intel" ]; then
+                    cp /opt/grub-intel/grub /mnt/etc/default/
                 fi
 
                 # Common GRUB UEFI settings
@@ -1748,6 +1750,8 @@ EOT
                 elif [ "$gpuon0" = "amd" ]; then
                     arch-chroot /mnt pacman -S --needed --noconfirm corectrl
                     cp /opt/grub-amd/grub /mnt/etc/default/
+                elif [ "$gpuon0" = "intel" ]; then
+                    cp /opt/grub-intel/grub /mnt/etc/default/
                 fi
 
                 # Common GRUB BIOS settings
@@ -1773,7 +1777,7 @@ EOT
                 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
                 if [ "$native1" = "yes" ]; then
-                    printf "%btitle Coffee-Linux 'Winey' (24.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+                    printf "%btitle Coffee-Linux 'Winey' (24.0.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
                 fi
 
                 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
