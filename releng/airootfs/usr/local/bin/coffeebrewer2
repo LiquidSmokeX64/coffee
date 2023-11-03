@@ -4,7 +4,7 @@ baseapps="amd-ucode mkinitcpio texinfo base base-devel dhcpcd intel-ucode iwd li
 
 baseapps2="git device-mapper gettext xz dosfstools efibootmgr freetype2 fuse2 libisoburn lzop mtools autogen help2man python rsync ttf-dejavu system-config-printer net-tools nfs-utils systemd-resolvconf tcpdump terminus-font testdisk ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils openvpn partclone pcsclite ppp pptpclient qemu-guest-agent vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools apparmor archinstall mlocate arch-install-scripts b43-fwcutter bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config hdparm hyperv jfsutils kitty-terminfo libfido2 libusb-compat linux linux-headers"
 
-coffeeapps="fwupd fwupd-efi glfw-wayland vulkan-validation-layers npm boost-libs gtk-update-icon-cache hwinfo libpwquality squashfs-tools yaml-cpp boost extra-cmake-modules git rhythmbox alsa-lib alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako samba shellcheck shotwell  sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-clover-mesa opencl-headers opencl-rusticl-mesa"
+coffeeapps="fwupd fwupd-efi glfw-wayland vulkan-validation-layers npm boost-libs gtk-update-icon-cache hwinfo libpwquality squashfs-tools yaml-cpp boost extra-cmake-modules git rhythmbox alsa-lib alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract jdk-openjdk jre-openjdk jre-openjdk-headless lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libxcomposite lib32-libxinerama lib32-libxslt  lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libunwind libva libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors make meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages openjdk-doc openjdk-src pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako samba shellcheck shotwell sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader w3m wireplumber xdg-utils xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-headers"
 
 gnomeapps="gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
@@ -36,2070 +36,2143 @@ enlightenmentapps="polkit polkit-gnome gnome-keyring libsecret enlightenment gtk
 
 questionare (){
 
-while [ "$netcheck00" != "1" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "3" ]; do
+declare -A options6=(
+    [1]="ethernet"
+    [2]="wifi"
+    [3]="connected"
+)
 
-clear
+declare -A adapters=(
+    [1]="realtek"
+    [2]="other"
+)
 
-printf "%b\nWhat type of network do you have?\n" "$*"
-printf "%b\n1 - Ethernet\n" "$*"
-printf "%b\n2 - Wifi\n" "$*"
-printf "%b\n3 - I have already connected to the internet\n" "$*"
-read -r netcheck00
-case $netcheck00 in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  3) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
-esac
+while true; do
+    clear
+    echo "What type of network do you have?"
+    echo "1 - Ethernet"
+    echo "2 - Wifi"
+    echo "3 - I have already connected to the internet"
+
+    read -r netcheck00
+
+    if [[ ${options6[$netcheck00]} ]]; then
+        netpass00=${options6[$netcheck00]}
+        if [[ $netcheck00 -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
 done
-if [ "$netcheck00" = "1" ]; then
-netpass00=ethernet
-elif [ "$netcheck00" = "2" ]; then
-netpass00=wifi
-elif [ "$netcheck00" = "3" ]; then
-netpass00=ethernet
-fi
 
-clear
+if [[ $netpass00 == "wifi" ]]; then
+    while true; do
+        clear
 
-if [ "$netpass00" = "ethernet" ]; then
-printf "%b\nEthernet selected, or already connected, skipping this part.\n" "$*"
-elif [ "$netpass00" = "wifi" ]; then
-while [ "$wifipasscheck" != "1" ]; do
-clear
+        echo "Is your wifi adapter Realtek?"
+        echo "1 - Realtek"
+        echo "2 - Other"
 
-while [ "$adaptercheck00" != "1" ] && [ "$adaptercheck00" != "2" ]; do
-printf "%b\nIs your wifi adapter Realtek?\n" "$*"
-printf "%b\n1 - Realtek\n" "$*"
-printf "%b\n2 - Other\n" "$*"
-read -r adaptercheck00
-printf "%b\n$adaptercheck00 Is this correct?\n" "$*"
-case $adaptercheck00 in
-1) printf "%b\nPerfect\n" "$*" ;;
-2) printf "%b\nLet's move on then.\n" "$*" ;;
-*) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
-esac
-if [ "$adaptercheck00" = "1" ]; then
-wifiadapter0="realtek"
-elif [ "$adaptercheck00" = "2" ]; then
-wifiadapter0="other"
-fi
-done
-clear
+        read -r adaptercheck00
 
-rfkill unblock all
-iwctl station list
-printf "%b\nSet your Wifi device ID. (Usually 'wlan0')\n" "$*"
-read -r wifi00
-wifi0=$wifi00
-printf "%b\n$wifi00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r wifipasscheck
-case $wifipasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-fi
+        if [[ ${adapters[$adaptercheck00]} ]]; then
+            wifiadapter0=${adapters[$adaptercheck00]}
+            if [[ $adaptercheck00 -eq 1 ]]; then
+                echo "Perfect"
+            else
+                echo "Let's move on then."
+            fi
+            break
+        else
+            echo "Unrecognized option, please try again."
+        fi
+    done
 
-clear
+    while true; do
+        clear
 
-if [ "$netpass00" = "ethernet" ]; then
-printf "%b\nNo Wifi, skipping this part.\n" "$*"
-elif [ "$netpass00" = "wifi" ]; then
-while [ "$ssidcheck" != "1" ]; do
-iwctl station $wifi0 get-networks
-printf "%b\nSet your Network SSID (Your network name).\n" "$*"
-read -r ssid00
-ssid0=$ssid00
-printf "%b\n$ssid00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r ssidcheck
-case $ssidcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-fi
+        rfkill unblock all
+        iwctl station list
+        echo "Set your Wifi device ID. (Usually 'wlan0')"
 
-clear
+        read -r wifi0
 
-if [ "$netpass00" = "ethernet" ]; then
-printf "%b\nNo Wifi, skipping this part.\n" "$*"
-elif [ "$netpass00" = "wifi" ]; then
-while [ "$netpasswordcheck" != "1" ]; do
-printf "%b\nEnter your Wifi password.\n" "$*"
-read -r netpassword00
-netpassword0=$netpassword00
-printf "%b\n$netpassword00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r netpasswordcheck
-case $netpasswordcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-fi
+        echo "$wifi0. Is this correct?"
+        echo "1 - yes"
+        echo "2 - no"
 
-clear
+        read -r wifipasscheck
 
-while [ "$usercheck" != "1" ]; do
-printf "%b\nSet your Username.\n" "$*"
-read -r user00
-printf "%b\n$user00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r usercheck
-case $usercheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-if [ "$usercheck" = "1" ]; then 
-user01=$user00
-fi
-#
+        if [[ $wifipasscheck -eq 1 ]]; then
+            echo "Perfect"
+            break
+        else
+            echo "Let's retry."
+        fi
+    done
 
-clear
+    while true; do
+        clear
 
-while [ "$userpasscheck" != "1" ]; do
-printf "%b\nSet your User Password.\n" "$*"
-read -r userpass00
-printf "%b\n$userpass00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r userpasscheck
-case $userpasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-if [ "$userpasscheck" = "1" ]; then 
-userpass0=$userpass00
-fi
-#
+        iwctl station $wifi0 get-networks
+        echo "Set your Network SSID (Your network name)."
 
-clear
+        read -r ssid0
 
-while [ "$rootpasscheck" != "1" ]; do
-printf "%b\nSet your Root Password.\n" "$*"
-read -r userpass01
-printf "%b\n$userpass01. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r rootpasscheck
-case $rootpasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-if [ "$rootpasscheck" = "1" ]; then 
-userpass1=$userpass01
+        echo "$ssid0. Is this correct?"
+        echo "1 - yes"
+        echo "2 - no"
+
+        read -r ssidcheck
+
+        if [[ $ssidcheck -eq 1 ]]; then
+            echo "Perfect"
+            break
+        else
+            echo "Let's retry."
+        fi
+    done
+
+    while true; do
+        clear
+
+        echo "Enter your Wifi password."
+
+        read -r netpassword0
+
+        echo "$netpassword0. Is this correct?"
+        echo "1 - yes"
+        echo "2 - no"
+
+        read -r netpasswordcheck
+
+        if [[ $netpasswordcheck -eq 1 ]]; then
+            echo "Perfect"
+            break
+        else
+            echo "Let's retry."
+        fi
+    done
 fi
 
 clear
 
-while [ "$sbpasscheck" != "1" ] && [ "$sbpasscheck" != "2" ]; do
-printf "%b\nWould you like to enable Secure-Boot in the OS? (requires systemd-bootloader)\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r sbpasscheck
-case $sbpasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-if [ "$sbpasscheck" = "1" ]; then
-sbpass0=yes
-elif [ "$sbpasscheck" = "2" ]; then
-sbpass0=no
-fi
-#
-if [ "$sbpass0" = "no" ]; then
-printf "%b\nNo SB, skipping this part.\n" "$*"
-elif [ "$sbpass0" = "yes" ]; then
-while [ "$uefipasscheck" != "1" ]; do
-printf "%b\nSet your UEFI/MOK Secure-Boot Password.\n" "$*"
-read -r uefipass00
-printf "%b\n$uefipass00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r uefipasscheck
-case $uefipasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-fi
+while true; do
+    echo "Set your Username."
+    read -r user00
+    echo "$user00. Is this correct?"
+    echo "1 - yes"
+    echo "2 - no"
 
-if [ "$uefipasscheck" = "1" ]; then 
-uefipass0=$uefipass00
+    read -r usercheck
+
+    if [[ $usercheck -eq 1 ]]; then
+        user01=$user00
+        echo "Perfect"
+        break
+    else
+        echo "Let's retry."
+    fi
+done
+
+clear
+
+while true; do
+    echo "Set your User Password."
+    read -r userpass00
+    echo "$userpass00. Is this correct?"
+    echo "1 - yes"
+    echo "2 - no"
+
+    read -r userpasscheck
+
+    if [[ $userpasscheck -eq 1 ]]; then
+        userpass0=$userpass00
+        echo "Perfect"
+        break
+    else
+        echo "Let's retry."
+    fi
+done
+
+clear
+
+while true; do
+    echo "Set your Root Password."
+    read -r userpass01
+    echo "$userpass01. Is this correct?"
+    echo "1 - yes"
+    echo "2 - no"
+
+    read -r rootpasscheck
+
+    if [[ $rootpasscheck -eq 1 ]]; then
+        userpass1=$userpass01
+        echo "Perfect"
+        break
+    else
+        echo "Let's retry."
+    fi
+done
+
+clear
+
+declare -A options6=(
+    [1]="yes"
+    [2]="no"
+)
+
+while true; do
+    echo "Would you like to enable Secure-Boot in the OS? (requires systemd-bootloader)"
+    echo "1 - yes"
+    echo "2 - no"
+
+    read -r sbpasscheck
+
+    if [[ ${options6[$sbpasscheck]} ]]; then
+        sbpass0=${options6[$sbpasscheck]}
+        if [[ $sbpasscheck -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "No SB, skipping this part."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+if [[ $sbpass0 == "yes" ]]; then
+    while true; do
+        echo "Set your UEFI/MOK Secure-Boot Password."
+        read -r uefipass00
+        echo "$uefipass00. Is this correct?"
+        echo "1 - yes"
+        echo "2 - no"
+
+        read -r uefipasscheck
+
+        if [[ $uefipasscheck -eq 1 ]]; then
+            uefipass0=$uefipass00
+            echo "Perfect"
+            break
+        else
+            echo "Let's retry."
+        fi
+    done
 fi
 
 clear
 
-while [ "$namepasscheck" != "1" ]; do
-printf "%b\nSet your PC name.\n" "$*"
-read -r name00
-printf "%b\n$name00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r namepasscheck
-case $namepasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-if [ "$namepasscheck" = "1" ]; then
-name0=$name00
-fi
+while true; do
+    echo "Set your PC name."
+    read -r name00
+    echo "$name00. Is this correct?"
+    echo "1 - yes"
+    echo "2 - no"
 
-#
+    read -r namepasscheck
+
+    if [[ $namepasscheck -eq 1 ]]; then
+        name0=$name00
+        echo "Perfect"
+        break
+    else
+        echo "Let's retry."
+    fi
+done
 
 clear
 
-while [ "$name2passcheck" != "1" ]; do
-printf "%b\nSet your HardDrive Label (OS Partition Label).\n" "$*"
-read -r name01
-printf "%b\n$name01. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r name2passcheck
-case $name2passcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
+while true; do
+    echo "Set your HardDrive Label (OS Partition Label)."
+    read -r name01
+    echo "$name01. Is this correct?"
+    echo "1 - yes"
+    echo "2 - no"
+
+    read -r name2passcheck
+
+    if [[ $name2passcheck -eq 1 ]]; then
+        name1=$name01
+        echo "Perfect"
+        break
+    else
+        echo "Let's retry."
+    fi
 done
-if [ "$name2passcheck" = "1" ]; then
-name1=$name01
-fi
-#
 
 native1=yes
 
 clear
 
-while [ "$driveXpasscheck" != "1" ]; do
-printf "%b\nListing Storage Devices for you.\n" "$*"
-fdisk -l
-printf "%b\n" "$*"
-printf "%b\nWhich drive do you want Coffee Linux to install to?\n" "$*"
-printf "%b\n1 - NVME0N1" "$*"
-printf "%b\n2 - NVME1N1" "$*"
-printf "%b\n3 - SDA" "$*"
-printf "%b\n4 - SDB" "$*"
-printf "%b\n5 - VDA" "$*"
-printf "%b\n6 - VDB\n" "$*"
-
-read -r driveX
-if [ "$driveX" = "1" ]; then
-drive="nvme0n1"
-boot=p1
-swap=p2
-system=p3
-elif [ "$driveX" = "2" ]; then
-drive="nvme1n1"
-boot=p1
-swap=p2
-system=p3
-elif [ "$driveX" = "3" ]; then
-drive="sda"
-boot=1
-swap=2
-system=3
-elif [ "$driveX" = "4" ]; then
-drive="sdb"
-boot=1
-swap=2
-system=3
-elif [ "$driveX" = "5" ]; then
-drive="vda"
-boot=1
-swap=2
-system=3
-elif [ "$driveX" = "6" ]; then
-drive="vdb"
-boot=1
-swap=2
-system=3
-fi
-
-printf "%b\n$drive. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r driveXpasscheck
-case $driveXpasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-
-if [ "$driveXpasscheck" = "1" ]; then
-pfx="/dev/"
-drive0=$pfx$drive
-boot0=$drive0$boot
-swap0=$drive0$swap
-system0=$drive0$system
-hostname0=$name0
-drivename0=$name1
-else
-exit
-fi
-
-clear
-
-while [ "$swapcheck" != "1" ] && [ "$swapcheck" != "2" ]; do
-printf "%b\nSetting up swap size, do you want to manually configure or auto configure it based on your RAM size ?\n" "$*"
-printf "%b\n1 - Manual\n" "$*"
-printf "%b\n2 - Auto\n" "$*"
-read -r swapcheck 
-case $swapcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-
-clear
-
-while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ]; do
-
-printf "%b\nWhat desktop environment do you want?\n" "$*"
-printf "%b\n1 - Gnome\n" "$*"
-printf "%b\n2 - KDE\n" "$*"
-printf "%b\n3 - Cinnamon\n" "$*"
-printf "%b\n4 - Mate\n" "$*"
-printf "%b\n5 - LXDE\n" "$*"
-printf "%b\n6 - LXQT\n" "$*"
-printf "%b\n7 - XFCE\n" "$*"
-printf "%b\n8 - Deepin - WIP May not work. \n" "$*"
-printf "%b\n9 - i3\n" "$*"
-printf "%b\n10 - Sway\n" "$*"
-printf "%b\n11 - Cutefish\n" "$*"
-printf "%b\n12 - Budgie\n" "$*"
-printf "%b\n13 - Enlightenment\n" "$*"
-printf "%b\n14 - Awesome\n" "$*"
-
-read -r desktopcheck
-case $desktopcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nA good choice.\n" "$*" ;;
-  3) printf "%b\nA good choice.\n" "$*" ;;
-  4) printf "%b\nA good choice.\n" "$*" ;;
-  5) printf "%b\nA good choice.\n" "$*" ;;
-  6) printf "%b\nA good choice.\n" "$*" ;;
-  7) printf "%b\nA good choice.\n" "$*" ;;
-  8) printf "%b\nA brave choice.\n" "$*" ;;
-  9) printf "%b\nA super choice.\n" "$*" ;;
-  10) printf "%b\nA super choice.\n" "$*" ;;
-  11) printf "%b\nA super choice.\n" "$*" ;;
-  12) printf "%b\nA super choice.\n" "$*" ;;
-  13) printf "%b\nA super choice.\n" "$*" ;;
-  14) printf "%b\nA super choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-
-if [ "$desktopcheck" = "1" ]; then
-desktop0="gnome"
-
-elif [ "$desktopcheck" = "2" ]; then
-desktop0="kde"
-
-elif [ "$desktopcheck" = "3" ]; then
-desktop0="cinnamon"
-
-elif [ "$desktopcheck" = "4" ]; then
-desktop0="mate"
-
-elif [ "$desktopcheck" = "5" ]; then
-desktop0="lxde"
-
-elif [ "$desktopcheck" = "6" ]; then
-desktop0="lxqt"
-
-elif [ "$desktopcheck" = "7" ]; then
-desktop0="xfce"
-
-elif [ "$desktopcheck" = "8" ]; then
-desktop0="deepin"
-
-elif [ "$desktopcheck" = "9" ]; then
-desktop0="i3"
-
-elif [ "$desktopcheck" = "10" ]; then
-desktop0="sway"
-
-elif [ "$desktopcheck" = "11" ]; then
-desktop0="cutefish"
-
-elif [ "$desktopcheck" = "12" ]; then
-desktop0="budgie"
-
-elif [ "$desktopcheck" = "13" ]; then
-desktop0="enlightenment"
-
-elif [ "$desktopcheck" = "14" ]; then
-desktop0="awesome"
-
-fi
-
-clear
-
-while [ "$hibernationpasscheck" != "1" ] && [ "$hibernationpasscheck" != "2" ]; do
-printf "%b\nWould you like to enable hibernation?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-
-read -r hibernationpasscheck
-case $hibernationpasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again.\n" "$*" ;;
-esac
-done
-
-clear
-
-while [ "$webcheck00" != "1" ] && [ "$webcheck00" != "2" ] && [ "$webcheck00" != "3" ]; do
-
-clear
-
-printf "%b\nWhat type of network do you have?\n" "$*"
-printf "%b\n1 - Google Chrome\n" "$*"
-printf "%b\n2 - Firefox\n" "$*"
-printf "%b\n3 - Microsoft Edge\n" "$*"
-read -r webcheck00
-case $webcheck00 in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  3) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
-esac
-done
-if [ "$webcheck00" = "1" ]; then
-webbrowser00=chrome
-elif [ "$webcheck00" = "2" ]; then
-webbrowser00=firefox
-elif [ "$webcheck00" = "3" ]; then
-webbrowser00=edge
-fi
-
-clear
-
-while [ "$heroiccheck00" != "1" ] && [ "$heroiccheck00" != "2" ]; do
-
-clear
-
-printf "%b\nWould you like to install Heroic Games Launcher for Epic Games and GoG games?\n" "$*"
-printf "%b\n1 - Yes\n" "$*"
-printf "%b\n2 - No\n" "$*"
-read -r heroiccheck00
-case $heroiccheck00 in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
-esac
-done
-if [ "$heroiccheck00" = "1" ]; then
-epicon00=yes
-elif [ "$heroiccheck00" = "2" ]; then
-epicon00=no
-fi
-
-clear
-
-while [ "$githubcheck00" != "1" ] && [ "$githubcheck00" != "2" ]; do
-
-clear
-
-printf "%b\nWould you like to install Github Desktop app?\n" "$*"
-printf "%b\n1 - Yes\n" "$*"
-printf "%b\n2 - No\n" "$*"
-read -r githubcheck00
-case $githubcheck00 in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
-esac
-done
-if [ "$githubcheck00" = "1" ]; then
-giton00=yes
-elif [ "$githubcheck00" = "2" ]; then
-giton00=no
-fi
-
-clear
-
-while [ "$steamcheck00" != "1" ] && [ "$steamcheck00" != "2" ]; do
-
-clear
-
-printf "%b\nWould you like to install Steam Desktop?\n" "$*"
-printf "%b\n1 - Yes\n" "$*"
-printf "%b\n2 - No\n" "$*"
-read -r steamcheck00
-case $steamcheck00 in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
-esac
-done
-if [ "$steamcheck00" = "1" ]; then
-steamon00=yes
-elif [ "$steamcheck00" = "2" ]; then
-steamon00=no
-fi
-
-clear
-
-while [ "$discordcheck00" != "1" ] && [ "$discordcheck00" != "2" ]; do
-
-clear
-
-printf "%b\nWould you like to install Discord app?\n" "$*"
-printf "%b\n1 - Yes\n" "$*"
-printf "%b\n2 - No\n" "$*"
-read -r discordcheck00
-case $discordcheck00 in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
-esac
-done
-if [ "$discordcheck00" = "1" ]; then
-discordon00=yes
-elif [ "$discordcheck00" = "2" ]; then
-discordon00=no
-fi
-
-clear
-
-while [ "$lutrischeck00" != "1" ] && [ "$lutrischeck00" != "2" ]; do
-
-clear
-
-printf "%b\nWould you like to install Lutris app?\n" "$*"
-printf "%b\n1 - Yes\n" "$*"
-printf "%b\n2 - No\n" "$*"
-read -r lutrischeck00
-case $lutrischeck00 in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
-esac
-done
-if [ "$lutrischeck00" = "1" ]; then
-lutrison00=yes
-elif [ "$lutrischeck00" = "2" ]; then
-lutrison00=no
-fi
-
-clear
-
-while [ "$officecheck00" != "1" ] && [ "$officecheck00" != "2" ]; do
-
-clear
-
-printf "%b\nWould you like to install LibreOffice app bundle?\n" "$*"
-printf "%b\n1 - Yes\n" "$*"
-printf "%b\n2 - No\n" "$*"
-read -r officecheck00
-case $officecheck00 in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
-esac
-done
-if [ "$officecheck00" = "1" ]; then
-officeon00=yes
-elif [ "$officecheck00" = "2" ]; then
-officeon00=no
-fi
-
-clear
-
-while [ "$snapcheck" != "1" ] && [ "$snapcheck" != "2" ]; do
-printf "%b\nWould you like Snap-Store support (Snapd) ?\n" "$*"
-printf "%b\n1 - Yes\n" "$*"
-printf "%b\n2 - No\n" "$*"
-
-read -r snapcheck
-case $snapcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nA good choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-
-if [ "$snapcheck" = "1" ]; then
-snapon="yes"
-elif [ "$snapcheck" = "2" ]; then
-snapon="no"
-fi
-
-clear
-
-while [ "$vmwarecheck" != "1" ] && [ "$vmwarecheck" != "2" ]; do
-printf "%b\nWould you like VMWare Workstation?\n" "$*"
-printf "%b\n1 - Yes\n" "$*"
-printf "%b\n2 - No\n" "$*"
-
-read -r vmwarecheck
-case $vmwarecheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nA good choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-
-if [ "$vmwarecheck" = "1" ]; then
-vmwareon="yes"
-elif [ "$vmwarecheck" = "2" ]; then
-vmwareon="no"
-fi
-
-clear
-
-while [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ]; do
-printf "%b\nDo you have an amd or nvidia graphics card? -- Intel ARC not yet supported.\n" "$*"
-printf "%b\n1 - AMD\n" "$*"
-printf "%b\n2 - Nvidia\n" "$*"
-printf "%b\n3 - Virtual GPU (VMware etc.)\n" "$*"
-
-read -r gpucheck
-case $gpucheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nA good choice.\n" "$*" ;;
-  3) printf "%b\nA good choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-if [ "$gpucheck" = "1" ]; then
-gpu0="amd"
-elif [ "$gpucheck" = "2" ]; then
-gpu0="nvidia"
-elif [ "$gpucheck" = "3" ]; then
-gpu0="vm"
-fi
-
-clear
-
-while [ "$fscheck" != "1" ] && [ "$fscheck" != "2" ]; do
-printf "%b\nWould you like Ext4 or BTRFS Filesystem type?\n" "$*"
-printf "%b\n1 - Ext4\n" "$*"
-printf "%b\n2 - BTRFS\n" "$*"
-
-read -r fscheck
-case $fscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nA good choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-done
-if [ "$fscheck" = "1" ]; then
-fs0="ext4"
-elif [ "$fscheck" = "2" ]; then
-fs0="btrfs"
-fi
-
-clear
-
-while [ "$grubcheck" != "1" ] && [ "$grubcheck" != "2" ] && [ "$grubcheck" != "3" ]; do
-printf "%b\nWould you like GRUB or SystemD-Bootloader?\nGRUB is more compatible with VMs.\nUnofficial Installs MUST use SystemD and be using actual hardware.\n" "$*"
-printf "%b\n1 - GRUB UEFI version\n" "$*"
-printf "%b\n2 - GRUB BIOS/MBR version\n" "$*"
-printf "%b\n3 - SystemD-Bootloader UEFI-Only (for secure-boot installations.)\n" "$*"
-read -r grubcheck
-case $grubcheck in
-  1) printf "%b\nPerfect.\n" "$*" ;;
-  2) printf "%b\nGreat Choice.\n" "$*" ;;
-  3) printf "%b\nGood Choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again.\n" "$*" ;;
-esac
-done
-
-if [ "$grubcheck" = "1" ]; then
-grub0="true"
-questionspassed="yes"
-elif [ "$grubcheck" = "2" ]; then
-grub0="true2"
-questionspassed="yes"
-elif [ "$grubcheck" = "3" ]; then
-grub0="false"
-questionspassed="yes"
-fi
-
-}
-
-set_swap (){
-
-clear
-
-while [ "$command0finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$hibernationpasscheck" = "1" ]; then
-HIBERNATING="1"
-fi
-
-while [ "$rampasscheck" != "1" ]; do
-
-RAM=$(free -m | grep Mem | awk '{print $2}')
-
-if [ "$RAM" -gt 2048 ] && [ "$RAM" -lt 8192 ]; then # if RAM is between 2 and 8 GB
-    
-    if [ "$HIBERNATING" = "1" ]; then
-        MULTIPLIER="3"
+declare -A drives=(
+    [1]="nvme0n1"
+    [2]="nvme1n1"
+    [3]="sda"
+    [4]="sdb"
+    [5]="vda"
+    [6]="vdb"
+)
+
+while true; do
+    echo "Listing Storage Devices for you."
+    fdisk -l
+    echo "Which drive do you want Coffee Linux to install to?"
+    echo "1 - NVME0N1"
+    echo "2 - NVME1N1"
+    echo "3 - SDA"
+    echo "4 - SDB"
+    echo "5 - VDA"
+    echo "6 - VDB"
+
+    read -r driveX
+
+    if [[ ${drives[$driveX]} ]]; then
+        drive=${drives[$driveX]}
+        if [[ $drive == nvme* ]]; then
+            boot=p1
+            swap=p2
+            system=p3
+        else
+            boot=1
+            swap=2
+            system=3
+        fi
+
+        echo "$drive. Is this correct?"
+        echo "1 - yes"
+        echo "2 - no"
+
+        read -r driveXpasscheck
+
+        if [[ $driveXpasscheck -eq 1 ]]; then
+            pfx="/dev/"
+            drive0=$pfx$drive
+            boot0=$drive0$boot
+            swap0=$drive0$swap
+            system0=$drive0$system
+            break
+        else
+            echo "Let's retry."
+        fi
     else
-        MULTIPLIER="1"
+        echo "Unrecognized option, please try again."
     fi
-fi
+done
 
-if [ "$RAM" -gt 8192 ] && [ "$RAM" -lt 16384 ]; then # if RAM is between 8 and 16 GB
-    if [ "$HIBERNATING" = "1" ]; then
-        MULTIPLIER="2"
+clear
+
+declare -A options1=(
+    [1]="Manual"
+    [2]="Auto"
+)
+
+while true; do
+    echo "Setting up swap size, do you want to manually configure or auto configure it based on your RAM size ?"
+    echo "1 - Manual"
+    echo "2 - Auto"
+
+    read -r swapcheck
+
+    if [[ ${options1[$swapcheck]} ]]; then
+        if [[ $swapcheck -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
     else
-        MULTIPLIER="1"
+        echo "Unrecognized option, please try again."
     fi
-fi
+done
 
-if [ "$RAM" -gt 32768  ]; then    # if RAM is more than 32 GB
-    if [ "$HIBERNATING" = "1" ]; then
-        MULTIPLIER="1"
+
+clear
+
+declare -A desktops1=(
+    [1]="gnome"
+    [2]="kde"
+    [3]="cinnamon"
+    [4]="mate"
+    [5]="lxde"
+    [6]="lxqt"
+    [7]="xfce"
+    [8]="deepin"
+    [9]="i3"
+    [10]="sway"
+    [11]="cutefish"
+    [12]="budgie"
+    [13]="enlightenment"
+    [14]="awesome"
+)
+
+while true; do
+    echo "What desktop environment do you want?"
+    echo "1 - Gnome"
+    echo "2 - KDE"
+    echo "3 - Cinnamon"
+    echo "4 - Mate"
+    echo "5 - LXDE"
+    echo "6 - LXQT"
+    echo "7 - XFCE"
+    echo "8 - Deepin - WIP May not work."
+    echo "9 - i3"
+    echo "10 - Sway"
+    echo "11 - Cutefish"
+    echo "12 - Budgie"
+    echo "13 - Enlightenment"
+    echo "14 - Awesome"
+
+    read -r desktopcheck
+
+    if [[ ${desktops1[$desktopcheck]} ]]; then
+        desktop0=${desktops1[$desktopcheck]}
+        break
     else
-        MULTIPLIER="1"
+        echo "Unrecognized option, please try again."
     fi
-fi
-
-if [ "$swapcheck" = "1" ]; then
-    printf "%b\nEnter swap size in GB\n" "$*"
-    read -r swapsize1
-    swapsize="+""$((swapsize1))G"
-    swap1=$swapsize
-elif [ "$swapcheck" = "2" ]; then
-    swapsize="+""$((RAM*MULTIPLIER))M"
-    swap1=$swapsize
-fi
-
-rampasscheck="1"
-
 done
 
-command0finished="1"
-else
-command0finished="0"
-fi
-done
-command0finished="0"
+clear
 
+declare -A options2=(
+    [1]="yes"
+    [2]="no"
+)
+
+while true; do
+    echo "Would you like to enable hibernation?"
+    echo "1 - yes"
+    echo "2 - no"
+
+    read -r hibernationpasscheck
+
+    if [[ ${options2[$hibernationpasscheck]} ]]; then
+        if [[ $hibernationpasscheck -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+clear
+
+declare -A browsers=(
+    [1]="chrome"
+    [2]="firefox"
+    [3]="edge"
+)
+
+while true; do
+    echo "What type of network do you have?"
+    echo "1 - Google Chrome"
+    echo "2 - Firefox"
+    echo "3 - Microsoft Edge"
+
+    read -r webcheck00
+
+    if [[ ${browsers[$webcheck00]} ]]; then
+        webbrowser00=${browsers[$webcheck00]}
+        if [[ $webcheck00 -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+fi
+
+clear
+
+declare -A options2=(
+    [1]="yes"
+    [2]="no"
+)
+
+while true; do
+    echo "Would you like to install Heroic Games Launcher for Epic Games and GoG games?"
+    echo "1 - Yes"
+    echo "2 - No"
+
+    read -r heroiccheck00
+
+    if [[ ${options2[$heroiccheck00]} ]]; then
+        epicon00=${options2[$heroiccheck00]}
+        if [[ $heroiccheck00 -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+
+clear
+
+declare -A options3=(
+    [1]="yes"
+    [2]="no"
+)
+
+while true; do
+    echo "Would you like to install Github Desktop app?"
+    echo "1 - Yes"
+    echo "2 - No"
+
+    read -r githubcheck00
+
+    if [[ ${options3[$githubcheck00]} ]]; then
+        giton00=${options3[$githubcheck00]}
+        if [[ $githubcheck00 -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+
+clear
+
+declare -A options4=(
+    [1]="yes"
+    [2]="no"
+)
+
+while true; do
+    echo "Would you like to install Steam Desktop?"
+    echo "1 - Yes"
+    echo "2 - No"
+
+    read -r steamcheck00
+
+    if [[ ${options4[$steamcheck00]} ]]; then
+        steamon00=${options4[$steamcheck00]}
+        if [[ $steamcheck00 -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+clear
+
+declare -A options5=(
+    [1]="yes"
+    [2]="no"
+)
+
+while true; do
+    echo "Would you like to install Discord app?"
+    echo "1 - Yes"
+    echo "2 - No"
+
+    read -r discordcheck00
+
+    if [[ ${options5[$discordcheck00]} ]]; then
+        discordon00=${options5[$discordcheck00]}
+        if [[ $discordcheck00 -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+clear
+
+declare -A option7=(
+    [1]="yes"
+    [2]="no"
+)
+
+while true; do
+    echo "Would you like to install Lutris app?"
+    echo "1 - Yes"
+    echo "2 - No"
+
+    read -r lutrischeck00
+
+    if [[ ${options7[$lutrischeck00]} ]]; then
+        lutrison00=${options7[$lutrischeck00]}
+        if [[ $lutrischeck00 -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+clear
+
+declare -A option8=(
+    [1]="yes"
+    [2]="no"
+)
+
+while true; do
+    echo "Would you like to install LibreOffice app bundle?\n"
+    echo "1 - Yes"
+    echo "2 - No"
+
+    read -r officecheck00
+
+    if [[ ${options8[$officecheck00]} ]]; then
+        officeon00=${options8[$officecheck00]}
+        if [[ $officecheck00 -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+clear
+
+declare -A option9=(
+    [1]="yes"
+    [2]="no"
+)
+
+while true; do
+    echo "Would you like Snap-Store support (Snapd)?\n"
+    echo "1 - Yes"
+    echo "2 - No"
+
+    read -r snapcheck
+
+    if [[ ${options9[$snapcheck]} ]]; then
+        snapon=${options9[$snapcheck]}
+        if [[ $snapcheck -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+clear
+
+declare -A option10=(
+    [1]="yes"
+    [2]="no"
+)
+
+while true; do
+    echo "Would you like VMWare Workstation?\n"
+    echo "1 - Yes"
+    echo "2 - No"
+
+    read -r vmwarecheck
+
+    if [[ ${options10[$vmwarecheck]} ]]; then
+        vmwareon=${options10[$vmwarecheck]}
+        if [[ $vmwarecheck -eq 1 ]]; then
+            echo "Perfect"
+        else
+            echo "Let's move on then."
+        fi
+        break
+    else
+        echo "Unrecognized option, please try again."
+    fi
+done
+
+clear
+
+while [[ ! $gpucheck00 =~ ^(1|2|3|4)$ ]]; do
+    echo -e "What graphics card type do you have?\n"
+    echo -e "1 - AMD"
+    echo -e "2 - Nvidia"
+    echo -e "3 - Intel"
+    echo -e "4 - Virtual GPU (VMware etc.)"
+    read -r gpucheck00
+
+    case $gpucheck00 in
+        1) echo "Perfect."; gpuon0="amd";;
+        2) echo "A good choice."; gpuon0="nvidia";;
+        3) echo "A good choice."; gpuon0="intel";;
+        4) echo "A good choice."; gpuon0="vm";;
+        *) echo "Unrecognized option, please try again: $user00";;
+    esac
+done
+
+clear
+
+while [[ ! $fscheck =~ ^(1|2)$ ]]; do
+    echo -e "Please select your preferred Filesystem type:\n"
+    echo -e "1 - Ext4 (Recommended for general use)"
+    echo -e "2 - BTRFS (Recommended for advanced users with specific needs)"
+    read -r fscheck
+
+    case $fscheck in
+        1)
+            echo "You've selected Ext4. This is a solid choice for most users."
+            fs0="ext4"
+            ;;
+        2)
+            echo "You've selected BTRFS. This filesystem offers advanced features like snapshotting and checksumming."
+            fs0="btrfs"
+            ;;
+        *)
+            echo "Invalid option: $fscheck. Please enter either 1 or 2."
+            ;;
+    esac
+done
+
+clear
+
+while [[ ! $grubcheck =~ ^(1|2|3)$ ]]; do
+    echo -e "Please select your preferred bootloader:\n"
+    echo -e "1 - GRUB UEFI version (Recommended for most users, including those on VMs)"
+    echo -e "2 - GRUB BIOS/MBR version (For older systems with BIOS firmware)"
+    echo -e "3 - SystemD-Bootloader UEFI-Only (For secure-boot installations on actual hardware. Not recommended for unofficial installs)"
+    read -r grubcheck
+
+    case $grubcheck in
+        1)
+            echo "You've selected the GRUB UEFI version. This is a versatile choice compatible with most systems."
+            grub0="true"
+            ;;
+        2)
+            echo "You've selected the GRUB BIOS/MBR version. This is suitable for older systems with BIOS firmware."
+            grub0="true2"
+            ;;
+        3)
+            echo "You've selected the SystemD-Bootloader UEFI-Only. This is suitable for secure-boot installations on actual hardware."
+            grub0="false"
+            ;;
+        *)
+            echo "Invalid option: $grubcheck. Please enter either 1, 2, or 3."
+            ;;
+    esac
+done
+
+# Set questionspassed to yes after successful completion
+questionspassed="yes"
+
+}
+
+set_swap() {
+    # Ensure command0finished is not set to 1 prematurely
+    command0finished="0"
+
+    while [ "$command0finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            # Check if hibernation is enabled
+            HIBERNATING=${hibernationpasscheck:="0"}
+
+            while [ "$rampasscheck" != "1" ]; do
+                # Get total RAM in MB
+                RAM=$(free -m | awk '/^Mem:/ {print $2}')
+
+                # Determine multiplier based on RAM size and hibernation status
+                if ((RAM > 2048 && RAM < 8192)) || ((RAM > 8192 && RAM < 16384)) || ((RAM > 32768)); then
+                    MULTIPLIER=${HIBERNATING:="1"}
+                fi
+
+                # Set swap size based on user input or calculated value
+                echo -e "Enter swap size in GB or press enter to use the default size:"
+                read -r swapsize1
+
+                if [[ $swapsize1 ]]; then
+                    swapsize="+${swapsize1}G"
+                else
+                    swapsize="+$((RAM*MULTIPLIER))M"
+                fi
+
+                swap1=$swapsize
+                rampasscheck="1"
+            done
+
+            command0finished="1"
+        fi
+    done
+
+    # Reset command0finished for next use
+    command0finished="0"
 }
 
 clear
 
-set_network (){
+set_network() {
+    # Ensure command17finished is not set to 1 prematurely
+    command17finished="0"
 
-while [ "$command17finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-#- Set variables for iwctl
-if [ "$netpass00" = "wifi" ]; then
+    while [ "$command17finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            # Initialize pacman keyring and update package databases
+            sleep 10
+            pacman-key --init
+            pacman -Syy
 
-rfkill unblock all
-printf "%b\n" "$*" | iwctl device $wifi0 set-property Powered on
-printf "%b\nPowering on wifi device for a minute..\n" "$*"
-sleep 5
-printf "%b\n" "$*" | iwctl --passphrase $netpassword0 station $wifi0 connect $ssid0
-printf "%b\nEnsuring we have a connection...\n" "$*"
-sleep 10
-printf "%b\nSetting intial pacman keyring up...\n" "$*"
-pacman-key --init
-printf "%b\nSet keys successfully..\n" "$*"
-sleep 5
-pacman -Syy
-else
-printf "%b\nEthernet selected, or already connected, preparing for launch..\n" "$*"
-sleep 10
-printf "%b\nSetting intial local pacman keyring up...\n" "$*"
-pacman-key --init
-printf "%b\nSet local pacman keys successfully..\n" "$*"
-sleep 5
-pacman -Syy
-clear
-fi
+            # Set variables for iwctl
+            if [ "$netpass00" = "wifi" ]; then
+                # Unblock all devices and power on wifi device
+                rfkill unblock all
+                printf "%b\n" "$*" | iwctl device $wifi0 set-property Powered on
 
-fi
-command17finished="1"
-done
-command17finished="0"
+                # Connect to wifi network
+                printf "%b\n" "$*" | iwctl --passphrase $netpassword0 station $wifi0 connect $ssid0
+
+            elif [ "$netpass00" = "ethernet" ]; then
+                echo "Ethernet connection detected. No additional setup required."
+
+            elif [ "$netpass00" = "connected" ]; then
+                echo "Already connected to the internet. No additional setup required."
+            fi
+
+            command17finished="1"
+        fi
+    done
+
+    # Reset command17finished for next use
+    command17finished="0"
 }
 
-format_disks (){
+format_disks() {
+    # Ensure command1finished is not set to 1 prematurely
+    command1finished="0"
 
-clear
+    while [ "$command1finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            # Formatting Partitions
+            echo -e "n\n1\n\n\nt\n20\nw\n" | fdisk -W always -u "$drive0"
+            echo -e "n\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nt\n3\n20\nw\n" | fdisk -W always -u "$drive0"
 
-while [ "$command1finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+            # Creating filesystems
+            mkfs.vfat -F 32 -L BOOT "$boot0"
+            mkswap "$swap0"
+            swapon "$swap0"
 
-printf "%b\nFormatting Partitions\n" "$*"
-printf "%bg\nn\n1\n\n\nt\n20\nw\n" "$*" | fdisk -W always "$drive0"
-printf "%bg\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nt\n3\n20\nw\n" "$*" | fdisk -W always "$drive0"
-mkfs.vfat -F 32 "$boot0"
-mkswap "$swap0"
-swapon "$swap0"
+            # Creating filesystem based on user choice
+            if [ "$fs0" = "btrfs" ]; then
+                mkfs.btrfs -f -L "$drivename0" "$system0"
+            elif [ "$fs0" = "ext4" ]; then
+                mkfs.ext4 -L "$drivename0" "$system0"
+            fi
 
-if [ "$fs0" = "btrfs" ]; then
-mkfs.btrfs -f -L "$drivename0" "$system0"
-elif [ "$fs0" = "ext4" ]; then
-mkfs.ext4 -L "$drivename0" "$system0"
-fi
-printf "%b\nMounting Disks\n" "$*"
-mount "$system0" /mnt
-mkdir /mnt/boot
-mount "$boot0" /mnt/boot
-pacman -Sy --noconfirm archlinux-keyring
-pacman -Syy --noconfirm
+            # Mounting Disks
+            mount "$system0" /mnt
+            mkdir -p /mnt/boot
+            mount "$boot0" /mnt/boot
 
-command1finished="1"
-else
-command1finished="0"
-fi
-done
-command1finished="0"
+            # Updating package databases
+            pacman -Syq --noconfirm archlinux-keyring
+            pacman -Syyq --noconfirm
 
+            command1finished="1"
+        fi
+    done
+
+    # Reset command1finished for next use
+    command1finished="0"
 }
 
-base_install (){
+base_install() {
+    # Ensure pacstrapfinished is not set to 1 prematurely
+    pacstrapfinished="0"
 
-clear
+    while [ "$pacstrapfinished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            echo "Installing base applications..."
 
-while [ "$pacstrapfinished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-pacstrap /mnt $baseapps
-clear
-arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
-clear
+            # Install base applications
+            pacstrap /mnt $baseapps
 
-pacstrapfinished="1"
-else
-pacstrapfinished="0"
-fi
+            echo "Updating package databases and installing additional base applications..."
 
-done
+            # Update package databases and install additional base applications
+            arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 
+            echo "Installation of base applications completed."
+
+            pacstrapfinished="1"
+        fi
+    done
+
+    # Reset pacstrapfinished for next use
+    pacstrapfinished="0"
 }
 
-set_locale (){
+set_locale() {
+    # Ensure command2finished is not set to 1 prematurely
+    command2finished="0"
 
-clear
+    while [ "$command2finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            echo "Setting Locale..."
 
-while [ "$command2finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-arch-chroot /mnt /bin/bash <<"EOT"
-printf "%b\nSetting Locale\n" "$*"
-ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+            arch-chroot /mnt /bin/bash <<EOT
+ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 hwclock --systohc
-printf "%b\nen_US ISO-8859-1\nen_US.UTF-8 UTF-8\n" "$*" >> /etc/locale.gen
-printf "%b\nKEYMAP=us\n" "$*" >> /etc/vconsole.conf
-printf "%b\nLANG=en_US.UTF-8" "$*" >> /etc/locale.conf
+
+echo "en_US ISO-8859-1
+en_US.UTF-8 UTF-8" >> /etc/locale.gen
+
+echo "KEYMAP=us" >> /etc/vconsole.conf
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
 export LANG=en_US.UTF-8
 locale-gen
-cd /
-printf "%b\n%%"w"heel ALL=(ALL:ALL) NOPASSWD: ALL\n" "$*" > /etc/sudoers.d/wheel
-mkinitcpio -P
 
+echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/wheel
+
+mkinitcpio -P
 EOT
 
-cp --dereference /etc/resolv.conf /mnt/etc/
-arch-chroot /mnt pacman -Syu --noconfirm
-clear
+            cp --dereference /etc/resolv.conf /mnt/etc/
+            arch-chroot /mnt pacman -Syu --noconfirm
 
-command2finished="1"
-else
-command2finished="0"
-fi
-done
-command2finished="0"
+            command2finished="1"
+        fi
+    done
 
+    # Reset command2finished for next use
+    command2finished="0"
 }
 
-set_passwords (){
+set_passwords() {
+    # Ensure command3finished is not set to 1 prematurely
+    command3finished="0"
 
-clear
+    while [ "$command3finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            echo "Updating package databases and keyring..."
+            arch-chroot /mnt pacman -Sy --noconfirm archlinux-keyring
+            cp /etc/pacman.conf /mnt/etc/pacman.conf
+            arch-chroot /mnt pacman -Syy --noconfirm
 
-while [ "$command3finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+            echo "Setting root password..."
+            echo -e "$userpass1\n$userpass1" | arch-chroot /mnt passwd
 
-arch-chroot /mnt pacman -Syy --noconfirm
-clear
-arch-chroot /mnt pacman -Sy --noconfirm archlinux-keyring
-clear
-cp /etc/pacman.conf /mnt/etc/pacman.conf
-arch-chroot /mnt pacman -Syy --noconfirm
-printf "%b\nSet Root Password\n" "$*"
-printf "%b$userpass1\n$userpass1\n" "$*" | arch-chroot /mnt passwd 
-printf "%bAdding User Account\n" "$*"
-arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01 
-printf "%b\nSet User Password\n" "$*"
-printf "%b$userpass0\n$userpass0\n" "$*" | arch-chroot /mnt passwd $user01
-printf "%b$hostname0\n" "$*" >> /mnt/etc/hostname
-printf "%b\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" "$*" >> /mnt/etc/hosts
-printf "%bCreating Links\n" "$*" 
-genfstab -U /mnt >> /mnt/etc/fstab
-clear
+            echo "Adding user account..."
+            arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01
 
-command3finished="1"
-else
-command3finished="0"
-fi
-done
-command3finished="0"
+            echo "Setting user password..."
+            echo -e "$userpass0\n$userpass0" | arch-chroot /mnt passwd $user01
 
+            echo "Setting hostname and updating hosts file..."
+            echo "$hostname0" >> /mnt/etc/hostname
+            echo -e "127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0" >> /mnt/etc/hosts
+
+            echo "Generating fstab file..."
+            genfstab -U /mnt >> /mnt/etc/fstab
+
+            command3finished="1"
+        fi
+    done
+
+    # Reset command3finished for next use
+    command3finished="0"
 }
 
-desktop_install (){
+desktop_install() {
+    # Ensure command4finished is not set to 1 prematurely
+    command4finished="0"
 
-clear
+    while [ "$command4finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            if [ "$desktop0" = "gnome" ]; then
+                echo "Installing GNOME desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
 
-while [ "$command4finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
 
-if [ "$desktop0" = "gnome" ]; then 
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 
-arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                echo "Installed yay successfully."
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                echo "Removing gedit and gnome-terminal..."
+                arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 
-arch-chroot /mnt systemctl enable gdm
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-elif [ "$desktop0" = "kde" ]; then 
+                if [ "$gpuon0" = "vm" ]; then
+                    gpuon0="amd"
+                fi
 
-arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                echo "Enabling gdm..."
+                arch-chroot /mnt systemctl enable gdm
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                command4finished="1"
+            elif [ "$desktop0" = "kde" ]; then
+                echo "Installing KDE desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
 
-arch-chroot /mnt systemctl enable sddm
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
 
-elif [ "$desktop0" = "cinnamon" ]; then
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 
-arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                echo "Installed yay successfully."
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-arch-chroot /mnt systemctl enable lightdm
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
 
-elif [ "$desktop0" = "mate" ]; then
+                echo "Enabling sddm..."
+                arch-chroot /mnt systemctl enable sddm
 
-arch-chroot /mnt pacman -Sy --noconfirm $mateapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                command4finished="1"
+            elif [ "$desktop0" = "cinnamon" ]; then
+                echo "Installing Cinnamon desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
 
-arch-chroot /mnt systemctl enable lightdm
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 
-elif [ "$desktop0" = "lxde" ]; then
+                echo "Installed yay successfully."
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
 
-arch-chroot /mnt systemctl enable lxdm
+                echo "Enabling lightdm..."
+                arch-chroot /mnt systemctl enable lightdm
 
-elif [ "$desktop0" = "lxqt" ]; then
+                command4finished="1"
+            elif [ "$desktop0" = "mate" ]; then
+                echo "Installing MATE desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $mateapps
 
-arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 
-arch-chroot /mnt systemctl enable sddm
+                echo "Installed yay successfully."
 
-elif [ "$desktop0" = "xfce" ]; then
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                echo "Enabling lightdm..."
+                arch-chroot /mnt systemctl enable lightdm
 
-arch-chroot /mnt systemctl enable lightdm
+                command4finished="1"
+            elif [ "$desktop0" = "lxde" ]; then
+                echo "Installing LXDE desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
 
-elif [ "$desktop0" = "deepin" ]; then
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
 
-arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                echo "Installed yay successfully."
 
-arch-chroot /mnt systemctl enable lightdm
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-elif [ "$desktop0" = "i3" ]; then
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
 
-arch-chroot /mnt pacman -Sy --noconfirm $i3apps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                echo "Enabling lxdm..."
+                arch-chroot /mnt systemctl enable lxdm
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                command4finished="1"
+            elif [ "$desktop0" = "lxqt" ]; then
+                echo "Installing LXQT desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
 
-arch-chroot /mnt systemctl enable lightdm
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
 
-elif [ "$desktop0" = "sway" ]; then
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 
-arch-chroot /mnt pacman -Sy --noconfirm $swayapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-cp /opt/config /mnt/etc/sway/config
-printf "%b\nif [ -z ""\$"\{DISPLAY\}" ] && [ ""\$"\{XDG_VTNR\}" -eq 1 ]; then\nexec sway\nfi\n" "$*" >> /mnt/etc/profile
+                echo "Installed yay successfully."
 
-if [ "$gpu0" = "nvidia" ]; then
-printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/sway/config
-fi
-if [ "$gpu0" = "vm" ]; then
-printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/sway/config
-gpu0="amd"
-fi
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
 
-elif [ "$desktop0" = "cutefish" ]; then
+                echo "Enabling lxqt..."
+                arch-chroot /mnt systemctl enable sddm
 
-arch-chroot /mnt pacman -Sy --noconfirm $cutefishapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                command4finished="1"
+            elif [ "$desktop0" = "xfce" ]; then
+                echo "Installing XFCE desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
 
-arch-chroot /mnt systemctl enable sddm
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 
-elif [ "$desktop0" = "budgie" ]; then
+                echo "Installed yay successfully."
 
-arch-chroot /mnt pacman -Sy --noconfirm $budgieapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
 
-arch-chroot /mnt systemctl enable lightdm
+                echo "Enabling xfce..."
+                arch-chroot /mnt systemctl enable lightdm
 
-elif [ "$desktop0" = "enlightenment" ]; then
+                command4finished="1"
+            elif [ "$desktop0" = "deepin" ]; then
+                echo "Installing Deepin desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
 
-arch-chroot /mnt pacman -Sy --noconfirm $enlightenmentapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 
-arch-chroot /mnt systemctl enable lightdm
+                echo "Installed yay successfully."
 
-elif [ "$desktop0" = "awesome" ]; then
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-arch-chroot /mnt pacman -Sy --noconfirm $awesomeapps
-clear
-sleep 5
-printf "%b\nCopying yay package..\n" "$*"
-sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled yay successfully.\n" "$*"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
 
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
+                echo "Enabling deepin..."
+                arch-chroot /mnt systemctl enable lightdm
 
-arch-chroot /mnt systemctl enable lightdm
+                command4finished="1"
+            elif [ "$desktop0" = "i3" ]; then
+                echo "Installing i3 desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $i3apps
 
-fi
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
 
-if [ $wifiadapter0 = "realtek" ]; then
-clear
-sleep 5
-printf "%b\nCopying realtek dkms packages..\n" "$*"
-sleep 5
-cp /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst /mnt/opt/
-cp /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst /mnt/opt/
-printf "%b\nInstalling drealtek dkms packages.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst
-arch-chroot /mnt pacman -U --noconfirm /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst
-sleep 2
-printf "%b\nInstalled realtek dkms packages successfully.\n" "$*"
-clear
-	
-fi
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
 
-command4finished="1"
-else
-command4finished="0"
-fi
-done
-command4finished="0"
+                echo "Installed yay successfully."
 
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
+
+                echo "Enabling i3..."
+                arch-chroot /mnt systemctl enable lightdm
+
+                command4finished="1"
+            elif [ "$desktop0" = "sway" ]; then
+                echo "Installing Sway desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $swayapps
+
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+
+                echo "Installed yay successfully."
+
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+                cp /opt/config /mnt/etc/sway/config
+                # Append the following lines to /mnt/etc/profile
+                printf "%b\n\
+                # If DISPLAY is not set and XDG_VTNR equals 1\n\
+                if [ -z \"\$DISPLAY\" ] && [ \"\$XDG_VTNR\" -eq 1 ]; then\n\
+                # Execute sway\n\
+                exec sway\n\
+                fi\n" "$*" >> /mnt/etc/profile
+
+
+                if [ "$gpuon0" = "nvidia" ]; then
+                # Append the following lines to /mnt/etc/sway/config
+                printf "%b\n\
+                # Always execute the following command\n\
+                exec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/sway/config
+
+                fi
+                if [ "$gpuon0" = "vm" ]; then
+                # Append the following lines to /mnt/etc/sway/config
+                printf "%b\n\
+                # Always execute the following command\n\
+                exec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/sway/config
+
+                gpuon0="amd"
+                fi
+
+                arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+
+                echo "Enabling sway..."
+
+                command4finished="1"
+            elif [ "$desktop0" = "cutefish" ]; then
+                echo "Installing Cutefish desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $cutefishapps
+
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+
+                echo "Installed yay successfully."
+
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
+
+                echo "Enabling cutefish..."
+                arch-chroot /mnt systemctl enable sddm
+
+                command4finished="1"
+            elif [ "$desktop0" = "budgie" ]; then
+                echo "Installing Budgie desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $budgieapps
+
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+
+                echo "Installed yay successfully."
+
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
+
+                echo "Enabling budgie..."
+                arch-chroot /mnt systemctl enable lightdm
+
+                command4finished="1"
+            elif [ "$desktop0" = "enlightenment" ]; then
+                echo "Installing Enlightenment desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $enlightenmentapps
+
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+
+                echo "Installed yay successfully."
+
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
+
+                echo "Enabling enlightenment..."
+                arch-chroot /mnt systemctl enable lightdm
+
+                command4finished="1"
+            elif [ "$desktop0" = "awesome" ]; then
+                echo "Installing Awesome desktop environment..."
+                arch-chroot /mnt pacman -Sy --noconfirm $awesomeapps
+
+                echo "Copying yay package..."
+                cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+
+                echo "Installing yay..."
+                arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+
+                echo "Installed yay successfully."
+
+                echo "Disabling systemd-resolved and systemd-networkd..."
+                arch-chroot /mnt systemctl preset-all
+                arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+
+                if [ "$gpuon0" = "vm" ]; then
+                  gpuon0="amd"
+                fi
+
+                echo "Enabling awesome..."
+                arch-chroot /mnt systemctl enable lightdm
+
+                command4finished="1"
+
+            fi
+        fi
+    done
+    if [ $wifiadapter0 = "realtek" ]; then
+    # Copy Realtek DKMS packages
+    printf "%b\nCopying Realtek DKMS packages..\n" "$*"
+    cp /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst /mnt/opt/
+    cp /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst /mnt/opt/
+
+    # Install Realtek DKMS packages
+    printf "%b\nInstalling Realtek DKMS packages.\n" "$*"
+    arch-chroot /mnt pacman -U --noconfirm /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst
+    arch-chroot /mnt pacman -U --noconfirm /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst
+    printf "%b\nInstalled Realtek DKMS packages successfully.\n" "$*"
+    fi
+    # Reset command4finished for next use
+    command4finished="0"
 }
 
-coffee_install (){
+coffee_install() {
+    clear
 
-clear
+    # Initialize the variable
+    pacmanfinished="0"
 
-while [ "$pacmanfinished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
-clear
-pacmanfinished="1"
-else
-pacmanfinished="0"
-fi
-done
+    # Loop until the installation is finished
+    while [ "$pacmanfinished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            # Install the applications if the questions have been passed
+            arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
+            clear
 
+            # Mark the installation as finished
+            pacmanfinished="1"
+        fi
+    done
 }
 
-java_install (){
+gpu_install() {
+    clear
 
-clear
+    # Check if the preconditions for installation are met
+    if [ "$questionspassed" = "yes" ]; then
 
-while [ "$command5finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+        # Install the appropriate drivers based on the GPU
+        if [ "$gpuon0" = "nvidia" ]; then
+            arch-chroot /mnt pacman -Sy --noconfirm nvidia nvidia-utils nvidia-settings
+            clear
+        elif [ "$gpuon0" = "amd" ]; then
+            arch-chroot /mnt pacman -Sy --noconfirm xf86-video-amdgpu lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libva-mesa-driver mesa mesa-utils mesa-vdpau vulkan-mesa-layers vulkan-radeon opencl-clover-mesa opencl-rusticl-mesa
+            clear
+        elif [ "$gpuon0" = "intel" ]; then
+            arch-chroot /mnt pacman -Sy --noconfirm xf86-video-intel
+        fi
 
-java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
-if [[ -z "$java1" ]] ; then
-    echo "I'm broken :("
-fi
-
-arch-chroot /mnt archlinux-java set "$java1"
-
-command5finished="1"
-else
-command5finished="0"
-fi
-done
-command5finished="0"
-
+    else
+        echo "Preconditions for installation are not met."
+    fi
 }
 
-vmware_install (){
+java_install() {
+    clear
 
-clear
+    # Check if the preconditions for installation are met
+    if [ "$questionspassed" = "yes" ]; then
 
-while [ "$command6finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+        # Get the current Java version
+        java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
 
-if [ "$vmwareon" = "yes" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y vmware-workstation
-clear
-printf "%b1\n[Unit]\nDescription=VMware daemon\nRequires=vmware-usbarbitrator.service\nBefore=vmware-usbarbitrator.service\nAfter=network.target\n[Service]\nExecStart=/etc/init.d/vmware start\nExecStop=/etc/init.d/vmware stop\nPIDFile=/var/lock/subsys/vmware\nRemainAfterExit=yes\n[Install]\nWantedBy=multi-user.target\n" "$*" >> /mnt/etc/systemd/system/vmware.service
+        # Check if a Java version was found
+        if [[ -z "$java1" ]] ; then
+            echo "Java version not found :("
+        else
+            # Set the Java version
+            arch-chroot /mnt archlinux-java set "$java1"
+            echo "Java version set to $java1"
+        fi
 
-printf "%b1\n[Unit]\nDescription=VMware USB Arbitrator\nRequires=vmware.service\n[Service]\nExecStart=/usr/bin/vmware-usbarbitrator\nExecStop=/usr/bin/vmware-usbarbitrator --kill\nRemainAfterExit=yes\n[Install]\nWantedBy=multi-user.target\n" "$*" >> /mnt/etc/systemd/system/vmware-usbarbitrator.service
-
-printf "%b\n[Unit]\nDescription=VMware Networks\nWants=vmware-networks-configuration.service\nAfter=vmware-networks-configuration.service\n[Service]\nType=forking\nExecStartPre=-/sbin/modprobe vmnet\nExecStart=/usr/bin/vmware-networks --start\nExecStop=/usr/bin/vmware-networks --stop\n[Install]\nWantedBy=multi-user.target\n" "$*" >> /mnt/etc/systemd/system/vmware-networks-server.service
-
-arch-chroot /mnt systemctl enable vmware-networks-server.service
-arch-chroot /mnt systemctl enable vmware-usbarbitrator.service
-arch-chroot /mnt systemctl enable vmware.service
-
-fi
-
-
-command6finished="1"
-else
-command6finished="0"
-fi
-done
-command6finished="0"
-
+    else
+        echo "Preconditions for installation are not met."
+    fi
 }
 
-browser_install (){
+vmware_install() {
+    clear
 
-clear
+    # Loop until the installation is finished
+    while [ "$command6finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ] && [ "$vmwareon" = "yes" ]; then
+            # Install VMware Workstation
+            printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y vmware-workstation
+            clear
 
-while [ "$command18finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+            # Create and enable VMware services
+            printf "%b1\n[Unit]\nDescription=VMware daemon\nRequires=vmware-usbarbitrator.service\nBefore=vmware-usbarbitrator.service\nAfter=network.target\n[Service]\nExecStart=/etc/init.d/vmware start\nExecStop=/etc/init.d/vmware stop\nPIDFile=/var/lock/subsys/vmware\nRemainAfterExit=yes\n[Install]\nWantedBy=multi-user.target\n" "$*" >> /mnt/etc/systemd/system/vmware.service
+            printf "%b1\n[Unit]\nDescription=VMware USB Arbitrator\nRequires=vmware.service\n[Service]\nExecStart=/usr/bin/vmware-usbarbitrator\nExecStop=/usr/bin/vmware-usbarbitrator --kill\nRemainAfterExit=yes\n[Install]\nWantedBy=multi-user.target\n" "$*" >> /mnt/etc/systemd/system/vmware-usbarbitrator.service
+            printf "%b\n[Unit]\nDescription=VMware Networks\nWants=vmware-networks-configuration.service\nAfter=vmware-networks-configuration.service\n[Service]\nType=forking\nExecStartPre=-/sbin/modprobe vmnet\nExecStart=/usr/bin/vmware-networks --start\nExecStop=/usr/bin/vmware-networks --stop\n[Install]\nWantedBy=multi-user.target\n" "$*" >> /mnt/etc/systemd/system/vmware-networks-server.service
 
-if [ "$webbrowser00" = "chrome" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
-clear
-elif [ "$webbrowser00" = "firefox" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm firefox
-clear
-elif [ "$webbrowser00" = "edge" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge-stable
-clear
-fi
+            arch-chroot /mnt systemctl enable vmware-networks-server.service
+            arch-chroot /mnt systemctl enable vmware-usbarbitrator.service
+            arch-chroot /mnt systemctl enable vmware.service
 
-command18finished="1"
-else
-command18finished="0"
-fi
-done
-command18finished="0"
+            # Mark the installation as finished
+            command6finished="1"
+        else
+            command6finished="0"
+        fi
+    done
 
+    # Reset the variable for the next installation
+    command6finished="0"
 }
 
-office_install (){
 
-clear
+browser_install() {
+    clear
 
-while [ "$command24finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+    # Initialize the variable
+    command18finished="0"
 
-if [ "$officeon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm libreoffice-fresh
-clear
-fi
+    # Loop until the installation is finished
+    while [ "$command18finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            # Install the appropriate browser based on the user's choice
+            if [ "$webbrowser00" = "chrome" ]; then
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
+                clear
+            elif [ "$webbrowser00" = "firefox" ]; then
+                arch-chroot /mnt pacman -Sy --noconfirm firefox
+                clear
+            elif [ "$webbrowser00" = "edge" ]; then
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge-stable
+                clear
+            fi
 
-command24finished="1"
-else
-command24finished="0"
-fi
-done
-command24finished="0"
+            # Mark the installation as finished
+            command18finished="1"
+        fi
+    done
 
+    # Reset the variable for the next installation
+    command18finished="0"
 }
 
-steam_install (){
+office_install() {
+    clear
 
-clear
+    # Initialize the variable
+    command24finished="0"
 
-while [ "$command21finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+    # Loop until the installation is finished
+    while [ "$command24finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            if [ "$officeon00" = "yes" ]; then
+                # Install LibreOffice if the user has chosen to do so
+                arch-chroot /mnt pacman -Sy --noconfirm libreoffice-fresh
+                clear
+            fi
 
-if [ "$steamon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm mangohud gamescope steam wine wine-gecko wine-mono winetricks
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
-clear
-fi
+            # Mark the installation as finished
+            command24finished="1"
+        fi
+    done
 
-command21finished="1"
-else
-command21finished="0"
-fi
-done
-command21finished="0"
-
+    # Reset the variable for the next installation
+    command24finished="0"
 }
 
-discord_install (){
+steam_install() {
+    clear
 
-clear
+    # Initialize the variable
+    command21finished="0"
 
-while [ "$command22finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+    # Loop until the installation is finished
+    while [ "$command21finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            if [ "$steamon00" = "yes" ]; then
+                # Install the necessary packages for Steam
+                arch-chroot /mnt pacman -Sy --noconfirm mangohud gamescope steam wine wine-gecko wine-mono winetricks
+                clear
 
-if [ "$discordon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm discord
-clear
-fi
+                # Install additional packages using yay
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks game-devices-udev dxvk-bin ntfix
+                clear
+            fi
 
-command22finished="1"
-else
-command22finished="0"
-fi
-done
-command22finished="0"
+            # Mark the installation as finished
+            command21finished="1"
+        fi
+    done
 
+    # Reset the variable for the next installation
+    command21finished="0"
 }
 
-lutris_install (){
+discord_install() {
+    clear
 
-clear
+    # Initialize the variable
+    command22finished="0"
 
-while [ "$command23finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+    # Loop until the installation is finished
+    while [ "$command22finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            if [ "$discordon00" = "yes" ]; then
+                # Install Discord if the user has chosen to do so
+                arch-chroot /mnt pacman -Sy --noconfirm discord
+                clear
+            fi
 
-if [ "$lutrison00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm lutris wine wine-gecko wine-mono winetricks
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
-clear
-fi
+            # Mark the installation as finished
+            command22finished="1"
+        fi
+    done
 
-command23finished="1"
-else
-command23finished="0"
-fi
-done
-command23finished="0"
-
+    # Reset the variable for the next installation
+    command22finished="0"
 }
 
-heroic_install (){
+lutris_install() {
+    clear
 
-clear
+    # Initialize the variable
+    command23finished="0"
 
-while [ "$command19finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+    # Loop until the installation is finished
+    while [ "$command23finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            if [ "$lutrison00" = "yes" ]; then
+                # Install Lutris and related packages
+                arch-chroot /mnt pacman -Sy --noconfirm lutris wine wine-gecko wine-mono winetricks
+                clear
 
-if [ "$epicon00" = "yes" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
-clear
-arch-chroot /mnt pacman -Sy --noconfirm wine wine-gecko wine-mono winetricks
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
-elif [ "$epicon00" = "no" ]; then
-printf "%b\nHeroic not selected, moving on." "$*"
-clear
-fi
+                # Install additional packages using yay
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev dxvk-bin
+                clear
+            fi
 
-command19finished="1"
-else
-command19finished="0"
-fi
-done
-command19finished="0"
+            # Mark the installation as finished
+            command23finished="1"
+        fi
+    done
 
+    # Reset the variable for the next installation
+    command23finished="0"
 }
 
-github_install (){
+heroic_install() {
+    clear
 
-clear
+    # Initialize the variable
+    command19finished="0"
 
-while [ "$command20finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+    # Loop until the installation is finished
+    while [ "$command19finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            if [ "$epicon00" = "yes" ]; then
+                # Install Heroic Games Launcher and related packages
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
+                clear
 
-if [ "$giton00" = "yes" ]; then
-printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
-clear
-elif [ "$giton00" = "no" ]; then
-printf "%b\nGithub Desktop not selected, moving on." "$*"
-clear
-fi
+                arch-chroot /mnt pacman -Sy --noconfirm wine wine-gecko wine-mono winetricks
+                clear
 
-command20finished="1"
-else
-command20finished="0"
-fi
-done
-command20finished="0"
+                # Install additional packages using yay
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev dxvk-bin
+                clear
+            elif [ "$epicon00" = "no" ]; then
+                printf "%b\nHeroic not selected, moving on." "$*"
+                clear
+            fi
 
+            # Mark the installation as finished
+            command19finished="1"
+        fi
+    done
+
+    # Reset the variable for the next installation
+    command19finished="0"
 }
 
-snapd_install (){
+github_install() {
+    clear
 
-clear
+    # Initialize the variable
+    command20finished="0"
 
-while [ "$command7finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+    # Loop until the installation is finished
+    while [ "$command20finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            if [ "$giton00" = "yes" ]; then
+                # Install GitHub Desktop if the user has chosen to do so
+                printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
+                clear
+            elif [ "$giton00" = "no" ]; then
+                printf "%b\nGithub Desktop not selected, moving on." "$*"
+                clear
+            fi
 
-if [ "$snapon" = "yes" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd-glib
-clear
-arch-chroot /mnt systemctl enable snapd.apparmor
-arch-chroot /mnt systemctl enable snapd
+            # Mark the installation as finished
+            command20finished="1"
+        fi
+    done
 
-
-fi
-
-command7finished="1"
-else
-command7finished="0"
-fi
-done
-command7finished="0"
-
+    # Reset the variable for the next installation
+    command20finished="0"
 }
 
-bootloader_install (){
+snapd_install() {
+    clear
 
-clear
+    # Initialize the variable
+    command7finished="0"
 
-while [ "$command8finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+    # Loop until the installation is finished
+    while [ "$command7finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            if [ "$snapon" = "yes" ]; then
+                # Install snapd and snapd-glib using yay
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd snapd-glib
+                clear
 
-if [ "$grub0" = "true" ]; then
+                # Enable snapd and snapd.apparmor services
+                arch-chroot /mnt systemctl enable snapd.apparmor
+                arch-chroot /mnt systemctl enable snapd
 
-if [ "$gpu0" = "nvidia" ]; then
+                # Mark the installation as finished
+                command7finished="1"
+            fi
+        fi
+    done
 
-printf "%b\nGRUB UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
+    # Reset the variable for the next installation
+    command7finished="0"
+}
 
-arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
+bootloader_install () {
+    clear
+    while [ "$command8finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            # Common packages for all cases
+            arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
 
-if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
+            if [ $desktop0 = "kde" ]; then
+                arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+            fi
 
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+            # GRUB UEFI case
+            if [ "$grub0" = "true" ]; then
+                printf "%b\nGRUB UEFI for %s selected.\n" "$*" "$gpuon0"
+                arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
-cp /opt/grub-nvidia/grub /mnt/etc/default/
+                # GPU specific settings
+                if [ "$gpuon0" = "nvidia" ]; then
+                    cp /opt/grub-nvidia/grub /mnt/etc/default/
+                elif [ "$gpuon0" = "amd" ]; then
+                    arch-chroot /mnt pacman -S --noconfirm corectrl
+                    cp /opt/grub-amd/grub /mnt/etc/default/
+                fi
 
-arch-chroot /mnt /bin/bash <<"EOT"
+                # Common GRUB UEFI settings
+                arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 EOT
 
-elif [ "$gpu0" = "amd" ]; then
+            # GRUB BIOS case
+            elif [ "$grub0" = "true2" ]; then
+                printf "%b\nGRUB BIOS for %s selected.\nInstalling GPU Drivers first.\n" "$*" "$gpuon0"
 
-printf "%b\nGRUB UEFI for AMD selected.\n" "$*"
+                # GPU specific settings
+                if [ "$gpuon0" = "nvidia" ]; then
+                    cp /opt/grub-nvidia/grub /mnt/etc/default/
+                elif [ "$gpuon0" = "amd" ]; then
+                    arch-chroot /mnt pacman -S --needed --noconfirm corectrl
+                    cp /opt/grub-amd/grub /mnt/etc/default/
+                fi
 
-arch-chroot /mnt pacman -S --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
+                # Common GRUB BIOS settings
+                arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
-if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
-
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-cp /opt/grub-amd/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
+                arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
-pacman -Sy --noconfirm 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+pacman -Sy --noconfirm
+grub-install --target=i386-pc "$drive0"
 grub-mkconfig -o /boot/grub/grub.cfg
 EOT
 
-fi
+            # SystemD-Bootloader UEFI case
+            elif [ "$grub0" = "false" ]; then
 
-elif [ "$grub0" = "true2" ]; then
+                printf "%bInstalling SystemD-Bootloader UEFI\n" "$*"
 
-if [ "$gpu0" = "nvidia" ]; then
-
-printf "%b\nGRUB BIOS for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
-
-arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
-
-if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
-
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
-cp /opt/grub-nvidia/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-pacman -Sy --noconfirm
-mkinitcpio -P
-EOT
-
-arch-chroot /mnt grub-install --target=i386-pc "$drive0"
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
-elif [ "$gpu0" = "amd" ]; then
-
-printf "%b\nGRUB BIOS for AMD selected.\n" "$*"
-
-
-arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font
-
-if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
-
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-
-cp /opt/grub-amd/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-pacman -Sy --noconfirm
-EOT
-
-arch-chroot /mnt grub-install --target=i386-pc "$drive0"
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
-fi
-
-elif [ "$grub0" = "false" ]; then
-
-arch-chroot /mnt /bin/bash <<"EOT"
-printf "%bInstalling SystemD-Bootloader UEFI\n" "$*"
+                arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
 bootctl install
 EOT
 
-printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
+                printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
-if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.2.2)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
-fi
+                if [ "$native1" = "yes" ]; then
+                    printf "%btitle Coffee-Linux 'Winey' (24.0.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+                fi
 
-printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+                printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 
-fi
+            fi
 
-#-Bootloader-End
+            command8finished="1"
+        else
+            command8finished="0"
+        fi
+    done
 
-command8finished="1"
-else
-command8finished="0"
-fi
-done
-command8finished="0"
-
-
+    command8finished="0"
 }
 
-gpu_install (){
+bootloader_gpu_install () {
+    clear
+    while [ "$command9finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            printf "%b\nSystemD-Bootloader UEFI for %s selected.\n" "$*" "$gpuon0"
 
-clear
+            # Common settings for both Nvidia and AMD
+            if [ "$grub0" = "false" ]; then
+                printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+            fi
 
-while [ "$command9finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+            # GPU specific settings
+            if [ "$gpuon0" = "nvidia" ]; then
+                if [ "$desktop0" = "sway" ]; then
+                    arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
+                fi
+            elif [ "$gpuon0" = "amd" ]; then
+                arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
+                arch-chroot /mnt pacman -Sy --noconfirm corectrl
+            fi
 
-if [ "$gpu0" = "nvidia" ]; then
-printf "%b\nSystemD-Bootloader UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
- if [ "$grub0" = "false" ]; then
-  printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
- fi
- if [ "$desktop0" = "sway" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
- fi
-elif [ "$gpu0" = "amd" ]; then
-printf "%b\nSystemD-Bootloader UEFI for AMD selected.\nInstalling amdgpu-fan and corectrl" "$*"
- if [ "$grub0" = "false" ]; then
-  printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
- fi
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
-arch-chroot /mnt pacman -Sy --noconfirm corectrl
-fi
+            command9finished="1"
+        else
+            command9finished="0"
+        fi
+    done
 
-command9finished="1"
-else
-command9finished="0"
-fi
-done
-command9finished="0"
+    command9finished="0"
+}
 
+yay_install() {
+    clear
+
+    # Loop until the installation is finished
+    while [ "$yayinstallfinished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            arch-chroot /mnt pacman -Rdd --noconfirm archlinux-appstream-data
+
+            # List of common packages to install
+            packages=("pamac-aur" "ast-firmware" "mkinitcpio-firmware" "text-engine-git" "mkinitcpio-openswap")
+
+            # Install common packages
+            for package in "${packages[@]}"; do
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y "$package"
+                clear
+            done
+
+            # Additional installation for GNOME desktop
+            if [ "$desktop0" = "gnome" ]; then
+                gnome_packages=("gnome-themes-extra" "humanity-icon-theme" "gnome-shell-extension-ubuntu-dock" "gnome-shell-extension-gtk4-desktop-icons-ng"
+                                "yaru-gtk-theme" "yaru-icon-theme" "yaru-gnome-shell-theme" "yaru-session"
+                                "yaru-sound-theme" "yaru-unity-theme")
+
+                # Install GNOME packages
+                for gnome_package in "${gnome_packages[@]}"; do
+                    printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y "$gnome_package"
+                    clear
+                done
+
+                arch-chroot /mnt pacman -Rdd --noconfirm mutter
+                clear
+
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
+                clear
+
+                printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
+                clear
+
+                rm -r /mnt/usr/share/wayland-sessions/gnome*
+                rm -r /mnt/usr/share/xsessions/gnome*
+            elif [ "$desktop0" = "kde" ]; then
+                # Install systemd-kcm if the desktop environment is KDE
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
+
+                if [ "$grub0" = "true" ]; then
+                # Install kcm-grub2 if GRUB is used as the bootloader
+                printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm kcm-grub2
+                fi
+            elif [ "$desktop0" = "cinnamon" ]; then
+                # List of packages to install
+                packages=("lightdm-settings" "mint-themes" "mint-x-icons" "mint-y-icons" "mint-backgrounds" "mintlocale" "humanity-icon-theme" "mint-themes-legacy" "mint-artwork")
+
+                # Install packages
+                for package in "${packages[@]}"; do
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y "$package"
+                clear
+                done
+
+                # Remove lightdm-settings
+                arch-chroot /mnt pacman -Rdd --noconfirm lightdm-settings
+                clear
+
+                # Remove GNOME sessions
+                rm -r /mnt/usr/share/wayland-sessions/gnome*
+                rm -r /mnt/usr/share/xsessions/gnome*
+                clear
+            elif [ "$desktop0" = "mate" ]; then
+                # List of packages to install
+                packages=("lightdm-settings" "mate-screensaver-hacks" "mate-tweak" "mate-menu" "mint-themes" "mint-x-icons" "mint-y-icons" "mint-backgrounds" "mintlocale" "mint-themes-legacy" "mint-artwork")
+
+                # Install packages
+                for package in "${packages[@]}"; do
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y "$package"
+                clear
+                done
+            elif [ "$desktop0" = "xfce" ]; then
+                # List of packages to install
+                packages=("lightdm-settings" "mint-themes" "mint-x-icons" "mint-y-icons" "mint-backgrounds" "mintlocale" "humanity-icon-theme" "mint-themes-legacy" "mint-artwork")
+
+                # Install packages
+                for package in "${packages[@]}"; do
+                printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y "$package"
+                clear
+                done
+            elif [ "$desktop0" = "lxde" ]; then
+                printf "%b1\n" "$*"
+            elif [ "$desktop0" = "lxqt" ]; then
+                printf "%b1\n" "$*"
+            elif [ "$desktop0" = "sway" ]; then
+                # Create directory for wayland sessions if it doesn't exist
+                mkdir -p /mnt/usr/share/wayland-sessions/
+
+                # Copy the sway desktop entry to the wayland sessions directory
+                cp /opt/sway.desktop /mnt/usr/share/wayland-sessions/sway.desktop
+
+                # Make the sway desktop entry executable
+                chmod +x /mnt/usr/share/wayland-sessions/sway.desktop
+
+                # Enable sddm service
+                arch-chroot /mnt systemctl enable sddm
+            fi
+            yayinstallfinished="1"
+        else
+            yayinstallfinished="0"
+        fi
+    done
+
+    # Reset the variable for the next installation
+    yayinstallfinished="0"
+}
+
+secureboot_install () {
+    # Clear the terminal
+    clear
+
+    # Loop until the command is finished
+    while [ "$command10finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            if [ "$sbpass0" = "yes" ]; then
+                echo "Generating CoffeeLinux Secure-Boot keys for your machine"
+
+                # Install necessary packages
+                arch-chroot /mnt pacman -Sy --noconfirm efitools mokutil sbsigntools apparmor sbctl
+
+                # Install shim-signed and preloader-signed
+                printf "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y shim-signed
+                printf "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y preloader-signed
+
+                # Reset MOK password
+                printf "$uefipass0\n$uefipass0\n" | arch-chroot /mnt mokutil --password
+                printf "$uefipass0\n$uefipass0\n" | arch-chroot /mnt mokutil --reset
+                printf "$uefipass0\n$uefipass0\n" | arch-chroot /mnt mokutil --password
+
+                # Copy necessary files
+                arch-chroot /mnt cp /usr/share/preloader-signed/PreLoader.efi /boot/EFI/systemd
+                arch-chroot /mnt cp /usr/share/preloader-signed/HashTool.efi /boot/EFI/systemd
+                arch-chroot /mnt cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/loader.efi
+
+                # Create new boot entry
+                arch-chroot /mnt efibootmgr --unicode --disk "$drive0" --part 1 --create --label "PreLoader" --loader /EFI/systemd/PreLoader.efi
+
+                # Move and copy necessary files
+                arch-chroot /mnt mv /boot/EFI/BOOT/BOOTx64.EFI /boot/EFI/BOOT/grubx64.efi
+                arch-chroot /mnt cp /usr/share/shim-signed/shimx64.efi /boot/EFI/BOOT/BOOTx64.EFI
+                arch-chroot /mnt cp /usr/share/shim-signed/mmx64.efi /boot/EFI/BOOT/
+
+                # Create new boot entry
+                arch-chroot /mnt efibootmgr --unicode --disk "$drive0" --part 1 --create --label "Shim" --loader /EFI/BOOT/BOOTx64.EFI
+
+                # Generate and sign keys
+                arch-chroot /mnt openssl req -newkey rsa:4096 -nodes -keyout MOK.key -new -x509 -sha256 -days 3650 -subj "/CN=my Machine Owner Key/" -out MOK.crt
+                arch-chroot /mnt openssl x509 -outform DER -in MOK.crt -out MOK.cer
+                arch-chroot /mnt sbsign --key MOK.key --cert MOK.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
+                arch-chroot /mnt sbsign --key MOK.key --cert MOK.crt --output /boot/EFI/BOOT/grubx64.efi /boot/EFI/BOOT/grubx64.efi
+
+                # Copy necessary files
+                cp /opt/999-sign_kernel_for_secureboot.hook /mnt/etc/pacman.d/hooks/999-sign_kernel_for_secureboot.hook
+                arch-chroot /mnt cp MOK.cer /boot/
+                arch-chroot /mnt cp MOK.crt /boot/
+                arch-chroot /mnt cp MOK.key /boot/
+
+                # Update package database
+                arch-chroot /mnt pacman -Sy --noconfirm
+
+                # Enable necessary services
+                arch-chroot /mnt systemctl enable apparmor
+                arch-chroot /mnt systemctl enable systemd-boot-update.service
+                arch-chroot /mnt systemctl enable dhcpcd
+                arch-chroot /mnt systemctl enable cronie
+                arch-chroot /mnt systemctl enable chronyd
+                arch-chroot /mnt systemctl enable NetworkManager
+                arch-chroot /mnt systemctl enable firewalld
+                arch-chroot /mnt systemctl enable cups
+                arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
+            elif [ "$sbpass0" = "no" ]; then
+                echo "Adding AppArmor"
+
+                # Install necessary packages
+                arch-chroot /mnt pacman -Sy --noconfirm apparmor
+
+                # Enable necessary services
+                arch-chroot /mnt systemctl enable apparmor
+                arch-chroot /mnt systemctl enable dhcpcd
+                arch-chroot /mnt systemctl enable cronie
+                arch-chroot /mnt systemctl enable chronyd
+                arch-chroot /mnt systemctl enable NetworkManager
+                arch-chroot /mnt systemctl enable firewalld
+                arch-chroot /mnt systemctl enable cups
+                arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
+            fi
+
+            command10finished="1"
+        else
+            command10finished="0"
+        fi
+    done
+    command10finished="0"
+}
+
+homedir_fix () {
+    # Clear the terminal
+    clear
+
+    # Loop until the command is finished
+    while [ "$command11finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            echo "Attempting to fix the home directory automatically now..."
+
+            # Install necessary packages
+            arch-chroot /mnt pacman -Sy --noconfirm xdg-user-dirs
+
+            # Install xdg-environment and xdg-autostart
+            printf "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
+            printf "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
+
+            # Update user directories
+            arch-chroot /mnt xdg-user-dirs-update
+
+            echo "Cleaning up"
+
+            command11finished="1"
+        else
+            command11finished="0"
+        fi
+    done
+    command11finished="0"
 }
 
 
+lightdm_fix () {
+    # Clear the terminal
+    clear
 
+    # Loop until the command is finished
+    while [ "$command12finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            # Update package database and upgrade packages
+            arch-chroot /mnt pacman -Syu
 
-yay_install (){
+            # Configure LightDM
+            printf "[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /mnt/etc/lightdm/lightdm.conf
 
-clear
+            # Enable LightDM service
+            arch-chroot /mnt systemctl enable lightdm
 
-while [ "$yayinstallfinished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm archlinux-appstream-data
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y pamac-aur
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
-clear
-  if [ "$desktop0" = "gnome" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-gtk4-desktop-icons-ng
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-session
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
-     clear
-     arch-chroot /mnt pacman -Rdd --noconfirm mutter
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
-     clear
-     printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
-     clear
-     rm -r /mnt/usr/share/wayland-sessions/gnome*
-     rm -r /mnt/usr/share/xsessions/gnome*
-  elif [ "$desktop0" = "kde" ]; then
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
-     clear
-     if [ "$grub0" = "true" ]; then
-     clear
-     printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm kcm-grub2
-     clear
-     fi
-   elif [ "$desktop0" = "cinnamon" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
-     clear
-     printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
-     clear
-     arch-chroot /mnt pacman -Rdd --noconfirm lightdm-settings
-     clear
-     rm -r /mnt/usr/share/wayland-sessions/gnome*
-     rm -r /mnt/usr/share/xsessions/gnome*
-     clear
-  elif [ "$desktop0" = "mate" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-screensaver-hacks
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-tweak
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-menu
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
-     clear
-     printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
-     clear
-  elif [ "$desktop0" = "xfce" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
-     clear
-     printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
-     clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
-     clear
-  elif [ "$desktop0" = "lxde" ]; then
-     printf "%b1\n" "$*"
-  elif [ "$desktop0" = "lxqt" ]; then
-     printf "%b1\n" "$*"
-  elif [ "$desktop0" = "sway" ]; then
-     mkdir -p /mnt/usr/share/wayland-sessions/
-     cp /opt/sway.desktop /mnt/usr/share/wayland-sessions/sway.desktop
-     chmod +x /mnt/usr/share/wayland-sessions/sway.desktop
-     arch-chroot /mnt systemctl enable sddm
-     clear
-  fi
-yayinstallfinished="1"
-else
-yayinstallfinished="0"
-fi
-done
-
+            command12finished="1"
+        else
+            command12finished="0"
+        fi
+    done
+    command12finished="0"
 }
 
-secureboot_install (){
+lightdm_fix_deepin () {
+    # Clear the terminal
+    clear
 
-clear
+    # Loop until the command is finished
+    while [ "$command13finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            # Update package database and upgrade packages
+            arch-chroot /mnt pacman -Syu
 
-while [ "$command10finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+            # Configure LightDM for Deepin
+            printf "[Seat:*]\ngreeter-session=lightdm-deepin-greeter\n" >> /mnt/etc/lightdm/lightdm.conf
 
-if [ "$sbpass0" = "yes" ]; then
-printf "%bGenerating CoffeeLinux Secure-Boot keys for your machine\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm efitools mokutil sbsigntools apparmor sbctl
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y shim-signed
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y preloader-signed
-clear
-printf "%b$uefipass0\n$uefipass0\n" "$*" | arch-chroot /mnt mokutil --password
-printf "%b$uefipass0\n$uefipass0\n" "$*" | arch-chroot /mnt mokutil --reset
-printf "%b$uefipass0\n$uefipass0\n" "$*" | arch-chroot /mnt mokutil --password
+            # Enable LightDM service
+            arch-chroot /mnt systemctl enable lightdm
 
-arch-chroot /mnt cp /usr/share/preloader-signed/PreLoader.efi /boot/EFI/systemd
-arch-chroot /mnt cp /usr/share/preloader-signed/HashTool.efi /boot/EFI/systemd
-arch-chroot /mnt cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/loader.efi
-arch-chroot /mnt efibootmgr --unicode --disk "$drive0" --part 1 --create --label "PreLoader" --loader /EFI/systemd/PreLoader.efi
-
-arch-chroot /mnt mv /boot/EFI/BOOT/BOOTx64.EFI /boot/EFI/BOOT/grubx64.efi
-arch-chroot /mnt cp /usr/share/shim-signed/shimx64.efi /boot/EFI/BOOT/BOOTx64.EFI
-arch-chroot /mnt cp /usr/share/shim-signed/mmx64.efi /boot/EFI/BOOT/
-arch-chroot /mnt efibootmgr --unicode --disk "$drive0" --part 1 --create --label "Shim" --loader /EFI/BOOT/BOOTx64.EFI
-
-arch-chroot /mnt openssl req -newkey rsa:4096 -nodes -keyout MOK.key -new -x509 -sha256 -days 3650 -subj "/CN=my Machine Owner Key/" -out MOK.crt
-arch-chroot /mnt openssl x509 -outform DER -in MOK.crt -out MOK.cer
-arch-chroot /mnt sbsign --key MOK.key --cert MOK.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
-arch-chroot /mnt sbsign --key MOK.key --cert MOK.crt --output /boot/EFI/BOOT/grubx64.efi /boot/EFI/BOOT/grubx64.efi
-cp /opt/999-sign_kernel_for_secureboot.hook /mnt/etc/pacman.d/hooks/999-sign_kernel_for_secureboot.hook
-arch-chroot /mnt cp MOK.cer /boot/
-arch-chroot /mnt cp MOK.crt /boot/
-arch-chroot /mnt cp MOK.key /boot/
-arch-chroot /mnt pacman -Sy --noconfirm
-arch-chroot /mnt systemctl enable apparmor
-arch-chroot /mnt systemctl enable systemd-boot-update.service
-arch-chroot /mnt systemctl enable dhcpcd
-arch-chroot /mnt systemctl enable cronie
-arch-chroot /mnt systemctl enable chronyd
-arch-chroot /mnt systemctl enable NetworkManager
-arch-chroot /mnt systemctl enable firewalld
-arch-chroot /mnt systemctl enable cups
-arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
-clear
-
-elif [ "$sbpass0" = "no" ]; then
-printf "%b\nAdding AppArmor\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm apparmor
-clear
-arch-chroot /mnt systemctl enable apparmor
-arch-chroot /mnt systemctl enable dhcpcd
-arch-chroot /mnt systemctl enable cronie
-arch-chroot /mnt systemctl enable chronyd
-arch-chroot /mnt systemctl enable NetworkManager
-arch-chroot /mnt systemctl enable firewalld
-arch-chroot /mnt systemctl enable cups
-arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
-
-fi
-
-command10finished="1"
-else
-command10finished="0"
-fi
-done
-command10finished="0"
-
+            command13finished="1"
+        else
+            command13finished="0"
+        fi
+    done
+    command13finished="0"
 }
 
+lightdm_fix_xfce () {
+    # Clear the terminal
+    clear
 
-homedir_fix (){
+    # Loop until the command is finished
+    while [ "$command14finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            # Configure LightDM for XFCE
+            printf "[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /mnt/etc/lightdm/lightdm.conf
 
-clear
+            # Enable LightDM service
+            arch-chroot /mnt systemctl enable lightdm
 
-while [ "$command11finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+            # Set vblank_mode to glx for xfwm4
+            arch-chroot /mnt xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
 
-printf "%bAttempting to fix the home directory automatically now...\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm xdg-user-dirs
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
-clear
-arch-chroot /mnt xdg-user-dirs-update
-printf "%bCleaning up\n" "$*"
+            # Uncomment the line below if you want to remove the default background
+            # arch-chroot /mnt rm -R /usr/share/backgrounds/linuxmint/default_background.jpg
 
-command11finished="1"
-else
-command11finished="0"
-fi
-done
-command11finished="0"
-
+            command14finished="1"
+        else
+            command14finished="0"
+        fi
+    done
+    command14finished="0"
 }
 
-lightdm_fix (){
+success_check () {
+    # Clear the terminal
+    clear
 
-clear
+    # Loop until the command is finished
+    while [ "$command15finished" != "1" ]; do
+        if [ "$questionspassed" = "yes" ]; then
+            if [ "$native1" = "yes" ]; then
+                # Create necessary directories
+                mkdir -p /mnt/usr/share/wallpapers/coffee/
+                mkdir -p /mnt/usr/share/backgrounds/gnome/
 
-while [ "$command12finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+                # Copy necessary files
+                cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
+                cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
+                cp /opt/os-release /mnt/etc/
+                cp /opt/lsb-release /mnt/etc/
+                cp -r /opt/* /mnt/opt/
+                cp /usr/local/bin/coffeebrewer2 /mnt/usr/local/bin/
 
-arch-chroot /mnt pacman -Syu
-printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
-arch-chroot /mnt systemctl enable lightdm
+                # Set permissions
+                arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer2
+            fi
 
-command12finished="1"
-else
-command12finished="0"
-fi
-done
-command12finished="0"
+            # Check if the installer completed successfully
+            echo "Did the installer complete successfully?"
+            echo "1 - yes"
+            echo "2 - no"
+            read -r rebootcheck
+            case $rebootcheck in
+                1) echo "Perfect" ;;
+                *) echo "Let's exit, something went wrong..." ;;
+            esac
 
+            # If the installer did not complete successfully, unmount and exit
+            if [ "$rebootcheck" != "1" ]; then
+                umount -R /mnt
+                swapoff "$swap0"
+                printf "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+                exit
+            fi
+
+            command15finished="1"
+        else
+            command15finished="0"
+        fi
+    done
+    command15finished="0"
 }
 
-lightdm_fix_deepin (){
-
-clear
-
-while [ "$command13finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-arch-chroot /mnt pacman -Syu
-printf "%b\n[Seat:*]\ngreeter-session=lightdm-deepin-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
-arch-chroot /mnt systemctl enable lightdm
-
-command13finished="1"
-else
-command13finished="0"
-fi
-done
-command13finished="0"
-
-}
-
-lightdm_fix_xfce (){
-
-clear
-
-while [ "$command14finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
-arch-chroot /mnt systemctl enable lightdm
-arch-chroot /mnt xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
-#rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
-
-command14finished="1"
-else
-command14finished="0"
-fi
-done
-command14finished="0"
-
-}
-
-success_check (){
-
-clear
-
-while [ "$command15finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$native1" = "yes" ]; then
-  mkdir -p /mnt/usr/share/wallpapers/coffee/
-  mkdir -p /mnt/usr/share/backgrounds/gnome/
-  cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
-  cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
-  cp /opt/os-release /mnt/etc/
-  cp /opt/lsb-release /mnt/etc/
-  cp -r /opt/* /mnt/opt/
-  cp /usr/local/bin/coffeebrewer2 /mnt/usr/local/bin/
-  arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer2
-fi
-
-printf "%b\n Did the installer complete sussessfully? \n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r rebootcheck
-case $rebootcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's exit, something went wrong...\n" "$*" ;;
-esac
-
-if [ "$rebootcheck" = "1" ]; then 
-printf "%b\n" "$*"
-elif [ "$rebootcheck" != "1" ]; then 
-umount -R /mnt
-swapoff "$swap0"
-printf "%bg\nn\n1\n\n\nt\n20\nw\n" "$*" | fdisk -W always "$drive0"
-exit
-fi
-
-command15finished="1"
-else
-command15finished="0"
-fi
-done
-command15finished="0"
-
-}
 
 #=================================================
 #-Main
@@ -2108,62 +2181,68 @@ command15finished="0"
 #clear
 
 while [ "$command16finished" != "1" ]; do
-cp /opt/lsb-release /etc/lsb-release
+    # Copy lsb-release to /etc
+    cp /opt/lsb-release /etc/lsb-release
 
-printf "%b\n Would you like to install Coffee Linux? \n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r installationcheck
-case $installationcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's exit.\n" "$*" ;;
-esac
-if [ "$installationcheck" = "1" ]; then 
-questionare
-set_swap
-set_network
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-bootloader_install
-gpu_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then 
-  lightdm_fix
- elif [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- elif [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-installationcheck="1"
-command16finished="1"
-umount -R /mnt
-reboot
-else
-installationcheck="0"
-#-End-Script
-exit
-fi
+    # Ask user if they want to install Coffee Linux
+    echo "Would you like to install Coffee Linux?"
+    echo "1 - yes"
+    echo "2 - no"
+    read -r installationcheck
+    case $installationcheck in
+        1) echo "Perfect" ;;
+        *) echo "Let's exit."; exit ;;
+    esac
+
+    # If user wants to install, proceed with installation steps
+    if [ "$installationcheck" = "1" ]; then
+        questionare
+        set_swap
+        set_network
+        format_disks
+        base_install
+        set_locale
+        set_passwords
+        desktop_install
+        coffee_install
+        gpu_install
+        java_install
+        vmware_install
+        browser_install
+        office_install
+        steam_install
+        discord_install
+        lutris_install
+        heroic_install
+        github_install
+        snapd_install
+        bootloader_install
+        bootloader_gpu_install
+        yay_install
+        secureboot_install
+        homedir_fix
+
+        # Choose the correct lightdm fix based on the desktop environment
+        if [ "$desktop0" = "cinnamon" ]; then
+            lightdm_fix
+        elif [ "$desktop0" = "mate" ]; then
+            lightdm_fix
+        elif [ "$desktop0" = "xfce" ]; then
+            lightdm_fix_xfce
+        elif [ "$desktop0" = "deepin" ]; then
+            lightdm_fix_deepin
+        fi
+
+        success_check
+
+        echo "Excellent. Let's proceed to reboot. Please eject/remove the installation medium."
+
+        # Unmount and reboot
+        umount -R /mnt
+        reboot
+    fi
 done
+
 
 #============================
 #End-Main
