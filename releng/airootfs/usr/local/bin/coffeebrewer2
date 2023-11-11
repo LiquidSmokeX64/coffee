@@ -4,13 +4,13 @@ baseapps="amd-ucode mkinitcpio texinfo base base-devel dhcpcd intel-ucode iwd li
 
 baseapps2="git device-mapper gettext xz dosfstools efibootmgr freetype2 fuse2 libisoburn lzop mtools autogen help2man python rsync ttf-dejavu system-config-printer net-tools nfs-utils systemd-resolvconf tcpdump terminus-font testdisk ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils openvpn partclone pcsclite ppp pptpclient qemu-guest-agent vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools apparmor archinstall mlocate arch-install-scripts b43-fwcutter bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config hdparm hyperv jfsutils kitty-terminfo libfido2 libusb-compat linux linux-headers"
 
-coffeeapps="fwupd fwupd-efi glfw-wayland vulkan-validation-layers npm boost-libs gtk-update-icon-cache hwinfo libpwquality squashfs-tools yaml-cpp boost extra-cmake-modules git rhythmbox alsa-lib alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libva-mesa-driver lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mesa-vdpau lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libunwind libva libva-mesa-driver libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors make mesa mesa-utils mesa-vdpau meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako samba shellcheck shotwell  sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader vulkan-mesa-layers vulkan-radeon w3m wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-clover-mesa opencl-headers opencl-rusticl-mesa"
+coffeeapps="fwupd fwupd-efi glfw-wayland vulkan-validation-layers npm boost-libs gtk-update-icon-cache hwinfo libpwquality squashfs-tools yaml-cpp boost extra-cmake-modules git rhythmbox alsa-lib alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server blueman bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract lib32-alsa-lib lib32-alsa-plugins lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libxcomposite lib32-libxinerama lib32-libxslt  lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire lib32-pipewire-jack lib32-v4l-utils lib32-vkd3d lib32-vulkan-icd-loader libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libunwind libva libva-utils libva-vdpau-driver libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors make meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon python-gobject python-mako samba shellcheck shotwell  sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch vkd3d vulkan-icd-loader w3m wireplumber xdg-utils xf86-video-amdgpu xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-headers"
 
 javaapps="jre-openjdk"
 
 gnomeapps="gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
 
-kdeapps="phonon-qt5-gstreamer gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 qt6 plasma plasma-nm kscreen kuserfeedback kvantum plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
+kdeapps="phonon-qt5-gstreamer gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma5 qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
 
 cinnamonapps="polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-terminal gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
 
@@ -472,7 +472,7 @@ while [ "$webcheck00" != "1" ] && [ "$webcheck00" != "2" ] && [ "$webcheck00" !=
 
 clear
 
-printf "%b\nWhat type of network do you have?\n" "$*"
+printf "%b\nWhat Web Browser do you prefer?\n" "$*"
 printf "%b\n1 - Google Chrome\n" "$*"
 printf "%b\n2 - Firefox\n" "$*"
 printf "%b\n3 - Microsoft Edge\n" "$*"
@@ -684,17 +684,19 @@ fi
 
 clear
 
-while [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ]; do
-printf "%b\nDo you have an amd or nvidia graphics card? -- Intel ARC not yet supported.\n" "$*"
+while [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; do
+printf "%b\nWhat type of GPU do you have?\n" "$*"
 printf "%b\n1 - AMD\n" "$*"
 printf "%b\n2 - Nvidia\n" "$*"
-printf "%b\n3 - Virtual GPU (VMware etc.)\n" "$*"
+printf "%b\n3 - Intel\n" "$*"
+printf "%b\n4 - Virtual GPU (VMware etc.)\n" "$*"
 
 read -r gpucheck
 case $gpucheck in
   1) printf "%b\nPerfect\n" "$*" ;;
   2) printf "%b\nA good choice.\n" "$*" ;;
   3) printf "%b\nA good choice.\n" "$*" ;;
+  4) printf "%b\nA good choice.\n" "$*" ;;
   *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 done
@@ -703,6 +705,8 @@ gpu0="amd"
 elif [ "$gpucheck" = "2" ]; then
 gpu0="nvidia"
 elif [ "$gpucheck" = "3" ]; then
+gpu0="intel"
+elif [ "$gpucheck" = "4" ]; then
 gpu0="vm"
 fi
 
@@ -729,10 +733,10 @@ fi
 clear
 
 while [ "$grubcheck" != "1" ] && [ "$grubcheck" != "2" ] && [ "$grubcheck" != "3" ]; do
-printf "%b\nWould you like GRUB or SystemD-Bootloader?\nGRUB is more compatible with VMs.\nUnofficial Installs MUST use SystemD and be using actual hardware.\n" "$*"
+printf "%b\nWould you like GRUB or SystemD-Bootloader?\nGRUB is more compatible with VMs.\n" "$*"
 printf "%b\n1 - GRUB UEFI version\n" "$*"
 printf "%b\n2 - GRUB BIOS/MBR version\n" "$*"
-printf "%b\n3 - SystemD-Bootloader UEFI-Only (for secure-boot installations.)\n" "$*"
+printf "%b\n3 - SystemD-Bootloader UEFI-Only (secure-boot installations must use this option.)\n" "$*"
 read -r grubcheck
 case $grubcheck in
   1) printf "%b\nPerfect.\n" "$*" ;;
@@ -1345,6 +1349,221 @@ done
 
 }
 
+bootloader_install (){
+
+clear
+
+while [ "$command8finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
+if [ "$grub0" = "true" ]; then
+
+if [ "$gpu0" = "nvidia" ]; then
+
+printf "%b\nGRUB UEFI for Nvidia selected.\n" "$*"
+
+arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
+
+if [ $desktop0 = "kde" ]; then
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+fi
+
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+
+cp /opt/grub-nvidia/grub /mnt/etc/default/
+
+arch-chroot /mnt /bin/bash <<"EOT"
+mkinitcpio -P
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+EOT
+
+elif [ "$gpu0" = "amd" ]; then
+
+printf "%b\nGRUB UEFI for AMD selected.\n" "$*"
+
+arch-chroot /mnt pacman -S --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
+
+if [ $desktop0 = "kde" ]; then
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+fi
+
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+cp /opt/grub-amd/grub /mnt/etc/default/
+
+arch-chroot /mnt /bin/bash <<"EOT"
+mkinitcpio -P
+pacman -Sy --noconfirm
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+EOT
+
+elif [ "$gpu0" = "intel" ]; then
+
+printf "%b\nGRUB UEFI for Intel selected.\n" "$*"
+
+arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
+
+if [ $desktop0 = "kde" ]; then
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+fi
+
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+cp /opt/grub-intel/grub /mnt/etc/default/
+
+arch-chroot /mnt /bin/bash <<"EOT"
+mkinitcpio -P
+pacman -Sy --noconfirm
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+EOT
+
+fi
+
+elif [ "$grub0" = "true2" ]; then
+
+if [ "$gpu0" = "nvidia" ]; then
+
+printf "%b\nGRUB BIOS for Nvidia selected.\n" "$*"
+
+arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
+
+if [ $desktop0 = "kde" ]; then
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+fi
+
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+
+cp /opt/grub-nvidia/grub /mnt/etc/default/
+
+arch-chroot /mnt /bin/bash <<"EOT"
+pacman -Sy --noconfirm
+mkinitcpio -P
+EOT
+
+arch-chroot /mnt grub-install --target=i386-pc "$drive0"
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+
+elif [ "$gpu0" = "amd" ]; then
+
+printf "%b\nGRUB BIOS for AMD selected.\n" "$*"
+
+
+arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font
+
+if [ $desktop0 = "kde" ]; then
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+fi
+
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+
+cp /opt/grub-amd/grub /mnt/etc/default/
+
+arch-chroot /mnt /bin/bash <<"EOT"
+mkinitcpio -P
+pacman -Sy --noconfirm
+EOT
+
+arch-chroot /mnt grub-install --target=i386-pc "$drive0"
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+
+elif [ "$gpu0" = "intel" ]; then
+
+printf "%b\nGRUB BIOS for Intel selected.\n" "$*"
+
+
+arch-chroot /mnt pacman -S --needed --noconfirm libadwaita grub os-prober breeze-grub terminus-font
+
+if [ $desktop0 = "kde" ]; then
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
+fi
+
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+
+cp /opt/grub-intel/grub /mnt/etc/default/
+
+arch-chroot /mnt /bin/bash <<"EOT"
+mkinitcpio -P
+pacman -Sy --noconfirm
+EOT
+
+arch-chroot /mnt grub-install --target=i386-pc "$drive0"
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+
+fi
+
+elif [ "$grub0" = "false" ]; then
+
+arch-chroot /mnt /bin/bash <<"EOT"
+printf "%bInstalling SystemD-Bootloader UEFI\n" "$*"
+mkinitcpio -P
+bootctl install
+EOT
+
+printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
+
+if [ "$native1" = "yes" ]; then
+printf "%btitle Coffee-Linux 'Winey' (23.2.5)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+fi
+
+printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+
+fi
+
+#-Bootloader-End
+
+command8finished="1"
+else
+command8finished="0"
+fi
+done
+command8finished="0"
+
+
+}
+
+gpu_install (){
+
+clear
+
+while [ "$command9finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
+if [ "$gpu0" = "nvidia" ]; then
+printf "%b\nNvidia GPU selected.\nInstalling GPU Drivers first.\n" "$*"
+arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
+ if [ "$grub0" = "false" ]; then
+  printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+ fi
+ if [ "$desktop0" = "sway" ]; then
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
+ fi
+elif [ "$gpu0" = "amd" ]; then
+printf "%b\nAMD GPU selected.\nInstalling amdgpu-fan and corectrl as well" "$*"
+arch-chroot /mnt pacman -Sy --noconfirm lib32-mesa lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon
+ if [ "$grub0" = "false" ]; then
+  printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+ fi
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
+arch-chroot /mnt pacman -Sy --noconfirm corectrl
+elif [ "$gpu0" = "intel" ]; then
+printf "%b\nIntel GPU selected.\n" "$*"
+arch-chroot /mnt pacman -Sy --noconfirm mesa lib32-mesa xorg-server vulkan-intel vulkan-intel lib32-vulkan-intel libva-intel-driver libva-utils
+ if [ "$grub0" = "false" ]; then
+  printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+ fi
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
+fi
+
+command9finished="1"
+else
+command9finished="0"
+fi
+done
+command9finished="0"
+
+}
+
 java_install (){
 
 clear
@@ -1609,175 +1828,6 @@ done
 command7finished="0"
 
 }
-
-bootloader_install (){
-
-clear
-
-while [ "$command8finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$grub0" = "true" ]; then
-
-if [ "$gpu0" = "nvidia" ]; then
-
-printf "%b\nGRUB UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
-
-arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
-
-if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
-
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
-cp /opt/grub-nvidia/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
-EOT
-
-elif [ "$gpu0" = "amd" ]; then
-
-printf "%b\nGRUB UEFI for AMD selected.\n" "$*"
-
-arch-chroot /mnt pacman -S --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
-
-if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
-
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-cp /opt/grub-amd/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-pacman -Sy --noconfirm 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
-EOT
-
-fi
-
-elif [ "$grub0" = "true2" ]; then
-
-if [ "$gpu0" = "nvidia" ]; then
-
-printf "%b\nGRUB BIOS for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
-
-arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
-
-if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
-
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
-cp /opt/grub-nvidia/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-pacman -Sy --noconfirm
-mkinitcpio -P
-EOT
-
-arch-chroot /mnt grub-install --target=i386-pc "$drive0"
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
-elif [ "$gpu0" = "amd" ]; then
-
-printf "%b\nGRUB BIOS for AMD selected.\n" "$*"
-
-
-arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font
-
-if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
-
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-
-cp /opt/grub-amd/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-pacman -Sy --noconfirm
-EOT
-
-arch-chroot /mnt grub-install --target=i386-pc "$drive0"
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
-fi
-
-elif [ "$grub0" = "false" ]; then
-
-arch-chroot /mnt /bin/bash <<"EOT"
-printf "%bInstalling SystemD-Bootloader UEFI\n" "$*"
-mkinitcpio -P
-bootctl install
-EOT
-
-printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
-
-if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.2.3)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
-fi
-
-printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
-
-fi
-
-#-Bootloader-End
-
-command8finished="1"
-else
-command8finished="0"
-fi
-done
-command8finished="0"
-
-
-}
-
-gpu_install (){
-
-clear
-
-while [ "$command9finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$gpu0" = "nvidia" ]; then
-printf "%b\nSystemD-Bootloader UEFI for Nvidia selected.\nInstalling GPU Drivers first.\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
- if [ "$grub0" = "false" ]; then
-  printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
- fi
- if [ "$desktop0" = "sway" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
- fi
-elif [ "$gpu0" = "amd" ]; then
-printf "%b\nSystemD-Bootloader UEFI for AMD selected.\nInstalling amdgpu-fan and corectrl" "$*"
- if [ "$grub0" = "false" ]; then
-  printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
- fi
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
-arch-chroot /mnt pacman -Sy --noconfirm corectrl
-fi
-
-command9finished="1"
-else
-command9finished="0"
-fi
-done
-command9finished="0"
-
-}
-
-
-
 
 yay_install (){
 
@@ -2153,6 +2203,8 @@ set_locale
 set_passwords
 desktop_install
 coffee_install
+bootloader_install
+gpu_install
 java_install
 vmware_install
 browser_install
@@ -2163,8 +2215,6 @@ lutris_install
 heroic_install
 github_install
 snapd_install
-bootloader_install
-gpu_install
 yay_install
 secureboot_install
 homedir_fix
