@@ -1,54 +1,26 @@
-# Coffee Linux v.23.2.5 "Winey"
+# Coffee Linux v.23.2.6 "Winey"
 
-I believe using your PC should be as easy as a sip of coffee, so I fixed it up to be that way for you. No guesswork, it just does what its supposed to do. So kick back, relax and enjoy your cup.
+What is CoffeeLinux?
 
-The goal here with Coffee Linux is specifically to be a gaming powerhouse OS, but is still perfectly capable of normal tasks as well.
+It is a distro, but not in a typical sense. This is pure Arch Linux, using the exact same ISO and creation method. However, CoffeeLinux has improved upon the installation method significantly.
 
-CoffeeLinux is a spin of Arch, but has been made easy for anyone to install and use for nearly anything. 
-The idea here is to have everything ready for you right away. No updating after installation.
-The whole OS is downloaded and preconfigured (default settings) piece by piece on demand by the installer so it is up to date immediately.
+The installation requires Internet, and builds the OS for you via a special script that automates the entire process.
 
-Gnome and KDE are the only tested Desktop Environments, though many are available to try.
-(Installation speed is solely based on your network speed)
+The installer script itself will ask a few questions to set things up according to your preferences then proceed to install the OS automatically.
 
-NOTE: Live Environment password is always "coffee" (required to login, and use the installer)
+There are several desktop options to select from including Gnome, KDE, and Cinnamon. There are other less tested desktop options as well.
 
-The installer itself is a handcrafted shell script, not multiple files, only one single file, it does everything typically done via the typical oversized/overly complex installers (ie: calamares) used by literally all other Linux distributions. 
+Many improvements have gone into catering to the gaming community, so there are options for Steam, Heroic Games, and Lutris if you want these apps.
 
-It asks a few simple questions to customize the OS to your liking, then you just wait for the reboot. Everything is downloaded and installed on the system for the system. 
-Everything that really can be given a user choice has been. I have just made things simpler to install with minimal hiccups as a "daily driver".
+There are choices to include other applications such as Java, LibreOffice, Github Desktop, VMware, and Snap support. So being productive is easier than ever.
 
-Notable Feature: Secure-Boot support is available to install on the OS [via SystemD-Bootloader ONLY] (however it does not boot the ISO itself in Secure-Boot mode)
+There are a host of "under the hood" improvements made to the system as well satisfying dependencies and optional support for many basic OS components to ensure you have the best experience possible immediately.
 
-(Simply turn on "Windows UEFI Mode" or similar in BIOS post-install of Secure-Boot enabled OS)
+If you ever wanted to try out real Arch Linux (Not a distro like Manjaro) but felt it was too much of a hassle to do it yourself, CoffeeLinux is made for you.
 
-(You do need to enroll your generated .cer in the MOK manually post-install similar to Ubuntu, it is placed in /boot/ by default )
+Welcome to the new age of Arch Linux installation, welcome to CoffeeLinux, we ope you enjoy your stay. Why hop distros, when you can have it all?
 
-Java, Wine, Protontricks, DXVK, Vulkan, Steam, Discord, Heroic (Epic/GOG) Games Launcher, Lutris and Firefox setup.
-
-Ext4 and BTRFS options for compatibility with some hardware.
-
-A ton of critical and optional dependencies resolved for most common packages.
-
-Latest Graphics drivers for AMD or Nvidia.
-
-Latest Linux Kernel and broad spectrum set of drivers.
-
-Bluetooth Support.
-
-Latest Gamescope & Mangohud from SteamOS.
-
-Yay AUR package manager (Terminal only).
-
-Pamac GUI Package Manager.
-
-Snap-Store support (if selected)
-
-VMware Workstation/Player (if selected)
-
-Hibernation Support (if selected)
-
-Grub bootloader (no secure-boot support) or SystemD-Bootloader UEFI w/secure-boot support 
+Don't believe me, try it for yourself..
 
 Just use Etcher to write the iso to usb, and go. Easy-peezy
 ============================================
