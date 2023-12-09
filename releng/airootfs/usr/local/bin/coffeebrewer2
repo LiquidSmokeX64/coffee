@@ -8,33 +8,35 @@ coffeeapps="fwupd fwupd-efi glfw-wayland vulkan-validation-layers npm boost-libs
 
 javaapps="jre-openjdk"
 
-gnomeapps="gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome"
+gnomeapps="qt6 qt6-multimedia-ffmpeg gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome libsecret"
 
-kdeapps="gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde"
+kdeapps="libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde libsecret"
 
-cinnamonapps="polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-terminal gnome-system-monitor gtk3 lightdm lightdm-slick-greeter xdg-desktop-portal-gtk gnome-text-editor"
+cinnamonapps="libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-console gnome-system-monitor gtk4 lightdm lightdm-slick-greeter xdg-desktop-portal-gnome gnome-text-editor"
 
-mateapps="mate-polkit polkit libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter gnome-text-editor"
+mateapps="libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji mate-polkit polkit libsecret gtk3 gtk4 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter gnome-text-editor"
 
-xfceapps="polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad lightdm lightdm-slick-greeter pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
+xfceapps="gtk4 libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad lightdm lightdm-slick-greeter pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
 
-lxdeapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lxde lxde-common lxdm lxpanel lxsession mousepad xcompmgr xdg-desktop-portal-lxqt"
+lxdeapps="gtk3 gtk4 libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lxde lxde-common lxdm lxpanel lxsession mousepad xcompmgr xdg-desktop-portal-lxqt libsecret"
 
-lxqtapps="wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt"
+lxqtapps="gtk3 gtk4 libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt libsecret"
 
-deepinapps="polkit polkit-gnome gnome-keyring gnome-extra libsecret deepin gtk3 gtk4 deepin-anything-arch deepin-kwin deepin-extra lightdm lightdm-deepin-greeter wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack"
+deepinapps="libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring gnome-extra libsecret deepin gtk3 gtk4 deepin-anything-arch deepin-kwin deepin-extra lightdm lightdm-deepin-greeter wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack"
 
-i3apps="polkit polkit-gnome gnome-keyring libsecret gnome-text-editor gnome-console gnome-system-monitor nautilus i3-wm i3lock gtk3 i3status i3blocks micro lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+i3apps="libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret gnome-text-editor gnome-console gnome-system-monitor nautilus i3-wm i3lock gtk3 gtk4 i3status i3blocks micro lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-swayapps="sddm gnome-disk-utility gnome-text-editor htop nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-terminal gnome-themes-extra gnome-tweaks j4-dmenu-desktop xdg-desktop-portal-gtk"
+swayapps="libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg qt6 sddm gnome-disk-utility gnome-text-editor htop nautilus polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk4 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-console gnome-themes-extra gnome-tweaks j4-dmenu-desktop xdg-desktop-portal-gnome"
 
-cutefishapps="polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+swayappsv2="libpulse gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji qt6 appstream-qt ark colord-kde gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg sddm gnome-disk-utility kate htop dolphin polkit kwallet libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk4 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi konsole j4-dmenu-desktop xdg-desktop-portal-kde"
 
-budgieapps="polkit polkit-gnome gnome-keyring gnome-extra gnome-shell libsecret budgie-control-center gtk3 budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver lightdm lightdm-gtk-greeter rofi gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+cutefishapps="libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 gtk4 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-awesomeapps="polkit polkit-gnome gnome-keyring libsecret awesome xterm gtk3 awesome-terminal-fonts lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+budgieapps="libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring gnome-extra gnome-shell libsecret budgie-control-center gtk3 budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver lightdm lightdm-gtk-greeter rofi gtk4 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-enlightenmentapps="polkit polkit-gnome gnome-keyring libsecret enlightenment gtk3 lightdm lightdm-gtk-greeter rofi wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+awesomeapps="libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret awesome xterm gtk3 gtk4 awesome-terminal-fonts lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
+
+enlightenmentapps="libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret enlightenment gtk3 gtk4 lightdm lightdm-gtk-greeter rofi wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
 questionare (){
 
@@ -369,7 +371,7 @@ done
 
 clear
 
-while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ]; do
+while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ]; do
 
 printf "%b\nWhat desktop environment do you want?\n" "$*"
 printf "%b\n1 - Gnome\n" "$*"
@@ -381,11 +383,12 @@ printf "%b\n6 - LXQT\n" "$*"
 printf "%b\n7 - XFCE\n" "$*"
 printf "%b\n8 - Deepin - WIP May not work. \n" "$*"
 printf "%b\n9 - i3\n" "$*"
-printf "%b\n10 - Sway\n" "$*"
-printf "%b\n11 - Cutefish\n" "$*"
-printf "%b\n12 - Budgie\n" "$*"
-printf "%b\n13 - Enlightenment\n" "$*"
-printf "%b\n14 - Awesome\n" "$*"
+printf "%b\n10 - Sway (Gnome version)\n" "$*"
+printf "%b\n11 - Sway (KDE version)\n" "$*"
+printf "%b\n12 - Cutefish\n" "$*"
+printf "%b\n13 - Budgie\n" "$*"
+printf "%b\n14 - Enlightenment\n" "$*"
+printf "%b\n15 - Awesome\n" "$*"
 
 read -r desktopcheck
 case $desktopcheck in
@@ -403,6 +406,7 @@ case $desktopcheck in
   12) printf "%b\nA super choice.\n" "$*" ;;
   13) printf "%b\nA super choice.\n" "$*" ;;
   14) printf "%b\nA super choice.\n" "$*" ;;
+  15) printf "%b\nA super choice.\n" "$*" ;;
   *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 done
@@ -438,15 +442,18 @@ elif [ "$desktopcheck" = "10" ]; then
 desktop0="sway"
 
 elif [ "$desktopcheck" = "11" ]; then
-desktop0="cutefish"
+desktop0="swayv2"
 
 elif [ "$desktopcheck" = "12" ]; then
-desktop0="budgie"
+desktop0="cutefish"
 
 elif [ "$desktopcheck" = "13" ]; then
-desktop0="enlightenment"
+desktop0="budgie"
 
 elif [ "$desktopcheck" = "14" ]; then
+desktop0="enlightenment"
+
+elif [ "$desktopcheck" = "15" ]; then
 desktop0="awesome"
 
 fi
@@ -1052,6 +1059,8 @@ clear
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+
 if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
@@ -1206,6 +1215,34 @@ clear
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 cp /opt/config /mnt/etc/sway/config
+printf "%b\nif [ -z ""\$"\{DISPLAY\}" ] && [ ""\$"\{XDG_VTNR\}" -eq 1 ]; then\nexec sway\nfi\n" "$*" >> /mnt/etc/profile
+
+if [ "$gpu0" = "nvidia" ]; then
+printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/sway/config
+fi
+if [ "$gpu0" = "vm" ]; then
+printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/sway/config
+gpu0="amd"
+fi
+
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+
+elif [ "$desktop0" = "swayv2" ]; then
+
+arch-chroot /mnt pacman -Sy --noconfirm $swayappsv2
+clear
+sleep 5
+printf "%b\nCopying yay package..\n" "$*"
+sleep 5
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+printf "%b\nInstalling yay.\n" "$*"
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+sleep 2
+printf "%b\nInstalled yay successfully.\n" "$*"
+clear
+arch-chroot /mnt systemctl preset-all
+arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+cp /opt/configv2 /mnt/etc/sway/config
 printf "%b\nif [ -z ""\$"\{DISPLAY\}" ] && [ ""\$"\{XDG_VTNR\}" -eq 1 ]; then\nexec sway\nfi\n" "$*" >> /mnt/etc/profile
 
 if [ "$gpu0" = "nvidia" ]; then
@@ -1503,7 +1540,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.2.7)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.3.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -1536,6 +1573,9 @@ arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils n
   printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
  fi
  if [ "$desktop0" = "sway" ]; then
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
+ fi
+ if [ "$desktop0" = "swayv2" ]; then
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
  fi
 elif [ "$gpu0" = "amd" ]; then
@@ -1955,6 +1995,12 @@ clear
      printf "%b1\n" "$*"
   elif [ "$desktop0" = "lxqt" ]; then
      printf "%b1\n" "$*"
+  elif [ "$desktop0" = "sway" ]; then
+     mkdir -p /mnt/usr/share/wayland-sessions/
+     cp /opt/sway.desktop /mnt/usr/share/wayland-sessions/sway.desktop
+     chmod +x /mnt/usr/share/wayland-sessions/sway.desktop
+     arch-chroot /mnt systemctl enable sddm
+     clear
   elif [ "$desktop0" = "sway" ]; then
      mkdir -p /mnt/usr/share/wayland-sessions/
      cp /opt/sway.desktop /mnt/usr/share/wayland-sessions/sway.desktop
