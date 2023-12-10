@@ -371,7 +371,7 @@ done
 
 clear
 
-while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ]; do
+while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; do
 
 printf "%b\nWhat desktop environment do you want?\n" "$*"
 printf "%b\n1 - Gnome (Ubuntu version)\n" "$*"
@@ -379,18 +379,20 @@ printf "%b\n2 - Gnome (Standard version)\n" "$*"
 printf "%b\n3 - KDE\n" "$*"
 printf "%b\n4 - Cinnamon (Mint version)\n" "$*"
 printf "%b\n5 - Cinnamon (Standard version)\n" "$*"
-printf "%b\n6 - Mate\n" "$*"
-printf "%b\n7 - LXDE\n" "$*"
-printf "%b\n8 - LXQT\n" "$*"
-printf "%b\n9 - XFCE\n" "$*"
-printf "%b\n10 - Deepin - WIP May not work. \n" "$*"
-printf "%b\n11 - i3\n" "$*"
-printf "%b\n12 - Sway (Gnome version)\n" "$*"
-printf "%b\n13 - Sway (KDE version)\n" "$*"
-printf "%b\n14 - Cutefish\n" "$*"
-printf "%b\n15 - Budgie\n" "$*"
-printf "%b\n16 - Enlightenment\n" "$*"
-printf "%b\n17 - Awesome\n" "$*"
+printf "%b\n6 - Mate (Mint version)\n" "$*"
+printf "%b\n7 - Mate (Standard version)\n" "$*"
+printf "%b\n8 - LXDE\n" "$*"
+printf "%b\n9 - LXQT\n" "$*"
+printf "%b\n10 - XFCE (Mint Version)\n" "$*"
+printf "%b\n11 - XFCE (Standard version)\n" "$*"
+printf "%b\n12 - Deepin - WIP May not work. \n" "$*"
+printf "%b\n13 - i3\n" "$*"
+printf "%b\n14 - Sway (Gnome version)\n" "$*"
+printf "%b\n15 - Sway (KDE version)\n" "$*"
+printf "%b\n16 - Cutefish\n" "$*"
+printf "%b\n17 - Budgie\n" "$*"
+printf "%b\n18 - Enlightenment\n" "$*"
+printf "%b\n19 - Awesome\n" "$*"
 
 read -r desktopcheck
 case $desktopcheck in
@@ -411,6 +413,8 @@ case $desktopcheck in
   15) printf "%b\nA super choice.\n" "$*" ;;
   16) printf "%b\nA super choice.\n" "$*" ;;
   17) printf "%b\nA super choice.\n" "$*" ;;
+  18) printf "%b\nA super choice.\n" "$*" ;;
+  19) printf "%b\nA super choice.\n" "$*" ;;
   *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 done
@@ -434,36 +438,42 @@ elif [ "$desktopcheck" = "6" ]; then
 desktop0="mate"
 
 elif [ "$desktopcheck" = "7" ]; then
-desktop0="lxde"
+desktop0="matev2"
 
 elif [ "$desktopcheck" = "8" ]; then
-desktop0="lxqt"
+desktop0="lxde"
 
 elif [ "$desktopcheck" = "9" ]; then
-desktop0="xfce"
+desktop0="lxqt"
 
 elif [ "$desktopcheck" = "10" ]; then
-desktop0="deepin"
+desktop0="xfce"
 
 elif [ "$desktopcheck" = "11" ]; then
-desktop0="i3"
+desktop0="xfcev2"
 
 elif [ "$desktopcheck" = "12" ]; then
-desktop0="sway"
+desktop0="deepin"
 
 elif [ "$desktopcheck" = "13" ]; then
-desktop0="swayv2"
+desktop0="i3"
 
 elif [ "$desktopcheck" = "14" ]; then
-desktop0="cutefish"
+desktop0="sway"
 
 elif [ "$desktopcheck" = "15" ]; then
-desktop0="budgie"
+desktop0="swayv2"
 
 elif [ "$desktopcheck" = "16" ]; then
-desktop0="enlightenment"
+desktop0="cutefish"
 
 elif [ "$desktopcheck" = "17" ]; then
+desktop0="budgie"
+
+elif [ "$desktopcheck" = "18" ]; then
+desktop0="enlightenment"
+
+elif [ "$desktopcheck" = "19" ]; then
 desktop0="awesome"
 
 fi
@@ -1168,6 +1178,28 @@ fi
 
 arch-chroot /mnt systemctl enable lightdm
 
+elif [ "$desktop0" = "matev2" ]; then
+
+arch-chroot /mnt pacman -Sy --noconfirm $mateapps
+clear
+sleep 5
+printf "%b\nCopying yay package..\n" "$*"
+sleep 5
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+printf "%b\nInstalling yay.\n" "$*"
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+sleep 2
+printf "%b\nInstalled yay successfully.\n" "$*"
+clear
+arch-chroot /mnt systemctl preset-all
+arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+
+if [ "$gpu0" = "vm" ]; then
+gpu0="amd"
+fi
+
+arch-chroot /mnt systemctl enable lightdm
+
 elif [ "$desktop0" = "lxde" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
@@ -1213,6 +1245,28 @@ fi
 arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "xfce" ]; then
+
+arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
+clear
+sleep 5
+printf "%b\nCopying yay package..\n" "$*"
+sleep 5
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+printf "%b\nInstalling yay.\n" "$*"
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+sleep 2
+printf "%b\nInstalled yay successfully.\n" "$*"
+clear
+arch-chroot /mnt systemctl preset-all
+arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+
+if [ "$gpu0" = "vm" ]; then
+gpu0="amd"
+fi
+
+arch-chroot /mnt systemctl enable lightdm
+
+elif [ "$desktop0" = "xfcev2" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
 clear
@@ -1619,7 +1673,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.3.3)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.3.4)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -2068,6 +2122,9 @@ if [ "$questionspassed" = "yes" ]; then
      clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
      clear
+  elif [ "$desktop0" = "matev2" ]; then
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
+     clear
   elif [ "$desktop0" = "xfce" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      clear
@@ -2086,6 +2143,11 @@ if [ "$questionspassed" = "yes" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
      clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
+     clear
+  elif [ "$desktop0" = "xfcev2" ]; then
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
+     clear
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
      clear
   elif [ "$desktop0" = "lxde" ]; then
      printf "%b1\n" "$*"
@@ -2231,6 +2293,25 @@ command12finished="0"
 
 }
 
+lightdm_fixv2 (){
+
+clear
+
+while [ "$command12finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
+arch-chroot /mnt pacman -Syu
+arch-chroot /mnt systemctl enable lightdm
+
+command12finished="1"
+else
+command12finished="0"
+fi
+done
+command12finished="0"
+
+}
+
 lightdm_fix_deepin (){
 
 clear
@@ -2259,6 +2340,26 @@ while [ "$command14finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 printf "%b\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" "$*" >> /mnt/etc/lightdm/lightdm.conf
+arch-chroot /mnt systemctl enable lightdm
+arch-chroot /mnt xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
+#rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
+
+command14finished="1"
+else
+command14finished="0"
+fi
+done
+command14finished="0"
+
+}
+
+lightdm_fix_xfcev2 (){
+
+clear
+
+while [ "$command14finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
 arch-chroot /mnt systemctl enable lightdm
 arch-chroot /mnt xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
 #rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
@@ -2369,8 +2470,12 @@ homedir_fix
   lightdm_fix
  elif [ "$desktop0" = "mate" ]; then
   lightdm_fix
+ elif [ "$desktop0" = "matev2" ]; then
+  lightdm_fixv2
  elif [ "$desktop0" = "xfce" ]; then
   lightdm_fix_xfce
+ elif [ "$desktop0" = "xfcev2" ]; then
+  lightdm_fix_xfcev2
  elif [ "$desktop0" = "deepin" ]; then
   lightdm_fix_deepin
  fi
