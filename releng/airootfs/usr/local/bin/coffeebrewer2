@@ -485,6 +485,28 @@ done
 
 clear
 
+while [ "$coffeecheck00" != "1" ] && [ "$coffeecheck00" != "2" ]; do
+
+clear
+
+printf "%b\nWould you like to install CoffeeLinux Extras (Recommended)?\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r coffeecheck00
+case $coffeecheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again..\n" "$*" ;;
+esac
+done
+if [ "$coffeecheck00" = "1" ]; then
+coffeeon00=yes
+elif [ "$coffeecheck00" = "2" ]; then
+coffeeon00=no
+fi
+
+clear
+
 while [ "$webcheck00" != "1" ] && [ "$webcheck00" != "2" ] && [ "$webcheck00" != "3" ]; do
 
 clear
@@ -1431,7 +1453,7 @@ coffee_install (){
 
 clear
 
-while [ "$pacmanfinished" != "1" ]; do
+while [ "$pacmanfinished" != "1" ] && [ "$coffeeon00" = "yes" ]; do
 if [ "$questionspassed" = "yes" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
 clear
@@ -1597,7 +1619,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.3.2)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.3.3)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -1932,18 +1954,20 @@ clear
 
 while [ "$yayinstallfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm archlinux-appstream-data
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y pamac-aur
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
-clear
+ if [ "$coffeeon00" = "yes" ]; then
+  arch-chroot /mnt pacman -Rdd --noconfirm archlinux-appstream-data
+  clear
+  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y pamac-aur
+  clear
+  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
+  clear
+  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
+  clear
+  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
+  clear
+  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
+  clear
+ fi
   if [ "$desktop0" = "gnome" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
      clear
@@ -2256,15 +2280,17 @@ while [ "$command15finished" != "1" ] && [ "$rebootcheck" != "1" ] && [ "$reboot
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$native1" = "yes" ]; then
-  mkdir -p /mnt/usr/share/wallpapers/coffee/
-  mkdir -p /mnt/usr/share/backgrounds/gnome/
-  cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
-  cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
   cp /opt/os-release /mnt/etc/
   cp /opt/lsb-release /mnt/etc/
-  cp -r /opt/* /mnt/opt/
-  cp /usr/local/bin/coffeebrewer2 /mnt/usr/local/bin/
-  arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer2
+  if [ "$coffeeon00" = "yes" ]; then
+   cp -r /opt/* /mnt/opt/
+   cp /usr/local/bin/coffeebrewer2 /mnt/usr/local/bin/
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer2
+   mkdir -p /mnt/usr/share/wallpapers/coffee/
+   mkdir -p /mnt/usr/share/backgrounds/gnome/
+   cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
+   cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
+  fi
 fi
 
 printf "%b\n Did the installer complete sussessfully? \n" "$*"
