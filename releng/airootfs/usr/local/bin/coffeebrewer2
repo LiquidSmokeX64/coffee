@@ -371,25 +371,26 @@ done
 
 clear
 
-while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ]; do
+while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ]; do
 
 printf "%b\nWhat desktop environment do you want?\n" "$*"
 printf "%b\n1 - Gnome (Ubuntu version)\n" "$*"
 printf "%b\n2 - Gnome (Standard version)\n" "$*"
 printf "%b\n3 - KDE\n" "$*"
-printf "%b\n4 - Cinnamon\n" "$*"
-printf "%b\n5 - Mate\n" "$*"
-printf "%b\n6 - LXDE\n" "$*"
-printf "%b\n7 - LXQT\n" "$*"
-printf "%b\n8 - XFCE\n" "$*"
-printf "%b\n9 - Deepin - WIP May not work. \n" "$*"
-printf "%b\n10 - i3\n" "$*"
-printf "%b\n11 - Sway (Gnome version)\n" "$*"
-printf "%b\n12 - Sway (KDE version)\n" "$*"
-printf "%b\n13 - Cutefish\n" "$*"
-printf "%b\n14 - Budgie\n" "$*"
-printf "%b\n15 - Enlightenment\n" "$*"
-printf "%b\n16 - Awesome\n" "$*"
+printf "%b\n4 - Cinnamon (Mint version)\n" "$*"
+printf "%b\n5 - Cinnamon (Standard version)\n" "$*"
+printf "%b\n6 - Mate\n" "$*"
+printf "%b\n7 - LXDE\n" "$*"
+printf "%b\n8 - LXQT\n" "$*"
+printf "%b\n9 - XFCE\n" "$*"
+printf "%b\n10 - Deepin - WIP May not work. \n" "$*"
+printf "%b\n11 - i3\n" "$*"
+printf "%b\n12 - Sway (Gnome version)\n" "$*"
+printf "%b\n13 - Sway (KDE version)\n" "$*"
+printf "%b\n14 - Cutefish\n" "$*"
+printf "%b\n15 - Budgie\n" "$*"
+printf "%b\n16 - Enlightenment\n" "$*"
+printf "%b\n17 - Awesome\n" "$*"
 
 read -r desktopcheck
 case $desktopcheck in
@@ -409,6 +410,7 @@ case $desktopcheck in
   14) printf "%b\nA super choice.\n" "$*" ;;
   15) printf "%b\nA super choice.\n" "$*" ;;
   16) printf "%b\nA super choice.\n" "$*" ;;
+  17) printf "%b\nA super choice.\n" "$*" ;;
   *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
 done
@@ -426,39 +428,42 @@ elif [ "$desktopcheck" = "4" ]; then
 desktop0="cinnamon"
 
 elif [ "$desktopcheck" = "5" ]; then
-desktop0="mate"
+desktop0="cinnamonv2"
 
 elif [ "$desktopcheck" = "6" ]; then
-desktop0="lxde"
+desktop0="mate"
 
 elif [ "$desktopcheck" = "7" ]; then
-desktop0="lxqt"
+desktop0="lxde"
 
 elif [ "$desktopcheck" = "8" ]; then
-desktop0="xfce"
+desktop0="lxqt"
 
 elif [ "$desktopcheck" = "9" ]; then
-desktop0="deepin"
+desktop0="xfce"
 
 elif [ "$desktopcheck" = "10" ]; then
-desktop0="i3"
+desktop0="deepin"
 
 elif [ "$desktopcheck" = "11" ]; then
-desktop0="sway"
+desktop0="i3"
 
 elif [ "$desktopcheck" = "12" ]; then
-desktop0="swayv2"
+desktop0="sway"
 
 elif [ "$desktopcheck" = "13" ]; then
-desktop0="cutefish"
+desktop0="swayv2"
 
 elif [ "$desktopcheck" = "14" ]; then
-desktop0="budgie"
+desktop0="cutefish"
 
 elif [ "$desktopcheck" = "15" ]; then
-desktop0="enlightenment"
+desktop0="budgie"
 
 elif [ "$desktopcheck" = "16" ]; then
+desktop0="enlightenment"
+
+elif [ "$desktopcheck" = "17" ]; then
 desktop0="awesome"
 
 fi
@@ -1095,6 +1100,30 @@ fi
 
 arch-chroot /mnt systemctl enable lightdm
 
+elif [ "$desktop0" = "cinnamonv2" ]; then
+
+arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
+clear
+sleep 5
+printf "%b\nCopying yay package..\n" "$*"
+sleep 5
+cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+printf "%b\nInstalling yay.\n" "$*"
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+sleep 2
+printf "%b\nInstalled yay successfully.\n" "$*"
+clear
+arch-chroot /mnt systemctl preset-all
+arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+
+if [ "$gpu0" = "vm" ]; then
+gpu0="amd"
+fi
+
+arch-chroot /mnt systemctl enable lightdm
+
 elif [ "$desktop0" = "mate" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $mateapps
@@ -1568,7 +1597,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.3.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.3.2)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -1984,6 +2013,14 @@ clear
      rm -r /mnt/usr/share/wayland-sessions/gnome*
      rm -r /mnt/usr/share/xsessions/gnome*
      clear
+  elif [ "$desktop0" = "cinnamonv2" ]; then
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
+     clear
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
+     clear
+     rm -r /mnt/usr/share/wayland-sessions/gnome*
+     rm -r /mnt/usr/share/xsessions/gnome*
+     clear
   elif [ "$desktop0" = "mate" ]; then
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      clear
@@ -2301,6 +2338,8 @@ yay_install
 secureboot_install
 homedir_fix
  if [ "$desktop0" = "cinnamon" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "cinnamonv2" ]; then
   lightdm_fix
  elif [ "$desktop0" = "mate" ]; then
   lightdm_fix
