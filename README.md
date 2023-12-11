@@ -2,27 +2,33 @@
 
 What is CoffeeLinux?
 
-It is a distro, but not in a typical sense. This is pure Arch Linux, using the exact same ISO and creation method. However, CoffeeLinux has improved upon the installation method significantly.
+Effectively it's pure Arch Linux with a different type of Installer.
+The standard installation script for a standard Arch Linux is kinda broken, and incomplete to assembe an actually functional environment.
+Coffee Linux aims to correcting this problem through a much simpler script that assembles the OS via a series of questions to cater to exactly what you want.
+I have chosen to provide a KDE Live environment to the iso, because connecting to the internet in a basic ArchIso can be difficult or scary for first time linux users.
+With Coffee Linux there is no longer any confusing guides to follow, no need to use a forked distro like Manjaro. You can have real Arch Linux, don't settle for second best.
+Simply connect to the internet, and fire up the installer.
 
-The installation requires Internet, and builds the OS for you via a special script that automates the entire process.
+Coffee Linux provides a full set of packages for every desktop environment, and a series of quality of life improvements via the Coffee Linux Extras.
+Coffee Linux extras include many dependencies for a ton of everday applications, firmware patches, and other little things to make your experience the best I can provide out of the box.
+There are a list of optional applications and services as well to choose from such as Steam, Java, LibreOffice, VMWare, Snapd framework, Heroic Games Launcher, Lutris, Github Desktop, and a few popular Web Browsers.
 
-The installer script itself will ask a few questions to set things up according to your preferences then proceed to install the OS automatically.
+The idea here is to bring real Arch Linux to everyone, and effectively end the need for a distro war.
+Everyone knows Arch is king under Gentoo, it's just confusing to install in a similar way. I've fixed that problem. Enjoy.
+Stop settling for hackjob distros. You're better than that aren't you?
 
-There are several desktop options to select from including Gnome, KDE, and Cinnamon. There are other less tested desktop options as well.
+[Features List]
+Pure Arch Linux not a fork (this is a feature)
+Single file only installer script (this is a feature)
 
-Many improvements have gone into catering to the gaming community, so there are options for Steam, Heroic Games, and Lutris if you want these apps.
+Web Browser Choices: Chrome, Firefox, and MS Edge
+App Choices: Snapd framework, Steam, Java, VMWare, Github Desktop, Heroic Games, Lutris, and LibreOffice.
+GPU Driver Choices: AMD, Nvidia, and Intel
+Bootloader Choices: Grub UEFI, Grub BIOS, and Systemd-Boot (with optional Secure-boot)
+Desktop Environment Choices: Gnome, KDE, Cinnamon, Mate, XFCE, LXQT, LXDE, i3, Sway, Cutefish, Deepin, Budgie, Enlightenment, and Awesome. (Some have styled versions to choose from as well)
 
-There are choices to include other applications such as Java, LibreOffice, Github Desktop, VMware, and Snap support. So being productive is easier than ever.
+Simply download from the Releases page and use Etcher to write the iso to usb. Use like any other ArchIso.
 
-There are a host of "under the hood" improvements made to the system as well satisfying dependencies and optional support for many basic OS components to ensure you have the best experience possible immediately.
-
-If you ever wanted to try out real Arch Linux (Not a distro like Manjaro) but felt it was too much of a hassle to do it yourself, CoffeeLinux is made for you.
-
-Welcome to the new age of Arch Linux installation, welcome to CoffeeLinux, we ope you enjoy your stay. Why hop distros, when you can have it all?
-
-Don't believe me, try it for yourself..
-
-Just use Etcher to write the iso to usb, and go. Easy-peezy
 ============================================
 Known issues...
 RTW8852BE Wifi adapter may not work. [Found in many Lenovo Laptops] (lwfinger rtw89 packages added, but seems ineffective so far)
