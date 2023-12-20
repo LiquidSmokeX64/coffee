@@ -381,18 +381,18 @@ printf "%b\n4 - Cinnamon (Mint version)\n" "$*"
 printf "%b\n5 - Cinnamon (Standard version)\n" "$*"
 printf "%b\n6 - Mate (Mint version)\n" "$*"
 printf "%b\n7 - Mate (Standard version)\n" "$*"
-printf "%b\n8 - LXDE\n" "$*"
-printf "%b\n9 - LXQT\n" "$*"
+printf "%b\n8 - LXDE (WIP May not work)\n" "$*"
+printf "%b\n9 - LXQT (WIP May not work)\n" "$*"
 printf "%b\n10 - XFCE (Mint Version)\n" "$*"
 printf "%b\n11 - XFCE (Standard version)\n" "$*"
-printf "%b\n12 - Deepin - WIP May not work. \n" "$*"
-printf "%b\n13 - i3\n" "$*"
+printf "%b\n12 - Deepin (WIP May not work). \n" "$*"
+printf "%b\n13 - i3 (WIP May not work)\n" "$*"
 printf "%b\n14 - Sway (Gnome version)\n" "$*"
 printf "%b\n15 - Sway (KDE version)\n" "$*"
-printf "%b\n16 - Cutefish\n" "$*"
-printf "%b\n17 - Budgie\n" "$*"
-printf "%b\n18 - Enlightenment\n" "$*"
-printf "%b\n19 - Awesome\n" "$*"
+printf "%b\n16 - Cutefish (WIP May not work)\n" "$*"
+printf "%b\n17 - Budgie (WIP May not work)\n" "$*"
+printf "%b\n18 - Enlightenment (WIP May not work)\n" "$*"
+printf "%b\n19 - Awesome (WIP May not work)\n" "$*"
 
 read -r desktopcheck
 case $desktopcheck in
@@ -1671,7 +1671,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.3.8)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.3.9)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf

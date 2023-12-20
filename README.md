@@ -1,4 +1,4 @@
-# Coffee Linux v.23.3.8 "Winey"
+# Coffee Linux v.23.3.9 "Winey"
 
 What is CoffeeLinux?
 
@@ -34,9 +34,9 @@ Single file only installer script (this is a feature)
 
 Web Browser Choices: Chrome, Firefox, and MS Edge
 
-App Choices: Snapd framework, Steam, Java, VMWare, Github Desktop, Heroic Games, Lutris, and LibreOffice.
+App Choices: Snapd framework, Steam, Java, VMWare, Discord, Github Desktop, Heroic Games, Lutris, and LibreOffice.
 
-GPU Driver Choices: AMD, Nvidia, and Intel
+GPU Driver Choices: AMD, Nvidia, and Intel (Intel is still WIP because I do not own an ARC GPU)
 
 Bootloader Choices: Grub UEFI, Grub BIOS, and Systemd-Boot (with optional Secure-boot)
 
@@ -60,7 +60,7 @@ To build your own iso:
 
 Install archiso first.
 
-Then open a terminal an issue the following commands.
+Then open a terminal and issue the following commands.
 
 git clone https://github.com/Project-X-Mods/coffeelinux.git
 
@@ -74,6 +74,9 @@ Join us on Discord: https://discord.gg/6Pz43wP
 
 We love hearing what you think of our project, 
 or have suggestions (polite ones)
+
+Donations accepted to keep our project alive and well.
+Paypal: paypal.me/DanMaxie
 
 ===============================================
 
