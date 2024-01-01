@@ -1,10 +1,10 @@
 [Unit]
 Description=Fixes Wallpapers
-After=multi-user.target
+After=network.target.target
 
 [Service]
-ExecStart=/usr/bin/bash /opt/wallpaper-updater.sh
-Type=simple
+Type=oneshot
+ExecStart=/opt/wallpaper-updater
 
 [Install]
 WantedBy=multi-user.target
