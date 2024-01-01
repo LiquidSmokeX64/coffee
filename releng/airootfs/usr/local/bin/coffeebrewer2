@@ -303,7 +303,7 @@ while [ "$driveXpasscheck" != "1" ]; do
 printf "%b\nListing Storage Devices for you.\n" "$*"
 fdisk -l
 printf "%b\n" "$*"
-printf "%b\nWhich drive do you want Coffee Linux to install to?\n" "$*"
+printf "%b\nWhich drive do you want Coffee Linux to install to? (Default: 1)\n" "$*"
 printf "%b\n1 - NVME0N1" "$*"
 printf "%b\n2 - NVME1N1" "$*"
 printf "%b\n3 - SDA" "$*"
@@ -342,6 +342,12 @@ drive="vdb"
 boot=1
 swap=2
 system=3
+elif [ "$driveX" != "1" ] && [ "$driveX" != "2" ] && [ "$driveX" != "3" ] && [ "$driveX" != "4" ] && [ "$driveX" != "5" ] && [ "$driveX" != "6" ]; then
+driveX=1
+drive="nvme0n1"
+boot=p1
+swap=p2
+system=p3
 fi
 
 printf "%b\n$drive. Is this correct?\n" "$*"
@@ -388,7 +394,7 @@ clear
 
 while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; do
 
-printf "%b\nWhat desktop environment do you want? (Default: 1)\n" "$*"
+printf "%b\nWhat desktop environment do you want? (Default: 3)\n" "$*"
 printf "%b\n1 - Gnome (Ubuntu version)\n" "$*"
 printf "%b\n2 - Gnome (Standard version)\n" "$*"
 printf "%b\n3 - KDE\n" "$*"
@@ -491,8 +497,8 @@ elif [ "$desktopcheck" = "19" ]; then
 desktop0="awesome"
 
 elif [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; then
-desktopcheck=1
-desktop0="gnome"
+desktopcheck=3
+desktop0="kde"
 
 fi
 done
@@ -565,7 +571,7 @@ webbrowser00=firefox
 elif [ "$webcheck00" = "3" ]; then
 webbrowser00=edge
 elif [ "$webcheck00" != "1" ] && [ "$webcheck00" != "2" ] && [ "$webcheck00" != "3" ]; then
-webcheck00=1
+webcheck00=2
 webbrowser00=firefox
 fi
 done
@@ -628,7 +634,7 @@ while [ "$steamcheck00" != "1" ] && [ "$steamcheck00" != "2" ]; do
 
 clear
 
-printf "%b\nWould you like to install Steam Desktop?\n" "$*"
+printf "%b\nWould you like to install Steam Desktop? (Default: 1)\n" "$*"
 printf "%b\n1 - Yes\n" "$*"
 printf "%b\n2 - No\n" "$*"
 read -r steamcheck00
@@ -790,14 +796,14 @@ elif [ "$vmwarecheck" = "2" ]; then
 vmwareon="no"
 elif [ "$vmwarecheck" != "1" ] && [ "$vmwarecheck" != "2" ]; then
 vmwarecheck=2
-vmwareon=yes
+vmwareon=no
 fi
 done
 
 clear
 
 while [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; do
-printf "%b\nWhat type of GPU do you have?\n" "$*"
+printf "%b\nWhat type of GPU do you have? (Default: 1)\n" "$*"
 printf "%b\n1 - AMD\n" "$*"
 printf "%b\n2 - Nvidia\n" "$*"
 printf "%b\n3 - Intel\n" "$*"
@@ -809,7 +815,7 @@ case $gpucheck in
   2) printf "%b\nA good choice.\n" "$*" ;;
   3) printf "%b\nA good choice.\n" "$*" ;;
   4) printf "%b\nA good choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
 esac
 
 if [ "$gpucheck" = "1" ]; then
@@ -820,6 +826,9 @@ elif [ "$gpucheck" = "3" ]; then
 gpu0="intel"
 elif [ "$gpucheck" = "4" ]; then
 gpu0="vm"
+elif [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; then
+gpucheck=1
+gpu0="amd"
 fi
 done
 
@@ -965,7 +974,7 @@ printf "%b\nSet keys successfully..\n" "$*"
 sleep 5
 pacman -Syy
 else
-printf "%b\nEthernet selected, or already connected, preparing for launch..\n" "$*"
+printf "%b\nWe are already connected to the internet, preparing for launch..\n" "$*"
 sleep 10
 printf "%b\nSetting intial local pacman keyring up...\n" "$*"
 pacman-key --init
@@ -1743,7 +1752,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.3.13)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.3.14)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
