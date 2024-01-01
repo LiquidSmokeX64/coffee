@@ -1418,9 +1418,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1441,9 +1441,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1464,9 +1464,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1486,9 +1486,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1510,9 +1510,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1534,9 +1534,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1556,9 +1556,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1578,9 +1578,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1600,9 +1600,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1622,9 +1622,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1644,9 +1644,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1666,9 +1666,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1688,9 +1688,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1710,9 +1710,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1738,9 +1738,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1766,9 +1766,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1788,9 +1788,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1810,9 +1810,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1832,9 +1832,9 @@ clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
-cp /opt/yay-12.1.2-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.1.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -2042,7 +2042,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.4.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.4.2)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
