@@ -2042,7 +2042,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.4.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.4.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -2433,7 +2433,7 @@ if [ "$questionspassed" = "yes" ]; then
      clear
      if [ "$grub0" = "true" ]; then
      clear
-     printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm kcm-grub2
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --nodiffmenu --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y kcm-grub2
      clear
      fi
    elif [ "$desktop0" = "cinnamon" ]; then
