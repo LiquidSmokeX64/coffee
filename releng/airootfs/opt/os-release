@@ -1,6 +1,6 @@
 NAME="CoffeeLinux"
 PRETTY_NAME="Coffee Linux"
-VERSION_ID="23.3.14"
+VERSION_ID="23.4.0"
 VERSION_CODENAME="Winey"
 ID="arch"
 BUILD_ID="Winey"

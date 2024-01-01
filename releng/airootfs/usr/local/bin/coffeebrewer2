@@ -157,7 +157,19 @@ fi
 
 clear
 
-while [ "$usercheck" != "1" ]; do
+while [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; do
+
+printf "%b\nWould you like to set your username? (Default: 2)\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r usercheck02
+case $usercheck02 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
+esac
+
+if [ "$usercheck02" = "1" ]; then
 printf "%b\nSet your Username.\n" "$*"
 read -r user00
 printf "%b\n$user00. Is this correct?\n" "$*"
@@ -168,15 +180,50 @@ case $usercheck in
   1) printf "%b\nPerfect\n" "$*" ;;
   *) printf "%b\nLet's retry\n" "$*" ;;
 esac
-done
+
 if [ "$usercheck" = "1" ]; then
 user01=$user00
 fi
+
+elif [ "$usercheck02" = "2" ]; then
+
+usercheck=1
+user00=defaultuser
+
+if [ "$usercheck" = "1" ]; then
+user01=$user00
+fi
+
+elif [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; then
+
+usercheck02=2
+usercheck=1
+user00=defaultuser
+
+if [ "$usercheck" = "1" ]; then
+user01=$user00
+fi
+
+fi
+done
 #
 
 clear
 
-while [ "$userpasscheck" != "1" ]; do
+while [ "$userpasscheck00" != "1" ] && [ "$userpasscheck00" != "2" ]; do
+
+printf "%b\nWould you like to set your user password? (Default: 2)\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r userpasscheck00
+case $userpasscheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
+esac
+
+if [ "$userpasscheck00" = "1" ]; then
+
 printf "%b\nSet your User Password.\n" "$*"
 read -r userpass00
 printf "%b\n$userpass00. Is this correct?\n" "$*"
@@ -187,15 +234,50 @@ case $userpasscheck in
   1) printf "%b\nPerfect\n" "$*" ;;
   *) printf "%b\nLet's retry\n" "$*" ;;
 esac
-done
+
 if [ "$userpasscheck" = "1" ]; then
 userpass0=$userpass00
 fi
+
+elif [ "$userpasscheck00" = "2" ]; then
+
+userpass00=coffee
+userpasscheck=1
+
+if [ "$userpasscheck" = "1" ]; then
+userpass0=$userpass00
+fi
+
+elif [ "$userpasscheck00" != "1" ] && [ "$userpasscheck00" != "2" ]; then
+
+userpasscheck00=2
+userpass00=coffee
+userpasscheck=1
+
+if [ "$userpasscheck" = "1" ]; then
+userpass0=$userpass00
+fi
+
+fi
+done
 #
 
 clear
 
-while [ "$rootpasscheck" != "1" ]; do
+while [ "$rootpasscheck00" != "1" ] && [ "$rootpasscheck00" != "2" ]; do
+
+printf "%b\nWould you like to set your root password? (Default: 2)\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r rootpasscheck00
+case $rootpasscheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
+esac
+
+if [ "$rootpasscheck00" = "1" ]; then
+
 printf "%b\nSet your Root Password.\n" "$*"
 read -r userpass01
 printf "%b\n$userpass01. Is this correct?\n" "$*"
@@ -206,10 +288,139 @@ case $rootpasscheck in
   1) printf "%b\nPerfect\n" "$*" ;;
   *) printf "%b\nLet's retry\n" "$*" ;;
 esac
-done
+
 if [ "$rootpasscheck" = "1" ]; then
 userpass1=$userpass01
 fi
+
+elif [ "$rootpasscheck00" = "2" ]; then
+
+userpass01=coffee
+rootpasscheck=1
+
+if [ "$rootpasscheck" = "1" ]; then
+userpass1=$userpass01
+fi
+
+elif [ "$rootpasscheck00" != "1" ] && [ "$rootpasscheck00" != "2" ]; then
+
+rootpasscheck00=2
+userpass01=coffee
+rootpasscheck=1
+
+if [ "$rootpasscheck" = "1" ]; then
+userpass1=$userpass01
+fi
+
+fi
+done
+
+clear
+
+while [ "$namepasscheck00" != "1" ] && [ "$namepasscheck00" != "2" ]; do
+
+printf "%b\nWould you like to set your PC Name? (Default: 2)\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r namepasscheck00
+case $namepasscheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
+esac
+
+if [ "$namepasscheck00" = "1" ]; then
+
+printf "%b\nSet your PC name.\n" "$*"
+read -r name00
+printf "%b\n$name00. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r namepasscheck
+case $namepasscheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+esac
+
+if [ "$namepasscheck" = "1" ]; then
+name0=$name00
+fi
+
+elif [ "$namepasscheck00" = "2" ]; then
+
+name00=coffeelinux
+namepasscheck=1
+
+if [ "$namepasscheck" = "1" ]; then
+name0=$name00
+fi
+
+elif [ "$namepasscheck00" != "1" ] && [ "$namepasscheck00" != "2" ]; then
+
+namepasscheck00=2
+name00=coffeelinux
+namepasscheck=1
+
+if [ "$namepasscheck" = "1" ]; then
+name0=$name00
+fi
+
+fi
+done
+#
+
+clear
+
+while [ "$name2passcheck02" != "1" ] && [ "$name2passcheck02" != "2" ]; do
+
+printf "%b\nWould you like to set your Hard Drive Label? (Default: 2)\n" "$*"
+printf "%b\n1 - Yes\n" "$*"
+printf "%b\n2 - No\n" "$*"
+read -r name2passcheck02
+case $name2passcheck02 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
+esac
+
+if [ "$name2passcheck02" = "1" ]; then
+
+printf "%b\nSet your HardDrive Label (OS Partition Label).\n" "$*"
+read -r name01
+printf "%b\n$name01. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r name2passcheck
+case $name2passcheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+esac
+
+if [ "$name2passcheck" = "1" ]; then
+name1=$name01
+fi
+
+elif [ "$name2passcheck02" = "2" ]; then
+
+name01=coffeedisk
+name2passcheck=1
+
+if [ "$name2passcheck" = "1" ]; then
+name1=$name01
+fi
+
+elif [ "$name2passcheck02" != "1" ] && [ "$name2passcheck02" != "2" ]; then
+
+name2passcheck02=2
+name01=coffeedisk
+name2passcheck=1
+
+if [ "$name2passcheck" = "1" ]; then
+name1=$name01
+fi
+
+fi
+done
 
 clear
 
@@ -258,43 +469,6 @@ fi
 
 clear
 
-while [ "$namepasscheck" != "1" ]; do
-printf "%b\nSet your PC name.\n" "$*"
-read -r name00
-printf "%b\n$name00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r namepasscheck
-case $namepasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-if [ "$namepasscheck" = "1" ]; then
-name0=$name00
-fi
-
-#
-
-clear
-
-while [ "$name2passcheck" != "1" ]; do
-printf "%b\nSet your HardDrive Label (OS Partition Label).\n" "$*"
-read -r name01
-printf "%b\n$name01. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r name2passcheck
-case $name2passcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-if [ "$name2passcheck" = "1" ]; then
-name1=$name01
-fi
-#
-
 native1=yes
 
 clear
@@ -317,38 +491,6 @@ drive="nvme0n1"
 boot=p1
 swap=p2
 system=p3
-elif [ "$driveX" = "2" ]; then
-drive="nvme1n1"
-boot=p1
-swap=p2
-system=p3
-elif [ "$driveX" = "3" ]; then
-drive="sda"
-boot=1
-swap=2
-system=3
-elif [ "$driveX" = "4" ]; then
-drive="sdb"
-boot=1
-swap=2
-system=3
-elif [ "$driveX" = "5" ]; then
-drive="vda"
-boot=1
-swap=2
-system=3
-elif [ "$driveX" = "6" ]; then
-drive="vdb"
-boot=1
-swap=2
-system=3
-elif [ "$driveX" != "1" ] && [ "$driveX" != "2" ] && [ "$driveX" != "3" ] && [ "$driveX" != "4" ] && [ "$driveX" != "5" ] && [ "$driveX" != "6" ]; then
-driveX=1
-drive="nvme0n1"
-boot=p1
-swap=p2
-system=p3
-fi
 
 printf "%b\n$drive. Is this correct?\n" "$*"
 printf "%b\n1 - yes\n" "$*"
@@ -359,7 +501,6 @@ case $driveXpasscheck in
   *) printf "%b\nLet's retry\n" "$*" ;;
   #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
 esac
-done
 
 if [ "$driveXpasscheck" = "1" ]; then
 pfx="/dev/"
@@ -369,9 +510,158 @@ swap0=$drive0$swap
 system0=$drive0$system
 hostname0=$name0
 drivename0=$name1
-else
-exit
 fi
+
+elif [ "$driveX" = "2" ]; then
+drive="nvme1n1"
+boot=p1
+swap=p2
+system=p3
+
+printf "%b\n$drive. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r driveXpasscheck
+case $driveXpasscheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+esac
+
+if [ "$driveXpasscheck" = "1" ]; then
+pfx="/dev/"
+drive0=$pfx$drive
+boot0=$drive0$boot
+swap0=$drive0$swap
+system0=$drive0$system
+hostname0=$name0
+drivename0=$name1
+fi
+
+elif [ "$driveX" = "3" ]; then
+drive="sda"
+boot=1
+swap=2
+system=3
+
+printf "%b\n$drive. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r driveXpasscheck
+case $driveXpasscheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+esac
+
+if [ "$driveXpasscheck" = "1" ]; then
+pfx="/dev/"
+drive0=$pfx$drive
+boot0=$drive0$boot
+swap0=$drive0$swap
+system0=$drive0$system
+hostname0=$name0
+drivename0=$name1
+fi
+
+elif [ "$driveX" = "4" ]; then
+drive="sdb"
+boot=1
+swap=2
+system=3
+
+printf "%b\n$drive. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r driveXpasscheck
+case $driveXpasscheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+esac
+
+if [ "$driveXpasscheck" = "1" ]; then
+pfx="/dev/"
+drive0=$pfx$drive
+boot0=$drive0$boot
+swap0=$drive0$swap
+system0=$drive0$system
+hostname0=$name0
+drivename0=$name1
+fi
+
+elif [ "$driveX" = "5" ]; then
+drive="vda"
+boot=1
+swap=2
+system=3
+
+printf "%b\n$drive. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r driveXpasscheck
+case $driveXpasscheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+esac
+
+if [ "$driveXpasscheck" = "1" ]; then
+pfx="/dev/"
+drive0=$pfx$drive
+boot0=$drive0$boot
+swap0=$drive0$swap
+system0=$drive0$system
+hostname0=$name0
+drivename0=$name1
+fi
+
+elif [ "$driveX" = "6" ]; then
+drive="vdb"
+boot=1
+swap=2
+system=3
+
+printf "%b\n$drive. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r driveXpasscheck
+case $driveXpasscheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+  #*) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+esac
+
+if [ "$driveXpasscheck" = "1" ]; then
+pfx="/dev/"
+drive0=$pfx$drive
+boot0=$drive0$boot
+swap0=$drive0$swap
+system0=$drive0$system
+hostname0=$name0
+drivename0=$name1
+fi
+
+elif [ "$driveX" != "1" ] && [ "$driveX" != "2" ] && [ "$driveX" != "3" ] && [ "$driveX" != "4" ] && [ "$driveX" != "5" ] && [ "$driveX" != "6" ]; then
+driveX=1
+drive="nvme0n1"
+boot=p1
+swap=p2
+system=p3
+driveXpasscheck=1
+
+if [ "$driveXpasscheck" = "1" ]; then
+pfx="/dev/"
+drive0=$pfx$drive
+boot0=$drive0$boot
+swap0=$drive0$swap
+system0=$drive0$system
+hostname0=$name0
+drivename0=$name1
+fi
+
+fi
+done
 
 clear
 
@@ -1752,7 +2042,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.3.14)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.4.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
