@@ -6,9 +6,11 @@ Effectively it's pure Arch Linux with a different type of Installer.
 
 The standard installation script for a standard Arch Linux is kinda broken, and incomplete to assembe an actually functional environment.
 
-Coffee Linux aims to correcting this problem through a much simpler script that assembles the OS via a series of questions to cater to exactly what you want.
+Coffee Linux aims to correct this problem through a much simpler script that assembles the OS via a series of questions to cater to exactly what you want.
 
-I have chosen to provide a KDE Live environment to the iso, because connecting to the internet in a basic ArchIso can be difficult or scary for first time linux users.
+I have chosen to provide a KDE Live environment to the iso, and is the default installed Desktop Environment.
+
+The entire installation process features a default setup in case one just wants to hit "Enter" a few times and be done.
 
 With Coffee Linux there is no longer any confusing guides to follow, no need to use a forked distro like Manjaro. You can have real Arch Linux, don't settle for second best.
 
