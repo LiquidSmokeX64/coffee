@@ -38,11 +38,172 @@ awesomeapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fo
 
 enlightenmentapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret enlightenment gtk3 gtk4 lightdm lightdm-gtk-greeter rofi wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
+defaultsetup(){
+
+clear
+
+while [ "$defaultcheck00" != "1" ] && [ "$defaultcheck00" != "2" ]; do
+
+printf "%b\nWhat type of installation would you like? (Default: 1)\n" "$*"
+printf "%b\n1 - Default Installation (fully automated)\n" "$*"
+printf "%b\n2 - Custom Installation\n" "$*"
+read -r defaultcheck00
+case $defaultcheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
+esac
+
+if [ "$defaultcheck00" = "1" ]; then
+
+printf "%b\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
+set_swap
+set_network
+format_disks
+base_install
+set_locale
+set_passwords
+desktop_install
+coffee_install
+bootloader_install
+gpu_install
+java_install
+vmware_install
+browser_install
+office_install
+steam_install
+discord_install
+lutris_install
+heroic_install
+github_install
+snapd_install
+yay_install
+secureboot_install
+homedir_fix
+ if [ "$desktop0" = "cinnamon" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "cinnamonv2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "mate" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "matev2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "xfce" ]; then
+  lightdm_fix_xfce
+ elif [ "$desktop0" = "xfcev2" ]; then
+  lightdm_fix_xfcev2
+ elif [ "$desktop0" = "deepin" ]; then
+  lightdm_fix_deepin
+ fi
+success_check
+printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+umount -R /mnt
+reboot
+
+elif [ "$defaultcheck00" = "2" ]; then
+
+questionare
+set_swap
+set_network
+format_disks
+base_install
+set_locale
+set_passwords
+desktop_install
+coffee_install
+bootloader_install
+gpu_install
+java_install
+vmware_install
+browser_install
+office_install
+steam_install
+discord_install
+lutris_install
+heroic_install
+github_install
+snapd_install
+yay_install
+secureboot_install
+homedir_fix
+ if [ "$desktop0" = "cinnamon" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "cinnamonv2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "mate" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "matev2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "xfce" ]; then
+  lightdm_fix_xfce
+ elif [ "$desktop0" = "xfcev2" ]; then
+  lightdm_fix_xfcev2
+ elif [ "$desktop0" = "deepin" ]; then
+  lightdm_fix_deepin
+ fi
+success_check
+printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+umount -R /mnt
+reboot
+
+elif [ "$defaultcheck00" != "1" ] && [ "$defaultcheck00" != "2" ]; then
+netdefaultcheck00=1
+
+printf "%b\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
+set_swap
+set_network
+format_disks
+base_install
+set_locale
+set_passwords
+desktop_install
+coffee_install
+bootloader_install
+gpu_install
+java_install
+vmware_install
+browser_install
+office_install
+steam_install
+discord_install
+lutris_install
+heroic_install
+github_install
+snapd_install
+yay_install
+secureboot_install
+homedir_fix
+ if [ "$desktop0" = "cinnamon" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "cinnamonv2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "mate" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "matev2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "xfce" ]; then
+  lightdm_fix_xfce
+ elif [ "$desktop0" = "xfcev2" ]; then
+  lightdm_fix_xfcev2
+ elif [ "$desktop0" = "deepin" ]; then
+  lightdm_fix_deepin
+ fi
+success_check
+printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+umount -R /mnt
+reboot
+
+fi
+done
+
+}
+
 questionare (){
 
 while [ "$netcheck00" != "1" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "3" ]; do
 
 clear
+
 
 printf "%b\nWhat type of network do you have? (Default: 1)\n" "$*"
 printf "%b\n1 - Ethernet\n" "$*"
@@ -2042,7 +2203,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.4.3)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (24.5.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -2818,57 +2979,16 @@ case $installationcheck in
   *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
 esac
 
-if [ "$installationcheck" != "1" ] && [ "$installationcheck" != "2" ]; then
-installationcheck=1
-fi
+
 if [ "$installationcheck" = "1" ]; then
-questionare
-set_swap
-set_network
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-bootloader_install
-gpu_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "cinnamonv2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- elif [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- elif [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-umount -R /mnt
-reboot
+defaultsetup
 elif [ "$installationcheck" = "2" ]; then
 printf "%b\nOkay, exiting the installer now..\n" "$*"
 sleep 5
 exit
+elif [ "$installationcheck" != "1" ] && [ "$installationcheck" != "2" ]; then
+installationcheck=1
+defaultsetup
 fi
 done
 
