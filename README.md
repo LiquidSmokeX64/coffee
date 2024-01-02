@@ -1,4 +1,4 @@
-# Coffee Linux v.23.5.1 "Winey"
+# Coffee Linux v.23.5.2 "Winey"
 
 What is CoffeeLinux?
 

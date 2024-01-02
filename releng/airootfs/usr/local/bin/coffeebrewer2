@@ -42,13 +42,16 @@ defaultsetup(){
 
 clear
 
-while [ "$defaultcheck00" != "1" ] && [ "$defaultcheck00" != "2" ] && [ "$defaultcheck00" != "3" ] && [ "$defaultcheck00" != "4" ]; do
+while [ "$defaultcheck00" != "1" ] && [ "$defaultcheck00" != "2" ] && [ "$defaultcheck00" != "3" ] && [ "$defaultcheck00" != "4" ] && [ "$defaultcheck00" != "5" ] && [ "$defaultcheck00" != "6" ] && [ "$defaultcheck00" != "7" ]; do
 
 printf "%b\nWhat type of installation would you like? (Default: 1)\n" "$*"
 printf "%b\n1 - Default KDE Installation (fully automated)\n" "$*"
-printf "%b\n2 - Default Gnome Installation (fully automated)\n" "$*"
-printf "%b\n3 - Default Cinnamon Installation (fully automated)\n" "$*"
-printf "%b\n4 - Custom Installation\n" "$*"
+printf "%b\n2 - Default KDE Installation (semi automated)\n" "$*"
+printf "%b\n3 - Default Gnome Installation (fully automated)\n" "$*"
+printf "%b\n4 - Default Gnome Installation (semi automated)\n" "$*"
+printf "%b\n5 - Default Cinnamon Installation (fully automated)\n" "$*"
+printf "%b\n6 - Default Cinnamon Installation (semi automated)\n" "$*"
+printf "%b\n7 - Custom Installation\n" "$*"
 
 read -r defaultcheck00
 case $defaultcheck00 in
@@ -56,12 +59,16 @@ case $defaultcheck00 in
   2) printf "%b\nLet's move on then.\n" "$*" ;;
   3) printf "%b\nLet's move on then.\n" "$*" ;;
   4) printf "%b\nLet's move on then.\n" "$*" ;;
+  5) printf "%b\nLet's move on then.\n" "$*" ;;
+  6) printf "%b\nLet's move on then.\n" "$*" ;;
+  7) printf "%b\nLet's move on then.\n" "$*" ;;
   *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
 esac
 
 if [ "$defaultcheck00" = "1" ]; then
 
-printf "%b\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
+printf "%b\n\n\n\n\n\n\n\n" "$*" | customtype2
+printf "%b\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
 set_swap
 set_network
 format_disks
@@ -107,7 +114,8 @@ reboot
 
 elif [ "$defaultcheck00" = "2" ]; then
 
-printf "%b\n\n\n\n\n\n\n\n\n1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
+customtype2
+printf "%b\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
 set_swap
 set_network
 format_disks
@@ -153,7 +161,8 @@ reboot
 
 elif [ "$defaultcheck00" = "3" ]; then
 
-printf "%b\n\n\n\n\n\n\n\n\n4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
+printf "%b\n\n\n\n\n\n\n\n" "$*" | customtype2
+printf "%b\n\n\n1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
 set_swap
 set_network
 format_disks
@@ -199,6 +208,148 @@ reboot
 
 elif [ "$defaultcheck00" = "4" ]; then
 
+customtype2
+printf "%b\n\n\n1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
+set_swap
+set_network
+format_disks
+base_install
+set_locale
+set_passwords
+desktop_install
+coffee_install
+bootloader_install
+gpu_install
+java_install
+vmware_install
+browser_install
+office_install
+steam_install
+discord_install
+lutris_install
+heroic_install
+github_install
+snapd_install
+yay_install
+secureboot_install
+homedir_fix
+ if [ "$desktop0" = "cinnamon" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "cinnamonv2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "mate" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "matev2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "xfce" ]; then
+  lightdm_fix_xfce
+ elif [ "$desktop0" = "xfcev2" ]; then
+  lightdm_fix_xfcev2
+ elif [ "$desktop0" = "deepin" ]; then
+  lightdm_fix_deepin
+ fi
+success_check
+printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+umount -R /mnt
+reboot
+
+elif [ "$defaultcheck00" = "5" ]; then
+
+printf "%b\n\n\n\n\n\n\n\n" "$*" | customtype2
+printf "%b\n\n\n4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
+set_swap
+set_network
+format_disks
+base_install
+set_locale
+set_passwords
+desktop_install
+coffee_install
+bootloader_install
+gpu_install
+java_install
+vmware_install
+browser_install
+office_install
+steam_install
+discord_install
+lutris_install
+heroic_install
+github_install
+snapd_install
+yay_install
+secureboot_install
+homedir_fix
+ if [ "$desktop0" = "cinnamon" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "cinnamonv2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "mate" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "matev2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "xfce" ]; then
+  lightdm_fix_xfce
+ elif [ "$desktop0" = "xfcev2" ]; then
+  lightdm_fix_xfcev2
+ elif [ "$desktop0" = "deepin" ]; then
+  lightdm_fix_deepin
+ fi
+success_check
+printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+umount -R /mnt
+reboot
+
+elif [ "$defaultcheck00" = "6" ]; then
+
+customtype2
+printf "%b\n\n\n4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
+set_swap
+set_network
+format_disks
+base_install
+set_locale
+set_passwords
+desktop_install
+coffee_install
+bootloader_install
+gpu_install
+java_install
+vmware_install
+browser_install
+office_install
+steam_install
+discord_install
+lutris_install
+heroic_install
+github_install
+snapd_install
+yay_install
+secureboot_install
+homedir_fix
+ if [ "$desktop0" = "cinnamon" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "cinnamonv2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "mate" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "matev2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "xfce" ]; then
+  lightdm_fix_xfce
+ elif [ "$desktop0" = "xfcev2" ]; then
+  lightdm_fix_xfcev2
+ elif [ "$desktop0" = "deepin" ]; then
+  lightdm_fix_deepin
+ fi
+success_check
+printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+umount -R /mnt
+reboot
+
+elif [ "$defaultcheck00" = "7" ]; then
+
+customtype2
 questionare
 set_swap
 set_network
@@ -243,10 +394,12 @@ printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the install
 umount -R /mnt
 reboot
 
-elif [ "$defaultcheck00" != "1" ] && [ "$defaultcheck00" != "2" ] && [ "$defaultcheck00" != "3" ] && [ "$defaultcheck00" != "4" ]; then
-netdefaultcheck00=1
+elif [ "$defaultcheck00" != "1" ] && [ "$defaultcheck00" != "2" ] && [ "$defaultcheck00" != "3" ] && [ "$defaultcheck00" != "4" ] && [ "$defaultcheck00" != "5" ] && [ "$defaultcheck00" != "6" ] && [ "$defaultcheck00" != "7" ]; then
 
-printf "%b\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
+defaultcheck00=1
+
+printf "%b\n\n\n\n\n\n\n\n" "$*" | customtype2
+printf "%b\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
 set_swap
 set_network
 format_disks
@@ -295,123 +448,7 @@ done
 
 }
 
-questionare (){
-
-while [ "$netcheck00" != "1" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "3" ]; do
-
-clear
-
-
-printf "%b\nWhat type of network do you have? (Default: 1)\n" "$*"
-printf "%b\n1 - Ethernet\n" "$*"
-printf "%b\n2 - Wifi\n" "$*"
-printf "%b\n3 - I have already connected to the internet\n" "$*"
-read -r netcheck00
-case $netcheck00 in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  3) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
-esac
-
-if [ "$netcheck00" = "1" ]; then
-netpass00=ethernet
-elif [ "$netcheck00" = "2" ]; then
-netpass00=wifi
-elif [ "$netcheck00" = "3" ]; then
-netpass00=ethernet
-elif [ "$netcheck00" != "3" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "1" ]; then
-netcheck00=3
-netpass00=ethernet
-fi
-done
-
-clear
-
-if [ "$netpass00" = "ethernet" ]; then
-printf "%b\nEthernet selected, or already connected, skipping this part.\n" "$*"
-elif [ "$netpass00" = "wifi" ]; then
-while [ "$wifipasscheck" != "1" ]; do
-clear
-
-while [ "$adaptercheck00" != "1" ] && [ "$adaptercheck00" != "2" ]; do
-printf "%b\nIs your wifi adapter Realtek? (Default: 2)\n" "$*"
-printf "%b\n1 - Realtek\n" "$*"
-printf "%b\n2 - Other\n" "$*"
-read -r adaptercheck00
-printf "%b\n$adaptercheck00 Is this correct?\n" "$*"
-case $adaptercheck00 in
-1) printf "%b\nPerfect\n" "$*" ;;
-2) printf "%b\nLet's move on then.\n" "$*" ;;
-*) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
-esac
-if [ "$adaptercheck00" = "1" ]; then
-wifiadapter0="realtek"
-elif [ "$adaptercheck00" = "2" ]; then
-wifiadapter0="other"
-elif [ "$adaptercheck00" != "2" ] && [ "$adaptercheck00" != "1" ]; then
-adaptercheck00=2
-wifiadapter0="other"
-fi
-done
-clear
-
-rfkill unblock all
-iwctl station list
-printf "%b\nSet your Wifi device ID. (Usually 'wlan0')\n" "$*"
-read -r wifi00
-wifi0=$wifi00
-printf "%b\n$wifi00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r wifipasscheck
-case $wifipasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-fi
-
-clear
-
-if [ "$netpass00" = "ethernet" ]; then
-printf "%b\nNo Wifi, skipping this part.\n" "$*"
-elif [ "$netpass00" = "wifi" ]; then
-while [ "$ssidcheck" != "1" ]; do
-iwctl station $wifi0 get-networks
-printf "%b\nSet your Network SSID (Your network name).\n" "$*"
-read -r ssid00
-ssid0=$ssid00
-printf "%b\n$ssid00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r ssidcheck
-case $ssidcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-fi
-
-clear
-
-if [ "$netpass00" = "ethernet" ]; then
-printf "%b\nNo Wifi, skipping this part.\n" "$*"
-elif [ "$netpass00" = "wifi" ]; then
-while [ "$netpasswordcheck" != "1" ]; do
-printf "%b\nEnter your Wifi password.\n" "$*"
-read -r netpassword00
-netpassword0=$netpassword00
-printf "%b\n$netpassword00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r netpasswordcheck
-case $netpasswordcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-fi
+customtype2(){
 
 clear
 
@@ -682,55 +719,6 @@ done
 
 clear
 
-while [ "$sbpasscheck" != "1" ] && [ "$sbpasscheck" != "2" ]; do
-printf "%b\nWould you like to enable Secure-Boot in the OS? (requires systemd-bootloader) (Default: 2)\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r sbpasscheck
-case $sbpasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
-esac
-
-if [ "$sbpasscheck" = "1" ]; then
-sbpass0=yes
-elif [ "$sbpasscheck" = "2" ]; then
-sbpass0=no
-elif [ "$sbpasscheck" != "2" ] && [ "$sbpasscheck" != "1" ]; then
-sbpasscheck=2
-sbpass0=no
-fi
-done
-
-#
-if [ "$sbpass0" = "no" ]; then
-printf "%b\nNo SB, skipping this part.\n" "$*"
-elif [ "$sbpass0" = "yes" ]; then
-while [ "$uefipasscheck" != "1" ]; do
-printf "%b\nSet your UEFI/MOK Secure-Boot Password.\n" "$*"
-read -r uefipass00
-printf "%b\n$uefipass00. Is this correct?\n" "$*"
-printf "%b\n1 - yes\n" "$*"
-printf "%b\n2 - no\n" "$*"
-read -r uefipasscheck
-case $uefipasscheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  *) printf "%b\nLet's retry\n" "$*" ;;
-esac
-done
-fi
-
-if [ "$uefipasscheck" = "1" ]; then
-uefipass0=$uefipass00
-fi
-
-clear
-
-native1=yes
-
-clear
-
 while [ "$driveXpasscheck" != "1" ]; do
 printf "%b\nListing Storage Devices for you.\n" "$*"
 fdisk -l
@@ -920,6 +908,209 @@ fi
 
 fi
 done
+
+clear
+
+while [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; do
+printf "%b\nWhat type of GPU do you have? (Default: 1)\n" "$*"
+printf "%b\n1 - AMD\n" "$*"
+printf "%b\n2 - Nvidia\n" "$*"
+printf "%b\n3 - Intel\n" "$*"
+printf "%b\n4 - Virtual GPU (VMware etc.)\n" "$*"
+
+read -r gpucheck
+case $gpucheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nA good choice.\n" "$*" ;;
+  3) printf "%b\nA good choice.\n" "$*" ;;
+  4) printf "%b\nA good choice.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
+esac
+
+if [ "$gpucheck" = "1" ]; then
+gpu0="amd"
+elif [ "$gpucheck" = "2" ]; then
+gpu0="nvidia"
+elif [ "$gpucheck" = "3" ]; then
+gpu0="intel"
+elif [ "$gpucheck" = "4" ]; then
+gpu0="vm"
+elif [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; then
+gpucheck=1
+gpu0="amd"
+fi
+done
+
+clear
+
+}
+
+questionare (){
+
+while [ "$netcheck00" != "1" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "3" ]; do
+
+clear
+
+
+printf "%b\nWhat type of network do you have? (Default: 1)\n" "$*"
+printf "%b\n1 - Ethernet\n" "$*"
+printf "%b\n2 - Wifi\n" "$*"
+printf "%b\n3 - I have already connected to the internet\n" "$*"
+read -r netcheck00
+case $netcheck00 in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  3) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
+esac
+
+if [ "$netcheck00" = "1" ]; then
+netpass00=ethernet
+elif [ "$netcheck00" = "2" ]; then
+netpass00=wifi
+elif [ "$netcheck00" = "3" ]; then
+netpass00=ethernet
+elif [ "$netcheck00" != "3" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "1" ]; then
+netcheck00=3
+netpass00=ethernet
+fi
+done
+
+clear
+
+if [ "$netpass00" = "ethernet" ]; then
+printf "%b\nEthernet selected, or already connected, skipping this part.\n" "$*"
+elif [ "$netpass00" = "wifi" ]; then
+while [ "$wifipasscheck" != "1" ]; do
+clear
+
+while [ "$adaptercheck00" != "1" ] && [ "$adaptercheck00" != "2" ]; do
+printf "%b\nIs your wifi adapter Realtek? (Default: 2)\n" "$*"
+printf "%b\n1 - Realtek\n" "$*"
+printf "%b\n2 - Other\n" "$*"
+read -r adaptercheck00
+printf "%b\n$adaptercheck00 Is this correct?\n" "$*"
+case $adaptercheck00 in
+1) printf "%b\nPerfect\n" "$*" ;;
+2) printf "%b\nLet's move on then.\n" "$*" ;;
+*) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
+esac
+if [ "$adaptercheck00" = "1" ]; then
+wifiadapter0="realtek"
+elif [ "$adaptercheck00" = "2" ]; then
+wifiadapter0="other"
+elif [ "$adaptercheck00" != "2" ] && [ "$adaptercheck00" != "1" ]; then
+adaptercheck00=2
+wifiadapter0="other"
+fi
+done
+clear
+
+rfkill unblock all
+iwctl station list
+printf "%b\nSet your Wifi device ID. (Usually 'wlan0')\n" "$*"
+read -r wifi00
+wifi0=$wifi00
+printf "%b\n$wifi00. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r wifipasscheck
+case $wifipasscheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+esac
+done
+fi
+
+clear
+
+if [ "$netpass00" = "ethernet" ]; then
+printf "%b\nNo Wifi, skipping this part.\n" "$*"
+elif [ "$netpass00" = "wifi" ]; then
+while [ "$ssidcheck" != "1" ]; do
+iwctl station $wifi0 get-networks
+printf "%b\nSet your Network SSID (Your network name).\n" "$*"
+read -r ssid00
+ssid0=$ssid00
+printf "%b\n$ssid00. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r ssidcheck
+case $ssidcheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+esac
+done
+fi
+
+clear
+
+if [ "$netpass00" = "ethernet" ]; then
+printf "%b\nNo Wifi, skipping this part.\n" "$*"
+elif [ "$netpass00" = "wifi" ]; then
+while [ "$netpasswordcheck" != "1" ]; do
+printf "%b\nEnter your Wifi password.\n" "$*"
+read -r netpassword00
+netpassword0=$netpassword00
+printf "%b\n$netpassword00. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r netpasswordcheck
+case $netpasswordcheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+esac
+done
+fi
+
+clear
+
+while [ "$sbpasscheck" != "1" ] && [ "$sbpasscheck" != "2" ]; do
+printf "%b\nWould you like to enable Secure-Boot in the OS? (requires systemd-bootloader) (Default: 2)\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r sbpasscheck
+case $sbpasscheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nLet's move on then.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
+esac
+
+if [ "$sbpasscheck" = "1" ]; then
+sbpass0=yes
+elif [ "$sbpasscheck" = "2" ]; then
+sbpass0=no
+elif [ "$sbpasscheck" != "2" ] && [ "$sbpasscheck" != "1" ]; then
+sbpasscheck=2
+sbpass0=no
+fi
+done
+
+#
+if [ "$sbpass0" = "no" ]; then
+printf "%b\nNo SB, skipping this part.\n" "$*"
+elif [ "$sbpass0" = "yes" ]; then
+while [ "$uefipasscheck" != "1" ]; do
+printf "%b\nSet your UEFI/MOK Secure-Boot Password.\n" "$*"
+read -r uefipass00
+printf "%b\n$uefipass00. Is this correct?\n" "$*"
+printf "%b\n1 - yes\n" "$*"
+printf "%b\n2 - no\n" "$*"
+read -r uefipasscheck
+case $uefipasscheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  *) printf "%b\nLet's retry\n" "$*" ;;
+esac
+done
+fi
+
+if [ "$uefipasscheck" = "1" ]; then
+uefipass0=$uefipass00
+fi
+
+clear
+
+native1=yes
 
 clear
 
@@ -1345,38 +1536,6 @@ vmwareon="no"
 elif [ "$vmwarecheck" != "1" ] && [ "$vmwarecheck" != "2" ]; then
 vmwarecheck=2
 vmwareon=no
-fi
-done
-
-clear
-
-while [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; do
-printf "%b\nWhat type of GPU do you have? (Default: 1)\n" "$*"
-printf "%b\n1 - AMD\n" "$*"
-printf "%b\n2 - Nvidia\n" "$*"
-printf "%b\n3 - Intel\n" "$*"
-printf "%b\n4 - Virtual GPU (VMware etc.)\n" "$*"
-
-read -r gpucheck
-case $gpucheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nA good choice.\n" "$*" ;;
-  3) printf "%b\nA good choice.\n" "$*" ;;
-  4) printf "%b\nA good choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
-esac
-
-if [ "$gpucheck" = "1" ]; then
-gpu0="amd"
-elif [ "$gpucheck" = "2" ]; then
-gpu0="nvidia"
-elif [ "$gpucheck" = "3" ]; then
-gpu0="intel"
-elif [ "$gpucheck" = "4" ]; then
-gpu0="vm"
-elif [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; then
-gpucheck=1
-gpu0="amd"
 fi
 done
 
@@ -2300,7 +2459,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.5.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.5.2)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
