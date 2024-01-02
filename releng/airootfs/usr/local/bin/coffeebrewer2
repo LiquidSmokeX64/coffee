@@ -38,416 +38,6 @@ awesomeapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fo
 
 enlightenmentapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret enlightenment gtk3 gtk4 lightdm lightdm-gtk-greeter rofi wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-defaultsetup(){
-
-clear
-
-while [ "$defaultcheck00" != "1" ] && [ "$defaultcheck00" != "2" ] && [ "$defaultcheck00" != "3" ] && [ "$defaultcheck00" != "4" ] && [ "$defaultcheck00" != "5" ] && [ "$defaultcheck00" != "6" ] && [ "$defaultcheck00" != "7" ]; do
-
-printf "%b\nWhat type of installation would you like? (Default: 1)\n" "$*"
-printf "%b\n1 - Default KDE Installation (fully automated)\n" "$*"
-printf "%b\n2 - Default KDE Installation (semi automated)\n" "$*"
-printf "%b\n3 - Default Gnome Installation (fully automated)\n" "$*"
-printf "%b\n4 - Default Gnome Installation (semi automated)\n" "$*"
-printf "%b\n5 - Default Cinnamon Installation (fully automated)\n" "$*"
-printf "%b\n6 - Default Cinnamon Installation (semi automated)\n" "$*"
-printf "%b\n7 - Custom Installation\n" "$*"
-
-read -r defaultcheck00
-case $defaultcheck00 in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nLet's move on then.\n" "$*" ;;
-  3) printf "%b\nLet's move on then.\n" "$*" ;;
-  4) printf "%b\nLet's move on then.\n" "$*" ;;
-  5) printf "%b\nLet's move on then.\n" "$*" ;;
-  6) printf "%b\nLet's move on then.\n" "$*" ;;
-  7) printf "%b\nLet's move on then.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, selecting default..\n" "$*" ;;
-esac
-
-if [ "$defaultcheck00" = "1" ]; then
-
-printf "%b\n\n\n\n\n\n\n\n" "$*" | customtype2
-printf "%b\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
-set_swap
-set_network
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-bootloader_install
-gpu_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "cinnamonv2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- elif [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- elif [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-umount -R /mnt
-reboot
-
-elif [ "$defaultcheck00" = "2" ]; then
-
-customtype2
-printf "%b\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
-set_swap
-set_network
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-bootloader_install
-gpu_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "cinnamonv2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- elif [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- elif [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-umount -R /mnt
-reboot
-
-elif [ "$defaultcheck00" = "3" ]; then
-
-printf "%b\n\n\n\n\n\n\n\n" "$*" | customtype2
-printf "%b\n\n\n1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
-set_swap
-set_network
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-bootloader_install
-gpu_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "cinnamonv2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- elif [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- elif [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-umount -R /mnt
-reboot
-
-elif [ "$defaultcheck00" = "4" ]; then
-
-customtype2
-printf "%b\n\n\n1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
-set_swap
-set_network
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-bootloader_install
-gpu_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "cinnamonv2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- elif [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- elif [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-umount -R /mnt
-reboot
-
-elif [ "$defaultcheck00" = "5" ]; then
-
-printf "%b\n\n\n\n\n\n\n\n" "$*" | customtype2
-printf "%b\n\n\n4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
-set_swap
-set_network
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-bootloader_install
-gpu_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "cinnamonv2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- elif [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- elif [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-umount -R /mnt
-reboot
-
-elif [ "$defaultcheck00" = "6" ]; then
-
-customtype2
-printf "%b\n\n\n4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
-set_swap
-set_network
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-bootloader_install
-gpu_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "cinnamonv2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- elif [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- elif [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-umount -R /mnt
-reboot
-
-elif [ "$defaultcheck00" = "7" ]; then
-
-customtype2
-questionare
-set_swap
-set_network
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-bootloader_install
-gpu_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "cinnamonv2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- elif [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- elif [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-umount -R /mnt
-reboot
-
-elif [ "$defaultcheck00" != "1" ] && [ "$defaultcheck00" != "2" ] && [ "$defaultcheck00" != "3" ] && [ "$defaultcheck00" != "4" ] && [ "$defaultcheck00" != "5" ] && [ "$defaultcheck00" != "6" ] && [ "$defaultcheck00" != "7" ]; then
-
-defaultcheck00=1
-
-printf "%b\n\n\n\n\n\n\n\n" "$*" | customtype2
-printf "%b\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" "$*" | questionare
-set_swap
-set_network
-format_disks
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-bootloader_install
-gpu_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "cinnamonv2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- elif [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- elif [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- elif [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- elif [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
-umount -R /mnt
-reboot
-
-fi
-done
-
-}
-
 customtype2(){
 
 clear
@@ -943,6 +533,119 @@ done
 
 clear
 
+while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; do
+
+printf "%b\nWhat desktop environment do you want? (Default: 3)\n" "$*"
+printf "%b\n1 - Gnome (Ubuntu version)\n" "$*"
+printf "%b\n2 - Gnome (Standard version)\n" "$*"
+printf "%b\n3 - KDE\n" "$*"
+printf "%b\n4 - Cinnamon (Mint version)\n" "$*"
+printf "%b\n5 - Cinnamon (Standard version)\n" "$*"
+printf "%b\n6 - Mate (Mint version)\n" "$*"
+printf "%b\n7 - Mate (Standard version)\n" "$*"
+printf "%b\n8 - LXDE (WIP May not work)\n" "$*"
+printf "%b\n9 - LXQT (WIP May not work)\n" "$*"
+printf "%b\n10 - XFCE (Mint Version)\n" "$*"
+printf "%b\n11 - XFCE (Standard version)\n" "$*"
+printf "%b\n12 - Deepin (WIP May not work). \n" "$*"
+printf "%b\n13 - i3 (WIP May not work)\n" "$*"
+printf "%b\n14 - Sway (Gnome version)\n" "$*"
+printf "%b\n15 - Sway (KDE version)\n" "$*"
+printf "%b\n16 - Cutefish (WIP May not work)\n" "$*"
+printf "%b\n17 - Budgie (WIP May not work)\n" "$*"
+printf "%b\n18 - Enlightenment (WIP May not work)\n" "$*"
+printf "%b\n19 - Awesome (WIP May not work)\n" "$*"
+
+read -r desktopcheck
+case $desktopcheck in
+  1) printf "%b\nPerfect\n" "$*" ;;
+  2) printf "%b\nA good choice.\n" "$*" ;;
+  3) printf "%b\nA good choice.\n" "$*" ;;
+  4) printf "%b\nA good choice.\n" "$*" ;;
+  5) printf "%b\nA good choice.\n" "$*" ;;
+  6) printf "%b\nA good choice.\n" "$*" ;;
+  7) printf "%b\nA good choice.\n" "$*" ;;
+  8) printf "%b\nA brave choice.\n" "$*" ;;
+  9) printf "%b\nA super choice.\n" "$*" ;;
+  10) printf "%b\nA super choice.\n" "$*" ;;
+  11) printf "%b\nA super choice.\n" "$*" ;;
+  12) printf "%b\nA super choice.\n" "$*" ;;
+  13) printf "%b\nA super choice.\n" "$*" ;;
+  14) printf "%b\nA super choice.\n" "$*" ;;
+  15) printf "%b\nA super choice.\n" "$*" ;;
+  16) printf "%b\nA super choice.\n" "$*" ;;
+  17) printf "%b\nA super choice.\n" "$*" ;;
+  18) printf "%b\nA super choice.\n" "$*" ;;
+  19) printf "%b\nA super choice.\n" "$*" ;;
+  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
+esac
+
+if [ "$desktopcheck" = "1" ]; then
+desktop0="gnome"
+
+elif [ "$desktopcheck" = "2" ]; then
+desktop0="gnomev2"
+
+elif [ "$desktopcheck" = "3" ]; then
+desktop0="kde"
+
+elif [ "$desktopcheck" = "4" ]; then
+desktop0="cinnamon"
+
+elif [ "$desktopcheck" = "5" ]; then
+desktop0="cinnamonv2"
+
+elif [ "$desktopcheck" = "6" ]; then
+desktop0="mate"
+
+elif [ "$desktopcheck" = "7" ]; then
+desktop0="matev2"
+
+elif [ "$desktopcheck" = "8" ]; then
+desktop0="lxde"
+
+elif [ "$desktopcheck" = "9" ]; then
+desktop0="lxqt"
+
+elif [ "$desktopcheck" = "10" ]; then
+desktop0="xfce"
+
+elif [ "$desktopcheck" = "11" ]; then
+desktop0="xfcev2"
+
+elif [ "$desktopcheck" = "12" ]; then
+desktop0="deepin"
+
+elif [ "$desktopcheck" = "13" ]; then
+desktop0="i3"
+
+elif [ "$desktopcheck" = "14" ]; then
+desktop0="sway"
+
+elif [ "$desktopcheck" = "15" ]; then
+desktop0="swayv2"
+
+elif [ "$desktopcheck" = "16" ]; then
+desktop0="cutefish"
+
+elif [ "$desktopcheck" = "17" ]; then
+desktop0="budgie"
+
+elif [ "$desktopcheck" = "18" ]; then
+desktop0="enlightenment"
+
+elif [ "$desktopcheck" = "19" ]; then
+desktop0="awesome"
+
+elif [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; then
+desktopcheck=3
+desktop0="kde"
+
+fi
+done
+
+clear
+
 }
 
 questionare (){
@@ -1126,119 +829,6 @@ case $swapcheck in
 esac
 if [ "$swapcheck" != "1" ] && [ "$swapcheck" != "2" ]; then
 swapcheck=2
-fi
-done
-
-clear
-
-while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; do
-
-printf "%b\nWhat desktop environment do you want? (Default: 3)\n" "$*"
-printf "%b\n1 - Gnome (Ubuntu version)\n" "$*"
-printf "%b\n2 - Gnome (Standard version)\n" "$*"
-printf "%b\n3 - KDE\n" "$*"
-printf "%b\n4 - Cinnamon (Mint version)\n" "$*"
-printf "%b\n5 - Cinnamon (Standard version)\n" "$*"
-printf "%b\n6 - Mate (Mint version)\n" "$*"
-printf "%b\n7 - Mate (Standard version)\n" "$*"
-printf "%b\n8 - LXDE (WIP May not work)\n" "$*"
-printf "%b\n9 - LXQT (WIP May not work)\n" "$*"
-printf "%b\n10 - XFCE (Mint Version)\n" "$*"
-printf "%b\n11 - XFCE (Standard version)\n" "$*"
-printf "%b\n12 - Deepin (WIP May not work). \n" "$*"
-printf "%b\n13 - i3 (WIP May not work)\n" "$*"
-printf "%b\n14 - Sway (Gnome version)\n" "$*"
-printf "%b\n15 - Sway (KDE version)\n" "$*"
-printf "%b\n16 - Cutefish (WIP May not work)\n" "$*"
-printf "%b\n17 - Budgie (WIP May not work)\n" "$*"
-printf "%b\n18 - Enlightenment (WIP May not work)\n" "$*"
-printf "%b\n19 - Awesome (WIP May not work)\n" "$*"
-
-read -r desktopcheck
-case $desktopcheck in
-  1) printf "%b\nPerfect\n" "$*" ;;
-  2) printf "%b\nA good choice.\n" "$*" ;;
-  3) printf "%b\nA good choice.\n" "$*" ;;
-  4) printf "%b\nA good choice.\n" "$*" ;;
-  5) printf "%b\nA good choice.\n" "$*" ;;
-  6) printf "%b\nA good choice.\n" "$*" ;;
-  7) printf "%b\nA good choice.\n" "$*" ;;
-  8) printf "%b\nA brave choice.\n" "$*" ;;
-  9) printf "%b\nA super choice.\n" "$*" ;;
-  10) printf "%b\nA super choice.\n" "$*" ;;
-  11) printf "%b\nA super choice.\n" "$*" ;;
-  12) printf "%b\nA super choice.\n" "$*" ;;
-  13) printf "%b\nA super choice.\n" "$*" ;;
-  14) printf "%b\nA super choice.\n" "$*" ;;
-  15) printf "%b\nA super choice.\n" "$*" ;;
-  16) printf "%b\nA super choice.\n" "$*" ;;
-  17) printf "%b\nA super choice.\n" "$*" ;;
-  18) printf "%b\nA super choice.\n" "$*" ;;
-  19) printf "%b\nA super choice.\n" "$*" ;;
-  *) printf "%b\nUnrecognized option, please try again: $user00\n" "$*" ;;
-esac
-
-if [ "$desktopcheck" = "1" ]; then
-desktop0="gnome"
-
-elif [ "$desktopcheck" = "2" ]; then
-desktop0="gnomev2"
-
-elif [ "$desktopcheck" = "3" ]; then
-desktop0="kde"
-
-elif [ "$desktopcheck" = "4" ]; then
-desktop0="cinnamon"
-
-elif [ "$desktopcheck" = "5" ]; then
-desktop0="cinnamonv2"
-
-elif [ "$desktopcheck" = "6" ]; then
-desktop0="mate"
-
-elif [ "$desktopcheck" = "7" ]; then
-desktop0="matev2"
-
-elif [ "$desktopcheck" = "8" ]; then
-desktop0="lxde"
-
-elif [ "$desktopcheck" = "9" ]; then
-desktop0="lxqt"
-
-elif [ "$desktopcheck" = "10" ]; then
-desktop0="xfce"
-
-elif [ "$desktopcheck" = "11" ]; then
-desktop0="xfcev2"
-
-elif [ "$desktopcheck" = "12" ]; then
-desktop0="deepin"
-
-elif [ "$desktopcheck" = "13" ]; then
-desktop0="i3"
-
-elif [ "$desktopcheck" = "14" ]; then
-desktop0="sway"
-
-elif [ "$desktopcheck" = "15" ]; then
-desktop0="swayv2"
-
-elif [ "$desktopcheck" = "16" ]; then
-desktop0="cutefish"
-
-elif [ "$desktopcheck" = "17" ]; then
-desktop0="budgie"
-
-elif [ "$desktopcheck" = "18" ]; then
-desktop0="enlightenment"
-
-elif [ "$desktopcheck" = "19" ]; then
-desktop0="awesome"
-
-elif [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; then
-desktopcheck=3
-desktop0="kde"
-
 fi
 done
 
@@ -2459,7 +2049,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.5.2)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.5.3)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -3237,14 +2827,101 @@ esac
 
 
 if [ "$installationcheck" = "1" ]; then
-defaultsetup
+customtype2
+questionare
+set_swap
+set_network
+format_disks
+base_install
+set_locale
+set_passwords
+desktop_install
+coffee_install
+bootloader_install
+gpu_install
+java_install
+vmware_install
+browser_install
+office_install
+steam_install
+discord_install
+lutris_install
+heroic_install
+github_install
+snapd_install
+yay_install
+secureboot_install
+homedir_fix
+ if [ "$desktop0" = "cinnamon" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "cinnamonv2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "mate" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "matev2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "xfce" ]; then
+  lightdm_fix_xfce
+ elif [ "$desktop0" = "xfcev2" ]; then
+  lightdm_fix_xfcev2
+ elif [ "$desktop0" = "deepin" ]; then
+  lightdm_fix_deepin
+ fi
+success_check
+printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+umount -R /mnt
+reboot
 elif [ "$installationcheck" = "2" ]; then
 printf "%b\nOkay, exiting the installer now..\n" "$*"
 sleep 5
 exit
 elif [ "$installationcheck" != "1" ] && [ "$installationcheck" != "2" ]; then
 installationcheck=1
-defaultsetup
+customtype2
+questionare
+set_swap
+set_network
+format_disks
+base_install
+set_locale
+set_passwords
+desktop_install
+coffee_install
+bootloader_install
+gpu_install
+java_install
+vmware_install
+browser_install
+office_install
+steam_install
+discord_install
+lutris_install
+heroic_install
+github_install
+snapd_install
+yay_install
+secureboot_install
+homedir_fix
+ if [ "$desktop0" = "cinnamon" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "cinnamonv2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "mate" ]; then
+  lightdm_fix
+ elif [ "$desktop0" = "matev2" ]; then
+  lightdm_fixv2
+ elif [ "$desktop0" = "xfce" ]; then
+  lightdm_fix_xfce
+ elif [ "$desktop0" = "xfcev2" ]; then
+  lightdm_fix_xfcev2
+ elif [ "$desktop0" = "deepin" ]; then
+  lightdm_fix_deepin
+ fi
+success_check
+printf "%b\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n" "$*"
+umount -R /mnt
+reboot
+
 fi
 done
 
