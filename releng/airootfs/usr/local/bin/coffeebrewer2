@@ -1266,8 +1266,8 @@ set_network (){
 while [ "$command17finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 #- Set variables for iwctl
+clear
 if [ "$netpass00" = "wifi" ]; then
-
 rfkill unblock all
 printf "%b\n" "$*" | iwctl device $wifi0 set-property Powered on
 printf "%b\nPowering on wifi device for a minute..\n" "$*"
@@ -1279,7 +1279,7 @@ printf "%b\nSetting intial pacman keyring up...\n" "$*"
 pacman-key --init
 printf "%b\nSet keys successfully..\n" "$*"
 sleep 5
-pacman -Syy archlinux-keyring
+pacman -Syy --noconfirm archlinux-keyring
 else
 printf "%b\nWe are already connected to the internet, preparing for launch..\n" "$*"
 sleep 10
@@ -1287,7 +1287,7 @@ printf "%b\nSetting intial local pacman keyring up...\n" "$*"
 pacman-key --init
 printf "%b\nSet local pacman keys successfully..\n" "$*"
 sleep 5
-pacman -Syy archlinux-keyring
+pacman -Syy --noconfirm archlinux-keyring
 clear
 fi
 
@@ -1320,8 +1320,7 @@ printf "%b\nMounting Disks\n" "$*"
 mount "$system0" /mnt
 mkdir /mnt/boot
 mount "$boot0" /mnt/boot
-pacman -Sy --noconfirm archlinux-keyring
-pacman -Syy --noconfirm
+clear
 
 command1finished="1"
 else
@@ -1394,9 +1393,6 @@ clear
 while [ "$command3finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-arch-chroot /mnt pacman -Syy --noconfirm
-clear
-arch-chroot /mnt pacman -Sy --noconfirm archlinux-keyring
 clear
 cp /etc/pacman.conf /mnt/etc/pacman.conf
 arch-chroot /mnt pacman -Syy --noconfirm
@@ -2059,7 +2055,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.5.4)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.5.5)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
