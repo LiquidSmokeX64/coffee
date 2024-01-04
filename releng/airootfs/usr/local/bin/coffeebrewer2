@@ -1395,7 +1395,6 @@ if [ "$questionspassed" = "yes" ]; then
 
 clear
 cp /etc/pacman.conf /mnt/etc/pacman.conf
-arch-chroot /mnt pacman -Syy --noconfirm
 printf "%b\nSet Root Password\n" "$*"
 printf "%b$userpass1\n$userpass1\n" "$*" | arch-chroot /mnt passwd
 printf "%bAdding User Account\n" "$*"
@@ -2055,7 +2054,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.5.5)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.5.6)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
