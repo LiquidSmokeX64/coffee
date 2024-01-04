@@ -1,4 +1,4 @@
-# Coffee Linux v.23.5.3 "Winey"
+# Coffee Linux v.23.5.4 "Winey"
 
 What is CoffeeLinux?
 
@@ -8,13 +8,9 @@ The standard installation script for a standard Arch Linux is kinda broken, and 
 
 Coffee Linux aims to correct this problem through a much simpler script that assembles the OS via a series of questions to cater to exactly what you want.
 
-I have chosen to provide a KDE Live environment to the iso, and is the default installed Desktop Environment.
-
 The entire installation process features a default setup in case one just wants to hit "Enter" a few times and be done.
 
 With Coffee Linux there is no longer any confusing guides to follow, no need to use a forked distro like Manjaro. You can have real Arch Linux, don't settle for second best.
-
-Simply connect to the internet, and fire up the installer.
 
 Coffee Linux provides a full set of packages for every desktop environment, and a series of quality of life improvements via the Coffee Linux Extras.
 
