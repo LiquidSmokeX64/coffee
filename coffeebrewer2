@@ -2056,7 +2056,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.5.8)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.5.9)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -2372,7 +2372,10 @@ printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disa
 clear
 arch-chroot /mnt systemctl enable snapd.apparmor
 arch-chroot /mnt systemctl enable snapd
-
+cp /opt/snapd-updater /mnt/opt/
+arch-chroot /mnt chmod 755 /opt/snapd-updater
+cp /opt/snapd-updater.service /mnt/lib/systemd/system/
+arch-chroot /mnt systemctl enable snapd-updater.service
 
 fi
 

@@ -1,0 +1,10 @@
+[Unit]
+Description=Finishes snapd installation and keeps snaps updated
+After=network.target.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/snapd-updater
+
+[Install]
+WantedBy=multi-user.target

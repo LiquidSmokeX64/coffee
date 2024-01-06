@@ -1,0 +1,7 @@
+#!/bin/sh
+
+snap install snapd
+snap install snapd-desktop-integration
+snap install core core18 core20 core22
+snap install snap-store
+snap refresh
