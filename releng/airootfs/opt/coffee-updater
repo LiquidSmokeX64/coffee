@@ -3,3 +3,4 @@
 rm -R /usr/share/wayland-sessions/gnome*
 rm -R /usr/share/xsessions/gnome*
 pacman -Rdd --noconfirm gnome-terminal gedit
+pacman -Syy --noconfirm gnome-console gnome-text-editor
