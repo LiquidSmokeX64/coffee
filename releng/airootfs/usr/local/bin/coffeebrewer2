@@ -1280,7 +1280,7 @@ pacman-key --init
 pacman-key --populate archlinux
 printf "%b\nSet keys successfully..\n" "$*"
 sleep 5
-pacman -Syy --noconfirm --disable-download-timeout archlinux-keyring
+pacman -Syy --noconfirm archlinux-keyring
 else
 printf "%b\nWe are already connected to the internet, preparing for launch..\n" "$*"
 sleep 10
@@ -1289,7 +1289,7 @@ pacman-key --init
 pacman-key --populate archlinux
 printf "%b\nSet local pacman keys successfully..\n" "$*"
 sleep 5
-pacman -Syy --noconfirm --disable-download-timeout archlinux-keyring
+pacman -Syy --noconfirm archlinux-keyring
 clear
 fi
 
@@ -1341,7 +1341,7 @@ while [ "$pacstrapfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 pacstrap /mnt $baseapps
 clear
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $baseapps2
+arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 clear
 
 pacstrapfinished="1"
@@ -1376,7 +1376,7 @@ mkinitcpio -P
 EOT
 
 cp --dereference /etc/resolv.conf /mnt/etc/
-arch-chroot /mnt pacman -Syu --noconfirm --disable-download-timeout
+arch-chroot /mnt pacman -Syu --noconfirm
 clear
 
 command2finished="1"
@@ -1427,18 +1427,18 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$desktop0" = "gnome" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $gnomeapps
+arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
-arch-chroot /mnt pacman -R --noconfirm --disable-download-timeout gedit gnome-terminal
+arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
@@ -1450,18 +1450,18 @@ arch-chroot /mnt systemctl enable gdm
 
 elif [ "$desktop0" = "gnomev2" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $gnomeapps
+arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
-arch-chroot /mnt pacman -R --noconfirm --disable-download-timeout gedit gnome-terminal
+arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
@@ -1473,14 +1473,14 @@ arch-chroot /mnt systemctl enable gdm
 
 elif [ "$desktop0" = "kde" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $kdeapps
+arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1495,21 +1495,21 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "cinnamon" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $cinnamonapps
+arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout gnome-session
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 
 if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
@@ -1519,21 +1519,21 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "cinnamonv2" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $cinnamonapps
+arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
-arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout gnome-session
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 
 if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
@@ -1543,14 +1543,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "mate" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $mateapps
+arch-chroot /mnt pacman -Sy --noconfirm $mateapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1565,14 +1565,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "matev2" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $mateapps
+arch-chroot /mnt pacman -Sy --noconfirm $mateapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1587,14 +1587,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "lxde" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $lxdeapps
+arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1609,14 +1609,14 @@ arch-chroot /mnt systemctl enable lxdm
 
 elif [ "$desktop0" = "lxqt" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $lxqtapps
+arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1631,14 +1631,14 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "xfce" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $xfceapps
+arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1653,14 +1653,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "xfcev2" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $xfceapps
+arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1675,14 +1675,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "deepin" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $deepinapps
+arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1697,14 +1697,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "i3" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $i3apps
+arch-chroot /mnt pacman -Sy --noconfirm $i3apps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1719,14 +1719,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "sway" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $swayapps
+arch-chroot /mnt pacman -Sy --noconfirm $swayapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1743,18 +1743,18 @@ printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/swa
 gpu0="amd"
 fi
 
-arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout gnome-session
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 
 elif [ "$desktop0" = "swayv2" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $swayappsv2
+arch-chroot /mnt pacman -Sy --noconfirm $swayappsv2
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1771,18 +1771,18 @@ printf "%b\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" "$*" >> /mnt/etc/swa
 gpu0="amd"
 fi
 
-arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout gnome-session
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 
 elif [ "$desktop0" = "cutefish" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $cutefishapps
+arch-chroot /mnt pacman -Sy --noconfirm $cutefishapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1797,14 +1797,14 @@ arch-chroot /mnt systemctl enable sddm
 
 elif [ "$desktop0" = "budgie" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $budgieapps
+arch-chroot /mnt pacman -Sy --noconfirm $budgieapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1819,14 +1819,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "enlightenment" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $enlightenmentapps
+arch-chroot /mnt pacman -Sy --noconfirm $enlightenmentapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1841,14 +1841,14 @@ arch-chroot /mnt systemctl enable lightdm
 
 elif [ "$desktop0" = "awesome" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $awesomeapps
+arch-chroot /mnt pacman -Sy --noconfirm $awesomeapps
 clear
 sleep 5
 printf "%b\nCopying yay package..\n" "$*"
 sleep 5
 cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling yay.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled yay successfully.\n" "$*"
 clear
@@ -1871,8 +1871,8 @@ sleep 5
 cp /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst /mnt/opt/
 cp /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling drealtek dkms packages.\n" "$*"
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst
-arch-chroot /mnt pacman -U --noconfirm --disable-download-timeout /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled realtek dkms packages successfully.\n" "$*"
 clear
@@ -1892,7 +1892,7 @@ clear
 
 while [ "$pacmanfinished" != "1" ] && [ "$coffeeon00" = "yes" ]; do
 if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $coffeeapps
+arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
 clear
 pacmanfinished="1"
 else
@@ -1915,13 +1915,13 @@ if [ "$gpu0" = "nvidia" ]; then
 
 printf "%b\nGRUB UEFI for Nvidia selected.\n" "$*"
 
-arch-chroot /mnt pacman -S --noconfirm --disable-download-timeout libadwaita grub os-prober breeze-grub terminus-font efivar
+arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
 
 if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout grub2-editor-frameworks
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 fi
 
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout update-grub
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
 cp /opt/grub-nvidia/grub /mnt/etc/default/
 
@@ -1935,18 +1935,18 @@ elif [ "$gpu0" = "amd" ]; then
 
 printf "%b\nGRUB UEFI for AMD selected.\n" "$*"
 
-arch-chroot /mnt pacman -S --noconfirm --disable-download-timeout libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
+arch-chroot /mnt pacman -S --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
 
 if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout grub2-editor-frameworks
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 fi
 
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout update-grub
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 cp /opt/grub-amd/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
-pacman -Sy --noconfirm --disable-download-timeout
+pacman -Sy --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 EOT
@@ -1955,18 +1955,18 @@ elif [ "$gpu0" = "intel" ]; then
 
 printf "%b\nGRUB UEFI for Intel selected.\n" "$*"
 
-arch-chroot /mnt pacman -S --noconfirm --disable-download-timeout libadwaita grub os-prober breeze-grub terminus-font efivar
+arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
 
 if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout grub2-editor-frameworks
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 fi
 
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout update-grub
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 cp /opt/grub-intel/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
-pacman -Sy --noconfirm --disable-download-timeout
+pacman -Sy --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 EOT
@@ -1979,18 +1979,18 @@ if [ "$gpu0" = "nvidia" ]; then
 
 printf "%b\nGRUB BIOS for Nvidia selected.\n" "$*"
 
-arch-chroot /mnt pacman -S --noconfirm --disable-download-timeout libadwaita grub os-prober breeze-grub terminus-font
+arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
 
 if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout grub2-editor-frameworks
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 fi
 
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout update-grub
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
 cp /opt/grub-nvidia/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
-pacman -Sy --noconfirm --disable-download-timeout
+pacman -Sy --noconfirm
 mkinitcpio -P
 EOT
 
@@ -2002,19 +2002,19 @@ elif [ "$gpu0" = "amd" ]; then
 printf "%b\nGRUB BIOS for AMD selected.\n" "$*"
 
 
-arch-chroot /mnt pacman -S --needed --noconfirm --disable-download-timeout libadwaita corectrl grub os-prober breeze-grub terminus-font
+arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font
 
 if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout grub2-editor-frameworks
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 fi
 
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout update-grub
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
 cp /opt/grub-amd/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
-pacman -Sy --noconfirm --disable-download-timeout
+pacman -Sy --noconfirm
 EOT
 
 arch-chroot /mnt grub-install --target=i386-pc "$drive0"
@@ -2024,20 +2024,19 @@ elif [ "$gpu0" = "intel" ]; then
 
 printf "%b\nGRUB BIOS for Intel selected.\n" "$*"
 
-
-arch-chroot /mnt pacman -S --needed --noconfirm --disable-download-timeout libadwaita grub os-prober breeze-grub terminus-font
+arch-chroot /mnt pacman -S --needed --noconfirm libadwaita grub os-prober breeze-grub terminus-font
 
 if [ $desktop0 = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout grub2-editor-frameworks
+arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 fi
 
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout update-grub
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
 cp /opt/grub-intel/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
-pacman -Sy --noconfirm --disable-download-timeout
+pacman -Sy --noconfirm
 EOT
 
 arch-chroot /mnt grub-install --target=i386-pc "$drive0"
@@ -2056,7 +2055,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.5.10)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.5.11)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -2084,31 +2083,31 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b\nNvidia GPU selected.\nInstalling GPU Drivers first.\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout nvidia-open opencl-nvidia nvidia-utils nvidia-settings
+arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
  if [ "$grub0" = "false" ]; then
   printf "%b\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
  fi
  if [ "$desktop0" = "sway" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
  fi
  if [ "$desktop0" = "swayv2" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
  fi
 elif [ "$gpu0" = "amd" ]; then
 printf "%b\nAMD GPU selected.\nInstalling amdgpu-fan and corectrl as well\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout lib32-mesa lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu
+arch-chroot /mnt pacman -Sy --noconfirm lib32-mesa lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu
  if [ "$grub0" = "false" ]; then
   printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
  fi
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout corectrl
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
+arch-chroot /mnt pacman -Sy --noconfirm corectrl
 elif [ "$gpu0" = "intel" ]; then
 printf "%b\nIntel GPU selected.\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout mesa lib32-mesa xorg-server vulkan-intel vulkan-intel lib32-vulkan-intel libva-intel-driver libva-utils
+arch-chroot /mnt pacman -Sy --noconfirm mesa lib32-mesa xorg-server vulkan-intel vulkan-intel lib32-vulkan-intel libva-intel-driver libva-utils
  if [ "$grub0" = "false" ]; then
   printf "%b\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" "$*" >> /mnt/boot/loader/entries/arch.conf
  fi
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y amdgpu-fan
 fi
 
 command9finished="1"
@@ -2130,7 +2129,7 @@ if [ "$questionspassed" = "yes" ]; then
 clear
 
 if [ "$javaon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout $javaapps
+arch-chroot /mnt pacman -Sy --noconfirm $javaapps
 clear
 fi
 
@@ -2158,7 +2157,7 @@ while [ "$command6finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$vmwareon" = "yes" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y vmware-workstation
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y vmware-workstation
 clear
 printf "%b1\n[Unit]\nDescription=VMware daemon\nRequires=vmware-usbarbitrator.service\nBefore=vmware-usbarbitrator.service\nAfter=network.target\n[Service]\nExecStart=/etc/init.d/vmware start\nExecStop=/etc/init.d/vmware stop\nPIDFile=/var/lock/subsys/vmware\nRemainAfterExit=yes\n[Install]\nWantedBy=multi-user.target\n" "$*" >> /mnt/etc/systemd/system/vmware.service
 
@@ -2190,13 +2189,13 @@ while [ "$command18finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$webbrowser00" = "chrome" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
 clear
 elif [ "$webbrowser00" = "firefox" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout firefox
+arch-chroot /mnt pacman -Sy --noconfirm firefox
 clear
 elif [ "$webbrowser00" = "edge" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge-stable
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge-stable
 clear
 fi
 
@@ -2217,7 +2216,7 @@ while [ "$command24finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$officeon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout libreoffice-fresh
+arch-chroot /mnt pacman -Sy --noconfirm libreoffice-fresh
 clear
 fi
 
@@ -2238,15 +2237,15 @@ while [ "$command21finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$steamon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout mangohud gamescope steam wine wine-gecko wine-mono winetricks
+arch-chroot /mnt pacman -Sy --noconfirm mangohud gamescope steam wine wine-gecko wine-mono winetricks
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
 clear
 fi
 
@@ -2267,7 +2266,7 @@ while [ "$command22finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$discordon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout discord
+arch-chroot /mnt pacman -Sy --noconfirm discord
 clear
 fi
 
@@ -2288,11 +2287,11 @@ while [ "$command23finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$lutrison00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout lutris wine wine-gecko wine-mono winetricks
+arch-chroot /mnt pacman -Sy --noconfirm lutris wine wine-gecko wine-mono winetricks
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
 clear
 fi
 
@@ -2313,13 +2312,13 @@ while [ "$command19finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$epicon00" = "yes" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
 clear
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout wine wine-gecko wine-mono winetricks
+arch-chroot /mnt pacman -Sy --noconfirm wine wine-gecko wine-mono winetricks
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
 elif [ "$epicon00" = "no" ]; then
 printf "%b\nHeroic not selected, moving on." "$*"
 clear
@@ -2342,7 +2341,7 @@ while [ "$command20finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$giton00" = "yes" ]; then
-printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
+printf "%b2\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 clear
 elif [ "$giton00" = "no" ]; then
 printf "%b\nGithub Desktop not selected, moving on." "$*"
@@ -2366,9 +2365,9 @@ while [ "$command7finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$snapon" = "yes" ]; then
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd-glib
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd-glib
 clear
 arch-chroot /mnt systemctl enable snapd.apparmor
 arch-chroot /mnt systemctl enable snapd
@@ -2395,145 +2394,145 @@ clear
 while [ "$yayinstallfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
  if [ "$coffeeon00" = "yes" ]; then
-  arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout archlinux-appstream-data
+  arch-chroot /mnt pacman -Rdd --noconfirm archlinux-appstream-data
   clear
-  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y pamac-aur
+  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y pamac-aur
   clear
-  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
+  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
   clear
-  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
+  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
   clear
-  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
+  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
   clear
-  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
+  printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
   clear
  fi
   if [ "$desktop0" = "gnome" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-gtk4-desktop-icons-ng
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-gtk4-desktop-icons-ng
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-session
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-session
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
      clear
-     arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout mutter
+     arch-chroot /mnt pacman -Rdd --noconfirm mutter
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
      clear
-     printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
+     printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
      clear
      rm -r /mnt/usr/share/wayland-sessions/gnome*
      rm -r /mnt/usr/share/xsessions/gnome*
   elif [ "$desktop0" = "gnomev2" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
      clear
-     printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
+     printf "%b1\ny\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
      clear
   elif [ "$desktop0" = "kde" ]; then
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
      clear
      if [ "$grub0" = "true" ]; then
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y kcm-grub2
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y kcm-grub2
      clear
      fi
    elif [ "$desktop0" = "cinnamon" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
      clear
-     printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
+     printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
      clear
-     arch-chroot /mnt pacman -Rdd --noconfirm --disable-download-timeout lightdm-settings
+     arch-chroot /mnt pacman -Rdd --noconfirm lightdm-settings
      clear
      rm -r /mnt/usr/share/wayland-sessions/gnome*
      rm -r /mnt/usr/share/xsessions/gnome*
      clear
   elif [ "$desktop0" = "cinnamonv2" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
      clear
      rm -r /mnt/usr/share/wayland-sessions/gnome*
      rm -r /mnt/usr/share/xsessions/gnome*
      clear
   elif [ "$desktop0" = "mate" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-screensaver-hacks
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-screensaver-hacks
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-tweak
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-tweak
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-menu
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-menu
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
      clear
-     printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
+     printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
      clear
   elif [ "$desktop0" = "matev2" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      clear
   elif [ "$desktop0" = "xfce" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
      clear
-     printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
+     printf "%b5\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
      clear
   elif [ "$desktop0" = "xfcev2" ]; then
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      clear
-     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
      clear
   elif [ "$desktop0" = "lxde" ]; then
      printf "%b1\n" "$*"
@@ -2569,11 +2568,11 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$sbpass0" = "yes" ]; then
 printf "%bGenerating CoffeeLinux Secure-Boot keys for your machine\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout efitools mokutil sbsigntools apparmor sbctl
+arch-chroot /mnt pacman -Sy --noconfirm efitools mokutil sbsigntools apparmor sbctl
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y shim-signed
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y shim-signed
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y preloader-signed
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y preloader-signed
 clear
 printf "%b$uefipass0\n$uefipass0\n" "$*" | arch-chroot /mnt mokutil --password
 printf "%b$uefipass0\n$uefipass0\n" "$*" | arch-chroot /mnt mokutil --reset
@@ -2597,7 +2596,7 @@ cp /opt/999-sign_kernel_for_secureboot.hook /mnt/etc/pacman.d/hooks/999-sign_ker
 arch-chroot /mnt cp MOK.cer /boot/
 arch-chroot /mnt cp MOK.crt /boot/
 arch-chroot /mnt cp MOK.key /boot/
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout
+arch-chroot /mnt pacman -Sy --noconfirm
 arch-chroot /mnt systemctl enable apparmor
 arch-chroot /mnt systemctl enable systemd-boot-update.service
 arch-chroot /mnt systemctl enable dhcpcd
@@ -2612,7 +2611,7 @@ clear
 
 elif [ "$sbpass0" = "no" ]; then
 printf "%b\nAdding AppArmor\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout apparmor
+arch-chroot /mnt pacman -Sy --noconfirm apparmor
 clear
 arch-chroot /mnt systemctl enable apparmor
 arch-chroot /mnt systemctl enable dhcpcd
@@ -2644,10 +2643,10 @@ while [ "$command11finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 printf "%bAttempting to fix the home directory automatically now...\n" "$*"
-arch-chroot /mnt pacman -Sy --noconfirm --disable-download-timeout xdg-user-dirs
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
+arch-chroot /mnt pacman -Sy --noconfirm xdg-user-dirs
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
 clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --disable-download-timeout --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
 clear
 arch-chroot /mnt xdg-user-dirs-update
 printf "%bCleaning up\n" "$*"
