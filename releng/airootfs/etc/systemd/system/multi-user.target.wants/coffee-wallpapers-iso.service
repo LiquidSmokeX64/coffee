@@ -1,0 +1,10 @@
+[Unit]
+Description=Fixes Wallpapers
+After=network.target.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/wallpaper-updater-iso
+
+[Install]
+WantedBy=multi-user.target

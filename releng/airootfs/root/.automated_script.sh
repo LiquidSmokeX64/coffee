@@ -42,5 +42,5 @@ automated_script() {
 if [[ $(tty) == "/dev/tty1" ]]; then
     automated_script
     rfkill unblock all
-    coffeebrewer2
+    #coffeebrewer2
 fi
