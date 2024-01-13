@@ -1,1 +1,8 @@
 root:x:0:root
+adm:x:4:liveuser
+wheel:x:10:liveuser
+uucp:x:14:liveuser
+audio:x:996:liveuser
+video:x:985:liveuser
+users:x:984:liveuser
+liveuser:x:1000:
