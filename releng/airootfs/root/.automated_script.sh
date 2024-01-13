@@ -42,5 +42,7 @@ automated_script() {
 if [[ $(tty) == "/dev/tty1" ]]; then
     automated_script
     rfkill unblock all
+    cp /opt/coffee-wallpapers-iso.service /lib/systemd/system/
+    systemctl enable --now coffee-wallpapers-iso.service
     #coffeebrewer2
 fi
