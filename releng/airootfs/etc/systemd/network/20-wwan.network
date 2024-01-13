@@ -1,9 +1,6 @@
 [Match]
 Name=ww*
 
-[Link]
-RequiredForOnline=routable
-
 [Network]
 DHCP=yes
 
