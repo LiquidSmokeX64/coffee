@@ -38,6 +38,8 @@ awesomeapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fo
 
 enlightenmentapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret enlightenment gtk3 gtk4 lightdm lightdm-gtk-greeter rofi wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
+#legiongo=""
+
 customtype2(){
 
 clear
@@ -2055,7 +2057,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.5.15)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.5.16)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -2237,7 +2239,7 @@ while [ "$command21finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$steamon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm mangohud gamescope steam wine wine-gecko wine-mono winetricks
+arch-chroot /mnt pacman -Sy --noconfirm mangohud gamescope steam-native-runtime wine wine-gecko wine-mono winetricks
 clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
 clear
@@ -2246,6 +2248,8 @@ clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
 clear
 printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
+clear
+printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protonup-qt
 clear
 fi
 
@@ -2450,6 +2454,8 @@ if [ "$questionspassed" = "yes" ]; then
      if [ "$grub0" = "true" ]; then
      clear
      printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y kcm-grub2
+     clear
+     printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y plasma5-themes-vapor-steamos
      clear
      fi
    elif [ "$desktop0" = "cinnamon" ]; then
