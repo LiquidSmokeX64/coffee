@@ -26,9 +26,9 @@ deepinapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fon
 
 i3apps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret gnome-text-editor gnome-console gnome-system-monitor nautilus i3-wm i3lock gtk3 gtk4 i3status i3blocks micro lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
-swayapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji sddm gnome-disk-utility gnome-text-editor htop nautilus polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk4 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-console gnome-themes-extra gnome-tweaks j4-dmenu-desktop xdg-desktop-portal-gnome"
+swayapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji sddm gnome-disk-utility gnome-text-editor htop nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-terminal j4-dmenu-desktop xdg-desktop-portal-gtk"
 
-swayappsv2="polkit-gnome gnome-keyring breeze-gtk breeze-icons breeze phonon-qt5-gstreamer libpulse gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji qt6 appstream-qt ark colord-kde qt6-multimedia-ffmpeg sddm gnome-disk-utility kate htop dolphin polkit libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk4 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi konsole j4-dmenu-desktop xdg-desktop-portal-kde"
+swayappsv2="polkit-gnome gnome-keyring breeze-gtk breeze-icons breeze phonon-qt5-gstreamer libpulse gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji qt6 appstream-qt ark colord-kde qt6-multimedia-ffmpeg sddm gnome-disk-utility kate htop dolphin polkit libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk3 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi konsole j4-dmenu-desktop xdg-desktop-portal-kde"
 
 cutefishapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 gtk4 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
 
@@ -2057,7 +2057,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.5.19)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.6.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
