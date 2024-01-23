@@ -1868,15 +1868,13 @@ fi
 if [ $wifiadapter0 = "realtek" ]; then
 clear
 sleep 5
-printf "%b\nInstalling realtek dkms packages..\n" "$*"
+printf "%b\nCopying realtek dkms packages..\n" "$*"
 sleep 5
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y rtw89-dkms-git
-clear
-printf "%b1\n" "$*" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y rtw89bt-dkms-git
-clear
+cp /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst /mnt/opt/
+cp /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst /mnt/opt/
 printf "%b\nInstalling drealtek dkms packages.\n" "$*"
-printf "%b\noptions rtw89_pci disable_clkreq=y disable_aspm_l1=y disable_aspm_l1ss=y\n" "$*" >> /mnt/usr/lib/modprobe.d/70-rtw89.conf
-printf "%b\noptions rtw89pci disable_clkreq=y disable_aspm_l1=y disable_aspm_l1ss=y\n" "$*" >> /mnt/usr/lib/modprobe.d/70-rtw89.conf
+arch-chroot /mnt pacman -U --noconfirm /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst
 sleep 2
 printf "%b\nInstalled realtek dkms packages successfully.\n" "$*"
 clear
@@ -2059,7 +2057,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.6.1)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.6.0)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
