@@ -2057,7 +2057,7 @@ EOT
 printf "%bdefault arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" "$*" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%btitle Coffee-Linux 'Winey' (23.5.18)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
+printf "%btitle Coffee-Linux 'Winey' (23.5.19)\n" "$*" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%blinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" "$*" >> /mnt/boot/loader/entries/arch.conf
@@ -2798,6 +2798,8 @@ if [ "$native1" = "yes" ]; then
    cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-wallpapers.service
   fi
+  cp /opt/os-release /mnt/etc/
+  cp /opt/lsb-release /mnt/etc/
 fi
 
 printf "%b\n Did the installer complete sussessfully? (Default: 1)\n" "$*"
