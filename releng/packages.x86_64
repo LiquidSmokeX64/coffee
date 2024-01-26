@@ -129,7 +129,25 @@ xl2tpd
 zsh
 
 # Desktop
-gnome
+plasma
+plasma-nm
+plasma-meta
+plasma-wayland-protocols
+plasma-wayland-session
+dolphin
+konsole
+sddm
+btop
+dos2unix
+gptfdisk
+iotop
+okular
+p7zip
+powertop
+tk
+unrar
+xorg-xhost
+zip
 xorg-server
 xorg-xwayland
 xdg-user-dirs
@@ -163,4 +181,4 @@ appstream-qt
 gnome-disk-utility
 gnome-menus
 firefox
-xdg-desktop-portal-gnome
+xdg-desktop-portal-kde
