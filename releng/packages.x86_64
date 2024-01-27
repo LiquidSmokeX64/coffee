@@ -136,12 +136,11 @@ plasma-wayland-protocols
 plasma-wayland-session
 dolphin
 konsole
+kate
 sddm
-btop
 dos2unix
 gptfdisk
 iotop
-okular
 p7zip
 powertop
 tk
@@ -167,12 +166,6 @@ zenity
 dialog
 spectacle
 btop
-dos2unix
-gptfdisk
-p7zip
-unrar
-xorg-xhost
-zip
 gnu-free-fonts
 pyside2
 cronie
