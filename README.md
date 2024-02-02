@@ -4,9 +4,10 @@ What is CoffeeLinux?
 
 Effectively it's pure Arch Linux with a different type of Installer.
 
-The standard installation script for a standard Arch Linux is kinda broken, and incomplete to assembe an actually functional environment.
+The installation script for a standard Arch Linux is kinda broken, and incomplete to assembe an actually functional environment.
 
-Coffee Linux aims to correct this problem through a much simpler script that assembles the OS via a series of questions to cater to exactly what you want.
+Coffee Linux aims to correct this problem through a much simpler easy to use script.
+Also through a seconary script assembles the OS via a series of questions to cater to exactly what you want within certain perameters of course, and is much more detailed.
 
 The entire installation process features a default setup in case one just wants to hit "Enter" a few times and be done.
 
