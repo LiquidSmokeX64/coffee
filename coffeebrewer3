@@ -8,7 +8,7 @@ coffeeapps="faudio pavucontrol fwupd fwupd-efi glfw-wayland vulkan-validation-la
 
 javaapps="jre-openjdk"
 
-kdeapps="phonon-qt5-gstreamer libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde libsecret"
+kdeapps="phonon-qt5-gstreamer libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
 
 desktop0="kde"
 native1=yes
@@ -1087,7 +1087,9 @@ if [ "$native1" = "yes" ]; then
   if [ "$coffeeon00" = "yes" ]; then
    cp -r /opt/* /mnt/opt/
    cp /usr/local/bin/coffeebrewer2 /mnt/usr/local/bin/
+   cp /usr/local/bin/coffeebrewer3 /mnt/usr/local/bin/
    arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer2
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer3
    mkdir -p /mnt/usr/share/wallpapers/coffee/
    mkdir -p /mnt/usr/share/backgrounds/gnome/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
