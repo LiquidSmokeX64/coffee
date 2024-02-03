@@ -567,7 +567,7 @@ clear
 
 while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; do
 
-printf "%b" "\nWhat desktop environment do you want? (Default: 1)\n"
+printf "%b" "\nWhat desktop environment do you want? (Default: 3)\n"
 printf "%b" "\n1 - Gnome (Ubuntu version)\n"
 printf "%b" "\n2 - Gnome (Standard version)\n"
 printf "%b" "\n3 - KDE\n"
@@ -689,8 +689,8 @@ desktop0="awesome"
 
 fi
 if [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; then
-desktopcheck=1
-desktop0="gnome"
+desktopcheck=3
+desktop0="kde"
 
 fi
 done
@@ -946,7 +946,7 @@ while [ "$webcheck00" != "1" ] && [ "$webcheck00" != "2" ] && [ "$webcheck00" !=
 
 clear
 
-printf "%b" "\nWhat Web Browser do you prefer? (Default: 2)\n"
+printf "%b" "\nWhat Web Browser do you prefer? (Default: 1)\n"
 printf "%b" "\n1 - Google Chrome\n"
 printf "%b" "\n2 - Firefox\n"
 printf "%b" "\n3 - Microsoft Edge\n"
@@ -967,8 +967,8 @@ if [ "$webcheck00" = "3" ]; then
 webbrowser00=edge
 fi
 if [ "$webcheck00" != "1" ] && [ "$webcheck00" != "2" ] && [ "$webcheck00" != "3" ]; then
-webcheck00=2
-webbrowser00=firefox
+webcheck00=1
+webbrowser00=chrome
 fi
 done
 
