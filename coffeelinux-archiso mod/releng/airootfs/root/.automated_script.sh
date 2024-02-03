@@ -43,7 +43,7 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     automated_script
     rfkill unblock all
     while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
-
+    clear
     printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
     printf "%b" "\n1 - Standard\n"
     printf "%b" "\n2 - Custom\n"

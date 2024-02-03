@@ -2,11 +2,11 @@
 
 What is CoffeeLinux?
 
-Effectively it's pure Arch Linux with a different type of Installer.
+Effectively it's a mod for pure Arch Linux's Iso designed to make it much easier to use and provide a better quality final product.
 
 Simply apply the mod files to any clean Archiso releng profile and thats it.
 
-The installation script for a standard Arch Linux is kinda broken, and incomplete to assembe an actually functional environment.
+The original installation script for a standard Arch Linux OS is difficult to use, and incomplete to some extent.
 
 Coffee Linux aims to correct this problem through a much simpler easy to use script.
 Also through a seconary script assembles the OS via a series of questions to cater to exactly what you want within certain perameters of course, and is much more detailed.
