@@ -2327,16 +2327,34 @@ while [ "$command18finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$webbrowser00" = "chrome" ]; then
+if [ "$branchpass00" = "stable" ]; then
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
 clear
 fi
+if [ "$branchpass00" = "beta" ]; then
+printf "%b" "3\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
+clear
+fi
+fi
 if [ "$webbrowser00" = "firefox" ]; then
+if [ "$branchpass00" = "stable" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm firefox
 clear
 fi
+if [ "$branchpass00" = "beta" ]; then
+arch-chroot /mnt pacman -Sy --noconfirm firefox-developer-edition
+clear
+fi
+fi
 if [ "$webbrowser00" = "edge" ]; then
+if [ "$branchpass00" = "stable" ]; then
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge
 clear
+fi
+if [ "$branchpass00" = "beta" ]; then
+printf "%b" "3\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge
+clear
+fi
 fi
 
 command18finished="1"
