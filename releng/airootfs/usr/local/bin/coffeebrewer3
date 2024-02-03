@@ -8,7 +8,9 @@ coffeeapps="faudio pavucontrol fwupd fwupd-efi glfw-wayland vulkan-validation-la
 
 javaapps="jre-openjdk"
 
-kdeapps="pyside6 phonon-qt5-gstreamer libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-wayland-session sddm sddm-kcm xdg-desktop-portal-kde libsecret"
+kdeapps="pyside6 phonon-qt5-gstreamer libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
+
+kdeapps2="plasma-wayland-session"
 
 desktop0="kde"
 native1=yes
@@ -30,6 +32,34 @@ grub0="true"
 questionare (){
 
 clear
+
+while [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; do
+
+printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
+printf "%b" "\n1 - Stable\n"
+printf "%b" "\n2 - Testing/Beta\n"
+
+read -r branchcheck00
+case $branchcheck00 in
+  1) printf "%b" "\nPerfect\n" ;;
+  2) printf "%b" "\nLet's move on then.\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+if [ "$branchcheck00" = "1" ]; then
+branchpass00=stable
+cp /opt/pacman-stable.conf /etc/pacman.conf
+fi
+if [ "$branchcheck00" = "2" ]; then
+branchpass00=beta
+cp /opt/pacman-unstable.conf /etc/pacman.conf
+fi
+if [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; then
+branchcheck00=1
+branchpass00=stable
+cp /opt/pacman-stable.conf /etc/pacman.conf
+fi
+done
 
 printf "%b" "\nSet your Username.\n"
 read -r user00
@@ -673,6 +703,9 @@ if [ "$questionspassed" = "yes" ]; then
 if [ "$desktop0" = "kde" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
+if [ "$branchpass00" = "stable" ]; then
+arch-chroot /mnt pacman -Sy --noconfirm $kdeapps2
+fi
 clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
@@ -1099,6 +1132,12 @@ if [ "$native1" = "yes" ]; then
    cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-wallpapers.service
   fi
+  if [ "$branchpass00" = "stable" ]; then
+  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  fi
+  if [ "$branchpass00" = "beta" ]; then
+  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  fi
   cp /opt/os-release /mnt/etc/
   cp /opt/lsb-release /mnt/etc/
 fi
@@ -1117,6 +1156,12 @@ if [ "$rebootcheck" = "1" ]; then
 printf "%b" "\n"
 fi
 if [ "$rebootcheck" = "2" ]; then
+  if [ "$branchpass00" = "stable" ]; then
+  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  fi
+  if [ "$branchpass00" = "beta" ]; then
+  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  fi
 umount -R /mnt
 swapoff "$swap0"
 printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"

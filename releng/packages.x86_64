@@ -132,7 +132,7 @@ plasma
 plasma-nm
 plasma-meta
 plasma-wayland-protocols
-plasma-wayland-session
+plasma-workspace
 dolphin
 konsole
 kate
