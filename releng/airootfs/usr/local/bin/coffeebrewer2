@@ -48,7 +48,7 @@ clear
 
 while [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; do
 
-printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
+printf "%b" "\nWhat type of installation do you want? (Default: 2)\n"
 printf "%b" "\n1 - Stable\n"
 printf "%b" "\n2 - Testing/Beta\n"
 
@@ -68,9 +68,9 @@ branchpass00=beta
 cp /opt/pacman-unstable.conf /etc/pacman.conf
 fi
 if [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; then
-branchcheck00=1
-branchpass00=stable
-cp /opt/pacman-stable.conf /etc/pacman.conf
+branchcheck00=2
+branchpass00=beta
+cp /opt/pacman-unstable.conf /etc/pacman.conf
 fi
 done
 
