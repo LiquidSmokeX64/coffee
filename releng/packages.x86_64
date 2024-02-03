@@ -116,7 +116,6 @@ udftools
 usb_modeswitch
 usbmuxd
 usbutils
-vim
 virtualbox-guest-utils-nox
 vpnc
 wezterm-terminfo
@@ -133,7 +132,7 @@ plasma
 plasma-nm
 plasma-meta
 plasma-wayland-protocols
-plasma-workspace
+plasma-wayland-session
 dolphin
 konsole
 kate
@@ -173,5 +172,5 @@ tesseract-data-eng
 appstream-qt
 gnome-disk-utility
 gnome-menus
-firefox-developer-edition
+firefox
 xdg-desktop-portal-kde
