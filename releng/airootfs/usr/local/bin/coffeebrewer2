@@ -2161,7 +2161,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.0.1)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.0.2)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2294,15 +2294,15 @@ while [ "$command18finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$webbrowser00" = "chrome" ]; then
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
+printf "%b" "3\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
 clear
 fi
 if [ "$webbrowser00" = "firefox" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm firefox
+arch-chroot /mnt pacman -Sy --noconfirm firefox-developer-edition
 clear
 fi
 if [ "$webbrowser00" = "edge" ]; then
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge-stable
+printf "%b" "3\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge
 clear
 fi
 

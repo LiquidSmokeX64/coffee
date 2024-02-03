@@ -866,7 +866,7 @@ while [ "$command18finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 if [ "$webbrowser00" = "chrome" ]; then
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
+printf "%b" "3\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
 clear
 fi
 
