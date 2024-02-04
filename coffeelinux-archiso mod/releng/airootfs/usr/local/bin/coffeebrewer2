@@ -770,7 +770,8 @@ clear
 if [ "$netpass00" = "ethernet" ]; then
 printf "%b" "\nEthernet selected, or already connected, skipping this part.\n"
 fi
-
+if [ "$netpass00" = "wifi" ]; then
+while [ "$wifipasscheck" != "1" ]; do
 clear
 
 rfkill unblock all
@@ -786,6 +787,7 @@ case $wifipasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
+
 done
 fi
 
@@ -794,6 +796,7 @@ clear
 if [ "$netpass00" = "ethernet" ]; then
 printf "%b" "\nNo Wifi, skipping this part.\n"
 fi
+
 if [ "$netpass00" = "wifi" ]; then
 while [ "$ssidcheck" != "1" ]; do
 iwctl station "$wifi0" get-networks
@@ -816,6 +819,7 @@ clear
 if [ "$netpass00" = "ethernet" ]; then
 printf "%b" "\nNo Wifi, skipping this part.\n"
 fi
+
 if [ "$netpass00" = "wifi" ]; then
 while [ "$netpasswordcheck" != "1" ]; do
 printf "%b" "\nEnter your Wifi password.\n"
@@ -1395,6 +1399,7 @@ while [ "$command1finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
 printf "%b" "\nFormatting Partitions\n"
+clear
 printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
 clear
 printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
@@ -1402,7 +1407,6 @@ clear
 printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
 clear
 printf "%b" "g\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nt\n3\n20\nw\n" | fdisk -W always $drive0
-clear
 mkfs.vfat -F 32 "$boot0"
 mkswap "$swap0"
 swapon "$swap0"
@@ -1978,6 +1982,12 @@ fi
 arch-chroot /mnt systemctl enable lightdm
 
 fi
+
+command4finished="1"
+else
+command4finished="0"
+fi
+done
 
 }
 
