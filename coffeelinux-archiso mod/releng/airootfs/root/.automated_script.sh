@@ -42,6 +42,10 @@ automated_script() {
 if [[ $(tty) == "/dev/tty1" ]]; then
     automated_script
     rfkill unblock all
+    pacman-key --init
+    clear
+    pacman-key --populate archlinux
+    clear
     while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
     clear
     printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
