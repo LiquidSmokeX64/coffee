@@ -42,6 +42,7 @@ automated_script() {
 if [[ $(tty) == "/dev/tty1" ]]; then
     automated_script
     rfkill unblock all
+    clear
     pacman-key --init
     clear
     pacman-key --populate archlinux
