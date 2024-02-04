@@ -770,32 +770,7 @@ clear
 if [ "$netpass00" = "ethernet" ]; then
 printf "%b" "\nEthernet selected, or already connected, skipping this part.\n"
 fi
-if [ "$netpass00" = "wifi" ]; then
-while [ "$wifipasscheck" != "1" ]; do
-clear
 
-while [ "$adaptercheck00" != "1" ] && [ "$adaptercheck00" != "2" ]; do
-printf "%b" "\nIs your wifi adapter Realtek? (Default: 2)\n"
-printf "%b" "\n1 - Realtek\n"
-printf "%b" "\n2 - Other\n"
-read -r adaptercheck00
-printf "%b" "\n$adaptercheck00 Is this correct?\n"
-case $adaptercheck00 in
-1) printf "%b" "\nPerfect\n" ;;
-2) printf "%b" "\nLet's move on then.\n" ;;
-*) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-if [ "$adaptercheck00" = "1" ]; then
-wifiadapter0="realtek"
-fi
-if [ "$adaptercheck00" = "2" ]; then
-wifiadapter0="other"
-fi
-if [ "$adaptercheck00" != "2" ] && [ "$adaptercheck00" != "1" ]; then
-adaptercheck00=2
-wifiadapter0="other"
-fi
-done
 clear
 
 rfkill unblock all
@@ -1421,7 +1396,13 @@ if [ "$questionspassed" = "yes" ]; then
 
 printf "%b" "\nFormatting Partitions\n"
 printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
 printf "%b" "g\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nt\n3\n20\nw\n" | fdisk -W always $drive0
+clear
 mkfs.vfat -F 32 "$boot0"
 mkswap "$swap0"
 swapon "$swap0"
@@ -1998,27 +1979,6 @@ arch-chroot /mnt systemctl enable lightdm
 
 fi
 
-if [ "$wifiadapter0" = "realtek" ]; then
-clear
-sleep 5
-printf "%b" "\nCopying realtek dkms packages..\n"
-sleep 5
-cp /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst /mnt/opt/
-cp /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling drealtek dkms packages.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/rtw89bt-dkms-1.0.0-1-any.pkg.tar.zst
-arch-chroot /mnt pacman -U --noconfirm /opt/rtw89-dkms-1.0.2-1-any.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled realtek dkms packages successfully.\n"
-clear
-fi
-
-command4finished="1"
-else
-command4finished="0"
-fi
-done
-
 }
 
 coffee_install (){
@@ -2196,7 +2156,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.1.0)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.1.1)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -3007,6 +2967,11 @@ if [ "$rebootcheck" = "2" ]; then
 umount -R /mnt
 swapoff "$swap0"
 printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
 exit
 fi
 if [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; then

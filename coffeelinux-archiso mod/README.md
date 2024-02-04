@@ -1,4 +1,4 @@
-# Coffee Linux v.24.1.0 "Xeno"
+# Coffee Linux v.24.1.1 "Xeno"
 
 What is CoffeeLinux?
 
@@ -44,12 +44,6 @@ Bootloader Choices: Grub UEFI, Grub BIOS, and Systemd-Boot (with optional Secure
 Desktop Environment Choices: Gnome, KDE, Cinnamon, Mate, XFCE, LXQT, LXDE, i3, Sway, Cutefish, Deepin, Budgie, Enlightenment, and Awesome. (Some have styled versions to choose from as well)
 
 Simply download from the Releases page and use Etcher to write the iso to usb. Use like any other ArchIso.
-
-============================================
-
-Known issues...
-
-RTW8852BE Wifi adapter may not work. [Found in many Lenovo Laptops] (lwfinger rtw89 packages added, but seems ineffective so far)
 
 ============================================
 

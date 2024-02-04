@@ -597,6 +597,11 @@ if [ "$questionspassed" = "yes" ]; then
 
 printf "%b" "\nFormatting Partitions\n"
 printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
 printf "%b" "g\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nt\n3\n20\nw\n" | fdisk -W always $drive0
 mkfs.vfat -F 32 "$boot0"
 mkswap "$swap0"
@@ -1173,6 +1178,11 @@ if [ "$rebootcheck" = "2" ]; then
 umount -R /mnt
 swapoff "$swap0"
 printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
 exit
 fi
 if [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; then
