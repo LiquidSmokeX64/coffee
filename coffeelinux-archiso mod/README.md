@@ -9,7 +9,8 @@ Simply apply the mod files to any clean Archiso releng profile and thats it.
 The original installation script for a standard Arch Linux OS is difficult to use, and incomplete to some extent.
 
 Coffee Linux aims to correct this problem through a much simpler easy to use script.
-Also through a seconary script assembles the OS via a series of questions to cater to exactly what you want within certain perameters of course, and is much more detailed.
+
+A custom install script is available too allowing the OS to be assembled via a series of questions to cater to exactly what you want within certain perameters.
 
 The entire installation process features a default setup in case one just wants to hit "Enter" a few times and be done.
 
@@ -19,7 +20,7 @@ Coffee Linux provides a full set of packages for every desktop environment, and 
 
 Coffee Linux extras include many dependencies for a ton of everday applications, firmware patches, and other little things to make your experience the best I can provide out of the box.
 
-There are a list of optional applications and services as well to choose from such as Steam, Java, LibreOffice, VMWare, Snapd framework, Heroic Games Launcher, Lutris, Github Desktop, and a few popular Web Browsers.
+There are a list of optional applications and services as well to choose from such as Steam, Java, LibreOffice, VMWare, Snapd framework, Heroic Games Launcher, Lutris, Github Desktop, Discord, and a few popular Web Browsers.
 
 The idea here is to bring real Arch Linux to everyone, and effectively end the need for a distro war.
 
