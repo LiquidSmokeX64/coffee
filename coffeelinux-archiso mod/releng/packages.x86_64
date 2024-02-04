@@ -51,6 +51,7 @@ ldns
 less
 lftp
 libfido2
+libpackagekit-glib
 libusb-compat
 linux
 linux-atm
@@ -85,6 +86,9 @@ openconnect
 openpgp-card-tools
 openssh
 openvpn
+packagekit
+packagekit-qt5
+packagekit-qt6
 partclone
 parted
 partimage
