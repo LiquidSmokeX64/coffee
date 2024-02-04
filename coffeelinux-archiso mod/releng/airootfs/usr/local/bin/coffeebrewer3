@@ -35,7 +35,7 @@ clear
 
 while [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; do
 
-printf "%b" "\nWhat type of installation do you want? (Default: 2)\n"
+printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
 printf "%b" "\n1 - Stable\n"
 printf "%b" "\n2 - Testing/Beta\n"
 
@@ -55,9 +55,9 @@ branchpass00=beta
 cp /opt/pacman-unstable.conf /etc/pacman.conf
 fi
 if [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; then
-branchcheck00=2
-branchpass00=beta
-cp /opt/pacman-unstable.conf /etc/pacman.conf
+branchcheck00=1
+branchpass00=stable
+cp /opt/pacman-stable.conf /etc/pacman.conf
 fi
 done
 
@@ -555,6 +555,34 @@ command0finished="0"
 
 clear
 
+while [ "$command1finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
+printf "%b" "\nFormatting Partitions\n"
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+printf "%b" "g\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nt\n3\n20\nw\n" | fdisk -W always $drive0
+mkfs.vfat -F 32 "$boot0"
+mkswap "$swap0"
+swapon "$swap0"
+mkfs.btrfs -f -L "$drivename0" "$system0"
+printf "%b" "\nMounting Disks\n"
+mount "$system0" /mnt
+mkdir /mnt/boot
+mount "$boot0" /mnt/boot
+clear
+
+command1finished="1"
+else
+command1finished="0"
+fi
+done
+command1finished="0"
+
 while [ "$command17finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 #- Set variables for iwctl
@@ -591,34 +619,6 @@ done
 command17finished="0"
 
 clear
-
-while [ "$command1finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-printf "%b" "\nFormatting Partitions\n"
-printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
-clear
-printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
-clear
-printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
-clear
-printf "%b" "g\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nt\n3\n20\nw\n" | fdisk -W always $drive0
-mkfs.vfat -F 32 "$boot0"
-mkswap "$swap0"
-swapon "$swap0"
-mkfs.btrfs -f -L "$drivename0" "$system0"
-printf "%b" "\nMounting Disks\n"
-mount "$system0" /mnt
-mkdir /mnt/boot
-mount "$boot0" /mnt/boot
-clear
-
-command1finished="1"
-else
-command1finished="0"
-fi
-done
-command1finished="0"
 
 }
 
@@ -1146,10 +1146,10 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt systemctl enable coffee-wallpapers.service
   fi
   if [ "$branchpass00" = "stable" ]; then
-  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  cp /opt/pacman-stable.conf /etc/pacman.conf
   fi
   if [ "$branchpass00" = "beta" ]; then
-  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  cp /opt/pacman-stable.conf /etc/pacman.conf
   fi
   cp /opt/os-release /mnt/etc/
   cp /opt/lsb-release /mnt/etc/
@@ -1170,10 +1170,10 @@ printf "%b" "\n"
 fi
 if [ "$rebootcheck" = "2" ]; then
   if [ "$branchpass00" = "stable" ]; then
-  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  cp /opt/pacman-stable.conf /etc/pacman.conf
   fi
   if [ "$branchpass00" = "beta" ]; then
-  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  cp /opt/pacman-stable.conf /etc/pacman.conf
   fi
 umount -R /mnt
 swapoff "$swap0"

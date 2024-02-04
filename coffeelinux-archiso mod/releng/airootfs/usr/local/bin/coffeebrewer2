@@ -48,7 +48,7 @@ clear
 
 while [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; do
 
-printf "%b" "\nWhat type of installation do you want? (Default: 2)\n"
+printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
 printf "%b" "\n1 - Stable\n"
 printf "%b" "\n2 - Testing/Beta\n"
 
@@ -68,9 +68,9 @@ branchpass00=beta
 cp /opt/pacman-unstable.conf /etc/pacman.conf
 fi
 if [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; then
-branchcheck00=2
-branchpass00=beta
-cp /opt/pacman-unstable.conf /etc/pacman.conf
+branchcheck00=1
+branchpass00=stable
+cp /opt/pacman-stable.conf /etc/pacman.conf
 fi
 done
 
@@ -1353,44 +1353,6 @@ command0finished="0"
 
 clear
 
-set_network (){
-
-while [ "$command17finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-#- Set variables for iwctl
-clear
-if [ "$netpass00" = "wifi" ]; then
-rfkill unblock all
-printf "%b" "\n" | iwctl device $wifi0 set-property Powered on
-printf "%b" "\nPowering on wifi device for a minute..\n"
-sleep 5
-printf "%b" "\n" | iwctl --passphrase $netpassword0 station $wifi0 connect $ssid0
-printf "%b" "\nEnsuring we have a connection...\n"
-sleep 10
-printf "%b" "\nSetting intial pacman keyring up...\n"
-pacman-key --init
-pacman-key --populate archlinux
-printf "%b" "\nSet keys successfully..\n"
-sleep 5
-pacman -Syy --noconfirm archlinux-keyring
-else
-printf "%b" "\nWe are already connected to the internet, preparing for launch..\n"
-sleep 10
-printf "%b" "\nSetting intial local pacman keyring up...\n"
-pacman-key --init
-pacman-key --populate archlinux
-printf "%b" "\nSet local pacman keys successfully..\n"
-sleep 5
-pacman -Syy --noconfirm archlinux-keyring
-clear
-fi
-
-fi
-command17finished="1"
-done
-command17finished="0"
-}
-
 format_disks (){
 
 clear
@@ -1430,6 +1392,44 @@ fi
 done
 command1finished="0"
 
+}
+
+set_network (){
+
+while [ "$command17finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+#- Set variables for iwctl
+clear
+if [ "$netpass00" = "wifi" ]; then
+rfkill unblock all
+printf "%b" "\n" | iwctl device $wifi0 set-property Powered on
+printf "%b" "\nPowering on wifi device for a minute..\n"
+sleep 5
+printf "%b" "\n" | iwctl --passphrase $netpassword0 station $wifi0 connect $ssid0
+printf "%b" "\nEnsuring we have a connection...\n"
+sleep 10
+printf "%b" "\nSetting intial pacman keyring up...\n"
+pacman-key --init
+pacman-key --populate archlinux
+printf "%b" "\nSet keys successfully..\n"
+sleep 5
+pacman -Syy --noconfirm archlinux-keyring
+else
+printf "%b" "\nWe are already connected to the internet, preparing for launch..\n"
+sleep 10
+printf "%b" "\nSetting intial local pacman keyring up...\n"
+pacman-key --init
+pacman-key --populate archlinux
+printf "%b" "\nSet local pacman keys successfully..\n"
+sleep 5
+pacman -Syy --noconfirm archlinux-keyring
+clear
+fi
+
+fi
+command17finished="1"
+done
+command17finished="0"
 }
 
 base_install (){
@@ -2166,7 +2166,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.1.1)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.1.2)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2945,10 +2945,10 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt systemctl enable coffee-wallpapers.service
   fi
   if [ "$branchpass00" = "stable" ]; then
-  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  cp /opt/pacman-stable.conf /etc/pacman.conf
   fi
   if [ "$branchpass00" = "beta" ]; then
-  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  cp /opt/pacman-stable.conf /etc/pacman.conf
   fi
   cp /opt/os-release /mnt/etc/
   cp /opt/lsb-release /mnt/etc/
@@ -2969,10 +2969,10 @@ printf "%b" "\n"
 fi
 if [ "$rebootcheck" = "2" ]; then
   if [ "$branchpass00" = "stable" ]; then
-  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  cp /opt/pacman-stable.conf /etc/pacman.conf
   fi
   if [ "$branchpass00" = "beta" ]; then
-  cp /opt/pacman-unstable.conf /etc/pacman.conf
+  cp /opt/pacman-stable.conf /etc/pacman.conf
   fi
 umount -R /mnt
 swapoff "$swap0"
