@@ -26,7 +26,6 @@ lutrison00=yes
 officeon00=yes
 javaon00=yes
 snapon="yes"
-fs0="btrfs"
 grub0="true"
 
 questionare (){
