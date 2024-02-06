@@ -10,7 +10,7 @@ javaapps="jre-openjdk"
 
 gnomeapps="phonon-qt5-gstreamer qt6 qt6-multimedia-ffmpeg gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome libsecret"
 
-desktop0="cinnamon"
+desktop0="gnome"
 native1=yes
 swapcheck=2
 hibernationpasscheck=1
