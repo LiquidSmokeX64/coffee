@@ -1131,10 +1131,14 @@ if [ "$native1" = "yes" ]; then
   cp /opt/lsb-release /mnt/etc/
   if [ "$coffeeon00" = "yes" ]; then
    cp -r /opt/* /mnt/opt/
-   cp /usr/local/bin/coffeebrewer2 /mnt/usr/local/bin/
-   cp /usr/local/bin/coffeebrewer3 /mnt/usr/local/bin/
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer2
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer3
+   cp /usr/local/bin/coffeebrewer-custom /mnt/usr/local/bin/
+   cp /usr/local/bin/coffeebrewer-kde /mnt/usr/local/bin/
+   cp /usr/local/bin/coffeebrewer-gnome /mnt/usr/local/bin/
+   cp /usr/local/bin/coffeebrewer-cinnamon /mnt/usr/local/bin/
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-custom
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-kde
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-gnome
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-cinnamon
    mkdir -p /mnt/usr/share/wallpapers/coffee/
    mkdir -p /mnt/usr/share/backgrounds/gnome/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
@@ -1207,20 +1211,6 @@ cp /opt/lsb-release /etc/
 
 clear
 
-while [ "$installationcheck" != "1" ] && [ "$installationcheck" != "2" ]; do
-
-printf "%b" "\n Would you like to install Coffee Linux? (Default: 1)\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r installationcheck
-case $installationcheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's exit.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-
-if [ "$installationcheck" = "1" ]; then
 questionare
 setup_install
 os_install
@@ -1228,24 +1218,6 @@ os_install
 printf "%b" "\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
 umount -R /mnt
 reboot
-fi
-if [ "$installationcheck" = "2" ]; then
-printf "%b" "\nOkay, exiting the installer now..\n"
-sleep 5
-exit
-fi
-if [ "$installationcheck" != "1" ] && [ "$installationcheck" != "2" ]; then
-installationcheck=1
-questionare
-setup_install
-os_install
-
-printf "%b" "\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
-umount -R /mnt
-reboot
-
-fi
-done
 
 #============================
 #End-Main

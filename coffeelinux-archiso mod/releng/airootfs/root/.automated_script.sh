@@ -47,38 +47,56 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     clear
     pacman-key --populate archlinux
     clear
-    while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ] && [ "$typecheck00" != "4" ]; do
+    while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
     clear
+    printf "%b" "\n#### Welcome to Coffee Linux ####\n"
     printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
-    printf "%b" "\n1 - KDE\n"
-    printf "%b" "\n2 - Gnome\n"
-    printf "%b" "\n3 - Cinnamon\n"
-    printf "%b" "\n4 - Custom\n"
+    printf "%b" "\n1 - Standard\n"
+    printf "%b" "\n2 - Custom\n"
 
     read -r typecheck00
     case $typecheck00 in
      1) printf "%b" "\nPerfect\n" ;;
      2) printf "%b" "\nLet's move on then.\n" ;;
-     3) printf "%b" "\nPerfect\n" ;;
-     4) printf "%b" "\nLet's move on then.\n" ;;
      *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
     esac
 
     if [ "$typecheck00" = "1" ]; then
-    coffeebrewer3-kde
+
+      while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ]; do
+      clear
+      printf "%b" "\nWhat type of Desktop Environment do you want? (Default: 1)\n"
+      printf "%b" "\n1 - KDE\n"
+      printf "%b" "\n2 - Gnome\n"
+      printf "%b" "\n3 - Cinnamon\n"
+      read -r typecheck01
+      case $typecheck01 in
+       1) printf "%b" "\nPerfect\n" ;;
+       2) printf "%b" "\nLet's move on then.\n" ;;
+       3) printf "%b" "\nPerfect\n" ;;
+       *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+      esac
+      if [ "$typecheck01" = "1" ]; then
+      coffeebrewer-kde
+      fi
+      if [ "$typecheck01" = "2" ]; then
+      coffeebrewer-gnome
+      fi
+      if [ "$typecheck01" = "3" ]; then
+      coffeebrewer-cinnamon
+      fi
+      if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ]; then
+      typecheck01=1
+      coffeebrewer-kde
+      fi
+      done
     fi
     if [ "$typecheck00" = "2" ]; then
-    coffeebrewer3-gnome
+    coffeebrewer-custom
     fi
-    if [ "$typecheck00" = "3" ]; then
-    coffeebrewer3-cinnamon
-    fi
-    if [ "$typecheck00" = "4" ]; then
-    coffeebrewer2
-    fi
-    if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ] && [ "$typecheck00" != "4" ]; then
-    typecheck00=1
-    coffeebrewer3-kde
+    if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
+    typecheck00=2
+    coffeebrewer-custom
     fi
     done
 fi

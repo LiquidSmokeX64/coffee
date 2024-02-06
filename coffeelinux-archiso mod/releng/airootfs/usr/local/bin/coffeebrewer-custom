@@ -2166,7 +2166,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.1.5)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.1.6)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2919,10 +2919,14 @@ if [ "$native1" = "yes" ]; then
   cp /opt/lsb-release /mnt/etc/
   if [ "$coffeeon00" = "yes" ]; then
    cp -r /opt/* /mnt/opt/
-   cp /usr/local/bin/coffeebrewer2 /mnt/usr/local/bin/
-   cp /usr/local/bin/coffeebrewer3 /mnt/usr/local/bin/
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer2
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer3
+   cp /usr/local/bin/coffeebrewer-custom /mnt/usr/local/bin/
+   cp /usr/local/bin/coffeebrewer-kde /mnt/usr/local/bin/
+   cp /usr/local/bin/coffeebrewer-gnome /mnt/usr/local/bin/
+   cp /usr/local/bin/coffeebrewer-cinnamon /mnt/usr/local/bin/
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-custom
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-kde
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-gnome
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-cinnamon
    mkdir -p /mnt/usr/share/wallpapers/coffee/
    mkdir -p /mnt/usr/share/backgrounds/gnome/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
@@ -3007,20 +3011,6 @@ cp /opt/lsb-release /etc/
 
 clear
 
-while [ "$installationcheck" != "1" ] && [ "$installationcheck" != "2" ]; do
-
-printf "%b" "\n Would you like to install Coffee Linux? (Default: 1)\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r installationcheck
-case $installationcheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's exit.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-
-if [ "$installationcheck" = "1" ]; then
 customtype2
 questionare
 set_swap
@@ -3071,67 +3061,6 @@ success_check
 printf "%b" "\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
 umount -R /mnt
 reboot
-fi
-if [ "$installationcheck" = "2" ]; then
-printf "%b" "\nOkay, exiting the installer now..\n"
-sleep 5
-exit
-fi
-if [ "$installationcheck" != "1" ] && [ "$installationcheck" != "2" ]; then
-installationcheck=1
-customtype2
-questionare
-set_swap
-format_disks
-set_network
-base_install
-set_locale
-set_passwords
-desktop_install
-coffee_install
-bootloader_install
-gpu_install
-java_install
-vmware_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
-yay_install
-secureboot_install
-homedir_fix
- if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
- fi
- if [ "$desktop0" = "cinnamonv2" ]; then
-  lightdm_fixv2
- fi
- if [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- fi
- if [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- fi
- if [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- fi
- if [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- fi
- if [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
- fi
-success_check
-printf "%b" "\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
-umount -R /mnt
-reboot
-
-fi
-done
 
 #============================
 #End-Main
