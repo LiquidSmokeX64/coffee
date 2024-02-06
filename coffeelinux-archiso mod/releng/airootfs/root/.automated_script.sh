@@ -49,7 +49,7 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     clear
     while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
     clear
-    printf "%b" "\n#### Welcome to Coffee Linux ####\n"
+    printf "%b" "\n#### Welcome to Coffee Linux v.24.1.7 ####\n"
     printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
     printf "%b" "\n1 - Standard\n"
     printf "%b" "\n2 - Custom\n"
