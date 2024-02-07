@@ -1,4 +1,4 @@
-# Coffee Linux v.24.1.9 "Xeno"
+# Coffee Linux v.24.2.0 "Xeno"
 
 What is CoffeeLinux?
 
