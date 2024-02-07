@@ -5,7 +5,7 @@ iso_name="coffeelinux"
 iso_label="COFFEE_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 iso_publisher="Coffee Linux <https://archlinux.org>"
 iso_application="Coffee Linux Live/Rescue CD"
-iso_version="24.1.7-$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
+iso_version="24.1.8-$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
@@ -29,4 +29,5 @@ file_permissions=(
   ["/usr/local/bin/coffeebrewer-kde"]="0:0:755"
   ["/usr/local/bin/coffeebrewer-gnome"]="0:0:755"
   ["/usr/local/bin/coffeebrewer-cinnamon"]="0:0:755"
+  ["/usr/local/bin/coffeebrewer-sway"]="0:0:755"
 )

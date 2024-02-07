@@ -8,9 +8,8 @@ coffeeapps="python-pyqt6 python-pyqt5 python-opengl qt5-serialport qt5-connectiv
 
 javaapps="jre-openjdk"
 
-gnomeapps="phonon-qt5-gstreamer qt6 qt6-multimedia-ffmpeg gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome libsecret"
-
-desktop0="gnome"
+swayapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji sddm gnome-disk-utility gnome-text-editor htop nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk4 gnome-tweaks gnome-themes-extra bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-terminal j4-dmenu-desktop xdg-desktop-portal-gnome"
+desktop0="sway"
 native1=yes
 swapcheck=2
 hibernationpasscheck=1
@@ -704,9 +703,9 @@ clear
 while [ "$command4finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$desktop0" = "gnome" ]; then
+if [ "$desktop0" = "sway" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
+arch-chroot /mnt pacman -Sy --noconfirm $swayapps
 clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
@@ -717,15 +716,20 @@ arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b" "\nInstalled yay successfully.\n"
 clear
-arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+cp /opt/config /mnt/etc/sway/config
+printf "%b" "\nif [ -z ""\$"\{DISPLAY\}" ] && [ ""\$"\{XDG_VTNR\}" -eq 1 ]; then\nexec sway\nfi\n" >> /mnt/etc/profile
 
+if [ "$gpu0" = "nvidia" ]; then
+printf "%b" "\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" >> /mnt/etc/sway/config
+fi
 if [ "$gpu0" = "vm" ]; then
+printf "%b" "\nexec_always export WLR_NO_HARDWARE_CURSORS=1\n" >> /mnt/etc/sway/config
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable gdm
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 
 fi
 
@@ -827,6 +831,9 @@ printf "%b" "\nNvidia GPU selected.\nInstalling GPU Drivers first.\n"
 arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
  if [ "$grub0" = "false" ]; then
   printf "%b" "\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" >> /mnt/boot/loader/entries/arch.conf
+ fi
+ if [ "$desktop0" = "sway" ]; then
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y sway-nvidia
  fi
 fi
 if [ "$gpu0" = "amd" ]; then
@@ -1055,34 +1062,11 @@ if [ "$questionspassed" = "yes" ]; then
   clear
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
   clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
+  mkdir -p /mnt/usr/share/wayland-sessions/
+  cp /opt/sway.desktop /mnt/usr/share/wayland-sessions/sway.desktop
+  chmod +x /mnt/usr/share/wayland-sessions/sway.desktop
+  arch-chroot /mnt systemctl enable sddm
   clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-gtk4-desktop-icons-ng
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-session
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
-  clear
-  arch-chroot /mnt pacman -Rdd --noconfirm mutter
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
-  clear
-  printf "%b" "1\ny\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
-  clear
-  rm -r /mnt/usr/share/wayland-sessions/gnome*
-  rm -r /mnt/usr/share/xsessions/gnome*
  fi
 yayinstallfinished="1"
 else
@@ -1152,12 +1136,6 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt chmod 755 /opt/wallpaper-updater
    cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-wallpapers.service
-   if [ "$desktop0" = "gnome" ]; then
-     cp /opt/coffee-updater /mnt/opt/
-     arch-chroot /mnt chmod 755 /opt/coffee-updater
-     cp /opt/coffee-updater.service /mnt/lib/systemd/system/
-     arch-chroot /mnt systemctl enable coffee-updater.service
-    fi
   fi
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf

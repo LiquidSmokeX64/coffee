@@ -49,7 +49,8 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     clear
     while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
     clear
-    printf "%b" "\n#### Welcome to Coffee Linux v.24.1.7 ####\n"
+    printf "%b" "\n#### Welcome to Coffee Linux v.24.1.8 ####\n"
+    printf "%b" "\n#### Warning: Some Non-Standard Desktop Environments may be Experimental ####\n"
     printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
     printf "%b" "\n1 - Standard\n"
     printf "%b" "\n2 - Custom\n"
@@ -63,17 +64,19 @@ if [[ $(tty) == "/dev/tty1" ]]; then
 
     if [ "$typecheck00" = "1" ]; then
 
-      while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ]; do
+      while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; do
       clear
-      printf "%b" "\nWhat type of Desktop Environment do you want? (Default: 1)\n"
+      printf "%b" "\nWhat type of Desktop Environment do you want? (Default: 3)\n"
       printf "%b" "\n1 - KDE\n"
       printf "%b" "\n2 - Gnome\n"
       printf "%b" "\n3 - Cinnamon\n"
+      printf "%b" "\n4 - Sway\n"
       read -r typecheck01
       case $typecheck01 in
        1) printf "%b" "\nPerfect\n" ;;
        2) printf "%b" "\nLet's move on then.\n" ;;
        3) printf "%b" "\nPerfect\n" ;;
+       4) printf "%b" "\nLet's move on then.\n" ;;
        *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
       esac
       if [ "$typecheck01" = "1" ]; then
@@ -85,9 +88,12 @@ if [[ $(tty) == "/dev/tty1" ]]; then
       if [ "$typecheck01" = "3" ]; then
       coffeebrewer-cinnamon
       fi
-      if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ]; then
-      typecheck01=1
-      coffeebrewer-kde
+      if [ "$typecheck01" = "4" ]; then
+      coffeebrewer-sway
+      fi
+      if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; then
+      typecheck01=3
+      coffeebrewer-cinnamon
       fi
       done
     fi
