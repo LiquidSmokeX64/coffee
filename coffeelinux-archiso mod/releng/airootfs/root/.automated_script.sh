@@ -66,7 +66,7 @@ if [[ $(tty) == "/dev/tty1" ]]; then
 
       while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; do
       clear
-      printf "%b" "\nWhat type of Desktop Environment do you want? (Default: 3)\n"
+      printf "%b" "\nWhat type of Desktop Environment do you want?\n"
       printf "%b" "\n1 - KDE\n"
       printf "%b" "\n2 - Gnome\n"
       printf "%b" "\n3 - Cinnamon\n"
@@ -77,7 +77,7 @@ if [[ $(tty) == "/dev/tty1" ]]; then
        2) printf "%b" "\nLet's move on then.\n" ;;
        3) printf "%b" "\nPerfect\n" ;;
        4) printf "%b" "\nLet's move on then.\n" ;;
-       *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+       *) printf "%b" "\nUnrecognized option...\n" ;;
       esac
       if [ "$typecheck01" = "1" ]; then
       coffeebrewer-kde
@@ -90,10 +90,6 @@ if [[ $(tty) == "/dev/tty1" ]]; then
       fi
       if [ "$typecheck01" = "4" ]; then
       coffeebrewer-sway
-      fi
-      if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; then
-      typecheck01=3
-      coffeebrewer-cinnamon
       fi
       done
     fi

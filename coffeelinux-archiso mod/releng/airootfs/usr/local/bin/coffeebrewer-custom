@@ -599,7 +599,7 @@ clear
 
 while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; do
 
-printf "%b" "\nWhat desktop environment do you want? (Default: 3)\n"
+printf "%b" "\nWhat desktop environment do you want?\n"
 printf "%b" "\n1 - Gnome (Ubuntu version)\n"
 printf "%b" "\n2 - Gnome (Standard version)\n"
 printf "%b" "\n3 - KDE\n"
@@ -641,7 +641,7 @@ case $desktopcheck in
   17) printf "%b" "\nA super choice.\n" ;;
   18) printf "%b" "\nA super choice.\n" ;;
   19) printf "%b" "\nA super choice.\n" ;;
-  *) printf "%b" "\nUnrecognized option, please try again: $user00\n" ;;
+  *) printf "%b" "\nUnrecognized option, please try again..\n" ;;
 esac
 
 if [ "$desktopcheck" = "1" ]; then
@@ -720,11 +720,7 @@ if [ "$desktopcheck" = "19" ]; then
 desktop0="awesome"
 
 fi
-if [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; then
-desktopcheck=3
-desktop0="kde"
 
-fi
 done
 
 clear
@@ -2154,7 +2150,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.1.8)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.1.9)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
