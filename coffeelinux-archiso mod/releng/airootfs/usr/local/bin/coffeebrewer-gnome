@@ -1010,20 +1010,20 @@ if [ "$native1" = "yes" ]; then
    mkdir -p /mnt/usr/share/backgrounds/gnome/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
+   cp /opt/coffee-injector /mnt/opt/
+   arch-chroot /mnt chmod 755 /opt/coffee-keeper
+   cp /opt/coffee-keeper /mnt/opt/
    cp /opt/wallpaper-updater /mnt/opt/
    arch-chroot /mnt chmod 755 /opt/wallpaper-updater
-   cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
-   arch-chroot /mnt systemctl enable coffee-wallpapers.service
-   cp /opt/coffee-injector /mnt/opt/
    arch-chroot /mnt chmod 755 /opt/coffee-injector
-   cp /opt/coffee-injector.service /mnt/lib/systemd/system/
-   arch-chroot /mnt systemctl enable coffee-injector.service
+   cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
+   arch-chroot /mnt systemctl enable coffee-keeper.service
    if [ "$desktop0" = "gnome" ]; then
      cp /opt/coffee-updater /mnt/opt/
      arch-chroot /mnt chmod 755 /opt/coffee-updater
      cp /opt/coffee-updater.service /mnt/lib/systemd/system/
      arch-chroot /mnt systemctl enable coffee-updater.service
-    fi
+   fi
   fi
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf

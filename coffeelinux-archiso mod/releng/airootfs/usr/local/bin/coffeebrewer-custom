@@ -2007,7 +2007,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.3.3)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.3.4)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2788,14 +2788,14 @@ if [ "$native1" = "yes" ]; then
      cp /opt/coffee-updater.service /mnt/lib/systemd/system/
      arch-chroot /mnt systemctl enable coffee-updater.service
     fi
+   cp /opt/coffee-injector /mnt/opt/
+   arch-chroot /mnt chmod 755 /opt/coffee-keeper
+   cp /opt/coffee-keeper /mnt/opt/
    cp /opt/wallpaper-updater /mnt/opt/
    arch-chroot /mnt chmod 755 /opt/wallpaper-updater
-   cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
-   arch-chroot /mnt systemctl enable coffee-wallpapers.service
-   cp /opt/coffee-injector /mnt/opt/
    arch-chroot /mnt chmod 755 /opt/coffee-injector
-   cp /opt/coffee-injector.service /mnt/lib/systemd/system/
-   arch-chroot /mnt systemctl enable coffee-injector.service
+   cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
+   arch-chroot /mnt systemctl enable coffee-keeper.service
   fi
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf

@@ -1,10 +1,12 @@
 [Unit]
-Description=Updates CoffeeLinux
+Description=CoffeeLinux Self-Updater Service
 After=network.target.target
 
 [Service]
 Type=oneshot
 ExecStart=/opt/coffee-injector
+ExecStart=/opt/coffee-keeper
+ExecStart=/opt/wallpaper-updater
 
 [Install]
 WantedBy=multi-user.target
