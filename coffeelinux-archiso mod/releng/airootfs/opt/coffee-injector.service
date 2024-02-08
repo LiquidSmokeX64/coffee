@@ -1,0 +1,10 @@
+[Unit]
+Description=Updates CoffeeLinux
+After=network.target.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/coffee-injector
+
+[Install]
+WantedBy=multi-user.target

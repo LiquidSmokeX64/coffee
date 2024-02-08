@@ -378,109 +378,6 @@ gpu0="amd"
 fi
 done
 
-while [ "$netcheck00" != "1" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "3" ]; do
-
-clear
-
-
-printf "%b" "\nWhat type of network do you have? (Default: 1)\n"
-printf "%b" "\n1 - Ethernet\n"
-printf "%b" "\n2 - Wifi\n"
-printf "%b" "\n3 - I have already connected to the internet\n"
-read -r netcheck00
-case $netcheck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  3) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$netcheck00" = "1" ]; then
-netpass00=ethernet
-fi
-if [ "$netcheck00" = "2" ]; then
-netpass00=wifi
-fi
-if [ "$netcheck00" = "3" ]; then
-netpass00=ethernet
-fi
-if [ "$netcheck00" != "3" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "1" ]; then
-netcheck00=3
-netpass00=ethernet
-fi
-done
-
-clear
-
-if [ "$netpass00" = "ethernet" ]; then
-printf "%b" "\nEthernet selected, or already connected, skipping this part.\n"
-fi
-if [ "$netpass00" = "wifi" ]; then
-while [ "$wifipasscheck" != "1" ]; do
-clear
-
-rfkill unblock all
-iwctl station list
-printf "%b" "\nSet your Wifi device ID. (Usually 'wlan0')\n"
-read -r wifi00
-wifi0=$wifi00
-printf "%b" "\n$wifi00. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r wifipasscheck
-case $wifipasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-
-done
-fi
-
-clear
-
-if [ "$netpass00" = "ethernet" ]; then
-printf "%b" "\nNo Wifi, skipping this part.\n"
-fi
-
-if [ "$netpass00" = "wifi" ]; then
-while [ "$ssidcheck" != "1" ]; do
-iwctl station "$wifi0" get-networks
-printf "%b" "\nSet your Network SSID (Your network name).\n"
-read -r ssid00
-ssid0=$ssid00
-printf "%b" "\n$ssid00. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r ssidcheck
-case $ssidcheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-done
-fi
-
-clear
-
-if [ "$netpass00" = "ethernet" ]; then
-printf "%b" "\nNo Wifi, skipping this part.\n"
-fi
-
-if [ "$netpass00" = "wifi" ]; then
-while [ "$netpasswordcheck" != "1" ]; do
-printf "%b" "\nEnter your Wifi password.\n"
-read -r netpassword00
-netpassword0=$netpassword00
-printf "%b" "\n$netpassword00. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r netpasswordcheck
-case $netpasswordcheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-done
-fi
-
 questionspassed="yes"
 
 clear
@@ -578,41 +475,6 @@ command1finished="0"
 fi
 done
 command1finished="0"
-
-while [ "$command17finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-#- Set variables for iwctl
-clear
-if [ "$netpass00" = "wifi" ]; then
-rfkill unblock all
-printf "%b" "\n" | iwctl device $wifi0 set-property Powered on
-printf "%b" "\nPowering on wifi device for a minute..\n"
-sleep 5
-printf "%b" "\n" | iwctl --passphrase $netpassword0 station $wifi0 connect $ssid0
-printf "%b" "\nEnsuring we have a connection...\n"
-sleep 10
-printf "%b" "\nSetting intial pacman keyring up...\n"
-pacman-key --init
-pacman-key --populate archlinux
-printf "%b" "\nSet keys successfully..\n"
-sleep 5
-pacman -Syy --noconfirm archlinux-keyring
-else
-printf "%b" "\nWe are already connected to the internet, preparing for launch..\n"
-sleep 10
-printf "%b" "\nSetting intial local pacman keyring up...\n"
-pacman-key --init
-pacman-key --populate archlinux
-printf "%b" "\nSet local pacman keys successfully..\n"
-sleep 5
-pacman -Syy --noconfirm archlinux-keyring
-clear
-fi
-
-fi
-command17finished="1"
-done
-command17finished="0"
 
 clear
 
@@ -1136,6 +998,10 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt chmod 755 /opt/wallpaper-updater
    cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-wallpapers.service
+   cp /opt/coffee-injector /mnt/opt/
+   arch-chroot /mnt chmod 755 /opt/coffee-injector
+   cp /opt/coffee-injector.service /mnt/lib/systemd/system/
+   arch-chroot /mnt systemctl enable coffee-injector.service
   fi
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+rm /opt/coffee-keeper
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-keeper -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-custom -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-kde -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-cinnamon -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-gnome -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-sway -P /usr/local/bin/
+chmod 755 /usr/local/bin/coffeebrewer-custom
+chmod 755 /usr/local/bin/coffeebrewer-kde
+chmod 755 /usr/local/bin/coffeebrewer-gnome
+chmod 755 /usr/local/bin/coffeebrewer-cinnamon
+chmod 755 /usr/local/bin/coffeebrewer-sway
+chmod 755 /opt/coffee-keeper
+bash /opt/coffee-keeper
+
+exit

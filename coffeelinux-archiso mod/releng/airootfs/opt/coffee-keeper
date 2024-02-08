@@ -1,0 +1,18 @@
+#!/bin/sh
+
+### Update first ###
+pacman -Syu --noconfirm
+### commits from 24.1.0-24.2.1 ####
+pacman -Sy --noconfirm wget xdotool yad tinyxxd python-pyqt6 python-pyqt5 python-opengl qt5-serialport qt5-connectivity qt5-remoteobjects qt5-quick3d at-spi2-core packagekit packagekit-qt5 packagekit-qt6 libpackagekit-glib dbus-broker-units
+
+clear
+
+rm /opt/coffee-injector
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-injector -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-injector.service -P /opt/
+chmod 755 /opt/coffee-injector
+cp /opt/coffee-injector.service /lib/systemd/system/
+systemctl enable coffee-injector.service
+### End commits ###
+
+exit
