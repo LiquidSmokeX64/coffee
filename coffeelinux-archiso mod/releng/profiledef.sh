@@ -5,7 +5,7 @@ iso_name="coffeelinux"
 iso_label="COFFEE_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 iso_publisher="Coffee Linux <https://archlinux.org>"
 iso_application="Coffee Linux Live/Rescue CD"
-iso_version="24.3.6-$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
+iso_version="24.3.7-$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
