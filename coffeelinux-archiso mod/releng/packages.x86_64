@@ -121,6 +121,7 @@ usbmuxd
 usbutils
 virtualbox-guest-utils-nox
 vpnc
+wget
 wezterm-terminfo
 wireless-regdb
 wireless_tools
