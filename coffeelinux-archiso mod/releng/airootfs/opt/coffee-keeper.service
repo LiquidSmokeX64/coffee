@@ -4,9 +4,9 @@ After=network.target.target
 
 [Service]
 Type=oneshot
+ExecStart=/opt/wallpaper-updater
 ExecStart=/opt/coffee-injector
 ExecStart=/opt/coffee-keeper
-ExecStart=/opt/wallpaper-updater
 
 [Install]
 WantedBy=multi-user.target

@@ -1,7 +1,8 @@
 #!/bin/sh
 
+sleep 20
 pacman -Syu --noconfirm
-yay -Syu --noconfirm --aur
+yay -Syu --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y --aur
 rm /opt/os-release
 rm /opt/lsb-release
 rm /etc/os-release
