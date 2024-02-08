@@ -4,8 +4,4 @@ mkdir -p /usr/share/wallpapers/coffee/
 mkdir -p /usr/share/backgrounds/gnome/
 cp /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
 cp /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
-rm -R /usr/share/wayland-sessions/gnome*
-rm -R /usr/share/xsessions/gnome*
-cp /opt/os-release /etc/
-cp /opt/lsb-release /etc/
 exit

@@ -1,9 +1,28 @@
 #!/bin/sh
 
-### Update first ###
 pacman -Syu --noconfirm
-### commits from 24.1.0-24.3.0 ####
+rm /opt/os-release
+rm /opt/lsb-release
+rm /opt/coffeebrewer-custom
+rm /opt/coffeebrewer-cinnamon
+rm /opt/coffeebrewer-kde
+rm /opt/coffeebrewer-gnome
+rm /opt/coffeebrewer-sway
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-custom -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-kde -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-cinnamon -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-gnome -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-sway -P /usr/local/bin/
+chmod 755 /usr/local/bin/coffeebrewer-custom
+chmod 755 /usr/local/bin/coffeebrewer-kde
+chmod 755 /usr/local/bin/coffeebrewer-gnome
+chmod 755 /usr/local/bin/coffeebrewer-cinnamon
+chmod 755 /usr/local/bin/coffeebrewer-sway
+rm -R /usr/share/wayland-sessions/gnome*
+rm -R /usr/share/xsessions/gnome*
+cp /opt/os-release /etc/
+cp /opt/lsb-release /etc/
 pacman -Sy --noconfirm wget xdotool yad tinyxxd python-pyqt6 python-pyqt5 python-opengl qt5-serialport qt5-connectivity qt5-remoteobjects qt5-quick3d at-spi2-core packagekit packagekit-qt5 packagekit-qt6 libpackagekit-glib dbus-broker-units
-### End commits ###
-
 exit

@@ -187,6 +187,13 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     command17finished="0"
     #Network Setup Finished
     #Update Needed Files
+    rm /opt/os-release
+    rm /opt/lsb-release
+    rm /opt/coffeebrewer-custom
+    rm /opt/coffeebrewer-cinnamon
+    rm /opt/coffeebrewer-kde
+    rm /opt/coffeebrewer-gnome
+    rm /opt/coffeebrewer-sway
     clear
     wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-custom -P /usr/local/bin/
     clear
