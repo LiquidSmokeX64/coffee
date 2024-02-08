@@ -196,25 +196,30 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     rm /usr/local/bin/coffeebrewer-kde
     rm /usr/local/bin/coffeebrewer-gnome
     rm /usr/local/bin/coffeebrewer-sway
+    mkdir /opt/coffee-updates/
     clear
-    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-custom -P /usr/local/bin/
+    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-custom -P /opt/coffee-updates/
     clear
-    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-kde -P /usr/local/bin/
+    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-kde -P /opt/coffee-updates/
     clear
-    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-cinnamon -P /usr/local/bin/
+    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-cinnamon -P /opt/coffee-updates/
     clear
-    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-gnome -P /usr/local/bin/
+    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-gnome -P /opt/coffee-updates/
     clear
-    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-sway -P /usr/local/bin/
+    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-sway -P /opt/coffee-updates/
     clear
-    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/
+    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/coffee-updates/
     clear
-    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /opt/
+    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /opt/coffee-updates/
     clear
-    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /etc/
+    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/coffee-updates/
     clear
-    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /etc/
+    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /opt/coffee-updates/
     clear
+    cp -R /opt/coffee-updates/coffeebrewer* /usr/local/bin/
+    cp -R /opt/coffee-updates/*-release /opt/
+    cp -R /opt/coffee-updates/*-release /etc/
+    rm -R /opt/coffee-updates/*
     chmod 755 /usr/local/bin/coffeebrewer-custom
     chmod 755 /usr/local/bin/coffeebrewer-kde
     chmod 755 /usr/local/bin/coffeebrewer-gnome
