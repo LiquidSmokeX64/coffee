@@ -189,11 +189,13 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     #Update Needed Files
     rm /opt/os-release
     rm /opt/lsb-release
-    rm /opt/coffeebrewer-custom
-    rm /opt/coffeebrewer-cinnamon
-    rm /opt/coffeebrewer-kde
-    rm /opt/coffeebrewer-gnome
-    rm /opt/coffeebrewer-sway
+    rm /etc/os-release
+    rm /etc/lsb-release
+    rm /usr/local/bin/coffeebrewer-custom
+    rm /usr/local/bin/coffeebrewer-cinnamon
+    rm /usr/local/bin/coffeebrewer-kde
+    rm /usr/local/bin/coffeebrewer-gnome
+    rm /usr/local/bin/coffeebrewer-sway
     clear
     wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-custom -P /usr/local/bin/
     clear
@@ -204,8 +206,6 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-gnome -P /usr/local/bin/
     clear
     wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffeebrewer-sway -P /usr/local/bin/
-    clear
-    wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-keeper -P /opt/
     clear
     wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/
     clear
