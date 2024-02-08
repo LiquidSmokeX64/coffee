@@ -28,6 +28,8 @@ chmod 755 /usr/local/bin/coffeebrewer-cinnamon
 chmod 755 /usr/local/bin/coffeebrewer-sway
 rm -R /usr/share/wayland-sessions/gnome*
 rm -R /usr/share/xsessions/gnome*
+#Removal of any packages
+pacman -Rdd --noconfirm blueman kmix
 #Coffee Package Updates
 newcontent="wget"
 pacman -Sy --noconfirm $newcontent
