@@ -2,7 +2,8 @@
 
 rm -R /usr/share/wayland-sessions/gnome*
 rm -R /usr/share/xsessions/gnome*
-#rm -r /mnt/usr/share/xsessions/cinnamon*
-pacman -Rdd --noconfirm gnome-terminal gedit
-pacman -Syy --noconfirm gnome-console gnome-text-editor
+pacman -Rdd --noconfirm gnome-terminal
+pacman -Rdd --noconfirm gedit
+pacman -Syy --noconfirm gnome-console
+pacman -Syy --noconfirm gnome-text-editor
 exit

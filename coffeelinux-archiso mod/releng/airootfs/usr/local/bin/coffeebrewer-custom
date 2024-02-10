@@ -1428,7 +1428,6 @@ fi
 if [ "$desktop0" = "kde" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
-arch-chroot /mnt pacman -Rdd --noconfirm blueman kmix
 if [ "$branchpass00" = "stable" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps2
 fi
@@ -1852,6 +1851,8 @@ clear
 while [ "$pacmanfinished" != "1" ] && [ "$coffeeon00" = "yes" ]; do
 if [ "$questionspassed" = "yes" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
+arch-chroot /mnt pacman -Rdd --noconfirm kmix
+arch-chroot /mnt pacman -Rdd --noconfirm blueman
 clear
 pacmanfinished="1"
 else
@@ -2008,7 +2009,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.3.12)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.4.0)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf

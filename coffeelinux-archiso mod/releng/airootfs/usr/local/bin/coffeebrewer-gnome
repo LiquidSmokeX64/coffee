@@ -602,6 +602,8 @@ clear
 while [ "$pacmanfinished" != "1" ] && [ "$coffeeon00" = "yes" ]; do
 if [ "$questionspassed" = "yes" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
+arch-chroot /mnt pacman -Rdd --noconfirm kmix
+arch-chroot /mnt pacman -Rdd --noconfirm blueman
 clear
 pacmanfinished="1"
 else
