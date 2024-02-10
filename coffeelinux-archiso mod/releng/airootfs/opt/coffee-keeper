@@ -4,12 +4,15 @@ sleep 20
 #Update existing OS first
 pacman -Syu --noconfirm
 yay -Syu --noconfirm
-#Removal of any packages
+#Coffee Package Updates
+newcontent="python-pipx"
+pacman -Sy --noconfirm $newcontent
+#Removal of any unwanted packages
 pacman -Rdd --noconfirm blueman
 pacman -Rdd --noconfirm kmix
-#Coffee Package Updates
-newcontent="wget"
-pacman -Sy --noconfirm $newcontent
+#Remove any unwanted files
+rm /usr/share/applications/steam.desktop
+rm /usr/share/applications/stoken-gui-small.desktop
 #Replace CoffeeLinux Files
 rm /opt/os-release
 rm /opt/lsb-release
