@@ -2009,7 +2009,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.4.2)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.4.3)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2800,6 +2800,13 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt systemctl enable coffee-keeper.service
    cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-wallpapers.service
+   cp /opt/firstrun-reboot /mnt/opt/
+   cp /opt/firstrun-reboot-starter /mnt/opt/
+   arch-chroot /mnt chmod 755 /opt/firstrun-reboot
+   arch-chroot /mnt chmod 755 /opt/firstrun-reboot-starter
+   cp /opt/firstrun-reboot.service /mnt/lib/systemd/system/
+   arch-chroot /mnt systemctl enable firstrun-reboot.service
+
   fi
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf
