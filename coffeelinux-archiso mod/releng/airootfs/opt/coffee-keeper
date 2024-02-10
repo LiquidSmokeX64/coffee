@@ -5,13 +5,13 @@ sleep 20
 pacman -Syu --noconfirm
 yay -Syu --noconfirm
 #Coffee Package Updates
-newcontent="python-pipx steam"
+newcontent="python-pipx"
 pacman -Sy --noconfirm $newcontent
 #Removal of any unwanted packages
 pacman -Rdd --noconfirm blueman
 pacman -Rdd --noconfirm kmix
 #Remove any unwanted files
-rm /usr/share/applications/steam-native-runtime.desktop
+rm /usr/share/applications/steam-native.desktop
 rm /usr/share/applications/stoken-gui-small.desktop
 #Replace CoffeeLinux Files
 rm /opt/os-release

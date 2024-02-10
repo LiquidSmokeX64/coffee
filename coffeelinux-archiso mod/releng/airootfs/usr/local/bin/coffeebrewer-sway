@@ -1006,7 +1006,7 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt systemctl enable coffee-keeper.service
    cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-wallpapers.service
-   rm /mnt/usr/share/applications/steam-native-runtime.desktop
+   rm /mnt/usr/share/applications/steam-native.desktop
    rm /mnt/usr/share/applications/stoken-gui-small.desktop
   fi
   if [ "$branchpass00" = "stable" ]; then
