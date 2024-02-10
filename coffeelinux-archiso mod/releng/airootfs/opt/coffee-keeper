@@ -18,7 +18,7 @@ rm /etc/lsb-release
 rm /opt/coffee-injector
 rm /opt/coffee-updater
 rm /opt/wallpaper-updater
-rm /opt/wallpaper-updater.service
+rm /opt/coffee-wallpapers.service
 rm /usr/local/bin/coffeebrewer-custom
 rm /usr/local/bin/coffeebrewer-cinnamon
 rm /usr/local/bin/coffeebrewer-kde

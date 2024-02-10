@@ -1,9 +1,0 @@
-#!/bin/sh
-
-sleep 20
-systemctl disable --now firstrun-reboot.service
-rm /opt/firstrun-reboot
-rm /opt/firstrun-reboot-starter
-rm /opt/firstrun-reboot.service
-rm /lib/systemd/system/firstrun-reboot.service
-reboot

@@ -1006,12 +1006,6 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt systemctl enable coffee-keeper.service
    cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-wallpapers.service
-   cp /opt/firstrun-reboot /mnt/opt/
-   cp /opt/firstrun-reboot-starter /mnt/opt/
-   arch-chroot /mnt chmod 755 /opt/firstrun-reboot
-   arch-chroot /mnt chmod 755 /opt/firstrun-reboot-starter
-   cp /opt/firstrun-reboot.service /mnt/lib/systemd/system/
-   arch-chroot /mnt systemctl enable firstrun-reboot.service
   fi
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf
