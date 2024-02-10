@@ -1020,6 +1020,8 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt chmod 755 /opt/coffee-injector
    cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-keeper.service
+   cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
+   arch-chroot /mnt systemctl enable coffee-wallpapers.service
    if [ "$desktop0" = "gnome" ]; then
      cp /opt/coffee-updater /mnt/opt/
      arch-chroot /mnt chmod 755 /opt/coffee-updater

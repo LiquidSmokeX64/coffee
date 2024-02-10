@@ -1004,6 +1004,8 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt chmod 755 /opt/coffee-injector
    cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-keeper.service
+   cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
+   arch-chroot /mnt systemctl enable coffee-wallpapers.service
   fi
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf
