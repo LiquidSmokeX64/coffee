@@ -91,6 +91,7 @@ esac
 clear
 
 if [ "$usercheck02" = "1" ]; then
+while [ "$usercheck" != "1" ]; do
 printf "%b" "\nSet your Username.\n"
 read -r user00
 printf "%b" "\n$user00. Is this correct?\n"
@@ -101,7 +102,7 @@ case $usercheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
-
+done
 if [ "$usercheck" = "1" ]; then
 user01=$user00
 fi
@@ -148,7 +149,7 @@ esac
 clear
 
 if [ "$userpasscheck00" = "1" ]; then
-
+while [ "$userpasscheck" != "1" ]; do
 printf "%b" "\nSet your User Password.\n"
 read -r userpass00
 printf "%b" "\n$userpass00. Is this correct?\n"
@@ -159,7 +160,7 @@ case $userpasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
-
+done
 if [ "$userpasscheck" = "1" ]; then
 userpass0=$userpass00
 fi
@@ -206,7 +207,7 @@ esac
 clear
 
 if [ "$rootpasscheck00" = "1" ]; then
-
+while [ "$rootpasscheck" != "1" ]; do
 printf "%b" "\nSet your Root Password.\n"
 read -r userpass01
 printf "%b" "\n$userpass01. Is this correct?\n"
@@ -217,7 +218,7 @@ case $rootpasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
-
+done
 if [ "$rootpasscheck" = "1" ]; then
 userpass1=$userpass01
 fi
@@ -263,7 +264,7 @@ esac
 clear
 
 if [ "$namepasscheck00" = "1" ]; then
-
+while [ "$namepasscheck" != "1" ]; do
 printf "%b" "\nSet your PC name.\n"
 read -r name00
 printf "%b" "\n$name00. Is this correct?\n"
@@ -274,7 +275,7 @@ case $namepasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
-
+done
 if [ "$namepasscheck" = "1" ]; then
 name0=$name00
 fi
@@ -321,7 +322,7 @@ esac
 clear
 
 if [ "$name2passcheck02" = "1" ]; then
-
+while [ "$name2passcheck" != "1" ]; do
 printf "%b" "\nSet your HardDrive Label (OS Partition Label).\n"
 read -r name01
 printf "%b" "\n$name01. Is this correct?\n"
@@ -332,7 +333,7 @@ case $name2passcheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
-
+done
 if [ "$name2passcheck" = "1" ]; then
 name1=$name01
 fi
@@ -490,6 +491,7 @@ boot=1
 swap=2
 system=3
 
+
 printf "%b" "\n$drive. Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
@@ -516,6 +518,7 @@ drive="vdb"
 boot=1
 swap=2
 system=3
+
 
 printf "%b" "\n$drive. Is this correct?\n"
 printf "%b" "\n1 - yes\n"
@@ -2009,7 +2012,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.4.7)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.5.0)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf

@@ -60,6 +60,7 @@ done
 
 clear
 
+while [ "$usercheck" != "1" ]; do
 printf "%b" "\nSet your Username.\n"
 read -r user00
 printf "%b" "\n$user00. Is this correct?\n"
@@ -70,15 +71,16 @@ case $usercheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
+done
 
 if [ "$usercheck" = "1" ]; then
 user01=$user00
 fi
-
 #
 
 clear
 
+while [ "$userpasscheck" != "1" ]; do
 printf "%b" "\nSet your User Password.\n"
 read -r userpass00
 printf "%b" "\n$userpass00. Is this correct?\n"
@@ -89,6 +91,7 @@ case $userpasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
+done
 
 if [ "$userpasscheck" = "1" ]; then
 userpass0=$userpass00
@@ -96,6 +99,7 @@ fi
 
 clear
 
+while [ "$rootpasscheck" != "1" ]; do
 printf "%b" "\nSet your Root Password.\n"
 read -r userpass01
 printf "%b" "\n$userpass01. Is this correct?\n"
@@ -106,6 +110,7 @@ case $rootpasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
+done
 
 if [ "$rootpasscheck" = "1" ]; then
 userpass1=$userpass01
@@ -113,6 +118,7 @@ fi
 
 clear
 
+while [ "$namepasscheck" != "1" ]; do
 printf "%b" "\nSet your PC name.\n"
 read -r name00
 printf "%b" "\n$name00. Is this correct?\n"
@@ -123,6 +129,7 @@ case $namepasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
+done
 
 if [ "$namepasscheck" = "1" ]; then
 name0=$name00
@@ -130,6 +137,7 @@ fi
 
 clear
 
+while [ "$name2passcheck" != "1" ]; do
 printf "%b" "\nSet your HardDrive Label (OS Partition Label).\n"
 read -r name01
 printf "%b" "\n$name01. Is this correct?\n"
@@ -140,6 +148,7 @@ case $name2passcheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
 esac
+done
 
 if [ "$name2passcheck" = "1" ]; then
 name1=$name01
