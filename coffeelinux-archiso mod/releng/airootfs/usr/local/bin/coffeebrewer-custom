@@ -2012,7 +2012,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.5.0)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.5.1)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2781,28 +2781,15 @@ if [ "$native1" = "yes" ]; then
    mkdir -p /mnt/usr/share/backgrounds/gnome/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
-    if [ "$desktop0" = "gnome" ]; then
-     cp /opt/coffee-updater /mnt/opt/
-     arch-chroot /mnt chmod 755 /opt/coffee-updater
-     cp /opt/coffee-updater.service /mnt/lib/systemd/system/
-     arch-chroot /mnt systemctl enable coffee-updater.service
-    fi
-    if [ "$desktop0" = "cinnamon" ]; then
-     cp /opt/coffee-updater /mnt/opt/
-     arch-chroot /mnt chmod 755 /opt/coffee-updater
-     cp /opt/coffee-updater.service /mnt/lib/systemd/system/
-     arch-chroot /mnt systemctl enable coffee-updater.service
-    fi
    cp /opt/coffee-injector /mnt/opt/
    arch-chroot /mnt chmod 755 /opt/coffee-keeper
    cp /opt/coffee-keeper /mnt/opt/
    cp /opt/wallpaper-updater /mnt/opt/
    arch-chroot /mnt chmod 755 /opt/wallpaper-updater
    arch-chroot /mnt chmod 755 /opt/coffee-injector
+   arch-chroot /mnt chmod 755 /opt/coffee-updater
    cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-keeper.service
-   cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
-   arch-chroot /mnt systemctl enable coffee-wallpapers.service
    if [ "$steamon00" = "yes" ]; then
    rm /mnt/usr/share/applications/steam-native.desktop
    fi

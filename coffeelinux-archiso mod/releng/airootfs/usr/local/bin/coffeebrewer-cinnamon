@@ -1028,18 +1028,11 @@ if [ "$native1" = "yes" ]; then
    cp /opt/wallpaper-updater /mnt/opt/
    arch-chroot /mnt chmod 755 /opt/wallpaper-updater
    arch-chroot /mnt chmod 755 /opt/coffee-injector
+   arch-chroot /mnt chmod 755 /opt/coffee-updater
    cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-keeper.service
-   cp /opt/coffee-wallpapers.service /mnt/lib/systemd/system/
-   arch-chroot /mnt systemctl enable coffee-wallpapers.service
    rm /mnt/usr/share/applications/steam-native.desktop
    rm /mnt/usr/share/applications/stoken-gui-small.desktop
-   if [ "$desktop0" = "cinnamon" ]; then
-     cp /opt/coffee-updater /mnt/opt/
-     arch-chroot /mnt chmod 755 /opt/coffee-updater
-     cp /opt/coffee-updater.service /mnt/lib/systemd/system/
-     arch-chroot /mnt systemctl enable coffee-updater.service
-    fi
   fi
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf

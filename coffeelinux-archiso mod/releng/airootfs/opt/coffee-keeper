@@ -10,9 +10,16 @@ pacman -Sy --noconfirm $newcontent
 #Removal of any unwanted packages
 pacman -Rdd --noconfirm blueman
 pacman -Rdd --noconfirm kmix
+#Disable unwanted services
+systemctl disable --now coffee-wallpapers.service
+systemctl disable --now coffee-updater.service
 #Remove any unwanted files
 rm /usr/share/applications/steam-native.desktop
 rm /usr/share/applications/stoken-gui-small.desktop
+rm /opt/coffee-wallpapers.service
+rm /opt/coffee-updater.service
+rm /lib/systemd/system/coffee-wallpapers.service
+rm /lib/systemd/system/coffee-updater.service
 #Replace CoffeeLinux Files
 rm /opt/os-release
 rm /opt/lsb-release
@@ -21,7 +28,6 @@ rm /etc/lsb-release
 rm /opt/coffee-injector
 rm /opt/coffee-updater
 rm /opt/wallpaper-updater
-rm /opt/coffee-wallpapers.service
 rm /usr/local/bin/coffeebrewer-custom
 rm /usr/local/bin/coffeebrewer-cinnamon
 rm /usr/local/bin/coffeebrewer-kde
@@ -29,7 +35,6 @@ rm /usr/local/bin/coffeebrewer-gnome
 rm /usr/local/bin/coffeebrewer-sway
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-injector -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/wallpaper-updater -P /opt/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-wallpapers.service -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-updater -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /opt/
@@ -48,6 +53,4 @@ chmod 755 /usr/local/bin/coffeebrewer-kde
 chmod 755 /usr/local/bin/coffeebrewer-gnome
 chmod 755 /usr/local/bin/coffeebrewer-cinnamon
 chmod 755 /usr/local/bin/coffeebrewer-sway
-cp /opt/coffee-wallpaper.service /lib/systemd/system/
-systemctl enable coffee-wallpapers.service
 exit
