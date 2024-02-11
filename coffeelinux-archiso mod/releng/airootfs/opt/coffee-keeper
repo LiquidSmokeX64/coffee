@@ -1,21 +1,13 @@
 #!/bin/sh
 
-sleep 20
-#Update existing OS first
-pacman -Syu --noconfirm
-yay -Syu --noconfirm
-#Coffee Package Updates
+sleep 10
+#Latest Coffee Package Updates
 newcontent="python-pipx"
 pacman -Sy --noconfirm $newcontent
-#Removal of any unwanted packages
-pacman -Rdd --noconfirm blueman
-pacman -Rdd --noconfirm kmix
 #Disable unwanted services
 systemctl disable --now coffee-wallpapers.service
 systemctl disable --now coffee-updater.service
 #Remove any unwanted files
-rm /usr/share/applications/steam-native.desktop
-rm /usr/share/applications/stoken-gui-small.desktop
 rm /opt/coffee-wallpapers.service
 rm /opt/coffee-updater.service
 rm /lib/systemd/system/coffee-wallpapers.service
