@@ -191,6 +191,11 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     rm /opt/lsb-release
     rm /etc/os-release
     rm /etc/lsb-release
+    rm /opt/config
+    rm /opt/coffee-keeper
+    rm /opt/coffee-injector
+    rm /opt/coffee-updater
+    rm /opt/wallpaper-updater
     rm /usr/local/bin/coffeebrewer-custom
     rm /usr/local/bin/coffeebrewer-cinnamon
     rm /usr/local/bin/coffeebrewer-kde
@@ -215,6 +220,15 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     clear
     wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /etc/
     clear
+    wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/config -P /opt/
+    clear
+    wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-injector -P /opt/
+    clear
+    wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-updater -P /opt/
+    clear
+    wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-keeper -P /opt/
+    clear
+    wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/wallpaper-updater -P /opt/
     chmod 755 /usr/local/bin/coffeebrewer-custom
     chmod 755 /usr/local/bin/coffeebrewer-kde
     chmod 755 /usr/local/bin/coffeebrewer-gnome
