@@ -1,38 +1,34 @@
-# Coffee Linux v.24.5.3 "Xeno"
+# Welcome to CoffeeLinux."
 
-What is CoffeeLinux?
+-----------------------------------
 
-Effectively it's a mod for pure Arch Linux's Iso designed to make it much easier to use and provide a better quality final product.
+CoffeeLinux is a distro designed with gaming in mind.
 
-Simply apply the mod files to any clean Archiso releng profile and thats it.
+However.. due to this lofty goal it excells in other areas quite nicely.  
+The performance difference is noticable.
 
-The original installation script for a standard Arch Linux OS is difficult to use, and incomplete to some extent.
+Based on Arch, CoffeeLinux aims to provide a smooth setup from start to finish so you can get right to it.  
 
-Coffee Linux aims to correct this problem through a much simpler easy to use script.
+The Installer is a pure shell installation. No need for a fancy GUI just to install an OS honestly.  
+Just a few simple choices and you're ready to go.
 
-A custom install script is available too allowing the OS to be assembled via a series of questions to cater to exactly what you want within certain perameters.
+With 4 Standard Desktop Environment choices, it's easy to find the one that suits you best.  
+And if you like more control try the Custom Mode that has much more configuration options and unique choices not available otherwise.
 
-The entire installation process features a default setup in case one just wants to hit "Enter" a few times and be done.
+CoffeeLinux is unique to other distros because its installer is a hand crafted mod for archiso (releng profile) that uses a single script to install the OS for you based on your choices.
+ 
+There is no copying packages and such. Everything is downloaded and installed live for your installation.  
 
-With Coffee Linux there is no longer any confusing guides to follow, no need to use a forked distro like Manjaro. You can have real Arch Linux, don't settle for second best.
+Don't like updating? I hear you..  
+CoffeeLinux Self-Updating Service is made just for you.  
+No more waitimg for updates, with this service you just reboot (twice sometimes). Seriously that's it. It takes care of all the maintenence for you in the background.
+You do nothing.
 
-Coffee Linux provides a full set of packages for every desktop environment, and a series of quality of life improvements via the Coffee Linux Extras.
+This is Arch but better. Enjoy it with us.
 
-Coffee Linux extras include many dependencies for a ton of everday applications, firmware patches, and other little things to make your experience the best I can provide out of the box.
+----------------------------------
 
-There are a list of optional applications and services as well to choose from such as Steam, Java, LibreOffice, VMWare, Snapd framework, Heroic Games Launcher, Lutris, Github Desktop, Discord, and a few popular Web Browsers.
-
-The idea here is to bring real Arch Linux to everyone, and effectively end the need for a distro war.
-
-Everyone knows Arch is king under Gentoo, it's just confusing to install in a similar way. I've fixed that problem. Enjoy.
-
-Stop settling for hackjob distros. You're better than that aren't you?
-
-[Features List]
-
-Pure Arch Linux not a fork (this is a feature)
-
-Single file only installer script (this is a feature)
+[Custom Mode Choices List]
 
 Web Browser Choices: Chrome, Firefox, and MS Edge
 
@@ -46,11 +42,11 @@ Desktop Environment Choices: Gnome, KDE, Cinnamon, Mate, XFCE, LXQT, LXDE, i3, S
 
 Simply download from the Releases page and use Etcher to write the iso to usb. Use like any other ArchIso.
 
-============================================
+------------------------------------
 
 Like, Share, and Enjoy. My Linux is the cure to the distro war.
 
-============================================
+------------------------------------
 
 Join us on Discord: https://discord.gg/6Pz43wP
 
