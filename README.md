@@ -37,8 +37,6 @@ Web Browser Choices: Chrome, Firefox, and MS Edge
 
 App Choices: Snapd framework, Steam, Java, VMWare, Discord, Github Desktop, Heroic Games, Lutris, and LibreOffice.
 
-GPU Driver Choices: AMD, Nvidia, and Intel (Intel is still WIP because I do not own an ARC GPU)
-
 Bootloader Choices: Grub UEFI, Grub BIOS, and Systemd-Boot (with optional Secure-boot)
 
 Desktop Environment Choices: Gnome, KDE, Cinnamon, Mate, XFCE, LXQT, LXDE, i3, Sway, Cutefish, Deepin, Budgie, Enlightenment, and Awesome. (Some have styled versions to choose from as well)

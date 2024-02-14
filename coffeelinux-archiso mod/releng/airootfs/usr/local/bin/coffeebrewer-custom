@@ -732,54 +732,6 @@ clear
 
 questionare (){
 
-while [ "$sbpasscheck" != "1" ] && [ "$sbpasscheck" != "2" ]; do
-printf "%b" "\nWould you like to enable Secure-Boot in the OS? (requires systemd-bootloader) (Default: 2)\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r sbpasscheck
-case $sbpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$sbpasscheck" = "1" ]; then
-sbpass0=yes
-fi
-if [ "$sbpasscheck" = "2" ]; then
-sbpass0=no
-fi
-if [ "$sbpasscheck" != "2" ] && [ "$sbpasscheck" != "1" ]; then
-sbpasscheck=2
-sbpass0=no
-fi
-done
-
-#
-if [ "$sbpass0" = "no" ]; then
-printf "%b" "\nNo SB, skipping this part.\n"
-fi
-if [ "$sbpass0" = "yes" ]; then
-while [ "$uefipasscheck" != "1" ]; do
-printf "%b" "\nSet your UEFI/MOK Secure-Boot Password.\n"
-read -r uefipass00
-printf "%b" "\n$uefipass00. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r uefipasscheck
-case $uefipasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-done
-fi
-
-if [ "$uefipasscheck" = "1" ]; then
-uefipass0=$uefipass00
-fi
-
-clear
-
 native1=yes
 
 clear
@@ -1171,6 +1123,55 @@ fi
 if [ "$grubcheck" = "3" ]; then
 grub0="false"
 questionspassed="yes"
+
+while [ "$sbpasscheck" != "1" ] && [ "$sbpasscheck" != "2" ]; do
+printf "%b" "\nWould you like to enable Secure-Boot in the OS? (requires systemd-bootloader) (Default: 2)\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r sbpasscheck
+case $sbpasscheck in
+  1) printf "%b" "\nPerfect\n" ;;
+  2) printf "%b" "\nLet's move on then.\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+if [ "$sbpasscheck" = "1" ]; then
+sbpass0=yes
+fi
+if [ "$sbpasscheck" = "2" ]; then
+sbpass0=no
+fi
+if [ "$sbpasscheck" != "2" ] && [ "$sbpasscheck" != "1" ]; then
+sbpasscheck=2
+sbpass0=no
+fi
+done
+
+#
+if [ "$sbpass0" = "no" ]; then
+printf "%b" "\nNo SB, skipping this part.\n"
+fi
+if [ "$sbpass0" = "yes" ]; then
+while [ "$uefipasscheck" != "1" ]; do
+printf "%b" "\nSet your UEFI/MOK Secure-Boot Password.\n"
+read -r uefipass00
+printf "%b" "\n$uefipass00. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r uefipasscheck
+case $uefipasscheck in
+  1) printf "%b" "\nPerfect\n" ;;
+  *) printf "%b" "\nLet's retry\n" ;;
+esac
+done
+fi
+
+if [ "$uefipasscheck" = "1" ]; then
+uefipass0=$uefipass00
+fi
+
+clear
+
 fi
 if [ "$grubcheck" != "1" ] && [ "$grubcheck" != "2" ] && [ "$grubcheck" != "3" ]; then
 grubcheck=1
@@ -2012,7 +2013,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.5.3)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.5.4)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
