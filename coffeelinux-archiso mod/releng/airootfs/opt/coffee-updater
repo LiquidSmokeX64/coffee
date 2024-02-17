@@ -10,6 +10,9 @@ pacman -Rdd --noconfirm kmix
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
 #Remove any unwanted files
+rm /usr/local/bin/coffeebrewer-cinnamon
+rm /usr/local/bin/coffeebrewer-kde
+rm /usr/local/bin/coffeebrewer-sway
 rm -R /usr/share/wayland-sessions/gnome*
 rm -R /usr/share/xsessions/gnome*
 rm /usr/share/applications/steam-native.desktop

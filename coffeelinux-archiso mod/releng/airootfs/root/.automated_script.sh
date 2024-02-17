@@ -197,20 +197,11 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     rm /opt/coffee-updater
     rm /opt/wallpaper-updater
     rm /usr/local/bin/coffeebrewer-custom
-    rm /usr/local/bin/coffeebrewer-cinnamon
-    rm /usr/local/bin/coffeebrewer-kde
     rm /usr/local/bin/coffeebrewer-gnome
-    rm /usr/local/bin/coffeebrewer-sway
     clear
     wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-custom -P /usr/local/bin/
     clear
-    wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-kde -P /usr/local/bin/
-    clear
-    wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-cinnamon -P /usr/local/bin/
-    clear
     wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-gnome -P /usr/local/bin/
-    clear
-    wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-sway -P /usr/local/bin/
     clear
     wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/
     clear
@@ -230,10 +221,7 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     clear
     wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/wallpaper-updater -P /opt/
     chmod 755 /usr/local/bin/coffeebrewer-custom
-    chmod 755 /usr/local/bin/coffeebrewer-kde
     chmod 755 /usr/local/bin/coffeebrewer-gnome
-    chmod 755 /usr/local/bin/coffeebrewer-cinnamon
-    chmod 755 /usr/local/bin/coffeebrewer-sway
     clear
     #Finished Updating
     #Main Menu
@@ -252,42 +240,14 @@ if [[ $(tty) == "/dev/tty1" ]]; then
     esac
 
     if [ "$typecheck00" = "1" ]; then
-
-      while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; do
-      clear
-      printf "%b" "\nWhat type of Desktop Environment do you want?\n"
-      printf "%b" "\n1 - KDE\n"
-      printf "%b" "\n2 - Gnome\n"
-      printf "%b" "\n3 - Cinnamon\n"
-      printf "%b" "\n4 - Sway\n"
-      read -r typecheck01
-      case $typecheck01 in
-       1) printf "%b" "\nPerfect\n" ;;
-       2) printf "%b" "\nLet's move on then.\n" ;;
-       3) printf "%b" "\nPerfect\n" ;;
-       4) printf "%b" "\nLet's move on then.\n" ;;
-       *) printf "%b" "\nUnrecognized option...\n" ;;
-      esac
-      if [ "$typecheck01" = "1" ]; then
-      coffeebrewer-kde
-      fi
-      if [ "$typecheck01" = "2" ]; then
       coffeebrewer-gnome
-      fi
-      if [ "$typecheck01" = "3" ]; then
-      coffeebrewer-cinnamon
-      fi
-      if [ "$typecheck01" = "4" ]; then
-      coffeebrewer-sway
-      fi
-      done
     fi
     if [ "$typecheck00" = "2" ]; then
     coffeebrewer-custom
     fi
     if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
-    typecheck00=2
-    coffeebrewer-custom
+    typecheck00=1
+    coffeebrewer-gnome
     fi
     done
 fi
