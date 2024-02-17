@@ -23,6 +23,7 @@ rm /opt/wallpaper-updater
 rm /opt/config
 rm /usr/local/bin/coffeebrewer-custom
 rm /usr/local/bin/coffeebrewer-gnome
+rm /usr/local/bin/coffeebrewer-mainmenu
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/config -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-injector -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/wallpaper-updater -P /opt/
@@ -33,9 +34,11 @@ wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coff
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /etc/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-custom -P /usr/local/bin/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-gnome -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-mainmenu -P /usr/local/bin/
 chmod 755 /opt/wallpaper-updater
 chmod 755 /opt/coffee-updater
 chmod 755 /opt/coffee-injector
 chmod 755 /usr/local/bin/coffeebrewer-custom
 chmod 755 /usr/local/bin/coffeebrewer-gnome
+chmod 755 /usr/local/bin/coffeebrewer-mainmenu
 exit

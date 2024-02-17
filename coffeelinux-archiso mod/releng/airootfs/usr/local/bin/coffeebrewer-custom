@@ -2013,7 +2013,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.5.5)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.5.6)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2769,15 +2769,11 @@ if [ "$native1" = "yes" ]; then
   if [ "$coffeeon00" = "yes" ]; then
    cp -r /opt/* /mnt/opt/
    cp /usr/local/bin/coffeebrewer-custom /mnt/usr/local/bin/
-   cp /usr/local/bin/coffeebrewer-kde /mnt/usr/local/bin/
    cp /usr/local/bin/coffeebrewer-gnome /mnt/usr/local/bin/
-   cp /usr/local/bin/coffeebrewer-cinnamon /mnt/usr/local/bin/
-   cp /usr/local/bin/coffeebrewer-sway /mnt/usr/local/bin/
+   cp /usr/local/bin/coffeebrewer-mainmenu /mnt/usr/local/bin/
    arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-custom
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-kde
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-mainmenu
    arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-gnome
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-cinnamon
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-sway
    mkdir -p /mnt/usr/share/wallpapers/coffee/
    mkdir -p /mnt/usr/share/backgrounds/gnome/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
