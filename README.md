@@ -39,8 +39,6 @@ App Choices: Snapd framework, Steam, Java, VMWare, Discord, Github Desktop, Hero
 
 Bootloader Choices: Grub UEFI, Grub BIOS, and Systemd-Boot (with optional Secure-boot)
 
-Desktop Environment Choices: Gnome, KDE, Cinnamon, Mate, XFCE, LXQT, LXDE, i3, Sway, Cutefish, Deepin, Budgie, Enlightenment, and Awesome. (Some have styled versions to choose from as well)
-
 Simply download from the Releases page and use Etcher to write the iso to usb. Use like any other ArchIso.
 
 ------------------------------------

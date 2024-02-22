@@ -14,33 +14,11 @@ kdeapps="pyside6 phonon-qt5-gstreamer libpulse noto-fonts noto-fonts-emoji gnu-f
 
 cinnamonapps="phonon-qt5-gstreamer qt6 libpulse qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack cinnamon cinnamon-translations geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-console gnome-system-monitor gtk4 lightdm lightdm-slick-greeter xdg-desktop-portal-gnome gnome-text-editor"
 
-mateapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji mate-polkit polkit libsecret gtk3 gtk4 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack engrampa eom gnome-calculator gnome-color-manager gnome-console gnome-disk-utility gnome-keyring gnome-menus leafpad marco mate mate-applet-dock mate-applet-streamer mate-common mate-extra mate-media mate-netbook mate-power-manager mate-system-monitor mate-terminal mozo orca pluma lightdm lightdm-slick-greeter gnome-text-editor"
-
-xfceapps="phonon-qt5-gstreamer qt6 gtk4 libpulse qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret gtk3 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack arc-gtk-theme galculator geary gnome-disk-utility gnome-keyring leafpad lightdm lightdm-slick-greeter pavucontrol thunar-archive-plugin thunar-media-tags-plugin xfce4 xfce4-battery-plugin xfce4-datetime-plugin xfce4-goodies xfce4-mount-plugin xfce4-netload-plugin xfce4-notifyd xfce4-screensaver xfce4-taskmanager xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin xfwm4"
-
-lxdeapps="phonon-qt5-gstreamer qt6 gtk3 gtk4 libpulse qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lxde lxde-common lxdm lxpanel lxsession mousepad xcompmgr xdg-desktop-portal-lxqt libsecret"
-
-lxqtapps="phonon-qt5-gstreamer gtk3 gtk4 libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack lightdm lightdm-gtk-greeter lximage-qt lxqt lxqt-about lxqt-admin lxqt-archiver lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes mousepad obconf-qt oxygen-icons pavucontrol-qt pcmanfm-qt qterminal screengrab sddm xdg-desktop-portal-lxqt libsecret"
-
-deepinapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring gnome-extra libsecret deepin gtk3 gtk4 deepin-anything-arch deepin-kwin deepin-extra lightdm lightdm-deepin-greeter wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack"
-
-i3apps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret gnome-text-editor gnome-terminal gnome-system-monitor nemo i3-wm i3lock gtk4 i3status i3blocks micro lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
-
 swayapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji sddm gnome-disk-utility gnome-text-editor htop nemo polkit polkit-gnome gnome-keyring libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk4 gnome-tweaks gnome-themes-extra bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi gnome-console j4-dmenu-desktop xdg-desktop-portal-gtk"
 
 swayappsv2="polkit-gnome gnome-keyring breeze-gtk breeze-icons breeze phonon-qt5-gstreamer libpulse gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji qt6 appstream-qt ark colord-kde qt6-multimedia-ffmpeg sddm gnome-disk-utility kate htop dolphin polkit libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk4 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi konsole j4-dmenu-desktop xdg-desktop-portal-kde"
 
-cutefishapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret cutefish-calculator gtk3 gtk4 cutefish-core cutefish-dock cutefish-filemanager cutefish-icons cutefish-launcher cutefish-qt-plugins cutefish-screenlocker cutefish-settings cutefish-statusbar cutefish-terminal cutefish-wallpapers fishui libcutefish sddm rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
-
-budgieapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring gnome-extra gnome-shell libsecret budgie-control-center gtk3 budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver lightdm lightdm-gtk-greeter rofi gtk4 wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
-
-awesomeapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret awesome xterm gtk3 gtk4 awesome-terminal-fonts lightdm lightdm-gtk-greeter rofi feh wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
-
-enlightenmentapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts pyside2 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret enlightenment gtk3 gtk4 lightdm lightdm-gtk-greeter rofi wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol dmenu"
-
 kdeapps2="plasma-wayland-session"
-
-#legiongo=""
 
 customtype2(){
 
@@ -600,7 +578,7 @@ done
 
 clear
 
-while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ] && [ "$desktopcheck" != "8" ] && [ "$desktopcheck" != "9" ] && [ "$desktopcheck" != "10" ] && [ "$desktopcheck" != "11" ] && [ "$desktopcheck" != "12" ] && [ "$desktopcheck" != "13" ] && [ "$desktopcheck" != "14" ] && [ "$desktopcheck" != "15" ] && [ "$desktopcheck" != "16" ] && [ "$desktopcheck" != "17" ] && [ "$desktopcheck" != "18" ] && [ "$desktopcheck" != "19" ]; do
+while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ] && [ "$desktopcheck" != "4" ] && [ "$desktopcheck" != "5" ] && [ "$desktopcheck" != "6" ] && [ "$desktopcheck" != "7" ]; do
 
 printf "%b" "\nWhat desktop environment do you want?\n"
 printf "%b" "\n1 - Gnome (Ubuntu version)\n"
@@ -608,20 +586,8 @@ printf "%b" "\n2 - Gnome (Standard version)\n"
 printf "%b" "\n3 - KDE\n"
 printf "%b" "\n4 - Cinnamon (Mint version)\n"
 printf "%b" "\n5 - Cinnamon (Standard version)\n"
-printf "%b" "\n6 - Mate (Mint version)\n"
-printf "%b" "\n7 - Mate (Standard version)\n"
-printf "%b" "\n8 - LXDE (WIP May not work)\n"
-printf "%b" "\n9 - LXQT (WIP May not work)\n"
-printf "%b" "\n10 - XFCE (Mint Version)\n"
-printf "%b" "\n11 - XFCE (Standard version)\n"
-printf "%b" "\n12 - Deepin (WIP May not work). \n"
-printf "%b" "\n13 - i3 (WIP May not work)\n"
-printf "%b" "\n14 - Sway (Gnome version)\n"
-printf "%b" "\n15 - Sway (KDE version)\n"
-printf "%b" "\n16 - Cutefish (WIP May not work)\n"
-printf "%b" "\n17 - Budgie (WIP May not work)\n"
-printf "%b" "\n18 - Enlightenment (WIP May not work)\n"
-printf "%b" "\n19 - Awesome (WIP May not work)\n"
+printf "%b" "\n6 - Sway (Gnome version)\n"
+printf "%b" "\n7 - Sway (KDE version)\n"
 
 read -r desktopcheck
 case $desktopcheck in
@@ -632,18 +598,6 @@ case $desktopcheck in
   5) printf "%b" "\nA good choice.\n" ;;
   6) printf "%b" "\nA good choice.\n" ;;
   7) printf "%b" "\nA good choice.\n" ;;
-  8) printf "%b" "\nA brave choice.\n" ;;
-  9) printf "%b" "\nA super choice.\n" ;;
-  10) printf "%b" "\nA super choice.\n" ;;
-  11) printf "%b" "\nA super choice.\n" ;;
-  12) printf "%b" "\nA super choice.\n" ;;
-  13) printf "%b" "\nA super choice.\n" ;;
-  14) printf "%b" "\nA super choice.\n" ;;
-  15) printf "%b" "\nA super choice.\n" ;;
-  16) printf "%b" "\nA super choice.\n" ;;
-  17) printf "%b" "\nA super choice.\n" ;;
-  18) printf "%b" "\nA super choice.\n" ;;
-  19) printf "%b" "\nA super choice.\n" ;;
   *) printf "%b" "\nUnrecognized option, please try again..\n" ;;
 esac
 
@@ -667,60 +621,13 @@ if [ "$desktopcheck" = "5" ]; then
 desktop0="cinnamonv2"
 
 fi
+
 if [ "$desktopcheck" = "6" ]; then
-desktop0="mate"
-
-fi
-if [ "$desktopcheck" = "7" ]; then
-desktop0="matev2"
-
-fi
-if [ "$desktopcheck" = "8" ]; then
-desktop0="lxde"
-
-fi
-if [ "$desktopcheck" = "9" ]; then
-desktop0="lxqt"
-
-fi
-if [ "$desktopcheck" = "10" ]; then
-desktop0="xfce"
-
-fi
-if [ "$desktopcheck" = "11" ]; then
-desktop0="xfcev2"
-
-fi
-if [ "$desktopcheck" = "12" ]; then
-desktop0="deepin"
-
-fi
-if [ "$desktopcheck" = "13" ]; then
-desktop0="i3"
-
-fi
-if [ "$desktopcheck" = "14" ]; then
 desktop0="sway"
 
 fi
-if [ "$desktopcheck" = "15" ]; then
+if [ "$desktopcheck" = "7" ]; then
 desktop0="swayv2"
-
-fi
-if [ "$desktopcheck" = "16" ]; then
-desktop0="cutefish"
-
-fi
-if [ "$desktopcheck" = "17" ]; then
-desktop0="budgie"
-
-fi
-if [ "$desktopcheck" = "18" ]; then
-desktop0="enlightenment"
-
-fi
-if [ "$desktopcheck" = "19" ]; then
-desktop0="awesome"
 
 fi
 
@@ -1505,190 +1412,7 @@ fi
 arch-chroot /mnt systemctl enable lightdm
 
 fi
-if [ "$desktop0" = "mate" ]; then
 
-arch-chroot /mnt pacman -Sy --noconfirm $mateapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
-if [ "$desktop0" = "matev2" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $mateapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
-if [ "$desktop0" = "lxde" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $lxdeapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lxdm
-
-fi
-if [ "$desktop0" = "lxqt" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $lxqtapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable sddm
-
-fi
-if [ "$desktop0" = "xfce" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
-if [ "$desktop0" = "xfcev2" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $xfceapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
-if [ "$desktop0" = "deepin" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $deepinapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
-if [ "$desktop0" = "i3" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $i3apps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
 if [ "$desktop0" = "sway" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $swayapps
@@ -1745,98 +1469,6 @@ gpu0="amd"
 fi
 
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-
-fi
-if [ "$desktop0" = "cutefish" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $cutefishapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable sddm
-
-fi
-if [ "$desktop0" = "budgie" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $budgieapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
-if [ "$desktop0" = "enlightenment" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $enlightenmentapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
-if [ "$desktop0" = "awesome" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $awesomeapps
-clear
-sleep 5
-printf "%b" "\nCopying yay package..\n"
-sleep 5
-cp /opt/yay-12.2.0-1-x86_64.pkg.tar.zst /mnt/opt/
-printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
-sleep 2
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
 
 fi
 
@@ -2013,7 +1645,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.5.6)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.5.7)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2028,7 +1660,6 @@ command8finished="0"
 fi
 done
 command8finished="0"
-
 
 }
 
@@ -2472,66 +2103,6 @@ if [ "$questionspassed" = "yes" ]; then
      #rm -r /mnt/usr/share/xsessions/cinnamon*
      clear
   fi
-  if [ "$desktop0" = "mate" ]; then
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-screensaver-hacks
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-tweak
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mate-menu
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
-     clear
-     printf "%b" "5\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
-     clear
-  fi
-  if [ "$desktop0" = "matev2" ]; then
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-     clear
-  fi
-  if [ "$desktop0" = "xfce" ]; then
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
-     clear
-     printf "%b" "5\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
-     clear
-  fi
-  if [ "$desktop0" = "xfcev2" ]; then
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-     clear
-  fi
-  if [ "$desktop0" = "lxde" ]; then
-     printf "%b" "1\n"
-  fi
-  if [ "$desktop0" = "lxqt" ]; then
-     printf "%b" "1\n"
-  fi
   if [ "$desktop0" = "sway" ]; then
      mkdir -p /mnt/usr/share/wayland-sessions/
      cp /opt/sway.desktop /mnt/usr/share/wayland-sessions/sway.desktop
@@ -2695,67 +2266,6 @@ command12finished="0"
 
 }
 
-lightdm_fix_deepin (){
-
-clear
-
-while [ "$command13finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-arch-chroot /mnt pacman -Syu
-printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-deepin-greeter\n" >> /mnt/etc/lightdm/lightdm.conf
-arch-chroot /mnt systemctl enable lightdm
-
-command13finished="1"
-else
-command13finished="0"
-fi
-done
-command13finished="0"
-
-}
-
-lightdm_fix_xfce (){
-
-clear
-
-while [ "$command14finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /mnt/etc/lightdm/lightdm.conf
-arch-chroot /mnt systemctl enable lightdm
-arch-chroot /mnt xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
-#rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
-
-command14finished="1"
-else
-command14finished="0"
-fi
-done
-command14finished="0"
-
-}
-
-lightdm_fix_xfcev2 (){
-
-clear
-
-while [ "$command14finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-arch-chroot /mnt systemctl enable lightdm
-arch-chroot /mnt xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
-#rm -R /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
-
-command14finished="1"
-else
-command14finished="0"
-fi
-done
-command14finished="0"
-
-}
-
 success_check (){
 
 clear
@@ -2884,21 +2394,6 @@ homedir_fix
  fi
  if [ "$desktop0" = "cinnamonv2" ]; then
   lightdm_fixv2
- fi
- if [ "$desktop0" = "mate" ]; then
-  lightdm_fix
- fi
- if [ "$desktop0" = "matev2" ]; then
-  lightdm_fixv2
- fi
- if [ "$desktop0" = "xfce" ]; then
-  lightdm_fix_xfce
- fi
- if [ "$desktop0" = "xfcev2" ]; then
-  lightdm_fix_xfcev2
- fi
- if [ "$desktop0" = "deepin" ]; then
-  lightdm_fix_deepin
  fi
 success_check
 printf "%b" "\nExcellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
