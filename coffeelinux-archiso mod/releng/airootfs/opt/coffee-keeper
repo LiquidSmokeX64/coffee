@@ -2,8 +2,8 @@
 
 sleep 10
 #Latest Coffee Package Updates
-newcontent="python-pipx"
-pacman -Sy --noconfirm $newcontent
+#newcontent="python-pipx"
+#pacman -Sy --noconfirm $newcontent
 #Disable unwanted services
 systemctl disable --now coffee-wallpapers.service
 systemctl disable --now coffee-updater.service
