@@ -201,7 +201,7 @@ case $typecheck00 in
 esac
 
 if [ "$typecheck00" = "1" ]; then
-  while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ]; do
+while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ]; do
 clear
 printf "%b" "\nWhat Desktop Environment do you want? (Default: 1)\n"
 printf "%b" "\n1 - Gnome\n"
@@ -225,6 +225,7 @@ if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ]; then
 typecheck01=1
 coffeebrewer-gnome
 fi
+done
 
 fi
 if [ "$typecheck00" = "2" ]; then
