@@ -183,6 +183,7 @@ clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/wallpaper-updater -P /opt/
 chmod 755 /usr/local/bin/coffeebrewer-custom
 chmod 755 /usr/local/bin/coffeebrewer-gnome
+chmod 755 /usr/local/bin/coffeebrewer-kde
 clear
 #Finished Updating
 #Main Menu
