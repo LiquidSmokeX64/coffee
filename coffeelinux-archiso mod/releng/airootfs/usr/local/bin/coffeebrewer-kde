@@ -990,13 +990,9 @@ if [ "$native1" = "yes" ]; then
    cp /usr/local/bin/coffeebrewer-custom /mnt/usr/local/bin/
    cp /usr/local/bin/coffeebrewer-kde /mnt/usr/local/bin/
    cp /usr/local/bin/coffeebrewer-gnome /mnt/usr/local/bin/
-   cp /usr/local/bin/coffeebrewer-cinnamon /mnt/usr/local/bin/
-   cp /usr/local/bin/coffeebrewer-sway /mnt/usr/local/bin/
    arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-custom
    arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-kde
    arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-gnome
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-cinnamon
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-sway
    mkdir -p /mnt/usr/share/wallpapers/coffee/
    mkdir -p /mnt/usr/share/backgrounds/gnome/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
