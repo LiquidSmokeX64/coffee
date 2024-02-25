@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sleep 10
+sleep 20
 #Update existing OS first
 pacman -Syu --noconfirm
 yay -Syu --noconfirm
@@ -11,7 +11,7 @@ pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
 #Remove any unwanted files
 rm /usr/local/bin/coffeebrewer-cinnamon
-rm /usr/local/bin/coffeebrewer-kde
+#rm /usr/local/bin/coffeebrewer-kde
 rm /usr/local/bin/coffeebrewer-sway
 rm -R /usr/share/wayland-sessions/gnome*
 rm -R /usr/share/xsessions/gnome*

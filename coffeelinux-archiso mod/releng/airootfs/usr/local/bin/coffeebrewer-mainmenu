@@ -156,10 +156,13 @@ rm /opt/coffee-updater
 rm /opt/wallpaper-updater
 rm /usr/local/bin/coffeebrewer-custom
 rm /usr/local/bin/coffeebrewer-gnome
+rm /usr/local/bin/coffeebrewer-kde
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-custom -P /usr/local/bin/
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-gnome -P /usr/local/bin/
+clear
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-kde -P /usr/local/bin/
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/
 clear
@@ -198,13 +201,37 @@ case $typecheck00 in
 esac
 
 if [ "$typecheck00" = "1" ]; then
-  coffeebrewer-gnome
+  while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ]; do
+clear
+printf "%b" "\nWhat Desktop Environment do you want? (Default: 1)\n"
+printf "%b" "\n1 - Gnome\n"
+printf "%b" "\n2 - KDE\n"
+
+read -r typecheck01
+case $typecheck01 in
+ 1) printf "%b" "\nPerfect\n" ;;
+ 2) printf "%b" "\nLet's move on then.\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+if [ "$typecheck01" = "1" ]; then
+coffeebrewer-gnome
+fi
+
+if [ "$typecheck01" = "2" ]; then
+coffeebrewer-kde
+fi
+if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ]; then
+typecheck01=1
+coffeebrewer-gnome
+fi
+
 fi
 if [ "$typecheck00" = "2" ]; then
 coffeebrewer-custom
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
-typecheck00=1
-coffeebrewer-gnome
+typecheck00=2
+coffeebrewer-custom
 fi
 done

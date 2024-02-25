@@ -1648,7 +1648,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.6.0)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.6.1)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2166,21 +2166,24 @@ arch-chroot /mnt cp MOK.cer /boot/
 arch-chroot /mnt cp MOK.crt /boot/
 arch-chroot /mnt cp MOK.key /boot/
 arch-chroot /mnt pacman -Sy --noconfirm
-arch-chroot /mnt systemctl enable apparmor
 arch-chroot /mnt systemctl enable systemd-boot-update.service
-arch-chroot /mnt systemctl enable dhcpcd
-arch-chroot /mnt systemctl enable cronie
-arch-chroot /mnt systemctl enable chronyd
-arch-chroot /mnt systemctl enable NetworkManager
-arch-chroot /mnt systemctl enable firewalld
-arch-chroot /mnt systemctl enable cups
-arch-chroot /mnt systemctl enable bluetooth.service
-arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
+
 clear
 
 fi
-if [ "$sbpass0" = "no" ]; then
-printf "%b" "\nAdding AppArmor\n"
+
+
+command10finished="1"
+else
+command10finished="0"
+fi
+done
+command10finished="0"
+
+}
+
+services_starter(){
+
 arch-chroot /mnt pacman -Sy --noconfirm apparmor
 clear
 arch-chroot /mnt systemctl enable apparmor
@@ -2192,15 +2195,6 @@ arch-chroot /mnt systemctl enable firewalld
 arch-chroot /mnt systemctl enable cups
 arch-chroot /mnt systemctl enable bluetooth.service
 arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
-
-fi
-
-command10finished="1"
-else
-command10finished="0"
-fi
-done
-command10finished="0"
 
 }
 
@@ -2284,10 +2278,12 @@ if [ "$native1" = "yes" ]; then
    cp -r /opt/* /mnt/opt/
    cp /usr/local/bin/coffeebrewer-custom /mnt/usr/local/bin/
    cp /usr/local/bin/coffeebrewer-gnome /mnt/usr/local/bin/
+   cp /usr/local/bin/coffeebrewer-kde /mnt/usr/local/bin/
    cp /usr/local/bin/coffeebrewer-mainmenu /mnt/usr/local/bin/
    arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-custom
    arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-mainmenu
    arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-gnome
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer-kde
    mkdir -p /mnt/usr/share/wallpapers/coffee/
    mkdir -p /mnt/usr/share/backgrounds/gnome/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
@@ -2392,6 +2388,7 @@ github_install
 snapd_install
 yay_install
 secureboot_install
+services_starter
 homedir_fix
  if [ "$desktop0" = "cinnamon" ]; then
   lightdm_fix
