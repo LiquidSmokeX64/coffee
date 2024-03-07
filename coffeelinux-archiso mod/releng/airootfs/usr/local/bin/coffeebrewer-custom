@@ -18,7 +18,7 @@ swayapps="phonon-qt5-gstreamer libpulse qt6 qt6-multimedia-ffmpeg gnu-free-fonts
 
 swayappsv2="polkit-gnome gnome-keyring breeze-gtk breeze-icons breeze phonon-qt5-gstreamer libpulse gnu-free-fonts pyside6 cronie tesseract-data-eng noto-fonts noto-fonts-emoji qt6 appstream-qt ark colord-kde qt6-multimedia-ffmpeg sddm gnome-disk-utility kate htop dolphin polkit libsecret egl-wayland xorg-xwayland dmenu bemenu bemenu-wayland gtk4 bemenu-x11 bemenu-ncurses i3blocks sway swaybg swayidle swayimg swaylock wlroots seatd wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack pavucontrol wofi konsole j4-dmenu-desktop xdg-desktop-portal-kde"
 
-kdeapps2="plasma-wayland-session"
+#kdeapps2="plasma-wayland-session"
 
 customtype2(){
 
@@ -1342,9 +1342,9 @@ fi
 if [ "$desktop0" = "kde" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
-if [ "$branchpass00" = "stable" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $kdeapps2
-fi
+#if [ "$branchpass00" = "stable" ]; then
+#arch-chroot /mnt pacman -Sy --noconfirm $kdeapps2
+#fi
 clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
@@ -1648,7 +1648,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.7.1)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.7.2)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf

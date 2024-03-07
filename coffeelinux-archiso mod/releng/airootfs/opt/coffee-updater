@@ -9,6 +9,7 @@ pacman -Rdd --noconfirm blueman
 pacman -Rdd --noconfirm kmix
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
+pacman -Rdd --noconfirm plasma-wayland-session
 #Remove any unwanted files
 rm /usr/local/bin/coffeebrewer-cinnamon
 #rm /usr/local/bin/coffeebrewer-kde

@@ -10,7 +10,7 @@ javaapps="jre-openjdk"
 
 kdeapps="pyside6 phonon-qt5-gstreamer libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa pipewire-jack appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
 
-kdeapps2="plasma-wayland-session"
+#kdeapps2="plasma-wayland-session"
 
 desktop0="kde"
 native1=yes
@@ -581,9 +581,9 @@ if [ "$questionspassed" = "yes" ]; then
 if [ "$desktop0" = "kde" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
-if [ "$branchpass00" = "stable" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $kdeapps2
-fi
+#if [ "$branchpass00" = "stable" ]; then
+#arch-chroot /mnt pacman -Sy --noconfirm $kdeapps2
+#fi
 clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
