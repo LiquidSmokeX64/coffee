@@ -1,9 +1,10 @@
 #!/bin/sh
 
 sleep 20
-#Latest Coffee Package Updates
-#newcontent="python-pipx"
-#pacman -Sy --noconfirm $newcontent
+#Latest Coffee Linux Raw Updates
+rm /opt yay*.tar.zst
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/yay-12.3.1-3-x86_64.pkg.tar.zst -P /opt/
+pacman -U --noconfirm /opt/yay-12.3.1-3-x86_64.pkg.tar.zst
 #Disable unwanted services
 systemctl disable --now coffee-wallpapers.service
 systemctl disable --now coffee-updater.service
@@ -44,4 +45,6 @@ chmod 755 /usr/local/bin/coffeebrewer-custom
 chmod 755 /usr/local/bin/coffeebrewer-gnome
 chmod 755 /usr/local/bin/coffeebrewer-kde
 chmod 755 /usr/local/bin/coffeebrewer-mainmenu
+#yay updates
+yay -Syu --noconfirm
 exit

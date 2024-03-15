@@ -3,7 +3,6 @@
 sleep 20
 #Update existing OS first
 pacman -Syu --noconfirm
-yay -Syu --noconfirm
 #Removal of any unwanted packages
 pacman -Rdd --noconfirm blueman
 pacman -Rdd --noconfirm kmix
