@@ -3,7 +3,7 @@
 #Main Menu
 while [ "$typecheck00" != "4" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Updater Tool 1.0.6 ####\n"
+printf "%b" "\n#### Coffee Linux Updater Tool 1.0.7 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 1)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
@@ -26,25 +26,30 @@ if [ "$typecheck00" = "1" ]; then
 sudo pacman -Syu
 clear
 printf "%b" "\nOfficial Arch Linux updates finished..\n\n"
+sleep 5
 fi
 if [ "$typecheck00" = "2" ]; then
 yay -Syu
 clear
 printf "%b" "\nAUR updates finished...\n\n"
+sleep 5
 fi
 if [ "$typecheck00" = "3" ]; then
 sudo bash /opt/coffee-injector
 clear
 printf "%b" "\nCoffeeLinux OS update finished...\n\n"
+sleep 5
 fi
 if [ "$typecheck00" = "4" ]; then
 clear
 printf "%b" "\nExited program successfully...\n\n"
+sleep 5
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ] && [ "$typecheck00" != "4" ]; then
 typecheck00=1
 sudo pacman -Syu
 clear
 printf "%b" "\nOfficial Arch Linux updates finished...\n\n"
+sleep 5
 fi
 done
