@@ -3,12 +3,11 @@
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Updater Tool 1.0.2 ####\n"
-printf "%b" "\n#### RUN AS ROOT ####\n"
+printf "%b" "\n#### Coffee Linux Updater Tool 1.0.3 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 1)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
-printf "%b" "\n2 - AUR updates (run program as user instead)\n"
-printf "%b" "\n2 - Coffee Linux OS update\n"
+printf "%b" "\n2 - AUR updates\n"
+printf "%b" "\n3 - Coffee Linux OS update\n"
 
 read -r typecheck00
 case $typecheck00 in
@@ -21,24 +20,24 @@ esac
 clear
 
 if [ "$typecheck00" = "1" ]; then
-pacman -Syu
-clear
+sudo pacman -Syu
+#clear
 printf "%b" "\nOfficial Arch Linux updates finished. Exiting program now...\n"
 fi
 if [ "$typecheck00" = "2" ]; then
 yay -Syu
-clear
+#clear
 printf "%b" "\nAUR updates finished. Exiting program now...\n"
 fi
 if [ "$typecheck00" = "3" ]; then
-./opt/coffee-injector
-clear
+sudo ./opt/coffee-injector
+#clear
 printf "%b" "\nCoffeeLinux OS update finished. Exiting program now...\n"
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; then
 typecheck00=1
-pacman -Syu
-clear
+sudo pacman -Syu
+#clear
 printf "%b" "\nOfficial Arch Linux updates finished. Exiting program now...\n"
 fi
 done
