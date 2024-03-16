@@ -1,0 +1,29 @@
+#!/bin/sh
+
+#Main Menu
+while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
+clear
+printf "%b" "\n#### Coffee Linux Updater Tool ####\n"
+printf "%b" "\n#### DO NOT RUN AS ROOT ####\n"
+printf "%b" "\nWhat type of updates do you want? (Default: 1)\n"
+printf "%b" "\n1 - Official\n"
+printf "%b" "\n2 - AUR\n"
+
+read -r typecheck00
+case $typecheck00 in
+ 1) printf "%b" "\nPerfect\n" ;;
+ 2) printf "%b" "\nLet's move on then.\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+if [ "$typecheck00" = "1" ]; then
+sudo pacman -Syu
+fi
+if [ "$typecheck00" = "2" ]; then
+yay -Syu
+fi
+if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
+typecheck00=1
+sudo pacman -Syu
+fi
+done
