@@ -1023,6 +1023,7 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt systemctl enable coffee-keeper.service
    rm /mnt/usr/share/applications/steam-native.desktop
    rm /mnt/usr/share/applications/stoken-gui-small.desktop
+   cp /opt/issue /mnt/etc/issue
   fi
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf
