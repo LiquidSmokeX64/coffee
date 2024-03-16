@@ -16,6 +16,10 @@ wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coff
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/pacman-unstable.conf -P /opt/
 cp /opt/pacman-stable.conf /etc/pacman.conf
 pacman -Rdd pamac-aur
+#27.7.9 Patch
+rm /etc/issue
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/issue -P /opt/
+cp /opt/issue /etc/
 #Replace CoffeeLinux Files
 rm /opt/os-release
 rm /opt/lsb-release
