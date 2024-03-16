@@ -3,7 +3,7 @@
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Updater Tool 1.0.1 ####\n"
+printf "%b" "\n#### Coffee Linux Updater Tool 1.0.2 ####\n"
 printf "%b" "\n#### RUN AS ROOT ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 1)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
@@ -18,21 +18,27 @@ case $typecheck00 in
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
 
+clear
+
 if [ "$typecheck00" = "1" ]; then
-sudo pacman -Syu
+pacman -Syu
+clear
 printf "%b" "\nOfficial Arch Linux updates finished. Exiting program now...\n"
 fi
 if [ "$typecheck00" = "2" ]; then
 yay -Syu
+clear
 printf "%b" "\nAUR updates finished. Exiting program now...\n"
 fi
 if [ "$typecheck00" = "3" ]; then
-sudo ./opt/coffee-injector
+./opt/coffee-injector
+clear
 printf "%b" "\nCoffeeLinux OS update finished. Exiting program now...\n"
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; then
 typecheck00=1
-sudo pacman -Syu
+pacman -Syu
+clear
 printf "%b" "\nOfficial Arch Linux updates finished. Exiting program now...\n"
 fi
 done

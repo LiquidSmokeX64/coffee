@@ -3,8 +3,8 @@
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Pacman Switcher Tool 1.0.1 ####\n"
-printf "%b" "\n#### RUN AS ROOT ONLY (sudo) ####\n"
+printf "%b" "\n#### Coffee Linux Pacman Switcher Tool 1.0.2 ####\n"
+printf "%b" "\n#### RUN AS ROOT ####\n"
 printf "%b" "\nWhat type of pacman repo do you want? (Default: 1)\n"
 printf "%b" "\n1 - Stable\n"
 printf "%b" "\n2 - Testing\n"
@@ -16,20 +16,25 @@ case $typecheck00 in
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
 
+clear
+
 if [ "$typecheck00" = "1" ]; then
 rm /etc/pacman.conf
 cp /opt/pacman-stable.conf /etc/pacman.conf
+clear
 printf "%b" "\nSwitched to stable repos successfully. Exiting program now..\n"
 fi
 if [ "$typecheck00" = "2" ]; then
 rm /etc/pacman.conf
 cp /opt/pacman-unstable.conf /etc/pacman.conf
+clear
 printf "%b" "\nSwitched to unstable repos successfully. Exiting program now..\n"
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
 typecheck00=1
 rm /etc/pacman.conf
 cp /opt/pacman-stable.conf /etc/pacman.conf
+clear
 printf "%b" "\nSwitched repos successfully. Exiting now..\n"
 fi
 done
