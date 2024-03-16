@@ -20,6 +20,7 @@ clear
 
 if [ "$typecheck00" = "1" ]; then
 sudo pacman -Syy archiso
+sudo rm -R ~/coffeelinux/
 sudo rm -R ~/work/ ~/out/
 git clone https://github.com/Project-X-Mods/coffeelinux.git
 mkdir -p ~/coffeelinux/releng/
