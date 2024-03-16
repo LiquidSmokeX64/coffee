@@ -1,32 +1,38 @@
 #!/bin/sh
 
 #Main Menu
-while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
+while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Updater Tool 1.0.0 ####\n"
-printf "%b" "\n#### DO NOT RUN AS ROOT ####\n"
+printf "%b" "\n#### Coffee Linux Updater Tool 1.0.1 ####\n"
+printf "%b" "\n#### RUN AS ROOT ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 1)\n"
-printf "%b" "\n1 - Official\n"
-printf "%b" "\n2 - AUR\n"
+printf "%b" "\n1 - Arch Linux Official\n"
+printf "%b" "\n2 - AUR updates (run program as user instead)\n"
+printf "%b" "\n2 - Coffee Linux OS update\n"
 
 read -r typecheck00
 case $typecheck00 in
- 1) printf "%b" "\nOfficial Updates Selected. Running now..\n" ;;
- 2) printf "%b" "\nAUR Updates Selected. Running now...\n" ;;
+ 1) printf "%b" "\nOfficial updates selected. Running now..\n" ;;
+ 2) printf "%b" "\nAUR updates selected. Running now...\n" ;;
+ 3) printf "%b" "\nCoffeeLinux OS update selected. Running now...\n" ;;
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
 
 if [ "$typecheck00" = "1" ]; then
 sudo pacman -Syu
-printf "%b" "\nOfficial Updates Finished. Exiting program now...\n"
+printf "%b" "\nOfficial Arch Linux updates finished. Exiting program now...\n"
 fi
 if [ "$typecheck00" = "2" ]; then
 yay -Syu
-printf "%b" "\nAUR Updates Finished. Exiting program now...\n"
+printf "%b" "\nAUR updates finished. Exiting program now...\n"
 fi
-if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
+if [ "$typecheck00" = "3" ]; then
+sudo ./opt/coffee-injector
+printf "%b" "\nCoffeeLinux OS update finished. Exiting program now...\n"
+fi
+if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; then
 typecheck00=1
 sudo pacman -Syu
-printf "%b" "\nOfficial Updates Finished. Exiting program now...\n"
+printf "%b" "\nOfficial Arch Linux updates finished. Exiting program now...\n"
 fi
 done
