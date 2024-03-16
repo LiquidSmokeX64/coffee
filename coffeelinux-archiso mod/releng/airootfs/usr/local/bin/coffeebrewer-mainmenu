@@ -152,7 +152,6 @@ rm /etc/lsb-release
 rm /opt/config
 rm /opt/coffee-keeper
 rm /opt/coffee-injector
-rm /opt/wallpaper-updater
 rm /usr/local/bin/coffeebrewer-custom
 rm /usr/local/bin/coffeebrewer-gnome
 rm /usr/local/bin/coffeebrewer-kde
@@ -177,7 +176,6 @@ wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coff
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-keeper -P /opt/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/wallpaper-updater -P /opt/
 chmod 755 /usr/local/bin/coffeebrewer-custom
 chmod 755 /usr/local/bin/coffeebrewer-gnome
 chmod 755 /usr/local/bin/coffeebrewer-kde
