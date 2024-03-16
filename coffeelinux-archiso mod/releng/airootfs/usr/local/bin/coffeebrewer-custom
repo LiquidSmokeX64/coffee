@@ -1648,7 +1648,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Xeno' (24.8.9)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Xeno' (24.8.10)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2300,6 +2300,10 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt chmod 755 /usr/share/applications/pacman-switcher.desktop
    cp /opt/coffee-updater.desktop /mnt/usr/share/applications/
    arch-chroot /mnt chmod 755 /usr/share/applications/coffee-updater.desktop
+   cp /opt/coffee-maker /mnt/usr/local/bin/
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffee-maker
+   cp /opt/coffee-maker.desktop /mnt/usr/share/applications/
+   arch-chroot /mnt chmod 755 /usr/share/applications/coffee-maker.desktop
    if [ "$steamon00" = "yes" ]; then
    rm /mnt/usr/share/applications/steam-native.desktop
    fi

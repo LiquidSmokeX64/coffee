@@ -1,0 +1,55 @@
+#!/bin/sh
+
+#Main Menu
+while [ "$typecheck00" != "2" ]; do
+clear
+printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.0.7 ####\n"
+printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
+printf "%b" "\nWhat would you like to do? (Default: 1)\n"
+printf "%b" "\n1 - Create a CoffeeLinux iso\n"
+printf "%b" "\n2 - Exit the program\n"
+
+read -r typecheck00
+case $typecheck00 in
+ 1) printf "%b" "\nStable selected. Switching now..\n" ;;
+ 2) printf "%b" "\nExit selected.. Exiting now\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+clear
+
+if [ "$typecheck00" = "1" ]; then
+sudo pacman -Syy archiso
+sudo rm -R ~/work/ ~/out/
+git clone https://github.com/Project-X-Mods/coffeelinux.git
+mkdir -p ~/coffeelinux/releng/
+cp -R /usr/share/archiso/configs/releng/* ~/coffeelinux/releng/
+cp -R /coffeelinux/coffeelinux-archiso\ mod/releng/* ~/coffeelinux/releng/
+sudo mkarchiso -v -w ~/work/ -o ~/out/ releng/
+cp ~/out/coffee* ~/Documents/
+sudo rm -R ~/work/ ~/out/
+clear
+printf "%b" "\nCreated Iso file successfully...\n\n"
+sleep 5
+fi
+if [ "$typecheck00" = "2" ]; then
+clear
+printf "%b" "\nExiting the program now...\n\n"
+sleep 5
+fi
+if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
+typecheck00=1
+sudo pacman -Syy archiso
+sudo rm -R ~/work/ ~/out/
+git clone https://github.com/Project-X-Mods/coffeelinux.git
+mkdir -p ~/coffeelinux/releng/
+cp -R /usr/share/archiso/configs/releng/* ~/coffeelinux/releng/
+cp -R /coffeelinux/coffeelinux-archiso\ mod/releng/* ~/coffeelinux/releng/
+sudo mkarchiso -v -w ~/work/ -o ~/out/ releng/
+cp ~/out/coffee* ~/Documents/
+sudo rm -R ~/work/ ~/out/
+clear
+printf "%b" "\nCreated Iso file successfully...\n\n"
+sleep 5
+fi
+done

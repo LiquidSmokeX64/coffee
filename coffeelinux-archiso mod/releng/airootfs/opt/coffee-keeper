@@ -46,6 +46,18 @@ rm /usr/share/applications/pacman-switcher.desktop
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/pacman-switcher.desktop -P /opt/
 cp /opt/pacman-switcher.desktop /usr/share/applications/
 chmod 755 /usr/share/applications/pacman-switcher.desktop
+#24.8.10 Patch (coffee-maker app)
+rm /usr/local/bin/coffee-maker
+rm /opt/coffee-maker
+rm -R /opt/coffee-maker.*
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-maker -P /opt/
+cp /opt/coffee-maker /usr/local/bin/
+chmod 755 /usr/local/bin/coffee-maker
+rm /opt/coffee-maker.desktop
+rm /usr/share/applications/coffee-maker.desktop
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-maker.desktop -P /opt/
+cp /opt/coffee-maker.desktop /usr/share/applications/
+chmod 755 /usr/share/applications/coffee-maker.desktop
 #Replace CoffeeLinux Files
 rm /opt/os-release
 rm /opt/lsb-release
