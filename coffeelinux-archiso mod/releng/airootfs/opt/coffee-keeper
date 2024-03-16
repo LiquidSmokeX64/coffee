@@ -16,6 +16,7 @@ pacman -Rdd pamac-aur
 systemctl disable --now coffee-wallpapers.service
 systemctl disable --now coffee-updater.service
 #Remove any unwanted files
+rm /opt/coffee-updater
 rm /opt/coffee-wallpapers.service
 rm /opt/coffee-updater.service
 rm /lib/systemd/system/coffee-wallpapers.service
@@ -26,7 +27,6 @@ rm /opt/lsb-release
 rm /etc/os-release
 rm /etc/lsb-release
 rm /opt/coffee-injector
-rm /opt/coffee-updater
 rm /opt/wallpaper-updater
 rm /opt/config
 rm /usr/local/bin/coffeebrewer-custom
@@ -36,7 +36,6 @@ rm /usr/local/bin/coffeebrewer-mainmenu
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/config -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-injector -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/wallpaper-updater -P /opt/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-updater -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /etc/
@@ -46,12 +45,23 @@ wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coff
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-kde -P /usr/local/bin/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-mainmenu -P /usr/local/bin/
 chmod 755 /opt/wallpaper-updater
-chmod 755 /opt/coffee-updater
 chmod 755 /opt/coffee-injector
 chmod 755 /usr/local/bin/coffeebrewer-custom
 chmod 755 /usr/local/bin/coffeebrewer-gnome
 chmod 755 /usr/local/bin/coffeebrewer-kde
 chmod 755 /usr/local/bin/coffeebrewer-mainmenu
-#yay updates
-yay -Syu --noconfirm
+#Removal of any unwanted packages
+pacman -Rdd --noconfirm blueman
+pacman -Rdd --noconfirm kmix
+pacman -Rdd --noconfirm gnome-terminal
+pacman -Rdd --noconfirm gedit
+pacman -Rdd --noconfirm plasma-wayland-session
+#Remove any unwanted files
+rm /usr/local/bin/coffeebrewer-cinnamon
+#rm /usr/local/bin/coffeebrewer-kde
+#rm /usr/local/bin/coffeebrewer-sway
+rm -R /usr/share/wayland-sessions/gnome*
+rm -R /usr/share/xsessions/gnome*
+rm /usr/share/applications/steam-native.desktop
+rm /usr/share/applications/stoken-gui-small.desktop
 exit

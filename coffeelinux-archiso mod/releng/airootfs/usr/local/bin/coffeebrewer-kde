@@ -1000,7 +1000,6 @@ if [ "$native1" = "yes" ]; then
    cp /opt/wallpaper-updater /mnt/opt/
    arch-chroot /mnt chmod 755 /opt/wallpaper-updater
    arch-chroot /mnt chmod 755 /opt/coffee-injector
-   arch-chroot /mnt chmod 755 /opt/coffee-updater
    cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-keeper.service
    rm /mnt/usr/share/applications/steam-native.desktop
