@@ -19,7 +19,7 @@ esac
 clear
 
 if [ "$typecheck00" = "1" ]; then
-sudo pacman -Syy archiso
+sudo pacman -Syy --noconfirm archiso
 sudo rm -R ~/coffeelinux/
 sudo rm -R ~/work/ ~/out/
 git clone https://github.com/Project-X-Mods/coffeelinux.git
