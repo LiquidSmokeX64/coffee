@@ -17,14 +17,20 @@ wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coff
 pacman -Rdd pamac-aur
 #27.7.9 Patch
 rm /etc/issue
+rm /opt/issue
+rm -R /opt/issue.*
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/issue -P /opt/
 cp /opt/issue /etc/
-#24.8.0 Patch (Custom Apps Part 1)
+#24.8.1 Patch (Custom Apps Part 1)
 rm /usr/local/bin/pacman-switcher
+rm /opt/pacman-switcher
+rm -R /opt/pacman-switcher.*
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/pacman-switcher -P /opt/
 cp /opt/pacman-switcher /usr/local/bin/
 chmod 755 /usr/local/bin/pacman-switcher
 rm /usr/local/bin/coffee-updater
+rm /opt/coffee-updater
+rm -R /opt/coffee-updater.*
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-updater -P /opt/
 cp /opt/coffee-updater /usr/local/bin/
 chmod 755 /usr/local/bin/coffee-updater
