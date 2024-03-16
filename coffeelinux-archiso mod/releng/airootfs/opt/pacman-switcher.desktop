@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Name=Pacman Repo Switcher
+Comment=Changes update repositories
+Categories=System;
+Icon=security-medium
+Exec=/usr/local/bin/pacman-switcher
+Terminal=true
+Type=Application
+NoDisplay=false

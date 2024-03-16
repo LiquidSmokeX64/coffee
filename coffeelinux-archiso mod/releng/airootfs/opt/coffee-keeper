@@ -35,6 +35,17 @@ rm -R /opt/coffee-updater.*
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-updater -P /opt/
 cp /opt/coffee-updater /usr/local/bin/
 chmod 755 /usr/local/bin/coffee-updater
+#24.8.8 Patch (Custom Apps Part 2)
+rm /opt/coffee-updater.desktop
+rm /usr/share/applications/coffee-updater.desktop
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-updater.desktop -P /opt/
+cp /opt/coffee-updater.desktop /usr/share/applications/
+chmod 755 /usr/share/applications/coffee-updater.desktop
+rm /opt/pacman-switcher.desktop
+rm /usr/share/applications/pacman-switcher.desktop
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/pacman-switcher.desktop -P /opt/
+cp /opt/pacman-switcher.desktop /usr/share/applications/
+chmod 755 /usr/share/applications/pacman-switcher.desktop
 #Replace CoffeeLinux Files
 rm /opt/os-release
 rm /opt/lsb-release

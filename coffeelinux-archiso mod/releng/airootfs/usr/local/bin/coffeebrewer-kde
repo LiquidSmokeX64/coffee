@@ -1007,6 +1007,10 @@ if [ "$native1" = "yes" ]; then
    arch-chroot /mnt chmod 755 /usr/local/bin/pacman-switcher
    cp /opt/coffee-updater /mnt/usr/local/bin/
    arch-chroot /mnt chmod 755 /usr/local/bin/coffee-updater
+   cp /opt/pacman-switcher.desktop /mnt/usr/share/applications/
+   arch-chroot /mnt chmod 755 /usr/share/applications/pacman-switcher.desktop
+   cp /opt/coffee-updater.desktop /mnt/usr/share/applications/
+   arch-chroot /mnt chmod 755 /usr/share/applications/coffee-updater.desktop
   fi
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf

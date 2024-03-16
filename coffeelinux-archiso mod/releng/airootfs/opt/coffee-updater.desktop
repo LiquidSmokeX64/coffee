@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Name=CoffeeLinux Updater
+Comment=Updates the OS in various ways
+Categories=System;
+Icon=security-medium
+Exec=/usr/local/bin/coffee-updater
+Terminal=true
+Type=Application
+NoDisplay=false
