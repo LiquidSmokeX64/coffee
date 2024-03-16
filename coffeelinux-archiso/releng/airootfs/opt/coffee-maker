@@ -25,8 +25,8 @@ sudo rm -R ~/work/ ~/out/
 git clone https://github.com/Project-X-Mods/coffeelinux.git
 mkdir -p ~/coffeelinux/releng/
 cp -R /usr/share/archiso/configs/releng/* ~/coffeelinux/releng/
-cp -R /coffeelinux/coffeelinux-archiso\ mod/releng/* ~/coffeelinux/releng/
-sudo mkarchiso -v -w ~/work/ -o ~/out/ releng/
+cp -R /coffeelinux/coffeelinux-archiso/releng/* ~/coffeelinux/releng/
+sudo mkarchiso -v -w ~/work/ -o ~/out/ ~/coffeelinux/releng/
 cp ~/out/coffee* ~/Documents/
 sudo rm -R ~/work/ ~/out/
 clear
@@ -41,12 +41,13 @@ fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
 typecheck00=1
 sudo pacman -Syy archiso
+sudo rm -R ~/coffeelinux/
 sudo rm -R ~/work/ ~/out/
 git clone https://github.com/Project-X-Mods/coffeelinux.git
 mkdir -p ~/coffeelinux/releng/
 cp -R /usr/share/archiso/configs/releng/* ~/coffeelinux/releng/
-cp -R /coffeelinux/coffeelinux-archiso\ mod/releng/* ~/coffeelinux/releng/
-sudo mkarchiso -v -w ~/work/ -o ~/out/ releng/
+cp -R /coffeelinux/coffeelinux-archiso/releng/* ~/coffeelinux/releng/
+sudo mkarchiso -v -w ~/work/ -o ~/out/ ~/coffeelinux/releng/
 cp ~/out/coffee* ~/Documents/
 sudo rm -R ~/work/ ~/out/
 clear

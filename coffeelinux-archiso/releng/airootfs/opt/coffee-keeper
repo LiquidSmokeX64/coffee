@@ -8,54 +8,54 @@ pacman -Sy --noconfirm wget
 rm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 rm /opt/yay-12.3.1-3-x86_64.pkg.tar.zst
 rm /opt/yay-12.3.3-3-x86_64.pkg.tar.zst
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/yay-12.3.3-3-x86_64.pkg.tar.zst -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.3.3-3-x86_64.pkg.tar.zst -P /opt/
 pacman -U --noconfirm /opt/yay-12.3.3-3-x86_64.pkg.tar.zst
 #27.7.4 Patch
 rm /opt/pacman-stable.conf
 rm /opt/pacman-unstable.conf
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/pacman-stable.conf -P /opt/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/pacman-unstable.conf -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf -P /opt/
 pacman -Rdd pamac-aur
 #27.7.9 Patch
 rm /etc/issue
 rm /opt/issue
 rm -R /opt/issue.*
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/issue -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/issue -P /opt/
 cp /opt/issue /etc/
 #24.8.1 Patch (Custom Apps Part 1)
 rm /usr/local/bin/pacman-switcher
 rm /opt/pacman-switcher
 rm -R /opt/pacman-switcher.*
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/pacman-switcher -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-switcher -P /opt/
 cp /opt/pacman-switcher /usr/local/bin/
 chmod 755 /usr/local/bin/pacman-switcher
 rm /usr/local/bin/coffee-updater
 rm /opt/coffee-updater
 rm -R /opt/coffee-updater.*
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-updater -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater -P /opt/
 cp /opt/coffee-updater /usr/local/bin/
 chmod 755 /usr/local/bin/coffee-updater
 #24.8.8 Patch (Custom Apps Part 2)
 rm /opt/coffee-updater.desktop
 rm /usr/share/applications/coffee-updater.desktop
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-updater.desktop -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater.desktop -P /opt/
 cp /opt/coffee-updater.desktop /usr/share/applications/
 chmod 755 /usr/share/applications/coffee-updater.desktop
 rm /opt/pacman-switcher.desktop
 rm /usr/share/applications/pacman-switcher.desktop
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/pacman-switcher.desktop -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-switcher.desktop -P /opt/
 cp /opt/pacman-switcher.desktop /usr/share/applications/
 chmod 755 /usr/share/applications/pacman-switcher.desktop
 #24.8.10 Patch (coffee-maker app)
 rm /usr/local/bin/coffee-maker
 rm /opt/coffee-maker
 rm -R /opt/coffee-maker.*
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-maker -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-maker -P /opt/
 cp /opt/coffee-maker /usr/local/bin/
 chmod 755 /usr/local/bin/coffee-maker
 rm /opt/coffee-maker.desktop
 rm /usr/share/applications/coffee-maker.desktop
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-maker.desktop -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-maker.desktop -P /opt/
 cp /opt/coffee-maker.desktop /usr/share/applications/
 chmod 755 /usr/share/applications/coffee-maker.desktop
 #Replace CoffeeLinux Files
@@ -69,16 +69,16 @@ rm /usr/local/bin/coffeebrewer-custom
 rm /usr/local/bin/coffeebrewer-gnome
 rm /usr/local/bin/coffeebrewer-kde
 rm /usr/local/bin/coffeebrewer-mainmenu
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/config -P /opt/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-injector -P /opt/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /opt/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /opt/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/os-release -P /etc/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/lsb-release -P /etc/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-custom -P /usr/local/bin/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-gnome -P /usr/local/bin/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-kde -P /usr/local/bin/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/usr/local/bin/coffeebrewer-mainmenu -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/config -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /etc/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /etc/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-custom -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-gnome -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-kde -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-mainmenu -P /usr/local/bin/
 chmod 755 /opt/coffee-injector
 chmod 755 /usr/local/bin/coffeebrewer-custom
 chmod 755 /usr/local/bin/coffeebrewer-gnome

@@ -1,9 +1,0 @@
-#!/bin/sh
-
-rm /opt/coffee-keeper
-sleep 20
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/coffee-keeper -P /opt/
-chmod 755 /opt/coffee-keeper
-bash /opt/coffee-keeper
-
-exit
