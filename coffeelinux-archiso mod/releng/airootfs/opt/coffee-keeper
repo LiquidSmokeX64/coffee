@@ -1,7 +1,11 @@
 #!/bin/sh
 
 sleep 10
+#Update the system first
+pacman -Syu --noconfirm
+yay -Syu --noconfirm
 #Latest Coffee Linux Raw Updates
+pacman -Sy wget
 rm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 rm /opt/yay-12.3.1-3-x86_64.pkg.tar.zst
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/yay-12.3.1-3-x86_64.pkg.tar.zst -P /opt/
@@ -13,15 +17,6 @@ wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coff
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso%20mod/releng/airootfs/opt/pacman-unstable.conf -P /opt/
 cp /opt/pacman-stable.conf /etc/pacman.conf
 pacman -Rdd pamac-aur
-#Disable unwanted services
-systemctl disable --now coffee-wallpapers.service
-systemctl disable --now coffee-updater.service
-#Remove any unwanted files
-rm /opt/coffee-updater
-rm /opt/coffee-wallpapers.service
-rm /opt/coffee-updater.service
-rm /lib/systemd/system/coffee-wallpapers.service
-rm /lib/systemd/system/coffee-updater.service
 #Replace CoffeeLinux Files
 rm /opt/os-release
 rm /opt/lsb-release
@@ -57,10 +52,15 @@ pacman -Rdd --noconfirm kmix
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
 pacman -Rdd --noconfirm plasma-wayland-session
+#Disable unwanted services
+systemctl disable --now coffee-wallpapers.service
+systemctl disable --now coffee-updater.service
 #Remove any unwanted files
-rm /usr/local/bin/coffeebrewer-cinnamon
-#rm /usr/local/bin/coffeebrewer-kde
-#rm /usr/local/bin/coffeebrewer-sway
+rm /opt/coffee-updater
+rm /opt/coffee-wallpapers.service
+rm /opt/coffee-updater.service
+rm /lib/systemd/system/coffee-wallpapers.service
+rm /lib/systemd/system/coffee-updater.service
 rm -R /usr/share/wayland-sessions/gnome*
 rm -R /usr/share/xsessions/gnome*
 rm /usr/share/applications/steam-native.desktop
