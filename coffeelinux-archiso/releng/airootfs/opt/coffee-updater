@@ -54,6 +54,8 @@ fi
 if [ "$typecheck00" = "2" ]; then
 yay -Syu
 clear
+yay -a
+clear
 printf "%b" "\nAUR updates finished...\n\n"
 typecheck00=4
 typecheck99=3
