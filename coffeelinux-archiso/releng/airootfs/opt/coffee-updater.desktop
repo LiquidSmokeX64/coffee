@@ -1,7 +1,7 @@
 [Desktop Entry]
 
-Name=CoffeeLinux Updater
-Comment=Updates the OS in various ways
+Name=CoffeeLinux Manager
+Comment=Add/Remove Programs and System Updater
 Categories=System;
 Icon=security-medium
 Exec=/usr/local/bin/coffee-updater

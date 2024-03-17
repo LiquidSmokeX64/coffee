@@ -1,15 +1,36 @@
 #!/bin/sh
 
 #Main Menu
+while [ "$typecheck99" != "3" ]; do
+clear
+printf "%b" "\n#### Coffee Linux Manager Tool 1.0.7 ####\n"
+printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
+printf "%b" "\nWhat would you like to do? (Default: 3)\n"
+printf "%b" "\n1 - System Updates\n"
+printf "%b" "\n2 - Application Management\n"
+printf "%b" "\n3 - Exit Coffee Manager.\n"
+
+read -r typecheck99
+case $typecheck99 in
+ 1) printf "%b" "\nSystem updates selected. Running now..\n" ;;
+ 2) printf "%b" "\nApplication managemennt selected. Running now...\n" ;;
+ 3) printf "%b" "\nExit selected. exiting now...\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+clear
+
+if [ "$typecheck99" = "1" ]; then
+
+#Main Menu
 while [ "$typecheck00" != "4" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Updater Tool 1.0.7 ####\n"
-printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
-printf "%b" "\nWhat type of updates do you want? (Default: 1)\n"
+printf "%b" "\n#### Coffee Linux System Updater Tool 1.0.7 ####\n"
+printf "%b" "\nWhat type of updates do you want? (Default: 4)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
 printf "%b" "\n2 - AUR updates\n"
 printf "%b" "\n3 - Coffee Linux OS update\n"
-printf "%b" "\n4 - Exit the program.\n"
+printf "%b" "\n4 - Exit App Manager.\n"
 
 read -r typecheck00
 case $typecheck00 in
@@ -26,30 +47,223 @@ if [ "$typecheck00" = "1" ]; then
 sudo pacman -Syu
 clear
 printf "%b" "\nOfficial Arch Linux updates finished..\n\n"
+typecheck00=4
+typecheck99=3
 sleep 5
 fi
 if [ "$typecheck00" = "2" ]; then
 yay -Syu
 clear
 printf "%b" "\nAUR updates finished...\n\n"
+typecheck00=4
+typecheck99=3
 sleep 5
 fi
 if [ "$typecheck00" = "3" ]; then
 sudo bash /opt/coffee-injector
 clear
 printf "%b" "\nCoffeeLinux OS update finished...\n\n"
+typecheck00=4
+typecheck99=3
 sleep 5
 fi
 if [ "$typecheck00" = "4" ]; then
 clear
-printf "%b" "\nExited program successfully...\n\n"
+printf "%b" "\nExited System Updater successfully...\n\n"
 sleep 5
+typecheck00=4
+typecheck99=3
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ] && [ "$typecheck00" != "4" ]; then
-typecheck00=1
-sudo pacman -Syu
+typecheck00=4
+typecheck99=3
 clear
-printf "%b" "\nOfficial Arch Linux updates finished...\n\n"
+printf "%b" "\nExited System Updater successfully...\n\n"
+sleep 5
+fi
+done
+
+fi
+if [ "$typecheck99" = "2" ]; then
+
+#Main Menu
+while [ "$typecheck01" != "4" ]; do
+clear
+printf "%b" "\n#### Coffee App Manager Tool 1.0.7 ####\n"
+printf "%b" "\nWhat would you like to do? (Default: 4)\n"
+printf "%b" "\n1 - Install a program\n"
+printf "%b" "\n2 - Install an AUR program\n"
+printf "%b" "\n3 - Remove a program\n"
+printf "%b" "\n4 - Exit the App Manager.\n"
+
+read -r typecheck01
+case $typecheck01 in
+ 1) printf "%b" "\nAdd a program selected. Running now..\n" ;;
+ 2) printf "%b" "\nAdd an AUR program selected. Running now..\n" ;;
+ 3) printf "%b" "\nRemove a program selected. Running now...\n" ;;
+ 4) printf "%b" "\nExit selected. exiting now...\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+clear
+
+if [ "$typecheck01" = "1" ]; then
+
+while [ "$programnamecheck00" != "1" ]; do
+printf "%b" "\nWhat programs would you like to install?\n\n"
+read -r programname00
+clear
+printf "%b" "\n$programname00. Is this correct? (default: 2)\n"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No\n"
+read -r programnamecheck00
+clear
+case $programnamecheck00 in
+ 1) printf "%b" "\nProgram names verified. Running now..\n" ;;
+ 2) printf "%b" "\nLets try again...\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+clear
+
+if [ "$programnamecheck00" = "1" ]; then
+sudo pacman -Syy $programname00
+clear
+printf "%b" "\nInstallation finished...\n\n"
+sleep 5
+typecheck01=4
+typecheck99=3
+fi
+
+if [ "$programnamecheck00" = "2" ]; then
+clear
+printf "%b" "\nLets try again...\n\n"
+sleep 5
+fi
+
+if [ "$programnamecheck00" != "1" ] && [ "$programnamecheck00" != "2" ]; then
+programnamecheck00=2
+clear
+printf "%b" "\nLets try again...\n\n"
+sleep 5
+fi
+done
+
+fi
+
+if [ "$typecheck01" = "2" ]; then
+
+while [ "$programnamecheck02" != "1" ]; do
+printf "%b" "\nWhat programs would you like to install?\n\n"
+read -r programname02
+clear
+printf "%b" "\n$programname02. Is this correct? (default: 2)\n"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No\n"
+read -r programnamecheck02
+clear
+case $programnamecheck02 in
+ 1) printf "%b" "\nProgram names verified. Running now..\n" ;;
+ 2) printf "%b" "\nLets try again...\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+clear
+
+if [ "$programnamecheck02" = "1" ]; then
+yay -Syy $programname02
+clear
+printf "%b" "\nInstallation finished...\n\n"
+sleep 5
+typecheck01=4
+typecheck99=3
+fi
+
+if [ "$programnamecheck02" = "2" ]; then
+clear
+printf "%b" "\nLets try again...\n\n"
+sleep 5
+fi
+
+if [ "$programnamecheck02" != "1" ] && [ "$programnamecheck02" != "2" ]; then
+programnamecheck02=2
+clear
+printf "%b" "\nLets try again...\n\n"
+sleep 5
+fi
+done
+
+fi
+
+if [ "$typecheck01" = "3" ]; then
+
+while [ "$programnamecheck01" != "1" ]; do
+printf "%b" "\nWhat programs would you like to remove?\n\n"
+read -r programname01
+clear
+printf "%b" "\n$programname01. Is this correct? (default: 2)\n"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No\n"
+read -r programnamecheck01
+clear
+case $programnamecheck01 in
+ 1) printf "%b" "\nProgram names verified. Running now..\n" ;;
+ 2) printf "%b" "\nLets try again...\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+clear
+
+if [ "$programnamecheck01" = "1" ]; then
+sudo pacman -Rdd --noconfirm $programname01
+clear
+printf "%b" "\nRemoval finished...\n\n"
+sleep 5
+typecheck01=4
+typecheck99=3
+fi
+
+if [ "$programnamecheck01" = "2" ]; then
+clear
+printf "%b" "\nLets try again...\n\n"
+sleep 5
+fi
+
+if [ "$programnamecheck01" != "1" ] && [ "$programnamecheck01" != "2" ]; then
+programnamecheck01=2
+clear
+printf "%b" "\nLets try again...\n\n"
+sleep 5
+fi
+done
+
+fi
+if [ "$typecheck01" = "4" ]; then
+clear
+printf "%b" "\nExited App Manager successfully...\n\n"
+sleep 5
+typecheck01=4
+typecheck99=3
+fi
+if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; then
+typecheck01=3
+clear
+printf "%b" "\nExited App Manager successfully...\n\n"
+sleep 5
+fi
+done
+
+fi
+if [ "$typecheck99" = "3" ]; then
+clear
+printf "%b" "\nExited Coffee Manager successfully...\n\n"
+sleep 5
+typecheck99=3
+fi
+if [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ]; then
+typecheck99=3
+clear
+printf "%b" "\nExited Coffee Manager successfully...\n\n"
 sleep 5
 fi
 done
