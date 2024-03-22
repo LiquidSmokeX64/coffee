@@ -945,11 +945,18 @@ if [ "$questionspassed" = "yes" ]; then
   clear
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
   clear
+  if [ "$branchpass00" = "stable" ]; then
+  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
   arch-chroot /mnt pacman -Rdd --noconfirm mutter
   clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
+  fi
   clear
+  if [ "$branchpass00" = "beta" ]; then
+  printf "%b" "3\ny\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
+  fi
+  if [ "$branchpass00" = "stable" ]; then
   printf "%b" "1\ny\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
+  fi
   clear
   rm -r /mnt/usr/share/wayland-sessions/gnome*
   rm -r /mnt/usr/share/xsessions/gnome*
