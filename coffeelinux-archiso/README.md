@@ -30,6 +30,7 @@ This is Arch but better. Enjoy it with us.
 ----------------------------------
 
 Features:
+
 Custom CLI apps to do many common tasks.
 1. Pacman Switcher : For switching pacman repos fast and easily.
 2. Coffee Manager : For various updates and App management.
