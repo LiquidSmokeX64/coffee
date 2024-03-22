@@ -1,4 +1,4 @@
-# Welcome to CoffeeLinux."
+# Welcome to CoffeeLinux.
 
 -----------------------------------
 
@@ -29,9 +29,19 @@ This is Arch but better. Enjoy it with us.
 
 ----------------------------------
 
+Features:
+Custom CLI apps to do many common tasks.
+1. Pacman Switcher : For switching pacman repos fast and easily.
+2. Coffee Manager : For various updates and App management.
+3. Coffee Iso Maker : For creating CoffeeLinux Iso files easily.
+
+Custom made self updating service: Stay up to date with no user interaction. Runs on boot by default.
+
+Stable or Testing Repo installation option for the brave.
+
 Web Browser Choices: Chrome, Firefox, and MS Edge
 
-App Choices: Snapd framework, Steam, Java, VMWare, Discord, Github Desktop, Heroic Games, Lutris, and LibreOffice.
+App Choices: Snapd framework, Steam, Java, VMWare, Discord, Github Desktop, Epic Games Launcher, Lutris, and LibreOffice.
 
 Bootloader Choices: Grub UEFI, Grub BIOS, and Systemd-Boot (with optional Secure-boot)
 
