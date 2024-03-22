@@ -12,9 +12,7 @@ Based on Arch, CoffeeLinux aims to provide a smooth setup from start to finish s
 The Installer is a pure shell installation. No need for a fancy GUI just to install an OS honestly.
   Just a few simple choices and you're ready to go.
 
-With 4 Standard Desktop Environment choices, it's easy to find the one that suits you best.
-
-If you like more control try the Custom Mode that has many more configuration options and unique choices not available otherwise.
+With 3 Standard Desktop Environment choices, it's easy to find the one that suits you best.
 
 CoffeeLinux is unique to other distros because its installer is a hand crafted mod for archiso (releng profile) that uses a single script to install the OS for you based on your choices.
  
@@ -30,8 +28,6 @@ You do nothing.
 This is Arch but better. Enjoy it with us.
 
 ----------------------------------
-
-[Custom Mode Choices List]
 
 Web Browser Choices: Chrome, Firefox, and MS Edge
 
