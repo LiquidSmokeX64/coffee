@@ -50,7 +50,7 @@ clear
 
 while [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; do
 
-printf "%b" "\nWould you like to set your username? (Default: 1)\n"
+printf "%b" "\nWould you like to set your username? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No\n"
 read -r usercheck02
@@ -93,9 +93,13 @@ fi
 fi
 if [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; then
 
-usercheck02=1
+usercheck02=2
 usercheck=1
+user00=defaultuser
+
+if [ "$usercheck" = "1" ]; then
 user01=$user00
+fi
 
 fi
 done
