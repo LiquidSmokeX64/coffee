@@ -16,7 +16,9 @@ With 3 Standard Desktop Environment choices, it's easy to find the one that suit
 
 CoffeeLinux is unique to other distros because its installer is a hand crafted mod for archiso (releng profile) that uses a single script to install the OS for you based on your choices.
  
-There is no copying packages and such. Everything is downloaded and installed live for your installation.
+There is no copying packages and such from the installation medium.
+
+Everything is downloaded and installed live for your installation as if you were installing Arch Linux manually (because you are).
 
 Don't like updating the hard way? I hear you.. we can do it better.
 
