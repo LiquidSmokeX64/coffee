@@ -152,6 +152,7 @@ rm /etc/lsb-release
 rm /opt/config
 rm /opt/coffee-keeper
 rm /opt/coffee-injector
+rm /usr/local/bin/coffeebrewer3
 rm /usr/local/bin/coffeebrewer-custom
 rm /usr/local/bin/coffeebrewer-gnome
 rm /usr/local/bin/coffeebrewer-kde
@@ -165,8 +166,6 @@ clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /etc/
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /etc/
-clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/config -P /opt/
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
 clear
