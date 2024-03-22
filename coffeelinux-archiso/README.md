@@ -37,11 +37,17 @@ Custom CLI apps to do many common tasks.
 
 Custom made self updating service: Stay up to date with no user interaction. Runs on boot by default.
 
+A hand picked set of QoL packages and dependencies for a large number of apps and services.
+
+Yaru (Ubuntu) styled Gnome DE, with dynamic buffering mutter.
+
+Mint styled Cinnamon DE with ALL mint backgrounds available.
+
 Stable or Testing Repo installation option for the brave.
 
 Web Browser Choices: Chrome, Firefox, and MS Edge
 
-App Choices: Snapd framework, Steam, Java, VMWare, Discord, Github Desktop, Epic Games Launcher, Lutris, and LibreOffice.
+App Choices: Snap Store, Steam, Java, VMWare, Discord, Github Desktop, Epic Games Launcher, Lutris, and LibreOffice.
 
 Bootloader Choices: Grub UEFI, Grub BIOS, and Systemd-Boot (with optional Secure-boot)
 
@@ -49,7 +55,8 @@ Simply download from the Releases page and use Etcher to write the iso to usb. U
 
 ------------------------------------
 
-Like, Share, and Enjoy. My Linux is the cure to the distro war.
+Like, Share, and Enjoy. 
+My Linux is the end of the distro war. It just needs some coffee to calm down.
 
 ------------------------------------
 
