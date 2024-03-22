@@ -65,25 +65,19 @@ rm /etc/os-release
 rm /etc/lsb-release
 rm /opt/coffee-injector
 rm /opt/config
-rm /usr/local/bin/coffeebrewer-custom
-rm /usr/local/bin/coffeebrewer-gnome
-rm /usr/local/bin/coffeebrewer-kde
-rm /usr/local/bin/coffeebrewer-mainmenu
+rm /usr/local/bin/coffee-barista
+rm /usr/local/bin/coffeebrewer3
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/config -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /etc/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /etc/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-custom -P /usr/local/bin/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-gnome -P /usr/local/bin/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-kde -P /usr/local/bin/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-mainmenu -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer3 -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
 chmod 755 /opt/coffee-injector
-chmod 755 /usr/local/bin/coffeebrewer-custom
-chmod 755 /usr/local/bin/coffeebrewer-gnome
-chmod 755 /usr/local/bin/coffeebrewer-kde
-chmod 755 /usr/local/bin/coffeebrewer-mainmenu
+chmod 755 /usr/local/bin/coffeebrewer3
+chmod 755 /usr/local/bin/coffee-barista
 #Removal of any unwanted packages
 pacman -Rdd --noconfirm blueman
 pacman -Rdd --noconfirm kmix
@@ -98,6 +92,10 @@ rm /opt/coffee-updater
 rm /opt/wallpaper-updater
 rm /opt/coffee-wallpapers.service
 rm /opt/coffee-updater.service
+rm /usr/local/bin/coffeebrewer-custom
+rm /usr/local/bin/coffeebrewer-mainmenu
+rm /usr/local/bin/coffeebrewer-gnome
+rm /usr/local/bin/coffeebrewer-kde
 rm /lib/systemd/system/coffee-wallpapers.service
 rm /lib/systemd/system/coffee-updater.service
 rm -R /usr/share/wayland-sessions/gnome*

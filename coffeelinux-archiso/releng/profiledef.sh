@@ -5,7 +5,7 @@ iso_name="coffeelinux"
 iso_label="COFFEE_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 iso_publisher="Coffee Linux <https://archlinux.org>"
 iso_application="Coffee Linux Live/Rescue CD"
-iso_version="24.9.2-$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
+iso_version="25.0.0-$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
@@ -25,8 +25,6 @@ file_permissions=(
   ["/usr/local/bin/choose-mirror"]="0:0:755"
   ["/usr/local/bin/Installation_guide"]="0:0:755"
   ["/usr/local/bin/livecd-sound"]="0:0:755"
-  ["/usr/local/bin/coffeebrewer-custom"]="0:0:755"
-  ["/usr/local/bin/coffeebrewer-gnome"]="0:0:755"
-  ["/usr/local/bin/coffeebrewer-kde"]="0:0:755"
-  ["/usr/local/bin/coffeebrewer-mainmenu"]="0:0:755"
+  ["/usr/local/bin/coffeebrewer3"]="0:0:755"
+  ["/usr/local/bin/coffee-barista"]="0:0:755"
 )

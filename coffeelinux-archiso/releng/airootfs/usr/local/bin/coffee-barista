@@ -156,11 +156,7 @@ rm /usr/local/bin/coffeebrewer-custom
 rm /usr/local/bin/coffeebrewer-gnome
 rm /usr/local/bin/coffeebrewer-kde
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-custom -P /usr/local/bin/
-clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-gnome -P /usr/local/bin/
-clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer-kde -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer3 -P /usr/local/bin/
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
 clear
@@ -176,18 +172,16 @@ wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coff
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper -P /opt/
 clear
-chmod 755 /usr/local/bin/coffeebrewer-custom
-chmod 755 /usr/local/bin/coffeebrewer-gnome
-chmod 755 /usr/local/bin/coffeebrewer-kde
+chmod 755 /usr/local/bin/coffeebrewer3
 clear
 #Finished Updating
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
-printf "%b" "\n#### Welcome to Coffee Linux ####\n"
-printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
-printf "%b" "\n1 - Standard\n"
-printf "%b" "\n2 - Custom\n"
+printf "%b" "\n#### Welcome to Coffee Linux Iso ####\n"
+printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
+printf "%b" "\n1 - Install CoffeeLinux.\n"
+printf "%b" "\n2 - Exit\n"
 
 read -r typecheck00
 case $typecheck00 in
@@ -197,38 +191,13 @@ case $typecheck00 in
 esac
 
 if [ "$typecheck00" = "1" ]; then
-while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ]; do
-clear
-printf "%b" "\nWhat Desktop Environment do you want? (Default: 1)\n"
-printf "%b" "\n1 - Gnome\n"
-printf "%b" "\n2 - KDE\n"
-
-read -r typecheck01
-case $typecheck01 in
- 1) printf "%b" "\nPerfect\n" ;;
- 2) printf "%b" "\nLet's move on then.\n" ;;
- *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$typecheck01" = "1" ]; then
-coffeebrewer-gnome
-fi
-
-if [ "$typecheck01" = "2" ]; then
-coffeebrewer-kde
-fi
-if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ]; then
-typecheck01=1
-coffeebrewer-gnome
-fi
-done
-
+coffeebrewer3
 fi
 if [ "$typecheck00" = "2" ]; then
-coffeebrewer-custom
+exit
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
-typecheck00=2
-coffeebrewer-custom
+typecheck00=1
+coffeebrewer3
 fi
 done
