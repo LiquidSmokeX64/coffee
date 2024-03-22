@@ -2081,7 +2081,7 @@ if [ "$native1" = "yes" ]; then
   if [ "$coffeeon00" = "yes" ]; then
    cp -r /opt/* /mnt/opt/
    cp /usr/local/bin/coffeebrewer3 /mnt/usr/local/bin/
-   cp /usr/local/bin/coffeebrewer-barista /mnt/usr/local/bin/
+   cp /usr/local/bin/coffee-barista /mnt/usr/local/bin/
    arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer3
    arch-chroot /mnt chmod 755 /usr/local/bin/coffee-barista
    mkdir -p /mnt/usr/share/wallpapers/coffee/
