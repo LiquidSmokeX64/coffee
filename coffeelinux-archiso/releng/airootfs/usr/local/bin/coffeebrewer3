@@ -1507,7 +1507,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.0.0)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Yeti' (25.0.1)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -1948,8 +1948,8 @@ if [ "$questionspassed" = "yes" ]; then
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
      clear
      if [ "$branchpass00" = "stable" ]; then
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
      arch-chroot /mnt pacman -Rdd --noconfirm mutter
+     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
      clear
      fi
      clear
