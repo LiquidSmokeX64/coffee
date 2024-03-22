@@ -18,12 +18,12 @@ CoffeeLinux is unique to other distros because its installer is a hand crafted m
  
 There is no copying packages and such. Everything is downloaded and installed live for your installation.
 
-Don't like updating? I hear you..
+Don't like updating the hard way? I hear you.. we can do it better.
 
 CoffeeLinux Self-Updating Service is made just for you.
-No more waitimg for updates, with this service you just reboot (twice sometimes). 
+No more waiting for updates, with this service you just reboot (twice sometimes). 
 Seriously that's it. It takes care of all the maintenence for you in the background.
-You do nothing.
+You do nothing but have an active internet connection.
 
 This is Arch but better. Enjoy it with us.
 
