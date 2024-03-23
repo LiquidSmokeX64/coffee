@@ -3,7 +3,7 @@
 #Main Menu
 while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Manager Tool 1.0.8 ####\n"
+printf "%b" "\n#### Coffee Linux Manager Tool 1.0.9 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 3)\n"
 printf "%b" "\n1 - System Updates\n"
@@ -27,7 +27,7 @@ if [ "$typecheck99" = "1" ]; then
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ] && [ "$typecheck00" != "4" ]; do
 clear
-printf "%b" "\n#### Coffee Linux System Updater Tool 1.0.8 ####\n"
+printf "%b" "\n#### Coffee Linux System Updater Tool 1.0.9 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 4)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
 printf "%b" "\n2 - AUR updates\n"
@@ -93,7 +93,7 @@ if [ "$typecheck99" = "2" ]; then
 #Main Menu
 while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; do
 clear
-printf "%b" "\n#### Coffee App Manager Tool 1.0.8 ####\n"
+printf "%b" "\n#### Coffee App Manager Tool 1.0.9 ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 4)\n"
 printf "%b" "\n1 - Install a program\n"
 printf "%b" "\n2 - Install an AUR program\n"
@@ -262,9 +262,14 @@ if [ "$typecheck99" = "3" ]; then
 clear
 printf "%b" "\nGetting system info now...\n\n"
 neofetch
-sleep 10
-printf "%b" "\nExiting in the program shortly...\n\n"
-sleep 10
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck01
+if [ "$endcheck01" != "g7y26rx105f6gh87stxy4" ]; then
+printf "%b" "\nExiting the program now...\n\n"
+fi
+if [ "$endcheck01" = "g7y26rx105f6gh87stxy4" ]; then
+printf "%b" "\nExiting the program now...\n\n"
+fi
 fi
 
 if [ "$typecheck99" = "4" ]; then

@@ -3,7 +3,7 @@
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.0.8 ####\n"
+printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.0.9 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Create a CoffeeLinux iso\n"
@@ -31,7 +31,16 @@ cp ~/out/coffee* ~/Documents/
 sudo rm -R ~/work/ ~/out/
 sudo rm -R ~/coffeelinux/
 clear
-printf "%b" "\nCreated Iso file successfully...\n\n"
+printf "%b" "\nCreated Iso file successfully...\n"
+printf "%b" "\nIso will be placed in Documents folder.\n"
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck00
+if [ "$endcheck00" != "g7y26rx105f6gh87stxy4" ]; then
+printf "%b" "\nExiting the program now...\n\n"
+fi
+if [ "$endcheck00" = "g7y26rx105f6gh87stxy4" ]; then
+printf "%b" "\nExiting the program now...\n\n"
+fi
 sleep 5
 fi
 if [ "$typecheck00" = "2" ]; then
