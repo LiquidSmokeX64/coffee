@@ -178,8 +178,9 @@ clear
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Iso ####\n"
+printf "%b" "\n########## Barista v.1.0.8 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
-printf "%b" "\n1 - Install CoffeeLinux.\n"
+printf "%b" "\n1 - Install CoffeeLinux\n"
 printf "%b" "\n2 - Exit\n"
 
 read -r typecheck00
@@ -193,7 +194,7 @@ if [ "$typecheck00" = "1" ]; then
 coffeebrewer3
 fi
 if [ "$typecheck00" = "2" ]; then
-exit
+printf "%b" "\nExiting now...\n"
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
 typecheck00=1
