@@ -1268,9 +1268,9 @@ clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
 sleep 5
-cp /opt/yay-12.3.3-3-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.3.4-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.3.3-3-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.3.4-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b" "\nInstalled yay successfully.\n"
 clear
@@ -1292,9 +1292,9 @@ clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
 sleep 5
-cp /opt/yay-12.3.3-3-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.3.4-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.3.3-3-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.3.4-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b" "\nInstalled yay successfully.\n"
 clear
@@ -1315,9 +1315,9 @@ clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
 sleep 5
-cp /opt/yay-12.3.3-3-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-12.3.4-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.3.3-3-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.3.4-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b" "\nInstalled yay successfully.\n"
 clear
@@ -1507,7 +1507,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.0.3)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Yeti' (25.0.4)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
