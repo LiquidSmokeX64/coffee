@@ -178,7 +178,7 @@ clear
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Iso ####\n"
-printf "%b" "\n########## Barista v.1.0.8 ##########\n"
+printf "%b" "\n########## Barista v.1.1.0 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Install CoffeeLinux\n"
 printf "%b" "\n2 - Exit\n"

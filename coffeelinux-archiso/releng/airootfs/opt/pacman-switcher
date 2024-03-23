@@ -1,11 +1,11 @@
 #!/bin/sh
 
 #Main Menu
-while [ "$typecheck00" != "3" ]; do
+while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Pacman Switcher Tool 1.0.7 ####\n"
+printf "%b" "\n#### Coffee Linux Pacman Switcher Tool 1.1.0 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
-printf "%b" "\nWhat type of pacman repo do you want? (Default: 1)\n"
+printf "%b" "\nWhat type of pacman repo do you want? (Default: 3)\n"
 printf "%b" "\n1 - Stable\n"
 printf "%b" "\n2 - Testing\n"
 printf "%b" "\n3 - Exit the program\n"
@@ -26,6 +26,11 @@ sudo cp /opt/pacman-stable.conf /etc/pacman.conf
 sudo pacman -Syy
 clear
 printf "%b" "\nSwitched to stable repos successfully...\n\n"
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck00
+printf "%b" "\nYou typed $endcheck00...\n\n"
+clear
+printf "%b" "\nExiting the program now...\n\n"
 sleep 5
 fi
 if [ "$typecheck00" = "2" ]; then
@@ -34,20 +39,22 @@ sudo cp /opt/pacman-unstable.conf /etc/pacman.conf
 sudo pacman -Syy
 clear
 printf "%b" "\nSwitched to unstable repos successfully...\n\n"
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck00
+printf "%b" "\nYou typed $endcheck00...\n\n"
+clear
+printf "%b" "\nExiting the program now...\n\n"
 sleep 5
 fi
 if [ "$typecheck00" = "3" ]; then
 clear
-printf "%b" "\nExited program successfully...\n\n"
+printf "%b" "\nExiting the program now...\n\n"
 sleep 5
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; then
-typecheck00=1
-sudo rm /etc/pacman.conf
-sudo cp /opt/pacman-stable.conf /etc/pacman.conf
-sudo pacman -Syy
+typecheck00=3
 clear
-printf "%b" "\nSwitched repos successfully...\n\n"
+printf "%b" "\nExiting the program now...\n\n"
 sleep 5
 fi
 done
