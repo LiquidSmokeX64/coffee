@@ -1507,7 +1507,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.0.8)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Yeti' (25.0.9)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -1588,9 +1588,9 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected.\nInstalling GPU Drivers first.\n"
-arch-chroot /mnt pacman -Sy --noconfirm nvidia lib32-nvidia-utils opencl-nvidia nvidia-utils nvidia-settings
+arch-chroot /mnt pacman -Sy --noconfirm nvidia-dkms lib32-nvidia-utils opencl-nvidia nvidia-utils nvidia-settings
  if [ "$grub0" = "false" ]; then
-  printf "%b" "\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" >> /mnt/boot/loader/entries/arch.conf
+  printf "%b" "\noptions root=LABEL=$drivename0 rw nvidia_drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" >> /mnt/boot/loader/entries/arch.conf
  fi
 fi
 if [ "$gpu0" = "amd" ]; then
