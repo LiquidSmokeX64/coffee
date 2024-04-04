@@ -1507,7 +1507,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.0.7)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Yeti' (25.0.8)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -1588,14 +1588,14 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected.\nInstalling GPU Drivers first.\n"
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings
+arch-chroot /mnt pacman -Sy --noconfirm nvidia lib32-nvidia-utils opencl-nvidia nvidia-utils nvidia-settings
  if [ "$grub0" = "false" ]; then
   printf "%b" "\noptions root=LABEL=$drivename0 rw nvidia-drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" >> /mnt/boot/loader/entries/arch.conf
  fi
 fi
 if [ "$gpu0" = "amd" ]; then
 printf "%b" "\nAMD GPU selected.\nInstalling amdgpu-fan and corectrl as well\n"
-arch-chroot /mnt pacman -Sy --noconfirm lib32-mesa lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu
+arch-chroot /mnt pacman -Sy --noconfirm lib32-mesa lib32-amdvlk lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu
  if [ "$grub0" = "false" ]; then
   printf "%b" "\noptions root=LABEL=$drivename0 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" >> /mnt/boot/loader/entries/arch.conf
  fi
