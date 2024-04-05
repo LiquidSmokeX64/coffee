@@ -1377,6 +1377,8 @@ arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub ter
 
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
+rm /opt/grub-nvidia/grub
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-nvidia/grub -P /opt/grub-nvidia/
 cp /opt/grub-nvidia/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
@@ -1393,6 +1395,9 @@ printf "%b" "\nGRUB UEFI for AMD selected.\n"
 arch-chroot /mnt pacman -S --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
 
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+
+rm /opt/grub-amd/grub
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-amd/grub -P /opt/grub-amd/
 cp /opt/grub-amd/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
@@ -1410,6 +1415,9 @@ printf "%b" "\nGRUB UEFI for Intel selected.\n"
 arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
 
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+
+rm /opt/grub-intel/grub
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-intel/grub -P /opt/grub-intel/
 cp /opt/grub-intel/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
@@ -1436,6 +1444,8 @@ fi
 
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
+rm /opt/grub-nvidia/grub
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-nvidia/grub -P /opt/grub-nvidia/
 cp /opt/grub-nvidia/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
@@ -1460,6 +1470,8 @@ fi
 
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
+rm /opt/grub-amd/grub
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-amd/grub -P /opt/grub-amd/
 cp /opt/grub-amd/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
@@ -1483,6 +1495,8 @@ fi
 
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 
+rm /opt/grub-intel/grub
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-intel/grub -P /opt/grub-intel/
 cp /opt/grub-intel/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
@@ -1507,7 +1521,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.1.0)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Yeti' (25.1.1)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
