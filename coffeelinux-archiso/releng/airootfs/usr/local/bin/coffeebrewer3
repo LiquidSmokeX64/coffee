@@ -1264,6 +1264,9 @@ if [ "$questionspassed" = "yes" ]; then
 if [ "$desktop0" = "gnome" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
+rm /usr/local/bin/coffee-barista
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
+chmod 755 /usr/local/bin/coffee-barista
 clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
@@ -1298,6 +1301,9 @@ fi
 if [ "$desktop0" = "kde" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
+rm /usr/local/bin/coffee-barista
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
+chmod 755 /usr/local/bin/coffee-barista
 clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
@@ -1331,6 +1337,9 @@ fi
 if [ "$desktop0" = "cinnamon" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
+rm /usr/local/bin/coffee-barista
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
+chmod 755 /usr/local/bin/coffee-barista
 clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
@@ -1552,7 +1561,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.1.3)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Yeti' (25.1.4)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
