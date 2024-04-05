@@ -1,22 +1,26 @@
 #!/bin/sh
 
 #Main Menu
-while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ]; do
+while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ; do
 clear
-printf "%b" "\n#### Coffee Linux Manager Tool 1.1.0 ####\n"
+printf "%b" "\n#### Coffee Linux Manager Tool 1.1.1 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 4)\n"
 printf "%b" "\n1 - System Updates\n"
 printf "%b" "\n2 - Application Management\n"
 printf "%b" "\n3 - System Info\n"
-printf "%b" "\n4 - Exit Coffee Manager.\n"
+printf "%b" "\n4 - CoffeeLinux Iso Maker\n"
+printf "%b" "\n5 - Pacman Switcher\n"
+printf "%b" "\n6 - Exit Coffee Manager.\n"
 
 read -r typecheck99
 case $typecheck99 in
  1) printf "%b" "\nSystem updates selected. Running now..\n" ;;
  2) printf "%b" "\nApplication managemennt selected. Running now...\n" ;;
- 3) printf "%b" "\nApplication managemennt selected. Running now...\n" ;;
- 4) printf "%b" "\nExit selected. exiting now...\n" ;;
+ 3) printf "%b" "\nSystem Info selected. Running now...\n" ;;
+ 4) printf "%b" "\nIso Creator selected. Running now...\n" ;;
+ 5) printf "%b" "\nPacman Switcher selected. Running now...\n" ;;
+ 6) printf "%b" "\nExit selected. exiting now...\n" ;;
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
 
@@ -50,7 +54,7 @@ sudo pacman -Syu
 clear
 printf "%b" "\nOfficial Arch Linux updates finished..\n\n"
 typecheck00=4
-#typecheck99=4
+#typecheck99=6
 sleep 5
 fi
 if [ "$typecheck00" = "2" ]; then
@@ -60,7 +64,7 @@ yay -a
 clear
 printf "%b" "\nAUR updates finished...\n\n"
 typecheck00=4
-#typecheck99=4
+#typecheck99=6
 sleep 5
 fi
 if [ "$typecheck00" = "3" ]; then
@@ -68,7 +72,7 @@ sudo bash /opt/coffee-injector
 clear
 printf "%b" "\nCoffeeLinux OS update finished...\n\n"
 typecheck00=4
-#typecheck99=4
+#typecheck99=6
 sleep 5
 fi
 if [ "$typecheck00" = "4" ]; then
@@ -76,11 +80,11 @@ clear
 printf "%b" "\nExited System Updater successfully...\n\n"
 sleep 5
 typecheck00=4
-#typecheck99=4
+#typecheck99=6
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ] && [ "$typecheck00" != "4" ]; then
 typecheck00=4
-#typecheck99=4
+#typecheck99=6
 clear
 printf "%b" "\nExited System Updater successfully...\n\n"
 sleep 5
@@ -136,7 +140,7 @@ clear
 printf "%b" "\nInstallation finished...\n\n"
 sleep 5
 typecheck01=4
-#typecheck99=4
+#typecheck99=6
 fi
 
 if [ "$programnamecheck00" = "2" ]; then
@@ -180,7 +184,7 @@ clear
 printf "%b" "\nInstallation finished...\n\n"
 sleep 5
 typecheck01=4
-#typecheck99=4
+#typecheck99=6
 fi
 
 if [ "$programnamecheck02" = "2" ]; then
@@ -224,7 +228,7 @@ clear
 printf "%b" "\nRemoval finished...\n\n"
 sleep 5
 typecheck01=4
-#typecheck99=4
+#typecheck99=6
 fi
 
 if [ "$programnamecheck01" = "2" ]; then
@@ -242,12 +246,13 @@ fi
 done
 
 fi
+
 if [ "$typecheck01" = "4" ]; then
 clear
 printf "%b" "\nExited App Manager successfully...\n\n"
 sleep 5
 typecheck01=4
-#typecheck99=4
+#typecheck99=6
 fi
 if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; then
 typecheck01=3
@@ -270,12 +275,134 @@ printf "%b" "\nExiting the program now...\n\n"
 fi
 if [ "$typecheck99" = "4" ]; then
 clear
-printf "%b" "\nExited Coffee Manager successfully...\n\n"
-typecheck99=4
+sleep 5
+#Main Menu
+while [ "$typecheck08" != "1" ] && [ "$typecheck08" != "2" ]; do
+clear
+printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.1.0 ####\n"
+printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
+printf "%b" "\nWhat would you like to do? (Default: 1)\n"
+printf "%b" "\n1 - Create a CoffeeLinux iso\n"
+printf "%b" "\n2 - Exit the program\n"
+
+read -r typecheck08
+case $typecheck08 in
+ 1) printf "%b" "\nCreate Iso selected. Running now..\n" ;;
+ 2) printf "%b" "\nExit selected.. Exiting now\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+clear
+
+if [ "$typecheck08" = "1" ]; then
+sudo pacman -Syy --noconfirm archiso
+sudo rm -R ~/coffeelinux/
+sudo rm -R ~/work/ ~/out/
+git clone https://github.com/Project-X-Mods/coffeelinux.git
+mkdir -p ~/coffeelinux/releng/
+cp -R /usr/share/archiso/configs/releng/* ~/coffeelinux/releng/
+cp -R ~/coffeelinux/coffeelinux-archiso/releng/* ~/coffeelinux/releng/
+sudo mkarchiso -v -w ~/work/ -o ~/out/ ~/coffeelinux/releng/
+cp ~/out/coffee* ~/Documents/
+sudo rm -R ~/work/ ~/out/
+sudo rm -R ~/coffeelinux/
+clear
+printf "%b" "\nCreated Iso file successfully...\n"
+printf "%b" "\nIso will be placed in Documents folder.\n"
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck08
+printf "%b" "\nYou typed $endcheck08...\n\n"
+clear
+printf "%b" "\nExiting the program now...\n\n"
 sleep 5
 fi
-if [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ]  && [ "$typecheck99" != "4" ]; then
-typecheck99=4
+if [ "$typecheck08" = "2" ]; then
+clear
+printf "%b" "\nExiting the program now...\n\n"
+sleep 5
+fi
+if [ "$typecheck08" != "1" ] && [ "$typecheck08" != "2" ]; then
+typecheck08=2
+clear
+printf "%b" "\nExiting the program now...\n\n"
+sleep 5
+fi
+done
+
+fi
+
+if [ "$typecheck99" = "5" ]; then
+clear
+sleep 5
+#Main Menu
+while [ "$typecheck95" != "1" ] && [ "$typecheck95" != "2" ] && [ "$typecheck95" != "3" ]; do
+clear
+printf "%b" "\n#### Coffee Linux Pacman Switcher Tool 1.1.0 ####\n"
+printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
+printf "%b" "\nWhat type of pacman repo do you want? (Default: 3)\n"
+printf "%b" "\n1 - Stable\n"
+printf "%b" "\n2 - Testing\n"
+printf "%b" "\n3 - Exit the program\n"
+
+read -r typecheck95
+case $typecheck95 in
+ 1) printf "%b" "\nStable selected. Switching now..\n" ;;
+ 2) printf "%b" "\nUnstable selected. Switching now..\n" ;;
+ 3) printf "%b" "\nExit selected.. Exiting now\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+clear
+
+if [ "$typecheck95" = "1" ]; then
+sudo rm /etc/pacman.conf
+sudo cp /opt/pacman-stable.conf /etc/pacman.conf
+sudo pacman -Syy
+clear
+printf "%b" "\nSwitched to stable repos successfully...\n\n"
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck95
+printf "%b" "\nYou typed $endcheck95...\n\n"
+clear
+printf "%b" "\nExiting the program now...\n\n"
+sleep 5
+fi
+if [ "$typecheck95" = "2" ]; then
+sudo rm /etc/pacman.conf
+sudo cp /opt/pacman-unstable.conf /etc/pacman.conf
+sudo pacman -Syy
+clear
+printf "%b" "\nSwitched to unstable repos successfully...\n\n"
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck95
+printf "%b" "\nYou typed $endcheck95...\n\n"
+clear
+printf "%b" "\nExiting the program now...\n\n"
+sleep 5
+fi
+if [ "$typecheck95" = "3" ]; then
+clear
+printf "%b" "\nExiting the program now...\n\n"
+sleep 5
+fi
+if [ "$typecheck95" != "1" ] && [ "$typecheck95" != "2" ] && [ "$typecheck95" != "3" ]; then
+typecheck95=3
+clear
+printf "%b" "\nExiting the program now...\n\n"
+sleep 5
+fi
+done
+
+fi
+
+if [ "$typecheck99" = "6" ]; then
+clear
+printf "%b" "\nExited Coffee Manager successfully...\n\n"
+typecheck99=6
+sleep 5
+fi
+if [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ]  && [ "$typecheck99" != "4" ]  && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ]; then
+typecheck99=6
 clear
 printf "%b" "\nExited Coffee Manager successfully...\n\n"
 sleep 5

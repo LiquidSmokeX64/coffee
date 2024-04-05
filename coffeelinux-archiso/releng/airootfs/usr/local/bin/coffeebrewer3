@@ -1267,6 +1267,8 @@ arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
 rm /usr/local/bin/coffee-barista
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
 chmod 755 /usr/local/bin/coffee-barista
+rm /opt/coffee-updater
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater -P /opt/
 clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
@@ -1561,7 +1563,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.1.4)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Yeti' (25.1.5)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2151,18 +2153,10 @@ if [ "$native1" = "yes" ]; then
    cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
    arch-chroot /mnt systemctl enable coffee-keeper.service
    cp /opt/issue /mnt/etc/issue
-   cp /opt/pacman-switcher /mnt/usr/local/bin/
-   arch-chroot /mnt chmod 755 /usr/local/bin/pacman-switcher
    cp /opt/coffee-updater /mnt/usr/local/bin/
    arch-chroot /mnt chmod 755 /usr/local/bin/coffee-updater
-   cp /opt/pacman-switcher.desktop /mnt/usr/share/applications/
-   arch-chroot /mnt chmod 755 /usr/share/applications/pacman-switcher.desktop
    cp /opt/coffee-updater.desktop /mnt/usr/share/applications/
    arch-chroot /mnt chmod 755 /usr/share/applications/coffee-updater.desktop
-   cp /opt/coffee-maker /mnt/usr/local/bin/
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffee-maker
-   cp /opt/coffee-maker.desktop /mnt/usr/share/applications/
-   arch-chroot /mnt chmod 755 /usr/share/applications/coffee-maker.desktop
    if [ "$steamon00" = "yes" ]; then
    rm /mnt/usr/share/applications/steam-native.desktop
    fi
