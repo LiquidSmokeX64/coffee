@@ -71,10 +71,8 @@ rm /opt/lsb-release
 rm /etc/os-release
 rm /etc/lsb-release
 rm /opt/coffee-injector
-rm /opt/config
 rm /usr/local/bin/coffee-barista
 rm /usr/local/bin/coffeebrewer3
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/config -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /opt/

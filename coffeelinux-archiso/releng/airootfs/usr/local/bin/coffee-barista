@@ -149,13 +149,9 @@ rm /opt/os-release
 rm /opt/lsb-release
 rm /etc/os-release
 rm /etc/lsb-release
-rm /opt/config
 rm /opt/coffee-keeper
 rm /opt/coffee-injector
 rm /usr/local/bin/coffeebrewer3
-rm /usr/local/bin/coffeebrewer-custom
-rm /usr/local/bin/coffeebrewer-gnome
-rm /usr/local/bin/coffeebrewer-kde
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer3 -P /usr/local/bin/
 clear
@@ -178,7 +174,7 @@ clear
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Iso ####\n"
-printf "%b" "\n########## Barista v.1.1.0 ##########\n"
+printf "%b" "\n########## Barista v.1.1.1 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Install CoffeeLinux\n"
 printf "%b" "\n2 - Exit\n"
