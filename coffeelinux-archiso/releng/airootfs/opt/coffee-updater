@@ -31,7 +31,7 @@ if [ "$typecheck99" = "1" ]; then
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ] && [ "$typecheck00" != "4" ]; do
 clear
-printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.0 ####\n"
+printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.1 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 4)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
 printf "%b" "\n2 - AUR updates\n"
@@ -97,7 +97,7 @@ if [ "$typecheck99" = "2" ]; then
 #Main Menu
 while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; do
 clear
-printf "%b" "\n#### Coffee App Manager Tool 1.1.0 ####\n"
+printf "%b" "\n#### Coffee App Manager Tool 1.1.1 ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 4)\n"
 printf "%b" "\n1 - Install a program\n"
 printf "%b" "\n2 - Install an AUR program\n"
@@ -279,7 +279,7 @@ sleep 5
 #Main Menu
 while [ "$typecheck08" != "1" ] && [ "$typecheck08" != "2" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.1.0 ####\n"
+printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.1.1 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Create a CoffeeLinux iso\n"
@@ -337,7 +337,7 @@ sleep 5
 #Main Menu
 while [ "$typecheck95" != "1" ] && [ "$typecheck95" != "2" ] && [ "$typecheck95" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Pacman Switcher Tool 1.1.0 ####\n"
+printf "%b" "\n#### Coffee Linux Pacman Switcher Tool 1.1.1 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat type of pacman repo do you want? (Default: 3)\n"
 printf "%b" "\n1 - Stable\n"
