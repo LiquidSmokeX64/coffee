@@ -15,8 +15,12 @@ rm /opt/yay-12.2.0-1-x86_64.pkg.tar.zst
 rm /opt/yay-12.3.1-3-x86_64.pkg.tar.zst
 rm /opt/yay-12.3.3-3-x86_64.pkg.tar.zst
 rm /opt/yay-12.3.4-1-x86_64.pkg.tar.zst
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.3.4-1-x86_64.pkg.tar.zst -P /opt/
-pacman -U --noconfirm /opt/yay-12.3.3-3-x86_64.pkg.tar.zst
+rm /opt/yay-12.3.5-1-x86_64.pkg.tar.zst
+rm /opt/yay-debug-12.3.5-1-x86_64.pkg.tar.zst
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.3.5-1-x86_64.pkg.tar.zst -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/yay-debug-12.3.5-1-x86_64.pkg.tar.zst -P /opt/
+pacman -U --noconfirm /opt/yay-12.3.5-1-x86_64.pkg.tar.zst
+pacman -U --noconfirm /opt/yay-debug-12.3.5-1-x86_64.pkg.tar.zst
 #27.7.4 Patch
 rm /opt/pacman-stable.conf
 rm /opt/pacman-unstable.conf
