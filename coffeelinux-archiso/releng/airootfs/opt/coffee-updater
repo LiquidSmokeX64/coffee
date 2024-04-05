@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #Main Menu
-while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ; do
+while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ]; do
 clear
 printf "%b" "\n#### Coffee Linux Manager Tool 1.1.1 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
