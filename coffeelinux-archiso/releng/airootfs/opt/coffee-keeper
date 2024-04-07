@@ -26,7 +26,6 @@ rm /opt/pacman-stable.conf
 rm /opt/pacman-unstable.conf
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf -P /opt/
-pacman -Rdd pamac-aur
 #27.7.9 Patch
 rm /etc/issue
 rm /opt/issue
