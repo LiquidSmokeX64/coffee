@@ -6,6 +6,10 @@ pacman -Syu --noconfirm
 #25.1.8 Patch
 pacman -Rdd lib32-alsa-lib lib32-alsa-plugins pipewire-jack lib32-pipewire-jack
 #Latest Coffee Linux Raw Updates
+rm /opt/backgrounds/coffee/adwaita-l.jxl
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl -P /opt/backgrounds/coffee/
+rm /opt/backgrounds/coffee/adwaita-d.jxl
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl -P /opt/backgrounds/coffee/
 pacman -Sy --noconfirm lib32-amdvlk
 rm /opt/grub-intel/grub
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-intel/grub -P /opt/grub-intel/
