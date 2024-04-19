@@ -8,9 +8,9 @@ coffeeapps="wget fwupd fwupd-efi glfw-wayland npm boost-libs gtk-update-icon-cac
 
 javaapps="jre-openjdk"
 
-gnomeapps="at-spi2-core phonon-qt5-gstreamer qt6 qt6-multimedia-ffmpeg gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome libsecret"
+gnomeapps="at-spi2-core phonon-qt5-gstreamer qt6 qt6-multimedia-ffmpeg gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside6 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome libsecret"
 
-kdeapps="pyside6 phonon-qt5-gstreamer libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside2 cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
+kdeapps="pyside6 phonon-qt5-gstreamer libpulse noto-fonts noto-fonts-emoji gnu-free-fonts cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
 
 cinnamonapps="phonon-qt5-gstreamer qt6 libpulse qt6-multimedia-ffmpeg gnu-free-fonts pyside6 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa cinnamon cinnamon-translations file-roller geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-console gnome-system-monitor gtk4 lightdm lightdm-slick-greeter xdg-desktop-portal-gnome gnome-text-editor"
 
@@ -1196,6 +1196,11 @@ clear
 while [ "$command2finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
+rm /mnt/etc/locale.gen
+rm /mnt/etc/locale.conf
+rm /mnt/etc/vconsole.conf
+rm /mnt/etc/sudoers.d/wheel
+
 arch-chroot /mnt /bin/bash <<"EOT"
 printf "%b" "\nSetting Locale\n"
 ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
@@ -1306,6 +1311,9 @@ arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
 rm /usr/local/bin/coffee-barista
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
 chmod 755 /usr/local/bin/coffee-barista
+rm /opt/coffee-updater
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater -P /opt/
+
 clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
@@ -1342,6 +1350,8 @@ arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
 rm /usr/local/bin/coffee-barista
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
 chmod 755 /usr/local/bin/coffee-barista
+rm /opt/coffee-updater
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater -P /opt/
 clear
 sleep 5
 printf "%b" "\nCopying yay package..\n"
@@ -1563,7 +1573,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.1.8)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Yeti' (25.1.9)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /amd-ucode.img\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
