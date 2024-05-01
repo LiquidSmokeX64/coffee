@@ -130,7 +130,3 @@ wvdial
 xfsprogs
 xl2tpd
 zsh
-nvidia-dkms
-nvidia-utils
-lib32-nvidia-utils
-nvidia-settings
