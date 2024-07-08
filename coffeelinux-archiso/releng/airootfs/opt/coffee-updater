@@ -401,9 +401,9 @@ if [ "$typecheck99" = "6" ]; then
 clear
 sleep 5
 #Main Menu
-while [ "$typecheck95" != "1" ] && [ "$typecheck95" != "2" ] && [ "$typecheck95" != "3" ]; do
+while [ "$typecheck67" != "1" ] && [ "$typecheck67" != "2" ] && [ "$typecheck67" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Steam Library Fixer Tool 1.1.1 ####\n"
+printf "%b" "\n#### Coffee Linux Steam Library Fixer Tool 1.1.2 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\n#### FIRE UP ANY GAME VIA PROTON FIRST ####\n"
 printf "%b" "\nHave you mounted the filesystem with your Library on it? (Default: 3)\n"
