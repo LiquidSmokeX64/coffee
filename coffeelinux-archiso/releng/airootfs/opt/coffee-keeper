@@ -110,8 +110,6 @@ rm /usr/local/bin/coffeebrewer-gnome
 rm /usr/local/bin/coffeebrewer-kde
 rm /lib/systemd/system/coffee-wallpapers.service
 rm /lib/systemd/system/coffee-updater.service
-rm -R /usr/share/wayland-sessions/gnome*
-rm -R /usr/share/xsessions/gnome*
 rm /usr/share/applications/steam-native.desktop
 rm /usr/share/applications/stoken-gui-small.desktop
 #Fix the wallpapers if needed

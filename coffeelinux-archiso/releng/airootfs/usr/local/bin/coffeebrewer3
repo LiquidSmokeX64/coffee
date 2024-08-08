@@ -8,7 +8,7 @@ coffeeapps="pavucontrol wget fwupd fwupd-efi glfw-wayland npm boost-libs gtk-upd
 
 javaapps="jre-openjdk"
 
-gnomeapps="at-spi2-core phonon-qt5-gstreamer qt6 qt6-multimedia-ffmpeg gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside6 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome libsecret"
+gnomeapps="gnome-shell-extension-arc-menu gnome-shell-extension-dash-to-panel at-spi2-core phonon-qt5-gstreamer qt6 qt6-multimedia-ffmpeg gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside6 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome libsecret"
 
 kdeapps="pyside6 phonon-qt5-gstreamer libpulse noto-fonts noto-fonts-emoji gnu-free-fonts cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
 
@@ -1573,7 +1573,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.2.2)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Yeti' (25.3.0)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -1654,7 +1654,7 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected.\nInstalling GPU Drivers first.\n"
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-dkms lib32-nvidia-utils opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader
+arch-chroot /mnt pacman -Sy --noconfirm nvidia-open-dkms nvidia-prime lib32-nvidia-utils opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader
  if [ "$grub0" = "false" ]; then
   printf "%b" "\noptions root=LABEL=$drivename0 rw nvidia_drm.modeset=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf\n" >> /mnt/boot/loader/entries/arch.conf
  fi
@@ -2001,8 +2001,8 @@ if [ "$questionspassed" = "yes" ]; then
      clear
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
      clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
-     clear
+     #printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
+     #clear
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-gtk4-desktop-icons-ng
      clear
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
@@ -2011,12 +2011,12 @@ if [ "$questionspassed" = "yes" ]; then
      clear
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
      clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-session
-     clear
+     #printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-session
+     #clear
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
      clear
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
-     clear
+     #clear
      if [ "$branchpass00" = "stable" ]; then
      arch-chroot /mnt pacman -Rdd --noconfirm mutter
      clear
@@ -2031,8 +2031,8 @@ if [ "$questionspassed" = "yes" ]; then
      printf "%b" "3\ny\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
      clear
      fi
-     rm -r /mnt/usr/share/wayland-sessions/gnome*
-     rm -r /mnt/usr/share/xsessions/gnome*
+     #rm -r /mnt/usr/share/wayland-sessions/gnome*
+     #rm -r /mnt/usr/share/xsessions/gnome*
   fi
   if [ "$desktop0" = "kde" ]; then
      clear
