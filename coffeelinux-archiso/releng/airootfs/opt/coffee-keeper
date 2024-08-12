@@ -4,9 +4,9 @@ sleep 10
 #Update the system first
 pacman -Syu --noconfirm
 #25.1.12
-printf "%b" "1\n" | yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xone-dkms-git
+#printf "%b" "1\n" | yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xone-dkms-git
 #25.1.8 Patch
-pacman -Rdd lib32-alsa-lib lib32-alsa-plugins pipewire-jack lib32-pipewire-jack
+#pacman -Rdd lib32-alsa-lib lib32-alsa-plugins pipewire-jack lib32-pipewire-jack
 #Latest Coffee Linux Raw Updates
 rm /opt/backgrounds/coffee/adwaita-l.jpg
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg -P /opt/backgrounds/coffee/
