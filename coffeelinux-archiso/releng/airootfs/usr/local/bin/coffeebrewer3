@@ -1573,7 +1573,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.3.1)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Yeti' (25.3.2)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -2079,6 +2079,9 @@ done
 }
 
 services_starter(){
+
+arch-chroot /mnt pacman -Rdd --noconfirm jack2
+arch-chroot /mnt pacman -Sy --noconfirm pipewire-jack lib32-pipewire-jack
 
 arch-chroot /mnt pacman -Sy --noconfirm apparmor
 clear
