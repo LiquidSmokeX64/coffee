@@ -3,6 +3,10 @@
 sleep 30
 #Update the system first
 pacman -Syu --noconfirm
+#25.4.0
+pacman -Rdd --noconfirm phonon-qt5-gstreamer
+pacman -Sy --noconfirm phonon-qt6-vlc phonon-qt6
+pacman -Syu --noconfirm
 #25.3.2
 pacman -Rdd --noconfirm jack2
 pacman -Sy --noconfirm pipewire-jack lib32-pipewire-jack
