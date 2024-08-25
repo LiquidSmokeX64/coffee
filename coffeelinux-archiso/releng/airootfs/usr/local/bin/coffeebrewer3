@@ -8,7 +8,7 @@ coffeeapps="pavucontrol wget fwupd fwupd-efi glfw-wayland npm boost-libs gtk-upd
 
 javaapps="jre-openjdk"
 
-kdeapps="pyside6 phonon-qt5-gstreamer libpulse noto-fonts noto-fonts-emoji gnu-free-fonts cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
+kdeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt6 pyside6 libpulse noto-fonts noto-fonts-emoji gnu-free-fonts cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
 
 questions(){
 
@@ -457,7 +457,7 @@ cp /etc/pacman.conf /mnt/etc/pacman.conf
 printf "%b" "\nSet Root Password\n"
 printf "%b" "$userpass1\n$userpass1\n" | arch-chroot /mnt passwd
 printf "%b" "Adding User Account\n"
-arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01
+arch-chroot /mnt useradd -m -G wheel,video,users,input,tty $user01
 printf "%b" "\nSet User Password\n"
 printf "%b" "$userpass0\n$userpass0\n" | arch-chroot /mnt passwd $user01
 printf "%b" "$hostname0\n" >> /mnt/etc/hostname
