@@ -8,7 +8,7 @@ coffeeapps="pavucontrol wget fwupd fwupd-efi glfw-wayland npm boost-libs gtk-upd
 
 javaapps="jre-openjdk"
 
-kdeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt6 pyside6 libpulse noto-fonts noto-fonts-emoji gnu-free-fonts cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
+kdeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 pyside6 libpulse noto-fonts noto-fonts-emoji gnu-free-fonts cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
 
 questions(){
 
@@ -492,13 +492,15 @@ printf "%b" "\nCopying yay package..\n"
 sleep 5
 rm /opt/yay-12.3.5-1-x86_64.pkg.tar.zst
 rm /opt/yay-debug-12.3.5-1-x86_64.pkg.tar.zst
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.3.5-1-x86_64.pkg.tar.zst -P /opt/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/yay-debug-12.3.5-1-x86_64.pkg.tar.zst -P /opt/
-cp /opt/yay-12.3.5-1-x86_64.pkg.tar.zst /mnt/opt/
-cp /opt/yay-debug-12.3.5-1-x86_64.pkg.tar.zst /mnt/opt/
+rm /opt/yay-12.4.1-1-x86_64.pkg.tar.zst
+rm /opt/yay-debug-12.4.1-1-x86_64.pkg.tar.zst
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.4.1-1-x86_64.pkg.tar.zst -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/yay-debug-12.4.1-1-x86_64.pkg.tar.zst -P /opt/
+cp /opt/yay-12.4.1-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-debug-12.4.1-1-x86_64.pkg.tar.zst /mnt/opt/
 printf "%b" "\nInstalling yay.\n"
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.3.5-1-x86_64.pkg.tar.zst
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-debug-12.3.5-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.4.1-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-debug-12.4.1-1-x86_64.pkg.tar.zst
 sleep 2
 printf "%b" "\nInstalled yay successfully.\n"
 clear
