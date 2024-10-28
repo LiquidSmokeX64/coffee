@@ -980,7 +980,7 @@ while [ "$grubcheck" != "1" ] && [ "$grubcheck" != "2" ] && [ "$grubcheck" != "3
 printf "%b" "\nWould you like GRUB or SystemD-Bootloader?\nGRUB is more compatible with VMs. (Default: 1)\n"
 printf "%b" "\n1 - GRUB UEFI version\n"
 printf "%b" "\n2 - GRUB BIOS/MBR version\n"
-printf "%b" "\n3 - SystemD-Bootloader UEFI-Only (secure-boot must use this option.)\n"
+printf "%b" "\n3 - SystemD-Bootloader (UEFI-Only)\n"
 read -r grubcheck
 case $grubcheck in
   1) printf "%b" "\nPerfect.\n" ;;
@@ -992,62 +992,14 @@ esac
 if [ "$grubcheck" = "1" ]; then
 grub0="true"
 questionspassed="yes"
-sbpass0=no
 fi
 if [ "$grubcheck" = "2" ]; then
 grub0="true2"
 questionspassed="yes"
-sbpass0=no
 fi
 if [ "$grubcheck" = "3" ]; then
 grub0="false"
 questionspassed="yes"
-
-while [ "$sbpasscheck" != "1" ] && [ "$sbpasscheck" != "2" ]; do
-printf "%b" "\nWould you like to enable Secure-Boot in the OS? (Default: 2)\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r sbpasscheck
-case $sbpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$sbpasscheck" = "1" ]; then
-sbpass0=yes
-fi
-if [ "$sbpasscheck" = "2" ]; then
-sbpass0=no
-fi
-if [ "$sbpasscheck" != "2" ] && [ "$sbpasscheck" != "1" ]; then
-sbpasscheck=2
-sbpass0=no
-fi
-done
-
-#
-if [ "$sbpass0" = "no" ]; then
-printf "%b" "\nNo SB, skipping this part.\n"
-fi
-if [ "$sbpass0" = "yes" ]; then
-while [ "$uefipasscheck" != "1" ]; do
-printf "%b" "\nSet your UEFI/MOK Secure-Boot Password.\n"
-read -r uefipass00
-printf "%b" "\n$uefipass00. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r uefipasscheck
-case $uefipasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-done
-fi
-
-if [ "$uefipasscheck" = "1" ]; then
-uefipass0=$uefipass00
-fi
 
 clear
 
@@ -1056,7 +1008,6 @@ if [ "$grubcheck" != "1" ] && [ "$grubcheck" != "2" ] && [ "$grubcheck" != "3" ]
 grubcheck=1
 grub0=true
 questionspassed=yes
-sbpass0=no
 fi
 done
 
@@ -1554,7 +1505,7 @@ EOT
 printf "%b" "default arch.conf\ntimeout 5\nconsole-mode max\neditor no\n" >> /mnt/boot/loader/loader.conf
 
 if [ "$native1" = "yes" ]; then
-printf "%b" "title Coffee-Linux 'Yeti' (25.4.0)\n" >> /mnt/boot/loader/entries/arch.conf
+printf "%b" "title Coffee-Linux 'Zeta' (26.1.3)\n" >> /mnt/boot/loader/entries/arch.conf
 fi
 
 printf "%b" "linux /vmlinuz-linux\ninitrd /initramfs-linux.img\n" >> /mnt/boot/loader/entries/arch.conf
@@ -1569,60 +1520,6 @@ command8finished="0"
 fi
 done
 command8finished="0"
-
-}
-
-secureboot_install (){
-
-clear
-
-while [ "$command10finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$sbpass0" = "yes" ]; then
-printf "%b" "Generating CoffeeLinux Secure-Boot keys for your machine\n"
-arch-chroot /mnt pacman -Sy --noconfirm efitools mokutil sbsigntools apparmor sbctl
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y shim-signed
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y preloader-signed
-clear
-printf "%b" "$uefipass0\n$uefipass0\n" | arch-chroot /mnt mokutil --password
-printf "%b" "$uefipass0\n$uefipass0\n" | arch-chroot /mnt mokutil --reset
-printf "%b" "$uefipass0\n$uefipass0\n" | arch-chroot /mnt mokutil --password
-
-arch-chroot /mnt cp /usr/share/preloader-signed/PreLoader.efi /boot/EFI/systemd
-arch-chroot /mnt cp /usr/share/preloader-signed/HashTool.efi /boot/EFI/systemd
-arch-chroot /mnt cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/loader.efi
-arch-chroot /mnt efibootmgr --unicode --disk "$drive0" --part 1 --create --label "PreLoader" --loader /EFI/systemd/PreLoader.efi
-
-arch-chroot /mnt mv /boot/EFI/BOOT/BOOTx64.EFI /boot/EFI/BOOT/grubx64.efi
-arch-chroot /mnt cp /usr/share/shim-signed/shimx64.efi /boot/EFI/BOOT/BOOTx64.EFI
-arch-chroot /mnt cp /usr/share/shim-signed/mmx64.efi /boot/EFI/BOOT/
-arch-chroot /mnt efibootmgr --unicode --disk "$drive0" --part 1 --create --label "Shim" --loader /EFI/BOOT/BOOTx64.EFI
-
-arch-chroot /mnt openssl req -newkey rsa:4096 -nodes -keyout MOK.key -new -x509 -sha256 -days 3650 -subj "/CN=my Machine Owner Key/" -out MOK.crt
-arch-chroot /mnt openssl x509 -outform DER -in MOK.crt -out MOK.cer
-arch-chroot /mnt sbsign --key MOK.key --cert MOK.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
-arch-chroot /mnt sbsign --key MOK.key --cert MOK.crt --output /boot/EFI/BOOT/grubx64.efi /boot/EFI/BOOT/grubx64.efi
-cp /opt/999-sign_kernel_for_secureboot.hook /mnt/etc/pacman.d/hooks/999-sign_kernel_for_secureboot.hook
-arch-chroot /mnt cp MOK.cer /boot/
-arch-chroot /mnt cp MOK.crt /boot/
-arch-chroot /mnt cp MOK.key /boot/
-arch-chroot /mnt pacman -Sy --noconfirm
-arch-chroot /mnt systemctl enable systemd-boot-update.service
-
-clear
-
-fi
-
-
-command10finished="1"
-else
-command10finished="0"
-fi
-done
-command10finished="0"
 
 }
 
@@ -2015,16 +1912,6 @@ if [ "$questionspassed" = "yes" ]; then
      #rm -r /mnt/usr/share/wayland-sessions/gnome*
      #rm -r /mnt/usr/share/xsessions/gnome*
   fi
-  if [ "$desktop0" = "kde" ]; then
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y systemd-kcm
-     clear
-     if [ "$grub0" = "true" ]; then
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y kcm-grub2
-     clear
-     fi
-   fi
    if [ "$desktop0" = "cinnamon" ]; then
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
      clear
@@ -2074,7 +1961,6 @@ arch-chroot /mnt systemctl enable bluetooth.service
 arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
 
 }
-
 
 homedir_fix (){
 
@@ -2239,7 +2125,6 @@ set_passwords
 desktop_install
 coffee_install
 bootloader_install
-secureboot_install
 gpu_install
 java_install
 vmware_install
