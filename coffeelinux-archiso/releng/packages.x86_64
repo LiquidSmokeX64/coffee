@@ -94,7 +94,6 @@ pv
 qemu-guest-agent
 refind
 reflector
-reiserfsprogs
 rp-pppoe
 rsync
 rxvt-unicode-terminfo
@@ -120,7 +119,6 @@ usbmuxd
 usbutils
 virtualbox-guest-utils-nox
 vpnc
-wget
 wireless-regdb
 wireless_tools
 wpa_supplicant
@@ -129,3 +127,5 @@ xfsprogs
 xl2tpd
 zsh
 archlinux-keyring
+iptables
+wget
