@@ -5,7 +5,7 @@ while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99"
 clear
 printf "%b" "\n#### Coffee Linux Manager Tool 1.1.4 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
-printf "%b" "\nWhat would you like to do? (Default: 6)\n"
+printf "%b" "\nWhat would you like to do? (Default: 7)\n"
 printf "%b" "\n1 - System Updates\n"
 printf "%b" "\n2 - Application Management\n"
 printf "%b" "\n3 - System Info\n"
