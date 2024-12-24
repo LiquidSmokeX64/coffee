@@ -76,10 +76,6 @@ clear
 printf "%b" "\nExited System Updater successfully...\n\n"
 sleep 5
 typecheck00=3
-printf "%b" "\n#######Press enter to continue.#######.\n"
-read -r endcheck102
-printf "%b" "\nYou typed $endcheck102...\n\n"
-clear
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; then
 typecheck00=3
@@ -264,22 +260,14 @@ fi
 if [ "$typecheck01" = "4" ]; then
 clear
 printf "%b" "\nExited App Manager successfully...\n\n"
-printf "%b" "\n#######Press enter to continue.#######.\n"
-read -r endcheck107
-printf "%b" "\nYou typed $endcheck107...\n\n"
-clear
 sleep 5
 typecheck01=4
 #typecheck99=6
 fi
 if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; then
-typecheck01=3
+typecheck01=4
 clear
 printf "%b" "\nExited App Manager successfully...\n\n"
-printf "%b" "\n#######Press enter to continue.#######.\n"
-read -r endcheck108
-printf "%b" "\nYou typed $endcheck108...\n\n"
-clear
 sleep 5
 fi
 done
