@@ -3,18 +3,8 @@
 sleep 20
 #Update the system first
 pacman -Syu --noconfirm
-#25.4.0
-#pacman -Rdd --noconfirm phonon-qt5-gstreamer
-#pacman -Sy --noconfirm phonon-qt6-vlc phonon-qt6
-pacman -Syu --noconfirm
-#25.3.2
-#pacman -Rdd --noconfirm jack2
-#pacman -Sy --noconfirm pipewire-jack lib32-pipewire-jack
-#25.1.12
-#printf "%b" "1\n" | yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xone-dkms-git
-#25.1.8 Patch
-#pacman -Rdd lib32-alsa-lib lib32-alsa-plugins pipewire-jack lib32-pipewire-jack
-#Latest Coffee Linux Raw Updates
+#Coffee Linux Maintenence
+#Replace CoffeeLinux Files
 rm /opt/backgrounds/coffee/adwaita-l.jpg
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg -P /opt/backgrounds/coffee/
 rm /opt/backgrounds/coffee/adwaita-d.jpg
@@ -23,44 +13,32 @@ rm /opt/backgrounds/coffee/adwaita-l.jxl
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl -P /opt/backgrounds/coffee/
 rm /opt/backgrounds/coffee/adwaita-d.jxl
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl -P /opt/backgrounds/coffee/
-pacman -Sy --noconfirm lib32-amdvlk
 rm /opt/grub-intel/grub
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-intel/grub -P /opt/grub-intel/
 rm /opt/grub-nvidia/grub
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-nvidia/grub -P /opt/grub-nvidia/
 rm /opt/grub-amd/grub
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-amd/grub -P /opt/grub-amd/
-#27.7.4 Patch
 rm /opt/pacman-stable.conf
 rm /opt/pacman-unstable.conf
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf -P /opt/
-#27.7.9 Patch
 rm /etc/issue
 rm /opt/issue
 rm -R /opt/issue.*
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/issue -P /opt/
 cp /opt/issue /etc/
-#24.8.1 Patch (Custom Apps Part 1)
 rm /usr/local/bin/coffee-updater
 rm /opt/coffee-updater
 rm -R /opt/coffee-updater.*
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater -P /opt/
 cp /opt/coffee-updater /usr/local/bin/
 chmod 755 /usr/local/bin/coffee-updater
-#24.8.8 Patch (Custom Apps Part 2)
 rm /opt/coffee-updater.desktop
 rm /usr/share/applications/coffee-updater.desktop
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater.desktop -P /opt/
 cp /opt/coffee-updater.desktop /usr/share/applications/
 chmod 755 /usr/share/applications/coffee-updater.desktop
-rm /opt/pacman-switcher.desktop
-rm /usr/share/applications/pacman-switcher.desktop
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-switcher.desktop -P /opt/
-cp /opt/pacman-switcher.desktop /usr/share/applications/
-chmod 755 /usr/share/applications/pacman-switcher.desktop
-#24.8.10 Patch (coffee-maker app)
-#Replace CoffeeLinux Files
 rm /opt/os-release
 rm /opt/lsb-release
 rm /etc/os-release
@@ -83,29 +61,8 @@ pacman -Rdd --noconfirm blueman
 pacman -Rdd --noconfirm kmix
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
-pacman -Rdd --noconfirm plasma-wayland-session
-#Disable unwanted services
-systemctl disable --now coffee-wallpapers.service
-systemctl disable --now coffee-updater.service
 #Remove any unwanted files
-rm /usr/local/bin/pacman-switcher
-rm /opt/pacman-switcher
-rm /usr/share/applications/pacman-switcher.desktop
-rm /opt/pacman-switcher.desktop
-rm /usr/local/bin/coffee-maker
-rm /opt/coffee-maker
-rm /opt/coffee-maker.desktop
-rm /usr/share/applications/coffee-maker.desktop
-rm /opt/coffee-maker.desktop
-rm /opt/coffee-updater
-rm /opt/wallpaper-updater
-rm /opt/coffee-wallpapers.service
 rm /opt/coffee-updater.service
-rm /usr/local/bin/coffeebrewer-custom
-rm /usr/local/bin/coffeebrewer-mainmenu
-rm /usr/local/bin/coffeebrewer-gnome
-rm /usr/local/bin/coffeebrewer-kde
-rm /lib/systemd/system/coffee-wallpapers.service
 rm /lib/systemd/system/coffee-updater.service
 rm /usr/share/applications/steam-native.desktop
 rm /usr/share/applications/stoken-gui-small.desktop
