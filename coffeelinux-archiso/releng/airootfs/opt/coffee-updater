@@ -3,7 +3,7 @@
 #Main Menu
 while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Manager Tool 1.1.2 ####\n"
+printf "%b" "\n#### Coffee Linux Manager Tool 1.1.3 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 6)\n"
 printf "%b" "\n1 - System Updates\n"
@@ -31,21 +31,19 @@ clear
 if [ "$typecheck99" = "1" ]; then
 
 #Main Menu
-while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ] && [ "$typecheck00" != "4" ]; do
+while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.1 ####\n"
+printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.2 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 4)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
-printf "%b" "\n2 - AUR updates\n"
-printf "%b" "\n3 - Coffee Linux OS update\n"
-printf "%b" "\n4 - Exit App Manager.\n"
+printf "%b" "\n2 - Coffee Linux OS update\n"
+printf "%b" "\n3 - Exit App Manager.\n"
 
 read -r typecheck00
 case $typecheck00 in
  1) printf "%b" "\nOfficial updates selected. Running now..\n" ;;
- 2) printf "%b" "\nAUR updates selected. Running now...\n" ;;
- 3) printf "%b" "\nCoffeeLinux OS update selected. Running now...\n" ;;
- 4) printf "%b" "\nExit selected. exiting now...\n" ;;
+ 2) printf "%b" "\nCoffeeLinux OS update selected. Running now...\n" ;;
+ 3) printf "%b" "\nExit selected. exiting now...\n" ;;
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
 
@@ -55,37 +53,27 @@ if [ "$typecheck00" = "1" ]; then
 sudo pacman -Syu
 clear
 printf "%b" "\nOfficial Arch Linux updates finished..\n\n"
-typecheck00=4
+typecheck00=3
 #typecheck99=6
 sleep 5
 fi
 if [ "$typecheck00" = "2" ]; then
-yay -Syu
+sudo bash /opt/coffee-injector
 clear
-yay -a
-clear
-printf "%b" "\nAUR updates finished...\n\n"
-typecheck00=4
+printf "%b" "\nCoffeeLinux OS update finished...\n\n"
+typecheck00=3
 #typecheck99=6
 sleep 5
 fi
 if [ "$typecheck00" = "3" ]; then
-sudo bash /opt/coffee-injector
-clear
-printf "%b" "\nCoffeeLinux OS update finished...\n\n"
-typecheck00=4
-#typecheck99=6
-sleep 5
-fi
-if [ "$typecheck00" = "4" ]; then
 clear
 printf "%b" "\nExited System Updater successfully...\n\n"
 sleep 5
-typecheck00=4
+typecheck00=3
 #typecheck99=6
 fi
-if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ] && [ "$typecheck00" != "4" ]; then
-typecheck00=4
+if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; then
+typecheck00=3
 #typecheck99=6
 clear
 printf "%b" "\nExited System Updater successfully...\n\n"
@@ -487,3 +475,5 @@ printf "%b" "\nExited Coffee Manager successfully...\n\n"
 sleep 5
 fi
 done
+
+kill -9 $PPID
