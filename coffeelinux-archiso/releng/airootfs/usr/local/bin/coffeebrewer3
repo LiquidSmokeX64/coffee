@@ -2046,7 +2046,6 @@ coffee_install
 bootloader_install
 gpu_install
 java_install
-vmware_install
 browser_install
 office_install
 steam_install
@@ -2063,6 +2062,10 @@ homedir_fix
  fi
 success_check
 printf "%b" "Excellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck00
+printf "%b" "\nYou typed $endcheck00...\n\n"
+clear
 umount -R /mnt
 reboot
 
