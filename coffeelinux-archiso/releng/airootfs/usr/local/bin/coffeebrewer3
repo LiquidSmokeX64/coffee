@@ -50,7 +50,7 @@ clear
 
 while [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; do
 
-printf "%b" "\nWould you like to set your username? (Default: 2)\n"
+printf "%b" "\nWould you like to set your username? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No\n"
 read -r usercheck02
@@ -68,7 +68,7 @@ printf "%b" "\nSet your Username.\n"
 read -r user00
 printf "%b" "\n$user00. Is this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (Username will be 'default')\n"
 read -r usercheck
 case $usercheck in
   1) printf "%b" "\nPerfect\n" ;;
@@ -83,7 +83,7 @@ fi
 if [ "$usercheck02" = "2" ]; then
 
 usercheck=1
-user00=defaultuser
+user00=default
 user01=$user00
 
 if [ "$usercheck" = "1" ]; then
@@ -92,10 +92,6 @@ fi
 
 fi
 if [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; then
-
-usercheck02=2
-usercheck=1
-user00=defaultuser
 
 if [ "$usercheck" = "1" ]; then
 user01=$user00
@@ -109,9 +105,9 @@ clear
 
 while [ "$userpasscheck00" != "1" ] && [ "$userpasscheck00" != "2" ]; do
 
-printf "%b" "\nWould you like to set your user password? (Default: 2)\n"
+printf "%b" "\nWould you like to set your user password? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
+printf "%b" "\n2 - No (default password will be 'coffee')\n"
 read -r userpasscheck00
 case $userpasscheck00 in
   1) printf "%b" "\nPerfect\n" ;;
@@ -151,10 +147,6 @@ fi
 fi
 if [ "$userpasscheck00" != "1" ] && [ "$userpasscheck00" != "2" ]; then
 
-userpasscheck00=2
-userpass00=coffee
-userpasscheck=1
-
 if [ "$userpasscheck" = "1" ]; then
 userpass0=$userpass00
 fi
@@ -167,9 +159,9 @@ clear
 
 while [ "$rootpasscheck00" != "1" ] && [ "$rootpasscheck00" != "2" ]; do
 
-printf "%b" "\nWould you like to set your root password? (Default: 2)\n"
+printf "%b" "\nWould you like to set your root password? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
+printf "%b" "\n2 - No (Root password will be 'coffee')\n"
 read -r rootpasscheck00
 case $rootpasscheck00 in
   1) printf "%b" "\nPerfect\n" ;;
@@ -209,10 +201,6 @@ fi
 fi
 if [ "$rootpasscheck00" != "1" ] && [ "$rootpasscheck00" != "2" ]; then
 
-rootpasscheck00=2
-userpass01=coffee
-rootpasscheck=1
-
 if [ "$rootpasscheck" = "1" ]; then
 userpass1=$userpass01
 fi
@@ -224,9 +212,9 @@ clear
 
 while [ "$namepasscheck00" != "1" ] && [ "$namepasscheck00" != "2" ]; do
 
-printf "%b" "\nWould you like to set your PC Name? (Default: 2)\n"
+printf "%b" "\nWould you like to set your PC Name? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
+printf "%b" "\n2 - No (Computer name will be 'coffeelinux')\n"
 read -r namepasscheck00
 case $namepasscheck00 in
   1) printf "%b" "\nPerfect\n" ;;
@@ -266,10 +254,6 @@ fi
 fi
 if [ "$namepasscheck00" != "1" ] && [ "$namepasscheck00" != "2" ]; then
 
-namepasscheck00=2
-name00=coffeelinux
-namepasscheck=1
-
 if [ "$namepasscheck" = "1" ]; then
 name0=$name00
 fi
@@ -282,9 +266,9 @@ clear
 
 while [ "$name2passcheck02" != "1" ] && [ "$name2passcheck02" != "2" ]; do
 
-printf "%b" "\nWould you like to set your Hard Drive Label? (Default: 2)\n"
+printf "%b" "\nWould you like to set your Hard Drive Label? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
+printf "%b" "\n2 - No (Drive name will be 'coffeedisk')\n"
 read -r name2passcheck02
 case $name2passcheck02 in
   1) printf "%b" "\nPerfect\n" ;;
@@ -324,10 +308,6 @@ fi
 fi
 if [ "$name2passcheck02" != "1" ] && [ "$name2passcheck02" != "2" ]; then
 
-name2passcheck02=2
-name01=coffeedisk
-name2passcheck=1
-
 if [ "$name2passcheck" = "1" ]; then
 name1=$name01
 fi
@@ -363,7 +343,6 @@ read -r driveXpasscheck
 case $driveXpasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
-  #*) printf "%b" "\nUnrecognized option, please try again: $user00\n" ;;
 esac
 
 if [ "$driveXpasscheck" = "1" ]; then
@@ -390,7 +369,6 @@ read -r driveXpasscheck
 case $driveXpasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
-  #*) printf "%b" "\nUnrecognized option, please try again: $user00\n" ;;
 esac
 
 if [ "$driveXpasscheck" = "1" ]; then
@@ -417,7 +395,6 @@ read -r driveXpasscheck
 case $driveXpasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
-  #*) printf "%b" "\nUnrecognized option, please try again: $user00\n" ;;
 esac
 
 if [ "$driveXpasscheck" = "1" ]; then
@@ -444,7 +421,6 @@ read -r driveXpasscheck
 case $driveXpasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
-  #*) printf "%b" "\nUnrecognized option, please try again: $user00\n" ;;
 esac
 
 if [ "$driveXpasscheck" = "1" ]; then
@@ -472,7 +448,6 @@ read -r driveXpasscheck
 case $driveXpasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
-  #*) printf "%b" "\nUnrecognized option, please try again: $user00\n" ;;
 esac
 
 if [ "$driveXpasscheck" = "1" ]; then
@@ -500,7 +475,6 @@ read -r driveXpasscheck
 case $driveXpasscheck in
   1) printf "%b" "\nPerfect\n" ;;
   *) printf "%b" "\nLet's retry\n" ;;
-  #*) printf "%b" "\nUnrecognized option, please try again: $user00\n" ;;
 esac
 
 if [ "$driveXpasscheck" = "1" ]; then
@@ -575,7 +549,7 @@ clear
 
 while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; do
 
-printf "%b" "\nWhat desktop environment do you want?\n"
+printf "%b" "\nWhat desktop environment do you want? (Default: 3)\n"
 printf "%b" "\n1 - Gnome\n"
 printf "%b" "\n2 - KDE\n"
 printf "%b" "\n3 - Cinnamon\n"
@@ -585,22 +559,21 @@ case $desktopcheck in
   1) printf "%b" "\nPerfect\n" ;;
   2) printf "%b" "\nA good choice.\n" ;;
   3) printf "%b" "\nA good choice.\n" ;;
-  *) printf "%b" "\nUnrecognized option, please try again..\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
 
 if [ "$desktopcheck" = "1" ]; then
 desktop0="gnome"
-
 fi
 if [ "$desktopcheck" = "2" ]; then
 desktop0="kde"
-
 fi
 if [ "$desktopcheck" = "3" ]; then
 desktop0="cinnamon"
-
 fi
-
+if [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; then
+desktop0="cinnamon"
+fi
 done
 
 clear
@@ -1625,8 +1598,6 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
 clear
-#printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ntfix
-#clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protonup-qt
 clear
 fi
@@ -1789,8 +1760,6 @@ if [ "$questionspassed" = "yes" ]; then
   clear
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
   clear
-  #printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xone-dkms-git
-  #clear
  fi
   if [ "$desktop0" = "gnome" ]; then
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
@@ -1842,8 +1811,6 @@ if [ "$questionspassed" = "yes" ]; then
      clear
      printf "%b" "5\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
      clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mintlocale
-     clear
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
      clear
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
@@ -1854,7 +1821,6 @@ if [ "$questionspassed" = "yes" ]; then
      clear
      rm -r /mnt/usr/share/wayland-sessions/gnome*
      rm -r /mnt/usr/share/xsessions/gnome*
-     #rm -r /mnt/usr/share/xsessions/cinnamon*
      clear
   fi
 yayinstallfinished="1"
@@ -2061,12 +2027,12 @@ homedir_fix
   lightdm_fix
  fi
 success_check
+umount -R /mnt
 printf "%b" "Excellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck00
 printf "%b" "\nYou typed $endcheck00...\n\n"
 clear
-umount -R /mnt
 reboot
 
 #============================
