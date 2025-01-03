@@ -16,7 +16,7 @@ With 3 Standard Desktop Environment choices, it's easy to find the one that suit
 
 CoffeeLinux is unique to other distros because its installer is a hand crafted mod for archiso (releng profile) that uses a single script to install the OS for you based on your choices.
  
-There is no copying packages and such from the installation medium.
+There is almost no copying packages and such from the installation medium.
 
 Everything is downloaded and installed live for your installation as if you were installing Arch Linux manually (because you are).
 
@@ -33,10 +33,13 @@ This is Arch but better. Enjoy it with us.
 
 Features:
 
-Custom CLI apps to do many common tasks.
-1. Pacman Switcher : For switching pacman repos fast and easily.
-2. Coffee Manager : For various updates and App management.
-3. Coffee Iso Maker : For creating CoffeeLinux Iso files easily.
+Coffee Manager app to do many common tasks.
+1. System and Distro specific updates.
+2. Application Management (Add/Remove apps)
+3. System Info (fastfetch)
+4. Coffee Iso Maker (for making CoffeeLinux Isos easily)
+5. Pacman Switcher (for switching to/from Beta system update channels)
+6. Steam Library Fixer (for fixing steam library links on secondary NTFS drives)
 
 Custom made self updating service: Stay up to date with no user interaction. Runs on boot by default.
 
@@ -50,9 +53,9 @@ Stable or Testing Repo installation option for the brave.
 
 Web Browser Choices: Chrome, Firefox, and MS Edge
 
-App Choices: Snap Store, Steam, Java, VMWare, Discord, Github Desktop, Epic Games Launcher, Lutris, and LibreOffice.
+App Choices: Snap Store, Steam, Java, Discord, Github Desktop, Epic Games Launcher, Lutris, and LibreOffice.
 
-Bootloader Choices: Grub UEFI, Grub BIOS, and Systemd-Boot (with optional Secure-boot)
+Bootloader Choices: Grub UEFI, and Grub BIOS
 
 Simply download from the Releases page and use Etcher to write the iso to usb. Use like any other ArchIso.
 
