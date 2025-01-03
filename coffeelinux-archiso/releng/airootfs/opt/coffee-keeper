@@ -4,8 +4,8 @@ sleep 20
 #Update the system first
 pacman -Syu --noconfirm
 #Coffee Linux Maintenence
-pacman -Rdd neofetch
-pacman -Syy fastfetch chafa xfconf ddcutil
+pacman -Rdd --noconfirm neofetch
+pacman -Syy --noconfirm fastfetch chafa xfconf ddcutil
 #Replace CoffeeLinux Files
 rm /opt/backgrounds/coffee/adwaita-l.jpg
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg -P /opt/backgrounds/coffee/
