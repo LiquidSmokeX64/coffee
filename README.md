@@ -33,7 +33,7 @@ This is Arch but better. Enjoy it with us.
 
 Features:
 
-Coffee Manager app to do many common tasks.
+CoffeeLinux Manager app to do many common tasks.
 1. System and Distro specific updates.
 2. Application Management (Add/Remove apps)
 3. System Info (fastfetch)
