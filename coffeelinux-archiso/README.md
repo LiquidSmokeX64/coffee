@@ -34,6 +34,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Desktop Environments**:
    - **Yaru (Ubuntu) styled GNOME**: Featuring dynamic buffering with Mutter for enhanced performance.
+   - **Plasma 6 DE (KDE)**: Standard KDE for a cleaner more user customizable environment.
    - **Mint-styled Cinnamon DE**: Includes all available Mint backgrounds for a polished look.
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
