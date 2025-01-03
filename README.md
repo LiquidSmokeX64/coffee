@@ -2,62 +2,57 @@
 
 -----------------------------------
 
-CoffeeLinux is a distro designed with gaming in mind.
+CoffeeLinux is a Linux distribution optimized for gaming, yet its performance extends to other areas as well, offering a noticeable improvement across the board.
 
-However.. due to this lofty goal it excells in other areas quite nicely.
-The performance difference is noticable.
+Built on Arch Linux, CoffeeLinux is designed to provide a streamlined, hassle-free installation process. From start to finish, the setup is simple, enabling users to begin their experience quickly and efficiently.
 
-Based on Arch, CoffeeLinux aims to provide a smooth setup from start to finish so you can get right to it.
+The installer is a lightweight, shell-based setup. We believe in a straightforward approach, foregoing unnecessary graphical interfaces in favor of a direct, efficient installation process. With just a few easy selections, you’ll be up and running in no time.
 
-The Installer is a pure shell installation. No need for a fancy GUI just to install an OS honestly.
-  Just a few simple choices and you're ready to go.
+CoffeeLinux offers three standard desktop environment choices, ensuring you can find the one that best suits your needs.
 
-With 3 Standard Desktop Environment choices, it's easy to find the one that suits you best.
+What sets CoffeeLinux apart from other distributions is its custom-crafted installer, a modified version of the Arch ISO (releng profile). This installer uses a single script to perform the entire installation based on your preferences, significantly reducing the need for copying packages from the installation medium. The installation process mirrors a manual Arch Linux setup, ensuring greater flexibility and control.
 
-CoffeeLinux is unique to other distros because its installer is a hand crafted mod for archiso (releng profile) that uses a single script to install the OS for you based on your choices.
- 
-There is almost no copying packages and such from the installation medium.
+Concerned about managing updates? We’ve got you covered. The CoffeeLinux Self-Updating Service is designed to simplify maintenance. Once activated, the service takes care of everything in the background with minimal user intervention—just reboot (sometimes twice), and your system will stay up to date.
 
-Everything is downloaded and installed live for your installation as if you were installing Arch Linux manually (because you are).
-
-Don't like updating the hard way? I hear you.. we can do it better.
-
-CoffeeLinux Self-Updating Service is made just for you.
-No more waiting for updates, with this service you just reboot (twice sometimes). 
-Seriously that's it. It takes care of all the maintenence for you in the background.
-You do nothing but have an active internet connection.
-
-This is Arch but better. Enjoy it with us.
+CoffeeLinux delivers the power of Arch with added ease and convenience. Join us and experience it for yourself.
 
 ----------------------------------
 
-Features:
+**Features of CoffeeLinux:**
 
-CoffeeLinux Manager app to do many common tasks.
-1. System and Distro specific updates.
-2. Application Management (Add/Remove apps)
-3. System Info (fastfetch)
-4. Coffee Iso Maker (for making CoffeeLinux Isos easily)
-5. Pacman Switcher (for switching to/from Beta system update channels)
-6. Steam Library Fixer (for fixing steam library links on secondary NTFS drives)
+- **CoffeeLinux Manager**: A comprehensive application designed to simplify common tasks, including:
+   1. System and distribution-specific updates.
+   2. Application management (install and remove software).
+   3. System information (via fastfetch).
+   4. **Coffee ISO Maker**: Easily create custom CoffeeLinux ISOs.
+   5. **Pacman Switcher**: Switch between stable and beta system update channels.
+   6. **Steam Library Fixer**: Resolve Steam library links on secondary NTFS drives.
 
-Custom made self updating service: Stay up to date with no user interaction. Runs on boot by default.
+- **Custom Self-Updating Service**: Stay up to date effortlessly. The service runs automatically on boot and requires no user interaction.
 
-A hand picked set of QoL packages and dependencies for a large number of apps and services.
+- **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
-Yaru (Ubuntu) styled Gnome DE, with dynamic buffering mutter.
+- **Desktop Environments**:
+   - **Yaru (Ubuntu) styled GNOME**: Featuring dynamic buffering with Mutter for enhanced performance.
+   - **Mint-styled Cinnamon DE**: Includes all available Mint backgrounds for a polished look.
 
-Mint styled Cinnamon DE with ALL mint backgrounds available.
+- **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
 
-Stable or Testing Repo installation option for the brave.
+- **Web Browser Choices**: Options include Chrome, Firefox, and Microsoft Edge for your browsing needs.
 
-Web Browser Choices: Chrome, Firefox, and MS Edge
+- **Application Selection**: Easily install key applications such as:
+   - Snap Store
+   - Steam
+   - Java
+   - Discord
+   - GitHub Desktop
+   - Epic Games Launcher
+   - Lutris
+   - LibreOffice
 
-App Choices: Snap Store, Steam, Java, Discord, Github Desktop, Epic Games Launcher, Lutris, and LibreOffice.
+- **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-Bootloader Choices: Grub UEFI, and Grub BIOS
-
-Simply download from the Releases page and use Etcher to write the iso to usb. Use like any other ArchIso.
+To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 
 ------------------------------------
 
