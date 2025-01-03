@@ -4,7 +4,7 @@ baseapps="iptables dbus-broker-units amd-ucode mkinitcpio texinfo base base-deve
 
 baseapps2="git device-mapper gettext xz dosfstools efibootmgr freetype2 fuse2 libisoburn lzop mtools autogen help2man python rsync ttf-dejavu system-config-printer net-tools nfs-utils systemd-resolvconf tcpdump terminus-font testdisk ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils openvpn partclone pcsclite ppp pptpclient qemu-guest-agent vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools apparmor archinstall mlocate arch-install-scripts b43-fwcutter bind brltty broadcom-wl btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config hdparm hyperv jfsutils kitty-terminfo libfido2 libusb-compat linux linux-headers"
 
-coffeeapps="pipewire-jack pavucontrol wget fwupd fwupd-efi glfw-wayland npm boost-libs gtk-update-icon-cache hwinfo libpwquality squashfs-tools yaml-cpp boost extra-cmake-modules git rhythmbox alsa-lib alsa-utils alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-v4l-utils libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libunwind libva libva-utils libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors make meson mkinitcpio mpg123 mtools nano ncurses neofetch nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages pipewire pipewire-alsa pipewire-pulse power-profiles-daemon python-gobject python-mako samba shellcheck shotwell sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch w3m wireplumber xdg-utils xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-headers lib32-amdvlk"
+coffeeapps="pipewire-jack pavucontrol wget fwupd fwupd-efi glfw-wayland npm boost-libs gtk-update-icon-cache hwinfo libpwquality squashfs-tools yaml-cpp boost extra-cmake-modules git rhythmbox alsa-lib alsa-utils alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-v4l-utils libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libunwind libva libva-utils libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors make meson mkinitcpio mpg123 mtools nano ncurses fastfetch chafa xfconf ddcutil nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages pipewire pipewire-alsa pipewire-pulse power-profiles-daemon python-gobject python-mako samba shellcheck shotwell sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch w3m wireplumber xdg-utils xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-headers lib32-amdvlk"
 
 javaapps="jre-openjdk"
 
@@ -52,7 +52,7 @@ while [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; do
 
 printf "%b" "\nWould you like to set your username? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
+printf "%b" "\n2 - No (Username will be 'default')\n"
 read -r usercheck02
 case $usercheck02 in
   1) printf "%b" "\nPerfect\n" ;;
@@ -68,7 +68,7 @@ printf "%b" "\nSet your Username.\n"
 read -r user00
 printf "%b" "\n$user00. Is this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no (Username will be 'default')\n"
+printf "%b" "\n2 - no\n"
 read -r usercheck
 case $usercheck in
   1) printf "%b" "\nPerfect\n" ;;
@@ -92,6 +92,19 @@ fi
 
 fi
 if [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; then
+
+while [ "$usercheck" != "1" ]; do
+printf "%b" "\nSet your Username.\n"
+read -r user00
+printf "%b" "\n$user00. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r usercheck
+case $usercheck in
+  1) printf "%b" "\nPerfect\n" ;;
+  *) printf "%b" "\nLet's retry\n" ;;
+esac
+done
 
 if [ "$usercheck" = "1" ]; then
 user01=$user00
@@ -147,6 +160,19 @@ fi
 fi
 if [ "$userpasscheck00" != "1" ] && [ "$userpasscheck00" != "2" ]; then
 
+while [ "$userpasscheck" != "1" ]; do
+printf "%b" "\nSet your User Password.\n"
+read -r userpass00
+printf "%b" "\n$userpass00. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r userpasscheck
+case $userpasscheck in
+  1) printf "%b" "\nPerfect\n" ;;
+  *) printf "%b" "\nLet's retry\n" ;;
+esac
+done
+
 if [ "$userpasscheck" = "1" ]; then
 userpass0=$userpass00
 fi
@@ -201,6 +227,19 @@ fi
 fi
 if [ "$rootpasscheck00" != "1" ] && [ "$rootpasscheck00" != "2" ]; then
 
+while [ "$rootpasscheck" != "1" ]; do
+printf "%b" "\nSet your Root Password.\n"
+read -r userpass01
+printf "%b" "\n$userpass01. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r rootpasscheck
+case $rootpasscheck in
+  1) printf "%b" "\nPerfect\n" ;;
+  *) printf "%b" "\nLet's retry\n" ;;
+esac
+done
+
 if [ "$rootpasscheck" = "1" ]; then
 userpass1=$userpass01
 fi
@@ -253,6 +292,19 @@ fi
 
 fi
 if [ "$namepasscheck00" != "1" ] && [ "$namepasscheck00" != "2" ]; then
+
+while [ "$namepasscheck" != "1" ]; do
+printf "%b" "\nSet your PC name.\n"
+read -r name00
+printf "%b" "\n$name00. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r namepasscheck
+case $namepasscheck in
+  1) printf "%b" "\nPerfect\n" ;;
+  *) printf "%b" "\nLet's retry\n" ;;
+esac
+done
 
 if [ "$namepasscheck" = "1" ]; then
 name0=$name00
@@ -307,6 +359,19 @@ fi
 
 fi
 if [ "$name2passcheck02" != "1" ] && [ "$name2passcheck02" != "2" ]; then
+
+while [ "$name2passcheck" != "1" ]; do
+printf "%b" "\nSet your HardDrive Label (OS Partition Label).\n"
+read -r name01
+printf "%b" "\n$name01. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r name2passcheck
+case $name2passcheck in
+  1) printf "%b" "\nPerfect\n" ;;
+  *) printf "%b" "\nLet's retry\n" ;;
+esac
+done
 
 if [ "$name2passcheck" = "1" ]; then
 name1=$name01
@@ -549,7 +614,7 @@ clear
 
 while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; do
 
-printf "%b" "\nWhat desktop environment do you want? (Default: 3)\n"
+printf "%b" "\nWhat desktop environment do you want? (Default: 1)\n"
 printf "%b" "\n1 - Gnome\n"
 printf "%b" "\n2 - KDE\n"
 printf "%b" "\n3 - Cinnamon\n"
@@ -572,7 +637,7 @@ if [ "$desktopcheck" = "3" ]; then
 desktop0="cinnamon"
 fi
 if [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; then
-desktop0="cinnamon"
+desktop0="gnome"
 fi
 done
 

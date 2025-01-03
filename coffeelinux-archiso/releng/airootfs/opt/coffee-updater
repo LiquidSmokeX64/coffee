@@ -276,7 +276,7 @@ fi
 if [ "$typecheck99" = "3" ]; then
 clear
 printf "%b" "\nGetting system info now...\n\n"
-neofetch
+fastfetch
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck109
 printf "%b" "\nYou typed $endcheck109...\n\n"
