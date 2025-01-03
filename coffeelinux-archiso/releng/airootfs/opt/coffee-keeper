@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sleep 20
+sleep 10
 #Update the system first
 pacman -Syu --noconfirm
 #Coffee Linux Maintenence
@@ -47,16 +47,16 @@ rm /etc/os-release
 rm /etc/lsb-release
 rm /opt/coffee-injector
 rm /usr/local/bin/coffee-barista
-rm /usr/local/bin/coffeebrewer3
+rm /usr/local/bin/coffeebrewer4
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /etc/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /etc/
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer3 -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer4 -P /usr/local/bin/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
 chmod 755 /opt/coffee-injector
-chmod 755 /usr/local/bin/coffeebrewer3
+chmod 755 /usr/local/bin/coffeebrewer4
 chmod 755 /usr/local/bin/coffee-barista
 #Removal of any unwanted packages
 pacman -Rdd --noconfirm blueman
