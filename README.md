@@ -21,9 +21,9 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 **Features of CoffeeLinux:**
 
 - **CoffeeLinux Manager**: A comprehensive application designed to simplify common tasks, including:
-   1. System and distribution-specific updates.
-   2. Application management (install and remove software).
-   3. System information (via fastfetch).
+   1. **System Updater** for distribution-specific updates.
+   2. **Application manager** (install and remove software).
+   3. **System information** (via fastfetch).
    4. **Coffee ISO Maker**: Easily create custom CoffeeLinux ISOs.
    5. **Pacman Switcher**: Switch between stable and beta system update channels.
    6. **Steam Library Fixer**: Resolve Steam library links on secondary NTFS drives.
