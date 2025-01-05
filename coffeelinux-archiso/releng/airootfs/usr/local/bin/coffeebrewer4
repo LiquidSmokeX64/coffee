@@ -106,6 +106,8 @@ case $usercheck in
 esac
 done
 
+usercheck02=1
+
 if [ "$usercheck" = "1" ]; then
 user01=$user00
 fi
@@ -172,6 +174,8 @@ case $userpasscheck in
   *) printf "%b" "\nLet's retry\n" ;;
 esac
 done
+
+userpasscheck00=1
 
 if [ "$userpasscheck" = "1" ]; then
 userpass0=$userpass00
@@ -240,6 +244,8 @@ case $rootpasscheck in
 esac
 done
 
+rootpasscheck00=1
+
 if [ "$rootpasscheck" = "1" ]; then
 userpass1=$userpass01
 fi
@@ -305,6 +311,8 @@ case $namepasscheck in
   *) printf "%b" "\nLet's retry\n" ;;
 esac
 done
+
+namepasscheck00=1
 
 if [ "$namepasscheck" = "1" ]; then
 name0=$name00
@@ -372,6 +380,8 @@ case $name2passcheck in
   *) printf "%b" "\nLet's retry\n" ;;
 esac
 done
+
+name2passcheck02=1
 
 if [ "$name2passcheck" = "1" ]; then
 name1=$name01
@@ -614,7 +624,7 @@ clear
 
 while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; do
 
-printf "%b" "\nWhat desktop environment do you want? (Default: 1)\n"
+printf "%b" "\nWhat desktop environment do you want? (Default: 2)\n"
 printf "%b" "\n1 - Gnome\n"
 printf "%b" "\n2 - KDE\n"
 printf "%b" "\n3 - Cinnamon\n"
@@ -637,7 +647,7 @@ if [ "$desktopcheck" = "3" ]; then
 desktop0="cinnamon"
 fi
 if [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; then
-desktop0="gnome"
+desktop0="kde"
 fi
 done
 
