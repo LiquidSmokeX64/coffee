@@ -1998,6 +1998,10 @@ if [ "$native1" = "yes" ]; then
    mkdir -p /mnt/usr/share/backgrounds/gnome/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
+   rm /opt/coffee-keeper
+   wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper -P /opt/
+   cp /opt/coffee-keeper /mnt/opt/
+   arch-chroot /mnt chmod 755 /opt/coffee-keeper
    rm /opt/coffee-injector
    wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
    cp /opt/coffee-injector /mnt/opt/
