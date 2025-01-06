@@ -1995,6 +1995,8 @@ if [ "$native1" = "yes" ]; then
    mkdir -p /mnt/usr/share/backgrounds/gnome/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
    cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
+   rm /opt/coffee-injector
+   wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
    cp /opt/coffee-injector /mnt/opt/
    arch-chroot /mnt chmod 755 /opt/coffee-injector
    rm /opt/coffee-keeper.service
@@ -2002,6 +2004,7 @@ if [ "$native1" = "yes" ]; then
    wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service -P /opt/
    cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
    arch-chroot /mnt chmod 755 /lib/systemd/system/coffee-keeper.service
+   arch-chroot /mnt systemctl enable coffee-keeper.service
    cp /opt/issue /mnt/etc/issue
    cp /opt/coffee-updater /mnt/usr/local/bin/
    arch-chroot /mnt chmod 755 /usr/local/bin/coffee-updater
