@@ -624,7 +624,7 @@ clear
 
 while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; do
 
-printf "%b" "\nWhat desktop environment do you want? (Default: 2)\n"
+printf "%b" "\nWhat desktop environment do you want? (Default: 3)\n"
 printf "%b" "\n1 - Gnome\n"
 printf "%b" "\n2 - KDE\n"
 printf "%b" "\n3 - Cinnamon\n"
@@ -647,7 +647,7 @@ if [ "$desktopcheck" = "3" ]; then
 desktop0="cinnamon"
 fi
 if [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; then
-desktop0="kde"
+desktop0="cinnamon"
 fi
 done
 
