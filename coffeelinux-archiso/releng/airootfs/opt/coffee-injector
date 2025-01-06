@@ -91,7 +91,7 @@ rm /lib/systemd/system/coffee-keeper.service
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service -P /opt/
 cp /opt/coffee-keeper.service /lib/systemd/system/
 chmod 755 /lib/systemd/system/coffee-keeper.service
-systemctl enable coffee-keeper
+systemctl enable coffee-keeper.service
 #Self-Replacer
 rm /opt/coffee-injector
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
