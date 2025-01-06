@@ -81,16 +81,25 @@ cp /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
 rm -r /usr/share/wayland-sessions/gnome*
 rm -r /usr/share/xsessions/gnome*
 
+#Replace snapd-updater service file only
+rm /lib/systemd/system/snapd-updater.service
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/snapd-updater.service -P /opt/
+cp /opt/snapd-updater.service /lib/systemd/system/
+chmod 755 /lib/systemd/system/snapd-updater.service
+
 #Replace updater service files and reactivate it.
 sleep 5
+
 #Remove old service files.
 rm /opt/coffee-keeper
 rm /opt/coffee-keeper.service
+
 #Replace service file first.
 rm /lib/systemd/system/coffee-keeper.service
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service -P /opt/
 cp /opt/coffee-keeper.service /lib/systemd/system/
 chmod 755 /lib/systemd/system/coffee-keeper.service
+
 systemctl enable coffee-keeper.service
 #Self-Replacer
 rm /opt/coffee-injector

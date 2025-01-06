@@ -1801,6 +1801,8 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 arch-chroot /mnt systemctl enable snapd.apparmor
 arch-chroot /mnt systemctl enable snapd
+rm /opt/snapd-updater.service
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/snapd-updater.service -P /opt/
 cp /opt/snapd-updater /mnt/opt/
 arch-chroot /mnt chmod 755 /opt/snapd-updater
 cp /opt/snapd-updater.service /mnt/lib/systemd/system/
