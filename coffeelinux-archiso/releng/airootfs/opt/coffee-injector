@@ -1,8 +1,5 @@
 #!/bin/sh
 
-#Remove old updater file.
-rm /opt/coffee-keeper
-
 #Coffee Updater
 
 sleep 20
@@ -86,7 +83,8 @@ rm -r /usr/share/xsessions/gnome*
 
 #Replace updater service files and reactivate it.
 sleep 5
-#Remove old service file.
+#Remove old service files.
+rm /opt/coffee-keeper
 rm /opt/coffee-keeper.service
 #Replace service file first.
 rm /lib/systemd/system/coffee-keeper.service
