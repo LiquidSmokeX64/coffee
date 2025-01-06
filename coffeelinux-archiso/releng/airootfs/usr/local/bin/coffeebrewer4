@@ -647,6 +647,7 @@ if [ "$desktopcheck" = "3" ]; then
 desktop0="cinnamon"
 fi
 if [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; then
+desktopcheck=3
 desktop0="cinnamon"
 fi
 done
