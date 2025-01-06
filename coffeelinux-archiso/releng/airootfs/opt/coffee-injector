@@ -1,9 +1,101 @@
 #!/bin/sh
 
+#Remove old updater file.
 rm /opt/coffee-keeper
-sleep 10
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper -P /opt/
-chmod 755 /opt/coffee-keeper
-bash /opt/coffee-keeper
 
+#Coffee Updater
+
+sleep 20
+
+#Update the system first
+pacman -Syu --noconfirm
+
+#Coffee Linux Maintenence 26.3.x
+pacman -Rdd --noconfirm neofetch
+pacman -Syy --noconfirm fastfetch chafa xfconf ddcutil
+
+#Replace CoffeeLinux Files
+rm /opt/backgrounds/coffee/adwaita-l.jpg
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg -P /opt/backgrounds/coffee/
+rm /opt/backgrounds/coffee/adwaita-d.jpg
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg -P /opt/backgrounds/coffee/
+rm /opt/backgrounds/coffee/adwaita-l.jxl
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl -P /opt/backgrounds/coffee/
+rm /opt/backgrounds/coffee/adwaita-d.jxl
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl -P /opt/backgrounds/coffee/
+rm /opt/grub-intel/grub
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-intel/grub -P /opt/grub-intel/
+rm /opt/grub-nvidia/grub
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-nvidia/grub -P /opt/grub-nvidia/
+rm /opt/grub-amd/grub
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/grub-amd/grub -P /opt/grub-amd/
+rm /opt/pacman-stable.conf
+rm /opt/pacman-unstable.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf -P /opt/
+rm /etc/issue
+rm /opt/issue
+rm -R /opt/issue.*
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/issue -P /opt/
+cp /opt/issue /etc/
+rm /usr/local/bin/coffee-updater
+rm /opt/coffee-updater
+rm -R /opt/coffee-updater.*
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater -P /opt/
+cp /opt/coffee-updater /usr/local/bin/
+chmod 755 /usr/local/bin/coffee-updater
+rm /opt/coffee-updater.desktop
+rm /usr/share/applications/coffee-updater.desktop
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater.desktop -P /opt/
+cp /opt/coffee-updater.desktop /usr/share/applications/
+chmod 755 /usr/share/applications/coffee-updater.desktop
+rm /opt/os-release
+rm /opt/lsb-release
+rm /etc/os-release
+rm /etc/lsb-release
+rm /usr/local/bin/coffee-barista
+rm /usr/local/bin/coffeebrewer4
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /opt/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /etc/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /etc/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer4 -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
+chmod 755 /usr/local/bin/coffeebrewer4
+chmod 755 /usr/local/bin/coffee-barista
+
+#Removal of any unwanted packages
+pacman -Rdd --noconfirm blueman
+pacman -Rdd --noconfirm kmix
+pacman -Rdd --noconfirm gnome-terminal
+pacman -Rdd --noconfirm gedit
+
+#Remove any unwanted files
+rm /usr/share/applications/steam-native.desktop
+rm /usr/share/applications/stoken-gui-small.desktop
+
+#Fix the wallpapers if needed
+mkdir -p /usr/share/wallpapers/coffee/
+mkdir -p /usr/share/backgrounds/gnome/
+cp /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
+cp /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
+
+#Remove Gnome default sessions if they exist
+rm -r /usr/share/wayland-sessions/gnome*
+rm -r /usr/share/xsessions/gnome*
+
+#Replace updater service files and reactivate it.
+sleep 5
+#Remove old service file.
+rm /opt/coffee-keeper.service
+#Replace service file first.
+rm /lib/systemd/system/coffee-keeper.service
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service -P /opt/
+cp /opt/coffee-keeper.service /lib/systemd/system/
+chmod 755 /lib/systemd/system/coffee-keeper.service
+systemctl enable coffee-keeper.service
+#Self-Replacer
+rm /opt/coffee-injector
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
+chmod 755 /opt/coffee-injector
 exit
