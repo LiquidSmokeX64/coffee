@@ -1,9 +1,9 @@
 #!/bin/sh
 
 #Main Menu
-while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ]; do
+while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ] && [ "$typecheck99" != "8" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Manager Tool 1.1.4 ####\n"
+printf "%b" "\n#### Coffee Linux Manager Tool 1.1.5 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 7)\n"
 printf "%b" "\n1 - System Updates\n"
@@ -12,7 +12,8 @@ printf "%b" "\n3 - System Info\n"
 printf "%b" "\n4 - CoffeeLinux Iso Maker\n"
 printf "%b" "\n5 - Pacman Switcher\n"
 printf "%b" "\n6 - Steam Library Fixer\n"
-printf "%b" "\n7 - Exit Coffee Manager.\n"
+printf "%b" "\n7 - Discord Updater Tool\n"
+printf "%b" "\n8 - Exit Coffee Manager.\n"
 
 read -r typecheck99
 case $typecheck99 in
@@ -22,7 +23,8 @@ case $typecheck99 in
  4) printf "%b" "\nIso Creator selected. Running now...\n" ;;
  5) printf "%b" "\nPacman Switcher selected. Running now...\n" ;;
  6) printf "%b" "\nSteam Library Fixer selected. Running now...\n" ;;
- 7) printf "%b" "\nExit selected. exiting now...\n" ;;
+ 7) printf "%b" "\nDiscord Updater Tool selected. Running now...\n" ;;
+ 8) printf "%b" "\nExit selected. exiting now...\n" ;;
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
 
@@ -90,6 +92,7 @@ fi
 done
 
 fi
+
 if [ "$typecheck99" = "2" ]; then
 
 #Main Menu
@@ -142,7 +145,6 @@ printf "%b" "\nYou typed $endcheck104...\n\n"
 clear
 sleep 5
 typecheck01=4
-#typecheck99=6
 fi
 
 if [ "$programnamecheck00" = "2" ]; then
@@ -190,7 +192,6 @@ printf "%b" "\nYou typed $endcheck105...\n\n"
 clear
 sleep 5
 typecheck01=4
-#typecheck99=6
 fi
 
 if [ "$programnamecheck02" = "2" ]; then
@@ -238,7 +239,6 @@ printf "%b" "\nYou typed $endcheck106...\n\n"
 clear
 sleep 5
 typecheck01=4
-#typecheck99=6
 fi
 
 if [ "$programnamecheck01" = "2" ]; then
@@ -262,7 +262,6 @@ clear
 printf "%b" "\nExited App Manager successfully...\n\n"
 sleep 5
 typecheck01=4
-#typecheck99=6
 fi
 if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; then
 typecheck01=4
@@ -509,19 +508,86 @@ done
 
 fi
 
-
 if [ "$typecheck99" = "7" ]; then
+
+#Main Menu
+while [ "$typecheck00D" != "1" ] && [ "$typecheck00D" != "2" ]; do
+clear
+printf "%b" "\n#### Coffee Linux Discord Updater Tool 1.0.0 ####\n"
+printf "%b" "\nWhat type of updates do you want? (Default: 3)\n"
+printf "%b" "\n1 - Manual Discord update\n"
+printf "%b" "\n2 - Exit Discord Updater.\n"
+
+read -r typecheck00D
+case $typecheck00D in
+ 1) printf "%b" "\nOfficial updates selected. Running now..\n" ;;
+ 2) printf "%b" "\nExit selected. exiting now...\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+clear
+
+if [ "$typecheck00D" = "1" ]; then
+
+sudo wget "https://discord.com/api/download?platform=linux&format=tar.gz" -O discord.tar.gz
+sudo mkdir -p ~/discord_update/
+sudo mv ~/discor*.tar.gz ~/discord_update/
+sudo rm -R /opt/discord/*
+sudo tar xvf ~/discord_update/discor*.tar.gz -C ~/discord_update/
+sudo cp -R ~/discord_update/Discord/* /opt/discord/
+sudo rm -R ~/discord_update/
+sudo rm -R /usr/share/icons/discord.png
+sudo rm -R /usr/bin/Discord
+sudo rm -R /usr/share/applications/discord.desktop
+sudo ln -s /opt/discord/discord.png /usr/share/icons/discord.png
+sudo ln -s /opt/discord/Discord /usr/bin/
+sudo cp /opt/discord/discord.desktop /usr/share/applications/
+sudo chmod 755 /opt/discord/Discord
+sudo chmod 755 /usr/bin/Discord
+sudo chmod 755 /usr/share/applications/discord.desktop
+
+clear
+printf "%b" "\nDiscord updater finished..\n"
+typecheck00D=2
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck100D
+printf "%b" "\nYou typed $endcheck100D...\n\n"
+clear
+sleep 5
+fi
+if [ "$typecheck00D" = "2" ]; then
+clear
+printf "%b" "\nExited Discord Updater successfully...\n\n"
+sleep 5
+typecheck00D=2
+fi
+if [ "$typecheck00D" != "1" ] && [ "$typecheck00D" != "2" ]; then
+typecheck00D=2
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck103D
+printf "%b" "\nYou typed $endcheck103D...\n\n"
+clear
+clear
+printf "%b" "\nExited Discord Updater successfully...\n\n"
+sleep 5
+fi
+done
+
+fi
+
+
+if [ "$typecheck99" = "8" ]; then
 clear
 printf "%b" "\nExited Coffee Manager successfully...\n\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck120
 printf "%b" "\nYou typed $endcheck120...\n\n"
 clear
-typecheck99=7
+typecheck99=8
 sleep 5
 fi
-if [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ]  && [ "$typecheck99" != "4" ]  && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ]; then
-typecheck99=7
+if [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ]  && [ "$typecheck99" != "4" ]  && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ] && [ "$typecheck99" != "8" ]; then
+typecheck99=8
 clear
 printf "%b" "\nExited Coffee Manager successfully...\n\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"

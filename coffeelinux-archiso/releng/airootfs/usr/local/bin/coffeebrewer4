@@ -2033,7 +2033,7 @@ if [ "$native1" = "yes" ]; then
 fi
 
 clear
-printf "%b" "\n Did the installer complete sussessfully? (Default: 1)\n"
+printf "%b" "\nDid the installer complete successfully? (Default: 1)\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r rebootcheck
@@ -2114,7 +2114,7 @@ homedir_fix
  fi
 success_check
 umount -R /mnt
-printf "%b" "Excellent. Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
+printf "%b" "Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck00
 printf "%b" "\nYou typed $endcheck00...\n\n"
