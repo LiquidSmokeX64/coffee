@@ -27,6 +27,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
    4. **Coffee ISO Maker**: Easily create custom CoffeeLinux ISOs.
    5. **Pacman Switcher**: Switch between stable and beta system update channels.
    6. **Steam Library Fixer**: Resolve Steam library links on secondary NTFS drives.
+   7. **Discord Updater Tool**: Manually updates Discord app from official tar.gz file.
 
 - **Custom Self-Updating Service**: Stay up to date effortlessly. The service runs automatically on boot and requires no user interaction.
 
@@ -35,7 +36,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 - **Desktop Environments**:
    - **Yaru (Ubuntu) styled GNOME**: Featuring dynamic buffering with Mutter for enhanced performance.
    - **Plasma 6 DE (KDE)**: Standard KDE for a cleaner more user customizable environment.
-   - **Mint-styled Cinnamon DE**: Includes all available Mint backgrounds for a polished look.
+   - **Mint-styled Cinnamon DE**: Includes all available Mint backgrounds for a polished look. **(Default selection)**
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
 
