@@ -23,6 +23,6 @@ file_permissions=(
   ["/usr/local/bin/choose-mirror"]="0:0:755"
   ["/usr/local/bin/Installation_guide"]="0:0:755"
   ["/usr/local/bin/livecd-sound"]="0:0:755"
-  ["/usr/local/bin/coffeebrewer3"]="0:0:755"
+  ["/usr/local/bin/coffeebrewer4"]="0:0:755"
   ["/usr/local/bin/coffee-barista"]="0:0:755"
 )
