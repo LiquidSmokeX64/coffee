@@ -624,9 +624,9 @@ clear
 
 while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; do
 
-printf "%b" "\nWhat desktop environment do you want? (Default: 3)\n"
-printf "%b" "\n1 - Gnome\n"
-printf "%b" "\n2 - KDE\n"
+printf "%b" "\nWhat desktop environment do you want? (Default: 1)\n"
+printf "%b" "\n1 - KDE\n"
+printf "%b" "\n2 - Gnome\n"
 printf "%b" "\n3 - Cinnamon\n"
 
 read -r desktopcheck
@@ -638,17 +638,17 @@ case $desktopcheck in
 esac
 
 if [ "$desktopcheck" = "1" ]; then
-desktop0="gnome"
+desktop0="kde"
 fi
 if [ "$desktopcheck" = "2" ]; then
-desktop0="kde"
+desktop0="gnome"
 fi
 if [ "$desktopcheck" = "3" ]; then
 desktop0="cinnamon"
 fi
 if [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; then
-desktopcheck=3
-desktop0="cinnamon"
+desktopcheck=1
+desktop0="kde"
 fi
 done
 

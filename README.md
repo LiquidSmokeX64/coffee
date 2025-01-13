@@ -34,9 +34,9 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
 - **Desktop Environments**:
+   - **Plasma 6 DE (KDE)**: Standard KDE for a cleaner more user customizable environment. **(Default selection)**
    - **Yaru (Ubuntu) styled GNOME**: Featuring dynamic buffering with Mutter for enhanced performance.
-   - **Plasma 6 DE (KDE)**: Standard KDE for a cleaner more user customizable environment.
-   - **Mint-styled Cinnamon DE**: Includes all available Mint backgrounds for a polished look. **(Default selection)**
+   - **Mint-styled Cinnamon DE**: Includes all available Mint backgrounds for a polished look.
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
 
