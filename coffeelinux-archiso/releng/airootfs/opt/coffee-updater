@@ -530,12 +530,12 @@ clear
 if [ "$typecheck00D" = "1" ]; then
 
 sudo wget "https://discord.com/api/download?platform=linux&format=tar.gz" -O discord.tar.gz
-sudo mkdir -p ~/discord_update/
-sudo mv ~/discor*.tar.gz ~/discord_update/
-sudo rm -R /opt/discord/*
-sudo tar xvf ~/discord_update/discor*.tar.gz -C ~/discord_update/
-sudo cp -R ~/discord_update/Discord/* /opt/discord/
-sudo rm -R ~/discord_update/
+sudo mkdir -p /opt/discord_update/
+mv /opt/discord.tar.gz /opt/discord_update/
+rm -R /opt/discord/*
+sudo tar xvf /opt/discord_update/discor*.tar.gz -C /opt/discord_update/
+sudo cp -R /opt/discord_update/Discord/* /opt/discord/
+sudo rm -R /opt/discord_update/
 sudo rm -R /usr/share/icons/discord.png
 sudo rm -R /usr/bin/Discord
 sudo rm -R /usr/share/applications/discord.desktop
