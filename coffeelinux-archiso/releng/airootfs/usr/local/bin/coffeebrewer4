@@ -14,7 +14,7 @@ kdeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-
 
 cinnamonapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 qt6 libpulse qt6-multimedia-ffmpeg gnu-free-fonts pyside6 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa cinnamon cinnamon-translations file-roller geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-console gnome-system-monitor gtk4 lightdm lightdm-slick-greeter xdg-desktop-portal-gnome gnome-text-editor"
 
-customtype2(){
+questionare (){
 
 clear
 
@@ -653,10 +653,6 @@ fi
 done
 
 clear
-
-}
-
-questionare (){
 
 native1=yes
 
@@ -2086,7 +2082,6 @@ cp /opt/lsb-release /etc/
 
 clear
 
-customtype2
 questionare
 set_swap
 format_disks
