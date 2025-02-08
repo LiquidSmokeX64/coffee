@@ -48,6 +48,38 @@ done
 
 clear
 
+clear
+
+while [ "$handheldcheck00" != "1" ] && [ "$handheldcheck00" != "2" ]; do
+
+printf "%b" "\nIs this device a Handheld ie: ROG Ally X? (Default: 1)\n"
+printf "%b" "\n1 - No\n"
+printf "%b" "\n2 - Yes\n"
+
+read -r handheldcheck00
+case $handheldcheck00 in
+  1) printf "%b" "\nPerfect\n" ;;
+  2) printf "%b" "\nLet's move on then.\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+if [ "$handheldcheck00" = "1" ]; then
+handheldpass00=nope
+printf "%b" "\nGot it. Moving on.."
+fi
+if [ "$handheldcheck00" = "2" ]; then
+handheldpass00=yup
+printf "%b" "\nGot it. Moving on.."
+fi
+if [ "$handheldcheck00" != "1" ] && [ "$handheldcheck00" != "2" ]; then
+handheldcheck00=1
+handheldpass00=nope
+printf "%b" "\nGot it. Moving on.."
+fi
+done
+
+clear
+
 while [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; do
 
 printf "%b" "\nWould you like to set your username? (Default: 1)\n"
@@ -1816,6 +1848,20 @@ command7finished="0"
 
 }
 
+handheld_install (){
+if [ "$handheldpass00" = "yup" ]; then
+  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd
+  clear
+  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd-ui
+  clear
+  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd-user
+  arch-chroot /mnt systemctl enable --user hhd-user
+  clear
+  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd-systemd-git
+  clear
+fi
+}
+
 yay_install (){
 
 clear
@@ -2104,6 +2150,7 @@ lutris_install
 heroic_install
 github_install
 snapd_install
+handheld_install
 yay_install
 services_starter
 homedir_fix
