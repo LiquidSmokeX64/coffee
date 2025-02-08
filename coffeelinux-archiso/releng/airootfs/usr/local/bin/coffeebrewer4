@@ -1326,6 +1326,11 @@ fi
 
 arch-chroot /mnt systemctl enable sddm
 
+if [ "$handheldpass00" = "yup" ]; then
+mkdir -p /mnt/etc/sddm.conf.d/
+printf "%b" "\n[General]\nDisplayServer=x11\n\n[Autologin]\nUser=$user00\nSession=plasmax11.desktop\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin
+fi
+
 fi
 if [ "$desktop0" = "cinnamon" ]; then
 
