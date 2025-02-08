@@ -148,6 +148,7 @@ networkmanager
 nmap
 sudo
 gobject-introspection
+broadcom-wl
 
 #Base Coffee Part 2
 git
