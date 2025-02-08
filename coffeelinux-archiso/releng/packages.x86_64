@@ -178,3 +178,5 @@ onboard
 qt6-virtualkeyboard
 pyside6
 maliit-keyboard
+qt6-multimedia-ffmpeg
+noto-fonts-emoji
