@@ -1863,7 +1863,7 @@ if [ "$handheldpass00" = "yup" ]; then
   clear
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd-ui
   clear
-  arch-chroot /mnt sudo -Su "$user01" systemctl enable hhd@$user01
+  arch-chroot /mnt systemctl enable hhd@$user01
   clear
 fi
 }
