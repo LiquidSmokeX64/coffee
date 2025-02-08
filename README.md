@@ -54,7 +54,11 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
+- **Handheld PC Options**: Supports Handhelds with On-Screen Keyboard, adjustor (TPM), and HandHeld Daemon service installations. (KDE Recommended)
+
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
+
+- **Note: LiveIso sudo/root password is "coffee"**
 
 ------------------------------------
 
