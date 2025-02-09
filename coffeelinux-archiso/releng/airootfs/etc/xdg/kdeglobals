@@ -6,7 +6,4 @@ action/switch_user=false
 action/start_new_session=true
 action/lock_screen=false
 
-[KDE Control Module Restrictions][$i]
-kcm_sddm.desktop=false
-kcm_plymouth.desktop=false
 
