@@ -8,7 +8,7 @@ coffeeapps="onboard qt6-virtualkeyboard maliit-keyboard pipewire-jack pavucontro
 
 javaapps="jre-openjdk"
 
-kdeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 pyside6 libpulse noto-fonts noto-fonts-emoji gnu-free-fonts cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
+kdeapps="qt5-wayland qt6-wayland lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 pyside6 libpulse noto-fonts noto-fonts-emoji gnu-free-fonts cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
 
 questionare (){
 
@@ -1264,11 +1264,11 @@ arch-chroot /mnt systemctl enable sddm
 #Autologin User
 rm -r /mnt/etc/sddm.conf.d/autologin.conf
 mkdir -p /mnt/etc/sddm.conf.d/
-printf "%b" "\n[General]\nDisplayServer=x11\n\n[Autologin]\nUser=$user00\nSession=plasmax11.desktop\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
+printf "%b" "\n[General]\nDisplayServer=wayland\n\n[Autologin]\nUser=$user00\nSession=plasma.desktop\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
 
 if [ "$handheldpass00" = "yup" ]; then
 #Setup OSKB for Handheld PCs
-printf "%b" "\n[General]\nInputMethod=onboard" > /mnt/etc/sddm.conf.d/virtualkbd.conf
+printf "%b" "\n[General]\nInputMethod=maliit-keyboard" > /mnt/etc/sddm.conf.d/virtualkbd.conf
 fi
 
 fi
@@ -1761,6 +1761,7 @@ command7finished="0"
 
 handheld_install (){
 if [ "$handheldpass00" = "yup" ]; then
+  clear
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd
   clear
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y adjustor
@@ -1768,6 +1769,8 @@ if [ "$handheldpass00" = "yup" ]; then
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd-ui
   clear
   arch-chroot /mnt systemctl enable hhd@$user01
+  clear
+  cp /etc/xdg/kwinrc /mnt/etc/xdg/kwinrc
   clear
 fi
 }
