@@ -1898,9 +1898,6 @@ if [ "$native1" = "yes" ]; then
   if [ "$branchpass00" = "beta" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf
   fi
-  if [ "$desktop0" = "kde" ]; then
-  cp -r /opt/VaporTheme/* /mnt/usr/share/
-  fi
   cp /opt/os-release /mnt/etc/
   cp /opt/lsb-release /mnt/etc/
 fi
