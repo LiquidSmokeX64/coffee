@@ -1264,7 +1264,7 @@ arch-chroot /mnt systemctl enable sddm
 #Autologin User
 rm -r /mnt/etc/sddm.conf.d/autologin.conf
 mkdir -p /mnt/etc/sddm.conf.d/
-printf "%b" "\n[General]\nDisplayServer=x11\n\n[Autologin]\nUser=$user00\nSession=plasmax11.desktop\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
+printf "%b" "\n[General]\nDisplayServer=wayland\n\n[Autologin]\nUser=$user00\nSession=plasma.desktop\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
 
 if [ "$handheldpass00" = "yup" ]; then
 #Setup OSKB for Handheld PCs
