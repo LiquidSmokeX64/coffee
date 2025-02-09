@@ -145,7 +145,6 @@ iotop
 p7zip
 powertop
 tk
-unrar
 xorg-xhost
 zip
 xorg-server
@@ -155,7 +154,6 @@ bash-completion
 networkmanager
 network-manager-applet
 gvfs
-neofetch
 pipewire
 pipewire-alsa
 pipewire-pulse
@@ -167,16 +165,8 @@ dialog
 spectacle
 btop
 gnu-free-fonts
-cronie
-tesseract-data-eng
 appstream-qt
 gnome-disk-utility
 gnome-menus
-firefox
-xdg-desktop-portal-kde
 onboard
 qt6-virtualkeyboard
-pyside6
-maliit-keyboard
-qt6-multimedia-ffmpeg
-noto-fonts-emoji
