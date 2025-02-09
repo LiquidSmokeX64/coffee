@@ -8,8 +8,6 @@ Built on Arch Linux, CoffeeLinux is designed to provide a streamlined, hassle-fr
 
 The installer is a lightweight, shell-based setup. We believe in a straightforward approach, foregoing unnecessary graphical interfaces in favor of a direct, efficient installation process. With just a few easy selections, you’ll be up and running in no time.
 
-CoffeeLinux offers three standard desktop environment choices, ensuring you can find the one that best suits your needs.
-
 What sets CoffeeLinux apart from other distributions is its custom-crafted installer, a modified version of the Arch ISO (releng profile). This installer uses a single script to perform the entire installation based on your preferences, significantly reducing the need for copying packages from the installation medium. The installation process mirrors a manual Arch Linux setup, ensuring greater flexibility and control.
 
 Concerned about managing updates? We’ve got you covered. The CoffeeLinux Self-Updating Service is designed to simplify maintenance. Once activated, the service takes care of everything in the background with minimal user intervention—just reboot (sometimes twice), and your system will stay up to date.
@@ -33,10 +31,8 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
-- **Desktop Environments**:
-   - **Plasma 6 DE (KDE)**: Standard KDE for a cleaner more user customizable environment. **(Default selection)**
-   - **Yaru (Ubuntu) styled GNOME**: Featuring dynamic buffering with Mutter for enhanced performance.
-   - **Mint-styled Cinnamon DE**: Includes all available Mint backgrounds for a polished look.
+- **Desktop Environment**:
+   - **Plasma 6 DE (KDE)**: Standard KDE for a cleaner more user customizable environment.
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
 
@@ -54,7 +50,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- **Handheld PC Options**: Supports Handhelds with On-Screen Keyboard, adjustor (TPM), and HandHeld Daemon service installations. (KDE Recommended)
+- **Handheld PC Options**: Supports Handhelds with On-Screen Keyboard, adjustor (TPM), and HandHeld Daemon service installations.
 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 

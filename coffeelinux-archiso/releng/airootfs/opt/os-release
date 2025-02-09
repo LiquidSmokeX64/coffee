@@ -1,6 +1,6 @@
 NAME="CoffeeLinux"
 PRETTY_NAME="Coffee Linux"
-VERSION_ID="27.0.0"
+VERSION_ID="27.0.1"
 VERSION_CODENAME="Almond"
 ID="arch"
 BUILD_ID="Almond"
