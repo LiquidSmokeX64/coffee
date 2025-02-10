@@ -10,6 +10,8 @@ pacman -Syu --noconfirm
 #Replace CoffeeLinux Files
 mkdir -p /etc/sddm.conf.d/
 mkdir -p /etc/xdg/
+rm /etc/sddm.conf.d/autologin.conf
+printf "%b" "\n[General]\nDisplayServer=wayland\n\n[Autologin]\nUser=$(whoami)\nSession=plasma.desktop\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
 rm /etc/sddm.conf.d/virtualkbd.conf
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/virtualkbd.conf -P /etc/sddm.conf.d/
 rm /etc/xdg/kwinrc
