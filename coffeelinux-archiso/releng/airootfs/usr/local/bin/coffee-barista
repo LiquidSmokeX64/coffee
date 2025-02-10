@@ -147,12 +147,14 @@ rm /etc/lsb-release
 rm /opt/coffee-injector
 rm /usr/local/bin/coffeebrewer4
 rm /etc/xdg/kwinrc
-rm /etc/sddm.config.d/virtualkbd.conf
-rm /etc/sddm.config.d/autologin.conf
+rm /etc/sddm.conf.d/virtualkbd.conf
+rm /etc/sddm.conf.d/autologin.conf
+mkdir -p /etc/sddm.conf.d/
+mkdir -p /etc/xdg/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/sddm.config.d/virtualkbd.conf -P /etc/sddm.config.d/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/virtualkbd.conf -P /etc/sddm.config.d/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/sddm.config.d/autologin.conf -P /etc/sddm.config.d/
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/autologin.conf -P /etc/sddm.config.d/
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/xdg/kwinrc -P /etc/xdg/
 clear

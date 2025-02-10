@@ -1268,6 +1268,7 @@ printf "%b" "\n[General]\nDisplayServer=wayland\n\n[Autologin]\nUser=$user00\nSe
 
 if [ "$handheldpass00" = "yup" ]; then
 #Setup OSKB for Handheld PCs
+rm -r /mnt/etc/sddm.conf.d/virtualkbd.conf
 printf "%b" "\n[General]\nInputMethod=maliit-keyboard" > /mnt/etc/sddm.conf.d/virtualkbd.conf
 fi
 
