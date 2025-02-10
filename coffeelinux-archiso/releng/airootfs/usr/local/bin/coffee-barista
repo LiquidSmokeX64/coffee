@@ -146,6 +146,15 @@ rm /etc/os-release
 rm /etc/lsb-release
 rm /opt/coffee-injector
 rm /usr/local/bin/coffeebrewer4
+rm /etc/xdg/kwinrc
+rm /etc/sddm.config.d/virtualkbd.conf
+rm /etc/sddm.config.d/autologin.conf
+clear
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/sddm.config.d/virtualkbd.conf -P /etc/sddm.config.d/
+clear
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/sddm.config.d/autologin.conf -P /etc/sddm.config.d/
+clear
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/xdg/kwinrc -P /etc/xdg/
 clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer4 -P /usr/local/bin/
 clear
@@ -166,7 +175,7 @@ clear
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Iso ####\n"
-printf "%b" "\n########## Barista v.1.1.4 ##########\n"
+printf "%b" "\n########## Barista v.1.1.5 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Install CoffeeLinux\n"
 printf "%b" "\n2 - Exit\n"
