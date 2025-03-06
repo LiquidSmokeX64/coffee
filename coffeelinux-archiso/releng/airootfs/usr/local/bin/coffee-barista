@@ -116,6 +116,16 @@ sleep 5
 printf "%b" "\n" | iwctl --passphrase $netpassword0 station $wifi0 connect $ssid0
 printf "%b" "\nEnsuring we have a connection...\n"
 sleep 10
+clear
+rm /etc/pacman.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/pacman.conf -P /etc/pacman.conf/
+clear
+rm /opt/pacman-stable.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/pacman-stable.conf/
+clear
+rm /opt/pacman-unstable.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf -P /opt/pacman-unstable.conf/
+clear
 printf "%b" "\nSetting intial pacman keyring up...\n"
 pacman-key --init
 pacman-key --populate archlinux
@@ -125,6 +135,16 @@ pacman -Syy --noconfirm archlinux-keyring
 else
 printf "%b" "\nWe are already connected to the internet, preparing for launch..\n"
 sleep 10
+clear
+rm /etc/pacman.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/pacman.conf -P /etc/pacman.conf/
+clear
+rm /opt/pacman-stable.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/pacman-stable.conf/
+clear
+rm /opt/pacman-unstable.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf -P /opt/pacman-unstable.conf/
+clear
 printf "%b" "\nSetting intial local pacman keyring up...\n"
 pacman-key --init
 pacman-key --populate archlinux
@@ -177,7 +197,7 @@ clear
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Iso ####\n"
-printf "%b" "\n########## Barista v.1.1.5 ##########\n"
+printf "%b" "\n########## Barista v.1.1.6 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Install CoffeeLinux\n"
 printf "%b" "\n2 - Exit\n"
