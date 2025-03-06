@@ -1887,11 +1887,23 @@ if [ "$native1" = "yes" ]; then
    cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
    arch-chroot /mnt chmod 755 /lib/systemd/system/coffee-keeper.service
    arch-chroot /mnt systemctl enable coffee-keeper.service
-   cp /opt/issue /mnt/etc/issue
+   rm /mnt/etc/bin/issue
+   cp /opt/issue /mnt/etc/
+   arch-chroot /mnt chmod 755 /etc/issue
+   rm /mnt/usr/local/bin/coffee-updater
    cp /opt/coffee-updater /mnt/usr/local/bin/
    arch-chroot /mnt chmod 755 /usr/local/bin/coffee-updater
+   rm /mnt/usr/share/applications/coffee-updater.desktop
    cp /opt/coffee-updater.desktop /mnt/usr/share/applications/
    arch-chroot /mnt chmod 755 /usr/share/applications/coffee-updater.desktop
+   rm /mnt/usr/local/bin/coffee-filter
+   wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter -P /mnt/usr/local/bin/
+   arch-chroot /mnt chmod 755 /usr/local/bin/coffee-filter
+   rm /mnt/usr/share/applications/coffee-filter.desktop
+   wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop -P /mnt/usr/share/applications/
+   arch-chroot /mnt chmod 755 /usr/share/applications/coffee-filter.desktop
+
+
    if [ "$steamon00" = "yes" ]; then
    rm /mnt/usr/share/applications/steam-native.desktop
    fi

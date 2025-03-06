@@ -8,6 +8,12 @@ sleep 10
 pacman -Syu --noconfirm
 
 #Replace CoffeeLinux Files
+rm /usr/local/bin/coffee-filter
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter -P /usr/local/bin/
+chmod 755 /usr/local/bin/coffee-filter
+rm /usr/share/applications/coffee-filter.desktop
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop -P /usr/share/applications/
+chmod 755 /usr/share/applications/coffee-filter.desktop
 mkdir -p /etc/sddm.conf.d/
 mkdir -p /etc/xdg/
 rm /etc/sddm.conf.d/virtualkbd.conf
