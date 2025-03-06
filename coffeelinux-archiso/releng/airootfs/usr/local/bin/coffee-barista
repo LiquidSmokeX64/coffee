@@ -119,6 +119,7 @@ sleep 10
 clear
 rm /etc/pacman.conf
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/pacman.conf -P /etc/pacman.conf/
+chmod 755 /etc/pacman.conf
 clear
 rm /opt/pacman-stable.conf
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/pacman-stable.conf/
