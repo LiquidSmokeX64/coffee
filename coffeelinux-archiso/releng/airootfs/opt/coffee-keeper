@@ -8,6 +8,12 @@ sleep 10
 pacman -Syu --noconfirm
 
 #Replace CoffeeLinux Files
+mkdir -p /etc/sddm.conf.d/
+mkdir -p /etc/xdg/
+rm /etc/sddm.conf.d/virtualkbd.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/virtualkbd.conf -P /etc/sddm.conf.d/
+rm /etc/xdg/kwinrc
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/xdg/kwinrc -P /etc/xdg/
 rm /opt/backgrounds/coffee/adwaita-l.jpg
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg -P /opt/backgrounds/coffee/
 rm /opt/backgrounds/coffee/adwaita-d.jpg
