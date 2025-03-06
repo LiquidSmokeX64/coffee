@@ -120,14 +120,14 @@ printf "%b" "\nEnsuring we have a connection...\n"
 sleep 10
 clear
 rm /etc/pacman.conf
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/pacman.conf -P /etc/pacman.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/pacman.conf -P /etc/
 chmod 755 /etc/pacman.conf
 clear
 rm /opt/pacman-stable.conf
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/pacman-stable.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/
 clear
 rm /opt/pacman-unstable.conf
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf -P /opt/pacman-unstable.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf -P /opt/
 clear
 printf "%b" "\nSetting intial pacman keyring up...\n"
 pacman-key --init
@@ -140,13 +140,14 @@ printf "%b" "\nWe are already connected to the internet, preparing for launch..\
 sleep 10
 clear
 rm /etc/pacman.conf
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/pacman.conf -P /etc/pacman.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/pacman.conf -P /etc/
+chmod 755 /etc/pacman.conf
 clear
 rm /opt/pacman-stable.conf
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/pacman-stable.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/
 clear
 rm /opt/pacman-unstable.conf
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf -P /opt/pacman-unstable.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf -P /opt/
 clear
 printf "%b" "\nSetting intial local pacman keyring up...\n"
 pacman-key --init
@@ -167,7 +168,7 @@ command17finished="0"
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Network Tool ####\n"
-printf "%b" "\n########## Filter v.1.0.0 ##########\n"
+printf "%b" "\n########## Filter v.1.0.1 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Connect to a network\n"
 printf "%b" "\n2 - Exit\n"
