@@ -35,7 +35,7 @@ if [ "$typecheck99" = "1" ]; then
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.4 ####\n"
+printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.5 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 3)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
 printf "%b" "\n2 - CoffeeLinux OS update\n"
@@ -52,7 +52,7 @@ esac
 clear
 
 if [ "$typecheck00" = "1" ]; then
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 clear
 printf "%b" "\nOfficial Arch Linux updates finished..\n"
 typecheck00=3
