@@ -1769,7 +1769,7 @@ arch-chroot /mnt systemctl enable NetworkManager
 arch-chroot /mnt systemctl enable firewalld
 arch-chroot /mnt systemctl enable cups
 arch-chroot /mnt systemctl enable bluetooth.service
-arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
+arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service pipewire-alsa.service wireplumber.service
 
 }
 
