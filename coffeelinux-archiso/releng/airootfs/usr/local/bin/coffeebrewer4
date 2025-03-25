@@ -898,40 +898,31 @@ wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coff
 chmod 755 /usr/local/bin/coffee-barista
 rm /opt/coffee-updater
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater -P /opt/
+arch-chroot /mnt systemctl preset-all
+arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
+#Install Yay for AUR support
 clear
-sleep 5
 printf "%b" "\nCopying yay package..\n"
-sleep 5
+clear
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.4.2-1-x86_64.pkg.tar.zst -P /opt/
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/yay-debug-12.4.2-1-x86_64.pkg.tar.zst -P /opt/
 cp /opt/yay-12.4.2-1-x86_64.pkg.tar.zst /mnt/opt/
 cp /opt/yay-debug-12.4.2-1-x86_64.pkg.tar.zst /mnt/opt/
+clear
 printf "%b" "\nInstalling yay.\n"
+clear
 arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.4.2-1-x86_64.pkg.tar.zst
 arch-chroot /mnt pacman -U --noconfirm /opt/yay-debug-12.4.2-1-x86_64.pkg.tar.zst
-sleep 2
+clear
 printf "%b" "\nInstalled yay successfully.\n"
 clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
 if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
 arch-chroot /mnt systemctl enable sddm
-
-#Autologin User
-rm -r /mnt/etc/sddm.conf.d/autologin.conf
-mkdir -p /mnt/etc/sddm.conf.d/
-printf "%b" "\n[General]\nDisplayServer=wayland\n\n[Autologin]\nUser=$user00\nSession=plasma.desktop\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
-
-if [ "$handheldpass00" = "yup" ]; then
-#Setup OSKB for Handheld PCs
-rm -r /mnt/etc/sddm.conf.d/virtualkbd.conf
-printf "%b" "\n[General]\nInputMethod=maliit-keyboard" > /mnt/etc/sddm.conf.d/virtualkbd.conf
-fi
 
 fi
 
@@ -1220,7 +1211,17 @@ command18finished="0"
 
 handheld_install (){
 if [ "$handheldpass00" = "yup" ]; then
+  #Autologin User
+  rm -r /mnt/etc/sddm.conf.d/autologin.conf
+  mkdir -p /mnt/etc/sddm.conf.d/
+  printf "%b" "\n[General]\nDisplayServer=wayland\n\n[Autologin]\nUser=$user00\nSession=plasma.desktop\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
+  #Setup OSKB for Handheld PCs
+  rm -r /mnt/etc/sddm.conf.d/virtualkbd.conf
+  printf "%b" "\n[General]\nInputMethod=maliit-keyboard" > /mnt/etc/sddm.conf.d/virtualkbd.conf
+  cp /etc/xdg/kwinrc /mnt/etc/xdg/kwinrc
+  arch-chroot /mnt chmod 755 /etc/xdg/kwinrc
   clear
+  #Install Handheld Device Daemon
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd
   clear
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y adjustor
@@ -1228,9 +1229,6 @@ if [ "$handheldpass00" = "yup" ]; then
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd-ui
   clear
   arch-chroot /mnt systemctl enable hhd@$user01
-  clear
-  cp /etc/xdg/kwinrc /mnt/etc/xdg/kwinrc
-  arch-chroot /mnt chmod 755 /etc/xdg/kwinrc
   clear
 fi
 }
