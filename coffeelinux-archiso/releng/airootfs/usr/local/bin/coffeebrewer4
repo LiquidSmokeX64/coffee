@@ -689,11 +689,6 @@ done
 
 clear
 
-while [ "$coffeecheck00" != "1" ] && [ "$coffeecheck00" != "2" ]; do
-
-clear
-
-coffeecheck00=1
 coffeeon00=yes
 
 clear
