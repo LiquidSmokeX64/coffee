@@ -6,7 +6,7 @@ coffeeos="amd-ucode apparmor appstream-qt arch-install-scripts archinstall archi
 
 javaapps="jre-openjdk"
 
-questionare (){
+configuration (){
 
 clear
 
@@ -646,324 +646,14 @@ done
 
 clear
 
-desktop0="kde"
-
-clear
-
 native1=yes
-
-clear
-
-while [ "$swapcheck" != "1" ] && [ "$swapcheck" != "2" ]; do
-printf "%b" "\nSetting up swap size, do you want to manually configure or auto configure it based on your RAM size ? (Default: 2)\n"
-printf "%b" "\n1 - Manual\n"
-printf "%b" "\n2 - Auto\n"
-read -r swapcheck
-case $swapcheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default...\n" ;;
-esac
-if [ "$swapcheck" != "1" ] && [ "$swapcheck" != "2" ]; then
+desktop0="kde"
 swapcheck=2
-fi
-done
-
-clear
-
-while [ "$hibernationpasscheck" != "1" ] && [ "$hibernationpasscheck" != "2" ]; do
-printf "%b" "\nWould you like to enable hibernation? (Default: 1)\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-
-read -r hibernationpasscheck
-case $hibernationpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default.\n" ;;
-esac
-if [ "$hibernationpasscheck" != "1" ] && [ "$hibernationpasscheck" != "2" ]; then
 hibernationpasscheck=1
-fi
-done
-
-clear
-
 coffeeon00=yes
-
-clear
-
-while [ "$webcheck00" != "1" ] && [ "$webcheck00" != "2" ] && [ "$webcheck00" != "3" ]; do
-
-clear
-
-printf "%b" "\nWhat Web Browser do you prefer? (Default: 1)\n"
-printf "%b" "\n1 - Google Chrome\n"
-printf "%b" "\n2 - Firefox\n"
-printf "%b" "\n3 - Microsoft Edge\n"
-read -r webcheck00
-case $webcheck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  3) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-if [ "$webcheck00" = "1" ]; then
 webbrowser00=chrome
-fi
-if [ "$webcheck00" = "2" ]; then
-webbrowser00=firefox
-fi
-if [ "$webcheck00" = "3" ]; then
-webbrowser00=edge
-fi
-if [ "$webcheck00" != "1" ] && [ "$webcheck00" != "2" ] && [ "$webcheck00" != "3" ]; then
-webcheck00=1
-webbrowser00=chrome
-fi
-done
-
-clear
-
-while [ "$heroiccheck00" != "1" ] && [ "$heroiccheck00" != "2" ]; do
-
-clear
-
-printf "%b" "\nWould you like to install Epic Games launcher? (Default: 1)\n"
-printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
-read -r heroiccheck00
-case $heroiccheck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, please try again..\n" ;;
-esac
-
-if [ "$heroiccheck00" = "1" ]; then
-epicon00=yes
-fi
-if [ "$heroiccheck00" = "2" ]; then
-epicon00=no
-fi
-if [ "$heroiccheck00" != "1" ] && [ "$heroiccheck00" != "2" ]; then
-heroiccheck00=1
-epicon00=yes
-fi
-done
-
-clear
-
-while [ "$githubcheck00" != "1" ] && [ "$githubcheck00" != "2" ]; do
-
-clear
-
-printf "%b" "\nWould you like to install Github Desktop app? (Default: 1)\n"
-printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
-read -r githubcheck00
-case $githubcheck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$githubcheck00" = "1" ]; then
-giton00=yes
-fi
-if [ "$githubcheck00" = "2" ]; then
-giton00=no
-fi
-if [ "$githubcheck00" != "1" ] && [ "$githubcheck00" != "2" ]; then
-githubcheck00=1
-giton00=yes
-fi
-done
-
-clear
-
-while [ "$steamcheck00" != "1" ] && [ "$steamcheck00" != "2" ]; do
-
-clear
-
-printf "%b" "\nWould you like to install Steam Desktop? (Default: 1)\n"
-printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
-read -r steamcheck00
-case $steamcheck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, please try again..\n" ;;
-esac
-
-if [ "$steamcheck00" = "1" ]; then
 steamon00=yes
-fi
-if [ "$steamcheck00" = "2" ]; then
-steamon00=no
-fi
-if [ "$steamcheck00" != "1" ] && [ "$steamcheck00" != "2" ]; then
-steamcheck00=1
-steamon00=yes
-fi
-done
-
-clear
-
-while [ "$discordcheck00" != "1" ] && [ "$discordcheck00" != "2" ]; do
-
-clear
-
-printf "%b" "\nWould you like to install Discord app? (Default: 1)\n"
-printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
-read -r discordcheck00
-case $discordcheck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$discordcheck00" = "1" ]; then
-discordon00=yes
-fi
-if [ "$discordcheck00" = "2" ]; then
-discordon00=no
-fi
-if [ "$discordcheck00" != "1" ] && [ "$discordcheck00" != "2" ]; then
-discordcheck00=1
-discordon00=yes
-fi
-done
-
-clear
-
-while [ "$lutrischeck00" != "1" ] && [ "$lutrischeck00" != "2" ]; do
-
-printf "%b" "\nWould you like to install Lutris app? (Default: 1)\n"
-printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
-read -r lutrischeck00
-case $lutrischeck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$lutrischeck00" = "1" ]; then
-lutrison00=yes
-fi
-if [ "$lutrischeck00" = "2" ]; then
-lutrison00=no
-fi
-if [ "$lutrischeck00" != "1" ] && [ "$lutrischeck00" != "2" ]; then
-lutrischeck00=1
-lutrison00=yes
-fi
-done
-
-clear
-
-while [ "$officecheck00" != "1" ] && [ "$officecheck00" != "2" ]; do
-
-printf "%b" "\nWould you like to install LibreOffice bundle? (Default: 1)\n"
-printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
-read -r officecheck00
-case $officecheck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$officecheck00" = "1" ]; then
-officeon00=yes
-fi
-if [ "$officecheck00" = "2" ]; then
-officeon00=no
-fi
-if [ "$officecheck00" != "1" ] && [ "$officecheck00" != "2" ]; then
-officecheck00=1
-officeon00=yes
-fi
-done
-
-clear
-
-while [ "$javacheck00" != "1" ] && [ "$javacheck00" != "2" ]; do
-
-printf "%b" "\nWould you like to install Java / OpenJDK? (Default: 1)\n"
-printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
-read -r javacheck00
-case $javacheck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$javacheck00" = "1" ]; then
-javaon00=yes
-fi
-if [ "$javacheck00" = "2" ]; then
-javaon00=no
-fi
-if [ "$javacheck00" != "1" ] && [ "$javacheck00" != "2" ]; then
-javacheck00=1
-javaon00=yes
-fi
-done
-
-clear
-
-while [ "$snapcheck" != "1" ] && [ "$snapcheck" != "2" ]; do
-printf "%b" "\nWould you like Snap-Store support (Snapd) ? (Default: 1)\n"
-printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
-
-read -r snapcheck
-case $snapcheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nA good choice.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$snapcheck" = "1" ]; then
-snapon="yes"
-fi
-if [ "$snapcheck" = "2" ]; then
-snapon="no"
-fi
-if [ "$snapcheck" != "1" ] && [ "$snapcheck" != "2" ]; then
-snapcheck=1
-snapon=yes
-fi
-done
-
-clear
-
-while [ "$fscheck" != "1" ] && [ "$fscheck" != "2" ]; do
-printf "%b" "\nWould you like Ext4 or BTRFS Filesystem type? (Default: 2)\n"
-printf "%b" "\n1 - Ext4\n"
-printf "%b" "\n2 - BTRFS\n"
-
-read -r fscheck
-case $fscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nA good choice.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$fscheck" = "1" ]; then
-fs0="ext4"
-fi
-if [ "$fscheck" = "2" ]; then
-fs0="btrfs"
-fi
-if [ "$fscheck" != "1" ] && [ "$fscheck" != "2" ]; then
-fscheck=2
 fs0=btrfs
-fi
-done
 
 clear
 
@@ -1104,7 +794,7 @@ command1finished="0"
 
 }
 
-base_install (){
+baseos_install (){
 
 clear
 
@@ -1122,7 +812,7 @@ done
 
 }
 
-set_locale (){
+preset_locale (){
 
 clear
 
@@ -1192,7 +882,7 @@ command3finished="0"
 
 }
 
-desktop_install (){
+mainos_install (){
 
 clear
 
@@ -1455,39 +1145,19 @@ command9finished="0"
 
 }
 
-java_install (){
-
-clear
-
-while [ "$command5finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-clear
-
-if [ "$javaon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $javaapps
-clear
-fi
-
-java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
-
-arch-chroot /mnt archlinux-java set "$java1"
-
-command5finished="1"
-else
-command5finished="0"
-fi
-done
-command5finished="0"
-
-}
-
-browser_install (){
+postos_install (){
 
 clear
 
 while [ "$command18finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
+
+clear
+arch-chroot /mnt pacman -Sy --noconfirm $javaapps
+java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
+arch-chroot /mnt archlinux-java set "$java1"
+
+clear
 
 if [ "$webbrowser00" = "chrome" ]; then
 if [ "$branchpass00" = "stable" ]; then
@@ -1498,67 +1168,8 @@ if [ "$branchpass00" = "beta" ]; then
 printf "%b" "3\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
 clear
 fi
-fi
-if [ "$webbrowser00" = "firefox" ]; then
-if [ "$branchpass00" = "stable" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm firefox
-clear
-fi
-if [ "$branchpass00" = "beta" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm firefox-developer-edition
-clear
-fi
-fi
-if [ "$webbrowser00" = "edge" ]; then
-if [ "$branchpass00" = "stable" ]; then
-printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge
-clear
-fi
-if [ "$branchpass00" = "beta" ]; then
-printf "%b" "3\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y microsoft-edge
-clear
-fi
-fi
 
-command18finished="1"
-else
-command18finished="0"
-fi
-done
-command18finished="0"
-
-}
-
-office_install (){
-
-clear
-
-while [ "$command24finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$officeon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm libreoffice-fresh
-clear
-fi
-
-command24finished="1"
-else
-command24finished="0"
-fi
-done
-command24finished="0"
-
-}
-
-steam_install (){
-
-clear
-
-while [ "$command21finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$steamon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm mangohud gamescope steam-native-runtime wine wine-gecko wine-mono winetricks
+arch-chroot /mnt pacman -Sy --noconfirm libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
 clear
@@ -1568,126 +1179,10 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protonup-qt
 clear
-fi
-
-command21finished="1"
-else
-command21finished="0"
-fi
-done
-command21finished="0"
-
-}
-
-discord_install (){
-
-clear
-
-while [ "$command22finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$discordon00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm discord
-clear
-fi
-
-command22finished="1"
-else
-command22finished="0"
-fi
-done
-command22finished="0"
-
-}
-
-lutris_install (){
-
-clear
-
-while [ "$command23finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$lutrison00" = "yes" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm lutris wine wine-gecko wine-mono winetricks
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
-clear
-fi
-
-command23finished="1"
-else
-command23finished="0"
-fi
-done
-command23finished="0"
-
-}
-
-heroic_install (){
-
-clear
-
-while [ "$command19finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$epicon00" = "yes" ]; then
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
 clear
-arch-chroot /mnt pacman -Sy --noconfirm wine wine-gecko wine-mono winetricks
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
-fi
-if [ "$epicon00" = "no" ]; then
-printf "%b" "\nHeroic not selected, moving on."
-clear
-fi
-
-command19finished="1"
-else
-command19finished="0"
-fi
-done
-command19finished="0"
-
-}
-
-github_install (){
-
-clear
-
-while [ "$command20finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$giton00" = "yes" ]; then
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 clear
-fi
-if [ "$giton00" = "no" ]; then
-printf "%b" "\nGithub Desktop not selected, moving on."
-clear
-fi
-
-command20finished="1"
-else
-command20finished="0"
-fi
-done
-command20finished="0"
-
-}
-
-snapd_install (){
-
-clear
-
-while [ "$command7finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-if [ "$snapon" = "yes" ]; then
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd-glib
@@ -1700,17 +1195,28 @@ cp /opt/snapd-updater /mnt/opt/
 arch-chroot /mnt chmod 755 /opt/snapd-updater
 cp /opt/snapd-updater.service /mnt/lib/systemd/system/
 arch-chroot /mnt systemctl enable snapd-updater.service
-
+clear
 fi
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y pamac-aur
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
+clear
 
-command7finished="1"
+command18finished="1"
 else
-command7finished="0"
+command18finished="0"
 fi
 done
-command7finished="0"
+command18finished="0"
 
 }
+
 
 handheld_install (){
 if [ "$handheldpass00" = "yup" ]; then
@@ -1729,32 +1235,6 @@ if [ "$handheldpass00" = "yup" ]; then
 fi
 }
 
-yay_install (){
-
-clear
-
-while [ "$yayinstallfinished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
- if [ "$coffeeon00" = "yes" ]; then
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y pamac-aur
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
-  clear
- fi
-yayinstallfinished="1"
-else
-yayinstallfinished="0"
-fi
-done
-
-}
 
 services_starter(){
 
@@ -1925,26 +1405,17 @@ cp /opt/lsb-release /etc/
 
 clear
 
-questionare
+configuration
 set_swap
 format_disks
-base_install
-set_locale
+baseos_install
+preset_locale
 set_passwords
-desktop_install
+mainos_install
 bootloader_install
 gpu_install
-java_install
-browser_install
-office_install
-steam_install
-discord_install
-lutris_install
-heroic_install
-github_install
-snapd_install
+postos_install
 handheld_install
-yay_install
 services_starter
 homedir_fix
 success_check
