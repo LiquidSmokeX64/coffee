@@ -8,6 +8,10 @@ sleep 10
 pacman -Syu --noconfirm
 
 #Replace CoffeeLinux Files
+pacman -Sy --noconfirm rtkit realtime-privileges
+systemctl enable rtkit-daemon
+rm /etc/pipewire/pipewire.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /etc/pipewire/
 rm /usr/local/bin/coffee-filter
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter -P /usr/local/bin/
 chmod 755 /usr/local/bin/coffee-filter

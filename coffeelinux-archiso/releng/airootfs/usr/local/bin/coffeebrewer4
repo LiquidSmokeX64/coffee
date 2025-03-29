@@ -894,6 +894,8 @@ arch-chroot /mnt pacman -Sy --noconfirm $coffeeos
 arch-chroot /mnt pacman -Rdd --noconfirm kmix
 arch-chroot /mnt pacman -Rdd --noconfirm blueman
 arch-chroot /mnt usermod -aG realtime $user01
+rm /mnt/etc/pipewire/pipewire.conf
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /mnt/etc/pipewire/
 rm /usr/local/bin/coffee-barista
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
 chmod 755 /usr/local/bin/coffee-barista
