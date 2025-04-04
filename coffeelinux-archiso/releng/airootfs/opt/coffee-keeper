@@ -8,7 +8,7 @@ sleep 10
 pacman -Syu --noconfirm
 
 #Replace CoffeeLinux Files
-pacman -Sy --noconfirm rtkit realtime-privileges
+pacman -Sy --noconfirm rtkit realtime-privileges rust
 systemctl enable rtkit-daemon
 rm /etc/pipewire/pipewire.conf
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /etc/pipewire/
@@ -78,8 +78,6 @@ pacman -Rdd --noconfirm blueman
 pacman -Rdd --noconfirm kmix
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
-pacman -Rdd --noconfirm rust
-
 
 #Remove any unwanted files
 rm /usr/share/applications/steam-native.desktop
