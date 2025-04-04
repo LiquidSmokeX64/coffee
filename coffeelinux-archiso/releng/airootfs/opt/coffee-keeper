@@ -78,6 +78,8 @@ pacman -Rdd --noconfirm blueman
 pacman -Rdd --noconfirm kmix
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
+pacman -Rdd --noconfirm rust
+
 
 #Remove any unwanted files
 rm /usr/share/applications/steam-native.desktop
