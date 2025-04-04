@@ -893,7 +893,9 @@ if [ "$desktop0" = "kde" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $coffeeos
 arch-chroot /mnt pacman -Rdd --noconfirm kmix
 arch-chroot /mnt pacman -Rdd --noconfirm blueman
-arch-chroot /mnt usermod -aG realtime $user01
+arch-chroot /mnt usermod -a -G realtime $user01
+arch-chroot /mnt usermod -a -G input $user01
+arch-chroot /mnt usermod -a -G plugdev $user01
 rm /mnt/etc/pipewire/pipewire.conf
 wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /mnt/etc/pipewire/
 rm /usr/local/bin/coffee-barista
@@ -1205,6 +1207,8 @@ clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y faudio
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y minecraft-launcher
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y libextest-git
 clear
 
 command18finished="1"
