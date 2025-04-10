@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gamescope -e -f -- steam -steamdeck -steamos3

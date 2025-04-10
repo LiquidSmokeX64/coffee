@@ -1171,6 +1171,27 @@ fi
 
 arch-chroot /mnt pacman -Sy --noconfirm libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks
 clear
+
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update -P /mnt/usr/bin/
+clear
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch -P /mnt/usr/bin/
+clear
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-session-select -P /mnt/usr/bin/
+clear
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/steamos/jupiter-biosupdate -P /mnt/usr/bin/
+clear
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session -P /mnt/usr/bin/
+clear
+wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/steamos/SteamOS.desktop -P /mnt/usr/share/applications/
+clear
+arch-chroot /mnt chmod 755 /usr/share/applications/SteamOS.desktop
+arch-chroot /mnt chmod 755 /usr/bin/steamos-select-branch
+arch-chroot /mnt chmod 755 /usr/bin/steamos-update
+arch-chroot /mnt chmod 755 /usr/bin/steamos-session-select
+arch-chroot /mnt chmod 755 /usr/bin/gamescope-session
+arch-chroot /mnt chmod 755 /usr/bin/jupiter-biosupdate
+clear
+
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
