@@ -14,23 +14,23 @@ rm /etc/sddm.conf.d/autologin.conf
 mkdir -p /etc/sddm.conf.d/
 mkdir -p /etc/xdg/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/virtualkbd.conf -P /etc/sddm.conf.d/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/virtualkbd.conf -P /etc/sddm.conf.d/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/autologin.conf -P /etc/sddm.conf.d/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/autologin.conf -P /etc/sddm.conf.d/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/etc/xdg/kwinrc -P /etc/xdg/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/xdg/kwinrc -P /etc/xdg/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer4 -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer4 -P /usr/local/bin/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /opt/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /etc/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /etc/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /etc/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /etc/
 clear
-wget -L https://raw.githubusercontent.com/Project-X-Mods/coffeelinux/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
 clear
 chmod 755 /usr/local/bin/coffeebrewer4
 clear
