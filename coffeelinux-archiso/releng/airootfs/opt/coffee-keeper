@@ -22,7 +22,7 @@ wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelin
 clear
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/jupiter-biosupdate -P /usr/bin/
 clear
-wget -L https://raw.githubusercontent.com/PLiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session -P /usr/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session -P /usr/bin/
 clear
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/SteamOS.desktop -P /usr/share/applications/
 clear
