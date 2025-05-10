@@ -1,3 +1,3 @@
 #!/bin/bash
 
-gamescope -e -f --expose-wayland --adaptive-sync -- steam -steamdeck -steamos3
+gamescope -e -f -o 120 -r 120 --framerate-limit 120 --backend auto --adaptive-sync -- steam -steamdeck -steamos3
