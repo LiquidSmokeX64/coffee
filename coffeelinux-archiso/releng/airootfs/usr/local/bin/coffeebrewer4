@@ -914,15 +914,15 @@ cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
 clear
 printf "%b" "\nCopying yay package..\n"
 clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.4.2-1-x86_64.pkg.tar.zst -P /opt/
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-debug-12.4.2-1-x86_64.pkg.tar.zst -P /opt/
-cp /opt/yay-12.4.2-1-x86_64.pkg.tar.zst /mnt/opt/
-cp /opt/yay-debug-12.4.2-1-x86_64.pkg.tar.zst /mnt/opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.5.0-1-x86_64.pkg.tar.zst -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst -P /opt/
+cp /opt/yay-12.5.0-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst /mnt/opt/
 clear
 printf "%b" "\nInstalling yay.\n"
 clear
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.4.2-1-x86_64.pkg.tar.zst
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-debug-12.4.2-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.5.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst
 clear
 printf "%b" "\nInstalled yay successfully.\n"
 clear
@@ -1172,26 +1172,6 @@ fi
 arch-chroot /mnt pacman -Sy --noconfirm libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks
 clear
 
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update -P /mnt/usr/bin/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch -P /mnt/usr/bin/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-session-select -P /mnt/usr/bin/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/jupiter-biosupdate -P /mnt/usr/bin/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session -P /mnt/usr/bin/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/SteamOS.desktop -P /mnt/usr/share/applications/
-clear
-arch-chroot /mnt chmod 755 /usr/share/applications/SteamOS.desktop
-arch-chroot /mnt chmod 755 /usr/bin/steamos-select-branch
-arch-chroot /mnt chmod 755 /usr/bin/steamos-update
-arch-chroot /mnt chmod 755 /usr/bin/steamos-session-select
-arch-chroot /mnt chmod 755 /usr/bin/gamescope-session
-arch-chroot /mnt chmod 755 /usr/bin/jupiter-biosupdate
-clear
-
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
@@ -1241,7 +1221,6 @@ done
 command18finished="0"
 
 }
-
 
 handheld_install (){
 if [ "$handheldpass00" = "yup" ]; then
