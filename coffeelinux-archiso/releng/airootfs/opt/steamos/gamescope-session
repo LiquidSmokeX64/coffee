@@ -1,3 +1,4 @@
 #!/bin/bash
-
+steam -shutdown
+sleep 5
 gamescope -e -f -o 120 -r 120 --framerate-limit 0 --backend auto --adaptive-sync -- steam -steamdeck -steamos3
