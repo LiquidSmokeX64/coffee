@@ -1,5 +1,3 @@
 #!/bin/bash
 
 steam -shutdown
-sleep 5
-steam
