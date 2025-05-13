@@ -1,21 +1,29 @@
 #!/bin/bash
 steam -shutdown
 sleep 3
+pkill steam
+sleep 2
 #gamescope -e -f -o 120 -r 120 --framerate-limit 120 --backend auto --adaptive-sync -- sh -c "steam -steamdeck -steamos3"
 # Launch Gamescope with Steam
 gamescope -e -f -o 120 -r 120 --framerate-limit 120 --backend auto --adaptive-sync -- steam -steamdeck -steamos3 &
 gamescope_pid=$!
 
-# Monitor Steam process in a loop
-while wait -n 1 "$gamescope_pid"; do
-  sleep 2 # Give a short delay before checking
-  if ! pgrep -u "$USER" -x "steam" > /dev/null; then
-    echo "Steam process not found. Relaunching..."
-    steam -steamdeck -steamos3 &
-    sleep 3 # Wait a bit after relaunching
-  else
-   steam &
-  fi
-done
-steam &
-echo "Gamescope session ended."
+# Function to monitor for Steam process and relaunch if it's not running
+monitor_steam() {
+  while kill -0 "$gamescope_pid" &> /dev/null; do
+    sleep 2
+    if ! pgrep -u "$USER" -x "steam" > /dev/null; then
+      echo "Steam process not found. Relaunching..."
+      steam &
+      sleep 5
+    fi
+  done
+  echo "Gamescope session ended."
+}
+
+# Run the monitoring function in the background
+monitor_steam &
+
+# Keep the script running until Gamescope exits
+wait "$gamescope_pid"
+
