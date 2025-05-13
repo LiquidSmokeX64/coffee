@@ -10,6 +10,33 @@ pacman -Syu --noconfirm
 #Replace CoffeeLinux Files
 pacman -Sy --noconfirm rtkit realtime-privileges rust
 systemctl enable rtkit-daemon
+
+rm /usr/share/applications/SteamOS.desktop
+rm /usr/bin/steamos-select-branch
+rm /usr/bin/steamos-update
+rm /usr/bin/steamos-session-select
+rm /usr/bin/gamescope-session
+rm /usr/bin/jupiter-biosupdate
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update -P /usr/bin/
+clear
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch -P /usr/bin/
+clear
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-session-select -P /usr/bin/
+clear
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/jupiter-biosupdate -P /usr/bin/
+clear
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session -P /usr/bin/
+clear
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/SteamOS.desktop -P /usr/share/applications/
+clear
+chmod 755 /usr/share/applications/SteamOS.desktop
+chmod 755 /usr/bin/steamos-select-branch
+chmod 755 /usr/bin/steamos-update
+chmod 755 /usr/bin/steamos-session-select
+chmod 755 /usr/bin/gamescope-session
+chmod 755 /usr/bin/jupiter-biosupdate
+clear
+
 rm /etc/pipewire/pipewire.conf
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /etc/pipewire/
 rm /usr/local/bin/coffee-filter
