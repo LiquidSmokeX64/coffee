@@ -1,4 +1,27 @@
 #!/bin/bash
 steam -shutdown
-sleep 5
-gamescope -e -f -o 120 -r 120 --framerate-limit 120 --backend auto --adaptive-sync -- sh -c "steam -steamdeck -steamos3"
+#sleep 5
+#gamescope -e -f -o 120 -r 120 --framerate-limit 120 --backend auto --adaptive-sync -- sh -c "steam -steamdeck -steamos3"
+# Launch Gamescope with Steam in the background
+gamescope -e -f -o 120 -r 120 --framerate-limit 120 --backend auto --adaptive-sync -- steam -steamdeck -steamos3 &
+gamescope_pid=$!
+
+# Function to monitor for game process exits (very basic example)
+monitor_games() {
+  while kill -0 "$gamescope_pid" &> /dev/null; do
+    sleep 5
+    # This is a very simplistic way to check for *any* non-Steam processes
+    # launched after Gamescope. A more robust method would be needed.
+    if ! pgrep -P "$(pgrep -P "$gamescope_pid" -f 'steam-runtime')" -x 'game_executable_name'; then
+      # Assuming the game process has exited, launch Steam desktop
+      steam &
+      break
+    fi
+  done
+}
+
+# Run the monitoring function in the background
+monitor_games &
+
+# Keep the script running until Gamescope exits (user quits)
+wait "$gamescope_pid"
