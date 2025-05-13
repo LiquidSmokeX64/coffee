@@ -13,7 +13,9 @@ while wait -n 1 "$gamescope_pid"; do
     echo "Steam process not found. Relaunching..."
     steam -steamdeck -steamos3 &
     sleep 3 # Wait a bit after relaunching
+  else
+   steam &
   fi
 done
-
+steam &
 echo "Gamescope session ended."
