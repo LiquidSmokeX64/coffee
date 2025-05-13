@@ -12,10 +12,8 @@ while wait -n 1 "$gamescope_pid"; do
   if ! pgrep -u "$USER" -x "steam" > /dev/null; then
     echo "Steam process not found. Relaunching..."
     steam -steamdeck -steamos3 &
-    sleep 3 # Wait a bit after relaunching
-  else
-   steam &
+    sleep 5 # Wait a bit after relaunching
   fi
 done
-steam &
+
 echo "Gamescope session ended."
