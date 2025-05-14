@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+
 # ==============================================================================
 # CoffeeBrewer4 - Optimized Gaming Installation Script for CoffeeLinux
 # ==============================================================================
@@ -120,7 +121,7 @@ configure_drive() {
     3) DRIVE="/dev/sda"; BOOT_PART="1"; SWAP_PART="2"; SYSTEM_PART="3" ;;
     4) DRIVE="/dev/sdb"; BOOT_PART="1"; SWAP_PART="2"; SYSTEM_PART="3" ;;
     5) DRIVE="/dev/vda"; BOOT_PART="1"; SWAP_PART="2"; SYSTEM_PART="3" ;;
-    6) DRIVE="/dev/vdb"; BOOT_PART="1"; SWAP_PART="2"; SYSTEM_PART="3" ;;
+    6) DRIVE="/dev/vdb"; BOOT_PART="1"; SWAP_PART="2"; SYSTEM_PART="p3" ;; # Typo here, should be p3
     *) DRIVE="/dev/nvme0n1"; BOOT_PART="p1"; SWAP_PART="p2"; SYSTEM_PART="p3"; prompt "Unrecognized option, defaulting to /dev/nvme0n1." ;;
   esac
 }
@@ -244,7 +245,7 @@ set_passwords() {
 mainos_install() {
   clear
   prompt "Installing CoffeeOS and gaming packages..."
-  arch-chroot /mnt pacman -Sy --noconfirm "$COFFEE_PACKAGES" "$GAMING_PACKAGES"
+  arch-chroot /mnt pacman -Sy --noconfirm "$COFFEE_PACKAGES" "$GAMING_PACKAGES" --needed
   arch-chroot /mnt pacman -Rdd --noconfirm kmix blueman rust # Remove potentially conflicting or less needed packages
   arch-chroot /mnt usermod -a -G realtime "$USERNAME"
   arch-chroot /mnt usermod -a -G input "$USERNAME"
@@ -262,22 +263,22 @@ mainos_install() {
   prompt "Installing yay for AUR support..."
   arch-chroot /mnt pacman -Sy --noconfirm git base-devel --needed
   arch-chroot /mnt git clone https://aur.archlinux.org/yay.git /tmp/yay
-  arch-chroot /mnt bash -c "cd /tmp/yay && makepkg -si --noconfirm"
+  arch-chroot /mnt bash -c "cd /tmp/yay && makepkg -si --noconfirm --nneeded"
   rm -rf /tmp/yay
 
   # Install GPU drivers
   case "$GPU" in
     nvidia)
       prompt "Installing Nvidia drivers..."
-      arch-chroot /mnt pacman -Sy --noconfirm nvidia nvidia-prime opencl-nvidia nvidia-utils nvidia-settings lib32-nvidia-utils
+      arch-chroot /mnt pacman -Sy --noconfirm nvidia nvidia-prime opencl-nvidia nvidia-utils nvidia-settings lib32-nvidia-utils --needed
       ;;
     amd)
       prompt "Installing AMD drivers and tools..."
-      arch-chroot /mnt pacman -Sy --noconfirm mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon vulkan-mesa-layers lib32-vulkan-mesa-layers corectrl amdgpu-fan
+      arch-chroot /mnt pacman -Sy --noconfirm mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon vulkan-mesa-layers lib32-vulkan-mesa-layers corectrl amdgpu-fan --needed
       ;;
     intel)
       prompt "Installing Intel drivers..."
-      arch-chroot /mnt pacman -Sy --noconfirm mesa lib32-mesa xf86-video-intel vulkan-intel lib32-vulkan-intel intel-media-driver lib32-intel-media-driver
+      arch-chroot /mnt pacman -Sy --noconfirm mesa lib32-mesa xf86-video-intel vulkan-intel lib32-vulkan-intel intel-media-driver lib32-intel-media-driver --needed
       ;;
   esac
 
@@ -290,12 +291,12 @@ bootloader_install() {
   prompt "Installing bootloader ($BOOTLOADER)..."
   case "$BOOTLOADER" in
     grub-uefi)
-      arch-chroot /mnt pacman -Sy --noconfirm efibootmgr grub os-prober
+      arch-chroot /mnt pacman -Sy --noconfirm efibootmgr grub os-prober --needed
       arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
       arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
       ;;
     grub-bios)
-      arch-chroot /mnt pacman -Sy --noconfirm grub os-prober
+      arch-chroot /mnt pacman -Sy --noconfirm grub os-prober --needed
       arch-chroot /mnt grub-install --target=i386-pc "$DRIVE"
       arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
       ;;
