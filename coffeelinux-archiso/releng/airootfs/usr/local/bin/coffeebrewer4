@@ -353,6 +353,33 @@ postos_install() {
 handheld_install() {
   if [ "$HANDHELD" = "yes" ]; then
     prompt "Configuring for handheld PC..."
+
+    # --- ROG Ally X Specific Configuration ---
+    detect_ally_x() {
+      if grep -q "ASUS ROG Ally X" /sys/devices/virtual/dmi/id/product_name; then
+        echo "ROG Ally X detected."
+        return 0
+      else
+        echo "ROG Ally X not detected."
+        return 1
+      fi
+    }
+
+    if detect_ally_x; then
+      prompt "Applying ROG Ally X specific settings..."
+      # Safest option: Append IOMMU parameters if the line exists, else create it
+      if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
+        sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 amd_iommu=on iommu=pt"/g' /mnt/etc/default/grub
+      else
+        echo 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amd_iommu=on iommu=pt"' >> /mnt/etc/default/grub
+      fi
+      prompt "IOMMU enabled for ROG Ally X."
+
+      # You can add more Ally X specific configurations here in the future
+      # such as installing specific power management tools or controller drivers
+    fi
+    # --- End ROG Ally X Specific Configuration ---
+
     # Autologin User
     mkdir -p /mnt/etc/sddm.conf.d/
     printf "[General]\nDisplayServer=wayland\n\n[Autologin]\nUser=%s\nSession=plasma.desktop\nRelogin=true" "$USERNAME" > /mnt/etc/sddm.conf.d/autologin.conf
