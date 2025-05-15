@@ -136,11 +136,10 @@ Comment[sl]=Prilagodljiva zaslonska tipkovnica
 Comment[sv]=Flexibelt onscreen-tangentbord
 Comment[tr]=Esnek ekran klavyesi
 Comment[ug]=ماسلىشىشچان ئېكران ھەرپتاختىسى
-Exec=onboard --not-show-in=GNOME,GNOME-Classic:GNOME --startup-delay=3.0
-Icon=onboard
+Exec=onboard
+Terminal=false
 Type=Application
-NoDisplay=true
+Categories=Utility;Accessibility;
+MimeType=application/x-onboard;
+Icon=onboard
 X-Ubuntu-Gettext-Domain=onboard
-AutostartCondition=GSettings org.gnome.desktop.a11y.applications screen-keyboard-enabled
-X-GNOME-AutoRestart=true
-OnlyShowIn=GNOME;Unity;MATE;

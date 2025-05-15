@@ -1247,15 +1247,15 @@ if [ "$handheldpass00" = "yup" ]; then
   #Autologin User
   rm -r /mnt/etc/sddm.conf.d/autologin.conf
   mkdir -p /mnt/etc/sddm.conf.d/
-  printf "%b" "\n[General]\nDisplayServer=x11\n\n[Autologin]\nUser=$user00\nSession=plasma.desktop\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
+  printf "%b" "\n[General]\nDisplayServer=x11\n\n[Autologin]\nUser=$user00\nSession=plasmax11\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
   #Setup OSKB for Handheld PCs
   rm -r /mnt/etc/sddm.conf.d/virtualkbd.conf
   printf "%b" "\n[General]\nInputMethod=onboard" > /mnt/etc/sddm.conf.d/virtualkbd.conf
   cp /etc/xdg/kwinrc /mnt/etc/xdg/kwinrc
   arch-chroot /mnt chmod 755 /etc/xdg/kwinrc
   mkdir -p /mnt/etc/xdg/autostart/
-  cp /etc/xdg/autostart/onboard-autostart.desktop /mnt/etc/xdg/autostart/
-  chmod 755 /mnt/etc/xdg/autostart/onboard-autostart.desktop
+  cp /etc/xdg/autostart/onboard.desktop /mnt/etc/xdg/autostart/
+  chmod 755 /mnt/etc/xdg/autostart/onboard.desktop
   clear
   #Install Handheld Device Daemon
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd
