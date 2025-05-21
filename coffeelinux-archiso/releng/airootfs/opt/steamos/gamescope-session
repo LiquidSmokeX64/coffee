@@ -1,11 +1,11 @@
 #!/bin/bash
-
+#Shutdown any existing Steam processes first
 steam -shutdown
 sleep 5
 pkill steam
 sleep 5
 
-# Launch Gamescope with Steam
+# Launch a Gamescope session with SteamDeck like options.
 gamescope \
     -e \
     -f \
@@ -23,7 +23,7 @@ gamescope \
     &
 gamescope_pid=$!
 
-# Function to monitor for Steam process and relaunch if it's not running
+# Monitor for Steam processes and relaunch if it's not running ie. Switching to Desktop Mode
 monitor_steam() {
   while kill -0 "$gamescope_pid" &> /dev/null; do
     sleep 5
