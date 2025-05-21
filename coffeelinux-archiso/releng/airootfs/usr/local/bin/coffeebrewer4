@@ -1256,16 +1256,11 @@ if [ "$handheldpass00" = "yup" ]; then
     }
 
     if detect_ally_x; then
-      prompt "Applying ROG Ally X specific settings..."
       # Safest option: Append IOMMU parameters to grub.
       if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
         sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 amd_iommu=on iommu=pt"/g' /mnt/etc/default/grub
         arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
       fi
-      prompt "IOMMU enabled for ROG Ally X."
-
-      # You can add more Ally X specific configurations here in the future
-      # such as installing specific power management tools or controller drivers
     fi
     # --- End ROG Ally X Specific Configuration ---
   #Autologin User
