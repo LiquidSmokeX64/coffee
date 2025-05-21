@@ -19,6 +19,7 @@ gamescope \
     --generate-drm-mode fixed \
     --framerate-limit 120 \
     --adaptive-sync \
+    --mangoapp \
     -- steam -steamdeck -steamos3 \
     &
 gamescope_pid=$!
