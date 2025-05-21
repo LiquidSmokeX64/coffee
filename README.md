@@ -36,7 +36,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
 
-- **Web Browser Choices**: Options include Chrome, Firefox, and Microsoft Edge for your browsing needs.
+- **SteamOS Mode**: A standalone SteamOS like experience utilizing Gamescope (like real SteamOS does).
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
