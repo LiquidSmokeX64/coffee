@@ -90,14 +90,14 @@ rm /opt/lsb-release
 rm /etc/os-release
 rm /etc/lsb-release
 rm /usr/local/bin/coffee-barista
-rm /usr/local/bin/coffeebrewer5
+rm /usr/local/bin/coffeebrewer4
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /opt/
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /etc/
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release -P /etc/
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer5 -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer4 -P /usr/local/bin/
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
-chmod 755 /usr/local/bin/coffeebrewer5
+chmod 755 /usr/local/bin/coffeebrewer4
 chmod 755 /usr/local/bin/coffee-barista
 
 #Removal of any unwanted packages

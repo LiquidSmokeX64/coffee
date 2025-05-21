@@ -7,7 +7,7 @@ rm /opt/lsb-release
 rm /etc/os-release
 rm /etc/lsb-release
 rm /opt/coffee-injector
-rm /usr/local/bin/coffeebrewer5
+rm /usr/local/bin/coffeebrewer4
 rm /etc/xdg/kwinrc
 rm /etc/sddm.conf.d/virtualkbd.conf
 rm /etc/sddm.conf.d/autologin.conf
@@ -20,7 +20,7 @@ wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelin
 clear
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/xdg/kwinrc -P /etc/xdg/
 clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer5 -P /usr/local/bin/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer4 -P /usr/local/bin/
 clear
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
 clear
@@ -32,7 +32,7 @@ wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelin
 clear
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
 clear
-chmod 755 /usr/local/bin/coffeebrewer5
+chmod 755 /usr/local/bin/coffeebrewer4
 clear
 #Finished Updating
 #Main Menu
@@ -52,13 +52,13 @@ case $typecheck00 in
 esac
 
 if [ "$typecheck00" = "1" ]; then
-coffeebrewer5
+coffeebrewer4
 fi
 if [ "$typecheck00" = "2" ]; then
 printf "%b" "\nExiting now...\n"
 fi
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
 typecheck00=1
-coffeebrewer5
+coffeebrewer4
 fi
 done
