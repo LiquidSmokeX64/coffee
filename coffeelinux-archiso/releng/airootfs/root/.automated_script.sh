@@ -42,4 +42,7 @@ automated_script() {
 if [[ $(tty) == "/dev/tty1" ]]; then
     automated_script
     rfkill unblock all
+    coffee-filter
+    sleep 5
+    coffee-barista
 fi
