@@ -1114,7 +1114,7 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected.\nInstalling GPU Drivers first.\n"
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-dkms opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-nvidia-utils
+arch-chroot /mnt pacman -Sy --noconfirm nvidia-open opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-nvidia-utils
 fi
 if [ "$gpu0" = "amd" ]; then
 printf "%b" "\nAMD GPU selected.\nInstalling amdgpu-fan and corectrl as well\n"
