@@ -956,23 +956,6 @@ arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
 
-#Install Yay for AUR support
-clear
-printf "%b" "\nCopying yay package..\n"
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.5.0-1-x86_64.pkg.tar.zst -P /opt/
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst -P /opt/
-cp /opt/yay-12.5.0-1-x86_64.pkg.tar.zst /mnt/opt/
-cp /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst /mnt/opt/
-clear
-printf "%b" "\nInstalling yay.\n"
-clear
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.5.0-1-x86_64.pkg.tar.zst
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst
-clear
-printf "%b" "\nInstalled yay successfully.\n"
-clear
-
 if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
@@ -1003,13 +986,6 @@ arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
 
-printf "%b" "\nInstalling yay.\n"
-clear
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.5.0-1-x86_64.pkg.tar.zst
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst
-clear
-printf "%b" "\nInstalled yay successfully.\n"
-clear
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
@@ -1044,13 +1020,6 @@ arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
 
-printf "%b" "\nInstalling yay.\n"
-clear
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.5.0-1-x86_64.pkg.tar.zst
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst
-clear
-printf "%b" "\nInstalled yay successfully.\n"
-clear
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
@@ -1063,6 +1032,23 @@ fi
 arch-chroot /mnt systemctl enable lightdm
 
 fi
+
+#Install Yay for AUR support
+clear
+printf "%b" "\nCopying yay package..\n"
+clear
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.5.0-1-x86_64.pkg.tar.zst -P /opt/
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst -P /opt/
+cp /opt/yay-12.5.0-1-x86_64.pkg.tar.zst /mnt/opt/
+cp /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst /mnt/opt/
+clear
+printf "%b" "\nInstalling yay.\n"
+clear
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.5.0-1-x86_64.pkg.tar.zst
+arch-chroot /mnt pacman -U --noconfirm /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst
+clear
+printf "%b" "\nInstalled yay successfully.\n"
+clear
 
 command4finished="1"
 else
@@ -1373,40 +1359,6 @@ clear
 if [ "$desktop0" = "gnome" ]; then
      printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
      clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock
-     #clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-gtk4-desktop-icons-ng
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-session
-     #clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n --answerdiff n --answeredit y --answerupgrade y yaru-unity-theme
-     #clear
-     if [ "$branchpass00" = "stable" ]; then
-     arch-chroot /mnt pacman -Rdd --noconfirm mutter
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-dynamic-buffering
-     clear
-     fi
-     if [ "$branchpass00" = "stable" ]; then
-     printf "%b" "1\ny\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
-     clear
-     fi
-     if [ "$branchpass00" = "beta" ]; then
-     printf "%b" "3\ny\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y gdm-settings
-     clear
-     fi
-     rm -r /mnt/usr/share/wayland-sessions/gnome*
-     rm -r /mnt/usr/share/xsessions/gnome*
      arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 fi
 if [ "$desktop0" = "cinnamon" ]; then

@@ -144,8 +144,8 @@ cp /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
 cp /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
 
 #Remove Gnome default sessions if they exist
-rm -r /usr/share/wayland-sessions/gnome*
-rm -r /usr/share/xsessions/gnome*
+#rm -r /usr/share/wayland-sessions/gnome*
+#rm -r /usr/share/xsessions/gnome*
 
 #Replace snapd-updater service file only
 rm /opt/snapd-updater.service
