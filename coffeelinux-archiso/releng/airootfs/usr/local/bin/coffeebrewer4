@@ -9,9 +9,9 @@ javaapps="jre-openjdk"
 amdcpu="amd-ucode"
 intelcpu="intel-ucode"
 
-nvgamingapps="nvidia-open-dkms opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks vulkan-tools"
+nvgamingapps="nvidia-open-dkms opencl-nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks vulkan-tools"
 
-amdgamingapps="libva-mesa-driver mesa mesa-utils mesa-vdpau opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader mesa xf86-video-amdgpu vulkan-radeon vulkan-mesa-layers corectrl libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks vulkan-tools"
+amdgamingapps="lib32-amdvlk libva-mesa-driver mesa mesa-utils mesa-vdpau opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader mesa xf86-video-amdgpu vulkan-radeon vulkan-mesa-layers corectrl libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks vulkan-tools"
 
 intelgamingapps="mesa xorg-server vulkan-intel vulkan-intel libva-intel-driver libva-utils vulkan-validation-layers vkd3d vulkan-icd-loader libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks vulkan-tools"
 
@@ -642,6 +642,8 @@ cpucheck=1
 cpu0="amd"
 fi
 done
+
+clear
 
 while [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; do
 printf "%b" "\nWhat type of GPU do you have? (Default: 1)\n"
