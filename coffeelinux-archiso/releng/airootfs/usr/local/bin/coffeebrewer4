@@ -4,17 +4,19 @@ baseapps="iptables broadcom-wl dbus-broker-units amd-ucode mkinitcpio texinfo ba
 
 baseapps2="git device-mapper gettext xz dosfstools efibootmgr freetype2 fuse2 libisoburn lzop mtools autogen help2man python rsync ttf-dejavu system-config-printer net-tools nfs-utils systemd-resolvconf tcpdump terminus-font testdisk ntfs-3g nvme-cli openconnect open-iscsi openssh open-vm-tools tmux tpm2-tss udftools usb_modeswitch usbmuxd usbutils openvpn partclone pcsclite ppp pptpclient qemu-guest-agent vpnc wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd zsh refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils modemmanager mokutil mtools apparmor archinstall mlocate arch-install-scripts b43-fwcutter bind brltty btrfs-progs clonezilla cloud-init cryptsetup darkhttpd ddrescue dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize fsarchiver gpm gptfdisk grml-zsh-config hdparm hyperv jfsutils kitty-terminfo libfido2 libusb-compat linux linux-headers"
 
-coffeeapps="onboard qt6-virtualkeyboard maliit-keyboard pipewire-jack pavucontrol wget fwupd fwupd-efi glfw-wayland npm boost-libs gtk-update-icon-cache hwinfo libpwquality squashfs-tools yaml-cpp boost extra-cmake-modules git rhythmbox alsa-lib alsa-utils alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-v4l-utils libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libunwind libva libva-utils libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors make meson mkinitcpio mpg123 mtools nano ncurses fastfetch chafa xfconf ddcutil nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages pipewire pipewire-alsa pipewire-pulse power-profiles-daemon python-gobject python-mako samba shellcheck shotwell sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch w3m wireplumber xdg-utils xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-headers lib32-amdvlk"
+coffeeapps="onboard qt6-virtualkeyboard maliit-keyboard pipewire-jack pavucontrol wget fwupd fwupd-efi glfw-x11 npm boost-libs gtk-update-icon-cache hwinfo libpwquality squashfs-tools yaml-cpp boost extra-cmake-modules git rhythmbox alsa-lib alsa-utils alsa-plugins amd-ucode rust archiso archivetools archlinux-wallpaper aria2 base-devel bash-completion bash-language-server bluez-libs cabextract chrony clang cmake colord cronie cups dbus dbus-python dconf directx-headers dkms efibootmgr egl-wayland elfutils exfatprogs expat extra-cmake-modules file-roller firewalld flatpak gettext giflib gimp git glib2 glibc glslang gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-engine-murrine hicolor-icon-theme innoextract lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-v4l-utils libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libunwind libva libva-utils libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors make meson mkinitcpio mpg123 mtools nano ncurses fastfetch chafa xfconf ddcutil nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ntfsprogs ntp nullmailer openal opencl-icd-loader opengl-man-pages pipewire pipewire-alsa pipewire-pulse power-profiles-daemon python-gobject python-mako samba shellcheck shotwell sudo systemd terminus-font tesseract-data-eng ttf-liberation udev ufw unrar unzip v4l-utils valgrind virtualbox virtualbox-guest-utils virtualbox-host-modules-arch w3m wireplumber xdg-utils xorg xorg-apps xorgproto xorg-server xorg-xwayland xreader zenity zstd vlc opencl-clhpp opencl-headers"
 
 javaapps="jre-openjdk"
-
-gnomeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 at-spi2-core qt6 qt6-multimedia-ffmpeg gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside6 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome libsecret"
 
 kdeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 pyside6 libpulse noto-fonts noto-fonts-emoji gnu-free-fonts cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace sddm sddm-kcm xdg-desktop-portal-kde libsecret"
 
-cinnamonapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 qt6 libpulse qt6-multimedia-ffmpeg gnu-free-fonts pyside6 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa cinnamon cinnamon-translations file-roller geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-console gnome-system-monitor gtk4 lightdm lightdm-slick-greeter xdg-desktop-portal-gnome gnome-text-editor"
-
 javaapps="jre-openjdk"
+
+nvgpuapps="nvidia nvidia-prime lib32-nvidia-utils opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader lib32-vulkan-mesa-layers vulkan-mesa-layers"
+
+amdgpuapps="lib32-amdvlk lib32-mesa lib32-amdvlk lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader"
+
+intelgpuapps="mesa lib32-mesa xorg-server vulkan-intel vulkan-intel lib32-vulkan-intel libva-intel-driver libva-utils vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader"
 
 configuration (){
 
@@ -656,40 +658,7 @@ done
 
 clear
 
-
-while [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; do
-
-printf "%b" "\nWhat desktop environment do you want? (Default: 1)\n"
-printf "%b" "\n1 - KDE\n"
-printf "%b" "\n2 - Gnome\n"
-printf "%b" "\n3 - Cinnamon\n"
-
-read -r desktopcheck
-case $desktopcheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nA good choice.\n" ;;
-  3) printf "%b" "\nA good choice.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-
-if [ "$desktopcheck" = "1" ]; then
 desktop0="kde"
-fi
-if [ "$desktopcheck" = "2" ]; then
-desktop0="gnome"
-fi
-if [ "$desktopcheck" = "3" ]; then
-desktop0="cinnamon"
-fi
-if [ "$desktopcheck" != "1" ] && [ "$desktopcheck" != "2" ] && [ "$desktopcheck" != "3" ]; then
-desktopcheck=1
-desktop0="kde"
-fi
-done
-
-clear
-
-
 native1=yes
 swapcheck=2
 hibernationpasscheck=1
@@ -964,75 +933,6 @@ arch-chroot /mnt systemctl enable sddm
 
 fi
 
-if [ "$desktop0" = "gnome" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
-arch-chroot /mnt pacman -Rdd --noconfirm kmix
-arch-chroot /mnt pacman -Rdd --noconfirm blueman
-arch-chroot /mnt pacman -Rdd --noconfirm rust
-arch-chroot /mnt usermod -a -G realtime $user01
-arch-chroot /mnt usermod -a -G input $user01
-arch-chroot /mnt usermod -a -G plugdev $user01
-rm /opt/pipewire/pipewire.conf
-rm /mnt/etc/pipewire/pipewire.conf
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /mnt/etc/pipewire/
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /opt/pipewire/
-rm /usr/local/bin/coffee-barista
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
-chmod 755 /usr/local/bin/coffee-barista
-rm /opt/coffee-updater
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater -P /opt/
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
-
-arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable gdm
-
-fi
-
-if [ "$desktop0" = "cinnamon" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
-arch-chroot /mnt pacman -Rdd --noconfirm kmix
-arch-chroot /mnt pacman -Rdd --noconfirm blueman
-arch-chroot /mnt pacman -Rdd --noconfirm rust
-arch-chroot /mnt usermod -a -G realtime $user01
-arch-chroot /mnt usermod -a -G input $user01
-arch-chroot /mnt usermod -a -G plugdev $user01
-rm /opt/pipewire/pipewire.conf
-rm /mnt/etc/pipewire/pipewire.conf
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /mnt/etc/pipewire/
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /opt/pipewire/
-rm /usr/local/bin/coffee-barista
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
-chmod 755 /usr/local/bin/coffee-barista
-rm /opt/coffee-updater
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater -P /opt/
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
-
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
-
 #Install Yay for AUR support
 clear
 printf "%b" "\nCopying yay package..\n"
@@ -1247,16 +1147,17 @@ if [ "$questionspassed" = "yes" ]; then
 
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected.\nInstalling GPU Drivers first.\n"
-arch-chroot /mnt pacman -Sy --noconfirm nvidia-open lib32-nvidia-utils opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader
+arch-chroot /mnt pacman -Sy --noconfirm $nvgpuapps
+arch-chroot /mnt systemctl enable nvidia-persistenced.service
 fi
 if [ "$gpu0" = "amd" ]; then
-printf "%b" "\nAMD GPU selected.\nInstalling amdgpu-fan and corectrl as well\n"
-arch-chroot /mnt pacman -Sy --noconfirm lib32-mesa lib32-amdvlk lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader
+printf "%b" "\nAMD GPU selected.\nInstalling corectrl as well\n"
+arch-chroot /mnt pacman -Sy --noconfirm $amdgpuapps
 arch-chroot /mnt pacman -Sy --noconfirm corectrl
 fi
 if [ "$gpu0" = "intel" ]; then
 printf "%b" "\nIntel GPU selected.\n"
-arch-chroot /mnt pacman -Sy --noconfirm mesa lib32-mesa xorg-server vulkan-intel vulkan-intel lib32-vulkan-intel libva-intel-driver libva-utils vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader
+arch-chroot /mnt pacman -Sy --noconfirm $intelgpuapps
 fi
 
 command9finished="1"
@@ -1356,35 +1257,6 @@ clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y minecraft-launcher
 clear
 
-if [ "$desktop0" = "gnome" ]; then
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y gnome-themes-extra
-     clear
-     arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
-fi
-if [ "$desktop0" = "cinnamon" ]; then
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
-     clear
-     printf "%b" "5\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
-     clear
-     printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
-     clear
-     arch-chroot /mnt pacman -Rdd --noconfirm lightdm-settings
-     clear
-     rm -r /mnt/usr/share/wayland-sessions/gnome*
-     rm -r /mnt/usr/share/xsessions/gnome*
-     clear
-fi
-
 command18finished="1"
 else
 command18finished="0"
@@ -1479,26 +1351,6 @@ command11finished="0"
 fi
 done
 command11finished="0"
-
-}
-
-lightdm_fix (){
-
-clear
-
-while [ "$command12finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-arch-chroot /mnt pacman -Syu --noconfirm
-printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /mnt/etc/lightdm/lightdm.conf
-arch-chroot /mnt systemctl enable lightdm
-
-command12finished="1"
-else
-command12finished="0"
-fi
-done
-command12finished="0"
 
 }
 
@@ -1644,9 +1496,6 @@ postos_install
 handheld_install
 services_starter
 homedir_fix
-if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
-fi
 success_check
 umount -R /mnt
 printf "%b" "Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
