@@ -1,16 +1,19 @@
 #!/bin/sh
 
-baseapps="amd-ucode base base-devel broadcom-wl dbus-broker-units dhcpcd gobject-introspection intel-ucode iptables iwd linux linux-firmware man-db man-pages mkinitcpio nano networkmanager nmap sudo texinfo"
+baseapps="base base-devel broadcom-wl dbus-broker-units dhcpcd gobject-introspection iptables iwd linux linux-firmware man-db man-pages mkinitcpio nano networkmanager nmap sudo texinfo"
 
-coffeeos="amd-ucode apparmor appstream-qt arch-install-scripts archinstall archiso archivetools archlinux-wallpaper aria2 ark autogen b43-fwcutter bash-completion bash-language-server bind bluez-libs boost boost-libs brltty btrfs-progs cabextract chafa chrony clang clonezilla cloud-init cmake colord colord-kde cronie cryptsetup cups darkhttpd dbus dbus-python dconf ddcutil ddrescue device-mapper dhclient diffutils directx-headers dkms dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools egl-wayland elfutils exfatprogs expat extra-cmake-modules f2fs-tools fastfetch fatresize firewalld flatpak freetype2 fsarchiver fuse2 fwupd fwupd-efi gettext giflib gimp git glfw-x11 glib2 glibc glslang gnome-disk-utility gnu-free-fonts gnutls go gpm gptfdisk grml-zsh-config gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer hdparm help2man hicolor-icon-theme hwinfo hyperv innoextract jfsutils kde-applications-meta kdevelop-python kgamma kitty-terminfo kpmcore kscreen kvantum libclc libdrm libelf libfido2 libglvnd libisoburn libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpwquality libsecret libunwind libusb-compat libva libva-utils libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lzop make maliit-keyboard meson mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mokutil mpg123 mtools nano ncurses net-tools nfs-utils nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm ntfs-3g ntfsprogs ntp nullmailer nvme-cli onboard open-iscsi open-vm-tools openal opencl-clhpp opencl-headers opencl-icd-loader openconnect opengl-man-pages openssh openvpn partclone pcsclite phonon-qt5-vlc phonon-qt6 phonon-qt6-vlc pipewire pipewire-alsa pipewire-jack pipewire-pulse plasma plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace power-profiles-daemon ppp pptpclient pyside6 python python-gobject python-mako qemu-guest-agent qt5-wayland qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard qt6-wayland realtime-privileges refind reflector rp-pppoe rsync rust rtkit rxvt-unicode-terminfo sbctl sbsigntools screen sddm sddm-kcm sdparm sg3_utils shellcheck smartmontools sof-firmware squashfs-tools system-config-printer systemd systemd-resolvconf tcpdump terminus-font tesseract-data-eng testdisk tmux tpm2-tss ttf-dejavu ttf-liberation udev udftools ufw unrar unzip usb_modeswitch usbmuxd usbutils v4l-utils valgrind vlc vpnc w3m wget wireless-regdb wireless_tools wireplumber wpa_supplicant xdg-desktop-portal-kde xdg-utils xfconf xfsprogs xl2tpd xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader xz yaml-cpp zenity zsh zstd"
+coffeeos="apparmor appstream-qt arch-install-scripts archinstall archiso archivetools archlinux-wallpaper aria2 ark autogen b43-fwcutter bash-completion bash-language-server bind bluez-libs boost boost-libs brltty btrfs-progs cabextract chafa chrony clang clonezilla cloud-init cmake colord colord-kde cronie cryptsetup cups darkhttpd dbus dbus-python dconf ddcutil ddrescue device-mapper dhclient diffutils directx-headers dkms dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools egl-wayland elfutils exfatprogs expat extra-cmake-modules f2fs-tools fastfetch fatresize firewalld flatpak freetype2 fsarchiver fuse2 fwupd fwupd-efi gettext giflib gimp git glfw-x11 glib2 glibc glslang gnome-disk-utility gnu-free-fonts gnutls go gpm gptfdisk grml-zsh-config gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer hdparm help2man hicolor-icon-theme hwinfo hyperv innoextract jfsutils kde-applications-meta kdevelop-python kgamma kitty-terminfo kpmcore kscreen kvantum libclc libdrm libelf libfido2 libglvnd libisoburn libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpwquality libsecret libunwind libusb-compat libva libva-utils libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lzop make maliit-keyboard meson mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mokutil mpg123 mtools nano ncurses net-tools nfs-utils nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm ntfs-3g ntfsprogs ntp nullmailer nvme-cli onboard open-iscsi open-vm-tools openal opencl-clhpp opencl-headers opencl-icd-loader openconnect opengl-man-pages openssh openvpn partclone pcsclite phonon-qt5-vlc phonon-qt6 phonon-qt6-vlc pipewire pipewire-alsa pipewire-jack pipewire-pulse plasma plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace power-profiles-daemon ppp pptpclient pyside6 python python-gobject python-mako qemu-guest-agent qt5-wayland qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard qt6-wayland realtime-privileges refind reflector rp-pppoe rsync rust rtkit rxvt-unicode-terminfo sbctl sbsigntools screen sddm sddm-kcm sdparm sg3_utils shellcheck smartmontools sof-firmware squashfs-tools system-config-printer systemd systemd-resolvconf tcpdump terminus-font tesseract-data-eng testdisk tmux tpm2-tss ttf-dejavu ttf-liberation udev udftools ufw unrar unzip usb_modeswitch usbmuxd usbutils v4l-utils valgrind vlc vpnc w3m wget wireless-regdb wireless_tools wireplumber wpa_supplicant xdg-desktop-portal-kde xdg-utils xfconf xfsprogs xl2tpd xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader xz yaml-cpp zenity zsh zstd"
 
 javaapps="jre-openjdk"
 
-nvgpuapps="nvidia-open-dkms opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader"
+amdcpu="amd-ucode"
+intelcpu="intel-ucode"
 
-amdgpuapps="libva-mesa-driver mesa mesa-utils mesa-vdpau opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader mesa xf86-video-amdgpu vulkan-radeon vulkan-mesa-layers corectrl"
+nvgamingapps="nvidia-open-dkms opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks vulkan-tools"
 
-intelgpuapps="mesa xorg-server vulkan-intel vulkan-intel libva-intel-driver libva-utils vulkan-validation-layers vkd3d vulkan-icd-loader"
+amdgamingapps="libva-mesa-driver mesa mesa-utils mesa-vdpau opencl-clover-mesa opencl-rusticl-mesa vulkan-mesa-layers vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader mesa xf86-video-amdgpu vulkan-radeon vulkan-mesa-layers corectrl libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks vulkan-tools"
+
+intelgamingapps="mesa xorg-server vulkan-intel vulkan-intel libva-intel-driver libva-utils vulkan-validation-layers vkd3d vulkan-icd-loader libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks vulkan-tools"
 
 configuration (){
 
@@ -616,6 +619,30 @@ done
 
 clear
 
+while [ "$cpucheck" != "1" ] && [ "$cpucheck" != "2" ]; do
+printf "%b" "\nWhat type of CPU do you have? (Default: 1)\n"
+printf "%b" "\n1 - AMD\n"
+printf "%b" "\n2 - Intel\n"
+
+read -r cpucheck
+case $cpucheck in
+  1) printf "%b" "\nPerfect\n" ;;
+  2) printf "%b" "\nA good choice.\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+
+if [ "$cpucheck" = "1" ]; then
+cpu0="amd"
+fi
+if [ "$cpucheck" = "2" ]; then
+cpu0="intel"
+fi
+if [ "$cpucheck" != "1" ] && [ "$cpucheck" != "2" ]; then
+cpucheck=1
+cpu0="amd"
+fi
+done
+
 while [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; do
 printf "%b" "\nWhat type of GPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
@@ -808,7 +835,12 @@ while [ "$pacstrapfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 pacstrap /mnt $baseapps
 clear
-
+if [ "$cpu0" = "amd" ]; then
+arch-chroot /mnt pacman -Sy --noconfirm $amdcpu
+fi
+if [ "$cpu0" = "intel" ]; then
+arch-chroot /mnt pacman -Sy --noconfirm $intelcpu
+fi
 pacstrapfinished="1"
 else
 pacstrapfinished="0"
@@ -1111,39 +1143,24 @@ command8finished="0"
 
 }
 
-gpu_install (){
+postos_install (){
 
-clear
-
-while [ "$command9finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
+#GPU Specific Setups
 if [ "$gpu0" = "nvidia" ]; then
-printf "%b" "\nNvidia GPU selected.\nInstalling GPU Drivers first.\n"
-arch-chroot /mnt pacman -Sy --noconfirm $nvgpuapps
+printf "%b" "\nNvidia GPU selected..\n"
+arch-chroot /mnt pacman -Sy --noconfirm $nvgamingapps
 arch-chroot /mnt systemctl enable nvidia-persistenced.service
 fi
 if [ "$gpu0" = "amd" ]; then
-printf "%b" "\nAMD GPU selected.\nInstalling corectrl as well\n"
-arch-chroot /mnt pacman -Sy --noconfirm $amdgpuapps
+printf "%b" "\nAMD GPU selected..\n"
+arch-chroot /mnt pacman -Sy --noconfirm $amdgamingapps
 arch-chroot /mnt pacman -Sy --noconfirm corectrl
 fi
 if [ "$gpu0" = "intel" ]; then
-printf "%b" "\nIntel GPU selected.\n"
-arch-chroot /mnt pacman -Sy --noconfirm $intelgpuapps
+printf "%b" "\nIntel GPU selected..\n"
+arch-chroot /mnt pacman -Sy --noconfirm $intelgamingapps
 fi
-
-command9finished="1"
-else
-command9finished="0"
-fi
-done
-command9finished="0"
-
-}
-
-postos_install (){
-
+#End GPU Specific Setups
 clear
 
 while [ "$command18finished" != "1" ]; do
@@ -1165,8 +1182,8 @@ if [ "$branchpass00" = "beta" ]; then
 printf "%b" "3\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
 clear
 fi
+fi
 
-arch-chroot /mnt pacman -Sy --noconfirm libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks
 clear
 
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update -P /mnt/usr/bin/
@@ -1201,20 +1218,6 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y snapd-glib
-clear
-arch-chroot /mnt systemctl enable snapd.apparmor
-arch-chroot /mnt systemctl enable snapd
-rm /opt/snapd-updater.service
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/snapd-updater.service -P /opt/
-cp /opt/snapd-updater /mnt/opt/
-arch-chroot /mnt chmod 755 /opt/snapd-updater
-cp /opt/snapd-updater.service /mnt/lib/systemd/system/
-arch-chroot /mnt systemctl enable snapd-updater.service
-clear
-fi
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y pamac-aur
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
@@ -1463,7 +1466,6 @@ preset_locale
 set_passwords
 mainos_install
 bootloader_install
-gpu_install
 postos_install
 handheld_install
 services_starter
