@@ -44,7 +44,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 
-- **Note: LiveIso sudo/root/user password is "coffee"**
+- **Note: Handheld Installer Iso password/s are "coffee"**
 
 ------------------------------------
 

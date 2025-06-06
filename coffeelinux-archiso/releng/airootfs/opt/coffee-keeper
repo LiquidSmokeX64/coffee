@@ -72,12 +72,6 @@ chmod 755 /usr/local/bin/coffee-filter
 rm /usr/share/applications/coffee-filter.desktop
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop -P /usr/share/applications/
 chmod 755 /usr/share/applications/coffee-filter.desktop
-mkdir -p /etc/sddm.conf.d/
-mkdir -p /etc/xdg/
-rm /etc/sddm.conf.d/virtualkbd.conf
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/virtualkbd.conf -P /etc/sddm.conf.d/
-rm /etc/xdg/kwinrc
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/xdg/kwinrc -P /etc/xdg/
 rm /opt/backgrounds/coffee/adwaita-l.jpg
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg -P /opt/backgrounds/coffee/
 rm /opt/backgrounds/coffee/adwaita-d.jpg
