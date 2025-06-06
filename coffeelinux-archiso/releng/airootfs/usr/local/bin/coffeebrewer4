@@ -641,6 +641,28 @@ if [ "$cpucheck" != "1" ] && [ "$cpucheck" != "2" ]; then
 cpucheck=1
 cpu0="amd"
 fi
+
+if [ "$cpu0" = "intel" ]; then
+while [ "$cpu13" != "yes" ] && [ "$cpu13" != "no" ]; do
+printf "%b" "\nIs this a 13th Gen Intel CPU? (Default: 1)\n"
+printf "%b" "\n1 - No\n"
+printf "%b" "\n2 - Yes\n"
+read -r cpucheck13
+case $cpucheck13 in
+  1) printf "%b" "\nPerfect\n" ;;
+  2) printf "%b" "\nExcellent.\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+if [ "$cpucheck13" = "1" ]; then
+cpu13="no"
+fi
+if [ "$cpucheck13" = "2" ]; then
+cpu13="yes"
+fi
+
+done
+fi
+
 done
 
 clear
@@ -1130,6 +1152,15 @@ EOT
 arch-chroot /mnt grub-install --target=i386-pc $drive0
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
+fi
+
+
+if [ "$cpu13" = "yes" ]; then
+  # Safest option: Append 13th Gen Intel CPU Mitigation fix parameters to grub.
+  if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
+     sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 split_lock_detect=off"/g' /mnt/etc/default/grub
+     arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+  fi
 fi
 
 fi
