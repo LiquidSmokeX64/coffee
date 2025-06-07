@@ -959,22 +959,12 @@ arch-chroot /mnt systemctl enable sddm
 
 fi
 
-#Install Yay for AUR support
-clear
-printf "%b" "\nCopying yay package..\n"
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.5.0-1-x86_64.pkg.tar.zst -P /opt/
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst -P /opt/
-cp /opt/yay-12.5.0-1-x86_64.pkg.tar.zst /mnt/opt/
-cp /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst /mnt/opt/
-clear
-printf "%b" "\nInstalling yay.\n"
-clear
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-12.5.0-1-x86_64.pkg.tar.zst
-arch-chroot /mnt pacman -U --noconfirm /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst
-clear
-printf "%b" "\nInstalled yay successfully.\n"
-clear
+# Install Yay for AUR support
+prompt "Installing yay for AUR support..."
+arch-chroot /mnt pacman -Sy --noconfirm git base-devel --needed
+arch-chroot /mnt git clone https://aur.archlinux.org/yay.git /tmp/yay
+arch-chroot /mnt bash -c "cd /tmp/yay && makepkg -si --noconfirm --needed"
+rm -rf /tmp/yay
 
 command4finished="1"
 else
