@@ -8,18 +8,8 @@ rm /etc/os-release
 rm /etc/lsb-release
 rm /opt/coffee-injector
 rm /usr/local/bin/coffeebrewer4
-rm /etc/xdg/kwinrc
-rm /etc/sddm.conf.d/virtualkbd.conf
-rm /etc/sddm.conf.d/autologin.conf
-mkdir -p /etc/sddm.conf.d/
-mkdir -p /etc/xdg/
 clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/virtualkbd.conf -P /etc/sddm.conf.d/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/sddm.conf.d/autologin.conf -P /etc/sddm.conf.d/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/xdg/kwinrc -P /etc/xdg/
-clear
+
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer4 -P /usr/local/bin/
 clear
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/os-release -P /opt/
@@ -39,7 +29,7 @@ clear
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Iso ####\n"
-printf "%b" "\n########## Barista v.1.1.7 ##########\n"
+printf "%b" "\n########## Barista v.1.1.8 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Install CoffeeLinux\n"
 printf "%b" "\n2 - Exit\n"

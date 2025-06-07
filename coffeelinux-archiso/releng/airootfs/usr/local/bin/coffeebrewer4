@@ -991,86 +991,42 @@ clear
 while [ "$command8finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$grub0" = "true" ]; then
+arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+
+sed -i 's/Arch/Coffee/g' /mnt/etc/default/grub
+sed -i 's/GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/g' /mnt/etc/default/grub
+
+# Safest option: Append parameters to grub.
+if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
+  sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf split_lock_detect=off"/g' /mnt/etc/default/grub
+fi
 
 if [ "$gpu0" = "nvidia" ]; then
 
-printf "%b" "\nGRUB UEFI for Nvidia selected.\n"
+printf "%b" "\nGRUB for Nvidia selected.\n"
 
-arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
+# Safest option: Append parameters to grub.
+if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
+  sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.modeset=1"/g' /mnt/etc/default/grub
+fi
 
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
+fi
 
-rm /opt/grub-nvidia/grub
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-nvidia/grub -P /opt/grub-nvidia/
-cp /opt/grub-nvidia/grub /mnt/etc/default/
+if [ "$grub0" = "true" ]; then
+
+arch-chroot /mnt pacman -S --noconfirm efivar
 
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 EOT
-
-fi
-if [ "$gpu0" = "amd" ]; then
-
-printf "%b" "\nGRUB UEFI for AMD selected.\n"
-
-arch-chroot /mnt pacman -S --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font efivar
-
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-
-rm /opt/grub-amd/grub
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-amd/grub -P /opt/grub-amd/
-cp /opt/grub-amd/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-pacman -Sy --noconfirm
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
-EOT
-
-fi
-if [ "$gpu0" = "intel" ]; then
-
-printf "%b" "\nGRUB UEFI for Intel selected.\n"
-
-arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font efivar
-
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-
-rm /opt/grub-intel/grub
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-intel/grub -P /opt/grub-intel/
-cp /opt/grub-intel/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-pacman -Sy --noconfirm
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
-EOT
-
-fi
 
 fi
 if [ "$grub0" = "true2" ]; then
 
-if [ "$gpu0" = "nvidia" ]; then
-
-printf "%b" "\nGRUB BIOS for Nvidia selected.\n"
-
-arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
-
-if [ "$desktop0" = "kde" ]; then
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
-
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-
-rm /opt/grub-nvidia/grub
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-nvidia/grub -P /opt/grub-nvidia/
-cp /opt/grub-nvidia/grub /mnt/etc/default/
 
 arch-chroot /mnt /bin/bash <<"EOT"
 pacman -Sy --noconfirm
@@ -1079,59 +1035,6 @@ EOT
 
 arch-chroot /mnt grub-install --target=i386-pc $drive0
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
-fi
-if [ "$gpu0" = "amd" ]; then
-
-printf "%b" "\nGRUB BIOS for AMD selected.\n"
-
-
-arch-chroot /mnt pacman -S --needed --noconfirm libadwaita corectrl grub os-prober breeze-grub terminus-font
-
-if [ "$desktop0" = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
-
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-
-rm /opt/grub-amd/grub
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-amd/grub -P /opt/grub-amd/
-cp /opt/grub-amd/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-pacman -Sy --noconfirm
-EOT
-
-arch-chroot /mnt grub-install --target=i386-pc $drive0
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
-fi
-if [ "$gpu0" = "intel" ]; then
-
-printf "%b" "\nGRUB BIOS for Intel selected.\n"
-
-arch-chroot /mnt pacman -S --needed --noconfirm libadwaita grub os-prober breeze-grub terminus-font
-
-if [ "$desktop0" = "kde" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-fi
-
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
-
-rm /opt/grub-intel/grub
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-intel/grub -P /opt/grub-intel/
-cp /opt/grub-intel/grub /mnt/etc/default/
-
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-pacman -Sy --noconfirm
-EOT
-
-arch-chroot /mnt grub-install --target=i386-pc $drive0
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
-fi
 
 fi
 

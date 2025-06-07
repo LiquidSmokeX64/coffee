@@ -80,12 +80,6 @@ rm /opt/backgrounds/coffee/adwaita-l.jxl
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl -P /opt/backgrounds/coffee/
 rm /opt/backgrounds/coffee/adwaita-d.jxl
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl -P /opt/backgrounds/coffee/
-rm /opt/grub-intel/grub
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-intel/grub -P /opt/grub-intel/
-rm /opt/grub-nvidia/grub
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-nvidia/grub -P /opt/grub-nvidia/
-rm /opt/grub-amd/grub
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-amd/grub -P /opt/grub-amd/
 rm /opt/pacman-stable.conf
 rm /opt/pacman-unstable.conf
 wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf -P /opt/
