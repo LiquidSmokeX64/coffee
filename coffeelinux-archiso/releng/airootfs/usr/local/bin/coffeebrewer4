@@ -30,7 +30,7 @@ branchcheck00=1
 branchpass01=stable
 fi
 clear
-printf "%b" "\nYou said $branchpass01.\n Is this correct?\n"
+printf "%b" "\nYou said $branchpass01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r branchpasscheck
@@ -60,7 +60,7 @@ handheldcheck00=1
 handheldpass01="no-handheld"
 fi
 clear
-printf "%b" "\nYou said $handheldpass01.\n Is this correct?\n"
+printf "%b" "\nYou said $handheldpass01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r handheldpasscheck
@@ -85,7 +85,8 @@ if [ "$usercheck02" = "1" ]; then
 while [ "$usercheck" != "1" ]; do
 printf "%b" "\nSet your Username.\n"
 read -r user00
-printf "%b" "\nYou said $user00.\n Is this correct?\n"
+clear
+printf "%b" "\nYou said $user00.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r usercheck
@@ -123,7 +124,8 @@ if [ "$userpasscheck00" = "1" ]; then
 while [ "$userpasscheck" != "1" ]; do
 printf "%b" "\nSet your User Password.\n"
 read -r userpass00
-printf "%b" "\nYou said $userpass00.\n Is this correct?\n"
+clear
+printf "%b" "\nYou said $userpass00.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r userpasscheck
@@ -161,7 +163,8 @@ if [ "$rootpasscheck00" = "1" ]; then
 while [ "$rootpasscheck" != "1" ]; do
 printf "%b" "\nSet your Root Password.\n"
 read -r userpass01
-printf "%b" "\nYou said $userpass01.\n Is this correct?\n"
+clear
+printf "%b" "\nYou said $userpass01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r rootpasscheck
@@ -199,7 +202,8 @@ if [ "$namepasscheck00" = "1" ]; then
 while [ "$namepasscheck" != "1" ]; do
 printf "%b" "\nSet your PC name.\n"
 read -r name00
-printf "%b" "\nYou said $name00.\n Is this correct?\n"
+clear
+printf "%b" "\nYou said $name00.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r namepasscheck
@@ -238,7 +242,8 @@ if [ "$name2passcheck02" = "1" ]; then
 while [ "$name2passcheck" != "1" ]; do
 printf "%b" "\nSet your HardDrive Label (OS Partition Label).\n"
 read -r name01
-printf "%b" "\nYou said $name01.\n Is this correct?\n"
+clear
+printf "%b" "\nYou said $name01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r name2passcheck
@@ -291,7 +296,7 @@ swap01="p2"
 system01="p3"
 fi
 clear
-printf "%b" "\nYou said $drive01.\n Is this correct?\n"
+printf "%b" "\nYou said $drive01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r drive01passcheck
@@ -316,7 +321,7 @@ cpucheck=1
 cpu01="amd"
 fi
 clear
-printf "%b" "\nYou said $cpu01.\n Is this correct?\n"
+printf "%b" "\nYou said $cpu01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r cpu01passcheck
@@ -346,7 +351,7 @@ gpu01="amd"
 fi
 done
 clear
-printf "%b" "\nYou said $gpu01.\n Is this correct?\n"
+printf "%b" "\nYou said $gpu01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r gpu01passcheck
@@ -371,7 +376,7 @@ grubcheck=1
 grub01="grub-uefi"
 fi
 clear
-printf "%b" "\nYou said $grub01.\n Is this correct?\n"
+printf "%b" "\nYou said $grub01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r grub01passcheck
