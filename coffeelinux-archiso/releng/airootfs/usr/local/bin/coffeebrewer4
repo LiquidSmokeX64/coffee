@@ -27,31 +27,38 @@ printf "%b" "\n2 - Testing/Beta\n"
 
 read -r branchcheck00
 case $branchcheck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+  1) branchpass01=stable ;;
+  2) branchpass01=beta ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
 
-if [ "$branchcheck00" = "1" ]; then
-branchpass00=stable
-cp /opt/pacman-stable.conf /etc/pacman.conf
-fi
-if [ "$branchcheck00" = "2" ]; then
-branchpass00=beta
-cp /opt/pacman-unstable.conf /etc/pacman.conf
-fi
 if [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; then
 branchcheck00=1
-branchpass00=stable
-cp /opt/pacman-stable.conf /etc/pacman.conf
+branchpass01=stable
 fi
+
+clear
+
+printf "%b" "\n$branchpass01. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r branchpasscheck
+case $branchpasscheck in
+  1) branchpass00=$branchpass01 ;;
+  *) printf "%b" "\nLet's retry\n" ;
+esac
+
+if [ "$branchpass00" = "stable" ]; then
+cp /opt/pacman-stable.conf /etc/pacman.conf
+else
+cp /opt/pacman-unstable.conf /etc/pacman.conf
+fi
+
 done
 
 clear
 
-clear
-
-while [ "$handheldcheck00" != "1" ] && [ "$handheldcheck00" != "2" ]; do
+while [ "$handheldpasscheck" != "1" ]; do
 
 printf "%b" "\nIs the destination device a Handheld PC (Default: 1)\n"
 printf "%b" "\n1 - No\n"
@@ -59,29 +66,32 @@ printf "%b" "\n2 - Yes\n"
 
 read -r handheldcheck00
 case $handheldcheck00 in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+  1) handheldpass01="no-handheld" ;;
+  2) handheldpass01="yes-handheld" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
 
-if [ "$handheldcheck00" = "1" ]; then
-handheldpass00=nope
-printf "%b" "\nGot it. Moving on.."
-fi
-if [ "$handheldcheck00" = "2" ]; then
-handheldpass00=yup
-printf "%b" "\nGot it. Moving on.."
-fi
 if [ "$handheldcheck00" != "1" ] && [ "$handheldcheck00" != "2" ]; then
 handheldcheck00=1
-handheldpass00=nope
-printf "%b" "\nGot it. Moving on.."
+handheldpass01="no-handheld"
 fi
+
+clear
+
+printf "%b" "\n$handheldpass01. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r handheldpasscheck
+case $handheldpasscheck in
+  1) handheldpass00=$handheldpass01 ;;
+  *) printf "%b" "\nLet's retry\n" ;
+esac
+
 done
 
 clear
 
-while [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; do
+while [ "$usercheck" != "1" ]; do
 
 printf "%b" "\nWould you like to set your username? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
@@ -90,7 +100,7 @@ read -r usercheck02
 case $usercheck02 in
   1) printf "%b" "\nPerfect\n" ;;
   2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
 
 clear
@@ -104,13 +114,10 @@ printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r usercheck
 case $usercheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
+  1) user01=$user00 ;;
+  *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-if [ "$usercheck" = "1" ]; then
-user01=$user00
-fi
 
 fi
 if [ "$usercheck02" = "2" ]; then
@@ -119,31 +126,13 @@ usercheck=1
 user00=default
 user01=$user00
 
-if [ "$usercheck" = "1" ]; then
-user01=$user00
-fi
-
 fi
 if [ "$usercheck02" != "1" ] && [ "$usercheck02" != "2" ]; then
 
-while [ "$usercheck" != "1" ]; do
-printf "%b" "\nSet your Username.\n"
-read -r user00
-printf "%b" "\n$user00. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r usercheck
-case $usercheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-done
-
-usercheck02=1
-
-if [ "$usercheck" = "1" ]; then
+usercheck=1
+user00=default
 user01=$user00
-fi
+usercheck02=1
 
 fi
 done
@@ -151,7 +140,7 @@ done
 
 clear
 
-while [ "$userpasscheck00" != "1" ] && [ "$userpasscheck00" != "2" ]; do
+while [ "$userpasscheck" != "1" ]; do
 
 printf "%b" "\nWould you like to set your user password? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
@@ -160,7 +149,7 @@ read -r userpasscheck00
 case $userpasscheck00 in
   1) printf "%b" "\nPerfect\n" ;;
   2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
 
 clear
@@ -174,45 +163,25 @@ printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r userpasscheck
 case $userpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
+  1) userpass0=$userpass00 ;;
+  *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-if [ "$userpasscheck" = "1" ]; then
-userpass0=$userpass00
-fi
 
 fi
 if [ "$userpasscheck00" = "2" ]; then
 
 userpass00=coffee
 userpasscheck=1
-
-if [ "$userpasscheck" = "1" ]; then
 userpass0=$userpass00
-fi
 
 fi
 if [ "$userpasscheck00" != "1" ] && [ "$userpasscheck00" != "2" ]; then
 
-while [ "$userpasscheck" != "1" ]; do
-printf "%b" "\nSet your User Password.\n"
-read -r userpass00
-printf "%b" "\n$userpass00. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r userpasscheck
-case $userpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-done
-
+userpass00=coffee
 userpasscheck00=1
-
-if [ "$userpasscheck" = "1" ]; then
 userpass0=$userpass00
-fi
+userpasscheck=1
 
 fi
 done
@@ -220,7 +189,7 @@ done
 
 clear
 
-while [ "$rootpasscheck00" != "1" ] && [ "$rootpasscheck00" != "2" ]; do
+while [ "$rootpasscheck" != "1" ]; do
 
 printf "%b" "\nWould you like to set your root password? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
@@ -229,7 +198,7 @@ read -r rootpasscheck00
 case $rootpasscheck00 in
   1) printf "%b" "\nPerfect\n" ;;
   2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
 
 clear
@@ -243,52 +212,32 @@ printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r rootpasscheck
 case $rootpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
+  1) userpass1=$userpass01 ;;
+  *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-if [ "$rootpasscheck" = "1" ]; then
-userpass1=$userpass01
-fi
 
 fi
 if [ "$rootpasscheck00" = "2" ]; then
 
 userpass01=coffee
 rootpasscheck=1
-
-if [ "$rootpasscheck" = "1" ]; then
 userpass1=$userpass01
-fi
 
 fi
 if [ "$rootpasscheck00" != "1" ] && [ "$rootpasscheck00" != "2" ]; then
 
-while [ "$rootpasscheck" != "1" ]; do
-printf "%b" "\nSet your Root Password.\n"
-read -r userpass01
-printf "%b" "\n$userpass01. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r rootpasscheck
-case $rootpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-done
-
+userpass01=coffee
 rootpasscheck00=1
-
-if [ "$rootpasscheck" = "1" ]; then
 userpass1=$userpass01
-fi
+rootpasscheck=1
 
 fi
 done
 
 clear
 
-while [ "$namepasscheck00" != "1" ] && [ "$namepasscheck00" != "2" ]; do
+while [ "$namepasscheck" != "1" ]; do
 
 printf "%b" "\nWould you like to set your PC Name? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
@@ -297,7 +246,7 @@ read -r namepasscheck00
 case $namepasscheck00 in
   1) printf "%b" "\nPerfect\n" ;;
   2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
 
 clear
@@ -311,53 +260,34 @@ printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r namepasscheck
 case $namepasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
+  1) name0=$name00 ;;
+  *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-if [ "$namepasscheck" = "1" ]; then
-name0=$name00
-fi
 
 fi
 if [ "$namepasscheck00" = "2" ]; then
 
 name00=coffeelinux
 namepasscheck=1
-
-if [ "$namepasscheck" = "1" ]; then
 name0=$name00
-fi
 
 fi
 if [ "$namepasscheck00" != "1" ] && [ "$namepasscheck00" != "2" ]; then
 
-while [ "$namepasscheck" != "1" ]; do
-printf "%b" "\nSet your PC name.\n"
-read -r name00
-printf "%b" "\n$name00. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r namepasscheck
-case $namepasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-done
-
+name00=coffeelinux
+namepasscheck=1
+name0=$name00
 namepasscheck00=1
 
-if [ "$namepasscheck" = "1" ]; then
-name0=$name00
-fi
-
 fi
 done
-#
+
+hostname0=$name0
 
 clear
 
-while [ "$name2passcheck02" != "1" ] && [ "$name2passcheck02" != "2" ]; do
+while [ "$name2passcheck" != "1" ]; do
 
 printf "%b" "\nWould you like to set your Hard Drive Label? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
@@ -366,7 +296,7 @@ read -r name2passcheck02
 case $name2passcheck02 in
   1) printf "%b" "\nPerfect\n" ;;
   2) printf "%b" "\nLet's move on then.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
 
 clear
@@ -375,57 +305,40 @@ if [ "$name2passcheck02" = "1" ]; then
 while [ "$name2passcheck" != "1" ]; do
 printf "%b" "\nSet your HardDrive Label (OS Partition Label).\n"
 read -r name01
+
 printf "%b" "\n$name01. Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r name2passcheck
 case $name2passcheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
+  1) name1=$name01 ;;
+  *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-if [ "$name2passcheck" = "1" ]; then
-name1=$name01
-fi
 
 fi
 if [ "$name2passcheck02" = "2" ]; then
 
 name01=coffeedisk
 name2passcheck=1
-
-if [ "$name2passcheck" = "1" ]; then
 name1=$name01
-fi
 
 fi
 if [ "$name2passcheck02" != "1" ] && [ "$name2passcheck02" != "2" ]; then
 
-while [ "$name2passcheck" != "1" ]; do
-printf "%b" "\nSet your HardDrive Label (OS Partition Label).\n"
-read -r name01
-printf "%b" "\n$name01. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r name2passcheck
-case $name2passcheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-done
-
+name01=coffeedisk
+name2passcheck=1
+name1=$name01
 name2passcheck02=1
 
-if [ "$name2passcheck" = "1" ]; then
-name1=$name01
-fi
-
 fi
 done
+
+drivename0=$name1
 
 clear
 
-while [ "$driveXpasscheck" != "1" ]; do
+while [ "$drive01passcheck" != "1" ]; do
 printf "%b" "\nListing Storage Devices for you.\n"
 fdisk -l
 printf "%b" "\n"
@@ -437,216 +350,74 @@ printf "%b" "\n4 - SDB"
 printf "%b" "\n5 - VDA"
 printf "%b" "\n6 - VDB\n"
 
-read -r driveX
-if [ "$driveX" = "1" ]; then
-drive="nvme0n1"
-boot=p1
-swap=p2
-system=p3
+read -r drive01check
 
-printf "%b" "\n$drive. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r driveXpasscheck
-case $driveXpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
+case "$drive01check" in
+  1) drive01="/dev/nvme0n1"; boot01="p1"; swap01="p2"; system01="p3" ;;
+  2) drive01="/dev/nvme1n1"; boot01="p1"; swap01="p2"; system01="p3" ;;
+  3) drive01="/dev/sda"; boot01="1"; swap01="2"; system01="3" ;;
+  4) drive01="/dev/sdb"; boot01="1"; swap01="2"; system01="3" ;;
+  5) drive01="/dev/vda"; boot01="1"; swap01="2"; system01="3" ;;
+  6) drive01="/dev/vdb"; boot01="1"; swap01="2"; system01="3" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
 
-if [ "$driveXpasscheck" = "1" ]; then
-pfx="/dev/"
-drive0=$pfx$drive
-boot0=$drive0$boot
-swap0=$drive0$swap
-system0=$drive0$system
-hostname0=$name0
-drivename0=$name1
+if [ "$drive01check" != "1" ] && [ "$drive01check" != "2" ] && [ "$drive01check" != "3" ] && [ "$drive01check" != "4" ] && [ "$drive01check" != "5" ] && [ "$drive01check" != "6" ]; then
+drive01check=1
+drive01="/dev/nvme0n1"
+boot01="p1"
+swap01="p2"
+system01="p3"
 fi
 
-fi
-if [ "$driveX" = "2" ]; then
-drive="nvme1n1"
-boot=p1
-swap=p2
-system=p3
+clear
 
-printf "%b" "\n$drive. Is this correct?\n"
+printf "%b" "\n$drive01. Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
-read -r driveXpasscheck
-case $driveXpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
+read -r drive01passcheck
+case $drive01passcheck in
+  1) drive0=$drive01; boot0=$boot01; swap0=$swap01; system0=$system01 ;;
+  *) printf "%b" "\nLet's retry\n" ;
 esac
 
-if [ "$driveXpasscheck" = "1" ]; then
-pfx="/dev/"
-drive0=$pfx$drive
-boot0=$drive0$boot
-swap0=$drive0$swap
-system0=$drive0$system
-hostname0=$name0
-drivename0=$name1
-fi
-
-fi
-if [ "$driveX" = "3" ]; then
-drive="sda"
-boot=1
-swap=2
-system=3
-
-printf "%b" "\n$drive. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r driveXpasscheck
-case $driveXpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-
-if [ "$driveXpasscheck" = "1" ]; then
-pfx="/dev/"
-drive0=$pfx$drive
-boot0=$drive0$boot
-swap0=$drive0$swap
-system0=$drive0$system
-hostname0=$name0
-drivename0=$name1
-fi
-
-fi
-if [ "$driveX" = "4" ]; then
-drive="sdb"
-boot=1
-swap=2
-system=3
-
-printf "%b" "\n$drive. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r driveXpasscheck
-case $driveXpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-
-if [ "$driveXpasscheck" = "1" ]; then
-pfx="/dev/"
-drive0=$pfx$drive
-boot0=$drive0$boot
-swap0=$drive0$swap
-system0=$drive0$system
-hostname0=$name0
-drivename0=$name1
-fi
-
-fi
-if [ "$driveX" = "5" ]; then
-drive="vda"
-boot=1
-swap=2
-system=3
-
-
-printf "%b" "\n$drive. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r driveXpasscheck
-case $driveXpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-
-if [ "$driveXpasscheck" = "1" ]; then
-pfx="/dev/"
-drive0=$pfx$drive
-boot0=$drive0$boot
-swap0=$drive0$swap
-system0=$drive0$system
-hostname0=$name0
-drivename0=$name1
-fi
-
-fi
-if [ "$driveX" = "6" ]; then
-drive="vdb"
-boot=1
-swap=2
-system=3
-
-
-printf "%b" "\n$drive. Is this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r driveXpasscheck
-case $driveXpasscheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  *) printf "%b" "\nLet's retry\n" ;;
-esac
-
-if [ "$driveXpasscheck" = "1" ]; then
-pfx="/dev/"
-drive0=$pfx$drive
-boot0=$drive0$boot
-swap0=$drive0$swap
-system0=$drive0$system
-hostname0=$name0
-drivename0=$name1
-fi
-
-fi
-if [ "$driveX" != "1" ] && [ "$driveX" != "2" ] && [ "$driveX" != "3" ] && [ "$driveX" != "4" ] && [ "$driveX" != "5" ] && [ "$driveX" != "6" ]; then
-driveX=1
-drive="nvme0n1"
-boot=p1
-swap=p2
-system=p3
-driveXpasscheck=1
-
-if [ "$driveXpasscheck" = "1" ]; then
-pfx="/dev/"
-drive0=$pfx$drive
-boot0=$drive0$boot
-swap0=$drive0$swap
-system0=$drive0$system
-hostname0=$name0
-drivename0=$name1
-fi
-
-fi
 done
 
 clear
 
-while [ "$cpucheck" != "1" ] && [ "$cpucheck" != "2" ]; do
+while [ "$cpu01passcheck" != "1" ]; do
 printf "%b" "\nWhat type of CPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
 printf "%b" "\n2 - Intel\n"
 
 read -r cpucheck
 case $cpucheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nA good choice.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+  1) cpu01="amd" ;;
+  2) cpu01="intel" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
 
-if [ "$cpucheck" = "1" ]; then
-cpu0="amd"
-fi
-if [ "$cpucheck" = "2" ]; then
-cpu0="intel"
-fi
 if [ "$cpucheck" != "1" ] && [ "$cpucheck" != "2" ]; then
 cpucheck=1
-cpu0="amd"
+cpu01="amd"
 fi
+
+clear
+
+printf "%b" "\n$cpu01. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r cpu01passcheck
+case $cpu01passcheck in
+  1) cpu0=$cpu01 ;;
+  *) printf "%b" "\nLet's retry\n" ;
+esac
 
 done
 
 clear
 
-while [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; do
+while [ "$gpu01passcheck" != "1" ]; do
 printf "%b" "\nWhat type of GPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
 printf "%b" "\n2 - Nvidia\n"
@@ -655,70 +426,60 @@ printf "%b" "\n4 - Virtual GPU (VMware etc.)\n"
 
 read -r gpucheck
 case $gpucheck in
-  1) printf "%b" "\nPerfect\n" ;;
-  2) printf "%b" "\nA good choice.\n" ;;
-  3) printf "%b" "\nA good choice.\n" ;;
-  4) printf "%b" "\nA good choice.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+  1) gpu01="amd" ;;
+  2) gpu01="nvidia" ;;
+  3) gpu01="intel" ;;
+  4) gpu01="vm" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
 
-if [ "$gpucheck" = "1" ]; then
-gpu0="amd"
-fi
-if [ "$gpucheck" = "2" ]; then
-gpu0="nvidia"
-fi
-if [ "$gpucheck" = "3" ]; then
-gpu0="intel"
-fi
-if [ "$gpucheck" = "4" ]; then
-gpu0="vm"
-fi
 if [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; then
 gpucheck=1
-gpu0="amd"
+gpu01="amd"
 fi
 done
 
 clear
 
-desktop0="kde"
-native1=yes
-swapcheck=2
-hibernationpasscheck=1
-coffeeon00=yes
-webbrowser00=chrome
-steamon00=yes
-fs0=btrfs
+printf "%b" "\n$gpu01. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r gpu01passcheck
+case $gpu01passcheck in
+  1) gpu0=$gpu01 ;;
+  *) printf "%b" "\nLet's retry\n" ;
+esac
 
 clear
 
-while [ "$grubcheck" != "1" ] && [ "$grubcheck" != "2" ]; do
+while [ "$grub01passcheck" != "1" ]; do
 printf "%b" "\nWould you like GRUB or SystemD-Bootloader?\nGRUB is more compatible with VMs. (Default: 1)\n"
 printf "%b" "\n1 - GRUB UEFI version\n"
 printf "%b" "\n2 - GRUB BIOS/MBR version\n"
 read -r grubcheck
 case $grubcheck in
-  1) printf "%b" "\nPerfect.\n" ;;
-  2) printf "%b" "\nGreat Choice.\n" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+  1) grub01="grub-uefi" ;;
+  2) grub01="grub-bios" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
-
-if [ "$grubcheck" = "1" ]; then
-grub0="true"
-questionspassed="yes"
-fi
-if [ "$grubcheck" = "2" ]; then
-grub0="true2"
-questionspassed="yes"
-fi
 
 clear
 if [ "$grubcheck" != "1" ] && [ "$grubcheck" != "2" ]; then
 grubcheck=1
-grub0=true
-questionspassed=yes
+grub01="grub-uefi"
 fi
+
+clear
+
+printf "%b" "\n$grub01. Is this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r grub01passcheck
+case $grub01passcheck in
+  1) grub0=$grub01; questionspassed="yes" ;;
+  *) printf "%b" "\nLet's retry\n" ;
+esac
+
 done
 
 }
@@ -730,9 +491,7 @@ clear
 while [ "$command0finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$hibernationpasscheck" = "1" ]; then
 HIBERNATING="1"
-fi
 
 while [ "$rampasscheck" != "1" ]; do
 
@@ -763,17 +522,8 @@ if [ "$RAM" -gt 32768  ]; then    # if RAM is more than 32 GB
     fi
 fi
 
-if [ "$swapcheck" = "1" ]; then
-    printf "%b" "\nEnter swap size in GB\n"
-    read -r swapsize1
-    swapsize="+""$((swapsize1))G"
-    swap1=$swapsize
-fi
-if [ "$swapcheck" = "2" ]; then
-    swapsize="+""$((RAM*MULTIPLIER))M"
-    swap1=$swapsize
-fi
-
+swapsize="+""$((RAM*MULTIPLIER))M"
+swap1=$swapsize
 rampasscheck="1"
 
 done
@@ -796,29 +546,26 @@ clear
 while [ "$command1finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-printf "%b" "\nFormatting Partitions\n"
-clear
-printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
-clear
-printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
-clear
-printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
-clear
-printf "%b" "g\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n1\nt\n2\n19\nt\n3\n20\nw\n" | fdisk -W always $drive0
-mkfs.vfat -F 32 "$boot0"
-mkswap "$swap0"
-swapon "$swap0"
+bootpartitiontype="1"
+swappartitiontype="19"
+systempartitiontype="20"
 
-if [ "$fs0" = "btrfs" ]; then
-mkfs.btrfs -f -L "$drivename0" "$system0"
-fi
-if [ "$fs0" = "ext4" ]; then
-mkfs.ext4 -L "$drivename0" "$system0"
-fi
+printf "%b" "\nWiping Partitions\n"
+clear
+printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
+clear
+
+prompt "Formatting partitions..."
+  printf "%b" "g\nn\n1\n\n+2G\nn\n2\n\n$swap1\nn\n3\n\n\nt\n1\n$bootpartitiontype\nt\n2\n$swappartitiontype\nt\n3\n$systempartitiontype\nw\n" | fdisk -W always "$drive0"
+  mkfs.vfat -F 32 "${drive0}${boot0}"
+  mkswap "${drive0}${swap0}"
+  swapon "${drive0}${swap0}"
+  mkfs.ext4 -L "$drivename0" "${drive0}${system0}"
+
 printf "%b" "\nMounting Disks\n"
-mount "$system0" /mnt
+mount "${drive0}${system0}" /mnt
 mkdir /mnt/boot
-mount "$boot0" /mnt/boot
+mount "${drive0}${boot0}" /mnt/boot
 clear
 
 command1finished="1"
@@ -838,12 +585,13 @@ while [ "$pacstrapfinished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 pacstrap /mnt $baseapps
 clear
-if [ "$cpu0" = "amd" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $amdcpu
-fi
+
 if [ "$cpu0" = "intel" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $intelcpu
+else
+arch-chroot /mnt pacman -Sy --noconfirm $amdcpu
 fi
+
 pacstrapfinished="1"
 else
 pacstrapfinished="0"
@@ -866,7 +614,6 @@ rm /mnt/etc/vconsole.conf
 rm /mnt/etc/sudoers.d/wheel
 
 arch-chroot /mnt /bin/bash <<"EOT"
-printf "%b" "\nSetting Locale\n"
 ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 hwclock --systohc
 printf "%b" "\nen_US ISO-8859-1\nen_US.UTF-8 UTF-8\n" >> /etc/locale.gen
@@ -902,15 +649,11 @@ if [ "$questionspassed" = "yes" ]; then
 
 clear
 cp /etc/pacman.conf /mnt/etc/pacman.conf
-printf "%b" "\nSet Root Password\n"
 printf "%b" "$userpass1\n$userpass1\n" | arch-chroot /mnt passwd
-printf "%b" "Adding User Account\n"
 arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01
-printf "%b" "\nSet User Password\n"
 printf "%b" "$userpass0\n$userpass0\n" | arch-chroot /mnt passwd $user01
 printf "%b" "$hostname0\n" >> /mnt/etc/hostname
 printf "%b" "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" >> /mnt/etc/hosts
-printf "%b" "Creating Links\n"
 genfstab -U /mnt >> /mnt/etc/fstab
 clear
 
@@ -930,25 +673,17 @@ clear
 while [ "$command4finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$desktop0" = "kde" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $coffeeos
-arch-chroot /mnt pacman -Rdd --noconfirm kmix
-arch-chroot /mnt pacman -Rdd --noconfirm blueman
-arch-chroot /mnt pacman -Rdd --noconfirm rust
+arch-chroot /mnt pacman -Rdd --noconfirm kmix blueman rust
 arch-chroot /mnt usermod -a -G realtime $user01
 arch-chroot /mnt usermod -a -G input $user01
 arch-chroot /mnt usermod -a -G plugdev $user01
-rm /opt/pipewire/pipewire.conf
-rm /mnt/etc/pipewire/pipewire.conf
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /mnt/etc/pipewire/
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf -P /opt/pipewire/
-rm /usr/local/bin/coffee-barista
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista -P /usr/local/bin/
-chmod 755 /usr/local/bin/coffee-barista
-rm /opt/coffee-updater
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater -P /opt/
+
+wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
+wget -q -O /opt/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+arch-chroot /mnt systemctl enable pipewire.service pipewire-pulse.service pipewire-alsa.service wireplumber.service rtkit-daemon.service
 cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
 
 if [ "$gpu0" = "vm" ]; then
@@ -957,9 +692,6 @@ fi
 
 arch-chroot /mnt systemctl enable sddm
 
-fi
-
-# Install Yay for AUR support
 prompt "Installing yay for AUR support..."
 arch-chroot /mnt pacman -Sy --noconfirm git base-devel --needed
 arch-chroot /mnt git clone https://aur.archlinux.org/yay.git /tmp/yay
@@ -1003,7 +735,7 @@ fi
 
 fi
 
-if [ "$grub0" = "true" ]; then
+if [ "$grub0" = "grub-uefi" ]; then
 
 arch-chroot /mnt pacman -S --noconfirm efivar
 
@@ -1014,7 +746,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 EOT
 
 fi
-if [ "$grub0" = "true2" ]; then
+if [ "$grub0" = "grub-bios" ]; then
 
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
 
@@ -1028,8 +760,6 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 fi
 
-#-Bootloader-End
-
 command8finished="1"
 else
 command8finished="0"
@@ -1041,7 +771,6 @@ command8finished="0"
 
 postos_install (){
 
-#GPU Specific Setups
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected..\n"
 arch-chroot /mnt pacman -Sy --noconfirm $nvgamingapps
@@ -1056,7 +785,6 @@ if [ "$gpu0" = "intel" ]; then
 printf "%b" "\nIntel GPU selected..\n"
 arch-chroot /mnt pacman -Sy --noconfirm $intelgamingapps
 fi
-#End GPU Specific Setups
 clear
 
 while [ "$command18finished" != "1" ]; do
@@ -1066,67 +794,12 @@ clear
 arch-chroot /mnt pacman -Sy --noconfirm $javaapps
 java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
 arch-chroot /mnt archlinux-java set "$java1"
-
 clear
 
-if [ "$webbrowser00" = "chrome" ]; then
-if [ "$branchpass00" = "stable" ]; then
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay -S --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome protontricks dxvk-bin protonup-qt heroic-games-launcher pamac-aur ast-firmware mkinitcpio-firmware text-engine-git mkinitcpio-openswap faudio minecraft-launcher
 clear
-fi
-if [ "$branchpass00" = "beta" ]; then
-printf "%b" "3\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y google-chrome
-clear
-fi
-fi
-
-clear
-
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update -P /mnt/usr/bin/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch -P /mnt/usr/bin/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-session-select -P /mnt/usr/bin/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/jupiter-biosupdate -P /mnt/usr/bin/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session -P /mnt/usr/bin/
-clear
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/SteamOS.desktop -P /mnt/usr/share/applications/
-clear
-arch-chroot /mnt chmod 755 /usr/share/applications/SteamOS.desktop
-arch-chroot /mnt chmod 755 /usr/bin/steamos-select-branch
-arch-chroot /mnt chmod 755 /usr/bin/steamos-update
-arch-chroot /mnt chmod 755 /usr/bin/steamos-session-select
-arch-chroot /mnt chmod 755 /usr/bin/gamescope-session
-arch-chroot /mnt chmod 755 /usr/bin/jupiter-biosupdate
-clear
-
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protontricks
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y dxvk-bin
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y protonup-qt
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
-clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay -S --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y pamac-aur
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y ast-firmware
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y text-engine-git
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mkinitcpio-openswap
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y faudio
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y minecraft-launcher
 clear
 
 command18finished="1"
@@ -1139,7 +812,7 @@ command18finished="0"
 }
 
 handheld_install (){
-if [ "$handheldpass00" = "yup" ]; then
+if [ "$handheldpass00" = "yes-handheld" ]; then
 # --- ROG Ally X Specific Configuration ---
     detect_ally_x() {
       if grep -q "ASUS ROG Ally X" /sys/devices/virtual/dmi/id/product_name; then
@@ -1163,42 +836,25 @@ if [ "$handheldpass00" = "yup" ]; then
   rm -r /mnt/etc/sddm.conf.d/autologin.conf
   mkdir -p /mnt/etc/sddm.conf.d/
   printf "%b" "\n[General]\nDisplayServer=x11\n\n[Autologin]\nUser=$user00\nSession=plasmax11\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
-  #Setup OSKB for Handheld PCs
   rm -r /mnt/etc/sddm.conf.d/virtualkbd.conf
   printf "%b" "\n[General]\nInputMethod=onboard" > /mnt/etc/sddm.conf.d/virtualkbd.conf
-  cp /etc/xdg/kwinrc /mnt/etc/xdg/kwinrc
+  cp /opt/handheld/xdg/kwinrc /mnt/etc/xdg/kwinrc
   arch-chroot /mnt chmod 755 /etc/xdg/kwinrc
   mkdir -p /mnt/etc/xdg/autostart/
-  cp /etc/xdg/autostart/onboard.desktop /mnt/etc/xdg/autostart/
+  cp /opt/handheld/xdg/autostart/onboard.desktop /mnt/etc/xdg/autostart/
   chmod 755 /mnt/etc/xdg/autostart/onboard.desktop
   clear
-  #Install Handheld Device Daemon
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y adjustor
-  clear
-  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd-ui
-  clear
+  printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay -S --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd adjustor hhd-ui
   arch-chroot /mnt systemctl enable hhd@$user01
   clear
 fi
 }
 
-
 services_starter(){
 
 arch-chroot /mnt pacman -Sy --noconfirm apparmor
 clear
-arch-chroot /mnt systemctl enable apparmor
-arch-chroot /mnt systemctl enable dhcpcd
-arch-chroot /mnt systemctl enable cronie
-arch-chroot /mnt systemctl enable chronyd
-arch-chroot /mnt systemctl enable NetworkManager
-arch-chroot /mnt systemctl enable firewalld
-arch-chroot /mnt systemctl enable cups
-arch-chroot /mnt systemctl enable bluetooth.service
-arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service pipewire-alsa.service wireplumber.service
-arch-chroot /mnt systemctl enable rtkit-daemon.service
+arch-chroot /mnt systemctl enable apparmor dhcpcd cronie chronyd NetworkManager firewalld cups bluetooth.service pipewire.service pipewire-pulse.service pipewire-alsa.service wireplumber.service rtkit-daemon.service power-profiles-daemon
 }
 
 homedir_fix (){
@@ -1210,12 +866,9 @@ if [ "$questionspassed" = "yes" ]; then
 
 printf "%b" "\nAttempting to fix the home directory automatically now...\n"
 arch-chroot /mnt pacman -Sy --noconfirm xdg-user-dirs
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay -S --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment xdg-autostart
 clear
 arch-chroot /mnt xdg-user-dirs-update
-printf "%b" "Cleaning up\n"
 
 command11finished="1"
 else
@@ -1233,72 +886,50 @@ clear
 while [ "$command15finished" != "1" ] && [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$native1" = "yes" ]; then
-  cp /opt/os-release /mnt/etc/
-  cp /opt/lsb-release /mnt/etc/
-  if [ "$coffeeon00" = "yes" ]; then
-   cp -r /opt/* /mnt/opt/
-   cp /usr/local/bin/coffeebrewer4 /mnt/usr/local/bin/
-   cp /usr/local/bin/coffee-barista /mnt/usr/local/bin/
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffeebrewer4
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffee-barista
-   rm /opt/backgrounds/coffee/adwaita-l.jpg
-   wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg -P /opt/backgrounds/coffee/
-   rm /opt/backgrounds/coffee/adwaita-d.jpg
-   wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg -P /opt/backgrounds/coffee/
-   rm /opt/backgrounds/coffee/adwaita-l.jxl
-   wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl -P /opt/backgrounds/coffee/
-   rm /opt/backgrounds/coffee/adwaita-d.jxl
-   wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl -P /opt/backgrounds/coffee/
-   mkdir -p /mnt/usr/share/wallpapers/coffee/
-   mkdir -p /mnt/usr/share/backgrounds/gnome/
-   cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
-   cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
-   rm /opt/coffee-keeper
-   wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper -P /opt/
-   cp /opt/coffee-keeper /mnt/opt/
-   arch-chroot /mnt chmod 755 /opt/coffee-keeper
-   rm /opt/coffee-injector
-   wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
-   cp /opt/coffee-injector /mnt/opt/
-   arch-chroot /mnt chmod 755 /opt/coffee-injector
-   rm /opt/coffee-keeper.service
-   rm /lib/systemd/system/coffee-keeper.service
-   wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service -P /opt/
-   cp /opt/coffee-keeper.service /mnt/lib/systemd/system/
-   arch-chroot /mnt chmod 755 /lib/systemd/system/coffee-keeper.service
-   arch-chroot /mnt systemctl enable coffee-keeper.service
-   rm /mnt/etc/bin/issue
-   cp /opt/issue /mnt/etc/
-   arch-chroot /mnt chmod 755 /etc/issue
-   rm /mnt/usr/local/bin/coffee-updater
-   cp /opt/coffee-updater /mnt/usr/local/bin/
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffee-updater
-   rm /mnt/usr/share/applications/coffee-updater.desktop
-   cp /opt/coffee-updater.desktop /mnt/usr/share/applications/
-   arch-chroot /mnt chmod 755 /usr/share/applications/coffee-updater.desktop
-   rm /mnt/usr/local/bin/coffee-filter
-   wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter -P /mnt/usr/local/bin/
-   arch-chroot /mnt chmod 755 /usr/local/bin/coffee-filter
-   rm /mnt/usr/share/applications/coffee-filter.desktop
-   wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop -P /mnt/usr/share/applications/
-   arch-chroot /mnt chmod 755 /usr/share/applications/coffee-filter.desktop
+arch-chroot /mnt pacman -Sy --noconfirm wget --needed
+wget -q -O /mnt/usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
+wget -q -O /mnt/usr/bin/steamos-select-branch https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch
+wget -q -O /mnt/usr/bin/steamos-session-select https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-session-select
+wget -q -O /mnt/usr/bin/jupiter-biosupdate https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/jupiter-biosupdate
+wget -q -O /mnt/usr/bin/gamescope-session https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session
+wget -q -O /mnt/usr/share/applications/SteamOS.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/SteamOS.desktop
+wget -q -O /mnt/usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
+wget -q -O /mnt/usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
+wget -q -O /mnt/opt/coffee-updater https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater
+wget -q -O /mnt/opt/coffee-keeper https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper
+wget -q -O /mnt/lib/systemd/system/coffee-keeper.service https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service
+wget -q -O /mnt/opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
+wget -q -O /mnt/etc/issue https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/issue
+wget -q -O /mnt/usr/share/applications/coffee-updater.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater.desktop
+wget -q -O /mnt/usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
+wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
+wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
+wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
+wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
+mkdir -p /mnt/usr/share/backgrounds/gnome/
+cp -r /mnt/usr/share/wallpapers/coffee/* /mnt/usr/share/backgrounds/gnome/
+arch-chroot /mnt chmod +x /usr/bin/steamos-select-branch /usr/bin/steamos-update /usr/bin/steamos-session-select /usr/bin/gamescope-session /usr/bin/jupiter-biosupdate /usr/local/bin/coffee-barista /usr/local/bin/coffee-filter /opt/coffee-updater /opt/coffee-keeper /opt/coffee-injector
+arch-chroot /mnt chmod 644 /usr/share/applications/SteamOS.desktop /usr/share/applications/coffee-updater.desktop /usr/share/applications/coffee-filter.desktop
+arch-chroot /mnt chmod 755 /lib/systemd/system/coffee-keeper.service
+arch-chroot /mnt chmod 644 /etc/issue
+arch-chroot /mnt systemctl enable coffee-keeper.service
+cp /opt/os-release /mnt/etc/
+cp /opt/lsb-release /mnt/etc/
+cp -r /opt/* /mnt/opt/
+cp /usr/local/bin/coffeebrewer4 /mnt/usr/local/bin/
+cp /usr/local/bin/coffee-barista /mnt/usr/local/bin/
+arch-chroot /mnt chmod +x /usr/local/bin/coffeebrewer4 /usr/local/bin/coffee-barista
+rm /mnt/usr/share/applications/steam-native.desktop
+rm /mnt/usr/share/applications/stoken-gui-small.desktop
 
-
-   if [ "$steamon00" = "yes" ]; then
-   rm /mnt/usr/share/applications/steam-native.desktop
-   fi
-   rm /mnt/usr/share/applications/stoken-gui-small.desktop
-  fi
-  if [ "$branchpass00" = "stable" ]; then
-  cp /opt/pacman-stable.conf /etc/pacman.conf
-  fi
-  if [ "$branchpass00" = "beta" ]; then
-  cp /opt/pacman-stable.conf /etc/pacman.conf
-  fi
-  cp /opt/os-release /mnt/etc/
-  cp /opt/lsb-release /mnt/etc/
+if [ "$branchpass00" = "stable" ]; then
+cp /opt/pacman-stable.conf /etc/pacman.conf
 fi
+if [ "$branchpass00" = "beta" ]; then
+cp /opt/pacman-stable.conf /etc/pacman.conf
+fi
+cp /opt/os-release /mnt/etc/
+cp /opt/lsb-release /mnt/etc/
 
 clear
 printf "%b" "\nDid the installer complete successfully? (Default: 1)\n"
@@ -1311,9 +942,6 @@ case $rebootcheck in
   *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
 
-if [ "$rebootcheck" = "1" ]; then
-printf "%b" "\n"
-fi
 if [ "$rebootcheck" = "2" ]; then
   if [ "$branchpass00" = "stable" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf
@@ -1322,18 +950,12 @@ if [ "$rebootcheck" = "2" ]; then
   cp /opt/pacman-stable.conf /etc/pacman.conf
   fi
 umount -R /mnt
-swapoff "$swap0"
+swapoff "${drive0}${swap0}"
 printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
 clear
-printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
-clear
-printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
-clear
-exit
 fi
 if [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; then
 rebootcheck=1
-printf "%b" "\n"
 fi
 
 command15finished="1"
@@ -1344,10 +966,6 @@ done
 command15finished="0"
 
 }
-
-#=================================================
-#-Main
-#=================================================
 
 cp /opt/os-release /etc/
 cp /opt/lsb-release /etc/
@@ -1372,11 +990,4 @@ printf "%b" "Let's proceed to reboot.\nPlease eject/remove the installation medi
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck00
 printf "%b" "\nYou typed $endcheck00...\n\n"
-clear
 reboot
-
-#============================
-#End-Main
-#============================
-
-#End-Script
