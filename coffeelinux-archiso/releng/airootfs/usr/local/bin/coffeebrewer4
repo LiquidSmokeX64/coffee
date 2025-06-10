@@ -699,10 +699,10 @@ wget -q -O /mnt/opt/coffee-injector https://raw.githubusercontent.com/LiquidSmok
 wget -q -O /mnt/etc/issue https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/issue
 wget -q -O /mnt/usr/share/applications/coffee-updater.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater.desktop
 wget -q -O /mnt/usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
-wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/backgrounds/coffee/adwaita-l.jpg
-wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/backgrounds/coffee/adwaita-d.jpg
-wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/backgrounds/coffee/adwaita-l.jxl
-wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/backgrounds/coffee/adwaita-d.jxl
+wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
+wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
+wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
+wget -q -O /mnt/usr/share/wallpapers/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
 mkdir -p /mnt/usr/share/backgrounds/gnome/
 cp -r /mnt/usr/share/wallpapers/coffee/* /mnt/usr/share/backgrounds/gnome/
 arch-chroot /mnt chmod +x /usr/bin/steamos-select-branch /usr/bin/steamos-update /usr/bin/steamos-session-select /usr/bin/gamescope-session /usr/bin/jupiter-biosupdate /usr/local/bin/coffee-barista /usr/local/bin/coffee-filter /opt/coffee-updater /opt/coffee-keeper /opt/coffee-injector
