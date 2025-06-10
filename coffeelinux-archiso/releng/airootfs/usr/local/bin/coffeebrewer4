@@ -17,9 +17,15 @@ intelgamingapps="mesa xorg-server vulkan-intel vulkan-intel libva-intel-driver l
 
 configuration (){
 
+# Replace coffee-barista just in case things go wrong
+wget -q -O /usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
+clear
+chmod +x /usr/local/bin/coffee-barista
+# End Replacement
+
 clear
 
-while [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; do
+while [ "$branchpasscheck" != "1" ]; do
 
 printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
 printf "%b" "\n1 - Stable\n"
@@ -39,7 +45,7 @@ fi
 
 clear
 
-printf "%b" "\n$branchpass01. Is this correct?\n"
+printf "%b" "\nYou said $branchpass01.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r branchpasscheck
@@ -78,7 +84,7 @@ fi
 
 clear
 
-printf "%b" "\n$handheldpass01. Is this correct?\n"
+printf "%b" "\nYou said $handheldpass01.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r handheldpasscheck
@@ -109,7 +115,7 @@ if [ "$usercheck02" = "1" ]; then
 while [ "$usercheck" != "1" ]; do
 printf "%b" "\nSet your Username.\n"
 read -r user00
-printf "%b" "\n$user00. Is this correct?\n"
+printf "%b" "\nYou said $user00.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r usercheck
@@ -136,7 +142,6 @@ usercheck02=1
 
 fi
 done
-#
 
 clear
 
@@ -158,7 +163,7 @@ if [ "$userpasscheck00" = "1" ]; then
 while [ "$userpasscheck" != "1" ]; do
 printf "%b" "\nSet your User Password.\n"
 read -r userpass00
-printf "%b" "\n$userpass00. Is this correct?\n"
+printf "%b" "\nYou said $userpass00.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r userpasscheck
@@ -207,7 +212,7 @@ if [ "$rootpasscheck00" = "1" ]; then
 while [ "$rootpasscheck" != "1" ]; do
 printf "%b" "\nSet your Root Password.\n"
 read -r userpass01
-printf "%b" "\n$userpass01. Is this correct?\n"
+printf "%b" "\nYou said $userpass01.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r rootpasscheck
@@ -255,7 +260,7 @@ if [ "$namepasscheck00" = "1" ]; then
 while [ "$namepasscheck" != "1" ]; do
 printf "%b" "\nSet your PC name.\n"
 read -r name00
-printf "%b" "\n$name00. Is this correct?\n"
+printf "%b" "\nYou said $name00.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r namepasscheck
@@ -306,7 +311,7 @@ while [ "$name2passcheck" != "1" ]; do
 printf "%b" "\nSet your HardDrive Label (OS Partition Label).\n"
 read -r name01
 
-printf "%b" "\n$name01. Is this correct?\n"
+printf "%b" "\nYou said $name01.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r name2passcheck
@@ -372,7 +377,7 @@ fi
 
 clear
 
-printf "%b" "\n$drive01. Is this correct?\n"
+printf "%b" "\nYou said $drive01.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r drive01passcheck
@@ -404,7 +409,7 @@ fi
 
 clear
 
-printf "%b" "\n$cpu01. Is this correct?\n"
+printf "%b" "\nYou said $cpu01.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r cpu01passcheck
@@ -441,7 +446,7 @@ done
 
 clear
 
-printf "%b" "\n$gpu01. Is this correct?\n"
+printf "%b" "\nYou said $gpu01.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r gpu01passcheck
@@ -471,7 +476,7 @@ fi
 
 clear
 
-printf "%b" "\n$grub01. Is this correct?\n"
+printf "%b" "\nYou said $grub01.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r grub01passcheck
