@@ -1,6 +1,5 @@
 #!/bin/sh
-
-
+# CoffeeLinux PreSetup Iso File updater
 #Update Needed Files
 
 clear
@@ -23,7 +22,7 @@ clear
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Iso ####\n"
-printf "%b" "\n########## Barista v.1.2.0 ##########\n"
+printf "%b" "\n########## Barista v.1.2.1 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Install CoffeeLinux\n"
 printf "%b" "\n2 - Exit to Terminal\n"
@@ -40,3 +39,4 @@ typecheck00=1
 coffeebrewer4
 fi
 done
+exit

@@ -1,43 +1,33 @@
 #!/bin/sh
-
-#Coffee Updater
-
+#Coffee Auto-Updater tool
 sleep 10
-
 #Do system updates to all packages
 pacman -Syu --noconfirm
 #Replace all non AUR packages (besides GPU specific driver set)
 pacman -Syy --noconfirm --needed base base-devel broadcom-wl dbus-broker-units dhcpcd gobject-introspection iptables iwd linux linux-firmware man-db man-pages mkinitcpio nano networkmanager nmap sudo texinfo amd-ucode apparmor appstream-qt arch-install-scripts archinstall archiso archivetools archlinux-wallpaper aria2 ark autogen b43-fwcutter bash-completion bash-language-server bind bluez-libs boost boost-libs brltty btrfs-progs cabextract chafa chrony clang clonezilla cloud-init cmake colord colord-kde cronie cryptsetup cups darkhttpd dbus dbus-python dconf ddcutil ddrescue device-mapper dhclient diffutils directx-headers dkms dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools egl-wayland elfutils exfatprogs expat extra-cmake-modules f2fs-tools fastfetch fatresize firewalld flatpak freetype2 fsarchiver fuse2 fwupd fwupd-efi gettext giflib gimp git glfw-wayland glib2 glibc glslang gnome-disk-utility gnu-free-fonts gnutls go gpm gptfdisk grml-zsh-config gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer hdparm help2man hicolor-icon-theme hwinfo hyperv innoextract jfsutils kde-applications-meta kdevelop-python kgamma kitty-terminfo kpmcore kscreen kvantum libclc libdrm libelf libfido2 libglvnd libisoburn libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpwquality libsecret libunwind libusb-compat libva libva-utils libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm linux-headers llvm llvm-libs lm_sensors lzop make maliit-keyboard meson mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mokutil mpg123 mtools nano ncurses net-tools nfs-utils nftables nitrogen nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm ntfs-3g ntfsprogs ntp nullmailer nvme-cli onboard open-iscsi open-vm-tools openal opencl-clhpp opencl-headers opencl-icd-loader openconnect opengl-man-pages openssh openvpn partclone pcsclite phonon-qt5-vlc phonon-qt6 phonon-qt6-vlc pipewire pipewire-alsa pipewire-jack pipewire-pulse plasma plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace power-profiles-daemon ppp pptpclient pyside6 python python-gobject python-mako qemu-guest-agent qt5-wayland qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard qt6-wayland realtime-privileges refind reflector rp-pppoe rsync rust rtkit rxvt-unicode-terminfo sbctl sbsigntools screen sddm sddm-kcm sdparm sg3_utils shellcheck smartmontools sof-firmware squashfs-tools system-config-printer systemd systemd-resolvconf tcpdump terminus-font tesseract-data-eng testdisk tmux tpm2-tss ttf-dejavu ttf-liberation udev udftools ufw unrar unzip usb_modeswitch usbmuxd usbutils v4l-utils valgrind vlc vpnc w3m wget wireless-regdb wireless_tools wireplumber wpa_supplicant xdg-desktop-portal-kde xdg-utils xfconf xfsprogs xl2tpd xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader xz yaml-cpp zenity zsh zstd
 #Enable any services that may have gotten messed up.
 systemctl enable rtkit-daemon
-
 #Fix grub for Ally X if needed
-
 detect_ally_x() {
-
- if grep -q "ASUS ROG Ally X" /sys/devices/virtual/dmi/id/product_name; then
-    echo "ROG Ally X detected."
-    return 0
- else
-    echo "ROG Ally X not detected."
-    return 1
- fi
- }
-
- if detect_ally_x; then
-
- # Safest option: Append IOMMU parameters to grub.
-   rm /opt/grub-amd/grub
-   wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-amd/grub -P /opt/grub-amd/
-   cp /opt/grub-amd/grub /etc/default/
-   if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /etc/default/grub; then
-     sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 amd_iommu=on iommu=pt"/g' /etc/default/grub
-     grub-mkconfig -o /boot/grub/grub.cfg
-   fi
- fi
-
+if grep -q "ASUS ROG Ally X" /sys/devices/virtual/dmi/id/product_name; then
+ echo "ROG Ally X detected."
+ return 0
+else
+ echo "ROG Ally X not detected."
+ return 1
+fi
+}
+if detect_ally_x; then
+# Safest option: Append IOMMU parameters to grub.
+rm /opt/grub-amd/grub
+wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/grub-amd/grub -P /opt/grub-amd/
+cp /opt/grub-amd/grub /etc/default/
+if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /etc/default/grub; then
+ sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 amd_iommu=on iommu=pt"/g' /etc/default/grub
+ grub-mkconfig -o /boot/grub/grub.cfg
+fi
+fi
 #Replace CoffeeLinux specific files
-
 wget -q -O /usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
 wget -q -O /usr/bin/steamos-select-branch https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch
 wget -q -O /usr/bin/steamos-session-select https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-session-select
@@ -47,10 +37,10 @@ wget -q -O /usr/share/applications/SteamOS.desktop https://raw.githubusercontent
 wget -q -O /etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
 wget -q -O /usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
 wget -q -O /usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
-wget -q -O /usr/share/wallpapers/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
-wget -q -O /usr/share/wallpapers/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
-wget -q -O /usr/share/wallpapers/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
-wget -q -O /usr/share/wallpapers/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
+wget -q -O /usr/share/wallpapers/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/backgrounds/coffee/adwaita-l.jpg
+wget -q -O /usr/share/wallpapers/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/backgrounds/coffee/adwaita-d.jpg
+wget -q -O /usr/share/wallpapers/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/backgrounds/coffee/adwaita-l.jxl
+wget -q -O /usr/share/wallpapers/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/backgrounds/coffee/adwaita-d.jxl
 wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf
 wget -q -O /opt/pacman-unstable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf
 wget -q -O /etc/issue https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/issue
@@ -65,33 +55,26 @@ wget -q -O /etc/os-release https://raw.githubusercontent.com/LiquidSmokeX64/coff
 wget -q -O /etc/lsb-release https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release
 wget -q -O /usr/local/bin/coffeebrewer4 https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer4
 wget -q -O /usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
-
 #Set permissions
-
 chmod +x /usr/bin/steamos-select-branch /usr/bin/steamos-update /usr/bin/steamos-session-select /usr/bin/gamescope-session /usr/bin/jupiter-biosupdate /usr/local/bin/coffee-barista /usr/local/bin/coffee-filter /opt/coffee-updater /opt/coffee-keeper /opt/coffee-injector
 chmod 644 /usr/share/applications/SteamOS.desktop /usr/share/applications/coffee-updater.desktop /usr/share/applications/coffee-filter.desktop
 chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
-
 #Removal of any unwanted packages
 pacman -Rdd --noconfirm blueman
 pacman -Rdd --noconfirm kmix
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
-
 #Remove any unwanted files
 rm /usr/share/applications/steam-native.desktop
 rm /usr/share/applications/stoken-gui-small.desktop
-
 #Fix the wallpapers if needed
 mkdir -p /usr/share/wallpapers/coffee/
 mkdir -p /usr/share/backgrounds/gnome/
 cp /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
 cp /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
-
 #Injector-Replacer
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
-
 exit
