@@ -1,6 +1,7 @@
 #!/bin/sh
 
 #Replace service file first.
+printf "%b" "Fetching the latest version of the update file..."
 rm /lib/systemd/system/coffee-keeper.service
 rm /opt/coffee-keeper
 wget -q -O /opt/coffee-keeper.service https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service
@@ -9,7 +10,9 @@ cp /opt/coffee-keeper.service /lib/systemd/system/
 chmod 755 /opt/coffee-keeper
 chmod 755 /lib/systemd/system/coffee-keeper.service
 systemctl enable coffee-keeper.service
-
+clear
+printf "%b" "Preparing to update CoffeeLinux..."
+sleep 7
 #Run updater script now
 bash /opt/coffee-keeper
 
