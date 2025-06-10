@@ -17,20 +17,11 @@ printf "%b" "\n2 - Wifi\n"
 printf "%b" "\n3 - I have already connected to the internet\n"
 read -r netcheck00
 case $netcheck00 in
- 1) printf "%b" "\nPerfect\n" ;;
- 2) printf "%b" "\nLet's move on then.\n" ;;
- 3) printf "%b" "\nLet's move on then.\n" ;;
+ 1) netpass00=ethernet ;;
+ 2) netpass00=wifi ;;
+ 3) netpass00=ethernet ;;
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
-if [ "$netcheck00" = "1" ]; then
-netpass00=ethernet
-fi
-if [ "$netcheck00" = "2" ]; then
-netpass00=wifi
-fi
-if [ "$netcheck00" = "3" ]; then
-netpass00=ethernet
-fi
 if [ "$netcheck00" != "3" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "1" ]; then
 netcheck00=3
 netpass00=ethernet
@@ -47,8 +38,7 @@ rfkill unblock all
 iwctl station list
 printf "%b" "\nSet your Wifi device ID. (Usually 'wlan0')\n"
 read -r wifi00
-wifi0=$wifi00
-printf "%b" "\n$wifi00. Is this correct?\n"
+printf "%b" "\nYou said $wifi00.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r wifipasscheck
@@ -56,6 +46,7 @@ case $wifipasscheck in
  1) printf "%b" "\nPerfect\n" ;;
  *) printf "%b" "\nLet's retry\n" ;;
 esac
+wifi0=$wifi00
 done
 fi
 clear
@@ -64,8 +55,7 @@ while [ "$ssidcheck" != "1" ]; do
 iwctl station "$wifi0" get-networks
 printf "%b" "\nSet your Network SSID (Your network name).\n"
 read -r ssid00
-ssid0=$ssid00
-printf "%b" "\n$ssid00. Is this correct?\n"
+printf "%b" "\nYou said $ssid00.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r ssidcheck
@@ -73,6 +63,7 @@ case $ssidcheck in
  1) printf "%b" "\nPerfect\n" ;;
  *) printf "%b" "\nLet's retry\n" ;;
 esac
+ssid0=$ssid00
 done
 fi
 clear
@@ -80,8 +71,7 @@ if [ "$netpass00" = "wifi" ]; then
 while [ "$netpasswordcheck" != "1" ]; do
 printf "%b" "\nEnter your Wifi password.\n"
 read -r netpassword00
-netpassword0=$netpassword00
-printf "%b" "\n$netpassword00. Is this correct?\n"
+printf "%b" "\nYou said $netpassword00.\n Is this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
 read -r netpasswordcheck
@@ -89,6 +79,7 @@ case $netpasswordcheck in
  1) printf "%b" "\nPerfect\n" ;;
  *) printf "%b" "\nLet's retry\n" ;;
 esac
+netpassword0=$netpassword00
 done
 fi
 networkready="yes"
@@ -130,7 +121,7 @@ command17finished="0"
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Network Tool ####\n"
-printf "%b" "\n########## Filter v.1.1.1 ##########\n"
+printf "%b" "\n########## Filter v.1.2.0 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Connect to a network\n"
 printf "%b" "\n2 - Exit to Barista.\n"

@@ -1,7 +1,6 @@
 #!/bin/sh
 # CoffeeLinux PreSetup Iso File updater
 #Update Needed Files
-
 clear
 wget -q -O /usr/local/bin/coffeebrewer4 https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffeebrewer4
 clear
@@ -22,18 +21,16 @@ clear
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Iso ####\n"
-printf "%b" "\n########## Barista v.1.2.1 ##########\n"
+printf "%b" "\n########## Barista v.1.2.2 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Install CoffeeLinux\n"
 printf "%b" "\n2 - Exit to Terminal\n"
-
 read -r typecheck00
 case $typecheck00 in
  1) coffeebrewer4 ;;
  2) printf "%b" "\nLet's move on then.\n" ;;
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
-
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
 typecheck00=1
 coffeebrewer4
