@@ -52,7 +52,7 @@ wget -q -O /usr/share/wallpapers/coffee/adwaita-d.jpg https://raw.githubusercont
 wget -q -O /usr/share/wallpapers/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /usr/share/wallpapers/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
 wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf
-wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf
+wget -q -O /opt/pacman-unstable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf
 wget -q -O /etc/issue https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/issue
 cp /opt/issue /etc/
 wget -q -O /opt/coffee-updater https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater

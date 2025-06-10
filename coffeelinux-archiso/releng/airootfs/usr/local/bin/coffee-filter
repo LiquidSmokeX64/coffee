@@ -128,9 +128,6 @@ wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmoke
 clear
 wget -q -O /opt/pacman-unstable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf
 clear
-wget -q -O /usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
-clear
-chmod +x /usr/local/bin/coffee-barista
 
 printf "%b" "\nSetting intial pacman keyring up...\n"
 pacman-key --init
