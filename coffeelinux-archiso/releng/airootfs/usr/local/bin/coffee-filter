@@ -126,7 +126,7 @@ chmod 755 /etc/pacman.conf
 clear
 wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf
 clear
-wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf
+wget -q -O /opt/pacman-unstable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf
 clear
 wget -q -O /usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
 clear

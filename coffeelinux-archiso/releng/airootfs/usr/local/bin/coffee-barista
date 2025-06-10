@@ -14,7 +14,7 @@ wget -q -O /etc/os-release https://raw.githubusercontent.com/LiquidSmokeX64/coff
 clear
 wget -q -O /etc/lsb-release https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release
 clear
-wget -L wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
+wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 clear
 chmod 755 /usr/local/bin/coffeebrewer4
 clear
