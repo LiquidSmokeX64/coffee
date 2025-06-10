@@ -349,7 +349,6 @@ if [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] &&
 gpucheck=1
 gpu01="amd"
 fi
-done
 clear
 printf "%b" "\nYou said $gpu01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
@@ -359,6 +358,7 @@ case $gpu01passcheck in
   1) gpu0=$gpu01 ;;
   *) printf "%b" "\nLet's retry\n" ;
 esac
+done
 clear
 while [ "$grub01passcheck" != "1" ]; do
 printf "%b" "\nWould you like GRUB or SystemD-Bootloader?\nGRUB is more compatible with VMs. (Default: 1)\n"
