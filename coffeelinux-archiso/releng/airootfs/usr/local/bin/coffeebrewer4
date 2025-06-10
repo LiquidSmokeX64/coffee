@@ -838,10 +838,10 @@ if [ "$handheldpass00" = "yes-handheld" ]; then
   printf "%b" "\n[General]\nDisplayServer=x11\n\n[Autologin]\nUser=$user00\nSession=plasmax11\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
   rm -r /mnt/etc/sddm.conf.d/virtualkbd.conf
   printf "%b" "\n[General]\nInputMethod=onboard" > /mnt/etc/sddm.conf.d/virtualkbd.conf
-  cp /opt/handheld/xdg/kwinrc /mnt/etc/xdg/kwinrc
+  wget -q -O /mnt/etc/xdg/kwinrc https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/handheld/xdg/kwinrc
   arch-chroot /mnt chmod 755 /etc/xdg/kwinrc
   mkdir -p /mnt/etc/xdg/autostart/
-  cp /opt/handheld/xdg/autostart/onboard.desktop /mnt/etc/xdg/autostart/
+  wget -q -O /mnt/etc/xdg/autostart/onboard.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/handheld/xdg/autostart/onboard.desktop
   chmod 755 /mnt/etc/xdg/autostart/onboard.desktop
   clear
   printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay -S --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd adjustor hhd-ui
