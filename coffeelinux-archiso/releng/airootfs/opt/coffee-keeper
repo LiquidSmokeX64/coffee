@@ -91,8 +91,7 @@ cp /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
 cp /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
 
 #Injector-Replacer
-rm /opt/coffee-injector
-wget -L https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector -P /opt/
+wget -q -O /opt/coffee-keeper https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
 
 exit
