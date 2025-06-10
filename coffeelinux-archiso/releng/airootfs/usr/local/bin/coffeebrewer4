@@ -272,12 +272,12 @@ printf "%b" "\nListing Storage Devices for you.\n"
 fdisk -l
 printf "%b" "\n"
 printf "%b" "\nWhich drive do you want Coffee Linux to install to? (Default: 1)\n"
-printf "%b" "\n1 - NVME0N1"
-printf "%b" "\n2 - NVME1N1"
-printf "%b" "\n3 - SDA"
-printf "%b" "\n4 - SDB"
-printf "%b" "\n5 - VDA"
-printf "%b" "\n6 - VDB\n"
+printf "%b" "\n1 - NVME0N1 (/dev/nvme0n1)"
+printf "%b" "\n2 - NVME1N1 (/dev/nvme1n1)"
+printf "%b" "\n3 - SDA (/dev/sda)"
+printf "%b" "\n4 - SDB  (/dev/sdb)"
+printf "%b" "\n5 - VDA (/dev/vda"
+printf "%b" "\n6 - VDB (/dev/vdb\n"
 read -r drive01check
 case "$drive01check" in
   1) drive01="/dev/nvme0n1"; boot01="p1"; swap01="p2"; system01="p3" ;;
