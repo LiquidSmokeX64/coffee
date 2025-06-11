@@ -1,0 +1,13 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "dlc07projectxmods@gmail.com",
+                "Name": "LiquidSmokeX64"
+            }
+        ],
+        "Id": "Coffee",
+        "License": "LGPLv3",
+        "Name": "Coffee 1.0",
+    }
+}
