@@ -62,32 +62,6 @@ else
 cp /opt/pacman-unstable.conf /etc/pacman.conf
 fi
 done
-clear
-while [ "$handheldpasscheck" != "1" ]; do
-clear
-printf "%b" "\nIs the destination device a Handheld PC (Default: 1)\n"
-printf "%b" "\n1 - No\n"
-printf "%b" "\n2 - Yes\n"
-read -r handheldcheck00
-case $handheldcheck00 in
-  1) handheldpass01="no-handheld" ;;
-  2) handheldpass01="yes-handheld" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
-esac
-if [ "$handheldcheck00" != "1" ] && [ "$handheldcheck00" != "2" ]; then
-handheldcheck00=1
-handheldpass01="no-handheld"
-fi
-clear
-printf "%b" "\nYou said $handheldpass01.\nIs this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r handheldpasscheck
-case $handheldpasscheck in
-  1) handheldpass00=$handheldpass01 ;;
-  *) printf "%b" "\nLet's retry\n" ;
-esac
-done
 while [ "$usercheck" != "1" ]; do
 clear
 printf "%b" "\nWould you like to set your username? (Default: 2)\n"
