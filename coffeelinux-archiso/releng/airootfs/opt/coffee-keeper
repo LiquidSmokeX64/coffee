@@ -66,13 +66,12 @@ pacman -Rdd --noconfirm gedit
 rm /usr/share/applications/steam-native.desktop
 rm /usr/share/applications/stoken-gui-small.desktop
 #Fix the wallpapers if needed
-mkdir -p /usr/share/wallpapers/Coffee/contents/images/
-wget -q -O /usr/share/wallpapers/Coffee/contents/images/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/Coffee/contents/images/adwaita-l.jpg
-wget -q -O /usr/share/wallpapers/Coffee/contents/images/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/Coffee/contents/images/adwaita-d.jpg
-wget -q -O /usr/share/wallpapers/Coffee/contents/images/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/Coffee/contents/images/adwaita-l.jxl
-wget -q -O /usr/share/wallpapers/Coffee/contents/images/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/Coffee/contents/images/adwaita-d.jxl
-wget -q -O /usr/share/wallpapers/Coffee/contents/screenshot.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/Coffee/contents/screenshot.jpg
-wget -q -O /usr/share/wallpapers/Coffee/metadata.json https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/Coffee/metadata.json
+wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
+wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
+wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
+wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
+mkdir -p /usr/share/wallpapers/coffee/
+cp /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
 #Injector-Replacer
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
