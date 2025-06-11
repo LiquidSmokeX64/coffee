@@ -410,6 +410,7 @@ case $desktop01passcheck in
   1) desktop0=$desktop01;;
   *) printf "%b" "\nLet's retry\n" ;
 esac
+done
 
 while [ "$grub01passcheck" != "1" ]; do
 clear
