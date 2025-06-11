@@ -359,8 +359,8 @@ while [ "$desktop01passcheck" != "1" ]; do
 clear
 printf "%b" "\n"
 printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
-printf "%b" "\n1 - Gnome"
-printf "%b" "\n2 - Cinnamon"
+printf "%b" "\n1 - Gnome\n"
+printf "%b" "\n2 - Cinnamon\n"
 printf "%b" "\n3 - KDE\n"
 
 read -r desktop01check
@@ -379,7 +379,7 @@ clear
 printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
-read -r drive01passcheck
+read -r desktop01passcheck
 case $desktop01passcheck in
   1) desktop0=$desktop01;;
   *) printf "%b" "\nLet's retry\n" ;
