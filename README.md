@@ -31,16 +31,16 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
-- **Desktop Environment**:
+- **Multiple Desktop Environments**:
    - **Plasma 6 DE (KDE)**: Standard KDE for a cleaner more user customizable environment.
+   - **Gnome DE **: Standard Gnome for a simple yet modern feel.
+   - **Cinnamon DE**: A very Windows XP like DE for Linux beginners or traditionalists.
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
 
 - **SteamOS Mode**: A standalone SteamOS like experience utilizing Gamescope (like real SteamOS does).
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
-
-- **Handheld PC Options**: Supports Handhelds with On-Screen Keyboard, adjustor (TPM), and HandHeld Device Daemon service installations.
 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 
