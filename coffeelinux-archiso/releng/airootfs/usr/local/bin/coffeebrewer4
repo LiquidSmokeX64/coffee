@@ -73,7 +73,7 @@ esac
 done
 while [ "$usercheck" != "1" ]; do
 clear
-printf "%b" "\nWould you like to set your username? (Default: 1)\n"
+printf "%b" "\nWould you like to set your username? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Username will be 'default')\n"
 read -r usercheck02
@@ -112,7 +112,7 @@ fi
 done
 while [ "$userpasscheck" != "1" ]; do
 clear
-printf "%b" "\nWould you like to set your user password? (Default: 1)\n"
+printf "%b" "\nWould you like to set your user password? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (default password will be 'coffee')\n"
 read -r userpasscheck00
@@ -151,7 +151,7 @@ fi
 done
 while [ "$rootpasscheck" != "1" ]; do
 clear
-printf "%b" "\nWould you like to set your root password? (Default: 1)\n"
+printf "%b" "\nWould you like to set your root password? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Root password will be 'coffee')\n"
 read -r rootpasscheck00
@@ -190,7 +190,7 @@ fi
 done
 while [ "$namepasscheck" != "1" ]; do
 clear
-printf "%b" "\nWould you like to set your PC Name? (Default: 1)\n"
+printf "%b" "\nWould you like to set your PC Name? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Computer name will be 'coffeelinux')\n"
 read -r namepasscheck00
@@ -231,7 +231,7 @@ done
 hostname0=$name0
 while [ "$name2passcheck" != "1" ]; do
 clear
-printf "%b" "\nWould you like to set your Hard Drive Label? (Default: 1)\n"
+printf "%b" "\nWould you like to set your Hard Drive Label? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Drive name will be 'coffeedisk')\n"
 read -r name2passcheck02
@@ -548,6 +548,7 @@ fi
 arch-chroot /mnt systemctl enable sddm
 printf "%b" "Installing yay for AUR support..."
 arch-chroot /mnt pacman -Sy --noconfirm git base-devel --needed
+cp /opt/yay-* /mnt/opt/
 yaypackage=$(basename /mnt/opt/yay-1*)
 yaydebugpackage=$(basename /mnt/opt/yay-debug*)
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
