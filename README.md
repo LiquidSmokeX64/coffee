@@ -33,7 +33,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Multiple Desktop Environments**:
    - **Plasma 6 DE (KDE)**: Standard KDE for a cleaner more user customizable environment.
-   - **Gnome DE **: Standard Gnome for a simple yet modern feel.
+   - **Gnome DE**: Standard Gnome for a simple yet modern feel.
    - **Cinnamon DE**: A very Windows XP like DE for Linux beginners or traditionalists.
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
@@ -43,8 +43,6 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
-
-- **Note: Handheld Installer Iso password/s are "coffee"**
 
 ------------------------------------
 
