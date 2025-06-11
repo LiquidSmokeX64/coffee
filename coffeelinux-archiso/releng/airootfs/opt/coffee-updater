@@ -3,9 +3,9 @@
 #Main Menu
 while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ] && [ "$typecheck99" != "8" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Manager Tool 1.1.5 ####\n"
+printf "%b" "\n#### Coffee Linux Manager Tool 1.1.6 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
-printf "%b" "\nWhat would you like to do? (Default: 7)\n"
+printf "%b" "\nWhat would you like to do? (Default: 8)\n"
 printf "%b" "\n1 - System Updates\n"
 printf "%b" "\n2 - Application Management\n"
 printf "%b" "\n3 - System Info\n"
@@ -459,7 +459,7 @@ if [ "$typecheck99" = "7" ]; then
 #Main Menu
 while [ "$typecheck00D" != "1" ] && [ "$typecheck00D" != "2" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Discord Updater Tool 1.0.0 ####\n"
+printf "%b" "\n#### Coffee Linux Discord Updater Tool 1.0.1 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 3)\n"
 printf "%b" "\n1 - Manual Discord update\n"
 printf "%b" "\n2 - Exit Discord Updater.\n"

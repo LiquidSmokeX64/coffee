@@ -16,6 +16,7 @@ chmod +x /usr/local/bin/coffee-barista
 # End Replacement
 clear
 while [ "$branchpasscheck" != "1" ]; do
+clear
 printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
 printf "%b" "\n1 - Stable\n"
 printf "%b" "\n2 - Testing/Beta\n"
@@ -46,6 +47,7 @@ fi
 done
 clear
 while [ "$handheldpasscheck" != "1" ]; do
+clear
 printf "%b" "\nIs the destination device a Handheld PC (Default: 1)\n"
 printf "%b" "\n1 - No\n"
 printf "%b" "\n2 - Yes\n"
@@ -69,8 +71,8 @@ case $handheldpasscheck in
   *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-clear
 while [ "$usercheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like to set your username? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Username will be 'default')\n"
@@ -80,9 +82,9 @@ case $usercheck02 in
   2) printf "%b" "\nLet's move on then.\n" ;;
   *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
-clear
 if [ "$usercheck02" = "1" ]; then
 while [ "$usercheck" != "1" ]; do
+clear
 printf "%b" "\nSet your Username.\n"
 read -r user00
 clear
@@ -108,8 +110,8 @@ user01=$user00
 usercheck02=1
 fi
 done
-clear
 while [ "$userpasscheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like to set your user password? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (default password will be 'coffee')\n"
@@ -119,9 +121,9 @@ case $userpasscheck00 in
   2) printf "%b" "\nLet's move on then.\n" ;;
   *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
-clear
 if [ "$userpasscheck00" = "1" ]; then
 while [ "$userpasscheck" != "1" ]; do
+clear
 printf "%b" "\nSet your User Password.\n"
 read -r userpass00
 clear
@@ -147,8 +149,8 @@ userpass0=$userpass00
 userpasscheck=1
 fi
 done
-clear
 while [ "$rootpasscheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like to set your root password? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Root password will be 'coffee')\n"
@@ -158,9 +160,9 @@ case $rootpasscheck00 in
   2) printf "%b" "\nLet's move on then.\n" ;;
   *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
-clear
 if [ "$rootpasscheck00" = "1" ]; then
 while [ "$rootpasscheck" != "1" ]; do
+clear
 printf "%b" "\nSet your Root Password.\n"
 read -r userpass01
 clear
@@ -186,8 +188,8 @@ userpass1=$userpass01
 rootpasscheck=1
 fi
 done
-clear
 while [ "$namepasscheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like to set your PC Name? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Computer name will be 'coffeelinux')\n"
@@ -200,6 +202,7 @@ esac
 clear
 if [ "$namepasscheck00" = "1" ]; then
 while [ "$namepasscheck" != "1" ]; do
+clear
 printf "%b" "\nSet your PC name.\n"
 read -r name00
 clear
@@ -226,8 +229,8 @@ namepasscheck00=1
 fi
 done
 hostname0=$name0
-clear
 while [ "$name2passcheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like to set your Hard Drive Label? (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Drive name will be 'coffeedisk')\n"
@@ -240,6 +243,7 @@ esac
 clear
 if [ "$name2passcheck02" = "1" ]; then
 while [ "$name2passcheck" != "1" ]; do
+clear
 printf "%b" "\nSet your HardDrive Label (OS Partition Label).\n"
 read -r name01
 clear
@@ -266,8 +270,8 @@ name2passcheck02=1
 fi
 done
 drivename0=$name1
-clear
 while [ "$drive01passcheck" != "1" ]; do
+clear
 printf "%b" "\nListing Storage Devices for you.\n"
 fdisk -l
 printf "%b" "\n"
@@ -305,8 +309,8 @@ case $drive01passcheck in
   *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-clear
 while [ "$cpu01passcheck" != "1" ]; do
+clear
 printf "%b" "\nWhat type of CPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
 printf "%b" "\n2 - Intel\n"
@@ -330,8 +334,8 @@ case $cpu01passcheck in
   *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-clear
 while [ "$gpu01passcheck" != "1" ]; do
+clear
 printf "%b" "\nWhat type of GPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
 printf "%b" "\n2 - Nvidia\n"
@@ -359,8 +363,8 @@ case $gpu01passcheck in
   *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-clear
 while [ "$grub01passcheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like GRUB or SystemD-Bootloader?\nGRUB is more compatible with VMs. (Default: 1)\n"
 printf "%b" "\n1 - GRUB UEFI version\n"
 printf "%b" "\n2 - GRUB BIOS/MBR version\n"
@@ -370,7 +374,6 @@ case $grubcheck in
   2) grub01="grub-bios" ;;
   *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
-clear
 if [ "$grubcheck" != "1" ] && [ "$grubcheck" != "2" ]; then
 grubcheck=1
 grub01="grub-uefi"

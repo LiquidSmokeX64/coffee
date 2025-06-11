@@ -36,6 +36,7 @@ while [ "$wifipasscheck" != "1" ]; do
 clear
 rfkill unblock all
 iwctl station list
+clear
 printf "%b" "\nSet your Wifi device ID. (Usually 'wlan0')\n"
 read -r wifi00
 clear
@@ -54,6 +55,7 @@ clear
 if [ "$netpass00" = "wifi" ]; then
 while [ "$ssidcheck" != "1" ]; do
 iwctl station "$wifi0" get-networks
+clear
 printf "%b" "\nSet your Network SSID (Your network name).\n"
 read -r ssid00
 clear
@@ -71,6 +73,7 @@ fi
 clear
 if [ "$netpass00" = "wifi" ]; then
 while [ "$netpasswordcheck" != "1" ]; do
+clear
 printf "%b" "\nEnter your Wifi password.\n"
 read -r netpassword00
 clear
