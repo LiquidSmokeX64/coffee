@@ -9,19 +9,19 @@ coffeeapps="onboard qt6-virtualkeyboard maliit-keyboard pipewire-jack pavucontro
 
 gnomeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 at-spi2-core qt6 qt6-multimedia-ffmpeg gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside6 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit-gnome xdg-desktop-portal-gnome libsecret"
 
-cinnamonapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 qt6 libpulse qt6-multimedia-ffmpeg gnu-free-fonts pyside6 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa cinnamon cinnamon-translations file-roller geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-console gnome-system-monitor gtk4 lightdm lightdm-slick-greeter xdg-desktop-portal-gnome gnome-text-editor"
-
 javaapps="jre-openjdk"
 
 amdcpu="amd-ucode"
 
 intelcpu="intel-ucode"
 
-nvgamingapps="nvidia-open lib32-nvidia-utils opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader vulkan-tools"
+nvidiagpudrivers="nvidia-open-dkms lib32-nvidia-utils opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader vulkan-tools"
 
-amdgamingapps="lib32-mesa lib32-amdvlk lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader corectrl vulkan-tools"
+amdgpudrivers="lib32-mesa lib32-amdvlk lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader corectrl vulkan-tools"
 
-intelgamingapps="mesa lib32-mesa xorg-server vulkan-intel lib32-vulkan-intel libva-intel-driver libva-utils vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader"
+intelgpudrivers="mesa lib32-mesa xorg-server vulkan-intel lib32-vulkan-intel libva-intel-driver libva-utils vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader"
+
+gamingapps="libreoffice-fresh discord mangohud lutris gamescope gamemode steam-native-runtime wine wine-gecko wine-mono winetricks"
 
 configuration (){
 # Replace coffee-barista just in case things go wrong
@@ -353,35 +353,6 @@ case $gpu01passcheck in
 esac
 done
 
-while [ "$desktop01passcheck" != "1" ]; do
-clear
-printf "%b" "\n"
-printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
-printf "%b" "\n1 - Gnome\n"
-printf "%b" "\n2 - Cinnamon\n"
-
-read -r desktop01check
-case "$desktop01check" in
-  1) desktop01="gnome";;
-  2) desktop01="cinnamon";;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n";
-esac
-if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ]; then
-desktop01check=1
-desktop01="gnome"
-
-fi
-clear
-printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r desktop01passcheck
-case $desktop01passcheck in
-  1) desktop0=$desktop01;;
-  *) printf "%b" "\nLet's retry\n" ;
-esac
-done
-
 while [ "$grub01passcheck" != "1" ]; do
 clear
 printf "%b" "\nWould you like GRUB or SystemD-Bootloader?\nGRUB is more compatible with VMs. (Default: 1)\n"
@@ -554,10 +525,7 @@ mainos_install (){
 while [ "$command4finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$desktop0" = "gnome" ]; then
-
 arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
-arch-chroot /mnt pacman -Rdd --noconfirm rust
 arch-chroot /mnt usermod -a -G realtime $user01
 arch-chroot /mnt usermod -a -G input $user01
 arch-chroot /mnt usermod -a -G plugdev $user01
@@ -579,7 +547,8 @@ yaydebugpackage=$(basename /mnt/opt/yay-debug*)
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
 clear
-arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
+arch-chroot /mnt pacman -R --noconfirm gedit
+arch-chroot /mnt pacman -R --noconfirm gnome-terminal
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 
@@ -589,45 +558,6 @@ fi
 
 arch-chroot /mnt systemctl enable gdm
 
-fi
-
-if [ "$desktop0" = "cinnamon" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
-arch-chroot /mnt pacman -Rdd --noconfirm rust
-arch-chroot /mnt usermod -a -G realtime $user01
-arch-chroot /mnt usermod -a -G input $user01
-arch-chroot /mnt usermod -a -G plugdev $user01
-wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-wget -q -O /opt/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-arch-chroot /mnt systemctl enable pipewire.service
-arch-chroot /mnt systemctl enable pipewire-pulse.service
-arch-chroot /mnt systemctl enable pipewire-alsa.service
-arch-chroot /mnt systemctl enable wireplumber.service 
-arch-chroot /mnt systemctl enable rtkit-daemon.service
-cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
-clear
-printf "%b" "Installing yay for AUR support..."
-cp /opt/yay-* /mnt/opt/
-yaypackage=$(basename /mnt/opt/yay-1*)
-yaydebugpackage=$(basename /mnt/opt/yay-debug*)
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
-clear
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
 command4finished="1"
 else
 command4finished="0"
@@ -694,19 +624,19 @@ postos_install (){
 clear
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected..\n"
-arch-chroot /mnt pacman -Sy --noconfirm $nvgamingapps
+arch-chroot /mnt pacman -Sy --noconfirm $nvidiagpudrivers
 arch-chroot /mnt systemctl enable nvidia-persistenced.service
 fi
 if [ "$gpu0" = "amd" ]; then
 printf "%b" "\nAMD GPU selected..\n"
-arch-chroot /mnt pacman -Sy --noconfirm $amdgamingapps
+arch-chroot /mnt pacman -Sy --noconfirm $amdgpudrivers
 arch-chroot /mnt pacman -Sy --noconfirm corectrl
 fi
 if [ "$gpu0" = "intel" ]; then
 printf "%b" "\nIntel GPU selected..\n"
-arch-chroot /mnt pacman -Sy --noconfirm $intelgamingapps
+arch-chroot /mnt pacman -Sy --noconfirm $intelgpudrivers
 fi
-arch-chroot /mnt pacman -Sy --noconfirm libreoffice-fresh discord mangohud lutris gamescope steam-native-runtime wine wine-gecko wine-mono winetricks
+arch-chroot /mnt pacman -Sy --noconfirm $gamingapps
 clear
 while [ "$command18finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
@@ -744,26 +674,6 @@ printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 arch-chroot /mnt pacman -R --noconfirm gedit gnome-terminal
 clear
-if [ "$desktop0" = "cinnamon" ]; then
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
-clear
-printf "%b" "5\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
-clear
-arch-chroot /mnt pacman -Rdd --noconfirm lightdm-settings
-clear
-fi
 
 command18finished="1"
 else
@@ -804,23 +714,6 @@ command11finished="0"
 fi
 done
 command11finished="0"
-}
-
-lightdm_fix (){
-clear
-while [ "$command12finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-arch-chroot /mnt pacman -Syu --noconfirm
-printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /mnt/etc/lightdm/lightdm.conf
-arch-chroot /mnt systemctl enable lightdm
-
-command12finished="1"
-else
-command12finished="0"
-fi
-done
-command12finished="0"
 }
 
 success_check (){
@@ -919,9 +812,6 @@ bootloader_install
 postos_install
 services_starter
 homedir_fix
-if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
-fi
 success_check
 umount -R /mnt
 printf "%b" "Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
