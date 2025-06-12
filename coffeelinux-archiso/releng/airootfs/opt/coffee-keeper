@@ -3,8 +3,6 @@
 sleep 10
 #Do system updates to all packages
 pacman -Syu --noconfirm
-#Enable any services that may have gotten messed up.
-systemctl enable rtkit-daemon
 #Replace CoffeeLinux specific files
 wget -q -O /usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
 wget -q -O /usr/bin/steamos-select-branch https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch
@@ -36,8 +34,6 @@ chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
 #Removal of any unwanted packages
-pacman -Rdd --noconfirm blueman
-pacman -Rdd --noconfirm kmix
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
 #Remove any unwanted files
@@ -49,9 +45,7 @@ wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.c
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
 mkdir -p /mnt/usr/share/backgrounds/gnome/
-mkdir -p /mnt/usr/share/wallpapers/coffee/
 cp /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
-cp /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
 #Injector-Replacer
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector

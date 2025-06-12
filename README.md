@@ -32,7 +32,6 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
 - **Multiple Desktop Environments**:
-   - **Plasma 6 DE (KDE)**: Standard KDE for a cleaner more user customizable environment.
    - **Gnome DE**: Standard Gnome for a simple yet modern feel.
    - **Cinnamon DE**: A very Windows XP like DE for Linux beginners or traditionalists.
 
