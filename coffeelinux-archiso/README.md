@@ -31,9 +31,8 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
-- **Multiple Desktop Environments**:
-   - **Gnome DE**: Standard Gnome for a simple yet modern feel.
-   - **Cinnamon DE**: A very Windows XP like DE for Linux beginners or traditionalists.
+- **Rock Solid Desktop Environment**:
+   - **Gnome DE**: Standard Gnome Desktop for a simple yet modern feel.
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
 
