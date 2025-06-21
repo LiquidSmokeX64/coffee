@@ -556,7 +556,7 @@ if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
 fi
 
-arch-chroot /mnt systemctl enable gdm
+arch-chroot /mnt systemctl enable lightdm
 
 command4finished="1"
 else
