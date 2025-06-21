@@ -32,7 +32,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
 - **Rock Solid Desktop Environment**:
-   - **Gnome DE**: Standard Gnome Desktop for a simple yet modern feel.
+   - **Cinnamon DE**: An elegant yet traditional desktop from the creators of Linux Mint.
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
 
