@@ -843,7 +843,8 @@ clear
 if [ "$desktop0" = "kde" ]; then
 printf "%b" "\nNothing to do here."
 else
-arch-chroot /mnt pacman -Rdd --noconfirm gedit gnome-terminal
+arch-chroot /mnt pacman -Rdd --noconfirm gedit
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-terminal
 fi
 clear
 
