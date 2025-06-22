@@ -44,11 +44,17 @@ wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.c
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
-cp /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
-cp /opt/backgrounds/* /usr/share/backgrounds/
-#Fix LightDM in case an update broke it
+mkdir -p /mnt/usr/share/backgrounds/gnome/
+mkdir -p /mnt/usr/share/wallpapers/coffee/
+cp -r /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
+cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
+#Fix Cinnamon LightDM in case an update broke it
+coffeedesktoptype=$(basename /usr/share/xsessions/*)
+if [ "$coffeedesktoptype" = "cinnamon2d.desktop" ]; then
+pacman -Rdd --noconfirm lightdm-settings
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
 systemctl enable lightdm
+fi
 #Injector-Replacer
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
