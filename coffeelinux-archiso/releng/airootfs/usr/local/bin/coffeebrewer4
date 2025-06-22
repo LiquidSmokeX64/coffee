@@ -19,7 +19,7 @@ amdcpu="amd-ucode"
 
 intelcpu="intel-ucode"
 
-nvidiagpudrivers="nvidia-open-dkms lib32-nvidia-utils opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader vulkan-tools"
+nvidiagpudrivers="nvidia-open-dkms lib32-nvidia-utils lib32-opencl-nvidia opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader vulkan-tools"
 
 amdgpudrivers="lib32-mesa lib32-amdvlk lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader corectrl vulkan-tools"
 
@@ -593,7 +593,6 @@ fi
 if [ "$desktop0" = "gnome" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
-arch-chroot /mnt pacman -Rdd --noconfirm kmix
 arch-chroot /mnt pacman -Rdd --noconfirm blueman
 arch-chroot /mnt pacman -Rdd --noconfirm rust
 arch-chroot /mnt usermod -a -G realtime $user01
@@ -632,7 +631,6 @@ fi
 if [ "$desktop0" = "cinnamon" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
-arch-chroot /mnt pacman -Rdd --noconfirm kmix
 arch-chroot /mnt pacman -Rdd --noconfirm blueman
 arch-chroot /mnt pacman -Rdd --noconfirm rust
 arch-chroot /mnt usermod -a -G realtime $user01
@@ -881,10 +879,13 @@ wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.c
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
-mkdir -p /mnt/usr/share/backgrounds/gnome/
+if [ "$desktop0" = "kde" ]; then
 mkdir -p /mnt/usr/share/wallpapers/coffee/
-cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
 cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
+else
+mkdir -p /mnt/usr/share/backgrounds/gnome/
+cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
+fi
 #End wallpaper setup
 wget -q -O /mnt/usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
 wget -q -O /mnt/usr/bin/steamos-select-branch https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch

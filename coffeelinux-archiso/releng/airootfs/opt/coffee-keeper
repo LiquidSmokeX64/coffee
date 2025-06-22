@@ -34,9 +34,13 @@ chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
 #Removal of any unwanted packages if they exist.
+coffeedesktoptype0=$(basename /usr/share/wayland-sessions/*)
+if [ "$coffeedesktoptype0" = "plasma.desktop" ]; then
+pacman -Rdd --noconfirm kmix
+else
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
-pacman -Rdd --noconfirm kmix
+fi
 pacman -Rdd --noconfirm blueman
 #Remove any unwanted files if they exist.
 rm /usr/share/applications/steam-native.desktop
@@ -46,10 +50,13 @@ wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.c
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
-mkdir -p /mnt/usr/share/backgrounds/gnome/
-mkdir -p /mnt/usr/share/wallpapers/coffee/
-cp -r /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
+if [ "$coffeedesktoptype0" = "plasma.desktop" ]; then
+mkdir -p /usr/share/wallpapers/coffee/
 cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
+else
+mkdir -p /usr/share/backgrounds/gnome/
+cp -r /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
+fi
 #Fix Cinnamon LightDM in case an update broke it
 coffeedesktoptype=$(basename /usr/share/xsessions/*)
 if [ "$coffeedesktoptype" = "cinnamon2d.desktop" ]; then
