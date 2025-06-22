@@ -9,10 +9,6 @@ coffeeapps="onboard qt6-virtualkeyboard maliit-keyboard pipewire-jack pavucontro
 
 gnomeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 at-spi2-core qt6 qt6-multimedia-ffmpeg gnome-shell-extension-appindicator libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside6 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa gdm gnome gnome-photos gnome-color-manager gnome-console gnome-extra gnome-firmware gnome-keyring gnome-menus gnome-online-accounts gnome-text-editor gtk4 polkit polkit-gnome xdg-desktop-portal-gnome libsecret"
 
-kdeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 pyside6 libpulse noto-fonts noto-fonts-emoji gnu-free-fonts cronie tesseract-data-eng qt6-multimedia-ffmpeg kpmcore wireplumber pipewire-pulse pipewire pipewire-alsa appstream-qt ark colord-kde gnome-color-manager gnome-disk-utility gnome-menus gtk4 kde-applications-meta kdevelop-python kgamma qt6 plasma plasma-nm kscreen kvantum plasma-meta plasma-wayland-protocols plasma-workspace polkit polkit-qt6 polkit-kde-agent sddm sddm-kcm xdg-desktop-portal-kde libsecret"
-
-cinnamonapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 qt6 libpulse qt6-multimedia-ffmpeg gnu-free-fonts pyside6 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa cinnamon cinnamon-translations file-roller geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-console gnome-system-monitor gtk4 lightdm lightdm-slick-greeter xdg-desktop-portal-gnome gnome-text-editor"
-
 javaapps="jre-openjdk"
 
 amdcpu="amd-ucode"
@@ -298,36 +294,6 @@ case $drive01passcheck in
 esac
 done
 
-while [ "$desktop01passcheck" != "1" ]; do
-clear
-printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
-printf "%b" "\n1 - Plasma (KDE)\n"
-printf "%b" "\n2 - Gnome\n"
-printf "%b" "\n3 - Cinnamon\n"
-
-read -r desktop01check
-case "$desktop01check" in
-  1) desktop01="kde";;
-  2) desktop01="gnome";;
-  3) desktop01="cinnamon";;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n";
-esac
-if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ]; then
-desktop01check=1
-desktop01="kde"
-
-fi
-clear
-printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
-read -r desktop01passcheck
-case $desktop01passcheck in
-  1) desktop0=$desktop01;;
-  *) printf "%b" "\nLet's retry\n" ;
-esac
-done
-
 while [ "$cpu01passcheck" != "1" ]; do
 clear
 printf "%b" "\nWhat type of CPU do you have? (Default: 1)\n"
@@ -353,6 +319,7 @@ case $cpu01passcheck in
   *) printf "%b" "\nLet's retry\n" ;
 esac
 done
+
 while [ "$gpu01passcheck" != "1" ]; do
 clear
 printf "%b" "\nWhat type of GPU do you have? (Default: 1)\n"
@@ -555,43 +522,6 @@ mainos_install (){
 while [ "$command4finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$desktop0" = "kde" ]; then
-arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
-arch-chroot /mnt pacman -Rdd --noconfirm kmix
-arch-chroot /mnt pacman -Rdd --noconfirm blueman
-arch-chroot /mnt pacman -Rdd --noconfirm rust
-arch-chroot /mnt usermod -a -G realtime $user01
-arch-chroot /mnt usermod -a -G input $user01
-arch-chroot /mnt usermod -a -G plugdev $user01
-wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-wget -q -O /opt/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-arch-chroot /mnt systemctl enable pipewire.service
-arch-chroot /mnt systemctl enable pipewire-pulse.service
-arch-chroot /mnt systemctl enable pipewire-alsa.service
-arch-chroot /mnt systemctl enable wireplumber.service 
-arch-chroot /mnt systemctl enable rtkit-daemon.service
-cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
-clear
-printf "%b" "Installing yay for AUR support..."
-cp /opt/yay-* /mnt/opt/
-yaypackage=$(basename /mnt/opt/yay-1*)
-yaydebugpackage=$(basename /mnt/opt/yay-debug*)
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
-clear
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable sddm
-
-fi
-
-if [ "$desktop0" = "gnome" ]; then
-
 arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
 arch-chroot /mnt pacman -Rdd --noconfirm blueman
 arch-chroot /mnt pacman -Rdd --noconfirm rust
@@ -622,44 +552,6 @@ gpu0="amd"
 fi
 
 arch-chroot /mnt systemctl enable gdm
-
-fi
-
-if [ "$desktop0" = "cinnamon" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
-arch-chroot /mnt pacman -Rdd --noconfirm blueman
-arch-chroot /mnt pacman -Rdd --noconfirm rust
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-arch-chroot /mnt usermod -a -G realtime $user01
-arch-chroot /mnt usermod -a -G input $user01
-arch-chroot /mnt usermod -a -G plugdev $user01
-wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-wget -q -O /opt/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-arch-chroot /mnt systemctl enable pipewire.service
-arch-chroot /mnt systemctl enable pipewire-pulse.service
-arch-chroot /mnt systemctl enable pipewire-alsa.service
-arch-chroot /mnt systemctl enable wireplumber.service 
-arch-chroot /mnt systemctl enable rtkit-daemon.service
-cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
-clear
-printf "%b" "Installing yay for AUR support..."
-cp /opt/yay-* /mnt/opt/
-yaypackage=$(basename /mnt/opt/yay-1*)
-yaydebugpackage=$(basename /mnt/opt/yay-debug*)
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
-clear
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable lightdm
-
-fi
 
 command4finished="1"
 else
@@ -779,33 +671,8 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 clear
-if [ "$desktop0" = "cinnamon" ]; then
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
-clear
-printf "%b" "5\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-themes-legacy
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
-clear
-arch-chroot /mnt pacman -Rdd --noconfirm lightdm-settings
-clear
-fi
-clear
-if [ "$desktop0" = "kde" ]; then
-printf "%b" "\nNothing to do here."
-else
 arch-chroot /mnt pacman -Rdd --noconfirm gedit
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-terminal
-fi
 clear
 
 command18finished="1"
@@ -849,23 +716,6 @@ done
 command11finished="0"
 }
 
-lightdm_fix (){
-clear
-while [ "$command12finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-arch-chroot /mnt pacman -Syu --noconfirm
-printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /mnt/etc/lightdm/lightdm.conf
-arch-chroot /mnt systemctl enable lightdm
-
-command12finished="1"
-else
-command12finished="0"
-fi
-done
-command12finished="0"
-}
-
 success_check (){
 clear
 while [ "$command15finished" != "1" ] && [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; do
@@ -875,13 +725,8 @@ wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.c
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
-if [ "$desktop0" = "kde" ]; then
-mkdir -p /mnt/usr/share/wallpapers/coffee/
-cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
-else
 mkdir -p /mnt/usr/share/backgrounds/gnome/
 cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
-fi
 #End wallpaper setup
 wget -q -O /mnt/usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
 wget -q -O /mnt/usr/bin/steamos-select-branch https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch
@@ -906,9 +751,9 @@ arch-chroot /mnt systemctl enable coffee-keeper.service
 cp /opt/os-release /mnt/etc/
 cp /opt/lsb-release /mnt/etc/
 cp -r /opt/* /mnt/opt/
-cp /usr/local/bin/coffeebrewer4 /mnt/usr/local/bin/
+cp /usr/local/bin/coffee-brewer /mnt/usr/local/bin/
 cp /usr/local/bin/coffee-barista /mnt/usr/local/bin/
-arch-chroot /mnt chmod +x /usr/local/bin/coffeebrewer4 /usr/local/bin/coffee-barista
+arch-chroot /mnt chmod +x /usr/local/bin/coffee-brewer /usr/local/bin/coffee-barista
 rm /mnt/usr/share/applications/steam-native.desktop
 rm /mnt/usr/share/applications/stoken-gui-small.desktop
 if [ "$branchpass00" = "stable" ]; then
@@ -967,9 +812,6 @@ bootloader_install
 postos_install
 services_starter
 homedir_fix
-if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
-fi
 success_check
 umount -R /mnt
 printf "%b" "Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
