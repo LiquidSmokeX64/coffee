@@ -13,7 +13,7 @@ kdeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-
 
 cinnamonapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 qt6 libpulse qt6-multimedia-ffmpeg gnu-free-fonts pyside6 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa cinnamon cinnamon-translations file-roller geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-console gnome-system-monitor gtk4 lightdm lightdm-slick-greeter xdg-desktop-portal-gnome gnome-text-editor"
 
-cosmicapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 qt6 qt6-multimedia-ffmpeg libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside6 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa polkit gtk4 libsecret gnome-disk-utility cosmic cosmic-applets cosmic-app-library cosmic-bg cosmic-comp cosmic-files cosmic-icon-theme cosmic-idle cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-player cosmic-randr cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces xdg-desktop-portal-cosmic"
+cosmicapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 qt6 qt6-multimedia-ffmpeg libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside6 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa polkit gtk4 libsecret gnome-disk-utility cosmic cosmic-applets cosmic-app-library cosmic-bg cosmic-comp cosmic-files cosmic-icon-theme cosmic-idle cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-player cosmic-randr cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces xdg-desktop-portal-cosmic gnome-calendar evolution"
 
 javaapps="jre-openjdk"
 
@@ -306,7 +306,7 @@ printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
 printf "%b" "\n1 - Plasma (KDE)\n"
 printf "%b" "\n2 - Gnome\n"
 printf "%b" "\n3 - Cinnamon\n"
-printf "%b" "\n3 - Cosmic (Alpha)\n"
+printf "%b" "\n4 - Cosmic\n"
 
 read -r desktop01check
 case "$desktop01check" in
