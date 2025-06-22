@@ -28,11 +28,6 @@ intelgpudrivers="mesa lib32-mesa xorg-server vulkan-intel lib32-vulkan-intel lib
 gamingapps="libreoffice-fresh discord mangohud lutris gamescope gamemode lib32-gamemode steam-native-runtime wine wine-gecko wine-mono winetricks"
 
 configuration (){
-# Replace coffee-barista just in case things go wrong
-wget -q -O /usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
-clear
-chmod +x /usr/local/bin/coffee-barista
-# End Replacement
 clear
 while [ "$branchpasscheck" != "1" ]; do
 clear

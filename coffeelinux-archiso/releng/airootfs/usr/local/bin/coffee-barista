@@ -14,6 +14,7 @@ wget -q -O /etc/lsb-release https://raw.githubusercontent.com/LiquidSmokeX64/cof
 clear
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 clear
+wget -q -O /opt/coffee-keeper https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper
 chmod 755 /usr/local/bin/coffeebrewer4
 clear
 #Finished Updating
@@ -21,7 +22,7 @@ clear
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Iso ####\n"
-printf "%b" "\n########## Barista v.1.2.2 ##########\n"
+printf "%b" "\n########## Barista v.1.2.3 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Install CoffeeLinux\n"
 printf "%b" "\n2 - Exit to Terminal\n"

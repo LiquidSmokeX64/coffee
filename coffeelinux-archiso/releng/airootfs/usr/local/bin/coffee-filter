@@ -115,6 +115,10 @@ printf "%b" "\nSet keys successfully..\n"
 sleep 5
 pacman -Syy --noconfirm archlinux-keyring
 clear
+# Replace coffee-barista ahead of time...
+wget -q -O /usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
+clear
+chmod 755 /usr/local/bin/coffee-barista
 fi
 command17finished="1"
 done
@@ -125,7 +129,7 @@ command17finished="0"
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Network Tool ####\n"
-printf "%b" "\n########## Filter v.1.2.1 ##########\n"
+printf "%b" "\n########## Filter v.1.2.2 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Connect to a network\n"
 printf "%b" "\n2 - Exit to Barista.\n"
