@@ -921,6 +921,10 @@ else
 mkdir -p /mnt/usr/share/backgrounds/gnome/
 cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
 fi
+if [ "$desktop0" = "cosmic" ]; then
+cp -r /opt/backgrounds/coffee/adwaita-l.jpg /mnt/usr/share/backgrounds/cosmic/A_stormy_stellar_nursery_esa_379309.jpg
+cp -r /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/cosmic/orion_nebula_nasa_heic0601a.jpg
+fi
 #End wallpaper setup
 wget -q -O /mnt/usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
 wget -q -O /mnt/usr/bin/steamos-select-branch https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch
