@@ -13,8 +13,6 @@ kdeapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-
 
 cinnamonapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 qt6 libpulse qt6-multimedia-ffmpeg gnu-free-fonts pyside6 cronie tesseract-data-eng noto-fonts noto-fonts-emoji polkit polkit-gnome gnome-keyring libsecret wireplumber pipewire-pulse pipewire pipewire-alsa cinnamon cinnamon-translations file-roller geary gnome-calculator gnome-color-manager gnome-disk-utility gnome-keyring gnome-menus gnome-photos gnome-software gnome-console gnome-system-monitor gtk4 lightdm lightdm-slick-greeter xdg-desktop-portal-gnome gnome-text-editor"
 
-cosmicapps="lib32-pipewire-jack pipewire-jack phonon-qt6-vlc phonon-qt5-vlc phonon-qt6 qt6 qt6-multimedia-ffmpeg libpulse noto-fonts noto-fonts-emoji gnu-free-fonts pyside6 cronie tesseract-data-eng wireplumber pipewire-pulse pipewire pipewire-alsa polkit gtk4 libsecret gnome-disk-utility cosmic cosmic-applets cosmic-app-library cosmic-bg cosmic-comp cosmic-files cosmic-icon-theme cosmic-idle cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-player cosmic-randr cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces xdg-desktop-portal-cosmic gnome-calendar evolution"
-
 javaapps="jre-openjdk"
 
 amdcpu="amd-ucode"
@@ -313,10 +311,9 @@ case "$desktop01check" in
   1) desktop01="kde";;
   2) desktop01="gnome";;
   3) desktop01="cinnamon";;
-  4) desktop01="cosmic";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
-if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ]; then
+if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ]; then
 desktop01check=1
 desktop01="kde"
 
@@ -665,41 +662,6 @@ arch-chroot /mnt systemctl enable lightdm
 
 fi
 
-if [ "$desktop0" = "cosmic" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $cosmicapps
-arch-chroot /mnt pacman -Rdd --noconfirm blueman
-arch-chroot /mnt pacman -Rdd --noconfirm rust
-arch-chroot /mnt usermod -a -G realtime $user01
-arch-chroot /mnt usermod -a -G input $user01
-arch-chroot /mnt usermod -a -G plugdev $user01
-wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-wget -q -O /opt/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-arch-chroot /mnt systemctl enable pipewire.service
-arch-chroot /mnt systemctl enable pipewire-pulse.service
-arch-chroot /mnt systemctl enable pipewire-alsa.service
-arch-chroot /mnt systemctl enable wireplumber.service
-arch-chroot /mnt systemctl enable rtkit-daemon.service
-cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
-clear
-printf "%b" "Installing yay for AUR support..."
-cp /opt/yay-* /mnt/opt/
-yaypackage=$(basename /mnt/opt/yay-1*)
-yaydebugpackage=$(basename /mnt/opt/yay-debug*)
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
-clear
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable cosmic-greeter.service
-
-fi
-
 command4finished="1"
 else
 command4finished="0"
@@ -920,10 +882,6 @@ cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
 else
 mkdir -p /mnt/usr/share/backgrounds/gnome/
 cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
-fi
-if [ "$desktop0" = "cosmic" ]; then
-cp -r /opt/backgrounds/coffee/adwaita-l.jpg /mnt/usr/share/backgrounds/cosmic/A_stormy_stellar_nursery_esa_379309.jpg
-cp -r /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/cosmic/orion_nebula_nasa_heic0601a.jpg
 fi
 #End wallpaper setup
 wget -q -O /mnt/usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update

@@ -35,7 +35,6 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
    - **Plasma DE (KDE)**:  An advanced desktop environment with a more user customizable interface.
    - **Gnome DE**: A modern yet simple desktop environment from Gnome.org.
    - **Cinnamon DE**: An elegant yet traditional desktop from the creators of Linux Mint.
-   - **Cosmic DE**:  A unique desktop environment from the creators of Pop OS.
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
 

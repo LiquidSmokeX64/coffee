@@ -59,10 +59,6 @@ else
 mkdir -p /usr/share/backgrounds/gnome/
 cp -r /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
 fi
-if [ "$coffeedesktoptype0" = "cosmic.desktop" ]; then
-cp -r /opt/backgrounds/coffee/adwaita-l.jpg /usr/share/backgrounds/cosmic/A_stormy_stellar_nursery_esa_379309.jpg
-cp -r /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/cosmic/orion_nebula_nasa_heic0601a.jpg
-fi
 #Fix Cinnamon LightDM in case an update broke it
 if [ "$coffeedesktoptype" = "cinnamon2d.desktop" ]; then
 pacman -Rdd --noconfirm gnome-session
