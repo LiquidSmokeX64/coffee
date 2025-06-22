@@ -304,7 +304,6 @@ printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
 printf "%b" "\n1 - Plasma (KDE)\n"
 printf "%b" "\n2 - Gnome\n"
 printf "%b" "\n3 - Cinnamon\n"
-printf "%b" "\n4 - Cosmic\n"
 
 read -r desktop01check
 case "$desktop01check" in
