@@ -33,9 +33,16 @@ chmod 644 /usr/share/applications/SteamOS.desktop /usr/share/applications/coffee
 chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
+#Detect DE for later use.
+coffeedesktoptype0=$(basename /usr/share/wayland-sessions/*)
+coffeedesktoptype=$(basename /usr/share/xsessions/*)
 #Removal of any unwanted packages if they exist.
+if [ "$coffeedesktoptype0" = "plasma.desktop" ]; then
+pacman -Rdd --noconfirm kmix
+else
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
+fi
 pacman -Rdd --noconfirm blueman
 #Remove any unwanted files if they exist.
 rm /usr/share/applications/steam-native.desktop
@@ -45,8 +52,20 @@ wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.c
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
+if [ "$coffeedesktoptype0" = "plasma.desktop" ]; then
+mkdir -p /usr/share/wallpapers/coffee/
+cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
+else
 mkdir -p /usr/share/backgrounds/gnome/
 cp -r /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
+fi
+#Fix Cinnamon LightDM in case an update broke it
+if [ "$coffeedesktoptype" = "cinnamon2d.desktop" ]; then
+pacman -Rdd --noconfirm gnome-session
+pacman -Rdd --noconfirm lightdm-settings
+printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
+systemctl enable lightdm
+fi
 #Injector-Replacer
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
