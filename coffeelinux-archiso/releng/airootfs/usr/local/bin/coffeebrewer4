@@ -634,6 +634,7 @@ if [ "$desktop0" = "cinnamon" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $cinnamonapps
 arch-chroot /mnt pacman -Rdd --noconfirm blueman
 arch-chroot /mnt pacman -Rdd --noconfirm rust
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt usermod -a -G realtime $user01
 arch-chroot /mnt usermod -a -G input $user01
 arch-chroot /mnt usermod -a -G plugdev $user01
@@ -655,8 +656,6 @@ yaydebugpackage=$(basename /mnt/opt/yay-debug*)
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
 clear
-
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 
 if [ "$gpu0" = "vm" ]; then
 gpu0="amd"

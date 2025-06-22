@@ -61,6 +61,7 @@ cp -r /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
 fi
 #Fix Cinnamon LightDM in case an update broke it
 if [ "$coffeedesktoptype" = "cinnamon2d.desktop" ]; then
+pacman -Rdd --noconfirm gnome-session
 pacman -Rdd --noconfirm lightdm-settings
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
 systemctl enable lightdm
