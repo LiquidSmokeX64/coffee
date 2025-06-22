@@ -300,22 +300,21 @@ done
 
 while [ "$desktop01passcheck" != "1" ]; do
 clear
-printf "%b" "\n"
 printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
-printf "%b" "\n1 - Gnome\n"
-printf "%b" "\n2 - Cinnamon\n"
-printf "%b" "\n3 - KDE\n"
+printf "%b" "\n1 - Plasma (KDE)\n"
+printf "%b" "\n2 - Gnome\n"
+printf "%b" "\n3 - Cinnamon\n"
 
 read -r desktop01check
 case "$desktop01check" in
-  1) desktop01="gnome";;
-  2) desktop01="cinnamon";;
-  3) desktop01="kde";;
+  1) desktop01="kde";;
+  2) desktop01="gnome";;
+  3) desktop01="cinnamon";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
 if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ]; then
 desktop01check=1
-desktop01="gnome"
+desktop01="kde"
 
 fi
 clear

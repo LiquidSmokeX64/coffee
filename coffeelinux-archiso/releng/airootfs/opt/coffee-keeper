@@ -33,10 +33,12 @@ chmod 644 /usr/share/applications/SteamOS.desktop /usr/share/applications/coffee
 chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
-#Removal of any unwanted packages
+#Removal of any unwanted packages if they exist.
 pacman -Rdd --noconfirm gnome-terminal
 pacman -Rdd --noconfirm gedit
-#Remove any unwanted files
+pacman -Rdd --noconfirm kmix
+pacman -Rdd --noconfirm blueman
+#Remove any unwanted files if they exist.
 rm /usr/share/applications/steam-native.desktop
 rm /usr/share/applications/stoken-gui-small.desktop
 #Fix the wallpapers if needed
