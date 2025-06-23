@@ -800,12 +800,8 @@ arch-chroot /mnt pacman -Rdd --noconfirm lightdm-settings
 clear
 fi
 clear
-if [ "$desktop0" = "kde" ]; then
-printf "%b" "\nNothing to do here."
-else
 arch-chroot /mnt pacman -Rdd --noconfirm gedit
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-terminal
-fi
 clear
 
 command18finished="1"
@@ -875,13 +871,10 @@ wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.c
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
-if [ "$desktop0" = "kde" ]; then
 mkdir -p /mnt/usr/share/wallpapers/coffee/
 cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
-else
 mkdir -p /mnt/usr/share/backgrounds/gnome/
 cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
-fi
 #End wallpaper setup
 wget -q -O /mnt/usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
 wget -q -O /mnt/usr/bin/steamos-select-branch https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch
