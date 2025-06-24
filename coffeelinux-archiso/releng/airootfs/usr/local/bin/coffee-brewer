@@ -861,18 +861,25 @@ success_check (){
 clear
 while [ "$command15finished" != "1" ] && [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; do
 if [ "$questionspassed" = "yes" ]; then
-#Setup Wallpapers
+#Setup Desktop specific things...
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
-
-if [ "$desktop0" != "cinnamon" ]; then
+if [ "$desktop0" = "gnome" ]; then
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-console
+cp -r /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/gnome/adwaita-d.jpg
+cp -r /opt/backgrounds/coffee/adwaita-l.jpg /mnt/usr/share/backgrounds/gnome/adwaita-l.jpg
+cp -r /opt/backgrounds/coffee/adwaita-d.jxl /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
+cp -r /opt/backgrounds/coffee/adwaita-l.jxl /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
+fi
+if [ "$desktop0" = "cinnamon" ]; then
+cp -r /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
+fi
+if [ "$desktop0" = "kde" ]; then
 mkdir -p /mnt/usr/share/wallpapers/coffee/
 cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
-cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/gnome/
-else
-cp -r /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 fi
 #End wallpaper setup
 wget -q -O /mnt/usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update

@@ -1,6 +1,6 @@
 NAME="CoffeeLinux"
 PRETTY_NAME="Coffee Linux"
-VERSION_ID="30.3"
+VERSION_ID="30.4"
 VERSION_CODENAME="Demitasse"
 ID="arch"
 BUILD_ID="Demitasse"

@@ -44,19 +44,26 @@ wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.c
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
-coffeedesktoptype=$(basename /usr/share/xsessions/*)
-if [ "$coffeedesktoptype" != "cinnamon2d.desktop" ]; then
+#Desktop specific stuff goes here..
+coffeedesktoptype01=$(basename -a /usr/share/wayland-sessions/plas*)
+if [ "$coffeedesktoptype01" = "plasma.desktop" ]; then
 mkdir -p /usr/share/wallpapers/coffee/
 cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
-cp -r /opt/backgrounds/coffee/* /usr/share/backgrounds/gnome/
-else
-cp -r /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
-pacman -Rdd --noconfirm gnome-session
 fi
-#Fix Cinnamon LightDM in case an update broke it
-if [ "$coffeedesktoptype" = "cinnamon2d.desktop" ]; then
+coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/gnome.*)
+if [ "$coffeedesktoptype00" = "gnome.desktop" ]; then
+pacman -Rdd --noconfirm gnome-text-editor
+pacman -Rdd --noconfirm gnome-console
+cp -r /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/gnome/adwaita-d.jpg
+cp -r /opt/backgrounds/coffee/adwaita-l.jpg /usr/share/backgrounds/gnome/adwaita-l.jpg
+cp -r /opt/backgrounds/coffee/adwaita-d.jxl /usr/share/backgrounds/gnome/adwaita-d.jxl
+cp -r /opt/backgrounds/coffee/adwaita-l.jxl /usr/share/backgrounds/gnome/adwaita-l.jxl
+fi
+coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinna.*)
+if [ "$coffeedesktoptype02" = "cinnamon2d.desktop" ]; then
 pacman -Rdd --noconfirm gnome-session
 pacman -Rdd --noconfirm lightdm-settings
+cp -r /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
 systemctl enable lightdm
 fi
