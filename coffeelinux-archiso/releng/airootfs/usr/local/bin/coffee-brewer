@@ -685,7 +685,7 @@ sed -i 's/Arch/Coffee/g' /mnt/etc/default/grub
 sed -i 's/GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/g' /mnt/etc/default/grub
 # Safest option: Append parameters to grub.
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
-  sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf split_lock_detect=off"/g' /mnt/etc/default/grub
+  sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf mitigations=off split_lock_detect=off"/g' /mnt/etc/default/grub
 fi
 
 if [ "$gpu0" = "nvidia" ]; then

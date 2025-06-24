@@ -471,17 +471,19 @@ case $typecheck00D in
 esac
 clear
 if [ "$typecheck00D" = "1" ]; then
+sudo mkdir -p /opt/discord/
 sudo wget "https://discord.com/api/download?platform=linux&format=tar.gz" -O /opt/discord.tar.gz
 sudo mkdir -p /opt/discord_update/
 sudo mv /opt/discord.tar.gz /opt/discord_update/
 sudo rm -R /opt/discord/*
+sudo cp -R /opt/discord_update/Discord/* /opt/discord/
 sudo tar xvf /opt/discord_update/discor*.tar.gz -C /opt/discord_update/
 sudo mkdir -p /usr/share/discord/
 sudo cp -R /opt/discord_update/Discord/* /usr/share/discord/
 sudo rm -R /opt/discord_update/
 sudo rm -R /usr/share/icons/discord.png
 sudo rm -R /usr/bin/Discord
-sudo rm -R /usr/share//applications/discord.desktop
+sudo rm -R /usr/share/applications/discord.desktop
 sudo ln -s /usr/share/discord/discord.png /usr/share/icons/discord.png
 sudo ln -s /usr/share/discord/Discord /usr/bin/
 sudo cp /usr/share/discord/discord.desktop /usr/share/applications/
