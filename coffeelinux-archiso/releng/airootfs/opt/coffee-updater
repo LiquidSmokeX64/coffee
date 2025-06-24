@@ -475,7 +475,6 @@ sudo mkdir -p /opt/discord/
 sudo wget "https://discord.com/api/download?platform=linux&format=tar.gz" -O /opt/discord.tar.gz
 sudo mkdir -p /opt/discord_update/
 sudo mv /opt/discord.tar.gz /opt/discord_update/
-sudo rm -R /opt/discord/*
 sudo cp -R /opt/discord_update/Discord/* /opt/discord/
 sudo tar xvf /opt/discord_update/discor*.tar.gz -C /opt/discord_update/
 sudo mkdir -p /usr/share/discord/
