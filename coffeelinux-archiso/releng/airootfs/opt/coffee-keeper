@@ -59,11 +59,12 @@ cp -r /opt/backgrounds/coffee/adwaita-l.jpg /usr/share/backgrounds/gnome/adwaita
 cp -r /opt/backgrounds/coffee/adwaita-d.jxl /usr/share/backgrounds/gnome/adwaita-d.jxl
 cp -r /opt/backgrounds/coffee/adwaita-l.jxl /usr/share/backgrounds/gnome/adwaita-l.jxl
 fi
-coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinna.*)
+coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinnamon2*)
 if [ "$coffeedesktoptype02" = "cinnamon2d.desktop" ]; then
 pacman -Rdd --noconfirm gnome-session
 pacman -Rdd --noconfirm lightdm-settings
-cp -r /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
+rm /usr/share/backgrounds/linuxmint/default_background.jpg
+cp /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
 systemctl enable lightdm
 fi
