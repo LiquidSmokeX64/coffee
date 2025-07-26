@@ -879,7 +879,8 @@ cp -r /opt/backgrounds/coffee/adwaita-d.jxl /mnt/usr/share/backgrounds/gnome/adw
 cp -r /opt/backgrounds/coffee/adwaita-l.jxl /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
 fi
 if [ "$desktop0" = "cinnamon" ]; then
-cp -r /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
+rm /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
+cp /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 fi
 if [ "$desktop0" = "kde" ]; then
 mkdir -p /mnt/usr/share/wallpapers/coffee/
