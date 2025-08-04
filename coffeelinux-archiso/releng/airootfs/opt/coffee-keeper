@@ -58,6 +58,7 @@ cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
 fi
 coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/gnome.*)
 if [ "$coffeedesktoptype00" = "gnome.desktop" ]; then
+pacman -S --noconfirm evolution
 pacman -Rdd --noconfirm gnome-text-editor
 pacman -Rdd --noconfirm gnome-console
 cp -r /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/gnome/adwaita-d.jpg
