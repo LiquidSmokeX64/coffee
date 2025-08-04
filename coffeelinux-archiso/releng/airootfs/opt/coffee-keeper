@@ -4,12 +4,6 @@ sleep 10
 #Do system updates to all packages
 pacman -Syu --noconfirm
 #Replace CoffeeLinux specific files
-wget -q -O /usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
-wget -q -O /usr/bin/steamos-select-branch https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch
-wget -q -O /usr/bin/steamos-session-select https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-session-select
-wget -q -O /usr/bin/jupiter-biosupdate https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/jupiter-biosupdate
-wget -q -O /usr/bin/gamescope-session https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session
-wget -q -O /usr/share/applications/SteamOS.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/SteamOS.desktop
 wget -q -O /etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
 wget -q -O /usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
 wget -q -O /usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
@@ -28,8 +22,8 @@ wget -q -O /etc/lsb-release https://raw.githubusercontent.com/LiquidSmokeX64/cof
 wget -q -O /usr/local/bin/coffee-brewer https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-brewer
 wget -q -O /usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
 #Set permissions
-chmod +x /usr/bin/steamos-select-branch /usr/bin/steamos-update /usr/bin/steamos-session-select /usr/bin/gamescope-session /usr/bin/jupiter-biosupdate /usr/local/bin/coffee-barista /usr/local/bin/coffee-filter /opt/coffee-updater /opt/coffee-keeper /opt/coffee-injector
-chmod 644 /usr/share/applications/SteamOS.desktop /usr/share/applications/coffee-updater.desktop /usr/share/applications/coffee-filter.desktop
+chmod +x /usr/local/bin/coffee-barista /usr/local/bin/coffee-filter /opt/coffee-updater /opt/coffee-keeper /opt/coffee-injector
+chmod 644 /usr/share/applications/coffee-updater.desktop /usr/share/applications/coffee-filter.desktop
 chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
@@ -39,6 +33,18 @@ pacman -Rdd --noconfirm blueman
 #Remove any unwanted files if they exist.
 rm /usr/share/applications/steam-native.desktop
 rm /usr/share/applications/stoken-gui-small.desktop
+rm /usr/bin/steamos-update
+rm /opt/steamos/steamos-update
+rm /usr/bin/steamos-select-branch 
+rm /opt/steamos/steamos-select-branch
+rm /usr/bin/steamos-session-select 
+rm /opt/steamos/steamos-session-select
+rm /usr/bin/jupiter-biosupdate
+rm /opt/steamos/jupiter-biosupdate
+rm /usr/bin/gamescope-session 
+rm /opt/steamos/gamescope-session
+rm /usr/share/applications/SteamOS.desktop 
+rm /opt/steamos/SteamOS.desktop
 #Fix the wallpapers if needed
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
@@ -58,15 +64,6 @@ cp -r /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/gnome/adwaita
 cp -r /opt/backgrounds/coffee/adwaita-l.jpg /usr/share/backgrounds/gnome/adwaita-l.jpg
 cp -r /opt/backgrounds/coffee/adwaita-d.jxl /usr/share/backgrounds/gnome/adwaita-d.jxl
 cp -r /opt/backgrounds/coffee/adwaita-l.jxl /usr/share/backgrounds/gnome/adwaita-l.jxl
-fi
-coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinnamon2*)
-if [ "$coffeedesktoptype02" = "cinnamon2d.desktop" ]; then
-pacman -Rdd --noconfirm gnome-session
-pacman -Rdd --noconfirm lightdm-settings
-rm /usr/share/backgrounds/linuxmint/default_background.jpg
-cp /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
-printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
-systemctl enable lightdm
 fi
 #Grub line fixer..
 sed -i 's/quiet splash loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf split_lock_detect=off/quiet splash loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf mitigations=off split_lock_detect=off/g' /etc/default/grub

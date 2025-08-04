@@ -1,5 +1,0 @@
-#!/bin/bash
-
-echo "Does not apply to Gamescope"
-
-exit 0;
