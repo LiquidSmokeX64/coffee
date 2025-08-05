@@ -304,13 +304,13 @@ printf "%b" "\n2 - Gnome\n"
 
 read -r desktop01check
 case "$desktop01check" in
-  1) desktop01="kde";;
+  1) desktop01="plasma";;
   2) desktop01="gnome";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
 if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ]; then
 desktop01check=1
-desktop01="kde"
+desktop01="plasma"
 
 fi
 clear
@@ -401,6 +401,32 @@ printf "%b" "\n2 - no\n"
 read -r games01passcheck
 case $games01passcheck in
   1) games0=$games01 ;;
+  *) printf "%b" "\nLet's retry\n" ;
+esac
+done
+
+while [ "$coffee01passcheck" != "1" ]; do
+clear
+printf "%b" "\nWould you like CoffeeLinux QoL features? VLC, LibreOffice, and various dependencies. (Default: 1)\n"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No\n"
+read -r coffeecheck
+case $coffeecheck in
+  1) coffee01="yes" ;;
+  2) coffee01="no" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n";
+esac
+if [ "$coffeecheck" != "1" ] && [ "$coffeecheck" != "2" ]; then
+coffeecheck=1
+coffee01="yes"
+fi
+clear
+printf "%b" "\nYou said $coffee01.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r coffee01passcheck
+case $coffee01passcheck in
+  1) coffee0=$games01 ;;
   *) printf "%b" "\nLet's retry\n" ;
 esac
 done
@@ -581,7 +607,7 @@ mainos_install (){
 while [ "$command4finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 
-if [ "$desktop0" = "kde" ]; then
+if [ "$desktop0" = "plasma" ]; then
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
 arch-chroot /mnt pacman -Rdd --noconfirm kmix
 arch-chroot /mnt pacman -Rdd --noconfirm blueman
@@ -658,12 +684,6 @@ fi
 done
 }
 
-coffee_install (){
-clear
-arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
-clear
-}
-
 bootloader_install (){
 clear
 while [ "$command8finished" != "1" ]; do
@@ -713,7 +733,7 @@ done
 command8finished="0"
 }
 
-postos_install (){
+gpu_install (){
 clear
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected..\n"
@@ -730,8 +750,12 @@ printf "%b" "\nIntel GPU selected..\n"
 arch-chroot /mnt pacman -Sy --noconfirm $intelgpudrivers
 fi
 clear
-while [ "$command18finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+}
+
+coffee_install (){
+clear
+arch-chroot /mnt pacman -Sy --noconfirm $coffeeapps
+clear
 arch-chroot /mnt pacman -Sy --noconfirm $javaapps
 java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
 arch-chroot /mnt archlinux-java set "$java1"
@@ -750,13 +774,52 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 clear
-
-command18finished="1"
-else
-command18finished="0"
+#Setup Desktop specific things...
+wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
+wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
+wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
+wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
+if [ "$desktop0" = "gnome" ]; then
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-console
+cp -r /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/gnome/adwaita-d.jpg
+cp -r /opt/backgrounds/coffee/adwaita-l.jpg /mnt/usr/share/backgrounds/gnome/adwaita-l.jpg
+cp -r /opt/backgrounds/coffee/adwaita-d.jxl /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
+cp -r /opt/backgrounds/coffee/adwaita-l.jxl /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
 fi
-done
-command18finished="0"
+if [ "$desktop0" = "plasma" ]; then
+mkdir -p /mnt/usr/share/wallpapers/coffee/
+cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
+fi
+#End wallpaper setup
+wget -q -O /mnt/usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
+wget -q -O /mnt/usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
+wget -q -O /mnt/opt/coffee-updater https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater
+wget -q -O /mnt/opt/coffee-keeper https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper
+wget -q -O /mnt/lib/systemd/system/coffee-keeper.service https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service
+wget -q -O /mnt/opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
+wget -q -O /mnt/etc/issue https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/issue
+wget -q -O /mnt/usr/share/applications/coffee-updater.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater.desktop
+wget -q -O /mnt/usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
+arch-chroot /mnt chmod +x /usr/local/bin/coffee-barista /usr/local/bin/coffee-filter /opt/coffee-updater /opt/coffee-keeper /opt/coffee-injector
+arch-chroot /mnt chmod 644 /usr/share/applications/coffee-updater.desktop /usr/share/applications/coffee-filter.desktop
+arch-chroot /mnt chmod 755 /lib/systemd/system/coffee-keeper.service
+arch-chroot /mnt chmod 644 /etc/issue
+arch-chroot /mnt systemctl enable coffee-keeper.service
+cp /opt/os-release /mnt/etc/
+cp /opt/lsb-release /mnt/etc/
+cp -r /opt/* /mnt/opt/
+cp /usr/local/bin/coffee-brewer /mnt/usr/local/bin/
+cp /usr/local/bin/coffee-barista /mnt/usr/local/bin/
+arch-chroot /mnt chmod +x /usr/local/bin/coffee-brewer /usr/local/bin/coffee-barista
+rm /mnt/usr/share/applications/steam-native.desktop
+rm /mnt/usr/share/applications/stoken-gui-small.desktop
+if [ "$branchpass00" = "stable" ]; then
+cp /opt/pacman-stable.conf /etc/pacman.conf
+fi
+if [ "$branchpass00" = "beta" ]; then
+cp /opt/pacman-stable.conf /etc/pacman.conf
+fi
 }
 
 games_install () {
@@ -782,6 +845,7 @@ clear
 }
 
 services_starter(){
+clear
 arch-chroot /mnt pacman -Sy --noconfirm apparmor
 clear
 arch-chroot /mnt systemctl enable apparmor 
@@ -816,58 +880,11 @@ command11finished="0"
 }
 
 success_check (){
+cp /opt/os-release /mnt/etc/
+cp /opt/lsb-release /mnt/etc/
 clear
 while [ "$command15finished" != "1" ] && [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; do
 if [ "$questionspassed" = "yes" ]; then
-#Setup Desktop specific things...
-wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
-wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
-wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
-wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
-if [ "$desktop0" = "gnome" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-console
-cp -r /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/gnome/adwaita-d.jpg
-cp -r /opt/backgrounds/coffee/adwaita-l.jpg /mnt/usr/share/backgrounds/gnome/adwaita-l.jpg
-cp -r /opt/backgrounds/coffee/adwaita-d.jxl /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
-cp -r /opt/backgrounds/coffee/adwaita-l.jxl /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
-fi
-if [ "$desktop0" = "kde" ]; then
-mkdir -p /mnt/usr/share/wallpapers/coffee/
-cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
-fi
-#End wallpaper setup
-wget -q -O /mnt/usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
-wget -q -O /mnt/usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
-wget -q -O /mnt/opt/coffee-updater https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater
-wget -q -O /mnt/opt/coffee-keeper https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper
-wget -q -O /mnt/lib/systemd/system/coffee-keeper.service https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service
-wget -q -O /mnt/opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
-wget -q -O /mnt/etc/issue https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/issue
-wget -q -O /mnt/usr/share/applications/coffee-updater.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater.desktop
-wget -q -O /mnt/usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
-arch-chroot /mnt chmod +x /usr/local/bin/coffee-barista /usr/local/bin/coffee-filter /opt/coffee-updater /opt/coffee-keeper /opt/coffee-injector
-arch-chroot /mnt chmod 644 /usr/share/applications/coffee-updater.desktop /usr/share/applications/coffee-filter.desktop
-arch-chroot /mnt chmod 755 /lib/systemd/system/coffee-keeper.service
-arch-chroot /mnt chmod 644 /etc/issue
-arch-chroot /mnt systemctl enable coffee-keeper.service
-cp /opt/os-release /mnt/etc/
-cp /opt/lsb-release /mnt/etc/
-cp -r /opt/* /mnt/opt/
-cp /usr/local/bin/coffee-brewer /mnt/usr/local/bin/
-cp /usr/local/bin/coffee-barista /mnt/usr/local/bin/
-arch-chroot /mnt chmod +x /usr/local/bin/coffee-brewer /usr/local/bin/coffee-barista
-rm /mnt/usr/share/applications/steam-native.desktop
-rm /mnt/usr/share/applications/stoken-gui-small.desktop
-if [ "$branchpass00" = "stable" ]; then
-cp /opt/pacman-stable.conf /etc/pacman.conf
-fi
-if [ "$branchpass00" = "beta" ]; then
-cp /opt/pacman-stable.conf /etc/pacman.conf
-fi
-cp /opt/os-release /mnt/etc/
-cp /opt/lsb-release /mnt/etc/
-clear
 printf "%b" "\nDid the installer complete successfully? (Default: 1)\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
@@ -910,9 +927,11 @@ baseos_install
 preset_locale
 set_passwords
 mainos_install
-coffee_install
 bootloader_install
-postos_install
+gpu_install
+if [ "$coffee0" = "yes" ]; then
+coffee_install
+fi
 if [ "$games0" = "yes" ]; then
 games_install
 fi
