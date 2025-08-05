@@ -407,7 +407,7 @@ done
 
 while [ "$coffee01passcheck" != "1" ]; do
 clear
-printf "%b" "\nWould you like CoffeeLinux QoL features? VLC, LibreOffice, and various dependencies. (Default: 1)\n"
+printf "%b" "\nWould you like CoffeeLinux curated QoL features? Firefox, VLC, LibreOffice, dependencies, and unique apps, etc. (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No\n"
 read -r coffeecheck
