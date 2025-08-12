@@ -18,7 +18,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 **Features of CoffeeLinux:**
 
-- **CoffeeLinux Manager**: A comprehensive application designed to simplify common tasks, including:
+- **CoffeeLinux Manager (WIP)**: A comprehensive application designed to simplify common tasks, including:
    1. **System Updater** for distribution-specific updates.
    2. **Application manager** (install and remove software).
    3. **System information** (via fastfetch).
