@@ -538,5 +538,4 @@ clear
 sleep 5
 fi
 done
-exit
 kill -9 $PPID
