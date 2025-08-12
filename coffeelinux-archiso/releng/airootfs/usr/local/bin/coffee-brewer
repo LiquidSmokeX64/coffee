@@ -137,9 +137,9 @@ fi
 done
 while [ "$rootpasscheck" != "1" ]; do
 clear
-printf "%b" "\nWould you like to set your Root user password? (Default: 2)\n"
+printf "%b" "\nWould you like to set your root user password? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No (Root password will be 'coffee')\n"
+printf "%b" "\n2 - No (Root user password will be 'coffee')\n"
 read -r rootpasscheck00
 case $rootpasscheck00 in
   1) printf "%b" "\nPerfect\n" ;;
@@ -149,7 +149,7 @@ esac
 if [ "$rootpasscheck00" = "1" ]; then
 while [ "$rootpasscheck" != "1" ]; do
 clear
-printf "%b" "\nSet your Root user password.\n"
+printf "%b" "\nSet your Root user Password.\n"
 read -r userpass01
 clear
 printf "%b" "\nYou said $userpass01.\nIs this correct?\n"
@@ -176,9 +176,9 @@ fi
 done
 while [ "$namepasscheck" != "1" ]; do
 clear
-printf "%b" "\nWould you like to set your PC's name? (Default: 2)\n"
+printf "%b" "\nWould you like to set your PC's Name? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No (Computer name will be 'coffeelinux')\n"
+printf "%b" "\n2 - No (PC's name will be 'coffeelinux')\n"
 read -r namepasscheck00
 case $namepasscheck00 in
   1) printf "%b" "\nPerfect\n" ;;
@@ -217,9 +217,9 @@ done
 hostname0=$name0
 while [ "$name2passcheck" != "1" ]; do
 clear
-printf "%b" "\nWould you like to set your OS device name? (Default: 2)\n"
+printf "%b" "\nWould you like to set your OS drive name? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No (Drive name will be 'coffeedisk')\n"
+printf "%b" "\n2 - No (OS drive name will be 'coffeedisk')\n"
 read -r name2passcheck02
 case $name2passcheck02 in
   1) printf "%b" "\nPerfect\n" ;;
@@ -230,7 +230,7 @@ clear
 if [ "$name2passcheck02" = "1" ]; then
 while [ "$name2passcheck" != "1" ]; do
 clear
-printf "%b" "\nSet your OS device name.\n"
+printf "%b" "\nSet your OS drive name.\n"
 read -r name01
 clear
 printf "%b" "\nYou said $name01.\nIs this correct?\n"
@@ -261,7 +261,7 @@ clear
 printf "%b" "\nListing Storage Devices for you.\n"
 fdisk -l
 printf "%b" "\n"
-printf "%b" "\nTo which storage device do you want to install? (Default: 1)\n"
+printf "%b" "\nTo which device do you want to install? (Default: 1)\n"
 printf "%b" "\n1 - NVME0N1"
 printf "%b" "\n2 - NVME1N1"
 printf "%b" "\n3 - SDA"
@@ -298,7 +298,7 @@ done
 
 while [ "$desktop01passcheck" != "1" ]; do
 clear
-printf "%b" "\nWhich Desktop Environment would you prefer? (Default: 1)\n"
+printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
 printf "%b" "\n1 - Plasma (KDE)\n"
 printf "%b" "\n2 - Gnome\n"
 
@@ -326,7 +326,7 @@ done
 
 while [ "$cpu01passcheck" != "1" ]; do
 clear
-printf "%b" "\nWhat Manufacturer is CPU built by? (Default: 1)\n"
+printf "%b" "\nWhat make of CPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
 printf "%b" "\n2 - Intel\n"
 read -r cpucheck
@@ -351,7 +351,7 @@ esac
 done
 while [ "$gpu01passcheck" != "1" ]; do
 clear
-printf "%b" "\nWhat type of GPU do you have? (Default: 1)\n"
+printf "%b" "\nWhat make of GPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
 printf "%b" "\n2 - Nvidia\n"
 printf "%b" "\n3 - Intel\n"
@@ -407,7 +407,7 @@ done
 
 while [ "$coffee01passcheck" != "1" ]; do
 clear
-printf "%b" "\nWould you like CoffeeLinux QoL packages? Misc package dependencies, etc. (Default: 1)\n"
+printf "%b" "\nWould you like CoffeeLinux QoL packages? Misc dependencies, unique apps, etc. (Default: 1)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No\n"
 read -r coffeecheck
@@ -474,16 +474,16 @@ if [ "$RAM" -gt 2048 ] && [ "$RAM" -lt 8192 ]; then # if RAM is between 2 and 8 
 fi
 if [ "$RAM" -gt 8192 ] && [ "$RAM" -lt 16384 ]; then # if RAM is between 8 and 16 GB
  if [ "$HIBERNATING" = "1" ]; then
-    MULTIPLIER="2"
+     MULTIPLIER="2"
  else
      MULTIPLIER="1"
  fi
 fi
 if [ "$RAM" -gt 32768  ]; then    # if RAM is more than 32 GB
  if [ "$HIBERNATING" = "1" ]; then
-    MULTIPLIER="1"
+     MULTIPLIER="1"
  else
-    MULTIPLIER="1"
+     MULTIPLIER="1"
  fi
 fi
 swapsize="+""$((RAM*MULTIPLIER))M"
@@ -623,6 +623,13 @@ arch-chroot /mnt systemctl enable wireplumber.service
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
 clear
+printf "%b" "Installing yay for AUR support..."
+cp /opt/yay-* /mnt/opt/
+yaypackage=$(basename /mnt/opt/yay-1*)
+yaydebugpackage=$(basename /mnt/opt/yay-debug*)
+arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
+arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
+clear
 
 if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
@@ -651,6 +658,13 @@ arch-chroot /mnt systemctl enable wireplumber.service
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 cp /opt/pipewire/pipewire.conf /mnt/etc/pipewire/
 clear
+printf "%b" "Installing yay for AUR support..."
+cp /opt/yay-* /mnt/opt/
+yaypackage=$(basename /mnt/opt/yay-1*)
+yaydebugpackage=$(basename /mnt/opt/yay-debug*)
+arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
+arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
+clear
 
 if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
@@ -673,6 +687,7 @@ while [ "$command8finished" != "1" ]; do
 
 if [ "$questionspassed" = "yes" ]; then
 arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 sed -i 's/Arch/Coffee/g' /mnt/etc/default/grub
 sed -i 's/GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/g' /mnt/etc/default/grub
 # Safest option: Append parameters to grub.
@@ -742,6 +757,16 @@ arch-chroot /mnt pacman -Sy --noconfirm $javaapps
 java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
 arch-chroot /mnt archlinux-java set "$java1"
 clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y pamac-aur
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y ast-firmware
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y text-engine-git
+clear
+printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
+clear
 #Setup Desktop specific things...
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
@@ -794,6 +819,14 @@ games_install () {
 clear
 arch-chroot /mnt pacman -Sy --noconfirm $gamingapps
 clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protontricks
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y dxvk-bin
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protonup-qt
+clear
+printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
+clear
 }
 
 services_starter(){
@@ -819,6 +852,8 @@ while [ "$command11finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
 printf "%b" "\nAttempting to fix the home directory automatically now...\n"
 arch-chroot /mnt pacman -Sy --noconfirm xdg-user-dirs
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
 clear
 arch-chroot /mnt xdg-user-dirs-update
 command11finished="1"
