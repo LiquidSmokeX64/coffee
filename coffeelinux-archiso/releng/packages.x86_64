@@ -128,7 +128,7 @@ xl2tpd
 zsh
 
 #CoffeeLinux Extras
-iwd
+wget
 gptfdisk
 gvfs
 networkmanager
