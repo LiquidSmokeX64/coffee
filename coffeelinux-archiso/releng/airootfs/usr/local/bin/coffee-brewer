@@ -464,101 +464,6 @@ fi
 done
 }
 
-preset_locale (){
-clear
-while [ "$command2finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-rm /mnt/etc/locale.gen
-rm /mnt/etc/locale.conf
-rm /mnt/etc/vconsole.conf
-rm /mnt/etc/sudoers.d/wheel
-
-arch-chroot /mnt /bin/bash <<"EOT"
-ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
-hwclock --systohc
-printf "%b" "\nen_US ISO-8859-1\nen_US.UTF-8 UTF-8\n" >> /etc/locale.gen
-printf "%b" "\nKEYMAP=us\n" >> /etc/vconsole.conf
-printf "%b" "\nLANG=en_US.UTF-8" >> /etc/locale.conf
-export LANG=en_US.UTF-8
-locale-gen
-cd /
-printf "%b\n%%"w"heel ALL=(ALL:ALL) NOPASSWD: ALL\n" "$*" > /etc/sudoers.d/wheel
-mkinitcpio -P
-EOT
-
-cp --dereference /etc/resolv.conf /mnt/etc/
-arch-chroot /mnt pacman -Syu --noconfirm
-clear
-command2finished="1"
-else
-command2finished="0"
-fi
-done
-command2finished="0"
-}
-
-set_passwords (){
-while [ "$command3finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-cp /etc/pacman.conf /mnt/etc/pacman.conf
-printf "%b" "$userpass1\n$userpass1\n" | arch-chroot /mnt passwd
-arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01
-printf "%b" "$userpass0\n$userpass0\n" | arch-chroot /mnt passwd $user01
-printf "%b" "$hostname0\n" >> /mnt/etc/hostname
-printf "%b" "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" >> /mnt/etc/hosts
-genfstab -U /mnt >> /mnt/etc/fstab
-clear
-command3finished="1"
-else
-command3finished="0"
-fi
-done
-command3finished="0"
-}
-
-mainos_install (){
-while [ "$command4finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-
-arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
-arch-chroot /mnt pacman -Rdd --noconfirm kmix
-arch-chroot /mnt usermod -a -G realtime $user01
-arch-chroot /mnt usermod -a -G input $user01
-arch-chroot /mnt usermod -a -G plugdev $user01
-wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-arch-chroot /mnt systemctl enable pipewire.service
-arch-chroot /mnt systemctl enable pipewire-pulse.service
-arch-chroot /mnt systemctl enable pipewire-alsa.service
-arch-chroot /mnt systemctl enable wireplumber.service 
-arch-chroot /mnt systemctl enable rtkit-daemon.service
-clear
-printf "%b" "Installing yay for AUR support..."
-cp /opt/yay-* /mnt/opt/
-yaypackage=$(basename /mnt/opt/yay-1*)
-yaydebugpackage=$(basename /mnt/opt/yay-debug*)
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
-clear
-
-if [ "$gpu0" = "vm" ]; then
-gpu0="amd"
-fi
-
-arch-chroot /mnt systemctl enable sddm
-
-arch-chroot /mnt pacman -Sy --noconfirm $javaapps
-java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
-arch-chroot /mnt archlinux-java set "$java1"
-
-command4finished="1"
-else
-command4finished="0"
-fi
-done
-}
-
 bootloader_install (){
 clear
 while [ "$command8finished" != "1" ]; do
@@ -627,7 +532,119 @@ fi
 clear
 }
 
-coffee_install (){
+preset_locale (){
+clear
+while [ "$command2finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+rm /mnt/etc/locale.gen
+rm /mnt/etc/locale.conf
+rm /mnt/etc/vconsole.conf
+rm /mnt/etc/sudoers.d/wheel
+
+arch-chroot /mnt /bin/bash <<"EOT"
+ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+hwclock --systohc
+printf "%b" "\nen_US ISO-8859-1\nen_US.UTF-8 UTF-8\n" >> /etc/locale.gen
+printf "%b" "\nKEYMAP=us\n" >> /etc/vconsole.conf
+printf "%b" "\nLANG=en_US.UTF-8" >> /etc/locale.conf
+export LANG=en_US.UTF-8
+locale-gen
+cd /
+printf "%b\n%%"w"heel ALL=(ALL:ALL) NOPASSWD: ALL\n" "$*" > /etc/sudoers.d/wheel
+mkinitcpio -P
+EOT
+
+cp --dereference /etc/resolv.conf /mnt/etc/
+arch-chroot /mnt pacman -Syu --noconfirm
+clear
+command2finished="1"
+else
+command2finished="0"
+fi
+done
+command2finished="0"
+}
+
+set_passwords (){
+while [ "$command3finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+cp /etc/pacman.conf /mnt/etc/pacman.conf
+printf "%b" "$userpass1\n$userpass1\n" | arch-chroot /mnt passwd
+arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01
+printf "%b" "$userpass0\n$userpass0\n" | arch-chroot /mnt passwd $user01
+printf "%b" "$hostname0\n" >> /mnt/etc/hostname
+printf "%b" "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" >> /mnt/etc/hosts
+genfstab -U /mnt >> /mnt/etc/fstab
+clear
+command3finished="1"
+else
+command3finished="0"
+fi
+done
+command3finished="0"
+}
+
+desktop_install (){
+while [ "$command4finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+
+arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
+arch-chroot /mnt pacman -Rdd --noconfirm kmix
+arch-chroot /mnt usermod -a -G realtime $user01
+arch-chroot /mnt usermod -a -G input $user01
+arch-chroot /mnt usermod -a -G plugdev $user01
+wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
+arch-chroot /mnt systemctl preset-all
+arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+arch-chroot /mnt systemctl enable pipewire.service
+arch-chroot /mnt systemctl enable pipewire-pulse.service
+arch-chroot /mnt systemctl enable pipewire-alsa.service
+arch-chroot /mnt systemctl enable wireplumber.service 
+arch-chroot /mnt systemctl enable rtkit-daemon.service
+clear
+printf "%b" "Installing yay for AUR support..."
+cp /opt/yay-* /mnt/opt/
+yaypackage=$(basename /mnt/opt/yay-1*)
+yaydebugpackage=$(basename /mnt/opt/yay-debug*)
+arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
+arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
+clear
+
+if [ "$gpu0" = "vm" ]; then
+gpu0="amd"
+fi
+
+arch-chroot /mnt systemctl enable sddm
+
+arch-chroot /mnt pacman -Sy --noconfirm $javaapps
+java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
+arch-chroot /mnt archlinux-java set "$java1"
+
+command4finished="1"
+else
+command4finished="0"
+fi
+done
+}
+
+gaming_install () {
+clear
+arch-chroot /mnt pacman -Sy --noconfirm $gamingapps
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protontricks
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y dxvk-bin
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protonup-qt
+clear
+printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
+clear
+rm /mnt/usr/share/applications/steam-native.desktop
+rm /mnt/usr/share/applications/stoken-gui-small.desktop
+clear
+}
+
+install_branding (){
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y pamac-aur
 clear
@@ -674,24 +691,6 @@ if [ "$branchpass00" = "beta" ]; then
 cp /opt/pacman-stable.conf /etc/pacman.conf
 fi
 }
-
-games_install () {
-clear
-arch-chroot /mnt pacman -Sy --noconfirm $gamingapps
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protontricks
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y dxvk-bin
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protonup-qt
-clear
-printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
-clear
-rm /mnt/usr/share/applications/steam-native.desktop
-rm /mnt/usr/share/applications/stoken-gui-small.desktop
-clear
-}
-
 services_starter(){
 clear
 arch-chroot /mnt pacman -Sy --noconfirm apparmor
@@ -771,13 +770,13 @@ clear
 configuration
 format_disks
 baseos_install
-preset_locale
-set_passwords
-mainos_install
 bootloader_install
 gpu_install
-coffee_install
-games_install
+preset_locale
+set_passwords
+desktop_install
+gaming_install
+install_branding
 services_starter
 homedir_fix
 success_check
