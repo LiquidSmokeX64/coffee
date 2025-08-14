@@ -374,10 +374,11 @@ esac
 done
 }
 
-format_disks (){
+setup_drive (){
 clear
 while [ "$command0finished" != "1" ]; do
 if [ "$questionspassed" = "yes" ]; then
+#Calculate Swap Size based on RAM...
 HIBERNATING="1"
 while [ "$rampasscheck" != "1" ]; do
 RAM=$(free -m | grep Mem | awk '{print $2}')
@@ -413,8 +414,8 @@ fi
 done
 clear
 command0finished="0"
+
 while [ "$command1finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
 bootpartitiontype="1"
 swappartitiontype="19"
 systempartitiontype="20"
@@ -438,39 +439,36 @@ mkdir /mnt/boot
 mount "${drive0}${boot0}" /mnt/boot
 clear
 command1finished="1"
-else
-command1finished="0"
-fi
 done
 command1finished="0"
 }
 
-baseos_install (){
+setup_core (){
 while [ "$pacstrapfinished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
 pacstrap /mnt $baseapps
 clear
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 clear
+
+pacstrapfinished="1"
+done
+pacstrapfinished="0"
+}
+
+setup_cpu (){
 if [ "$cpu0" = "intel" ]; then
+clear
 arch-chroot /mnt pacman -Sy --noconfirm $intelcpu
 else
 arch-chroot /mnt pacman -Sy --noconfirm $amdcpu
 fi
-pacstrapfinished="1"
-else
-pacstrapfinished="0"
-fi
-done
 }
 
-bootloader_install (){
+setup_bootloader (){
 clear
 while [ "$command8finished" != "1" ]; do
 
-if [ "$questionspassed" = "yes" ]; then
 arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm update-grub
 sed -i 's/Arch/Coffee/g' /mnt/etc/default/grub
 sed -i 's/GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/g' /mnt/etc/default/grub
 # Safest option: Append parameters to grub.
@@ -506,36 +504,13 @@ arch-chroot /mnt grub-install --target=i386-pc $drive0
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 fi
 command8finished="1"
-else
-command8finished="0"
-fi
 done
 command8finished="0"
 }
 
-gpu_install (){
-clear
-if [ "$gpu0" = "nvidia" ]; then
-printf "%b" "\nNvidia GPU selected..\n"
-arch-chroot /mnt pacman -Sy --noconfirm $nvidiagpudrivers
-arch-chroot /mnt systemctl enable nvidia-persistenced.service
-fi
-if [ "$gpu0" = "amd" ]; then
-printf "%b" "\nAMD GPU selected..\n"
-arch-chroot /mnt pacman -Sy --noconfirm $amdgpudrivers
-arch-chroot /mnt pacman -Sy --noconfirm corectrl
-fi
-if [ "$gpu0" = "intel" ]; then
-printf "%b" "\nIntel GPU selected..\n"
-arch-chroot /mnt pacman -Sy --noconfirm $intelgpudrivers
-fi
-clear
-}
-
-preset_locale (){
+setup_locale (){
 clear
 while [ "$command2finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
 rm /mnt/etc/locale.gen
 rm /mnt/etc/locale.conf
 rm /mnt/etc/vconsole.conf
@@ -549,25 +524,26 @@ printf "%b" "\nKEYMAP=us\n" >> /etc/vconsole.conf
 printf "%b" "\nLANG=en_US.UTF-8" >> /etc/locale.conf
 export LANG=en_US.UTF-8
 locale-gen
-cd /
-printf "%b\n%%"w"heel ALL=(ALL:ALL) NOPASSWD: ALL\n" "$*" > /etc/sudoers.d/wheel
-mkinitcpio -P
 EOT
 
 cp --dereference /etc/resolv.conf /mnt/etc/
-arch-chroot /mnt pacman -Syu --noconfirm
 clear
 command2finished="1"
-else
-command2finished="0"
-fi
 done
 command2finished="0"
 }
 
-set_passwords (){
+setup_sudo (){
+clear
+arch-chroot /mnt /bin/bash <<"EOT"
+printf "%b\n%%"w"heel ALL=(ALL:ALL) NOPASSWD: ALL\n" "$*" > /etc/sudoers.d/wheel
+mkinitcpio -P
+EOT
+}
+
+setup_users (){
 while [ "$command3finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
+clear
 cp /etc/pacman.conf /mnt/etc/pacman.conf
 printf "%b" "$userpass1\n$userpass1\n" | arch-chroot /mnt passwd
 arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01
@@ -577,16 +553,12 @@ printf "%b" "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" >> /m
 genfstab -U /mnt >> /mnt/etc/fstab
 clear
 command3finished="1"
-else
-command3finished="0"
-fi
 done
 command3finished="0"
 }
 
-desktop_install (){
+setup_desktop (){
 while [ "$command4finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
 arch-chroot /mnt pacman -Rdd --noconfirm kmix
@@ -621,13 +593,29 @@ java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
 arch-chroot /mnt archlinux-java set "$java1"
 
 command4finished="1"
-else
-command4finished="0"
-fi
 done
 }
 
-gaming_install () {
+setup_gpu (){
+clear
+if [ "$gpu0" = "nvidia" ]; then
+printf "%b" "\nNvidia GPU selected..\n"
+arch-chroot /mnt pacman -Sy --noconfirm $nvidiagpudrivers
+arch-chroot /mnt systemctl enable nvidia-persistenced.service
+fi
+if [ "$gpu0" = "amd" ]; then
+printf "%b" "\nAMD GPU selected..\n"
+arch-chroot /mnt pacman -Sy --noconfirm $amdgpudrivers
+arch-chroot /mnt pacman -Sy --noconfirm corectrl
+fi
+if [ "$gpu0" = "intel" ]; then
+printf "%b" "\nIntel GPU selected..\n"
+arch-chroot /mnt pacman -Sy --noconfirm $intelgpudrivers
+fi
+clear
+}
+
+setup_gaming () {
 clear
 arch-chroot /mnt pacman -Sy --noconfirm $gamingapps
 clear
@@ -644,7 +632,7 @@ rm /mnt/usr/share/applications/stoken-gui-small.desktop
 clear
 }
 
-install_branding (){
+setup_branding (){
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y pamac-aur
 clear
@@ -711,7 +699,6 @@ arch-chroot /mnt systemctl enable power-profiles-daemon
 homedir_fix (){
 clear
 while [ "$command11finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
 printf "%b" "\nAttempting to fix the home directory automatically now...\n"
 arch-chroot /mnt pacman -Sy --noconfirm xdg-user-dirs
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
@@ -719,9 +706,6 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 arch-chroot /mnt xdg-user-dirs-update
 command11finished="1"
-else
-command11finished="0"
-fi
 done
 command11finished="0"
 }
@@ -731,7 +715,6 @@ cp /opt/os-release /mnt/etc/
 cp /opt/lsb-release /mnt/etc/
 clear
 while [ "$command15finished" != "1" ] && [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; do
-if [ "$questionspassed" = "yes" ]; then
 printf "%b" "\nDid the installer complete successfully? (Default: 1)\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no\n"
@@ -757,9 +740,6 @@ if [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; then
 rebootcheck=1
 fi
 command15finished="1"
-else
-command15finished="0"
-fi
 done
 command15finished="0"
 }
@@ -767,23 +747,39 @@ command15finished="0"
 cp /opt/os-release /etc/
 cp /opt/lsb-release /etc/
 clear
+while [ "$configurationcheck00" != "1" ]; do
 configuration
-format_disks
-baseos_install
-bootloader_install
-gpu_install
-preset_locale
-set_passwords
-desktop_install
-gaming_install
-install_branding
+if [ "$questionspassed" = "yes" ]; then
+configurationcheck00="1"
+setup_drive
+setup_core
+setup_cpu
+setup_bootloader
+setup_locale
+setup_sudo
+setup_users
+setup_desktop
+setup_gpu
+setup_gaming
+setup_branding
 services_starter
 homedir_fix
 success_check
 umount -R /mnt
+clear
 printf "%b" "Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck00
 printf "%b" "\nYou typed $endcheck00...\n\n"
 reboot
 exit
+else
+clear
+printf "%b" "Something went wrong.\nLets try again.\n"
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck00
+printf "%b" "\nYou typed $endcheck00...\n\n"
+clear
+configurationcheck00="0"
+fi
+done
