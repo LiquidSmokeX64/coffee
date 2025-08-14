@@ -31,9 +31,8 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
-- **2 Popular Desktop Environments**:
-   - **Plasma DE (KDE)**:  An advanced desktop environment with a more user customizable interface.
-   - **Gnome DE**: A modern yet simple desktop environment from Gnome.org.
+- **Lightweight Desktop Environment**:
+   - **Plasma (KDE)**:  An advanced desktop environment ideal for everyday use.
 
 - **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
 

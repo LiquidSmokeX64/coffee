@@ -29,43 +29,16 @@ chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
 #Removal of any unwanted packages if they exist.
 pacman -Rdd --noconfirm kmix
-pacman -Rdd --noconfirm blueman
 #Remove any unwanted files if they exist.
 rm /usr/share/applications/steam-native.desktop
 rm /usr/share/applications/stoken-gui-small.desktop
-rm /usr/bin/steamos-update
-rm /opt/steamos/steamos-update
-rm /usr/bin/steamos-select-branch 
-rm /opt/steamos/steamos-select-branch
-rm /usr/bin/steamos-session-select 
-rm /opt/steamos/steamos-session-select
-rm /usr/bin/jupiter-biosupdate
-rm /opt/steamos/jupiter-biosupdate
-rm /usr/bin/gamescope-session 
-rm /opt/steamos/gamescope-session
-rm /usr/share/applications/SteamOS.desktop 
-rm /opt/steamos/SteamOS.desktop
 #Fix the wallpapers if needed
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
-#Desktop specific stuff goes here..
-coffeedesktoptype01=$(basename -a /usr/share/wayland-sessions/plas*)
-if [ "$coffeedesktoptype01" = "plasma.desktop" ]; then
 mkdir -p /usr/share/wallpapers/coffee/
 cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
-fi
-coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/gnome.*)
-if [ "$coffeedesktoptype00" = "gnome.desktop" ]; then
-#pacman -S --noconfirm evolution
-pacman -Rdd --noconfirm gnome-text-editor
-pacman -Rdd --noconfirm gnome-console
-cp -r /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/gnome/adwaita-d.jpg
-cp -r /opt/backgrounds/coffee/adwaita-l.jpg /usr/share/backgrounds/gnome/adwaita-l.jpg
-cp -r /opt/backgrounds/coffee/adwaita-d.jxl /usr/share/backgrounds/gnome/adwaita-d.jxl
-cp -r /opt/backgrounds/coffee/adwaita-l.jxl /usr/share/backgrounds/gnome/adwaita-l.jxl
-fi
 #Grub line fixer..
 sed -i 's/quiet splash loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf split_lock_detect=off/quiet splash loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf mitigations=off split_lock_detect=off/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
