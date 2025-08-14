@@ -1,9 +1,7 @@
-#ArchIso Base
 alsa-utils
 amd-ucode
 arch-install-scripts
 archinstall
-archlinux-keyring
 b43-fwcutter
 base
 bcachefs-tools
@@ -17,7 +15,6 @@ cloud-init
 cryptsetup
 darkhttpd
 ddrescue
-dhclient
 dhcpcd
 diffutils
 dmidecode
@@ -42,7 +39,6 @@ grub
 hdparm
 hyperv
 intel-ucode
-iptables
 irssi
 iw
 iwd
@@ -70,6 +66,7 @@ memtest86+-efi
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
+mmc-utils
 modemmanager
 mtools
 nano
@@ -96,7 +93,6 @@ pv
 qemu-guest-agent
 refind
 reflector
-rp-pppoe
 rsync
 rxvt-unicode-terminfo
 screen
@@ -119,17 +115,20 @@ udftools
 usb_modeswitch
 usbmuxd
 usbutils
+vim
+virtualbox-guest-utils-nox
 vpnc
-wget
 wireless-regdb
 wireless_tools
 wpa_supplicant
 wvdial
+xdg-utils
 xfsprogs
 xl2tpd
 zsh
 
-#CoffeeLinux Minimal Desktop
+#CoffeeLinux Extras
+iwd
 gptfdisk
 gvfs
 networkmanager
