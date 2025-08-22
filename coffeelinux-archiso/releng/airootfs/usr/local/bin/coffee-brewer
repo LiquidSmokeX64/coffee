@@ -574,13 +574,6 @@ arch-chroot /mnt systemctl enable pipewire-alsa.service
 arch-chroot /mnt systemctl enable wireplumber.service 
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 clear
-printf "%b" "Installing yay for AUR support..."
-cp /opt/yay-* /mnt/opt/
-yaypackage=$(basename /mnt/opt/yay-1*)
-yaydebugpackage=$(basename /mnt/opt/yay-debug*)
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
-arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
-clear
 
 if [ "$gpu0" = "vm" ]; then
 gpu0="amd"
@@ -619,30 +612,12 @@ setup_gaming () {
 clear
 arch-chroot /mnt pacman -Sy --noconfirm $gamingapps
 clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protontricks
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y dxvk-bin
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protonup-qt
-clear
-printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
-clear
 rm /mnt/usr/share/applications/steam-native.desktop
 rm /mnt/usr/share/applications/stoken-gui-small.desktop
 clear
 }
 
 setup_branding (){
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y pamac-aur
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y ast-firmware
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y text-engine-git
-clear
-printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 clear
 #Setup Wallpapers...
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
@@ -700,10 +675,6 @@ homedir_fix (){
 clear
 while [ "$command11finished" != "1" ]; do
 printf "%b" "\nAttempting to fix the home directory automatically now...\n"
-arch-chroot /mnt pacman -Sy --noconfirm xdg-user-dirs
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
-clear
 arch-chroot /mnt xdg-user-dirs-update
 command11finished="1"
 done
