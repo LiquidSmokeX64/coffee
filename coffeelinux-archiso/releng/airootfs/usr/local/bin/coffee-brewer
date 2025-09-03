@@ -611,11 +611,12 @@ fi
 if [ "$desktop0" = "gnome" ]; then
 
 arch-chroot /mnt pacman -Sy --noconfirm $gnomeapps
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-console
 arch-chroot /mnt usermod -a -G realtime $user01
 arch-chroot /mnt usermod -a -G input $user01
 arch-chroot /mnt usermod -a -G plugdev $user01
 wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-wget -q -O /opt/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
 arch-chroot /mnt systemctl preset-all
 arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
 arch-chroot /mnt systemctl enable pipewire.service
@@ -676,8 +677,6 @@ wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.c
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
 if [ "$desktop0" = "gnome" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-console
 cp -r /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/gnome/adwaita-d.jpg
 cp -r /opt/backgrounds/coffee/adwaita-l.jpg /mnt/usr/share/backgrounds/gnome/adwaita-l.jpg
 cp -r /opt/backgrounds/coffee/adwaita-d.jxl /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
