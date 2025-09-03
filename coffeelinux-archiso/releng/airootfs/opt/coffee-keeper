@@ -37,11 +37,24 @@ wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.c
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
 wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
 wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
+coffeedesktoptype01=$(basename -a /usr/share/wayland-sessions/plas*)
+if [ "$coffeedesktoptype01" = "plasma.desktop" ]; then
 mkdir -p /usr/share/wallpapers/coffee/
 cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
+fi
+coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/gnome.*)
+if [ "$coffeedesktoptype00" = "gnome.desktop" ]; then
+#pacman -S --noconfirm evolution
+pacman -Rdd --noconfirm gnome-text-editor
+pacman -Rdd --noconfirm gnome-console
+cp -r /opt/backgrounds/coffee/adwaita-d.jpg /usr/share/backgrounds/gnome/adwaita-d.jpg
+cp -r /opt/backgrounds/coffee/adwaita-l.jpg /usr/share/backgrounds/gnome/adwaita-l.jpg
+cp -r /opt/backgrounds/coffee/adwaita-d.jxl /usr/share/backgrounds/gnome/adwaita-d.jxl
+cp -r /opt/backgrounds/coffee/adwaita-l.jxl /usr/share/backgrounds/gnome/adwaita-l.jxl
+fi
 #Grub line fixer..
-sed -i 's/quiet splash loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf split_lock_detect=off/quiet splash loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf mitigations=off split_lock_detect=off/g' /etc/default/grub
-grub-mkconfig -o /boot/grub/grub.cfg
+#sed -i 's/quiet splash loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf split_lock_detect=off/quiet splash loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf mitigations=off split_lock_detect=off/g' /etc/default/grub
+#grub-mkconfig -o /boot/grub/grub.cfg
 #Injector-Replacer
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
