@@ -744,6 +744,9 @@ command11finished="0"
 setup_aur (){
 clear
 printf "%b" "Installing yay for AUR support..."
+rm -r /mnt/opt/yay*
+wget -q -O /opt/yay-12.5.0-1-x86_64.pkg.tar.zst https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-12.5.0-1-x86_64.pkg.tar.zst
+wget -q -O /opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/yay-debug-12.5.0-1-x86_64.pkg.tar.zst
 cp /opt/yay-* /mnt/opt/
 yaypackage=$(basename /mnt/opt/yay-1*)
 yaydebugpackage=$(basename /mnt/opt/yay-debug*)
