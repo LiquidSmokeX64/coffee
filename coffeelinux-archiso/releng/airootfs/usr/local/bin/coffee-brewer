@@ -50,9 +50,13 @@ case $branchpasscheck in
   *) printf "%b" "\nLet's retry\n" ;
 esac
 if [ "$branchpass00" = "stable" ]; then
+rm /etc/pacman.conf
 cp /opt/pacman-stable.conf /etc/pacman.conf
+chmod 755 /etc/pacman.conf
 else
+rm /etc/pacman.conf
 cp /opt/pacman-unstable.conf /etc/pacman.conf
+chmod 755 /etc/pacman.conf
 fi
 done
 while [ "$usercheck" != "1" ]; do
@@ -681,6 +685,8 @@ cp -r /opt/backgrounds/coffee/adwaita-d.jpg /mnt/usr/share/backgrounds/gnome/adw
 cp -r /opt/backgrounds/coffee/adwaita-l.jpg /mnt/usr/share/backgrounds/gnome/adwaita-l.jpg
 cp -r /opt/backgrounds/coffee/adwaita-d.jxl /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
 cp -r /opt/backgrounds/coffee/adwaita-l.jxl /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
+chmod 755 /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
+chmod 755 /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
 fi
 if [ "$desktop0" = "plasma" ]; then
 mkdir -p /mnt/usr/share/wallpapers/coffee/

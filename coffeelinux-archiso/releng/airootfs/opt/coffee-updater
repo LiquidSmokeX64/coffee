@@ -331,6 +331,7 @@ clear
 if [ "$typecheck95" = "1" ]; then
 sudo rm /etc/pacman.conf
 sudo cp /opt/pacman-stable.conf /etc/pacman.conf
+sudo chmod 755 /etc/pacman.conf
 sudo pacman -Syy
 clear
 printf "%b" "\nSwitched to stable repos successfully...\n\n"
@@ -344,6 +345,7 @@ fi
 if [ "$typecheck95" = "2" ]; then
 sudo rm /etc/pacman.conf
 sudo cp /opt/pacman-unstable.conf /etc/pacman.conf
+sudo chmod 755 /etc/pacman.conf
 sudo pacman -Syy
 clear
 printf "%b" "\nSwitched to unstable repos successfully...\n\n"
