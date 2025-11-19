@@ -665,19 +665,20 @@ cp /opt/pacman-stable.conf /etc/pacman.conf
 chmod 755 /etc/pacman.conf
 fi
 }
+
 services_starter(){
 clear
 arch-chroot /mnt pacman -Sy --noconfirm apparmor
 clear
-arch-chroot /mnt systemctl enable apparmor 
+arch-chroot /mnt systemctl enable apparmor
 arch-chroot /mnt systemctl enable dhcpcd
 arch-chroot /mnt systemctl enable cronie
-arch-chroot /mnt systemctl enable chronyd 
-arch-chroot /mnt systemctl enable NetworkManager 
-arch-chroot /mnt systemctl enable firewalld 
-arch-chroot /mnt systemctl enable cups 
-arch-chroot /mnt systemctl enable bluetooth.service 
-arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service pipewire-alsa.service wireplumber.service 
+arch-chroot /mnt systemctl enable chronyd
+arch-chroot /mnt systemctl enable NetworkManager
+arch-chroot /mnt systemctl enable firewalld
+arch-chroot /mnt systemctl enable cups
+arch-chroot /mnt systemctl enable bluetooth.service
+arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service pipewire-alsa.service wireplumber.service
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable power-profiles-daemon
 }
@@ -690,6 +691,43 @@ arch-chroot /mnt xdg-user-dirs-update
 command11finished="1"
 done
 command11finished="0"
+}
+
+setup_aur (){
+clear
+printf "%b" "Installing yay for AUR support and some extra QoL applications...\nThis may fail due to servers having issues.\nIf it fails you will only be missing a few extras, nothing really important."
+sleep 20
+
+cp /opt/yay-* /mnt/opt/
+yaypackage=$(basename /mnt/opt/yay-1*)
+yaydebugpackage=$(basename /mnt/opt/yay-debug*)
+arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
+arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
+clear
+# Add AUR Gaming Extras..
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protontricks
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y dxvk-bin
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protonup-qt
+clear
+printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
+clear
+# Add AUR System Extras..
+printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y pamac-aur
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y ast-firmware
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
+clear
+printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
+clear
+# Add additional fix for XDG Directories..
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
+clear
 }
 
 success_check (){
@@ -748,6 +786,7 @@ setup_gaming
 setup_branding
 services_starter
 homedir_fix
+setup_aur
 success_check
 umount -R /mnt
 clear
