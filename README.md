@@ -54,8 +54,6 @@ or have suggestions (polite ones)
 
 Donations accepted to keep our project alive and well.
 
-Paypal: paypal.me/DanMaxie
-
 CashApp: $FahrWander
 
 ------------------------
