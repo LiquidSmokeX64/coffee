@@ -33,8 +33,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
-- **Lightweight Desktop Environment**:
-   - **Plasma (KDE)**:  An advanced desktop environment ideal for everyday use.
+- **Plasma (KDE)**:  An advanced desktop environment ideal for everyday use.
 
 - **Iso Repository Options**: Choose between stable or testing repository channels during OS installation.
 
