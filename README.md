@@ -22,7 +22,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **ZRAM Enabled**: A more modern, efficient alternative to the default ZSWAP, giving back that precious Hard Drive space for more of what you want instead.
 
-- **CoffeeLinux Manager (WIP)**: A comprehensive application designed to simplify common tasks, including:
+- **CoffeeLinux Manager (WIP)**: A console scripted application designed to simplify common tasks, including:
    1. **System Updater** for distribution-specific updates.
    2. **Application manager** (install and remove software).
    3. **System information** (via fastfetch).
