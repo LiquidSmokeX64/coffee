@@ -363,8 +363,8 @@ case $nvsmcheck in
   *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
 if [ "$nvsmcheck" != "1" ] && [ "$nvsmcheck" != "2" ]; then
-nvsmcheck=2
-nvsm01="nvsm-off"
+nvsmcheck=1
+nvsm01="nvsm-on"
 fi
 clear
 printf "%b" "\nYou said $nvsm01.\nIs this correct?\n"
