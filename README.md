@@ -9,8 +9,6 @@ The installer is a lightweight, shell-based setup. We believe in a straightforwa
 
 What sets CoffeeLinux apart from other distributions is its custom-crafted installer, a modified version of the Arch ISO (releng profile). This installer uses a single script to perform the entire installation based on your preferences, significantly reducing the need for copying packages from the installation medium. The installation process mirrors a manual Arch Linux setup, ensuring greater flexibility and control.
 
-Concerned about managing updates? We’ve got you covered. The CoffeeLinux Self-Updating Service is designed to simplify maintenance. Once activated, the service takes care of everything in the background with minimal user intervention—just reboot (sometimes twice), and your system will stay up to date.
-
 CoffeeLinux delivers the power of Arch with added ease and convenience. Join us and experience it for yourself.
 
 ----------------------------------
