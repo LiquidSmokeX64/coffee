@@ -18,7 +18,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 **Features of CoffeeLinux:**
 
-- **Zen Kernel**: A more gaming focused kernel to get the most out of your gaming experience.
+- **Zen Kernel**: A more focused kernel to get the most out of your gaming experience.
 
 - **ZRAM Enabled**: A more modern, efficient alternative to the default ZSWAP, giving back that precious Hard Drive space for more of what you want instead.
 
