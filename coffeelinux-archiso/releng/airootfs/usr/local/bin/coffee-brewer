@@ -516,7 +516,7 @@ if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
 fi
 
 if [ "$nvsm0" = "nvsm-on" ]; then
-printf "%b" "\nNVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /etc/skel/.bashrc
+printf "%b" "\nexport NVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /etc/skel/.bashrc
 fi
 
 fi
