@@ -33,14 +33,12 @@ pacman -Rdd --noconfirm kmix
 rm /usr/share/applications/steam-native.desktop
 rm /usr/share/applications/stoken-gui-small.desktop
 #Fix the wallpapers if needed
-wget -q -O /opt/backgrounds/coffee/adwaita-l.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jpg
-wget -q -O /opt/backgrounds/coffee/adwaita-d.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jpg
-wget -q -O /opt/backgrounds/coffee/adwaita-l.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-l.jxl
-wget -q -O /opt/backgrounds/coffee/adwaita-d.jxl https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/adwaita-d.jxl
+wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-light.jpg
+wget -q -O /opt/backgrounds/coffee/coffee-dark.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-dark.jpg
 mkdir -p /usr/share/wallpapers/coffee/
 cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
-chmod 755 /usr/share/wallpapers/coffee/adwaita-l.jxl
-chmod 755 /usr/share/wallpapers/coffee/adwaita-d.jxl
+chmod 755 /usr/share/wallpapers/coffee/coffee-light.jpg
+chmod 755 /usr/share/wallpapers/coffee/coffee-dark.jpg
 #Grub line fixer..
 #sed -i 's/quiet splash loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf split_lock_detect=off/quiet splash loglevel=3 rw lsm=landlock,lockdown,yama,integrity,apparmor,bpf mitigations=off split_lock_detect=off/g' /etc/default/grub
 #grub-mkconfig -o /boot/grub/grub.cfg
