@@ -676,6 +676,7 @@ arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable power-profiles-daemon
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 arch-chroot /mnt systemctl daemon-reload
+}
 
 homedir_fix (){
 clear
