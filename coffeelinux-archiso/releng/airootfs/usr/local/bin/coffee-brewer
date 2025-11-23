@@ -351,11 +351,39 @@ case $gpu01passcheck in
 esac
 done
 
+if [ "$gpu0" = "nvidia" ]; then
+while [ "$nvsm01passcheck" != "1" ]; do
+clear
+printf "%b" "\nWould you like Smooth Motion Enabled [40xx and newer only]? (Default: 1)\n"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No\n"
+read -r nvsmcheck
+case $nvsmcheck in
+  1) nvsm01="nvsm-on" ;;
+  2) nvsm01="nvsm-off" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
+esac
+if [ "$nvsmcheck" != "1" ] && [ "$nvsmcheck" != "2" ]; then
+nvsmcheck=2
+nvsm01="nvsm-off"
+fi
+clear
+printf "%b" "\nYou said $nvsm01.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r nvsm01passcheck
+case $nvsm01passcheck in
+  1) nvsm0=$nvsm01;;
+  *) printf "%b" "\nLet's retry\n" ;
+esac
+done
+fi
+
 while [ "$grub01passcheck" != "1" ]; do
 clear
 printf "%b" "\nWhich version of GRUB do you need? (Default: 1)\n"
-printf "%b" "\n1 - GRUB UEFI version\n"
-printf "%b" "\n2 - GRUB BIOS/MBR version\n"
+printf "%b" "\n1 - GRUB UEFI version (modern hardware)\n"
+printf "%b" "\n2 - GRUB BIOS/MBR version (older hardware only)\n"
 read -r grubcheck
 case $grubcheck in
   1) grub01="grub-uefi" ;;
@@ -486,6 +514,11 @@ printf "%b" "\nGRUB for Nvidia selected.\n"
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
   sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.modeset=1"/g' /mnt/etc/default/grub
 fi
+
+if [ "$nvsm0" = "nvsm-on" ]; then
+printf "%b" "\nNVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /etc/skel/.bashrc
+fi
+
 fi
 
 if [ "$grub0" = "grub-uefi" ]; then
