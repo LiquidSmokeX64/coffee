@@ -18,6 +18,10 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 **Features of CoffeeLinux:**
 
+- **Zen Kernel**: A more gaming focused kernel to get the most out of your gaming experience.
+
+- **ZRAM Enabled**: A more modern, efficient alternative to the default ZSWAP, giving back that precious Hard Drive space for more of what you want instead.
+
 - **CoffeeLinux Manager (WIP)**: A comprehensive application designed to simplify common tasks, including:
    1. **System Updater** for distribution-specific updates.
    2. **Application manager** (install and remove software).
