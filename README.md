@@ -3,7 +3,7 @@
 
 CoffeeLinux is a Linux distribution optimized for gaming, yet its performance extends to other areas as well, offering a noticeable improvement across the board.
 
-Built on Arch Linux, CoffeeLinux is designed to provide a streamlined, hassle-free installation process. From start to finish, the setup is simple, enabling users to begin their experience quickly and efficiently.
+Built on Arch, CoffeeLinux is designed to provide a streamlined, hassle-free installation process. From start to finish, the setup is simple, enabling users to begin their experience quickly and efficiently.
 
 The installer is a lightweight, shell-based setup. We believe in a straightforward approach, foregoing unnecessary graphical interfaces in favor of a direct, efficient installation process. With just a few simple steps, you’ll be up and running in no time.
 
