@@ -1,5 +1,4 @@
 # Welcome to CoffeeLinux.
-(ReReleased Edition)
 -----------------------------------
 
 CoffeeLinux is a Linux distribution optimized for gaming, yet its performance extends to other areas as well, offering a noticeable improvement across the board.
