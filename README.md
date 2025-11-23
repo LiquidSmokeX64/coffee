@@ -26,19 +26,17 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
    1. **System Updater** for distribution-specific updates.
    2. **Application manager** (install and remove software).
    3. **System information** (via fastfetch).
-   4. **Coffee ISO Maker**: Easily create custom CoffeeLinux ISOs.
+   4. **Coffee ISO Maker**: Easily create updated CoffeeLinux ISOs.
    5. **Pacman Switcher**: Switch between stable and beta system update channels.
    6. **Steam Library Fixer**: Resolve Steam library links on secondary NTFS drives.
    7. **Discord Updater Tool**: Manually updates Discord app from official tar.gz file.
-
-- **Custom Self-Updating Service**: Stay up to date effortlessly. The service runs automatically on boot and requires no user interaction.
 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
 - **Lightweight Desktop Environment**:
    - **Plasma (KDE)**:  An advanced desktop environment ideal for everyday use.
 
-- **Repository Installation Options**: Choose between stable or testing repository channels, catering to users who prefer stability or those who seek cutting-edge updates.
+- **Iso Repository Options**: Choose between stable or testing repository channels during OS installation.
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
