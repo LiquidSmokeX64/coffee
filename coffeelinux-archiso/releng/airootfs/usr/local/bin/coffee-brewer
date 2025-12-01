@@ -616,7 +616,8 @@ clear
 rm /mnt/usr/share/applications/steam-native.desktop
 rm /mnt/usr/share/applications/stoken-gui-small.desktop
 clear
-printf "%b" "\nvm.max_map_count=1048576" > /mnt/etc/sysctl.conf
+printf "%b" "\nvm.max_map_count=262144" > /mnt/etc/sysctl.d/99-vm.max_map_count.conf
+printf "%b" "\nvm.max_map_count=262144" >> /mnt/etc/sysctl.conf
 }
 
 setup_branding (){
