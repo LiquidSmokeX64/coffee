@@ -31,13 +31,17 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Gaming Tools**: DXVK-Bin, Winetricks, Protontricks, and ProtonUp-QT built in.
 
-- **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for CPU Mitigations (13th Gen Intel, etc), VM Max Map Count (Horizon Zero Dawn, etc), DotNet 4.8 installations (Space Engineers, etc), and Nvidia Smooth Motion enabled (Nvidia 40xx+ GPU required)
-
 - **Lightweight Desktop Environment**:  Plasma (KDE). Ideal for everyday use, and enthusiasts alike.
 
 - **Installer Self-Updater**: Installer script, and misc files are auto-updated on the installation medium prior to use to always give the latest available version.
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
+
+- **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
+   1. **CPU Mitigations and SplitLock Detection Disabled** Fixes stuttering with 13th Gen Intel CPUs and some AMD ones as well.
+   2. **VM Max Map Count** Fixes CTDs in Horizon Zero Dawn Remastered, and helps with motion jitters in many games.
+   3. **DotNet 4.8 installation Fix** Fixes issues with Space Engineers, possibly any other titles that require it. (protontricks)
+   4. **Nvidia Smooth Motion** Globally enabled by default if selected (Nvidia 40xx+ GPU required)
 
 - **CoffeeLinux Manager (WIP)**: A console scripted application designed to simplify common tasks, including:
    1. **System Updater** for distribution-specific updates.
