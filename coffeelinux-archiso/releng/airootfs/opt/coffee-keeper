@@ -42,8 +42,8 @@ chmod 755 /usr/share/wallpapers/coffee/coffee-dark.jpg
 #grub-mkconfig -o /boot/grub/grub.cfg
 # OS Fixes..
 #DotNet 4.8 ie: Space Engineers..
-printf "%b" "\nabi <abi/4.0>,\ninclude <tunables/global>\n\nprofile bwrap /usr/bin/bwrap flags=(unconfined) {\n  userns,\n\n\n  # Site-specific additions and overrides. See local/README for details.\n  include if exists <local/bwrap>\n}\n" > /etc/apparmor.d/bwrap
-printf "%b" "\nabi <abi/4.0>,\ninclude <tunables/global>\n\nprofile srt-bwrap /home/*/.local/share/Steam/**/srt-bwrap flags=(unconfined) {\n  userns,\n  capability setpcap,\n  /proc/*/uid_map rw,\n  /proc/*/gid_map rw,\n  /proc/*/setgroups rw,\n\n  # Prevent transition to the restrictive unprivileged_userns profile\n  change_profile -> unconfined,\n\n  # Site-specific additions and overrides\n  include if exists <local/srt-bwrap>\n}\n" > /etc/apparmor.d/srt-bwrap
+printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile bwrap /usr/bin/bwrap flags=(unconfined) {\n  userns,\n\n\n  # Site-specific additions and overrides. See local/README for details.\n  include if exists <local/bwrap>\n}\n" > /etc/apparmor.d/bwrap
+printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile srt-bwrap /home/*/.local/share/Steam/**/srt-bwrap flags=(unconfined) {\n  userns,\n  capability setpcap,\n  /proc/*/uid_map rw,\n  /proc/*/gid_map rw,\n  /proc/*/setgroups rw,\n\n  # Prevent transition to the restrictive unprivileged_userns profile\n  change_profile -> unconfined,\n\n  # Site-specific additions and overrides\n  include if exists <local/srt-bwrap>\n}\n" > /etc/apparmor.d/srt-bwrap
 apparmor_parser -r /etc/apparmor.d/bwrap
 apparmor_parser -r /etc/apparmor.d/srt-bwrap
 systemctl restart apparmor
