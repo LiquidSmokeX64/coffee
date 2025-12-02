@@ -1,37 +1,11 @@
 #!/bin/sh
 # CoffeeLinux Homemade MultiTool Application
-#Main Menu
-while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ] && [ "$typecheck99" != "8" ]; do
-clear
-printf "%b" "\n#### Coffee Linux Manager Tool 1.1.6 ####\n"
-printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
-printf "%b" "\nWhat would you like to do? (Default: 8)\n"
-printf "%b" "\n1 - System Updates\n"
-printf "%b" "\n2 - Application Management\n"
-printf "%b" "\n3 - System Info\n"
-printf "%b" "\n4 - CoffeeLinux Iso Maker\n"
-printf "%b" "\n5 - Pacman Switcher\n"
-printf "%b" "\n6 - Steam Library Fixer\n"
-printf "%b" "\n7 - Discord Updater Tool\n"
-printf "%b" "\n8 - Exit Coffee Manager.\n"
-read -r typecheck99
-case $typecheck99 in
- 1) printf "%b" "\nSystem updates selected. Running now..\n" ;;
- 2) printf "%b" "\nApplication managemennt selected. Running now...\n" ;;
- 3) printf "%b" "\nSystem Info selected. Running now...\n" ;;
- 4) printf "%b" "\nIso Creator selected. Running now...\n" ;;
- 5) printf "%b" "\nPacman Switcher selected. Running now...\n" ;;
- 6) printf "%b" "\nSteam Library Fixer selected. Running now...\n" ;;
- 7) printf "%b" "\nDiscord Updater Tool selected. Running now...\n" ;;
- 8) printf "%b" "\nExit selected. exiting now...\n" ;;
- *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
-esac
-clear
-if [ "$typecheck99" = "1" ]; then
+
+system_updater (){
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.5 ####\n"
+printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.6 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 3)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
 printf "%b" "\n2 - CoffeeLinux OS update\n"
@@ -83,12 +57,14 @@ printf "%b" "\nExited System Updater successfully...\n\n"
 sleep 5
 fi
 done
-fi
-if [ "$typecheck99" = "2" ]; then
+}
+
+app_manager (){
 #Main Menu
 while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; do
 clear
-printf "%b" "\n#### Coffee App Manager Tool 1.1.2 ####\n"
+sleep 5
+printf "%b" "\n#### Coffee App Manager Tool 1.1.3 ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 4)\n"
 printf "%b" "\n1 - Install a program\n"
 printf "%b" "\n2 - Install an AUR program\n"
@@ -236,9 +212,11 @@ printf "%b" "\nExited App Manager successfully...\n\n"
 sleep 5
 fi
 done
-fi
-if [ "$typecheck99" = "3" ]; then
+}
+
+system_info (){
 clear
+sleep 5
 printf "%b" "\nGetting system info now...\n\n"
 fastfetch
 printf "%b" "\n#######Press enter to continue.#######.\n"
@@ -246,14 +224,16 @@ read -r endcheck109
 printf "%b" "\nYou typed $endcheck109...\n\n"
 clear
 printf "%b" "\nExiting the program now...\n\n"
-fi
-if [ "$typecheck99" = "4" ]; then
+sleep 5
+}
+
+iso_maker (){
 clear
 sleep 5
 #Main Menu
 while [ "$typecheck08" != "1" ] && [ "$typecheck08" != "2" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.1.2 ####\n"
+printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.1.3 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Create a CoffeeLinux iso\n"
@@ -307,14 +287,15 @@ clear
 sleep 5
 fi
 done
-fi
-if [ "$typecheck99" = "5" ]; then
+}
+
+pacman_switcher (){
 clear
 sleep 5
 #Main Menu
 while [ "$typecheck95" != "1" ] && [ "$typecheck95" != "2" ] && [ "$typecheck95" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Pacman Switcher Tool 1.1.2 ####\n"
+printf "%b" "\n#### Coffee Linux Pacman Switcher Tool 1.1.3 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat type of pacman repo do you want? (Default: 3)\n"
 printf "%b" "\n1 - Stable\n"
@@ -376,14 +357,15 @@ clear
 sleep 5
 fi
 done
-fi
-if [ "$typecheck99" = "6" ]; then
+}
+
+steam_ntfs_fixer (){
 clear
 sleep 5
 #Main Menu
 while [ "$typecheck67" != "1" ] && [ "$typecheck67" != "2" ] && [ "$typecheck67" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Steam Library Fixer Tool 1.1.3 ####\n"
+printf "%b" "\n#### Coffee Linux Steam Library Fixer Tool 1.1.4 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\n#### FIRE UP ANY GAME VIA PROTON FIRST ####\n"
 printf "%b" "\nHave you mounted the filesystem with your Library on it? (Default: 3)\n"
@@ -456,12 +438,14 @@ clear
 sleep 5
 fi
 done
-fi
-if [ "$typecheck99" = "7" ]; then
+}
+
+discord_updater (){
 #Main Menu
 while [ "$typecheck00D" != "1" ] && [ "$typecheck00D" != "2" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Discord Updater Tool 1.0.1 ####\n"
+sleep 5
+printf "%b" "\n#### Coffee Linux Discord Updater Tool 1.0.2 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 3)\n"
 printf "%b" "\n1 - Manual Discord update\n"
 printf "%b" "\n2 - Exit Discord Updater.\n"
@@ -513,12 +497,41 @@ printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck103D
 printf "%b" "\nYou typed $endcheck103D...\n\n"
 clear
-clear
 printf "%b" "\nExited Discord Updater successfully...\n\n"
 sleep 5
 fi
 done
-fi
+}
+
+#Main Menu
+while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ] && [ "$typecheck99" != "8" ]; do
+clear
+sleep 5
+printf "%b" "\n#### Coffee Linux Manager Tool 2.0.0 ####\n"
+printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
+printf "%b" "\nWhat would you like to do? (Default: 8)\n"
+printf "%b" "\n1 - System Updates\n"
+printf "%b" "\n2 - Application Management\n"
+printf "%b" "\n3 - System Info\n"
+printf "%b" "\n4 - CoffeeLinux Iso Maker\n"
+printf "%b" "\n5 - Pacman Switcher\n"
+printf "%b" "\n6 - Steam Library Fixer\n"
+printf "%b" "\n7 - Discord Updater Tool\n"
+printf "%b" "\n8 - Exit Coffee Manager.\n"
+read -r typecheck99
+case $typecheck99 in
+ 1) system_updater ;;
+ 2) app_manager ;;
+ 3) system_info ;;
+ 4) iso_maker ;;
+ 5) pacman_switcher ;;
+ 6) steam_ntfs_fixer ;;
+ 7) discord_updater ;;
+ 8) printf "%b" "\nExit selected. exiting now...\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
+esac
+clear
+
 if [ "$typecheck99" = "8" ]; then
 clear
 printf "%b" "\nExited Coffee Manager successfully...\n\n"
