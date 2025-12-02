@@ -21,15 +21,6 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **ZRAM Enabled**: A more modern, efficient alternative to the default ZSWAP, giving back that precious Hard Drive space for more of what you want instead.
 
-- **CoffeeLinux Manager (WIP)**: A console scripted application designed to simplify common tasks, including:
-   1. **System Updater** for distribution-specific updates.
-   2. **Application manager** (install and remove software).
-   3. **System information** (via fastfetch).
-   4. **Coffee ISO Maker**: Easily create updated CoffeeLinux ISOs.
-   5. **Pacman Switcher**: Switch between stable and beta system update channels.
-   6. **Steam Library Fixer**: Resolve Steam library links on secondary NTFS drives.
-   7. **Discord Updater Tool**: Manually updates Discord app from official tar.gz file.
-
 - **QoL Packages**: Essential packages and dependencies, designed to optimize the experience across a wide range of applications and services. ie: Java, etc.
 
 - **Wayland Focused**:  The software stack is entirely built with Wayland functionality in mind (including Nvidia GPUs). X11 support is limited at best by default.
@@ -47,6 +38,15 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 - **Installer Self-Updater**: Installer script, and misc files are auto-updated on the installation medium prior to use to always give the latest available version.
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
+
+- **CoffeeLinux Manager (WIP)**: A console scripted application designed to simplify common tasks, including:
+   1. **System Updater** for distribution-specific updates.
+   2. **Application manager** (install and remove software).
+   3. **System information** (via fastfetch).
+   4. **Coffee ISO Maker**: Easily create updated CoffeeLinux ISOs.
+   5. **Pacman Switcher**: Switch between stable and beta system update channels.
+   6. **Steam Library Fixer**: Resolve Steam library links on secondary NTFS drives.
+   7. **Discord Updater Tool**: Manually updates Discord app from official tar.gz file.
 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 
