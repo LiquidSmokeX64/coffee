@@ -1,6 +1,7 @@
 #!/bin/sh
 # CoffeeLinux Install Script
 
+#Set Variables..
 baseapps="iptables dbus-broker-units mkinitcpio texinfo base base-devel dhcpcd iwd linux-zen linux-firmware man-db man-pages nano networkmanager nmap sudo gobject-introspection"
 
 baseapps2="apparmor arch-install-scripts archinstall autogen b43-fwcutter bind boost boost-libs bootconfig brltty btrfs-progs clonezilla cloud-init cpupower cryptsetup darkhttpd dbus ddrescue device-mapper dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize freetype2 fsarchiver fuse2 fwupd fwupd-efi gettext git gpm gptfdisk grml-zsh-config hdparm help2man hyperv jfsutils kitty-terminfo libfido2 libisoburn libusb-compat linux-zen-headers lzop mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mokutil mtools net-tools nfs-utils nftables ntfs-3g ntfsprogs ntp nvme-cli open-iscsi open-vm-tools openconnect openssh openvpn partclone pcsclite perf ppp pptpclient python realtime-privileges refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools system-config-printer systemd systemd-resolvconf tcpdump terminus-font testdisk tmux tpm2-tss ttf-dejavu udev udftools usb_modeswitch usbmuxd usbutils vpnc wget wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd xz zram-generator zsh"
@@ -22,6 +23,8 @@ intelgpudrivers="mesa lib32-mesa xorg-server vulkan-intel lib32-vulkan-intel lib
 gamingapps="discord mangohud lutris gamescope gamemode lib32-gamemode steam wine wine-gecko wine-mono winetricks"
 
 configuration (){
+# Have user select all potential variables needed through a series of questions..
+
 clear
 while [ "$branchpasscheck" != "1" ]; do
 clear
@@ -407,7 +410,7 @@ done
 
 setup_drive (){
 clear
-
+# Wipe the drive and reformat it for use..
 while [ "$command1finished" != "1" ]; do
 bootpartitiontype="1"
 systempartitiontype="20"
@@ -434,11 +437,14 @@ command1finished="0"
 }
 
 setup_core (){
+# Install base level apps via pacstrap..
 while [ "$pacstrapfinished" != "1" ]; do
 pacstrap /mnt $baseapps
 clear
+# Install second layer base level apps via pacman..
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 clear
+# Setup ZRAM perameters for ZRAM Generator..
 printf "%b" "\n[zram0]\nzram-size=ram\ncompression-algorithm=zstd\nswap-priority=60\n" > /mnt/usr/lib/systemd/zram-generator.conf
 clear
 
@@ -449,6 +455,7 @@ pacstrapfinished="0"
 
 setup_cpu (){
 if [ "$cpu0" = "intel" ]; then
+# Add CPU specific packages here...
 clear
 arch-chroot /mnt pacman -Sy --noconfirm $intelcpu
 else
@@ -458,6 +465,7 @@ fi
 
 setup_bootloader (){
 clear
+# Setup GRUB Bootloader and adjust it as needed based on GPU and type.
 while [ "$command8finished" != "1" ]; do
 
 arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
@@ -507,6 +515,7 @@ command8finished="0"
 
 setup_locale (){
 clear
+# Preset Locale because it can be set in the OS.
 while [ "$command2finished" != "1" ]; do
 rm /mnt/etc/locale.gen
 rm /mnt/etc/locale.conf
@@ -530,6 +539,7 @@ command2finished="0"
 }
 
 setup_sudo (){
+# Add all users to passwordless sudo (helps during OS installation)..
 clear
 rm /mnt/etc/sudoers.d/wheel
 clear
@@ -542,12 +552,16 @@ EOT
 setup_users (){
 while [ "$command3finished" != "1" ]; do
 clear
+# Send pacman info to new OS install..
 cp /etc/pacman.conf /mnt/etc/pacman.conf
+# Add users to the new OS...
 printf "%b" "$userpass1\n$userpass1\n" | arch-chroot /mnt passwd
 arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01
 printf "%b" "$userpass0\n$userpass0\n" | arch-chroot /mnt passwd $user01
+# Create localhost...
 printf "%b" "$hostname0\n" >> /mnt/etc/hostname
 printf "%b" "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" >> /mnt/etc/hosts
+# Generate fstab file
 genfstab -U /mnt >> /mnt/etc/fstab
 clear
 command3finished="1"
@@ -556,6 +570,7 @@ command3finished="0"
 }
 
 setup_desktop (){
+# Install Desktop Environment and Java...
 while [ "$command4finished" != "1" ]; do
 arch-chroot /mnt pacman -Sy --noconfirm $kdeapps
 arch-chroot /mnt pacman -Rdd --noconfirm kmix
@@ -591,6 +606,7 @@ done
 }
 
 setup_gpu (){
+# Setup GPU drivers...
 clear
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected..\n"
@@ -610,6 +626,7 @@ clear
 }
 
 setup_gaming () {
+# Install Gaming Apps...
 clear
 arch-chroot /mnt pacman -Sy --noconfirm $gamingapps
 clear
@@ -632,6 +649,7 @@ arch-chroot /mnt apparmor_parser -r /etc/apparmor.d/srt-bwrap
 }
 
 setup_branding (){
+# Setup CoffeeLinux specific creations and such...
 clear
 #Setup Wallpapers...
 wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-light.jpg
@@ -673,6 +691,7 @@ fi
 }
 
 services_starter(){
+# Startup Services before rebooting.
 clear
 arch-chroot /mnt systemctl enable dhcpcd
 arch-chroot /mnt systemctl enable cronie
@@ -689,6 +708,7 @@ arch-chroot /mnt systemctl daemon-reload
 }
 
 homedir_fix (){
+# Fix some Home Directory bugs..
 clear
 while [ "$command11finished" != "1" ]; do
 printf "%b" "\nAttempting to fix the home directory automatically now...\n"
@@ -699,9 +719,10 @@ command11finished="0"
 }
 
 setup_aur (){
+# Setup AUR apps for additional features...
 clear
 printf "%b" "Installing yay for AUR support and some extra QoL applications...\nThis may fail due to servers having issues.\nIf it fails you will only be missing a few extras, nothing really important."
-sleep 20
+sleep 15
 
 cp /opt/yay-* /mnt/opt/
 yaypackage=$(basename /mnt/opt/yay-1*)
@@ -734,6 +755,7 @@ clear
 success_check (){
 cp /opt/os-release /mnt/etc/
 cp /opt/lsb-release /mnt/etc/
+# Ensure all went well...
 clear
 while [ "$command15finished" != "1" ] && [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; do
 printf "%b" "\nDid the installer complete successfully? (Default: 1)\n"
@@ -767,6 +789,7 @@ done
 command15finished="0"
 }
 
+## Main Menu...
 cp /opt/os-release /etc/
 cp /opt/lsb-release /etc/
 clear
