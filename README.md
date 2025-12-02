@@ -38,15 +38,15 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
-   1. **CPU Mitigations and SplitLock Detection Disabled** Fixes stuttering with 13th Gen Intel CPUs and some AMD ones as well.
-   2. **VM Max Map Count** Fixes CTDs in Horizon Zero Dawn Remastered, and helps with motion jitters in many games.
-   3. **DotNet 4.8 installation Fix** Fixes issues with Space Engineers, possibly any other titles that require it. (protontricks)
-   4. **Nvidia Smooth Motion** Globally enabled by default if selected (Nvidia 40xx+ GPU required)
+   1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen Intel CPUs and some AMD ones as well.
+   2. **VM Max Map Count**: Fixes CTDs in Horizon Zero Dawn Remastered, and helps with motion jitters in many games.
+   3. **DotNet 4.8 installation Fix**: Fixes issues with Space Engineers, possibly any other titles that require it. (protontricks)
+   4. **Nvidia Smooth Motion**: Globally enabled by default if selected. (Nvidia 40xx+ GPU required)
 
 - **CoffeeLinux Manager (WIP)**: A console scripted application designed to simplify common tasks, including:
-   1. **System Updater** for distribution-specific updates.
-   2. **Application manager** (install and remove software).
-   3. **System information** (via fastfetch).
+   1. **System Updater**: For distribution-specific updates.
+   2. **Application manager**: Basic installing and removal of software.
+   3. **System information**: Fastfetch Info.
    4. **Coffee ISO Maker**: Easily create updated CoffeeLinux ISOs.
    5. **Pacman Switcher**: Switch between stable and beta system update channels.
    6. **Steam Library Fixer**: Resolve Steam library links on secondary NTFS drives.
