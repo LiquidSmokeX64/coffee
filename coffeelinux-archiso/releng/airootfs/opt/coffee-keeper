@@ -48,12 +48,11 @@ apparmor_parser -r /etc/apparmor.d/bwrap
 apparmor_parser -r /etc/apparmor.d/srt-bwrap
 systemctl restart apparmor
 # VM Max Map Count Fix ie: Horizon Zero Dawn..
-printf "%b" "\nvm.max_map_count=262144" > /etc/sysctl.conf
-printf "%b" "\nvm.max_map_count=262144" > /etc/sysctl.d/99-vm.max_map_count.conf
+printf "%b" "vm.max_map_count=262144" > /etc/sysctl.conf
+printf "%b" "vm.max_map_count=262144" > /etc/sysctl.d/99-vm.max_map_count.conf
 #End OS Fixes..
 #Injector-Replacer
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
-printf "%b" "\nUpdater Finished Successfully.\n"
 sleep 5
 exit
