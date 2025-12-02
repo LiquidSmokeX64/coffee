@@ -34,6 +34,8 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Gaming Tools**: DXVK-Bin, Winetricks, Protontricks, and ProtonUp-QT built in.
 
+- **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for CPU Mitigations (13th Gen Intel, etc), VM Max Map Count (Horizon Zero Dawn, etc), DotNet 4.8 installations (Space Engineers, etc), and Nvidia Smooth Motion enabled (Nvidia 40xx+ GPU required)
+
 - **Desktop Environment**:  Plasma (KDE). Ideal for everyday use, and enthusiasts alike.
 
 - **Installer Self-Update**: Installer script, and misc files are auto-updated on the installation medium prior to use to always give the latest available version.
