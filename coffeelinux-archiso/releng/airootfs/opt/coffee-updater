@@ -365,9 +365,9 @@ sleep 5
 #Main Menu
 while [ "$typecheck67" != "1" ] && [ "$typecheck67" != "2" ] && [ "$typecheck67" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Steam Library Fixer Tool 1.1.4 ####\n"
+printf "%b" "\n#### Coffee Linux Steam Library Fixer Tool 1.1.5 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
-printf "%b" "\n#### FIRE UP ANY GAME VIA PROTON FIRST ####\n"
+printf "%b" "\n#### PLAY ANY GAME VIA PROTON FIRST ####\n"
 printf "%b" "\nHave you mounted the filesystem with your Library on it? (Default: 3)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No\n"
@@ -382,7 +382,7 @@ esac
 clear
 if [ "$typecheck67" = "1" ]; then
 while [ "$pathverified" != "1" ]; do
-printf "%b" "\nPlease enter the path to your Steam Library...\n\n"
+printf "%b" "\nPlease enter the path to your Steam Library...\n(Do not include final '\')\n\n"
 read -r steampath
 printf "%b" "\n$steampath...\n"
 printf "%b" "\nIs this correct?\n\n"
