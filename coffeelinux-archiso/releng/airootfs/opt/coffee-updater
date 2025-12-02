@@ -506,7 +506,6 @@ done
 #Main Menu
 while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ] && [ "$typecheck99" != "8" ]; do
 clear
-sleep 5
 printf "%b" "\n#### Coffee Linux Manager Tool 2.0.0 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 8)\n"
