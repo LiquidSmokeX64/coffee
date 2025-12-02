@@ -30,6 +30,10 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
+- **Gaming Ready**:  Lutris, Wine, Steam, Heroic Games Launcher (Epic/GOG/Amazon), and Discord built in.
+
+- **Gaming Tools**: DXVK-Bin, Winetricks, Protontricks, and ProtonUp-QT built in.
+
 - **Desktop Environment**:  Plasma (KDE). Ideal for everyday use, and enthusiasts alike.
 
 - **Installer Self-Update**: Installer script, and misc files are auto-updated on the installation medium prior to use to always give the latest available version.
