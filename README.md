@@ -39,7 +39,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen Intel CPUs and some AMD ones as well.
-   2. **VM Max Map Count**: Fixes CTDs in Horizon Zero Dawn Remastered, and helps with motion jitters in many games.
+   2. **VM Max Map Count Fix**: Prevents most CTDs in Horizon Zero Dawn Remastered, and helps with motion jitters in many games.
    3. **DotNet 4.8 installation Fix**: Fixes issues with Space Engineers, possibly any other titles that require it. (protontricks)
    4. **Nvidia Smooth Motion**: Globally enabled by default if selected. (Nvidia 40xx+ GPU required)
 
