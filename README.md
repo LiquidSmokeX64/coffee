@@ -15,6 +15,8 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 **Features of CoffeeLinux:**
 
+- **Command Line installation**:  Simple easy to use universal installer without all that flashy unneeded GUI to cause problems. (Trust me it's better this way.)
+
 - **Zen Kernel**: A more focused kernel to get the most out of your gaming experience.
 
 - **ZRAM Enabled**: A more modern, efficient alternative to the default ZSWAP, giving back that precious Hard Drive space for more of what you want instead.
