@@ -56,4 +56,5 @@ printf "%b" "\nvm.max_map_count=262144" > /etc/sysctl.d/99-vm.max_map_count.conf
 #Injector-Replacer
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
+sleep 10
 exit
