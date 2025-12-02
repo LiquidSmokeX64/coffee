@@ -618,6 +618,13 @@ rm /mnt/usr/share/applications/stoken-gui-small.desktop
 clear
 printf "%b" "\nvm.max_map_count=262144" > /mnt/etc/sysctl.d/99-vm.max_map_count.conf
 printf "%b" "\nvm.max_map_count=262144" >> /mnt/etc/sysctl.conf
+arch-chroot /mnt pacman -Sy --noconfirm apparmor
+clear
+arch-chroot /mnt systemctl enable apparmor
+printf "%b" "\nabi <abi/4.0>,\ninclude <tunables/global>\n\nprofile bwrap /usr/bin/bwrap flags=(unconfined) {\n  userns,\n\n\n  # Site-specific additions and overrides. See local/README for details.\n  include if exists <local/bwrap>\n}\n" > /mnt/etc/apparmor.d/bwrap
+printf "%b" "\nabi <abi/4.0>,\ninclude <tunables/global>\n\nprofile srt-bwrap /home/*/.local/share/Steam/**/srt-bwrap flags=(unconfined) {\n  userns,\n  capability setpcap,\n  /proc/*/uid_map rw,\n  /proc/*/gid_map rw,\n  /proc/*/setgroups rw,\n\n  # Prevent transition to the restrictive unprivileged_userns profile\n  change_profile -> unconfined,\n\n  # Site-specific additions and overrides\n  include if exists <local/srt-bwrap>\n}\n" > /mnt/etc/apparmor.d/srt-bwrap
+arch-chroot /mnt apparmor_parser -r /etc/apparmor.d/bwrap
+arch-chroot /mnt apparmor_parser -r /etc/apparmor.d/srt-bwrap
 }
 
 setup_branding (){
@@ -663,9 +670,6 @@ fi
 
 services_starter(){
 clear
-arch-chroot /mnt pacman -Sy --noconfirm apparmor
-clear
-arch-chroot /mnt systemctl enable apparmor
 arch-chroot /mnt systemctl enable dhcpcd
 arch-chroot /mnt systemctl enable cronie
 arch-chroot /mnt systemctl enable chronyd
