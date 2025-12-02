@@ -30,8 +30,6 @@ systemctl enable coffee-keeper.service
 #Removal of any unwanted packages if they exist.
 pacman -Rdd --noconfirm kmix
 #Remove any unwanted files if they exist.
-rm /usr/share/applications/steam-native.desktop
-rm /usr/share/applications/stoken-gui-small.desktop
 #Fix the wallpapers if needed
 wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-light.jpg
 wget -q -O /opt/backgrounds/coffee/coffee-dark.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-dark.jpg
