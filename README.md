@@ -30,9 +30,9 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Quality of Life Packages**: A curated selection of essential packages and dependencies, designed to optimize the experience across a wide range of applications and services.
 
-- **Plasma (KDE)**:  An advanced desktop environment ideal for everyday use.
+- **Desktop Environment**:  Plasma (KDE). Ideal for everyday use, and enthusiasts alike.
 
-- **Iso Repository Options**: Choose between stable or testing repository channels during OS installation.
+- **Installer Self-Update**: Installer script, and misc files are auto-updated on the installation medium prior to use to always give the latest available version.
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
