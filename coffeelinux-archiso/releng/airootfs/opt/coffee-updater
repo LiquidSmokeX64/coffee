@@ -5,7 +5,7 @@ system_updater (){
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.6 ####\n"
+printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.7 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 3)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
 printf "%b" "\n2 - CoffeeLinux OS update\n"
@@ -19,39 +19,31 @@ case $typecheck00 in
 esac
 clear
 if [ "$typecheck00" = "1" ]; then
-sudo pacman -Syu --noconfirm
+sudo pacman -Syu
 clear
 printf "%b" "\nOfficial Arch Linux updates finished..\n"
-typecheck00=3
-printf "%b" "\n#######Press enter to continue.#######.\n"
-read -r endcheck100
-printf "%b" "\nYou typed $endcheck100...\n\n"
-clear
-sleep 5
 fi
 if [ "$typecheck00" = "2" ]; then
 sudo bash /opt/coffee-injector
 clear
 printf "%b" "\nCoffeeLinux OS update finished...\n"
-typecheck00=3
-printf "%b" "\n#######Press enter to continue.#######.\n"
-read -r endcheck101
-printf "%b" "\nYou typed $endcheck101...\n\n"
-clear
-sleep 5
 fi
 if [ "$typecheck00" = "3" ]; then
 clear
 printf "%b" "\nExited System Updater successfully...\n\n"
-sleep 5
-typecheck00=3
 fi
+
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck100
+printf "%b" "\nYou typed $endcheck100...\n\n"
+clear
+sleep 5
+
 if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; then
 typecheck00=3
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck103
 printf "%b" "\nYou typed $endcheck103...\n\n"
-clear
 clear
 printf "%b" "\nExited System Updater successfully...\n\n"
 sleep 5
