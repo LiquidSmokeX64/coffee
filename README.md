@@ -35,7 +35,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- ** 3 Desktop Environment Choices**:  
+- **3 Desktop Environment Choices**:  
    1. Plasma. Ideal for everyday use, and enthusiasts alike.
    2. Gnome. Simple and Modern interface.
    3. Cinnamon. Great for newcomers, and Linux Mint lovers (Like us).
