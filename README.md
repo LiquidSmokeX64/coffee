@@ -23,7 +23,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **QoL Packages**: Essential packages and dependencies, designed to optimize the experience across a wide range of applications and services. ie: Java, etc.
 
-- **Wayland Focused**:  The software stack is entirely built with Wayland functionality in mind (including Nvidia GPUs). X11 support is limited at best by default.
+- **Wayland Friendly**:  The software stack is built with Wayland functionality in mind (in most cases).
 
 - **GPU Friendly**:  AMD or Nvidia GPUs welcome (Intel... maybe..)
 
@@ -31,11 +31,14 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Gaming Tools**: DXVK-Bin, Winetricks, Protontricks, and ProtonUp-QT built in.
 
-- **Lightweight Desktop Environment**:  Plasma (KDE). Ideal for everyday use, and enthusiasts alike.
-
 - **Installer Self-Updater**: Installer script, and misc files are auto-updated on the installation medium prior to use to always give the latest available version.
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
+
+- ** 3 Desktop Environment Choices**:  
+   1. Plasma. Ideal for everyday use, and enthusiasts alike.
+   2. Gnome. Simple and Modern interface.
+   3. Cinnamon. Great for newcomers, and Linux Mint lovers (Like us).
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
