@@ -23,7 +23,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **QoL Packages**: Essential packages and dependencies, designed to optimize the experience across a wide range of applications and services. ie: Java, etc.
 
-- **Wayland Friendly**:  The software stack is built with Wayland functionality in mind (in most cases).
+- **Wayland Focused**:  The software stack is built with Wayland functionality in mind (in most cases).
 
 - **GPU Friendly**:  AMD or Nvidia GPUs welcome (Intel... maybe..)
 
@@ -57,6 +57,12 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 
+**Known Potential Issues**
+1. RayNeo 3s Pro AR/XR glasses have no audio in Plasma DE.
+2. Updating via "pacman -Syu" command on Cinnamon DE may break lightdm. (Use the distro-specific updater in CoffeeLinux Manager)
+3. Sometimmes the ISO does not wipe the destination drive properly (automated fdisk issue).
+4. Switching to X11 sessions in Plasma or Gnome may have random oddities due to the Wayland focused setup of CoffeeLinux.
+5. Audio may be quieter than usual on some speakers / laptops.
 ------------------------------------
 
 Like, Share, and Enjoy. 
