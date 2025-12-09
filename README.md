@@ -60,7 +60,7 @@ To get started, simply download the ISO from the *Releases* page, use Etcher to 
 **Known Potential Issues**
 1. RayNeo 3s Pro AR/XR glasses have no audio in Plasma DE.
 2. Updating via "pacman -Syu" command on Cinnamon DE may break lightdm. (Use the distro-specific updater in CoffeeLinux Manager)
-3. Sometimmes the ISO does not wipe the destination drive properly (automated fdisk issue).
+3. Sometimes the ISO does not wipe the destination drive properly (automated fdisk issue).
 4. Switching to X11 sessions in Plasma or Gnome may have random oddities due to the Wayland focused setup of CoffeeLinux.
 5. Audio may be quieter than usual on some speakers / laptops.
 ------------------------------------
