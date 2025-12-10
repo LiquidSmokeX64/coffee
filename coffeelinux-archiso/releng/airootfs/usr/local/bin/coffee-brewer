@@ -10,7 +10,7 @@ basedesktop="alsa-lib alsa-plugins alsa-utils appstream-qt archiso archivetools 
 
 kdedesktop="appstream-qt ark colord-kde kde-applications-meta kdevelop-python kgamma kpmcore kscreen kvantum plasma plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace polkit-kde-agent polkit-qt6 sddm sddm-kcm xdg-desktop-portal-kde"
 
-gnomedesktop="epiphany evolution gdm gedit gnome gnome-color-manager gnome-extra gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-shell-extension-appindicator gnome-shell-extension-desktop-icons-ng gnome-terminal gnome-tweaks polkit-gnome papers pantheon-photos xdg-desktop-portal-gnome"
+gnomedesktop="epiphany evolution gdm gedit gnome gnome-color-manager gnome-extra gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-shell-extensions gnome-shell-extension-appindicator gnome-shell-extension-desktop-icons-ng gnome-terminal gnome-tweaks polkit-gnome papers pantheon-photos xdg-desktop-portal-gnome"
 
 cinnamondesktop="cinnamon cinnamon-translations epiphany evolution gedit gnome-calculator gnome-color-manager gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-photos gnome-software gnome-system-monitor gnome-terminal lightdm lightdm-slick-greeter pantheon-photos polkit-gnome xdg-desktop-portal-gnome"
 
@@ -851,16 +851,18 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 fi
 if [ "$desktop0" = "gnome" ]; then
-pacman -Rdd --noconfirm mutter
+arch-chroot /mnt pacman -Rdd --noconfirm mutter
+rm -r /mnt/usr/share/xsessions/gnome*
+rm -r /mnt/usr/share/wayland-sessions/gnome*
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mutter-performance
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y ubuntu-wallpapers
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y gnome-shell-extension-ubuntu-dock-git
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y ubuntu-themes
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-icon-theme
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-session
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
 fi
 }
 
