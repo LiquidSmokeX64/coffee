@@ -27,14 +27,15 @@ chmod 644 /usr/share/applications/coffee-updater.desktop /usr/share/applications
 chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
-#Removal of any unwanted packages if they exist.
-pacman -Rdd --noconfirm kmix
 #Remove any unwanted files if they exist.
 #Fix the wallpapers if needed
 wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-light.jpg
 wget -q -O /opt/backgrounds/coffee/coffee-dark.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-dark.jpg
+# Desktop environment adjustments
 coffeedesktoptype01=$(basename -a /usr/share/wayland-sessions/plas*)
 if [ "$coffeedesktoptype01" = "plasma.desktop" ]; then
+pacman -Rdd --noconfirm gnome-session
+pacman -Rdd --noconfirm kmix
 mkdir -p /usr/share/wallpapers/coffee/
 cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
 chmod 755 /usr/share/wallpapers/coffee/coffee-light.jpg
@@ -42,6 +43,11 @@ chmod 755 /usr/share/wallpapers/coffee/coffee-dark.jpg
 fi
 coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/gnome.*)
 if [ "$coffeedesktoptype00" = "gnome.desktop" ]; then
+pacman -Rdd --noconfirm gnome-console
+pacman -Rdd --noconfirm gnome-text-editor
+pacman -Rdd --noconfirm gnome-photos
+pacman -Rdd --noconfirm geary
+pacman -Syy --noconfirm pantheon-photos
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/gnome/adwaita-l.jxl
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/gnome/adwaita-d.jxl
 chmod 755 /usr/share/backgrounds/gnome/adwaita-l.jxl
@@ -51,6 +57,11 @@ coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinnamon2*)
 if [ "$coffeedesktoptype02" = "cinnamon2d.desktop" ]; then
 pacman -Rdd --noconfirm gnome-session
 pacman -Rdd --noconfirm lightdm-settings
+pacman -Rdd --noconfirm gnome-console
+pacman -Rdd --noconfirm gnome-text-editor
+pacman -Rdd --noconfirm gnome-photos
+pacman -Rdd --noconfirm geary
+pacman -Syy --noconfirm pantheon-photos
 rm -r /usr/share/backgrounds/linuxmint/default_background.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
