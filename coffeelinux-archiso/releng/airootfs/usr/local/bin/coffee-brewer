@@ -321,20 +321,8 @@ esac
 if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ]; then
 desktop01check=1
 desktop01="plasma"
-
-if [ "$desktop01" = "plasma" ];then
-selecteddesktop=$kdedesktop
 fi
 
-if [ "$desktop01" = "gnome" ];then
-selecteddesktop=$gnomedesktop
-fi
-
-if [ "$desktop01" = "cinnamon" ];then
-selecteddesktop=$cinnamondesktop
-fi
-
-fi
 clear
 printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
@@ -621,6 +609,19 @@ command3finished="0"
 setup_desktop (){
 # Install Desktop Environment and Java...
 while [ "$command4finished" != "1" ]; do
+
+if [ "$desktop01" = "plasma" ];then
+selecteddesktop=$kdedesktop
+fi
+
+if [ "$desktop01" = "gnome" ];then
+selecteddesktop=$gnomedesktop
+fi
+
+if [ "$desktop01" = "cinnamon" ];then
+selecteddesktop=$cinnamondesktop
+fi
+
 arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
 arch-chroot /mnt pacman -Rdd --noconfirm evince
