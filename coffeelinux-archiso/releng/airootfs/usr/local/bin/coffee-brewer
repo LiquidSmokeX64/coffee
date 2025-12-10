@@ -366,16 +366,14 @@ printf "%b" "\nWhat make of GPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
 printf "%b" "\n2 - Nvidia\n"
 printf "%b" "\n3 - Intel\n"
-printf "%b" "\n4 - Virtual GPU (VMware etc.)\n"
 read -r gpucheck
 case $gpucheck in
   1) gpu01="amd" ;;
   2) gpu01="nvidia" ;;
   3) gpu01="intel" ;;
-  4) gpu01="vm" ;;
   *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
-if [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ] && [ "$gpucheck" != "4" ]; then
+if [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ]; then
 gpucheck=1
 gpu01="amd"
 fi
@@ -476,6 +474,8 @@ command1finished="0"
 setup_core (){
 # Install base level apps via pacstrap..
 while [ "$pacstrapfinished" != "1" ]; do
+mkdir -p /mnt/etc/
+printf "%b" "KEYMAP=us\n" > /etc/vconsole.conf
 printf "%b" "KEYMAP=us\n" > /mnt/etc/vconsole.conf
 pacstrap /mnt $baseapps
 clear
@@ -555,9 +555,9 @@ setup_locale (){
 clear
 # Preset Locale because it can be set in the OS.
 while [ "$command2finished" != "1" ]; do
-rm /mnt/etc/locale.gen
-rm /mnt/etc/locale.conf
-rm /mnt/etc/vconsole.conf
+rm -r /mnt/etc/locale.gen
+rm -r /mnt/etc/locale.conf
+rm -r /mnt/etc/vconsole.conf
 
 arch-chroot /mnt /bin/bash <<"EOT"
 ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
@@ -579,7 +579,8 @@ command2finished="0"
 setup_sudo (){
 # Add all users to passwordless sudo (helps during OS installation)..
 clear
-rm /mnt/etc/sudoers.d/wheel
+mkdir -p /mnt/etc/sudoers.d/
+rm -r /mnt/etc/sudoers.d/wheel
 clear
 arch-chroot /mnt /bin/bash <<"EOT"
 printf "%b\n%%"w"heel ALL=(ALL:ALL) NOPASSWD: ALL\n" "$*" > /etc/sudoers.d/wheel
@@ -724,8 +725,6 @@ chmod 755 /mnt/usr/share/wallpapers/coffee/coffee-dark.jpg
 chmod 755 /mnt/usr/share/wallpapers/coffee/coffee-light.jpg
 fi
 if [ "$desktop0" = "gnome" ]; then
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/gnome/adwaita-d.jpg
-cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/gnome/adwaita-l.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
 chmod 755 /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
@@ -733,12 +732,13 @@ chmod 755 /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
 fi
 if [ "$desktop0" = "cinnamon" ]; then
 rm -r /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
-mkdir -p /mnt/usr/share/backgrounds/coffee/
-cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
+mkdir -p /mnt/usr/share/backgrounds/coffee/
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
 chmod 755 /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
-chmod 755 /mnt/usr/share/backgrounds/coffee/coffee-dark.jpg
-chmod 755 /mnt/usr/share/backgrounds/coffee/coffee-light.jpg
+chmod 755 /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
+chmod 755 /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
 fi
 #Setup CoffeeLinux Apps...
 wget -q -O /mnt/usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista

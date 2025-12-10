@@ -64,6 +64,12 @@ pacman -Rdd --noconfirm geary
 pacman -Syy --noconfirm pantheon-photos
 rm -r /usr/share/backgrounds/linuxmint/default_background.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/coffee/coffee-dark.jxl
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/coffee-light.jxl
+chmod 755 /usr/share/backgrounds/linuxmint/default_background.jpg
+chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
+chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
+
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
 systemctl enable lightdm
 fi
