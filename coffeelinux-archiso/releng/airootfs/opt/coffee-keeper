@@ -53,6 +53,7 @@ cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/gnome/adwai
 chmod 755 /usr/share/backgrounds/gnome/adwaita-l.jxl
 chmod 755 /usr/share/backgrounds/gnome/adwaita-d.jxl
 rm -r /usr/share/wayland-sessions/gnome*
+rm -r /usr/share/xsessions/Yaru*
 fi
 coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinnamon2*)
 if [ "$coffeedesktoptype02" = "cinnamon2d.desktop" ]; then

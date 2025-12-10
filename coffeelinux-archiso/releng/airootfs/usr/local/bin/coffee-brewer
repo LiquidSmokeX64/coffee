@@ -852,7 +852,6 @@ clear
 fi
 if [ "$desktop0" = "gnome" ]; then
 arch-chroot /mnt pacman -Rdd --noconfirm mutter
-rm -r /mnt/usr/share/xsessions/gnome*
 rm -r /mnt/usr/share/wayland-sessions/gnome*
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mutter-performance
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
@@ -863,6 +862,7 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-sound-theme
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-gnome-shell-theme
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y yaru-gtk-theme
+rm -r /mnt/usr/share/xsessions/Yaru*
 fi
 }
 
