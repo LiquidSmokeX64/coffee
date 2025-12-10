@@ -476,6 +476,7 @@ command1finished="0"
 setup_core (){
 # Install base level apps via pacstrap..
 while [ "$pacstrapfinished" != "1" ]; do
+printf "%b" "KEYMAP=us\n" > /mnt/etc/vconsole.conf
 pacstrap /mnt $baseapps
 clear
 # Install second layer base level apps via pacman..
