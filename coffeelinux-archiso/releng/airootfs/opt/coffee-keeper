@@ -52,7 +52,6 @@ cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/gnome/adwa
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/gnome/adwaita-d.jxl
 chmod 755 /usr/share/backgrounds/gnome/adwaita-l.jxl
 chmod 755 /usr/share/backgrounds/gnome/adwaita-d.jxl
-rm -r /usr/share/xsessions/gnome*
 rm -r /usr/share/wayland-sessions/gnome*
 fi
 coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinnamon2*)
