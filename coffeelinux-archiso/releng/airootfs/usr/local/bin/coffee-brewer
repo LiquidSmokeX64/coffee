@@ -627,7 +627,6 @@ fi
 arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
 arch-chroot /mnt pacman -Rdd --noconfirm evince
-arch-chroot /mnt pacman -Rdd --noconfirm xreader
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
 arch-chroot /mnt pacman -Rdd --noconfirm geary
@@ -736,9 +735,9 @@ cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/linuxmi
 mkdir -p /mnt/usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
-chmod 755 /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
-chmod 755 /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
-chmod 755 /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
+arch-chroot /mnt chmod 755 /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
+arch-chroot /mnt chmod 755 /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
+arch-chroot /mnt chmod 755 /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
 fi
 #Setup CoffeeLinux Apps...
 wget -q -O /mnt/usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
