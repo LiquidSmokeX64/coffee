@@ -12,7 +12,7 @@ kdedesktop="appstream-qt ark colord-kde kde-applications-meta kdevelop-python kg
 
 gnomedesktop="epiphany evolution gdm gedit gnome gnome-color-manager gnome-extra gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-shell-extensions gnome-shell-extension-appindicator gnome-shell-extension-desktop-icons-ng gnome-terminal gnome-tweaks polkit-gnome papers pantheon-photos xdg-desktop-portal-gnome"
 
-cinnamondesktop="cinnamon cinnamon-translations epiphany evolution gedit gnome-calculator gnome-color-manager gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-photos gnome-software gnome-system-monitor gnome-terminal lightdm lightdm-slick-greeter pantheon-photos polkit-gnome xdg-desktop-portal-gnome"
+cinnamondesktop="cinnamon cinnamon-translations epiphany evolution gedit gnome-builder gnome-calculator gnome-color-manager gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-photos gnome-software gnome-system-monitor gnome-terminal lightdm lightdm-slick-greeter pantheon-photos polkit-gnome rhythmbox xdg-desktop-portal-gnome"
 
 javaapps="jre-openjdk"
 
@@ -730,14 +730,14 @@ chmod 755 /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
 chmod 755 /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
 fi
 if [ "$desktop0" = "cinnamon" ]; then
-rm -r /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 mkdir -p /mnt/usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
-arch-chroot /mnt chmod 755 /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
-arch-chroot /mnt chmod 755 /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
-arch-chroot /mnt chmod 755 /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/linuxmint/default_background.jpg
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
 fi
 #Setup CoffeeLinux Apps...
 wget -q -O /mnt/usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista

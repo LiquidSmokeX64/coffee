@@ -69,6 +69,7 @@ cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/cof
 chmod 755 /usr/share/backgrounds/linuxmint/default_background.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
 chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
+chmod 755 /usr/share/backgrounds/coffee/
 
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
 systemctl enable lightdm
