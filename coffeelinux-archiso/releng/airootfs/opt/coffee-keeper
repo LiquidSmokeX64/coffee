@@ -41,8 +41,8 @@ cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
 chmod 755 /usr/share/wallpapers/coffee/coffee-light.jpg
 chmod 755 /usr/share/wallpapers/coffee/coffee-dark.jpg
 fi
-coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/Yaru.*)
-if [ "$coffeedesktoptype00" = "Yaru.desktop" ]; then
+coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/gnome.*)
+if [ "$coffeedesktoptype00" = "gnome.desktop" ]; then
 pacman -Rdd --noconfirm gnome-console
 pacman -Rdd --noconfirm gnome-text-editor
 pacman -Rdd --noconfirm gnome-photos
@@ -52,8 +52,6 @@ cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/gnome/adwa
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/gnome/adwaita-d.jxl
 chmod 755 /usr/share/backgrounds/gnome/adwaita-l.jxl
 chmod 755 /usr/share/backgrounds/gnome/adwaita-d.jxl
-rm -r /usr/share/wayland-sessions/gnome*
-rm -r /usr/share/xsessions/Yaru*
 fi
 coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinnamon2*)
 if [ "$coffeedesktoptype02" = "cinnamon2d.desktop" ]; then
