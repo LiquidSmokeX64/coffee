@@ -87,6 +87,8 @@ chmod 755 /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
 chmod 755 /usr/share/backgrounds/coffee/
+pkill -f cosmic-app-library
+systemctl daemon-reload
 fi
 # OS Fixes..
 #DotNet 4.8 ie: Space Engineers..
