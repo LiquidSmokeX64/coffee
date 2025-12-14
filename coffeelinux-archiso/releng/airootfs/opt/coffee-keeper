@@ -74,6 +74,17 @@ chmod 755 /usr/share/backgrounds/coffee/
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
 systemctl enable lightdm
 fi
+coffeedesktoptype02=$(basename -a /usr/share/xsessions/cosmi*)
+if [ "$coffeedesktoptype02" = "cosmic.desktop" ]; then
+rm -r /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/coffee/coffee-dark.jpg
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/coffee-light.jpg
+chmod 755 /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
+chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
+chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
+chmod 755 /usr/share/backgrounds/coffee/
+fi
 # OS Fixes..
 #DotNet 4.8 ie: Space Engineers..
 printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile bwrap /usr/bin/bwrap flags=(unconfined) {\n  userns,\n\n\n  # Site-specific additions and overrides. See local/README for details.\n  include if exists <local/bwrap>\n}\n" > /etc/apparmor.d/bwrap

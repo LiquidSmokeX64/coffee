@@ -35,10 +35,11 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- **3 Desktop Environment Choices**:  
+- **4 Desktop Environment Choices**:  
    1. Plasma. Ideal for everyday use, and enthusiasts alike.
    2. Gnome. Simple and Modern interface.
    3. Cinnamon. Great for newcomers, and Linux Mint lovers (Like us).
+   4. Cosmic. A unique Rust based Desktop Environment by System 76 (Pop OS).
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
