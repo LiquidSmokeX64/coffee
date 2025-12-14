@@ -62,6 +62,7 @@ pacman -Rdd --noconfirm gnome-text-editor
 pacman -Rdd --noconfirm gnome-photos
 pacman -Rdd --noconfirm geary
 pacman -Syy --noconfirm pantheon-photos
+mkdir -p chmod 755 /usr/share/backgrounds/coffee/
 rm -r /usr/share/backgrounds/linuxmint/default_background.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/coffee/coffee-dark.jxl
@@ -76,6 +77,7 @@ systemctl enable lightdm
 fi
 coffeedesktoptype02=$(basename -a /usr/share/wayland-sessions/cosmi*)
 if [ "$coffeedesktoptype02" = "cosmic.desktop" ]; then
+mkdir -p chmod 755 /usr/share/backgrounds/coffee/
 rm -r /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/coffee/coffee-dark.jpg

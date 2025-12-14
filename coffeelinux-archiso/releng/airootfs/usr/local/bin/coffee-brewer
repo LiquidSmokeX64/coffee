@@ -736,14 +736,15 @@ chmod 755 /mnt/usr/share/wallpapers/coffee/coffee-dark.jpg
 chmod 755 /mnt/usr/share/wallpapers/coffee/coffee-light.jpg
 fi
 if [ "$desktop0" = "gnome" ]; then
+mkdir -p /mnt/usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
 chmod 755 /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
 chmod 755 /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
 fi
 if [ "$desktop0" = "cinnamon" ]; then
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 mkdir -p /mnt/usr/share/backgrounds/coffee/
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/linuxmint/default_background.jpg
@@ -752,6 +753,7 @@ arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
 fi
 if [ "$desktop0" = "cosmic" ]; then
+mkdir -p /mnt/usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
 mkdir -p /mnt/usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
