@@ -35,11 +35,11 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- **4 Desktop Environment Choices**:  
-   1. Plasma. Ideal for everyday use, and enthusiasts alike.
+- **Multiple Desktop Environment Choices**:  
+   1. Cosmic (Default). A unique Rust based Desktop Environment by System 76 (Pop OS).
    2. Gnome. Simple and Modern interface.
    3. Cinnamon. Great for newcomers, and Linux Mint lovers (Like us).
-   4. Cosmic. A unique Rust based Desktop Environment by System 76 (Pop OS).
+   4. Plasma. Ideal for everyday use, and enthusiasts alike.
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
@@ -60,7 +60,7 @@ To get started, simply download the ISO from the *Releases* page, use Etcher to 
 
 **Known Potential Issues**
 1. Updating via "pacman -Syu" command or through the Package Manager app on Cinnamon DE may break lightdm-slick-greeter. (Use the distro-specific updater in CoffeeLinux Manager)
-2. Sometimes the ISO does not wipe the destination drive properly (automated fdisk issue).
+2. Sometimes the ISO does not wipe the destination drive properly (automated fdisk/hardware bug).
 3. Audio may be quieter than usual on some speakers / laptops.
 4. Steam Client on Gnome with Nvidia GPUs may have mouse input issues.
 ------------------------------------
