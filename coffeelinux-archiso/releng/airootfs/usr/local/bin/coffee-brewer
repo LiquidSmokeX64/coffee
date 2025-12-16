@@ -20,6 +20,8 @@ budgiedesktop="budgie budgie-backgrounds budgie-control-center budgie-desktop bu
 
 xfcedesktop="catfish exo garcon orage parole ristretto geary gnome-keyring mousepad libxfce4ui lightdm lightdm-gtk-greeter polkit-gnome sound-theme-freedesktop thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler xdg-desktop-portal-gtk xfce4-artwork xfce4-appfinder xfce4-clipman-plugin xfce4-datetime-plugin xfce4-dict xfce4-mixer xfce4-notifyd xfce4-panel xfce4-panel-profiles xfce4-places-plugin xfce4-power-manager xfce4-pulseaudio-plugin xfce4-sensors-plugin xfce4-taskmanager xfce4-terminal xfce4-screenshooter xfce4-session xfce4-settings xfce4-screensaver xfce4-whiskermenu-plugin xfce4-wavelan-plugin xfdashboard xfdesktop xfwm4 xfwm4-themes"
 
+lxqtdesktop="featherpad geary lxmusic lxqt-archiver lxqt-about lxqt-admin lxqt-build-tools lxqt-config lxqt-globalkeys lxqt-menu-data lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-runner lxqt-session lxqt-sudo lxqt-themes lxqt-wayland-session libdbusmenu-lxqt liblxqt lximage-qt obconf-qt openbox pavucontrol-qt pcmanfm-qt qps qterminal screengrab sddm xdg-desktop-portal-lxqt"
+
 javaapps="jre-openjdk"
 
 amdcpu="amd-ucode"
@@ -313,12 +315,13 @@ done
 while [ "$desktop01passcheck" != "1" ]; do
 clear
 printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
-printf "%b" "\n1 - Cosmic\n"
+printf "%b" "\n1 - Plasma\n"
 printf "%b" "\n2 - Gnome\n"
 printf "%b" "\n3 - Cinnamon\n"
-printf "%b" "\n4 - Plasma\n"
+printf "%b" "\n4 - Cosmic\n"
 printf "%b" "\n5 - Budgie\n"
 printf "%b" "\n6 - XFCE\n"
+printf "%b" "\n7 - LXQT\n"
 
 read -r desktop01check
 case "$desktop01check" in
@@ -328,11 +331,12 @@ case "$desktop01check" in
   4) desktop01="plasma";;
   5) desktop01="budgie";;
   6) desktop01="xfce";;
+  7) desktop01="lxqt";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
-if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ] && [ "$desktop01check" != "6" ]; then
+if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ] && [ "$desktop01check" != "6" ] && [ "$desktop01check" != "7" ]; then
 desktop01check=1
-desktop01="cosmic"
+desktop01="plasma"
 fi
 
 clear
@@ -648,6 +652,10 @@ if [ "$desktop01" = "xfce" ];then
 selecteddesktop=$xfcedesktop
 fi
 
+if [ "$desktop01" = "lxqt" ];then
+selecteddesktop=$lxqtdesktop
+fi
+
 arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
 arch-chroot /mnt pacman -Rdd --noconfirm evince
@@ -695,6 +703,11 @@ fi
 if [ "$desktop01" = "xfce" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt systemctl enable lightdm
+fi
+
+if [ "$desktop01" = "lxqt" ];then
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+arch-chroot /mnt systemctl enable sddm
 fi
 
 command4finished="1"
