@@ -702,13 +702,13 @@ rm -r /mnt/usr/share/wallpapers/Next/contents/images/*
 rm -r /mnt/usr/share/wallpapers/Next/contents/images_dark/*
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/wallpapers/Next/contents/images/5120x2880.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/wallpapers/Next/contents/images_dark/5120x2880.jpg
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/wallpapers/coffee/contents/images_dark/coffee-dark.jpg
-cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/wallpapers/coffee/contents/images/coffee-light.jpg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/wallpapers/coffee/contents/images_dark/coffee.jpg
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/wallpapers/coffee/contents/images/coffee.jpg
 cp -r /opt/backgrounds/coffee/metadata.json /mnt/usr/share/wallpapers/coffee/metadata.json
 arch-chroot /mnt chmod 755 /usr/share/wallpapers/Next/contents/images/5120x2880.jpg
 arch-chroot /mnt chmod 755 /usr/share/wallpapers/Next/contents/images_dark/5120x2880.jpg
-arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/contents/images_dark/coffee-dark.jpg
-arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/contents/images/coffee-light.jpg
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/contents/images_dark/coffee.jpg
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/contents/images/coffee.jpg
 arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/metadata.json
 arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/
 fi
