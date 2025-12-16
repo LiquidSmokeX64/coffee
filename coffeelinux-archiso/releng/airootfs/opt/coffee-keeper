@@ -53,7 +53,7 @@ chmod 755 /usr/share/wallpapers/Next/contents/images_dark/5120x2880.jpg
 chmod 755 /usr/share/wallpapers/coffee/contents/images_dark/coffee-dark.jpg
 chmod 755 /usr/share/wallpapers/coffee/contents/images/coffee-light.jpg
 chmod 755 /usr/share/wallpapers/coffee/metadata.json
-chmod 755 /usr/share/backgrounds/coffee/
+chmod 755 /usr/share/wallpapers/coffee/
 fi
 coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/gnome.*)
 if [ "$coffeedesktoptype00" = "gnome.desktop" ]; then
