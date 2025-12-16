@@ -323,7 +323,7 @@ case "$desktop01check" in
   2) desktop01="gnome";;
   3) desktop01="cinnamon";;
   4) desktop01="plasma";;
-  4) desktop01="budgie";;
+  5) desktop01="budgie";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
 if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ]; then
