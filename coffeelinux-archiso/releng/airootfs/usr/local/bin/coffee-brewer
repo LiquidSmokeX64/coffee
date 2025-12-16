@@ -322,10 +322,10 @@ printf "%b" "\n6 - XFCE\n"
 
 read -r desktop01check
 case "$desktop01check" in
-  1) desktop01="cosmic";;
+  1) desktop01="plasma";;
   2) desktop01="gnome";;
   3) desktop01="cinnamon";;
-  4) desktop01="plasma";;
+  4) desktop01="cosmic";;
   5) desktop01="budgie";;
   6) desktop01="xfce";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
