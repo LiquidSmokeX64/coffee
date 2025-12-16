@@ -757,16 +757,22 @@ wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubuserconten
 wget -q -O /opt/backgrounds/coffee/coffee-dark.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-dark.jpg
 if [ "$desktop0" = "plasma" ]; then
 mkdir -p /mnt/usr/share/wallpapers/coffee/
+rm -r /mnt/usr/share/wallpapers/Next/contents/images/*
+rm -r /mnt/usr/share/wallpapers/Next/contents/images_dark/*
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/wallpapers/Next/contents/images/5120x2880.jpg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/wallpapers/Next/contents/images_dark/5120x2880.jpg
 cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
-chmod 755 /mnt/usr/share/wallpapers/coffee/coffee-dark.jpg
-chmod 755 /mnt/usr/share/wallpapers/coffee/coffee-light.jpg
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/Next/contents/images/5120x2880.jpg
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/Next/contents/images_dark/5120x2880.jpg
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/coffee-dark.jpg
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/coffee-light.jpg
 fi
 if [ "$desktop0" = "gnome" ]; then
 mkdir -p /mnt/usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
-chmod 755 /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
-chmod 755 /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/gnome/adwaita-l.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/gnome/adwaita-d.jxl
 fi
 if [ "$desktop0" = "cinnamon" ]; then
 mkdir -p /mnt/usr/share/backgrounds/coffee/
@@ -902,6 +908,8 @@ clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
+clear
+printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
 clear
 # Additional setup for Cinnamon DE
 if [ "$desktop0" = "cinnamon" ]; then
