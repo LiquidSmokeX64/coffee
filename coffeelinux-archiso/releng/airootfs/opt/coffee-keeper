@@ -102,6 +102,18 @@ chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
 chmod 755 /usr/share/backgrounds/coffee/
 fi
+coffeedesktoptype02=$(basename -a /usr/share/xsessions/xfc*)
+if [ "$coffeedesktoptype02" = "xfce.desktop" ]; then
+mkdir -p /usr/share/backgrounds/coffee/
+rm -r /usr/share/backgrounds/xfce/xfce-x.svg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/xfce/xfce-x.svg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/coffee/coffee-dark.svg
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/coffee-light.svg
+chmod 755 /usr/share/backgrounds/xfce/xfce-x.svg
+chmod 755 /usr/share/backgrounds/coffee/coffee-dark.svg
+chmod 755 /usr/share/backgrounds/coffee/coffee-light.svg
+chmod 755 /usr/share/backgrounds/coffee/
+fi
 # OS Fixes..
 #DotNet 4.8 ie: Space Engineers..
 printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile bwrap /usr/bin/bwrap flags=(unconfined) {\n  userns,\n\n\n  # Site-specific additions and overrides. See local/README for details.\n  include if exists <local/bwrap>\n}\n" > /etc/apparmor.d/bwrap

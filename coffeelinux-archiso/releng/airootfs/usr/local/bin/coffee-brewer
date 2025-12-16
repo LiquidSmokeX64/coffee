@@ -18,7 +18,7 @@ cosmicdesktop="cosmic cosmic-app-library cosmic-applets cosmic-bg cosmic-comp co
 
 budgiedesktop="budgie budgie-backgrounds budgie-control-center budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver budgie-session nautilus geary gedit gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus gnome-terminal network-manager-applet materia-gtk-theme papirus-icon-theme polkit-gnome shotwell rhythmbox lightdm lightdm-gtk-greeter xdg-desktop-portal-gtk"
 
-xfcedesktop="catfish exo garcon orage parole ristretto geary gnome-calendar gnome-keyring mousepad libxfce4ui lightdm lightdm-gtk-greeter polkit-gnome sound-theme-freedesktop thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler xdg-desktop-portal-gtk xfce4-artwork xfce4-appfinder xfce4-clipman-plugin xfce4-datetime-plugin xfce4-dict xfce4-mixer xfce4-notifyd xfce4-panel xfce4-panel-profiles xfce4-places-plugin xfce4-power-manager xfce4-pulseaudio-plugin xfce4-sensors-plugin xfce4-taskmanager xfce4-terminal xfce4-screenshooter xfce4-session xfce4-settings xfce4-screensaver xfce4-whiskermenu-plugin xfce4-wavelan-plugin xfdashboard xfdesktop xfwm4 xfwm4-themes"
+xfcedesktop="catfish exo garcon orage parole ristretto geary gnome-keyring mousepad libxfce4ui lightdm lightdm-gtk-greeter polkit-gnome sound-theme-freedesktop thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler xdg-desktop-portal-gtk xfce4-artwork xfce4-appfinder xfce4-clipman-plugin xfce4-datetime-plugin xfce4-dict xfce4-mixer xfce4-notifyd xfce4-panel xfce4-panel-profiles xfce4-places-plugin xfce4-power-manager xfce4-pulseaudio-plugin xfce4-sensors-plugin xfce4-taskmanager xfce4-terminal xfce4-screenshooter xfce4-session xfce4-settings xfce4-screensaver xfce4-whiskermenu-plugin xfce4-wavelan-plugin xfdashboard xfdesktop xfwm4 xfwm4-themes"
 
 javaapps="jre-openjdk"
 
@@ -796,6 +796,17 @@ mkdir -p /mnt/usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/budgie/default.jpg
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
+fi
+if [ "$desktop0" = "xfce" ]; then
+mkdir -p /mnt/usr/share/backgrounds/coffee/
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/xfce/xfce-x.svg
+mkdir -p /mnt/usr/share/backgrounds/coffee/
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/xfce/xfce-x.svg
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
