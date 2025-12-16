@@ -31,6 +31,7 @@ systemctl enable coffee-keeper.service
 #Fix the wallpapers if needed
 wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-light.jpg
 wget -q -O /opt/backgrounds/coffee/coffee-dark.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-dark.jpg
+wget -q -O /opt/backgrounds/coffee/coffee.stw https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee.stw
 # Desktop environment adjustments
 coffeedesktoptype01=$(basename -a /usr/share/wayland-sessions/plas*)
 if [ "$coffeedesktoptype01" = "plasma.desktop" ]; then
@@ -46,6 +47,8 @@ chmod 755 /usr/share/wallpapers/Next/contents/images/5120x2880.jpg
 chmod 755 /usr/share/wallpapers/Next/contents/images_dark/5120x2880.jpg
 chmod 755 /usr/share/wallpapers/coffee/coffee-light.jpg
 chmod 755 /usr/share/wallpapers/coffee/coffee-dark.jpg
+chmod 755 /usr/share/wallpapers/coffee/coffee.stw
+chmod 755 /usr/share/backgrounds/coffee/
 fi
 coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/gnome.*)
 if [ "$coffeedesktoptype00" = "gnome.desktop" ]; then
@@ -55,10 +58,15 @@ pacman -Rdd --noconfirm gnome-text-editor
 pacman -Rdd --noconfirm gnome-photos
 pacman -Rdd --noconfirm geary
 pacman -Syy --noconfirm pantheon-photos
+cp -r /opt/backgrounds/coffee/* /usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/gnome/adwaita-l.jxl
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/gnome/adwaita-d.jxl
 chmod 755 /usr/share/backgrounds/gnome/adwaita-l.jxl
 chmod 755 /usr/share/backgrounds/gnome/adwaita-d.jxl
+chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
+chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
+chmod 755 /usr/share/backgrounds/coffee/coffee.stw
+chmod 755 /usr/share/backgrounds/coffee/
 fi
 coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinnamon2*)
 if [ "$coffeedesktoptype02" = "cinnamon2d.desktop" ]; then
@@ -77,6 +85,7 @@ cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/cof
 chmod 755 /usr/share/backgrounds/linuxmint/default_background.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
 chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
+chmod 755 /usr/share/wallpapers/coffee/coffee.stw
 chmod 755 /usr/share/backgrounds/coffee/
 
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
@@ -92,6 +101,7 @@ cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/cof
 chmod 755 /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
+chmod 755 /usr/share/wallpapers/coffee/coffee.stw
 chmod 755 /usr/share/backgrounds/coffee/
 pkill -f cosmic-app-library
 systemctl daemon-reload
@@ -106,6 +116,7 @@ cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/cof
 chmod 755 /usr/share/backgrounds/budgie/default.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
+chmod 755 /usr/share/wallpapers/coffee/coffee.stw
 chmod 755 /usr/share/backgrounds/coffee/
 fi
 coffeedesktoptype02=$(basename -a /usr/share/xsessions/xfc*)
@@ -118,6 +129,7 @@ cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/cof
 chmod 755 /usr/share/backgrounds/xfce/xfce-x.svg
 chmod 755 /usr/share/backgrounds/coffee/coffee-dark.svg
 chmod 755 /usr/share/backgrounds/coffee/coffee-light.svg
+chmod 755 /usr/share/wallpapers/coffee/coffee.stw
 chmod 755 /usr/share/backgrounds/coffee/
 fi
 # OS Fixes..
