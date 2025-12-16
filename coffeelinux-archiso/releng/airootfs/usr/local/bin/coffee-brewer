@@ -16,7 +16,9 @@ cinnamondesktop="cinnamon cinnamon-translations epiphany evolution gedit gnome-b
 
 cosmicdesktop="cosmic cosmic-app-library cosmic-applets cosmic-bg cosmic-comp cosmic-greeter cosmic-icon-theme cosmic-idle cosmic-initial-setup cosmic-files cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-randr cosmic-player cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces geary gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus polkit-gnome shotwell system76-scheduler xdg-desktop-portal-cosmic"
 
-budgiedesktop="budgie budgie-desktop budgie-screensaver budgie-session budgie-control-center budgie-desktop-view budgie-backgrounds network-manager-applet materia-gtk-theme papirus-icon-theme budgie-extras lightdm lightdm-gtk-greeter xdg-desktop-portal-gtk nautilus gedit gnome-terminal gnome-keyring polkit-gnome gnome-calculator gnome-mahjongg gnome-menus"
+budgiedesktop="budgie budgie-backgrounds budgie-control-center budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver budgie-session nautilus geary gedit gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus gnome-terminal network-manager-applet materia-gtk-theme papirus-icon-theme polkit-gnome shotwell rhythmbox lightdm lightdm-gtk-greeter xdg-desktop-portal-gtk"
+
+xfcedesktop="catfish exo garcon orage parole ristretto geary gnome-calendar gnome-keyring mousepad libxfce4ui lightdm lightdm-gtk-greeter polkit-gnome sound-theme-freedesktop thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler xdg-desktop-portal-gtk xfce4-artwork xfce4-appfinder xfce4-clipman-plugin xfce4-datetime-plugin xfce4-dict xfce4-mixer xfce4-notifyd xfce4-panel xfce4-panel-profiles xfce4-places-plugin xfce4-power-manager xfce4-pulseaudio-plugin xfce4-sensors-plugin xfce4-taskmanager xfce4-terminal xfce4-screenshooter xfce4-session xfce4-settings xfce4-screensaver xfce4-whiskermenu-plugin xfce4-wavelan-plugin xfdashboard xfdesktop xfwm4 xfwm4-themes"
 
 javaapps="jre-openjdk"
 
@@ -316,6 +318,7 @@ printf "%b" "\n2 - Gnome\n"
 printf "%b" "\n3 - Cinnamon\n"
 printf "%b" "\n4 - Plasma\n"
 printf "%b" "\n5 - Budgie\n"
+printf "%b" "\n6 - XFCE\n"
 
 read -r desktop01check
 case "$desktop01check" in
@@ -324,9 +327,10 @@ case "$desktop01check" in
   3) desktop01="cinnamon";;
   4) desktop01="plasma";;
   5) desktop01="budgie";;
+  6) desktop01="xfce";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
-if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ]; then
+if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ] && [ "$desktop01check" != "6" ]; then
 desktop01check=1
 desktop01="cosmic"
 fi
@@ -640,6 +644,10 @@ if [ "$desktop01" = "budgie" ];then
 selecteddesktop=$budgiedesktop
 fi
 
+if [ "$desktop01" = "xfce" ];then
+selecteddesktop=$xfcedesktop
+fi
+
 arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
 arch-chroot /mnt pacman -Rdd --noconfirm evince
@@ -680,6 +688,11 @@ arch-chroot /mnt systemctl enable cosmic-greeter.service
 fi
 
 if [ "$desktop01" = "budgie" ];then
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+arch-chroot /mnt systemctl enable lightdm
+fi
+
+if [ "$desktop01" = "xfce" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt systemctl enable lightdm
 fi
