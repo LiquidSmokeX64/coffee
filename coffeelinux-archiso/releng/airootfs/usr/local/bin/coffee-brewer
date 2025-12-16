@@ -14,7 +14,9 @@ gnomedesktop="epiphany evolution gdm gedit gnome gnome-color-manager gnome-extra
 
 cinnamondesktop="cinnamon cinnamon-translations epiphany evolution gedit gnome-builder gnome-calculator gnome-color-manager gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-photos gnome-software gnome-system-monitor gnome-terminal lightdm lightdm-slick-greeter pantheon-photos polkit-gnome rhythmbox xdg-desktop-portal-gnome"
 
-cosmicdesktop="cosmic cosmic-app-library cosmic-applets cosmic-bg cosmic-comp cosmic-greeter cosmic-icon-theme cosmic-idle cosmic-initial-setup cosmic-files cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-randr cosmic-player cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces geary gnome-calendar gnome-keyring shotwell system76-scheduler xdg-desktop-portal-cosmic"
+cosmicdesktop="cosmic cosmic-app-library cosmic-applets cosmic-bg cosmic-comp cosmic-greeter cosmic-icon-theme cosmic-idle cosmic-initial-setup cosmic-files cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-randr cosmic-player cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces geary gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus polkit-gnome shotwell system76-scheduler xdg-desktop-portal-cosmic"
+
+budgiedesktop="budgie budgie-desktop budgie-screensaver budgie-session budgie-control-center budgie-desktop-view budgie-backgrounds network-manager-applet materia-gtk-theme papirus-icon-theme budgie-extras lightdm lightdm-gtk-greeter xdg-desktop-portal-gtk nautilus gedit gnome-terminal gnome-keyring polkit-gnome gnome-calculator gnome-mahjongg gnome-menus"
 
 javaapps="jre-openjdk"
 
@@ -313,6 +315,7 @@ printf "%b" "\n1 - Cosmic\n"
 printf "%b" "\n2 - Gnome\n"
 printf "%b" "\n3 - Cinnamon\n"
 printf "%b" "\n4 - Plasma\n"
+printf "%b" "\n5 - Budgie\n"
 
 read -r desktop01check
 case "$desktop01check" in
@@ -320,9 +323,10 @@ case "$desktop01check" in
   2) desktop01="gnome";;
   3) desktop01="cinnamon";;
   4) desktop01="plasma";;
+  4) desktop01="budgie";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
-if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ]; then
+if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ]; then
 desktop01check=1
 desktop01="cosmic"
 fi
@@ -632,6 +636,10 @@ if [ "$desktop01" = "cosmic" ];then
 selecteddesktop=$cosmicdesktop
 fi
 
+if [ "$desktop01" = "budgie" ];then
+selecteddesktop=$budgiedesktop
+fi
+
 arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
 arch-chroot /mnt pacman -Rdd --noconfirm evince
@@ -669,6 +677,11 @@ fi
 if [ "$desktop01" = "cosmic" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt systemctl enable cosmic-greeter.service
+fi
+
+if [ "$desktop01" = "budgie" ];then
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+arch-chroot /mnt systemctl enable lightdm
 fi
 
 command4finished="1"
