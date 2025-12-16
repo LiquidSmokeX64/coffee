@@ -693,18 +693,23 @@ clear
 wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-light.jpg
 wget -q -O /opt/backgrounds/coffee/coffee-dark.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-dark.jpg
 wget -q -O /opt/backgrounds/coffee/coffee.stw https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee.stw
+wget -q -O /opt/backgrounds/coffee/metadata.json https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/metadata.json
 if [ "$desktop0" = "plasma" ]; then
 mkdir -p /mnt/usr/share/wallpapers/coffee/
+mkdir -p /mnt/usr/share/wallpapers/coffee/contents/images/
+mkdir -p /mnt/usr/share/wallpapers/coffee/contents/images_dark/
 rm -r /mnt/usr/share/wallpapers/Next/contents/images/*
 rm -r /mnt/usr/share/wallpapers/Next/contents/images_dark/*
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/wallpapers/Next/contents/images/5120x2880.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/wallpapers/Next/contents/images_dark/5120x2880.jpg
-cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/wallpapers/coffee/contents/images_dark/coffee-dark.jpg
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/wallpapers/coffee/contents/images/coffee-light.jpg
+cp -r /opt/backgrounds/coffee/metadata.json /mnt/usr/share/wallpapers/coffee/metadata.json
 arch-chroot /mnt chmod 755 /usr/share/wallpapers/Next/contents/images/5120x2880.jpg
 arch-chroot /mnt chmod 755 /usr/share/wallpapers/Next/contents/images_dark/5120x2880.jpg
-arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/coffee-dark.jpg
-arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/coffee-light.jpg
-arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/coffee.stw
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/contents/images_dark/coffee-dark.jpg
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/contents/images/coffee-light.jpg
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/metadata.json
 arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/
 fi
 if [ "$desktop0" = "gnome" ]; then

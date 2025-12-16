@@ -1,0 +1,52 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "dlc07projectxmods@gmail.com",
+                "Name": "Dan Maxie",
+                "Name[bg]": "Dan Maxie",
+                "Name[ca@valencia]": "Dan Maxie",
+                "Name[ca]": "Dan Maxie",
+                "Name[cs]": "Dan Maxie",
+                "Name[de]": "Dan Maxie",
+                "Name[en_GB]": "Dan Maxie",
+                "Name[eo]": "Dan Maxie",
+                "Name[es]": "Dan Maxie",
+                "Name[eu]": "Dan Maxie",
+                "Name[fi]": "Dan Maxie",
+                "Name[fr]": "Dan Maxie",
+                "Name[gl]": "Dan Maxie",
+                "Name[hu]": "Dan Maxie",
+                "Name[ia]": "Dan Maxie",
+                "Name[is]": "Dan Maxie",
+                "Name[it]": "Dan Maxie",
+                "Name[ka]": "Dan Maxie",
+                "Name[ko]": "Dan Maxie",
+                "Name[lt]": "Dan Maxie",
+                "Name[lv]": "Dan Maxie",
+                "Name[nl]": "Dan Maxie",
+                "Name[nn]": "Dan Maxie",
+                "Name[pl]": "Dan Maxie",
+                "Name[pt_BR]": "Dan Maxie",
+                "Name[ro]": "Dan Maxie",
+                "Name[ru]": "Dan Maxie",
+                "Name[sl]": "Dan Maxie",
+                "Name[sv]": "Dan Maxie",
+                "Name[tr]": "Dan Maxie",
+                "Name[uk]": "Dan Maxie",
+                "Name[zh_CN]": "Dan Maxie",
+                "Name[zh_TW]": "Dan Maxie"
+            }
+        ],
+        "Id": "coffee",
+        "License": "CC-BY-SA-4.0",
+        "Name": "Coffee",
+        "Name[bg]": "Coffee",
+        "Name[ca@valencia]": "Coffee",
+        "Name[ca]": "Coffee",
+        "Name[eu]": "Coffee",
+        "Name[nl]": "Coffee",
+        "Name[pl]": "Coffee",,
+        "Name[zh_TW]": "Coffee"
+    }
+}
