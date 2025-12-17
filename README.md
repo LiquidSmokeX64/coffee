@@ -23,8 +23,6 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **QoL Packages**: Essential packages and dependencies, designed to optimize the experience across a wide range of applications and services. ie: Java, etc.
 
-- **Wayland Focused**:  The software stack is built with Wayland functionality in mind (in most cases).
-
 - **GPU Friendly**:  AMD or Nvidia GPUs welcome (Intel... maybe..)
 
 - **Gaming Ready**:  Lutris, Wine, Steam, Heroic Games Launcher (Epic/GOG/Amazon), and Discord built in.
@@ -35,13 +33,9 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- **Multiple Desktop Environment Choices**: 
+- **2 Desktop Environment Choices**: 
    1. Plasma. A cutting edge, looks and customization forward environment from KDE Neon.
-   2. Gnome. Simple and modern interface from Gnome.org.
-   3. Cinnamon. Sleek and stylish yet classic environment by Linux Mint.
-   4. Cosmic. A unique Rust based environment by System 76.
-   5. Budgie. A gnome based environment featured in Solarus.
-   6. XFCE. A superlightweight environment featured in Manjaro.
+   2. Cosmic. A unique Rust based environment by System 76.
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
@@ -57,6 +51,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
    5. **Pacman Switcher**: Switch between stable and beta system update channels.
    6. **Steam Library Fixer**: Resolve Steam library links on secondary NTFS drives.
    7. **Discord Updater Tool**: Manually updates Discord app from official tar.gz file.
+   8. **Cosmic App Library Fixer**: Manually kills and restarts the process (Cosmic bug).
 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 
