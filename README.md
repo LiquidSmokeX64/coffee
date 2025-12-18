@@ -56,11 +56,9 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 
 **Known Potential Issues**
-1. Updating via "pacman -Syu" command or through the Package Manager app on Cinnamon DE may break lightdm-slick-greeter. (Use the distro-specific updater in CoffeeLinux Manager)
-2. Sometimes the ISO does not wipe the destination drive properly (automated fdisk/hardware bug).
-3. Audio may be quieter than usual on some speakers / laptops.
-4. Steam Client on Gnome with Nvidia GPUs may have mouse input issues.
-5. Cosmic Desktop is still very new thus has some minor issues it's developers need to resolve.
+1. Sometimes the ISO does not wipe the destination drive properly (automated fdisk/hardware bug).
+2. Audio may be quieter than usual on some speakers / laptops.
+3. Cosmic Desktop is still very new thus has some minor issues it's developers need to resolve.
 ------------------------------------
 
 Like, Share, and Enjoy. 
