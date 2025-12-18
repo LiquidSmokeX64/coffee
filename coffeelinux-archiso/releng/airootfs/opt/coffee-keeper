@@ -1,0 +1,82 @@
+#!/bin/sh
+#Coffee Auto-Updater tool
+sleep 10
+#Do system updates to all packages
+pacman -Syu --noconfirm
+#Replace CoffeeLinux specific files
+wget -q -O /etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
+wget -q -O /usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
+wget -q -O /usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
+wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf
+wget -q -O /opt/pacman-unstable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf
+wget -q -O /etc/issue https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/issue
+cp /opt/issue /etc/
+wget -q -O /opt/coffee-updater https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater
+cp /opt/coffee-updater /usr/local/bin/
+wget -q -O /opt/coffee-updater.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater.desktop
+cp /opt/coffee-updater.desktop /usr/share/applications/
+wget -q -O /opt/os-release https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/os-release
+wget -q -O /opt/lsb-release https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release
+wget -q -O /etc/os-release https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/os-release
+wget -q -O /etc/lsb-release https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/lsb-release
+wget -q -O /usr/local/bin/coffee-brewer https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-brewer
+wget -q -O /usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
+#Set permissions
+chmod +x /usr/local/bin/coffee-barista /usr/local/bin/coffee-filter /opt/coffee-updater /opt/coffee-keeper /opt/coffee-injector
+chmod 644 /usr/share/applications/coffee-updater.desktop /usr/share/applications/coffee-filter.desktop
+chmod 755 /lib/systemd/system/coffee-keeper.service
+chmod 644 /etc/issue
+systemctl enable coffee-keeper.service
+#Remove any unwanted files if they exist.
+#Fix the wallpapers if needed
+wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-light.jpg
+wget -q -O /opt/backgrounds/coffee/coffee-dark.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-dark.jpg
+wget -q -O /opt/backgrounds/coffee/coffee.stw https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee.stw
+# Desktop environment adjustments
+coffeedesktoptype01=$(basename -a /usr/share/wayland-sessions/plas*)
+if [ "$coffeedesktoptype01" = "plasma.desktop" ]; then
+pacman -Rdd --noconfirm gnome-session
+pacman -Rdd --noconfirm kmix
+mkdir -p /usr/share/wallpapers/coffee/
+rm -r /usr/share/wallpapers/Next/contents/images/*
+rm -r /usr/share/wallpapers/Next/contents/images_dark/*
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/wallpapers/Next/contents/images/5120x2880.jpg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/wallpapers/Next/contents/images_dark/5120x2880.jpg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/wallpapers/coffee/coffee-dark.jpg
+cp -r /opt/backgrounds/coffee/* /usr/share/wallpapers/coffee/
+chmod 755 /usr/share/wallpapers/Next/contents/images/5120x2880.jpg
+chmod 755 /usr/share/wallpapers/Next/contents/images_dark/5120x2880.jpg
+chmod 755 /usr/share/wallpapers/coffee/coffee-dark.jpg
+chmod 755 /usr/share/wallpapers/coffee/coffee-light.jpg
+chmod 755 /usr/share/wallpapers/coffee/
+fi
+coffeedesktoptype02=$(basename -a /usr/share/wayland-sessions/cosmi*)
+if [ "$coffeedesktoptype02" = "cosmic.desktop" ]; then
+mkdir -p /usr/share/backgrounds/coffee/
+rm -r /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/coffee/coffee-dark.jpg
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/coffee-light.jpg
+chmod 755 /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
+chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
+chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
+chmod 755 /usr/share/backgrounds/coffee/coffee.stw
+chmod 755 /usr/share/backgrounds/coffee/
+pkill -f cosmic-app-library
+systemctl daemon-reload
+fi
+# OS Fixes..
+#DotNet 4.8 ie: Space Engineers..
+printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile bwrap /usr/bin/bwrap flags=(unconfined) {\n  userns,\n\n\n  # Site-specific additions and overrides. See local/README for details.\n  include if exists <local/bwrap>\n}\n" > /etc/apparmor.d/bwrap
+printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile srt-bwrap /home/*/.local/share/Steam/**/srt-bwrap flags=(unconfined) {\n  userns,\n  capability setpcap,\n  /proc/*/uid_map rw,\n  /proc/*/gid_map rw,\n  /proc/*/setgroups rw,\n\n  # Prevent transition to the restrictive unprivileged_userns profile\n  change_profile -> unconfined,\n\n  # Site-specific additions and overrides\n  include if exists <local/srt-bwrap>\n}\n" > /etc/apparmor.d/srt-bwrap
+apparmor_parser -r /etc/apparmor.d/bwrap
+apparmor_parser -r /etc/apparmor.d/srt-bwrap
+systemctl restart apparmor
+# VM Max Map Count Fix ie: Horizon Zero Dawn..
+printf "%b" "vm.max_map_count=262144" > /etc/sysctl.d/99-vm.max_map_count.conf
+#End OS Fixes..
+#Injector-Replacer
+wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
+chmod 755 /opt/coffee-injector
+sleep 5
+exit

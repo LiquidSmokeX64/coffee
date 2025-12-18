@@ -1,0 +1,21 @@
+[Desktop Entry]
+Comment[en_US]=Connects to a network
+Comment=Connects to a network
+Categories=Qt;System;
+Exec=su -c 'coffee-filter' root
+Keywords=system;installer;
+GenericName[en_US]=CoffeeLinux Network Tool (Root)
+GenericName=CcoffeeLinux Network Tool (Root)
+Icon=security-medium
+Name[en_US]=CoffeeLinux Network Tool (Root)
+Name=CoffeeLinux Network Tool (Root)
+Path=/usr/local/bin
+StartupNotify=true
+Terminal=true
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
