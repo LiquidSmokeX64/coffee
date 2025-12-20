@@ -11,6 +11,10 @@ What sets CoffeeLinux apart from other distributions is its custom-crafted insta
 
 CoffeeLinux delivers the power of Arch with added ease and convenience. Join us and experience it for yourself.
 
+However, it should be noted that gaming performance can vary depending on the Desktop Environment you choose. This is because each uses its own compositors, some game better than others.
+Also the display rendering differences between Wayland or X11 play a factor to overall gaming horsepower.
+Which is why CoffeeLinux provides a short list of some of the most popular DEs to choose from. If one doest suit you, try another, it might work better for your machine.
+
 ----------------------------------
 
 **Features of CoffeeLinux:**
