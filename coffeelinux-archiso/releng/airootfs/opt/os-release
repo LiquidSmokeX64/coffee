@@ -1,6 +1,6 @@
 NAME="CoffeeLinux"
 PRETTY_NAME="Coffee Linux"
-VERSION_ID="35.0.0"
+VERSION_ID="35.1.0"
 VERSION_CODENAME="Grinder"
 ID="arch"
 BUILD_ID="Grinder"
