@@ -294,25 +294,25 @@ done
 while [ "$desktop01passcheck" != "1" ]; do
 clear
 printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
-printf "%b" "\n1 - Plasma\n"
+printf "%b" "\n1 - Cosmic\n"
 printf "%b" "\n2 - Gnome\n"
 printf "%b" "\n3 - Cinnamon\n"
-printf "%b" "\n4 - Cosmic\n"
+printf "%b" "\n4 - Plasma\n"
 printf "%b" "\n5 - Budgie\n"
 printf "%b" "\n6 - XFCE\n"
 read -r desktop01check
 case "$desktop01check" in
-  1) desktop01="plasma";;
+  1) desktop01="cosmic";;
   2) desktop01="gnome";;
   3) desktop01="cinnamon";;
-  4) desktop01="cosmic";;
+  4) desktop01="plasma";;
   5) desktop01="budgie";;
   6) desktop01="xfce";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
 if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ] && [ "$desktop01check" != "6" ]; then
 desktop01check=1
-desktop01="plasma"
+desktop01="cosmic"
 fi
 clear
 printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
@@ -734,10 +734,8 @@ if [ "$desktop0" = "cosmic" ]; then
 mkdir -p /mnt/usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
 mkdir -p /mnt/usr/share/backgrounds/coffee/
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
 fi
