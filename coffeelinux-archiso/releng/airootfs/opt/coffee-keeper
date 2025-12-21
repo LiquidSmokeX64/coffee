@@ -74,7 +74,7 @@ pacman -Rdd --noconfirm gnome-console
 pacman -Rdd --noconfirm gnome-text-editor
 pacman -Rdd --noconfirm gnome-photos
 pacman -Rdd --noconfirm geary
-pacman -Syy --noconfirm pantheon-photos
+pacman -Rdd --noconfirm nautilus
 mkdir -p /usr/share/backgrounds/coffee/
 rm -r /usr/share/backgrounds/linuxmint/default_background.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
