@@ -39,14 +39,8 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- **Multiple Desktop Environment Choices**: 
-   1. Cosmic. A very fast and unique Rust based environment by System 76. (Default)
-   2. Gnome. Simple and modern interface from Gnome.org.
-   3. Cinnamon. Sleek and stylish yet classic environment by Linux Mint.
-   4. Plasma. A cutting edge, looks and customization forward environment from KDE Neon.
-   5. Budgie. A gnome based environment featured in Solarus.
-   6. XFCE. A superlightweight environment featured in Manjaro.
-
+- **Plasma (KDE) Desktop Environment**: A fast and reliable desktop environment suitable for new users and verterans alike.
+   
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
    2. **VM Max Map Count Fix**: Prevents most CTDs in Horizon Zero Dawn Remastered, and helps with motion jitters in many games.
