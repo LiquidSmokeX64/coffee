@@ -501,10 +501,24 @@ fi
 done
 }
 
-#Main Menu
-while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ] && [ "$typecheck99" != "8" ]; do
+cosmic_fixer (){
 clear
-printf "%b" "\n#### Coffee Linux Manager Tool 2.1.1 ####\n"
+sleep 5
+printf "%b" "\nRestarting Cosmic App Library now...\n\n"
+pkill -f cosmic-app-library
+sleep 10
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck119
+printf "%b" "\nYou typed $endcheck119...\n\n"
+clear
+printf "%b" "\nExiting the program now...\n\n"
+sleep 5
+}
+
+#Main Menu
+while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ] && [ "$typecheck99" != "8" ] && [ "$typecheck99" != "9" ]; do
+clear
+printf "%b" "\n#### Coffee Linux Manager Tool 2.1.0 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 8)\n"
 printf "%b" "\n1 - System Updates\n"
@@ -514,7 +528,8 @@ printf "%b" "\n4 - CoffeeLinux Iso Maker\n"
 printf "%b" "\n5 - Pacman Switcher\n"
 printf "%b" "\n6 - Steam Library Fixer\n"
 printf "%b" "\n7 - Discord Updater Tool\n"
-printf "%b" "\n8 - Exit Coffee Manager.\n"
+printf "%b" "\n8 - Cosmic App Library Fixer.\n"
+printf "%b" "\n9 - Exit Coffee Manager.\n"
 read -r typecheck99
 case $typecheck99 in
  1) system_updater ;;
@@ -524,7 +539,8 @@ case $typecheck99 in
  5) pacman_switcher ;;
  6) steam_ntfs_fixer ;;
  7) discord_updater ;;
- 8) printf "%b" "\nExit selected. exiting now...\n" ;;
+ 8) cosmic_fixer ;;
+ 9) printf "%b" "\nExit selected. exiting now...\n" ;;
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
 clear
