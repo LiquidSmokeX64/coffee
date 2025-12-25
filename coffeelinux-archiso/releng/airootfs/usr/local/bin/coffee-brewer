@@ -1,6 +1,8 @@
 #!/bin/sh
 # CoffeeLinux Install Script
 #Set Variables..
+set_variables(){
+clear
 
 baseapps="iptables dbus-broker-units mkinitcpio texinfo base base-devel dhcpcd iwd linux-zen linux-firmware man-db man-pages nano networkmanager nmap sudo gobject-introspection"
 
@@ -33,12 +35,11 @@ amdgpudrivers="lib32-mesa lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-
 intelgpudrivers="mesa lib32-mesa xorg-server vulkan-intel lib32-vulkan-intel libva-intel-driver libva-utils vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader"
 
 gamingapps="discord mangohud lutris gamescope gamemode lib32-gamemode steam wine wine-gecko wine-mono winetricks"
+}
 
-configuration (){
-# Have user select all potential variables needed through a series of questions..
+set_pacman(){
 clear
 while [ "$branchpasscheck" != "1" ]; do
-clear
 printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
 printf "%b" "\n1 - Stable\n"
 printf "%b" "\n2 - Testing/Beta\n"
@@ -71,8 +72,11 @@ cp /opt/pacman-unstable.conf /etc/pacman.conf
 chmod 755 /etc/pacman.conf
 fi
 done
-while [ "$usercheck" != "1" ]; do
+}
+
+set_username(){
 clear
+while [ "$usercheck" != "1" ]; do
 printf "%b" "\nWould you like to set your username? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Username will be 'default')\n"
@@ -110,8 +114,11 @@ user01=$user00
 usercheck02=1
 fi
 done
-while [ "$userpasscheck" != "1" ]; do
+}
+
+set_user_password(){
 clear
+while [ "$userpasscheck" != "1" ]; do
 printf "%b" "\nWould you like to set your user password? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (default password will be 'coffee')\n"
@@ -149,8 +156,11 @@ userpass0=$userpass00
 userpasscheck=1
 fi
 done
-while [ "$rootpasscheck" != "1" ]; do
+}
+
+set_root_password(){
 clear
+while [ "$rootpasscheck" != "1" ]; do
 printf "%b" "\nWould you like to set your root user password? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Root user password will be 'coffee')\n"
@@ -188,8 +198,11 @@ userpass1=$userpass01
 rootpasscheck=1
 fi
 done
-while [ "$namepasscheck" != "1" ]; do
+}
+
+set_pc_name(){
 clear
+while [ "$namepasscheck" != "1" ]; do
 printf "%b" "\nWould you like to set your PC's Name? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (PC's name will be 'coffeelinux')\n"
@@ -229,8 +242,11 @@ namepasscheck00=1
 fi
 done
 hostname0=$name0
-while [ "$name2passcheck" != "1" ]; do
+}
+
+set_drive_name(){
 clear
+while [ "$name2passcheck" != "1" ]; do
 printf "%b" "\nWould you like to set your OS drive name? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (OS drive name will be 'coffeedisk')\n"
@@ -270,8 +286,11 @@ name2passcheck02=1
 fi
 done
 drivename0=$name1
-while [ "$drive01passcheck" != "1" ]; do
+}
+
+set_destination_device(){
 clear
+while [ "$drive01passcheck" != "1" ]; do
 printf "%b" "\nListing Storage Devices for you.\n"
 fdisk -l
 printf "%b" "\n"
@@ -308,21 +327,24 @@ case $drive01passcheck in
   *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-while [ "$desktop01passcheck" != "1" ]; do
+}
+
+set_desktop_environment(){
 clear
+while [ "$desktop01passcheck" != "1" ]; do
 printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
-printf "%b" "\n1 - Plasma\n"
+printf "%b" "\n1 - Cinnamon\n"
 printf "%b" "\n**Alternative Desktop Environments**\n"
 printf "%b" "\n2 - Gnome\n"
-printf "%b" "\n3 - Cinnamon\n"
+printf "%b" "\n3 - Plasma\n"
 printf "%b" "\n4 - Cosmic\n"
 printf "%b" "\n5 - Budgie\n"
 printf "%b" "\n6 - XFCE\n"
 read -r desktop01check
 case "$desktop01check" in
-  1) desktop01="plasma";;
+  1) desktop01="cinnamon";;
   2) desktop01="gnome";;
-  3) desktop01="cinnamon";;
+  3) desktop01="plasma";;
   4) desktop01="cosmic";;
   5) desktop01="budgie";;
   6) desktop01="xfce";;
@@ -330,7 +352,7 @@ case "$desktop01check" in
 esac
 if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ] && [ "$desktop01check" != "6" ]; then
 desktop01check=1
-desktop01="plasma"
+desktop01="cinnamon"
 fi
 clear
 printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
@@ -342,8 +364,11 @@ case $desktop01passcheck in
   *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-while [ "$cpu01passcheck" != "1" ]; do
+}
+
+set_cpu_type(){
 clear
+while [ "$cpu01passcheck" != "1" ]; do
 printf "%b" "\nWhat make of CPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
 printf "%b" "\n2 - Intel\n"
@@ -367,8 +392,11 @@ case $cpu01passcheck in
   *) printf "%b" "\nLet's retry\n" ;
 esac
 done
-while [ "$gpu01passcheck" != "1" ]; do
+}
+
+set_gpu_type(){
 clear
+while [ "$gpu01passcheck" != "1" ]; do
 printf "%b" "\nWhat make of GPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
 printf "%b" "\n2 - Nvidia\n"
@@ -421,8 +449,11 @@ case $nvsm01passcheck in
 esac
 done
 fi
-while [ "$grub01passcheck" != "1" ]; do
+}
+
+set_grub_type(){
 clear
+while [ "$grub01passcheck" != "1" ]; do
 printf "%b" "\nWhich version of GRUB do you need? (Default: 1)\n"
 printf "%b" "\n1 - GRUB UEFI version (modern hardware)\n"
 printf "%b" "\n2 - GRUB BIOS/MBR version (older hardware only)\n"
@@ -841,8 +872,8 @@ arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.servi
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable power-profiles-daemon
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
-
 }
+
 homedir_fix (){
 # Fix some Home Directory bugs..
 clear
@@ -853,6 +884,7 @@ command11finished="1"
 done
 command11finished="0"
 }
+
 setup_aur (){
 # Setup AUR apps for additional features...
 clear
@@ -904,6 +936,7 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 fi
 }
+
 lightdm_fix (){
 clear
 while [ "$command12finished" != "1" ]; do
@@ -917,6 +950,7 @@ command12finished="0"
 fi
 done
 }
+
 success_check (){
 cp /opt/os-release /mnt/etc/
 cp /opt/lsb-release /mnt/etc/
@@ -952,12 +986,24 @@ command15finished="1"
 done
 command15finished="0"
 }
+
 ## Main Menu...
 cp /opt/os-release /etc/
 cp /opt/lsb-release /etc/
 clear
 while [ "$configurationcheck00" != "1" ]; do
-configuration
+set_variables
+set_pacman
+set_username
+set_user_password
+set_root_password
+set_pc_name
+set_drive_name
+set_destination_device
+set_desktop_environment
+set_cpu_type
+set_gpu_type
+set_grub_type
 if [ "$questionspassed" = "yes" ]; then
 configurationcheck00="1"
 setup_drive
