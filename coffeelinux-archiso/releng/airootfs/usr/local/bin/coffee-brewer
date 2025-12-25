@@ -461,9 +461,6 @@ printf "%b" "\nGRUB for Nvidia selected.\n"
 # Safest option: Append parameters to grub.
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
 sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.modeset=1"/g' /mnt/etc/default/grub
-if [ "$desktop0" = "cinnamon" ]; then
-sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.fbdev=1"/g' /mnt/etc/default/grub
-fi
 fi
 if [ "$nvsm0" = "nvsm-on" ]; then
 printf "%b" "\nexport NVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /mnt/etc/skel/.bashrc
