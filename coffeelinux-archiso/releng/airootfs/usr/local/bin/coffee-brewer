@@ -1,22 +1,39 @@
 #!/bin/sh
 # CoffeeLinux Install Script
 #Set Variables..
+
 baseapps="iptables dbus-broker-units mkinitcpio texinfo base base-devel dhcpcd iwd linux-zen linux-firmware man-db man-pages nano networkmanager nmap sudo gobject-introspection"
+
 baseapps2="apparmor arch-install-scripts archinstall autogen b43-fwcutter bind boost boost-libs bootconfig brltty btrfs-progs clonezilla cloud-init cpupower cryptsetup darkhttpd dbus ddrescue device-mapper dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize freetype2 fsarchiver fuse2 fwupd fwupd-efi gettext git gpm gptfdisk grml-zsh-config hdparm help2man hyperv jfsutils kitty-terminfo libfido2 libisoburn libusb-compat linux-zen-headers lzop mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mokutil mtools net-tools nfs-utils nftables ntfs-3g ntfsprogs ntp nvme-cli open-iscsi open-vm-tools openconnect openssh openvpn partclone pcsclite perf ppp pptpclient python realtime-privileges refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools system-config-printer systemd systemd-resolvconf tcpdump terminus-font testdisk tmux tpm2-tss ttf-dejavu udev udftools usb_modeswitch usbmuxd usbutils vpnc wget wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd xz zram-generator zsh"
+
 basedesktop="alsa-firmware alsa-lib alsa-plugins alsa-utils archiso archivetools archlinux-wallpaper aria2 at-spi2-core bash-completion bash-language-server bluez-libs bolt cabextract chafa chrony clang cmake colord cronie cups dconf ddcutil directx-headers dkms egl-wayland elfutils expat extra-cmake-modules fastfetch firefox firewalld flatpak giflib gimp glfw glib2 glibc glslang gnome-disk-utility gtk4 gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-update-icon-cache gvfs gvfs-dnssd gvfs-nfs gvfs-smb hicolor-icon-theme hwinfo innoextract lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libx11 lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire-jack lib32-v4l-utils libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libpwquality libreoffice-fresh libunwind libva libva-utils libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm llvm llvm-libs lm_sensors make meson mpg123 ncurses nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm nullmailer onboard openal opencl-clhpp opencl-headers opencl-icd-loader opengl-man-pages pavucontrol phonon-qt6 phonon-qt6-vlc pipewire pipewire-alsa pipewire-jack pipewire-pulse polkit power-profiles-daemon pyside6 python-gobject python-mako qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard rust samba seahorse shellcheck showtime sof-firmware tesseract-data-eng ttf-liberation ttf-ubuntu-font-family ufw unrar unzip v4l-utils valgrind vlc vlc-plugins-all w3m wireplumber xdg-utils xfconf xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader yaml-cpp zenity zstd"
+
 kdedesktop="appstream-qt ark colord-kde kde-applications-meta kdevelop-python kgamma kpmcore kscreen kvantum kwin-x11 plasma plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace plasma-x11-session polkit-kde-agent polkit-qt6 sddm sddm-kcm xdg-desktop-portal-kde"
+
 gnomedesktop="epiphany evolution gdm gedit gnome gnome-color-manager gnome-extra gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-shell-extensions gnome-shell-extension-appindicator gnome-shell-extension-desktop-icons-ng gnome-terminal gnome-tweaks polkit-gnome papers pantheon-photos xdg-desktop-portal-gnome"
+
 cinnamondesktop="cinnamon cinnamon-translations epiphany evolution gedit gnome-builder gnome-calculator gnome-color-manager gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-photos gnome-software gnome-system-monitor gnome-terminal lightdm lightdm-slick-greeter pantheon-photos polkit-gnome rhythmbox xdg-desktop-portal-gnome"
+
 cosmicdesktop="cosmic cosmic-app-library cosmic-applets cosmic-bg cosmic-comp cosmic-greeter cosmic-icon-theme cosmic-idle cosmic-initial-setup cosmic-files cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-randr cosmic-player cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces geary gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus polkit-gnome shotwell system76-scheduler xdg-desktop-portal-cosmic"
+
 budgiedesktop="budgie budgie-backgrounds budgie-control-center budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver budgie-session nautilus geary gedit gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus gnome-terminal network-manager-applet materia-gtk-theme papirus-icon-theme polkit-gnome shotwell rhythmbox lightdm lightdm-gtk-greeter xdg-desktop-portal-gtk"
+
 xfcedesktop="catfish exo garcon orage parole ristretto geary gnome-keyring mousepad libxfce4ui lightdm lightdm-gtk-greeter polkit-gnome sound-theme-freedesktop thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler xdg-desktop-portal-gtk xfce4-artwork xfce4-appfinder xfce4-clipman-plugin xfce4-datetime-plugin xfce4-dict xfce4-mixer xfce4-notifyd xfce4-panel xfce4-panel-profiles xfce4-places-plugin xfce4-power-manager xfce4-pulseaudio-plugin xfce4-sensors-plugin xfce4-taskmanager xfce4-terminal xfce4-screenshooter xfce4-session xfce4-settings xfce4-screensaver xfce4-whiskermenu-plugin xfce4-wavelan-plugin xfdashboard xfdesktop xfwm4 xfwm4-themes"
+
 javaapps="jre-openjdk"
+
 amdcpu="amd-ucode"
+
 intelcpu="intel-ucode intel-speed-select"
+
 nvidiagpudrivers="nvidia-open-dkms lib32-nvidia-utils lib32-opencl-nvidia opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader vulkan-tools"
+
 amdgpudrivers="lib32-mesa lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader corectrl vulkan-tools lib32-opencl-mesa opencl-mesa"
+
 intelgpudrivers="mesa lib32-mesa xorg-server vulkan-intel lib32-vulkan-intel libva-intel-driver libva-utils vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader"
+
 gamingapps="discord mangohud lutris gamescope gamemode lib32-gamemode steam wine wine-gecko wine-mono winetricks"
+
 configuration (){
 # Have user select all potential variables needed through a series of questions..
 clear
@@ -430,6 +447,7 @@ case $grub01passcheck in
 esac
 done
 }
+
 setup_drive (){
 clear
 # Wipe the drive and reformat it for use..
@@ -457,6 +475,7 @@ command1finished="1"
 done
 command1finished="0"
 }
+
 setup_core (){
 # Install base level apps via pacstrap..
 while [ "$pacstrapfinished" != "1" ]; do
@@ -484,6 +503,7 @@ else
 arch-chroot /mnt pacman -Sy --noconfirm $amdcpu
 fi
 }
+
 setup_bootloader (){
 clear
 # Setup GRUB Bootloader and adjust it as needed based on GPU and type.
@@ -509,12 +529,14 @@ printf "%b" "\nexport NVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /mnt/etc/skel/.bashrc
 fi
 fi
 if [ "$grub0" = "grub-uefi" ]; then
+
 arch-chroot /mnt pacman -S --noconfirm efivar
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 EOT
+
 fi
 if [ "$grub0" = "grub-bios" ]; then
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
@@ -525,10 +547,12 @@ EOT
 arch-chroot /mnt grub-install --target=i386-pc $drive0
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 fi
+
 command8finished="1"
 done
 command8finished="0"
 }
+
 setup_locale (){
 clear
 # Preset Locale because it can be set in the OS.
@@ -536,6 +560,7 @@ while [ "$command2finished" != "1" ]; do
 rm -r /mnt/etc/locale.gen
 rm -r /mnt/etc/locale.conf
 rm -r /mnt/etc/vconsole.conf
+
 arch-chroot /mnt /bin/bash <<"EOT"
 ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 hwclock --systohc
@@ -545,12 +570,14 @@ printf "%b" "\nLANG=en_US.UTF-8" >> /etc/locale.conf
 export LANG=en_US.UTF-8
 locale-gen
 EOT
+
 cp --dereference /etc/resolv.conf /mnt/etc/
 clear
 command2finished="1"
 done
 command2finished="0"
 }
+
 setup_sudo (){
 # Add all users to passwordless sudo (helps during OS installation)..
 clear
@@ -561,7 +588,9 @@ arch-chroot /mnt /bin/bash <<"EOT"
 printf "%b\n%%"w"heel ALL=(ALL:ALL) NOPASSWD: ALL\n" "$*" > /etc/sudoers.d/wheel
 mkinitcpio -P
 EOT
+
 }
+
 setup_users (){
 while [ "$command3finished" != "1" ]; do
 clear
@@ -581,6 +610,7 @@ command3finished="1"
 done
 command3finished="0"
 }
+
 setup_desktop (){
 # Install Desktop Environment and Java...
 while [ "$command4finished" != "1" ]; do
@@ -648,11 +678,13 @@ fi
 command4finished="1"
 done
 }
+
 setup_java (){
 arch-chroot /mnt pacman -Sy --noconfirm $javaapps
 java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
 arch-chroot /mnt archlinux-java set "$java1"
 }
+
 setup_gpu (){
 # Setup GPU drivers...
 clear
@@ -672,6 +704,7 @@ arch-chroot /mnt pacman -Sy --noconfirm $intelgpudrivers
 fi
 clear
 }
+
 setup_gaming () {
 # Install Gaming Apps...
 clear
@@ -691,6 +724,7 @@ printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile srt-bwrap /hom
 arch-chroot /mnt apparmor_parser -r /etc/apparmor.d/bwrap
 arch-chroot /mnt apparmor_parser -r /etc/apparmor.d/srt-bwrap
 }
+
 setup_branding (){
 # Setup CoffeeLinux specific creations and such...
 clear
@@ -792,6 +826,7 @@ cp /opt/pacman-stable.conf /etc/pacman.conf
 chmod 755 /etc/pacman.conf
 fi
 }
+
 services_starter(){
 # Startup Services before rebooting.
 clear
@@ -806,8 +841,7 @@ arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.servi
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable power-profiles-daemon
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
-arch-chroot /mnt systemctl daemon-reload
-arch-chroot /mnt systemctl enable --now power-profiles-daemon
+
 }
 homedir_fix (){
 # Fix some Home Directory bugs..
