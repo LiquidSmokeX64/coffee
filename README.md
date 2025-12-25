@@ -40,10 +40,10 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
 - **Multiple Desktop Environment Choices**: 
-   1. Cinnamon. Sleek and stylish yet classic environment by Linux Mint.
+   1. Cosmic. A very fast and unique Rust based environment by System 76. (Default)
    2. Gnome. Simple and modern interface from Gnome.org.
    3. Plasma. A cutting edge, looks and customization forward environment from KDE Neon.
-   4. Cosmic. A very fast and unique Rust based environment by System 76.
+   4. Cinnamon. Sleek and stylish yet classic environment by Linux Mint.
    5. Budgie. A gnome based environment featured in Solarus.
    6. XFCE. A superlightweight environment featured in Manjaro.
 
