@@ -1,5 +1,5 @@
 [Wayland]
-InputMethod[$e]=/usr/share/applications/com.github.maliit.keyboard.desktop
+InputMethod[$e]=/usr/share/applications/onboard.desktop
 VirtualKeyboardEnabled=true
 
 [X11]
