@@ -225,7 +225,7 @@ sleep 5
 #Main Menu
 while [ "$typecheck08" != "1" ] && [ "$typecheck08" != "2" ] && [ "$typecheck08" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.2.0 ####\n"
+printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.2.1 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Create a CoffeeLinux Live GUI iso (Recommended for Handheld PCs)\n"
@@ -233,8 +233,8 @@ printf "%b" "\n2 - Create a CoffeeLinux Minimal iso (Shell Installer)\n"
 printf "%b" "\n3 - Exit the program\n"
 read -r typecheck08
 case $typecheck08 in
- 1) printf "%b" "\nCreate Iso selected. Running now..\n" ;;
- 2) printf "%b" "\nCreate Iso selected. Running now..\n" ;;
+ 1) printf "%b" "\nCreate Live GUI Iso selected. Running now..\n" ;;
+ 2) printf "%b" "\nCreate Minimal Iso selected. Running now..\n" ;;
  3) printf "%b" "\nExit selected.. Exiting now\n" ;;
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
@@ -247,6 +247,7 @@ git clone https://github.com/LiquidSmokeX64/coffee.git
 mkdir -p ~/coffee/releng/
 cp -R /usr/share/archiso/configs/releng/* ~/coffee/releng/
 cp -R ~/coffee/coffeelinux-archiso/releng/* ~/coffee/releng/
+cp -R ~/coffee/coffeelinux-liveiso-mod/releng/* ~/coffee/releng/
 sudo mkarchiso -v -w ~/work/ -o ~/out/ ~/coffee/releng/
 cp ~/out/coffee* ~/Documents/
 sudo rm -R ~/work/ ~/out/
@@ -268,7 +269,7 @@ sudo rm -R ~/work/ ~/out/
 git clone https://github.com/LiquidSmokeX64/coffee.git
 mkdir -p ~/coffee/releng/
 cp -R /usr/share/archiso/configs/releng/* ~/coffee/releng/
-cp -R ~/coffee/coffeelinux-archiso-minimal/releng/* ~/coffee/releng/
+cp -R ~/coffee/coffeelinux-archiso/releng/* ~/coffee/releng/
 sudo mkarchiso -v -w ~/work/ -o ~/out/ ~/coffee/releng/
 cp ~/out/coffee* ~/Documents/
 sudo rm -R ~/work/ ~/out/
