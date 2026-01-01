@@ -21,7 +21,7 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 
 - **Minimal or Live GUI Installer Isos**: Two ways to install depending on your PCs needs or personal preference. (LiveGUI version recommended for Handheld PCs)
                                           
-(Note: Live GUI Iso must be created manually via CoffeeLinux Manager due to Github upload size restrictions.)
+  (Note: Live GUI Iso must be created manually via CoffeeLinux Manager due to Github upload size restrictions.)
 
 - **Terminal/Shell script based OS Installation Procedure**:  Simple easy to use universal installer without all that flashy nonsense to cause problems or make mistakes.
 
@@ -42,7 +42,8 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 - **Installer Self-Updater**: Installer script, and misc files are auto-updated on the installation medium prior to use to always give the latest available version.
 
 - **SteamOS Mode**: A standalone SteamOS like experience utilizing Gamescope (like real SteamOS does).
-                    (Note: SteamOS Mode on Nvidia GPUs may be buggy due to Valve not supporting it yet.)
+                    
+  (Note: SteamOS Mode on Nvidia GPUs may be buggy due to Valve not supporting it yet.)
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
