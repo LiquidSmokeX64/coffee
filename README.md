@@ -43,7 +43,7 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 
 - **SteamOS Mode**: A standalone SteamOS like experience utilizing Gamescope (like real SteamOS does).
                     
-  (Note: SteamOS Mode on Nvidia GPUs may be buggy due to Valve not supporting it yet.)
+  (Note: SteamOS Mode on Nvidia GPUs may be buggy or not work at all due to Valve not officially supporting it yet.)
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
