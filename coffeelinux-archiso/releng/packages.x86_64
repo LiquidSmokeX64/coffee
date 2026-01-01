@@ -129,6 +129,9 @@ zsh
 
 #CoffeeLinux Extras
 wget
+gptfdisk
+gvfs
+networkmanager
 
 #CoffeeLinux Minimal Desktop
 appstream-qt
@@ -140,14 +143,12 @@ dos2unix
 gnome-disk-utility
 gnome-menus
 gnu-free-fonts
-gptfdisk
-gvfs
 iotop
 kate
 konsole
+kwin-x11
 libx11
 network-manager-applet
-networkmanager
 noto-fonts
 onboard
 p7zip
