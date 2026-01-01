@@ -8,7 +8,7 @@ baseapps="iptables dbus-broker-units mkinitcpio texinfo base base-devel dhcpcd i
 
 baseapps2="apparmor arch-install-scripts archinstall autogen b43-fwcutter bind boost boost-libs bootconfig brltty btrfs-progs clonezilla cloud-init cpupower cryptsetup darkhttpd dbus ddrescue device-mapper dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize freetype2 fsarchiver fuse2 fwupd fwupd-efi gettext git gpm gptfdisk grml-zsh-config hdparm help2man hyperv jfsutils kitty-terminfo libfido2 libisoburn libusb-compat linux-zen-headers lzop mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mokutil mtools net-tools nfs-utils nftables ntfs-3g ntfsprogs ntp nvme-cli open-iscsi open-vm-tools openconnect openssh openvpn partclone pcsclite perf ppp pptpclient python realtime-privileges refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools system-config-printer systemd systemd-resolvconf tcpdump terminus-font testdisk tmux tpm2-tss ttf-dejavu udev udftools usb_modeswitch usbmuxd usbutils vpnc wget wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd xz zram-generator zsh"
 
-basedesktop="alsa-firmware alsa-lib alsa-plugins alsa-utils archiso archivetools archlinux-wallpaper aria2 at-spi2-core bash-completion bash-language-server bluez-libs bolt cabextract chafa chrony clang cmake colord cronie cups dconf ddcutil directx-headers dkms egl-wayland elfutils expat extra-cmake-modules fastfetch firefox firewalld flatpak giflib gimp glfw glib2 glibc glslang gnome-disk-utility gtk4 gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-update-icon-cache gvfs gvfs-dnssd gvfs-nfs gvfs-smb hicolor-icon-theme hwinfo innoextract lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libx11 lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire-jack lib32-v4l-utils libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libpwquality libreoffice-fresh libunwind libva libva-utils libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm llvm llvm-libs lm_sensors make meson mpg123 ncurses nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm nullmailer openal opencl-clhpp opencl-headers opencl-icd-loader opengl-man-pages pavucontrol phonon-qt6 phonon-qt6-vlc pipewire pipewire-alsa pipewire-jack pipewire-pulse polkit power-profiles-daemon pyside6 python-gobject python-mako qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard rust samba seahorse shellcheck showtime sof-firmware tesseract-data-eng ttf-liberation ttf-ubuntu-font-family ufw unrar unzip v4l-utils valgrind vlc vlc-plugins-all w3m wireplumber xdg-utils xfconf xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader yaml-cpp zenity zstd"
+basedesktop="alsa-firmware alsa-lib alsa-plugins alsa-utils archiso archivetools archlinux-wallpaper aria2 at-spi2-core bash-completion bash-language-server bluez-libs bolt cabextract chafa chrony clang cmake colord cronie cups dconf ddcutil directx-headers dkms egl-wayland elfutils expat extra-cmake-modules fastfetch firefox firewalld flatpak giflib gimp glfw glib2 glibc glslang gnome-disk-utility gtk4 gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-update-icon-cache gvfs gvfs-dnssd gvfs-nfs gvfs-smb hicolor-icon-theme hwinfo innoextract lib32-giflib lib32-gnutls lib32-gst-plugins-base-libs lib32-libjpeg-turbo lib32-libldap lib32-libpng lib32-libpulse lib32-libva lib32-libx11 lib32-libxcomposite lib32-libxinerama lib32-libxslt lib32-mpg123 lib32-ncurses lib32-openal lib32-opencl-icd-loader lib32-pipewire-jack lib32-v4l-utils libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libpwquality libreoffice-fresh libunwind libva libva-utils libvdpau libx11 libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm llvm llvm-libs lm_sensors make maliit-keyboard meson mpg123 ncurses nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm nullmailer onboard openal opencl-clhpp opencl-headers opencl-icd-loader opengl-man-pages pavucontrol phonon-qt6 phonon-qt6-vlc pipewire pipewire-alsa pipewire-jack pipewire-pulse polkit power-profiles-daemon pyside6 python-gobject python-mako qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard rust samba seahorse shellcheck showtime sof-firmware tesseract-data-eng ttf-liberation ttf-ubuntu-font-family ufw unrar unzip v4l-utils valgrind vlc vlc-plugins-all w3m wireplumber xdg-utils xfconf xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader yaml-cpp zenity zstd"
 
 kdedesktop="appstream-qt ark colord-kde kde-applications-meta kdevelop-python kgamma kpmcore kscreen kvantum kwin-x11 plasma plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace plasma-x11-session polkit-kde-agent polkit-qt6 sddm sddm-kcm xdg-desktop-portal-kde"
 
@@ -329,9 +329,66 @@ esac
 done
 }
 
+set_handheld_mode (){
+while [ "$handheldpasscheck" != "1" ]; do
+clear
+printf "%b" "\nIs the destination device a Handheld PC (Default: 1)\n"
+printf "%b" "\n1 - No\n"
+printf "%b" "\n2 - Yes\n"
+read -r handheldcheck00
+case $handheldcheck00 in
+  1) handheldpass01="no-handheld" ;;
+  2) handheldpass01="yes-handheld" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
+esac
+if [ "$handheldcheck00" != "1" ] && [ "$handheldcheck00" != "2" ]; then
+handheldcheck00=1
+handheldpass01="no-handheld"
+fi
+clear
+printf "%b" "\nYou said $handheldpass01.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r handheldpasscheck
+case $handheldpasscheck in
+  1) handheldpass00=$handheldpass01 ;;
+  *) printf "%b" "\nLet's retry\n" ;
+esac
+done
+}
+
+set_steamos_mode (){
+while [ "$steamosmodepasscheck" != "1" ]; do
+clear
+printf "%b" "\nWould you like SteamOS Mode Installed (Default: 1)\n"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No\n"
+read -r steamosmodecheck00
+case $steamosmodecheck00 in
+  1) steamosmodepass01="steamosmode-on" ;;
+  2) steamosmodepass01="steamodmode-off" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
+esac
+if [ "$steamosmodecheck00" != "1" ] && [ "$steamosmodecheck00" != "2" ]; then
+steamosmodecheck00=1
+steamosmodepass01="steamosmode-on"
+fi
+clear
+printf "%b" "\nYou said $steamosmodepass01.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r steamosmodepasscheck
+case $steamosmodepasscheck in
+  1) steamosmodepass00=$steamosmodepass01 ;;
+  *) printf "%b" "\nLet's retry\n" ;
+esac
+done
+}
+
 set_desktop_environment(){
 clear
 while [ "$desktop01passcheck" != "1" ]; do
+if [ "$handheldpass00" != "yes-handheld" ]; then
 printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
 printf "%b" "\n1 - Cosmic\n"
 printf "%b" "\n**Alternative Desktop Environments**\n"
@@ -363,6 +420,13 @@ case $desktop01passcheck in
   1) desktop0=$desktop01;;
   *) printf "%b" "\nLet's retry\n" ;
 esac
+fi
+if [ "$handheldpass00" = "yes-handheld" ]; then
+desktop01check=1
+desktop01="plasma"
+desktop0=$desktop01
+desktop01passcheck=1
+fi
 done
 }
 
@@ -906,10 +970,22 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
 clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y minecraft-launcher
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
+clear
 # Add AUR System Extras..
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y pamac-aur
 clear
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y ast-firmware
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y mkinitcpio-firmware
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y text-engine-git
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y faudio
 clear
 # Add additional fix for XDG Directories..
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
@@ -949,6 +1025,58 @@ else
 command12finished="0"
 fi
 done
+}
+
+setup_steamos_mode (){
+clear
+if [ "$steamosmodepass00" = "steamosmode-on" ]; then
+wget -q -O /mnt/usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
+wget -q -O /mnt/usr/bin/steamos-select-branch https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-select-branch
+wget -q -O /mnt/usr/bin/steamos-session-select https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-session-select
+wget -q -O /mnt/usr/bin/jupiter-biosupdate https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/jupiter-biosupdate
+wget -q -O /mnt/usr/bin/gamescope-session https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session
+wget -q -O /mnt/usr/share/applications/SteamOS.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/SteamOS.desktop
+arch-chroot /mnt chmod +x /usr/bin/steamos-select-branch /usr/bin/steamos-update /usr/bin/steamos-session-select /usr/bin/gamescope-session /usr/bin/jupiter-biosupdate
+arch-chroot /mnt chmod 644 /usr/share/applications/SteamOS.desktop
+fi
+}
+
+setup_handheld_mode (){
+if [ "$handheldpass00" = "yes-handheld" ]; then
+# --- ROG Ally X Specific Configuration ---
+detect_ally_x() {
+if grep -q "ASUS ROG Ally X" /sys/devices/virtual/dmi/id/product_name; then
+ echo "ROG Ally X detected."
+ return 0
+else
+ echo "ROG Ally X not detected."
+ return 1
+fi
+}
+if detect_ally_x; then
+# Safest option: Append IOMMU parameters to grub.
+if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
+ sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 amd_iommu=on iommu=pt"/g' /mnt/etc/default/grub
+ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+fi
+fi
+# --- End ROG Ally X Specific Configuration ---
+#Autologin User by adding files to sddm and Kwin.
+rm -r /mnt/etc/sddm.conf.d/autologin.conf
+mkdir -p /mnt/etc/sddm.conf.d/
+printf "%b" "\n[General]\nDisplayServer=x11\n\n[Autologin]\nUser=$user00\nSession=plasmax11\nRelogin=true" > /mnt/etc/sddm.conf.d/autologin.conf
+rm -r /mnt/etc/sddm.conf.d/virtualkbd.conf
+printf "%b" "\n[General]\nInputMethod=onboard" > /mnt/etc/sddm.conf.d/virtualkbd.conf
+wget -q -O /mnt/etc/xdg/kwinrc https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/handheld/xdg/kwinrc
+arch-chroot /mnt chmod 755 /etc/xdg/kwinrc
+mkdir -p /mnt/etc/xdg/autostart/
+wget -q -O /mnt/etc/xdg/autostart/onboard.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/handheld/xdg/autostart/onboard.desktop
+chmod 755 /mnt/etc/xdg/autostart/onboard.desktop
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay -S --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y hhd adjustor hhd-ui
+arch-chroot /mnt systemctl enable hhd@$user01
+clear
+fi
 }
 
 success_check (){
@@ -1000,6 +1128,8 @@ set_root_password
 set_pc_name
 set_drive_name
 set_destination_device
+set_handheld_mode
+set_steamos_mode
 set_desktop_environment
 set_cpu_type
 set_gpu_type
@@ -1024,6 +1154,8 @@ setup_aur
 if [ "$desktop0" = "cinnamon" ]; then
   lightdm_fix
 fi
+setup_steamos_mode
+setup_handheld_mode
 success_check
 umount -R /mnt
 clear

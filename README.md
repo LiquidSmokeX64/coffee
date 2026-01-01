@@ -37,7 +37,11 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 
 - **Installer Self-Updater**: Installer script, and misc files are auto-updated on the installation medium prior to use to always give the latest available version.
 
+- **SteamOS Mode**: A standalone SteamOS like experience utilizing Gamescope (like real SteamOS does).
+
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
+
+- **Handheld PC Options**: Supports Handhelds with On-Screen Keyboard, adjustor (TPM), and HandHeld Device Daemon service installations.
 
 - **Multiple Desktop Environment Choices**: 
    1. Cosmic. A very fast and unique Rust based environment by System 76. (Default)
@@ -72,6 +76,8 @@ To get started, simply download the ISO from the *Releases* page, use Etcher to 
 5. Cosmic Desktop is still very new thus has some minor bugs it's developers need to resolve.
 6. Fullscreen Games (Steam) may not appear properly in Cosmic. 
   [Workaround: Use Gamescope. ie: "gamescope -h 1080 -H 1080 -r 144 -f -- %command%" launch option]
+  
+- **Note: LiveIso User password/s are "coffee"**
 ------------------------------------
 
 Like, Share, and Enjoy. 
