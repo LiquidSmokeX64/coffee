@@ -20,7 +20,8 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 **Features of CoffeeLinux:**
 
 - **Minimal or Live GUI Installer Isos**: Two ways to install depending on your PCs needs or personal preference. (LiveGUI version recommended for Handheld PCs)
-                                          (Note: Live GUI Iso must be created manually via CoffeeLinux Manager due to Github upload size restrictions.)
+                                          
+(Note: Live GUI Iso must be created manually via CoffeeLinux Manager due to Github upload size restrictions.)
 
 - **Terminal/Shell script based OS Installation Procedure**:  Simple easy to use universal installer without all that flashy nonsense to cause problems or make mistakes.
 
