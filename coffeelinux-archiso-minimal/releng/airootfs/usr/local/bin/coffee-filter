@@ -1,0 +1,147 @@
+#!/bin/sh
+# CoffeeLinux Network and Pacman Setup Tool
+networksetup (){
+#Network Setup Begins
+#Prepare pacman
+rfkill unblock all
+clear
+pacman-key --init
+clear
+pacman-key --populate archlinux
+clear
+while [ "$netcheck00" != "1" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "3" ]; do
+clear
+printf "%b" "\nWhat type of network do you have? (Default: 1)\n"
+printf "%b" "\n1 - Ethernet\n"
+printf "%b" "\n2 - Wifi\n"
+printf "%b" "\n3 - I have already connected to the internet\n"
+read -r netcheck00
+case $netcheck00 in
+ 1) netpass00=ethernet ;;
+ 2) netpass00=wifi ;;
+ 3) netpass00=ethernet ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+if [ "$netcheck00" != "3" ] && [ "$netcheck00" != "2" ] && [ "$netcheck00" != "1" ]; then
+netcheck00=3
+netpass00=ethernet
+fi
+done
+clear
+if [ "$netpass00" = "ethernet" ]; then
+printf "%b" "\nEthernet selected, or already connected, skipping this part.\n"
+fi
+if [ "$netpass00" = "wifi" ]; then
+while [ "$wifipasscheck" != "1" ]; do
+clear
+rfkill unblock all
+iwctl station list
+printf "%b" "\nSet your Wifi device ID. (Usually 'wlan0')\n"
+read -r wifi00
+clear
+printf "%b" "\nYou said $wifi00.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r wifipasscheck
+case $wifipasscheck in
+ 1) printf "%b" "\nPerfect\n" ;;
+ *) printf "%b" "\nLet's retry\n" ;;
+esac
+wifi0=$wifi00
+done
+fi
+clear
+if [ "$netpass00" = "wifi" ]; then
+while [ "$ssidcheck" != "1" ]; do
+clear
+iwctl station "$wifi0" get-networks
+printf "%b" "\nSet your Network SSID (Your network name).\n"
+read -r ssid00
+clear
+printf "%b" "\nYou said $ssid00.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r ssidcheck
+case $ssidcheck in
+ 1) printf "%b" "\nPerfect\n" ;;
+ *) printf "%b" "\nLet's retry\n" ;;
+esac
+ssid0=$ssid00
+done
+fi
+if [ "$netpass00" = "wifi" ]; then
+while [ "$netpasswordcheck" != "1" ]; do
+clear
+printf "%b" "\nEnter your Wifi password.\n"
+read -r netpassword00
+clear
+printf "%b" "\nYou said $netpassword00.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no\n"
+read -r netpasswordcheck
+case $netpasswordcheck in
+ 1) printf "%b" "\nPerfect\n" ;;
+ *) printf "%b" "\nLet's retry\n" ;;
+esac
+netpassword0=$netpassword00
+done
+fi
+networkready="yes"
+while [ "$command17finished" != "1" ]; do
+if [ "$networkready" = "yes" ]; then
+#- Set variables for iwctl
+clear
+if [ "$netpass00" = "wifi" ]; then
+rfkill unblock all
+printf "%b" "\n" | iwctl device $wifi0 set-property Powered on
+printf "%b" "\nPowering on wifi device for a minute..\n"
+sleep 5
+printf "%b" "\n" | iwctl --passphrase $netpassword0 station $wifi0 connect $ssid0
+fi
+printf "%b" "\nEnsuring we have a connection...\n"
+sleep 10
+clear
+wget -q -O /etc/pacman.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/pacman.conf
+chmod 755 /etc/pacman.conf
+clear
+wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf
+clear
+wget -q -O /opt/pacman-unstable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf
+clear
+printf "%b" "\nSetting intial pacman keyring up...\n"
+pacman-key --init
+pacman-key --populate archlinux
+printf "%b" "\nSet keys successfully..\n"
+sleep 5
+pacman -Syy --noconfirm archlinux-keyring
+clear
+# Replace coffee-barista ahead of time...
+wget -q -O /usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
+clear
+chmod 755 /usr/local/bin/coffee-barista
+fi
+command17finished="1"
+done
+command17finished="0"
+#Network Setup Finished
+}
+#Main Menu
+while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
+clear
+printf "%b" "\n#### Welcome to Coffee Linux Network Tool ####\n"
+printf "%b" "\n########## Filter v.1.2.2 ##########\n"
+printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
+printf "%b" "\n1 - Connect to a network\n"
+printf "%b" "\n2 - Exit to Barista.\n"
+read -r typecheck00
+case $typecheck00 in
+ 1) networksetup ;;
+ 2) printf "%b" "\nLet's move on then.\n" ;;
+ *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
+esac
+if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; then
+typecheck00=1
+networksetup
+fi
+done
+exit

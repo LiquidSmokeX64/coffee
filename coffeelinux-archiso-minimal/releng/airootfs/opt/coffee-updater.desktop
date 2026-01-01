@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Name=CoffeeLinux Manager
+Comment=Add/Remove Programs and System Updater
+Categories=System;
+Icon=security-medium
+Exec=/opt/coffee-updater
+Terminal=true
+Type=Application
+NoDisplay=false
