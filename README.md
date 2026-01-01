@@ -40,9 +40,9 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
 - **Multiple Desktop Environment Choices**: 
-   1. Plasma. A cutting edge, looks and customization forward environment from KDE Neon. (Default)
+   1. Cosmic. A very fast and unique Rust based environment by System 76. (Default)
    2. Gnome. Simple and modern interface from Gnome.org.
-   3. Cosmic. A very fast and unique Rust based environment by System 76.
+   3. Plasma. A cutting edge, looks and customization forward environment from KDE Neon.
    4. Cinnamon. Sleek and stylish yet classic environment by Linux Mint.
    5. Budgie. A gnome based environment featured in Solarus.
    6. XFCE. A superlightweight environment featured in Manjaro.
@@ -70,6 +70,7 @@ To get started, simply download the ISO from the *Releases* page, use Etcher to 
 3. Audio may be quieter than usual on some speakers / laptops.
 4. Steam Client on Gnome with Nvidia GPUs may have mouse input issues.
 5. Cosmic Desktop is still very new thus has some minor bugs it's developers need to resolve.
+6. Fullscreen Games (Steam) may not appear properly in Cosmic. [Workaround: "gamescope -f -- %command%" launch option]
 ------------------------------------
 
 Like, Share, and Enjoy. 
