@@ -5,7 +5,7 @@ iso_name="coffeelinux"
 iso_label="COFFEE_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 iso_publisher="Coffee Linux <https://archlinux.org>"
 iso_application="Coffee Linux Live/Rescue DVD"
-iso_version="36.1-Harvest"
+iso_version="36.2-Harvest"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux'

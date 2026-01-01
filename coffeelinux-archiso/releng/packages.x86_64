@@ -157,8 +157,8 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 plasma
+plasma-keyboard
 plasma-meta
-plasma-nm
 plasma-wayland-protocols
 plasma-workspace
 plasma-x11-session
