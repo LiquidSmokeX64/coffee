@@ -39,7 +39,7 @@ wget -q -O /usr/local/bin/coffee-brewer https://raw.githubusercontent.com/Liquid
 wget -q -O /usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
 #Set permissions
 chmod +x /usr/local/bin/coffee-barista /usr/local/bin/coffee-filter /opt/coffee-updater /opt/coffee-keeper /opt/coffee-injector
-chmod 644 chmod 644 /usr/share/applications/coffee-updater.desktop /usr/share/applications/coffee-filter.desktop
+chmod 644 /usr/share/applications/coffee-updater.desktop /usr/share/applications/coffee-filter.desktop
 chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
