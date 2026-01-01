@@ -70,7 +70,8 @@ To get started, simply download the ISO from the *Releases* page, use Etcher to 
 3. Audio may be quieter than usual on some speakers / laptops.
 4. Steam Client on Gnome with Nvidia GPUs may have mouse input issues.
 5. Cosmic Desktop is still very new thus has some minor bugs it's developers need to resolve.
-6. Fullscreen Games (Steam) may not appear properly in Cosmic. [Workaround: "gamescope -f -- %command%" launch option]
+6. Fullscreen Games (Steam) may not appear properly in Cosmic. 
+  [Workaround: Use Gamescope. ie: "gamescope -h 1080 -H 1080 -r 144 -f -- %command%" launch option]
 ------------------------------------
 
 Like, Share, and Enjoy. 
