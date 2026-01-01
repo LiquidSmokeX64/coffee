@@ -105,7 +105,6 @@ systemctl enable lightdm
 fi
 coffeedesktoptype02=$(basename -a /usr/share/wayland-sessions/cosmi*)
 if [ "$coffeedesktoptype02" = "cosmic.desktop" ]; then
-rm -r /usr/share/backgrounds/coffee/coffee-dark.jpg
 mkdir -p /usr/share/backgrounds/coffee/
 rm -r /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
