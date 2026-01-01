@@ -129,9 +129,6 @@ zsh
 
 #CoffeeLinux Extras
 wget
-gptfdisk
-gvfs
-networkmanager
 
 #CoffeeLinux Minimal Desktop
 appstream-qt
@@ -148,6 +145,7 @@ gvfs
 iotop
 kate
 konsole
+libx11
 network-manager-applet
 networkmanager
 noto-fonts
@@ -162,6 +160,7 @@ plasma-meta
 plasma-nm
 plasma-wayland-protocols
 plasma-workspace
+plasma-x11-session
 powertop
 qt6-virtualkeyboard
 sddm
