@@ -95,7 +95,7 @@ My Linux is the end of the distro war. It just needs some coffee to calm down.
 
 ------------------------------------
 
-[Join us on Discord]: (https://discord.gg/6Pz43wP)
+Join us on Discord: [Link] (https://discord.gg/6Pz43wP)
 
 We love hearing what you think of our project, 
 or have suggestions (polite ones)
