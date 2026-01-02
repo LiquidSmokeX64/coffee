@@ -1161,7 +1161,7 @@ setup_handheld_mode
 success_check
 umount -R /mnt
 clear
-printf "%b" "Let's proceed to reboot.\nPlease eject/remove the installation medium.\n"
+printf "%b" "Let's proceed to reboot.\nPlease eject/remove the installation medium in a moment..\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck00
 printf "%b" "\nYou typed $endcheck00...\n\n"

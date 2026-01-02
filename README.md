@@ -29,6 +29,10 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 
 - **ZRAM Enabled**: A more modern, efficient alternative to the default ZSWAP, giving back that precious Hard Drive space for more of what you want instead.
 
+- **Nvidia Smooth Motion Enabled**: When activated (by choice) Nvidia Smooth Motion will be enabled within the desktop session. (40xx+ Series GPU Required.)
+ 
+  (Note: Smooth Motion must be activated manually in Steam via launch option "NVPRESENT_ENABLE_SMOOTH_MOTION=1 %command%")
+
 - **QoL Packages**: Essential packages and dependencies, designed to optimize the experience across a wide range of applications and services. ie: Java, etc.
 
 - **Wayland Focused**: The software stack is built with Wayland functionality in mind (in most cases).
@@ -91,7 +95,7 @@ My Linux is the end of the distro war. It just needs some coffee to calm down.
 
 ------------------------------------
 
-Join us on Discord: [Discord Link] (https://discord.gg/6Pz43wP)
+[Join us on Discord]: https://discord.gg/6Pz43wP
 
 We love hearing what you think of our project, 
 or have suggestions (polite ones)
