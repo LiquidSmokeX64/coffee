@@ -963,22 +963,27 @@ yaydebugpackage1=$(basename /mnt/opt/yay-debug*)
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage1
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage1
 clear
+printf "%b" "Testing new feature begins..."
+sleep 20
 #Attempt to build yay from source..
 arch-chroot /mnt pacman -S --needed --noconfirm git base-devel
 #Remove old packages..
 arch-chroot /mnt rm -r /opt/yay*
 # Clone and build the packages...
-arch-chroot /mnt sudo -Su "$user01" git clone https://aur.archlinux.org/yay.git ~/yay
-arch-chroot /mnt sudo -Su "$user01" makepkg -s --dir ~/yay
+arch-chroot /mnt sudo -Su "$user01" mkdir -p /home/$user01/yaybuilder/
+arch-chroot /mnt sudo -Su "$user01" git clone https://aur.archlinux.org/yay.git /home/$user01/yaybuilder/yay
+arch-chroot /mnt sudo -Su "$user01" makepkg -s --dir /home/$user01/yaybuilder/yay
 #Copy package to be installed..
-arch-chroot /mnt cp -r /home/$user01/yay/yay* /opt/
+arch-chroot /mnt cp -r /home/$user01/yaybuilder/yay/yay* /opt/
 #Remove the build directory now..
-arch-chroot /mnt rm -r /home/$user01/yay
+arch-chroot /mnt rm -r /home/$user01/yaybuilder/
 #Install yay from fresh built packages..
 yaypackage=$(basename /mnt/opt/yay-1*)
 yaydebugpackage=$(basename /mnt/opt/yay-debug*)
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
+printf "%b" "Testing new feature ends..."
+sleep 20
 clear
 # Add AUR Gaming Extras..
 clear
