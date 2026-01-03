@@ -30,9 +30,7 @@ intelcpu="intel-ucode intel-speed-select"
 
 nvidiagpudrivers="nvidia-open-dkms lib32-nvidia-utils lib32-opencl-nvidia opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader vulkan-tools"
 
-amdgpudrivers="lib32-mesa lib32-libva-mesa-driver lib32-mesa-vdpau lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils mesa-vdpau vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader corectrl vulkan-tools lib32-opencl-mesa opencl-mesa"
-
-intelgpudrivers="mesa lib32-mesa xorg-server vulkan-intel lib32-vulkan-intel libva-intel-driver libva-utils vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader"
+amdgpudrivers="lib32-mesa lib32-libva-mesa-driver lib32-vulkan-mesa-layers libva-mesa-driver mesa mesa-utils vulkan-mesa-layers lib32-vulkan-radeon lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader lib32-vkd3d lib32-vulkan-icd-loader corectrl vulkan-tools lib32-opencl-mesa opencl-mesa"
 
 gamingapps="discord mangohud lutris gamescope gamemode lib32-gamemode steam wine wine-gecko wine-mono winetricks"
 }
@@ -40,6 +38,7 @@ gamingapps="discord mangohud lutris gamescope gamemode lib32-gamemode steam wine
 set_pacman(){
 clear
 while [ "$branchpasscheck" != "1" ]; do
+clear
 printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
 printf "%b" "\n1 - Stable\n"
 printf "%b" "\n2 - Testing/Beta\n"
@@ -52,6 +51,7 @@ esac
 if [ "$branchcheck00" != "1" ] && [ "$branchcheck00" != "2" ]; then
 branchcheck00=1
 branchpass01=stable
+clear
 fi
 clear
 printf "%b" "\nYou said $branchpass01.\nIs this correct?\n"
@@ -462,17 +462,15 @@ set_gpu_type(){
 clear
 while [ "$gpu01passcheck" != "1" ]; do
 printf "%b" "\nWhat make of GPU do you have? (Default: 1)\n"
-printf "%b" "\n1 - AMD\n"
+printf "%b" "\n1 - AMD (Virtual Machine GPUs too)\n"
 printf "%b" "\n2 - Nvidia\n"
-printf "%b" "\n3 - Intel\n"
 read -r gpucheck
 case $gpucheck in
   1) gpu01="amd" ;;
   2) gpu01="nvidia" ;;
-  3) gpu01="intel" ;;
   *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
 esac
-if [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ] && [ "$gpucheck" != "3" ]; then
+if [ "$gpucheck" != "1" ] && [ "$gpucheck" != "2" ]; then
 gpucheck=1
 gpu01="amd"
 fi
@@ -792,10 +790,6 @@ if [ "$gpu0" = "amd" ]; then
 printf "%b" "\nAMD GPU selected..\n"
 arch-chroot /mnt pacman -Sy --noconfirm $amdgpudrivers
 arch-chroot /mnt pacman -Sy --noconfirm corectrl
-fi
-if [ "$gpu0" = "intel" ]; then
-printf "%b" "\nIntel GPU selected..\n"
-arch-chroot /mnt pacman -Sy --noconfirm $intelgpudrivers
 fi
 clear
 }
