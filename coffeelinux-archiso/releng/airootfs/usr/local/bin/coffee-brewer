@@ -955,7 +955,26 @@ setup_aur (){
 clear
 printf "%b" "Installing yay for AUR support and some extra QoL applications...\nThis may fail due to servers having issues.\nIf it fails you will only be missing a few extras, nothing really important."
 sleep 15
+#Copy iso version of yay first...
 cp /opt/yay-* /mnt/opt/
+#Install yay from iso packages first..
+yaypackage1=$(basename /mnt/opt/yay-1*)
+yaydebugpackage1=$(basename /mnt/opt/yay-debug*)
+arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage1
+arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage1
+clear
+#Attempt to build yay from source..
+arch-chroot /mnt pacman -S --needed --noconfirm git base-devel
+#Remove old packages..
+arch-chroot /mnt rm -r /opt/yay*
+# Clone and build the packages...
+arch-chroot /mnt sudo -Su "$user01" git clone https://aur.archlinux.org/yay.git ~/yay
+arch-chroot /mnt sudo -Su "$user01" makepkg -s --dir ~/yay
+#Copy package to be installed..
+arch-chroot /mnt cp -r /home/$user01/yay/yay* /opt/
+#Remove the build directory now..
+arch-chroot /mnt rm -r /home/$user01/yay
+#Install yay from fresh built packages..
 yaypackage=$(basename /mnt/opt/yay-1*)
 yaydebugpackage=$(basename /mnt/opt/yay-debug*)
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage

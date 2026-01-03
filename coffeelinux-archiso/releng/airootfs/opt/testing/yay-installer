@@ -1,0 +1,30 @@
+#!/bin/sh
+
+#Coffee Auto-Yay-Installer tool
+printf "%b" "%\nTesting Starts..."
+sleep 15
+clear
+#Add Username here..
+UserName="Username_Here"
+#Prepare for installation.
+sudo pacman -S --needed git base-devel
+#Remove any old files...
+sudo rm -r ~/yay
+sudo rm -r yay
+sudo rm -r /opt/yay*
+# Clone and build the package...
+sudo -Su "$UserName" git clone https://aur.archlinux.org/yay.git ~/yay
+sudo -Su "$UserName" makepkg -s --dir ~/yay
+#Copy package to be installed..
+sudo cp -r /home/$UserName/yay/yay* /opt/
+#Remove the build directory now..
+sudo rm -r ~/yay
+#install the packages...
+yaypackage=$(basename /opt/yay-1*)
+yaydebugpackage=$(basename /opt/yay-debug*)
+sudo pacman -U --noconfirm /opt/$yaypackage
+sudo pacman -U --noconfirm /opt/$yaydebugpackage
+#Confirm all went well...
+printf "%b" "%\nTesting over..."
+sleep 20
+exit
