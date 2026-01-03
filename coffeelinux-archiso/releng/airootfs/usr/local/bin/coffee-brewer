@@ -943,46 +943,32 @@ done
 command11finished="0"
 }
 
-setup_aur (){
-# Setup AUR apps for additional features...
+setup_yay (){
+# Setup Yay...
 clear
-printf "%b" "Installing yay for AUR support and some extra QoL applications...\nThis may fail due to servers having issues.\nIf it fails you will only be missing a few extras, nothing really important."
+printf "%b" "Installing yay for AUR support and some extra QoL applications...\nThis may fail due to servers having issues.\nIf it fails you will only be missing a few extras, nothing really important.\n"
 sleep 15
-#Copy iso version of yay first...
-#cp /opt/yay-* /mnt/opt/
-#Install yay from iso packages first..
-#yaypackage1=$(basename /mnt/opt/yay-1*)
-#yaydebugpackage1=$(basename /mnt/opt/yay-debug*)
-#arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage1
-#arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage1
-#clear
-printf "%b" "Testing new feature begins...\n"
-sleep 20
 #Attempt to build yay from source..
 arch-chroot /mnt pacman -S --needed --noconfirm git base-devel
+clear
 #Remove old packages..
 rm -r /mnt/opt/yay-1*
 rm -r /mnt/opt/yay-debug*
+clear
 # Clone and build the packages...
 arch-chroot /mnt sudo -Su root mkdir -p /opt/yaybuilder/
 arch-chroot /mnt sudo -Su root chmod 777 /opt/yaybuilder
 arch-chroot /mnt sudo -Su root chmod u+x /opt/yaybuilder
 arch-chroot /mnt sudo -Su "$user01" git clone https://aur.archlinux.org/yay.git /opt/yaybuilder/yay
-arch-chroot /mnt sudo -Su "$user01" makepkg -si --noconfirm --dir /opt/yaybuilder/yay
-#Copy package to be installed..
-#rm -r /mnt/opt/yaybuilder/yay/*gz
-#cp -r /mnt/opt/yaybuilder/yay/yay-1* /opt/
-#cp -r /mnt/opt/yaybuilder/yay/yay-debug* /opt/
-#Remove the build directory now..
-rm -r /mnt/opt/yaybuilder/
-#Install yay from fresh built packages..
-#yaypackage=$(basename /mnt/opt/yay-1*)
-#yaydebugpackage=$(basename /mnt/opt/yay-debug*)
-#arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
-#arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
-printf "%b" "Testing new feature ends..\n."
-sleep 20
 clear
+arch-chroot /mnt sudo -Su "$user01" makepkg -si --noconfirm --dir /opt/yaybuilder/yay
+clear
+rm -r /mnt/opt/yaybuilder/
+clear
+}
+
+setup_aur (){
+
 # Add AUR Gaming Extras..
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protontricks
@@ -1174,6 +1160,7 @@ setup_gaming
 setup_branding
 services_starter
 homedir_fix
+setup_yay
 setup_aur
 if [ "$desktop0" = "cinnamon" ]; then
   lightdm_fix
