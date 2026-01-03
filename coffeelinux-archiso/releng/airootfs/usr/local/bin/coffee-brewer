@@ -963,7 +963,7 @@ yaydebugpackage1=$(basename /mnt/opt/yay-debug*)
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage1
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage1
 clear
-printf "%b" "Testing new feature begins..."
+printf "%b" "Testing new feature begins...\n"
 sleep 20
 #Attempt to build yay from source..
 arch-chroot /mnt pacman -S --needed --noconfirm git base-devel
@@ -982,7 +982,7 @@ yaypackage=$(basename /mnt/opt/yay-1*)
 yaydebugpackage=$(basename /mnt/opt/yay-debug*)
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaypackage
 arch-chroot /mnt pacman -U --noconfirm /opt/$yaydebugpackage
-printf "%b" "Testing new feature ends..."
+printf "%b" "Testing new feature ends..\n."
 sleep 20
 clear
 # Add AUR Gaming Extras..
