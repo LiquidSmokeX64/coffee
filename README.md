@@ -37,7 +37,7 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 
 - **Wayland Focused**: The software stack is built with Wayland functionality in mind (in most cases).
 
-- **GPU Friendly**: AMD or Nvidia GPUs welcome (Intel... maybe..)
+- **GPU Friendly**: AMD or Nvidia GPUs welcome.
 
 - **Gaming Ready**: Lutris, Wine, Steam, Heroic Games Launcher (Epic/GOG/Amazon), and Discord built in.
 
