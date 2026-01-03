@@ -1051,24 +1051,12 @@ fi
 
 setup_handheld_mode (){
 if [ "$handheldpass00" = "yes-handheld" ]; then
-# --- ROG Ally X Specific Configuration ---
-detect_ally_x() {
-if grep -q "ASUS ROG Ally X" /sys/devices/virtual/dmi/id/product_name; then
- echo "ROG Ally X detected."
- return 0
-else
- echo "ROG Ally X not detected."
- return 1
-fi
-}
-if detect_ally_x; then
+# --- Handheld Specific Configuration ---
 # Safest option: Append IOMMU parameters to grub.
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
  sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 amd_iommu=on iommu=pt"/g' /mnt/etc/default/grub
  arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 fi
-fi
-# --- End ROG Ally X Specific Configuration ---
 #Autologin User by adding files to sddm and Kwin.
 rm -r /mnt/etc/sddm.conf.d/autologin.conf
 mkdir -p /mnt/etc/sddm.conf.d/
