@@ -974,7 +974,7 @@ arch-chroot /mnt sudo -Su root mkdir -p /opt/yaybuilder/
 arch-chroot /mnt sudo -Su root chmod 777 /opt/yaybuilder
 arch-chroot /mnt sudo -Su root chmod u+x /opt/yaybuilder
 arch-chroot /mnt sudo -Su "$user01" git clone https://aur.archlinux.org/yay.git /opt/yaybuilder/yay
-arch-chroot /mnt sudo -Su "$user01" makepkg -s --dir /opt/yaybuilder/yay
+arch-chroot /mnt sudo -Su "$user01" makepkg -si --noconfirm --dir /opt/yaybuilder/yay
 #Copy package to be installed..
 rm -r /mnt/opt/yaybuilder/yay/*gz
 cp -r /mnt/opt/yaybuilder/yay/yay-1* /opt/
