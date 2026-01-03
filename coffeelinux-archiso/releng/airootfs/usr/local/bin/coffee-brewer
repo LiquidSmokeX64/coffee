@@ -36,7 +36,6 @@ gamingapps="discord mangohud lutris gamescope gamemode lib32-gamemode steam wine
 }
 
 set_pacman(){
-clear
 while [ "$branchpasscheck" != "1" ]; do
 clear
 printf "%b" "\nWhat type of installation do you want? (Default: 1)\n"
@@ -56,11 +55,11 @@ fi
 clear
 printf "%b" "\nYou said $branchpass01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r branchpasscheck
 case $branchpasscheck in
   1) branchpass00=$branchpass01 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 if [ "$branchpass00" = "stable" ]; then
 rm /etc/pacman.conf
@@ -75,8 +74,8 @@ done
 }
 
 set_username(){
-clear
 while [ "$usercheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like to set your username? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Username will be 'default')\n"
@@ -94,11 +93,11 @@ read -r user00
 clear
 printf "%b" "\nYou said $user00.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r usercheck
 case $usercheck in
   1) user01=$user00 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 fi
@@ -117,8 +116,8 @@ done
 }
 
 set_user_password(){
-clear
 while [ "$userpasscheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like to set your user password? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (default password will be 'coffee')\n"
@@ -136,11 +135,11 @@ read -r userpass00
 clear
 printf "%b" "\nYou said $userpass00.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r userpasscheck
 case $userpasscheck in
   1) userpass0=$userpass00 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 fi
@@ -159,8 +158,8 @@ done
 }
 
 set_root_password(){
-clear
 while [ "$rootpasscheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like to set your root user password? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (Root user password will be 'coffee')\n"
@@ -178,11 +177,11 @@ read -r userpass01
 clear
 printf "%b" "\nYou said $userpass01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r rootpasscheck
 case $rootpasscheck in
   1) userpass1=$userpass01 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 fi
@@ -201,8 +200,8 @@ done
 }
 
 set_pc_name(){
-clear
 while [ "$namepasscheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like to set your PC's Name? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (PC's name will be 'coffeelinux')\n"
@@ -221,11 +220,11 @@ read -r name00
 clear
 printf "%b" "\nYou said $name00.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r namepasscheck
 case $namepasscheck in
   1) name0=$name00 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 fi
@@ -245,8 +244,8 @@ hostname0=$name0
 }
 
 set_drive_name(){
-clear
 while [ "$name2passcheck" != "1" ]; do
+clear
 printf "%b" "\nWould you like to set your OS drive name? (Default: 2)\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No (OS drive name will be 'coffeedisk')\n"
@@ -265,11 +264,11 @@ read -r name01
 clear
 printf "%b" "\nYou said $name01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r name2passcheck
 case $name2passcheck in
   1) name1=$name01 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 fi
@@ -289,8 +288,8 @@ drivename0=$name1
 }
 
 set_destination_device(){
-clear
 while [ "$drive01passcheck" != "1" ]; do
+clear
 printf "%b" "\nListing Storage Devices for you.\n"
 fdisk -l
 printf "%b" "\n"
@@ -320,11 +319,11 @@ fi
 clear
 printf "%b" "\nYou said $drive01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r drive01passcheck
 case $drive01passcheck in
   1) drive0=$drive01; boot0=$boot01; system0=$system01 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 }
@@ -348,11 +347,11 @@ fi
 clear
 printf "%b" "\nYou said $handheldpass01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r handheldpasscheck
 case $handheldpasscheck in
   1) handheldpass00=$handheldpass01 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 }
@@ -376,18 +375,18 @@ fi
 clear
 printf "%b" "\nYou said $steamosmodepass01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r steamosmodepasscheck
 case $steamosmodepasscheck in
   1) steamosmodepass00=$steamosmodepass01 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 }
 
 set_desktop_environment(){
-clear
 while [ "$desktop01passcheck" != "1" ]; do
+clear
 if [ "$handheldpass00" != "yes-handheld" ]; then
 printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
 printf "%b" "\n1 - Plasma\n"
@@ -414,11 +413,11 @@ fi
 clear
 printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r desktop01passcheck
 case $desktop01passcheck in
   1) desktop0=$desktop01;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 fi
 if [ "$handheldpass00" = "yes-handheld" ]; then
@@ -431,8 +430,8 @@ done
 }
 
 set_cpu_type(){
-clear
 while [ "$cpu01passcheck" != "1" ]; do
+clear
 printf "%b" "\nWhat make of CPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD\n"
 printf "%b" "\n2 - Intel\n"
@@ -449,18 +448,18 @@ fi
 clear
 printf "%b" "\nYou said $cpu01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r cpu01passcheck
 case $cpu01passcheck in
   1) cpu0=$cpu01 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 }
 
 set_gpu_type(){
-clear
 while [ "$gpu01passcheck" != "1" ]; do
+clear
 printf "%b" "\nWhat make of GPU do you have? (Default: 1)\n"
 printf "%b" "\n1 - AMD (Virtual Machine GPUs too)\n"
 printf "%b" "\n2 - Nvidia\n"
@@ -477,11 +476,11 @@ fi
 clear
 printf "%b" "\nYou said $gpu01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r gpu01passcheck
 case $gpu01passcheck in
   1) gpu0=$gpu01 ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 if [ "$gpu0" = "nvidia" ]; then
@@ -503,19 +502,19 @@ fi
 clear
 printf "%b" "\nYou said $nvsm01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r nvsm01passcheck
 case $nvsm01passcheck in
   1) nvsm0=$nvsm01;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 fi
 }
 
 set_grub_type(){
-clear
 while [ "$grub01passcheck" != "1" ]; do
+clear
 printf "%b" "\nWhich version of GRUB do you need? (Default: 1)\n"
 printf "%b" "\n1 - GRUB UEFI version (modern hardware)\n"
 printf "%b" "\n2 - GRUB BIOS/MBR version (older hardware only)\n"
@@ -532,11 +531,11 @@ fi
 clear
 printf "%b" "\nYou said $grub01.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no\n"
+printf "%b" "\n2 - no (default)\n"
 read -r grub01passcheck
 case $grub01passcheck in
   1) grub0=$grub01; questionspassed="yes" ;;
-  *) printf "%b" "\nLet's retry\n" ;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
 }
