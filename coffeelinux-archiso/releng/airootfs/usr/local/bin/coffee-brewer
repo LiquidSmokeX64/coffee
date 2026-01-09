@@ -28,7 +28,7 @@ amdcpu="amd-ucode"
 
 intelcpu="intel-ucode intel-speed-select"
 
-nvidiagpudrivers="nvidia-open-dkms lib32-opencl-nvidia opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader vulkan-tools"
+nvidiagpudrivers="nvidia-open-dkms opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader vulkan-tools"
 
 amdgpudrivers="libva-mesa-driver mesa mesa-utils vulkan-mesa-layers vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader corectrl vulkan-tools opencl-mesa"
 
@@ -586,6 +586,7 @@ pacstrapfinished="1"
 done
 pacstrapfinished="0"
 }
+
 setup_cpu (){
 if [ "$cpu0" = "intel" ]; then
 # Add CPU specific packages here...
@@ -690,7 +691,7 @@ clear
 cp /etc/pacman.conf /mnt/etc/pacman.conf
 # Add users to the new OS...
 printf "%b" "$userpass1\n$userpass1\n" | arch-chroot /mnt passwd
-arch-chroot /mnt useradd -m -G wheel,audio,video,users $user01
+arch-chroot /mnt useradd -m -G wheel,audio,video,users,storage,power,rfkill,lp $user01
 printf "%b" "$userpass0\n$userpass0\n" | arch-chroot /mnt passwd $user01
 # Create localhost...
 printf "%b" "$hostname0\n" >> /mnt/etc/hostname
@@ -733,11 +734,14 @@ arch-chroot /mnt usermod -a -G realtime $user01
 arch-chroot /mnt usermod -a -G input $user01
 arch-chroot /mnt usermod -a -G plugdev $user01
 wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
-arch-chroot /mnt systemctl preset-all
-arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
-arch-chroot /mnt systemctl enable pipewire.service
-arch-chroot /mnt systemctl enable pipewire-pulse.service
-arch-chroot /mnt systemctl enable wireplumber.service 
+#arch-chroot /mnt systemctl preset-all
+#arch-chroot /mnt systemctl disable systemd-resolved systemd-networkd
+arch-chroot /mnt systemctl --global enable pipewire.service
+arch-chroot /mnt systemctl --global enable pipewire-pulse.service
+arch-chroot /mnt systemctl --global enable wireplumber.service
+arch-chroot /mnt sudo -Su "$user01" systemctl --user enable pipewire.service
+arch-chroot /mnt sudo -Su "$user01" systemctl --user enable pipewire-pulse.service
+arch-chroot /mnt sudo -Su "$user01" systemctl --user enable wireplumber.service 
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 arch-chroot /mnt systemctl daemon-reload
@@ -925,7 +929,12 @@ arch-chroot /mnt systemctl enable NetworkManager
 arch-chroot /mnt systemctl enable firewalld
 arch-chroot /mnt systemctl enable cups
 arch-chroot /mnt systemctl enable bluetooth.service
-arch-chroot /mnt systemctl --global enable pipewire.service pipewire-pulse.service wireplumber.service
+arch-chroot /mnt systemctl --global enable pipewire.service
+arch-chroot /mnt systemctl --global enable pipewire-pulse.service
+arch-chroot /mnt systemctl --global enable wireplumber.service
+arch-chroot /mnt sudo -Su "$user01" systemctl --user enable pipewire.service
+arch-chroot /mnt sudo -Su "$user01" systemctl --user enable pipewire-pulse.service
+arch-chroot /mnt sudo -Su "$user01" systemctl --user enable wireplumber.service 
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable power-profiles-daemon
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
