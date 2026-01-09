@@ -86,6 +86,8 @@ To get started, simply download the ISO from the *Releases* page, use Etcher to 
 5. Cosmic Desktop is still very new thus has some minor bugs it's developers need to resolve.
 6. Fullscreen Games (Steam) may not appear properly in Cosmic. 
   [Workaround: Use Gamescope. ie: "gamescope -h 1080 -H 1080 -r 144 -f -- %command%" launch option]
+7. The latest version of polkit is causing password input issues in Cosmic. 
+  [Workaround: Use "sudo downgrade polkit" and select version 125 to workaround this till the developers resolve this issue]
   
 - **Note: LiveIso User password/s are "coffee"**
 ------------------------------------

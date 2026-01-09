@@ -1,6 +1,6 @@
 NAME="CoffeeLinux"
 PRETTY_NAME="Coffee Linux"
-VERSION_ID="37.0"
+VERSION_ID="37.0.2"
 VERSION_CODENAME="Infusion"
 ID="arch"
 BUILD_ID="Infusion"
