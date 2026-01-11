@@ -844,18 +844,13 @@ arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
 fi
 if [ "$desktop0" = "cinnamon" ]; then
 mkdir -p /mnt/usr/share/backgrounds/coffee/
-mkdir -p /mnt/usr/share/backgrounds/linuxmint/
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/linuxmint/default_background.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
-arch-chroot /mnt sudo -Su root chmod 777 /usr/share/backgrounds/linuxmint/default_background.jpg
-arch-chroot /mnt sudo -Su root chmod 777 /usr/share/backgrounds/coffee/coffee-dark.jxl
-arch-chroot /mnt sudo -Su root chmod 777 /usr/share/backgrounds/coffee/coffee-light.jxl
-arch-chroot /mnt sudo -Su root chmod 777 /usr/share/backgrounds/coffee/
-arch-chroot /mnt sudo -Su root chmod u+x /usr/share/backgrounds/linuxmint/default_background.jpg
-arch-chroot /mnt sudo -Su root chmod u+x /usr/share/backgrounds/coffee/coffee-dark.jxl
-arch-chroot /mnt sudo -Su root chmod u+x /usr/share/backgrounds/coffee/coffee-light.jxl
-arch-chroot /mnt sudo -Su root chmod u+x /usr/share/backgrounds/coffee/
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/linuxmint/default_background.jpg
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
 fi
 if [ "$desktop0" = "cosmic" ]; then
 mkdir -p /mnt/usr/share/backgrounds/coffee/
