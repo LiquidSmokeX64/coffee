@@ -389,26 +389,26 @@ while [ "$desktop01passcheck" != "1" ]; do
 clear
 if [ "$handheldpass00" != "yes-handheld" ]; then
 printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
-printf "%b" "\n1 - Cosmic\n"
+printf "%b" "\n1 - Plasma\n"
 printf "%b" "\n**Alternative Desktop Environments (performance may vary..)**\n"
 printf "%b" "\n2 - Gnome\n"
-printf "%b" "\n3 - Cinnamon\n"
-printf "%b" "\n4 - Plasma\n"
+printf "%b" "\n3 - Cosmic\n"
+printf "%b" "\n4 - Cinnamon\n"
 printf "%b" "\n5 - Budgie\n"
 printf "%b" "\n6 - XFCE\n"
 read -r desktop01check
 case "$desktop01check" in
-  1) desktop01="cosmic";;
+  1) desktop01="plasma";;
   2) desktop01="gnome";;
-  3) desktop01="cinnamon";;
-  4) desktop01="plasma";;
+  3) desktop01="cosmic";;
+  4) desktop01="cinnamon";;
   5) desktop01="budgie";;
   6) desktop01="xfce";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
 if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ] && [ "$desktop01check" != "6" ]; then
 desktop01check=1
-desktop01="cosmic"
+desktop01="plasma"
 fi
 clear
 printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
