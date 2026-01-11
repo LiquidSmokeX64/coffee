@@ -1,6 +1,6 @@
 NAME="CoffeeLinux"
 PRETTY_NAME="Coffee Linux"
-VERSION_ID="38.1.0"
+VERSION_ID="38.1.1"
 VERSION_CODENAME="Joe"
 ID="arch"
 BUILD_ID="Joe"
