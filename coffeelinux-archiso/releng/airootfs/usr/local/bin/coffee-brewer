@@ -10,17 +10,13 @@ baseapps2="apparmor arch-install-scripts archinstall autogen b43-fwcutter bind b
 
 basedesktop="alsa-firmware alsa-lib alsa-plugins alsa-utils archiso archivetools archlinux-wallpaper aria2 at-spi2-core bash-completion bash-language-server bluez-libs bolt cabextract chafa chrony clang cmake colord cronie cups dconf ddcutil directx-headers dkms egl-wayland elfutils expat extra-cmake-modules fastfetch firefox firewalld flatpak giflib gimp glfw glib2 glibc glslang gnome-disk-utility gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-update-icon-cache gvfs gvfs-dnssd gvfs-nfs gvfs-smb hicolor-icon-theme hwinfo innoextract libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libpwquality libreoffice-fresh libunwind libva libva-utils libvdpau libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm llvm llvm-libs lm_sensors make meson mpg123 ncurses nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm nullmailer onboard openal opencl-clhpp opencl-headers opencl-icd-loader opengl-man-pages pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon pyside6 python-gobject python-mako rust samba shellcheck showtime sof-firmware tesseract-data-eng ttf-liberation ufw unrar unzip v4l-utils valgrind vlc vlc-plugins-all w3m wireplumber xdg-utils xfconf xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader yaml-cpp zenity zstd"
 
-kdedesktop="appstream-qt ark colord-kde kde-applications-meta kdevelop-python kgamma kpmcore kscreen kvantum kwin-x11 libx11 phonon-qt6 phonon-qt6-vlc plasma plasma-keyboard plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace plasma-x11-session polkit-kde-agent polkit-qt6 qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard sddm sddm-kcm xdg-desktop-portal-kde"
+kdedesktop="appstream-qt ark colord-kde kde-applications-meta kdevelop-python kgamma kpmcore kscreen kvantum phonon-qt6 phonon-qt6-vlc plasma plasma-keyboard plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace polkit-kde-agent polkit-qt6 qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard sddm sddm-kcm xdg-desktop-portal-kde"
 
 gnomedesktop="epiphany evolution gdm gedit gnome gnome-color-manager gnome-extra gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-terminal gtk4 polkit-gnome papers pantheon-photos xdg-desktop-portal-gnome"
 
-cinnamondesktop="cinnamon cinnamon-translations epiphany evolution gedit gnome-builder gnome-calculator gnome-color-manager gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-photos gnome-software gnome-system-monitor gnome-terminal gtk4 libx11 lightdm lightdm-slick-greeter pantheon-photos polkit-gnome rhythmbox xdg-desktop-portal-gnome"
+cinnamondesktop="cinnamon cinnamon-translations epiphany evolution gnome-text-editor gnome-console gnome-calculator gnome-color-manager gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-software gnome-system-monitor gnome-terminal gtk4 lightdm lightdm-slick-greeter pantheon-photos polkit-gnome rhythmbox xdg-desktop-portal-gnome"
 
 cosmicdesktop="cosmic cosmic-app-library cosmic-applets cosmic-bg cosmic-comp cosmic-greeter cosmic-icon-theme cosmic-idle cosmic-initial-setup cosmic-files cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-randr cosmic-player cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces geary gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus gtk4 polkit-gnome shotwell system76-scheduler xdg-desktop-portal-cosmic"
-
-budgiedesktop="budgie budgie-backgrounds budgie-control-center budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver budgie-session nautilus geary gedit gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus gnome-terminal gtk4 libx11 network-manager-applet materia-gtk-theme papirus-icon-theme polkit-gnome shotwell rhythmbox lightdm lightdm-gtk-greeter xdg-desktop-portal-gtk"
-
-xfcedesktop="catfish exo garcon orage parole ristretto geary gnome-keyring gtk4 libx11 mousepad libxfce4ui lightdm lightdm-gtk-greeter polkit-gnome sound-theme-freedesktop thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler xdg-desktop-portal-gtk xfce4-artwork xfce4-appfinder xfce4-clipman-plugin xfce4-datetime-plugin xfce4-dict xfce4-mixer xfce4-notifyd xfce4-panel xfce4-panel-profiles xfce4-places-plugin xfce4-power-manager xfce4-pulseaudio-plugin xfce4-sensors-plugin xfce4-taskmanager xfce4-terminal xfce4-screenshooter xfce4-session xfce4-settings xfce4-screensaver xfce4-whiskermenu-plugin xfce4-wavelan-plugin xfdashboard xfdesktop xfwm4 xfwm4-themes"
 
 javaapps="jre-openjdk"
 
@@ -393,20 +389,16 @@ printf "%b" "\n1 - Plasma\n"
 printf "%b" "\n**Alternative Desktop Environments (performance may vary..)**\n"
 printf "%b" "\n2 - Gnome\n"
 printf "%b" "\n3 - Cosmic\n"
-printf "%b" "\n4 - Cinnamon\n"
-printf "%b" "\n5 - Budgie\n"
-printf "%b" "\n6 - XFCE\n"
+printf "%b" "\n4 - Cinnamon\n""
 read -r desktop01check
 case "$desktop01check" in
   1) desktop01="plasma";;
   2) desktop01="gnome";;
   3) desktop01="cosmic";;
   4) desktop01="cinnamon";;
-  5) desktop01="budgie";;
-  6) desktop01="xfce";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n";
 esac
-if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ] && [ "$desktop01check" != "6" ]; then
+if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ]; then
 desktop01check=1
 desktop01="plasma"
 fi
@@ -719,17 +711,9 @@ fi
 if [ "$desktop01" = "cosmic" ];then
 selecteddesktop=$cosmicdesktop
 fi
-if [ "$desktop01" = "budgie" ];then
-selecteddesktop=$budgiedesktop
-fi
-if [ "$desktop01" = "xfce" ];then
-selecteddesktop=$xfcedesktop
-fi
 arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
 arch-chroot /mnt pacman -Rdd --noconfirm evince
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
 arch-chroot /mnt usermod -a -G realtime $user01
 arch-chroot /mnt usermod -a -G input $user01
 arch-chroot /mnt usermod -a -G plugdev $user01
@@ -744,6 +728,8 @@ arch-chroot /mnt systemctl daemon-reload
 if [ "$desktop01" = "plasma" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm kmix
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
 arch-chroot /mnt systemctl enable sddm
 fi
 if [ "$desktop01" = "gnome" ];then
@@ -752,19 +738,16 @@ fi
 if [ "$desktop01" = "cinnamon" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm nautilus
+arch-chroot /mnt pacman -Rdd --noconfirm gedit
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-terminal
+rm -r /mnt/usr/share/xsessions/
 arch-chroot /mnt systemctl enable lightdm
 fi
 if [ "$desktop01" = "cosmic" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
 arch-chroot /mnt systemctl enable cosmic-greeter.service
-fi
-if [ "$desktop01" = "budgie" ];then
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-arch-chroot /mnt systemctl enable lightdm
-fi
-if [ "$desktop01" = "xfce" ];then
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-arch-chroot /mnt systemctl enable lightdm
 fi
 command4finished="1"
 done
@@ -859,28 +842,6 @@ cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/cosmic/
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jpg
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
-fi
-if [ "$desktop0" = "budgie" ]; then
-mkdir -p /mnt/usr/share/backgrounds/coffee/
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/budgie/default.jpg
-mkdir -p /mnt/usr/share/backgrounds/coffee/
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
-cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/budgie/default.jpg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
-fi
-if [ "$desktop0" = "xfce" ]; then
-mkdir -p /mnt/usr/share/backgrounds/coffee/
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/xfce/xfce-x.svg
-mkdir -p /mnt/usr/share/backgrounds/coffee/
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
-cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/xfce/xfce-x.svg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
 fi
 #Setup CoffeeLinux Apps...
@@ -1169,7 +1130,6 @@ clear
 printf "%b" "Something went wrong.\nLets try again.\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck00
-printf "%b" "\nYou typed $endcheck00...\n\n"
 clear
 configurationcheck00="0"
 fi
