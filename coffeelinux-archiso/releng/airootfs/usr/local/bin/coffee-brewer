@@ -854,11 +854,11 @@ arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
 fi
 if [ "$desktop0" = "cosmic" ]; then
 mkdir -p /mnt/usr/share/backgrounds/coffee/
+rm -r /mnt/usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
-mkdir -p /mnt/usr/share/backgrounds/coffee/
-cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jpg
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
 fi
 if [ "$desktop0" = "budgie" ]; then
