@@ -35,7 +35,7 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 
 - **QoL Packages**: Essential packages and dependencies, designed to optimize the experience across a wide range of applications and services. ie: Java, etc.
 
-- **Wayland Focused**: The software list is built with Wayland as a priority. (No X11 sessions).
+- **Wayland Focused**: The software stack is built with Wayland functionality in mind (in most cases).
 
 - **GPU Friendly**: AMD or Nvidia GPUs welcome.
 
@@ -57,7 +57,9 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
    1. Plasma. A cutting edge, looks and customization forward environment from KDE Neon. (Default)
    2. Gnome. Simple and modern interface from Gnome.org.
    3. Cosmic. A very fast and unique Rust based environment by System 76.
-   4. Cinnamon. Sleek and stylish yet classic environment by Linux Mint. (Wayland session only)
+   4. Cinnamon. Sleek and stylish yet classic environment by Linux Mint.
+   5. Budgie. A gnome based environment featured in Solarus.
+   6. XFCE. A superlightweight environment featured in Manjaro.
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
@@ -79,12 +81,12 @@ To get started, simply download the ISO from the *Releases* page, use Etcher to 
 **Known Potential Issues**
 1. Updating via "pacman -Syu" command or through the Package Manager app on Cinnamon DE may break lightdm-slick-greeter. (Use the distro-specific updater in CoffeeLinux Manager)
 2. Sometimes the ISO does not wipe the destination drive properly (automated fdisk/hardware bug).
-3. Cinnamon Wayland is still experimental thus can have some bugs (Linux Mint team is woking on it slowly).
+3. Audio may be quieter than usual on some speakers / laptops.
 4. Steam Client on Gnome with Nvidia GPUs may have mouse input issues.
 5. Cosmic Desktop is still very new thus has some minor bugs it's developers need to resolve.
 6. Fullscreen Games (Steam) may not appear properly in Cosmic. 
   [Workaround: Use Gamescope. ie: "gamescope -h 1080 -H 1080 -r 144 -f -- %command%" launch option]
-7. The latest version of polkit (126) is causing password input issues in Cosmic. 
+7. The latest version of polkit is causing password input issues in Cosmic. 
   [Workaround: Use "sudo downgrade polkit" and select version 125 to workaround this till the developers resolve this issue]
   
 - **Note: LiveIso User password/s are "coffee"**
