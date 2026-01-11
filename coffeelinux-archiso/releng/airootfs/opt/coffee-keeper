@@ -96,14 +96,10 @@ rm -r /usr/share/backgrounds/linuxmint/default_background.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
 cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/coffee/coffee-dark.jxl
 cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/coffee-light.jxl
-chmod 777 /usr/share/backgrounds/linuxmint/default_background.jpg
-chmod 777 /usr/share/backgrounds/coffee/coffee-dark.jxl
-chmod 777 /usr/share/backgrounds/coffee/coffee-light.jxl
-chmod 777 /usr/share/backgrounds/coffee/
-chmod u+x /usr/share/backgrounds/linuxmint/default_background.jpg
-chmod u+x /usr/share/backgrounds/coffee/coffee-dark.jxl
-chmod u+x /usr/share/backgrounds/coffee/coffee-light.jxl
-chmod u+x /usr/share/backgrounds/coffee/
+chmod 755 /usr/share/backgrounds/linuxmint/default_background.jpg
+chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
+chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
+chmod 755 /usr/share/backgrounds/coffee/
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
 systemctl enable lightdm
 fi
