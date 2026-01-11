@@ -947,7 +947,7 @@ setup_yay (){
 # Setup Yay...
 clear
 printf "%b" "Installing yay for AUR support and some extra QoL applications...\nThis may fail due to servers having issues.\nIf it fails you will only be missing a few extras, nothing really important.\n"
-sleep 15
+sleep 5
 #Attempt to build yay from source..
 arch-chroot /mnt pacman -S --needed --noconfirm git base-devel
 clear
