@@ -618,7 +618,7 @@ sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 n
 fi
 fi
 if [ "$nvsm0" = "nvsm-on" ]; then
-printf "%b" "\nNVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /mnt/etc/environment
+printf "%b" "\nexport NVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /mnt/etc/skel/.bashrc
 fi
 fi
 if [ "$grub0" = "grub-uefi" ]; then
