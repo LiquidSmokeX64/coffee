@@ -68,9 +68,6 @@ fi
 coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/gnome.*)
 if [ "$coffeedesktoptype00" = "gnome.desktop" ]; then
 mkdir -p /usr/share/backgrounds/coffee/
-pacman -Rdd --noconfirm gnome-console
-pacman -Rdd --noconfirm gnome-text-editor
-pacman -Rdd --noconfirm gnome-photos
 pacman -Rdd --noconfirm geary
 pacman -Syy --noconfirm pantheon-photos
 cp -r /opt/backgrounds/coffee/* /usr/share/backgrounds/coffee/
@@ -114,18 +111,6 @@ chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
 chmod 755 /usr/share/backgrounds/coffee/
 pkill -f cosmic-app-library
 systemctl daemon-reload
-fi
-coffeedesktoptype02=$(basename -a /usr/share/xsessions/budg*)
-if [ "$coffeedesktoptype02" = "budgie-desktop.desktop" ]; then
-mkdir -p /usr/share/backgrounds/coffee/
-rm -r /usr/share/backgrounds/budgie/default.jpg
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/budgie/default.jpg
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/coffee/coffee-dark.jpg
-cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/coffee-light.jpg
-chmod 755 /usr/share/backgrounds/budgie/default.jpg
-chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
-chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
-chmod 755 /usr/share/backgrounds/coffee/
 fi
 coffeedesktoptype02=$(basename -a /usr/share/xsessions/xfc*)
 if [ "$coffeedesktoptype02" = "xfce.desktop" ]; then
