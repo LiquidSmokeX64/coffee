@@ -600,9 +600,6 @@ printf "%b" "\nGRUB for Nvidia selected.\n"
 # Safest option: Append parameters to grub.
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
 sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.modeset=1"/g' /mnt/etc/default/grub
-if [ "$desktop0" = "cinnamon" ]; then
-sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.fbdev=1"/g' /mnt/etc/default/grub
-fi
 fi
 if [ "$nvsm0" = "nvsm-on" ]; then
 printf "%b" "\nexport NVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /mnt/etc/skel/.bashrc
@@ -931,6 +928,11 @@ clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
+#Desktop specific entries go here...
+if [ "$desktop01" = "gnome" ]; then
+arch-chroot /mnt pacman -Rdd --noconfirm mutter
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-performance
+fi
 clear
 fi
 }

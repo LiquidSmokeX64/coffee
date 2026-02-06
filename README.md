@@ -57,9 +57,6 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
    1. Plasma. A cutting edge, looks and customization forward environment from KDE Neon. (Default)
    2. Gnome. Simple and modern interface from Gnome.org.
    3. Cosmic. A very fast and unique Rust based environment by System 76.
-   4. Cinnamon. Sleek and stylish yet classic environment by Linux Mint.
-   5. Budgie. A gnome based environment featured in Solarus.
-   6. XFCE. A superlightweight environment featured in Manjaro.
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
@@ -86,8 +83,6 @@ To get started, simply download the ISO from the *Releases* page, use Etcher to 
 5. Cosmic Desktop is still very new thus has some minor bugs it's developers need to resolve.
 6. Fullscreen Games (Steam) may not appear properly in Cosmic. 
   [Workaround: Use Gamescope. ie: "gamescope -h 1080 -H 1080 -r 144 -f -- %command%" launch option]
-7. The latest version of polkit is causing password input issues in Cosmic. 
-  [Workaround: Use "sudo downgrade polkit" and select version 125 to workaround this till the developers resolve this issue]
   
 - **Note: LiveIso User password/s are "coffee"**
 ------------------------------------
