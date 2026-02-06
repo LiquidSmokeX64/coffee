@@ -79,27 +79,6 @@ chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
 chmod 755 /usr/share/backgrounds/coffee/
 fi
-coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinnamon2*)
-if [ "$coffeedesktoptype02" = "cinnamon2d.desktop" ]; then
-pacman -Rdd --noconfirm gnome-session
-pacman -Rdd --noconfirm lightdm-settings
-pacman -Rdd --noconfirm gnome-console
-pacman -Rdd --noconfirm gnome-text-editor
-pacman -Rdd --noconfirm gnome-photos
-pacman -Rdd --noconfirm geary
-pacman -Rdd --noconfirm nautilus
-mkdir -p /usr/share/backgrounds/coffee/
-rm -r /usr/share/backgrounds/linuxmint/default_background.jpg
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/linuxmint/default_background.jpg
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/coffee/coffee-dark.jxl
-cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/coffee-light.jxl
-chmod 755 /usr/share/backgrounds/linuxmint/default_background.jpg
-chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
-chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
-chmod 755 /usr/share/backgrounds/coffee/
-printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
-systemctl enable lightdm
-fi
 coffeedesktoptype02=$(basename -a /usr/share/wayland-sessions/cosmi*)
 if [ "$coffeedesktoptype02" = "cosmic.desktop" ]; then
 mkdir -p /usr/share/backgrounds/coffee/
@@ -111,18 +90,6 @@ chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
 chmod 755 /usr/share/backgrounds/coffee/
 pkill -f cosmic-app-library
 systemctl daemon-reload
-fi
-coffeedesktoptype02=$(basename -a /usr/share/xsessions/xfc*)
-if [ "$coffeedesktoptype02" = "xfce.desktop" ]; then
-mkdir -p /usr/share/backgrounds/coffee/
-rm -r /usr/share/backgrounds/xfce/xfce-x.svg
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/xfce/xfce-x.svg
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /usr/share/backgrounds/coffee/coffee-dark.svg
-cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/coffee-light.svg
-chmod 755 /usr/share/backgrounds/xfce/xfce-x.svg
-chmod 755 /usr/share/backgrounds/coffee/coffee-dark.svg
-chmod 755 /usr/share/backgrounds/coffee/coffee-light.svg
-chmod 755 /usr/share/backgrounds/coffee/
 fi
 # OS Fixes..
 #DotNet 4.8 ie: Space Engineers..
