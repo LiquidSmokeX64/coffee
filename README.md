@@ -11,10 +11,6 @@ What sets CoffeeLinux apart from other distributions is its custom-crafted insta
 
 CoffeeLinux delivers the power of Arch with added ease and convenience. Join us and experience it for yourself.
 
-However, it should be noted that gaming performance can vary depending on the Desktop Environment you choose. This is because each uses its own compositors, some game better than others.
-Also the display rendering differences between Wayland or X11 play a factor to overall gaming horsepower.
-Which is why CoffeeLinux provides a short list of some of the most popular DEs to choose from. If one doest suit you, try another, it might work better for your machine.
-
 ----------------------------------
 
 **Features of CoffeeLinux:**
@@ -53,10 +49,7 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 
 - **Handheld PC Options**: Supports Handhelds with On-Screen Keyboard, adjustor (TPM), and HandHeld Device Daemon service installations.
 
-- **Multiple Desktop Environment Choices**: 
-   1. Plasma. A cutting edge, looks and customization forward environment from KDE Neon. (Default)
-   2. Gnome. Simple and modern interface from Gnome.org.
-   3. Cosmic. A very fast and unique Rust based environment by System 76.
+- **Plasma Desktop Environment**: 
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
@@ -76,13 +69,8 @@ Which is why CoffeeLinux provides a short list of some of the most popular DEs t
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 
 **Known Potential Issues**
-1. Updating via "pacman -Syu" command or through the Package Manager app on Cinnamon DE may break lightdm-slick-greeter. (Use the distro-specific updater in CoffeeLinux Manager)
-2. Sometimes the ISO does not wipe the destination drive properly (automated fdisk/hardware bug).
-3. Audio may be quieter than usual on some speakers / laptops.
-4. Steam Client on Gnome with Nvidia GPUs may have mouse input issues.
-5. Cosmic Desktop is still very new thus has some minor bugs it's developers need to resolve.
-6. Fullscreen Games (Steam) may not appear properly in Cosmic. 
-  [Workaround: Use Gamescope. ie: "gamescope -h 1080 -H 1080 -r 144 -f -- %command%" launch option]
+1. Sometimes the ISO does not wipe the destination drive properly (automated fdisk/hardware bug).
+2. Audio may be quieter than usual on some speakers / laptops.
   
 - **Note: LiveIso User password/s are "coffee"**
 ------------------------------------

@@ -12,10 +12,6 @@ basedesktop="alsa-firmware alsa-lib alsa-plugins alsa-utils archiso archivetools
 
 kdedesktop="appstream-qt ark colord-kde kde-applications-meta kdevelop-python kgamma kpmcore kscreen kvantum libx11 phonon-qt6 phonon-qt6-vlc plasma plasma-keyboard plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace polkit-kde-agent polkit-qt6 qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard sddm sddm-kcm xdg-desktop-portal-kde"
 
-gnomedesktop="epiphany evolution libx11 qt6 qt6-multimedia-ffmpeg phonon-qt6 phonon-qt6-vlc gnome-shell-extension-appindicator gdm gnome-text-editor gnome-builder gnome-console gnome gnome-color-manager gnome-extra gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gtk4 polkit-gnome papers gnome-photos xdg-desktop-portal-gnome"
-
-cosmicdesktop="cosmic cosmic-app-library cosmic-applets cosmic-bg cosmic-comp cosmic-greeter cosmic-icon-theme cosmic-idle cosmic-initial-setup cosmic-files cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-randr cosmic-player cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces geary gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus gtk4 polkit-gnome shotwell system76-scheduler xdg-desktop-portal-cosmic"
-
 javaapps="jre-openjdk"
 
 amdcpu="amd-ucode"
@@ -378,44 +374,6 @@ esac
 done
 }
 
-set_desktop_environment(){
-while [ "$desktop01passcheck" != "1" ]; do
-clear
-if [ "$handheldpass00" != "yes-handheld" ]; then
-printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
-printf "%b" "\n1 - Plasma\n"
-printf "%b" "\n2 - Gnome\n"
-printf "%b" "\n3 - Cosmic\n"
-read -r desktop01check
-case "$desktop01check" in
-  1) desktop01="plasma";;
-  2) desktop01="gnome";;
-  3) desktop01="cosmic";;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n";
-esac
-if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ]; then
-desktop01check=1
-desktop01="plasma"
-fi
-clear
-printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no (default)\n"
-read -r desktop01passcheck
-case $desktop01passcheck in
-  1) desktop0=$desktop01;;
-  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
-esac
-fi
-if [ "$handheldpass00" = "yes-handheld" ]; then
-desktop01check=1
-desktop01="plasma"
-desktop0=$desktop01
-desktop01passcheck=1
-fi
-done
-}
-
 set_cpu_type(){
 while [ "$cpu01passcheck" != "1" ]; do
 clear
@@ -691,16 +649,7 @@ command3finished="0"
 setup_desktop (){
 # Install Desktop Environment and Java...
 while [ "$command4finished" != "1" ]; do
-if [ "$desktop01" = "plasma" ];then
-selecteddesktop=$kdedesktop
-fi
-if [ "$desktop01" = "gnome" ];then
-selecteddesktop=$gnomedesktop
-fi
-if [ "$desktop01" = "cosmic" ];then
-selecteddesktop=$cosmicdesktop
-fi
-arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
+arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $kdedesktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
 arch-chroot /mnt pacman -Rdd --noconfirm evince
 arch-chroot /mnt usermod -a -G realtime $user01
@@ -714,18 +663,9 @@ arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 arch-chroot /mnt systemctl daemon-reload
 # Desktop Environment specific..
-if [ "$desktop01" = "plasma" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm kmix
 arch-chroot /mnt systemctl enable sddm
-fi
-if [ "$desktop01" = "gnome" ];then
-arch-chroot /mnt systemctl enable gdm
-fi
-if [ "$desktop01" = "cosmic" ];then
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-arch-chroot /mnt systemctl enable cosmic-greeter.service
-fi
 command4finished="1"
 done
 }
@@ -778,7 +718,6 @@ clear
 #Setup Wallpapers...
 wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-light.jpg
 wget -q -O /opt/backgrounds/coffee/coffee-dark.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-dark.jpg
-if [ "$desktop0" = "plasma" ]; then
 mkdir -p /mnt/usr/share/wallpapers/coffee/
 rm -r /mnt/usr/share/wallpapers/Next/contents/images/*
 rm -r /mnt/usr/share/wallpapers/Next/contents/images_dark/*
@@ -790,27 +729,6 @@ arch-chroot /mnt chmod 755 /usr/share/wallpapers/Next/contents/images_dark/5120x
 arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/coffee-light.jpg
 arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/coffee-dark.jpg
 arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/
-fi
-if [ "$desktop0" = "gnome" ]; then
-mkdir -p /mnt/usr/share/backgrounds/coffee/
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/gnome/adwaita-d.jxl
-cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/gnome/adwaita-l.jxl
-cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/coffee/
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/gnome/adwaita-l.jxl
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/gnome/adwaita-d.jxl
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
-fi
-if [ "$desktop0" = "cosmic" ]; then
-mkdir -p /mnt/usr/share/backgrounds/coffee/
-rm -r /mnt/usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
-cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
-cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jpg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/cosmic/tarantula_nebula_nasa_PIA23646.jpg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
-fi
 #Setup CoffeeLinux Apps...
 wget -q -O /mnt/usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
 wget -q -O /mnt/usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
@@ -928,11 +846,6 @@ clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
-#Desktop specific entries go here...
-if [ "$desktop01" = "gnome" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm mutter
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mutter-performance
-fi
 clear
 fi
 }
@@ -1029,7 +942,6 @@ set_drive_name
 set_destination_device
 set_handheld_mode
 set_steamos_mode
-set_desktop_environment
 set_cpu_type
 set_gpu_type
 set_grub_type
@@ -1067,7 +979,7 @@ clear
 printf "%b" "Something went wrong.\nLets try again.\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck00
-printf "%b" "\nYou typed $endcheck00...\n\n"
+printf "%b" "\n$endcheck00...\n\n"
 clear
 configurationcheck00="0"
 fi
