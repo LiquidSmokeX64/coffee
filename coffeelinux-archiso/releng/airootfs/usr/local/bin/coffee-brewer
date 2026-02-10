@@ -655,7 +655,7 @@ arch-chroot /mnt pacman -Rdd --noconfirm evince
 arch-chroot /mnt usermod -a -G realtime $user01
 arch-chroot /mnt usermod -a -G input $user01
 arch-chroot /mnt usermod -a -G plugdev $user01
-wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
+#wget -q -O /mnt/etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
 arch-chroot /mnt systemctl --global enable pipewire.service
 arch-chroot /mnt systemctl --global enable pipewire-pulse.service
 arch-chroot /mnt systemctl --global enable wireplumber.service
