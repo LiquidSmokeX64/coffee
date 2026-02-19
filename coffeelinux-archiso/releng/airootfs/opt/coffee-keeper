@@ -20,7 +20,6 @@ wget -q -O /usr/bin/gamescope-session https://raw.githubusercontent.com/LiquidSm
 chmod +x /usr/bin/gamescope-session
 fi
 #Replace CoffeeLinux specific files
-wget -q -O /etc/pipewire/pipewire.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pipewire/pipewire.conf
 wget -q -O /usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
 wget -q -O /usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
 wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf
