@@ -35,9 +35,9 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **GPU Friendly**: AMD or Nvidia GPUs welcome.
 
-- **Gaming Ready**: Lutris, Wine, Steam, Heroic Games Launcher (Epic/GOG/Amazon), and Discord built in.
+- **Gaming Ready**: Wine, Steam, Heroic Games Launcher (Epic/GOG/Amazon), and Discord built in.
 
-- **Gaming Tools**: DXVK-Bin, Winetricks, Protontricks, and ProtonUp-QT built in.
+- **Gaming Helper Tools**: DXVK-Bin, Winetricks, Protontricks, and ProtonUp-QT built in.
 
 - **Installer Self-Updater**: Installer script, and misc files are auto-updated on the installation medium prior to use to always give the latest available version.
 

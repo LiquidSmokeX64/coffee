@@ -22,7 +22,7 @@ nvidiagpudrivers="nvidia-open-dkms opencl-nvidia nvidia-utils nvidia-settings vu
 
 amdgpudrivers="libva-mesa-driver mesa mesa-utils vulkan-mesa-layers vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader corectrl vulkan-tools opencl-mesa"
 
-gamingapps="discord mangohud lutris gamescope gamemode steam wine wine-gecko wine-mono winetricks"
+gamingapps="discord mangohud gamescope gamemode steam wine wine-gecko wine-mono winetricks"
 }
 
 set_pacman(){
@@ -793,10 +793,6 @@ clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protonup-qt
 clear
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y minecraft-launcher
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y game-devices-udev
 clear
 # Add AUR System Extras..
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y pamac-aur
