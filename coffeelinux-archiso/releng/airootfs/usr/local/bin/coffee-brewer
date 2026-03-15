@@ -714,6 +714,7 @@ arch-chroot /mnt chmod 644 /etc/issue
 arch-chroot /mnt systemctl enable coffee-keeper.service
 cp /opt/os-release /mnt/etc/
 cp /opt/lsb-release /mnt/etc/
+rm -r /usr/share/wallpapers/coffee/*.jxl
 cp -r /opt/* /mnt/opt/
 cp /usr/local/bin/coffee-brewer /mnt/usr/local/bin/
 cp /usr/local/bin/coffee-barista /mnt/usr/local/bin/

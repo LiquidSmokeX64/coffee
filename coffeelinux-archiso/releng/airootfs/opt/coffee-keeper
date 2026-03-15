@@ -46,6 +46,7 @@ systemctl enable coffee-keeper.service
 #Fix the wallpapers if needed
 wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-light.jpg
 wget -q -O /opt/backgrounds/coffee/coffee-dark.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-dark.jpg
+rm -r /usr/share/wallpapers/coffee/*.jxl
 # Desktop environment adjustments
 pacman -Rdd --noconfirm gnome-session
 pacman -Rdd --noconfirm kmix
