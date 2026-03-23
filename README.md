@@ -47,7 +47,13 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- **Plasma Desktop Environment**: A cutting edge, looks and customization forward environment from KDE Neon.
+- **Multiple Desktop Environment Choices**: 
+   1. Plasma. A cutting edge, looks and customization forward environment from KDE Neon. (Default)
+   2. Gnome. Simple and modern interface from Gnome.org.
+   3. Cosmic. A very fast and unique Rust based environment by System 76.
+   4. Cinnamon. Sleek and stylish yet classic environment by Linux Mint.
+   5. Budgie. A gnome based environment featured in Solarus.
+   6. XFCE. A superlightweight environment featured in Manjaro.
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
