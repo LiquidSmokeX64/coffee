@@ -800,9 +800,10 @@ arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/
 fi
 if [ "$desktop0" = "gnome" ]; then
 mkdir -p /mnt/usr/share/backgrounds/coffee/
-cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/coffee/
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
-arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
 fi
 if [ "$desktop0" = "cinnamon" ]; then
