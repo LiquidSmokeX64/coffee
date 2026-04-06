@@ -15,11 +15,9 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 **Features of CoffeeLinux:**
 
-- **Minimal or Live GUI Installer Isos**: Two ways to install depending on your PCs needs or personal preference.
-                                          
-  (Note: Live GUI Iso must be created manually via CoffeeLinux Manager due to Github upload size restrictions.)
+- **Minimal Installer Iso**: Simple and effective. No need for a pretty GUI for this anyway.
 
-- **Terminal/Shell script based OS Installation Procedure**:  Simple easy to use universal installer without all that flashy nonsense to cause problems or make mistakes.
+- **Terminal/Shell script based OS Installation Procedure**: Simple easy to use universal installer without all that flashy nonsense to cause problems or make mistakes.
 
 - **Zen Kernel**: A more focused kernel to get the most out of your gaming experience.
 
@@ -47,13 +45,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- **Multiple Desktop Environment Choices**: 
-   1. Plasma. A cutting edge, looks and customization forward environment from KDE Neon. (Default)
-   2. Gnome. Simple and modern interface from Gnome.org.
-   3. Cosmic. A very fast and unique Rust based environment by System 76.
-   4. Cinnamon. Sleek and stylish yet classic environment by Linux Mint.
-   5. Budgie. A gnome based environment featured in Solarus.
-   6. XFCE. A superlightweight environment featured in Manjaro.
+- **Cosmic Desktop. A very fast and unique Rust based environment by System 76.**: 
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
@@ -66,16 +58,15 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
    2. **Application manager**: Basic installing and removal of software.
    3. **System information**: Fastfetch Info.
    4. **Coffee ISO Maker**: Easily create updated CoffeeLinux ISOs.
-   5. **Pacman Switcher**: Switch between stable and beta system update channels.
-   6. **Steam Library Fixer**: Resolve Steam library links on secondary NTFS drives.
-   7. **Discord Updater Tool**: Manually updates Discord app from official tar.gz file.
+   5. **Steam Library Fixer**: Resolve Steam library links on secondary NTFS drives.
+   6. **Discord Updater Tool**: Manually updates Discord app from official tar.gz file.
 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 
 **Known Potential Issues**
 1. Sometimes the ISO does not wipe the destination drive properly (scripted fdisk use bug).
-  
-- **Note: LiveIso User password/s are "coffee"**
+2. Network may need reconfiguring after first reboot of the installed system. (keyring/policykit issue)  
+
 ------------------------------------
 
 Like, Share, and Enjoy. 
