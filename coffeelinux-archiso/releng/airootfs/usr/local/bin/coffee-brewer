@@ -695,7 +695,8 @@ chmod 755 /etc/pacman.conf
 services_starter(){
 # Startup Services before rebooting.
 clear
-arch-chroot /mnt systemctl enable dhcpcd
+arch-chroot /mnt systemctl disable dhcpcd
+arch-chroot /mnt systemctl disable systemd-networkd
 arch-chroot /mnt systemctl enable cronie
 arch-chroot /mnt systemctl enable chronyd
 arch-chroot /mnt systemctl enable NetworkManager

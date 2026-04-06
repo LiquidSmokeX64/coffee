@@ -55,10 +55,11 @@ cp -r /opt/backgrounds/coffee/coffee-light.jpg /usr/share/backgrounds/coffee/cof
 chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
 chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
 chmod 755 /usr/share/backgrounds/coffee/
-pkill -f cosmic-app-library
-systemctl daemon-reload
 fi
 # OS Fixes..
+systemctl disable --now dhcpcd
+systemctl disable --now systend-networkd
+systemctl enable --now NetworkManager
 #DotNet 4.8 ie: Space Engineers..
 printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile bwrap /usr/bin/bwrap flags=(unconfined) {\n  userns,\n\n\n  # Site-specific additions and overrides. See local/README for details.\n  include if exists <local/bwrap>\n}\n" > /etc/apparmor.d/bwrap
 printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile srt-bwrap /home/*/.local/share/Steam/**/srt-bwrap flags=(unconfined) {\n  userns,\n  capability setpcap,\n  /proc/*/uid_map rw,\n  /proc/*/gid_map rw,\n  /proc/*/setgroups rw,\n\n  # Prevent transition to the restrictive unprivileged_userns profile\n  change_profile -> unconfined,\n\n  # Site-specific additions and overrides\n  include if exists <local/srt-bwrap>\n}\n" > /etc/apparmor.d/srt-bwrap
