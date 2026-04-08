@@ -475,15 +475,24 @@ systempartitiontype="23"
 printf "%b" "\nWiping Partitions\n"
 clear
 printf "%b" "g\nn\n1\n\n\nt\n23\nw\n" | fdisk -W always "$drive0"
+sleep 3
 clear
 printf "%b" "g\nn\n1\n\n\nt\n23\nw\n" | fdisk -W always "$drive0"
+sleep 3
 clear
 printf "%b" "g\nn\n1\n\n\nt\n23\nw\n" | fdisk -W always "$drive0"
+sleep 3
 clear
 printf "%b" "Formatting partitions..."
 printf "%b" "g\nn\n1\n\n+2G\nn\n2\n\n\nt\n1\n$bootpartitiontype\nt\n2\n$systempartitiontype\nw\n" | fdisk -W always "$drive0"
+sleep 3
+clear
 mkfs.vfat -F 32 "${drive0}${boot0}"
+sleep 3
+clear
 mkfs.xfs -f -L "$drivename0" "${drive0}${system0}"
+sleep 3
+clear
 printf "%b" "\nMounting Disks\n"
 mount "${drive0}${system0}" /mnt
 mkdir /mnt/boot
