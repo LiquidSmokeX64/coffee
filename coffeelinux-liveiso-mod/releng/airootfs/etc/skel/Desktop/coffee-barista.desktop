@@ -1,0 +1,21 @@
+[Desktop Entry]
+Comment[en_US]=Invokes the coffee-barista script
+Comment=Invokes the coffee-barista script
+Categories=Qt;System;
+Exec=su -c 'coffee-barista' root
+Keywords=system;installer;
+GenericName[en_US]=Install CoffeeLinux (Root)
+GenericName=Install CoffeeLinux (Root)
+Icon=security-medium
+Name[en_US]=Install CoffeeLinux (Root)
+Name=Install CoffeeLinux (Root)
+Path=/usr/local/bin
+StartupNotify=true
+Terminal=true
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
