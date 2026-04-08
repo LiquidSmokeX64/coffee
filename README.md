@@ -45,7 +45,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- **Cosmic Desktop. A very fast and unique Rust based environment by System 76.**: 
+- **Desktop Environment Selection. Choose from many popular DEs such as Plasma, Gnome, Cosmic, and more.**: 
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
@@ -64,8 +64,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
 
 **Known Potential Issues**
-1. Sometimes the ISO does not wipe the destination drive properly (scripted fdisk use bug).
-2. Network may need reconfiguring after first reboot of the installed system. (keyring/policykit issue)  
+1. Sometimes the ISO does not wipe the destination drive properly (scripted fdisk use bug). 
 
 ------------------------------------
 

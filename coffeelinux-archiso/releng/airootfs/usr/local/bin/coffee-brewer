@@ -10,7 +10,17 @@ baseapps2="apparmor arch-install-scripts archinstall autogen b43-fwcutter bind b
 
 basedesktop="alsa-firmware alsa-lib alsa-plugins alsa-utils archiso archivetools archlinux-wallpaper aria2 at-spi2-core bash-completion bash-language-server bluez-libs bolt cabextract chafa chrony clang cmake colord cronie cups dconf ddcutil directx-headers dkms egl-wayland elfutils expat extra-cmake-modules fastfetch firefox firewalld flatpak giflib gimp glfw glib2 glibc glslang gnome-disk-utility gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-update-icon-cache gvfs gvfs-dnssd gvfs-nfs gvfs-smb hicolor-icon-theme hwinfo innoextract libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libpwquality libreoffice-fresh libunwind libva libva-utils libvdpau libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm llvm llvm-libs lm_sensors make meson mpg123 ncurses nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm nullmailer onboard openal opencl-clhpp opencl-headers opencl-icd-loader opengl-man-pages pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon pyside6 python-gobject python-mako rust samba shellcheck showtime sof-firmware tesseract-data-eng ttf-liberation ufw unrar unzip v4l-utils valgrind vlc vlc-plugins-all w3m wireplumber xdg-utils xfconf xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader yaml-cpp zenity zstd"
 
+kdedesktop="appstream-qt ark colord-kde kde-applications-meta kdevelop-python kgamma kpmcore kscreen kvantum phonon-qt6 phonon-qt6-vlc plasma plasma-keyboard plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace polkit-kde-agent polkit-qt6 qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard xdg-desktop-portal-kde"
+
+gnomedesktop="epiphany evolution gdm gnome-text-editor gnome-keyring gnome gnome-color-manager gnome-extra gnome-firmware gnome-keyring gnome-shell-extension-appindicator gnome-mahjongg gnome-menus gnome-online-accounts gnome-console gtk4 polkit-gnome papers pantheon-photos xdg-desktop-portal-gnome"
+
+cinnamondesktop="cinnamon cinnamon-translations epiphany evolution gedit gnome-builder gnome-calculator gnome-color-manager gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-photos gnome-software gnome-system-monitor gnome-terminal gtk4 libx11 lightdm lightdm-slick-greeter pantheon-photos polkit-gnome rhythmbox xdg-desktop-portal-gnome"
+
 cosmicdesktop="cosmic cosmic-app-library cosmic-applets cosmic-bg cosmic-comp cosmic-greeter cosmic-icon-theme cosmic-idle cosmic-initial-setup cosmic-files cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-randr cosmic-player cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces geary gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus gtk4 polkit-gnome shotwell system76-scheduler xdg-desktop-portal-cosmic"
+
+budgiedesktop="budgie-backgrounds budgie-control-center budgie-desktop budgie-desktop-services budgie-desktop-view budgie-extras budgie-session nautilus geary gedit gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus gnome-terminal gtk4 network-manager-applet materia-gtk-theme papirus-icon-theme polkit-gnome shotwell rhythmbox lightdm lightdm-gtk-greeter wdisplays labwc xdg-desktop-portal-gtk xdg-desktop-portal-wlr grim slurp gtklock"
+
+xfcedesktop="catfish exo garcon orage parole ristretto geary gnome-keyring gtk4 libx11 mousepad libxfce4ui lightdm lightdm-gtk-greeter polkit-gnome sound-theme-freedesktop thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler xdg-desktop-portal-gtk xfce4-artwork xfce4-appfinder xfce4-clipman-plugin xfce4-datetime-plugin xfce4-dict xfce4-mixer xfce4-notifyd xfce4-panel xfce4-panel-profiles xfce4-places-plugin xfce4-power-manager xfce4-pulseaudio-plugin xfce4-sensors-plugin xfce4-taskmanager xfce4-terminal xfce4-screenshooter xfce4-session xfce4-settings xfce4-screensaver xfce4-whiskermenu-plugin xfce4-wavelan-plugin xfdesktop xfwm4 xfwm4-themes"
 
 javaapps="jre-openjdk"
 
@@ -18,7 +28,7 @@ amdcpu="amd-ucode"
 
 intelcpu="intel-ucode intel-speed-select"
 
-nvidiagpudrivers="nvidia-open-dkms opencl-nvidia nvidia-utils lib32--nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader vulkan-tools"
+nvidiagpudrivers="lib32-nvidia-utils nvidia-open-dkms opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader vulkan-tools"
 
 amdgpudrivers="libva-mesa-driver mesa mesa-utils vulkan-mesa-layers lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader corectrl vulkan-tools opencl-mesa"
 
@@ -308,6 +318,43 @@ esac
 done
 }
 
+set_desktop_environment(){
+while [ "$desktop01passcheck" != "1" ]; do
+clear
+printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
+printf "%b" "\n1 - Plasma\n"
+printf "%b" "\n**Alternative Desktop Environments (performance may vary..)**\n"
+printf "%b" "\n2 - Gnome\n"
+printf "%b" "\n3 - Cosmic\n"
+printf "%b" "\n4 - Cinnamon\n"
+printf "%b" "\n5 - Budgie\n"
+printf "%b" "\n6 - XFCE\n"
+read -r desktop01check
+case "$desktop01check" in
+  1) desktop01="plasma";;
+  2) desktop01="gnome";;
+  3) desktop01="cosmic";;
+  4) desktop01="cinnamon";;
+  5) desktop01="budgie";;
+  6) desktop01="xfce";;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n";
+esac
+if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ] && [ "$desktop01check" != "6" ]; then
+desktop01check=1
+desktop01="plasma"
+fi
+clear
+printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no (default)\n"
+read -r desktop01passcheck
+case $desktop01passcheck in
+  1) desktop0=$desktop01;;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
+esac
+done
+}
+
 set_cpu_type(){
 while [ "$cpu01passcheck" != "1" ]; do
 clear
@@ -586,7 +633,24 @@ command3finished="0"
 setup_desktop (){
 # Install Desktop Environment and Java...
 while [ "$command4finished" != "1" ]; do
+if [ "$desktop01" = "plasma" ];then
+selecteddesktop=$kdedesktop
+fi
+if [ "$desktop01" = "gnome" ];then
+selecteddesktop=$gnomedesktop
+fi
+if [ "$desktop01" = "cinnamon" ];then
+selecteddesktop=$cinnamondesktop
+fi
+if [ "$desktop01" = "cosmic" ];then
 selecteddesktop=$cosmicdesktop
+fi
+if [ "$desktop01" = "budgie" ];then
+selecteddesktop=$budgiedesktop
+fi
+if [ "$desktop01" = "xfce" ];then
+selecteddesktop=$xfcedesktop
+fi
 arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
 arch-chroot /mnt pacman -Rdd --noconfirm evince
@@ -600,11 +664,42 @@ arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 arch-chroot /mnt systemctl daemon-reload
 # Desktop Environment specific..
+if [ "$desktop01" = "plasma" ];then
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
+arch-chroot /mnt pacman -Rdd --noconfirm kmix
+arch-chroot /mnt systemctl enable plasmalogin
+fi
+if [ "$desktop01" = "gnome" ];then
+arch-chroot /mnt pacman -Rdd --noconfirm gedit
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-terminal
+arch-chroot /mnt systemctl enable gdm
+fi
+if [ "$desktop01" = "cinnamon" ];then
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+arch-chroot /mnt pacman -Rdd --noconfirm nautilus
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
+arch-chroot /mnt systemctl enable lightdm
+fi
 if [ "$desktop01" = "cosmic" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
 arch-chroot /mnt systemctl enable cosmic-greeter.service
+fi
+if [ "$desktop01" = "budgie" ];then
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
+arch-chroot /mnt systemctl enable lightdm
+fi
+if [ "$desktop01" = "xfce" ];then
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
+arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
+arch-chroot /mnt systemctl enable lightdm
 fi
 command4finished="1"
 done
@@ -658,7 +753,43 @@ clear
 #Setup Wallpapers...
 wget -q -O /opt/backgrounds/coffee/coffee-light.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-light.jpg
 wget -q -O /opt/backgrounds/coffee/coffee-dark.jpg https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/backgrounds/coffee/coffee-dark.jpg
+if [ "$desktop0" = "plasma" ]; then
+mkdir -p /mnt/usr/share/wallpapers/coffee/
+cp -r /opt/backgrounds/coffee/* /mnt/usr/share/wallpapers/coffee/
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/coffee-dark.jpg
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/coffee-light.jpg
+arch-chroot /mnt chmod 755 /usr/share/wallpapers/coffee/
+fi
+if [ "$desktop0" = "gnome" ]; then
+mkdir -p /mnt/usr/share/backgrounds/coffee/
+cp -r /opt/backgrounds/coffee/coffee-dark.jpg /mnt/usr/share/backgrounds/coffee/coffee-dark.jxl
+cp -r /opt/backgrounds/coffee/coffee-light.jpg /mnt/usr/share/backgrounds/coffee/coffee-light.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jxl
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
+fi
+if [ "$desktop0" = "cinnamon" ]; then
+mkdir -p /mnt/usr/share/backgrounds/coffee/
+cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/coffee/
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
+fi
 if [ "$desktop0" = "cosmic" ]; then
+mkdir -p /mnt/usr/share/backgrounds/coffee/
+cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/coffee/
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
+fi
+if [ "$desktop0" = "budgie" ]; then
+mkdir -p /mnt/usr/share/backgrounds/coffee/
+cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/coffee/
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-light.jpg
+arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/
+fi
+if [ "$desktop0" = "xfce" ]; then
 mkdir -p /mnt/usr/share/backgrounds/coffee/
 cp -r /opt/backgrounds/coffee/* /mnt/usr/share/backgrounds/coffee/
 arch-chroot /mnt chmod 755 /usr/share/backgrounds/coffee/coffee-dark.jpg
@@ -683,12 +814,10 @@ arch-chroot /mnt systemctl enable coffee-keeper.service
 cp /opt/os-release /mnt/etc/
 cp /opt/lsb-release /mnt/etc/
 rm -r /usr/share/wallpapers/coffee/*.jxl
-rm -r /usr/share/backgrounds/coffee/*.jxl
 cp -r /opt/* /mnt/opt/
 cp /usr/local/bin/coffee-brewer /mnt/usr/local/bin/
 cp /usr/local/bin/coffee-barista /mnt/usr/local/bin/
 arch-chroot /mnt chmod +x /usr/local/bin/coffee-brewer /usr/local/bin/coffee-barista
-cp /etc/pacman.conf /mnt/etc/pacman.conf
 chmod 755 /etc/pacman.conf
 }
 
@@ -696,7 +825,6 @@ services_starter(){
 # Startup Services before rebooting.
 clear
 arch-chroot /mnt systemctl disable dhcpcd
-arch-chroot /mnt systemctl disable systemd-networkd
 arch-chroot /mnt systemctl enable cronie
 arch-chroot /mnt systemctl enable chronyd
 arch-chroot /mnt systemctl enable NetworkManager
@@ -774,6 +902,23 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
 clear
+# Additional setup for Cinnamon DE
+if [ "$desktop0" = "cinnamon" ]; then
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
+clear
+printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
+clear
+printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
+clear
+printf "%b" "5\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
+clear
+fi
 }
 
 setup_steamos_mode (){
@@ -788,6 +933,20 @@ wget -q -O /mnt/usr/share/applications/SteamOS.desktop https://raw.githubusercon
 arch-chroot /mnt chmod +x /usr/bin/steamos-select-branch /usr/bin/steamos-update /usr/bin/steamos-session-select /usr/bin/gamescope-session /usr/bin/jupiter-biosupdate
 arch-chroot /mnt chmod 644 /usr/share/applications/SteamOS.desktop
 fi
+}
+
+lightdm_fix (){
+clear
+while [ "$command12finished" != "1" ]; do
+if [ "$questionspassed" = "yes" ]; then
+arch-chroot /mnt pacman -Rdd --noconfirm lightdm-settings
+printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /mnt/etc/lightdm/lightdm.conf
+arch-chroot /mnt systemctl enable lightdm
+command12finished="1"
+else
+command12finished="0"
+fi
+done
 }
 
 success_check (){
@@ -806,14 +965,8 @@ case $rebootcheck in
   *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
 if [ "$rebootcheck" = "2" ]; then
-  if [ "$branchpass00" = "stable" ]; then
-  cp /opt/pacman-stable.conf /etc/pacman.conf
-  chmod 755 /etc/pacman.conf
-  fi
-  if [ "$branchpass00" = "beta" ]; then
-  cp /opt/pacman-stable.conf /etc/pacman.conf
-  chmod 755 /etc/pacman.conf
-  fi
+chmod 755 /etc/pacman.conf
+fi
 umount -R /mnt
 printf "%b" "g\nn\n1\n\n\nt\n20\nw\n" | fdisk -W always "$drive0"
 clear
@@ -839,6 +992,7 @@ set_pc_name
 set_drive_name
 set_destination_device
 set_steamos_mode
+set_desktop_environment
 set_cpu_type
 set_gpu_type
 set_grub_type
@@ -860,6 +1014,9 @@ services_starter
 homedir_fix
 setup_yay
 setup_aur
+if [ "$desktop0" = "cinnamon" ]; then
+  lightdm_fix
+fi
 setup_steamos_mode
 success_check
 umount -R /mnt

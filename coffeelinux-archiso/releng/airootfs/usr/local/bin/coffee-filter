@@ -104,10 +104,6 @@ clear
 wget -q -O /etc/pacman.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/etc/pacman.conf
 chmod 755 /etc/pacman.conf
 clear
-wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf
-clear
-wget -q -O /opt/pacman-unstable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-unstable.conf
-clear
 printf "%b" "\nSetting intial pacman keyring up...\n"
 pacman-key --init
 pacman-key --populate archlinux
@@ -129,7 +125,7 @@ command17finished="0"
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ]; do
 clear
 printf "%b" "\n#### Welcome to Coffee Linux Network Tool ####\n"
-printf "%b" "\n########## Filter v.1.2.2 ##########\n"
+printf "%b" "\n########## Filter v.1.2.3 ##########\n"
 printf "%b" "\nWhat whould you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Connect to a network\n"
 printf "%b" "\n2 - Exit to Barista.\n"
