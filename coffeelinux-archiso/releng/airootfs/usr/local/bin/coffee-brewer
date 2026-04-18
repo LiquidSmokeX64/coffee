@@ -552,10 +552,10 @@ if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nGRUB for Nvidia selected.\n"
 # Safest option: Append parameters to grub.
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
-sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.modeset=1"/g' /mnt/etc/default/grub
+sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia-drm.modeset=1"/g' /mnt/etc/default/grub
 fi
 if [ "$desktop0" = "cinnamon" ]; then
-sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.fbdev=1"/g' /mnt/etc/default/grub
+sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia-drm.fbdev=1"/g' /mnt/etc/default/grub
 fi
 if [ "$nvsm0" = "nvsm-on" ]; then
 printf "%b" "\nexport NVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /mnt/etc/skel/.bashrc
@@ -732,6 +732,8 @@ if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected..\n"
 arch-chroot /mnt pacman -Sy --noconfirm $nvidiagpudrivers
 arch-chroot /mnt systemctl enable nvidia-persistenced.service
+printf "%b" "\nMODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)" >> /mnt/etc/mkinitcpio.conf
+arch-chroot /mnt mkinitcpio -P
 fi
 if [ "$gpu0" = "amd" ]; then
 printf "%b" "\nAMD GPU selected..\n"
