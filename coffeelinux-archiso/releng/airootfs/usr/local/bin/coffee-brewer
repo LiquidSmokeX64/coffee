@@ -10,17 +10,7 @@ baseapps2="apparmor arch-install-scripts archinstall autogen b43-fwcutter bind b
 
 basedesktop="alsa-firmware alsa-lib alsa-plugins alsa-utils archiso archivetools archlinux-wallpaper aria2 at-spi2-core bash-completion bash-language-server bluez-libs bolt cabextract chafa chrony clang cmake colord cronie cups dconf ddcutil directx-headers dkms egl-wayland elfutils expat extra-cmake-modules fastfetch firefox firewalld flatpak giflib gimp glfw glib2 glibc glslang gnome-disk-utility gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-update-icon-cache gvfs gvfs-dnssd gvfs-nfs gvfs-smb hicolor-icon-theme hwinfo innoextract libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libpwquality libreoffice-fresh libunwind libva libva-utils libvdpau libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm llvm llvm-libs lm_sensors make meson mpg123 ncurses nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm nullmailer onboard openal opencl-clhpp opencl-headers opencl-icd-loader opengl-man-pages pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon pyside6 python-gobject python-mako rust samba shellcheck showtime sof-firmware tesseract-data-eng ttf-liberation ufw unrar unzip v4l-utils valgrind vlc vlc-plugins-all w3m wireplumber xdg-utils xfconf xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader yaml-cpp zenity zstd"
 
-kdedesktop="appstream-qt ark colord-kde kde-applications-meta kdevelop-python kgamma kpmcore kscreen kvantum phonon-qt6 phonon-qt6-vlc plasma plasma-keyboard plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace polkit-kde-agent polkit-qt6 qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard xdg-desktop-portal-kde"
-
-gnomedesktop="epiphany evolution gdm gnome-text-editor gnome-keyring gnome gnome-color-manager gnome-extra gnome-firmware gnome-keyring gnome-shell-extension-appindicator gnome-mahjongg gnome-menus gnome-online-accounts gnome-console gtk4 polkit-gnome papers pantheon-photos xdg-desktop-portal-gnome"
-
-cinnamondesktop="cinnamon cinnamon-translations epiphany evolution gedit gnome-builder gnome-calculator gnome-color-manager gnome-firmware gnome-keyring gnome-mahjongg gnome-menus gnome-online-accounts gnome-photos gnome-software gnome-system-monitor gnome-terminal gtk4 libx11 lightdm lightdm-slick-greeter pantheon-photos polkit-gnome rhythmbox xdg-desktop-portal-gnome"
-
-cosmicdesktop="cosmic cosmic-app-library cosmic-applets cosmic-bg cosmic-comp cosmic-greeter cosmic-icon-theme cosmic-idle cosmic-initial-setup cosmic-files cosmic-launcher cosmic-notifications cosmic-osd cosmic-panel cosmic-randr cosmic-player cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-store cosmic-terminal cosmic-text-editor cosmic-wallpapers cosmic-workspaces geary gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus gtk4 polkit-gnome shotwell system76-scheduler xdg-desktop-portal-cosmic"
-
-budgiedesktop="budgie-backgrounds budgie-control-center budgie-desktop budgie-desktop-services budgie-desktop-view budgie-extras budgie-session nautilus geary gedit gnome-calculator gnome-calendar gnome-keyring gnome-mahjongg gnome-menus gnome-terminal gtk4 network-manager-applet materia-gtk-theme papirus-icon-theme polkit-gnome shotwell rhythmbox lightdm lightdm-gtk-greeter wdisplays labwc xdg-desktop-portal-gtk xdg-desktop-portal-wlr grim slurp gtklock"
-
-xfcedesktop="catfish exo garcon orage parole ristretto geary gnome-keyring gtk4 libx11 mousepad libxfce4ui lightdm lightdm-gtk-greeter polkit-gnome sound-theme-freedesktop thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler xdg-desktop-portal-gtk xfce4-artwork xfce4-appfinder xfce4-clipman-plugin xfce4-datetime-plugin xfce4-dict xfce4-mixer xfce4-notifyd xfce4-panel xfce4-panel-profiles xfce4-places-plugin xfce4-power-manager xfce4-pulseaudio-plugin xfce4-sensors-plugin xfce4-taskmanager xfce4-terminal xfce4-screenshooter xfce4-session xfce4-settings xfce4-screensaver xfce4-whiskermenu-plugin xfce4-wavelan-plugin xfdesktop xfwm4 xfwm4-themes"
+desktop="appstream-qt ark colord-kde kde-applications-meta kdevelop-python kgamma kpmcore kscreen kvantum phonon-qt6 phonon-qt6-vlc plasma plasma-keyboard plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace polkit-kde-agent polkit-qt6 qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard xdg-desktop-portal-kde"
 
 javaapps="jre-openjdk"
 
@@ -249,6 +239,92 @@ done
 drivename0=$name1
 }
 
+set_country(){
+while [ "$countrycheck" != "1" ]; do
+clear
+printf "%b" "\nWould you like to set your Country? (Default: 2)\n"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No (Country will be 'America')\n"
+printf "%b" "\nNote: Some things like keyboard map and language will be set to U.S/English by default.\n"
+read -r countrycheck02
+case $countrycheck02 in
+  1) printf "%b" "\nPerfect\n" ;;
+  2) printf "%b" "\nLet's move on then.\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
+esac
+if [ "$countrycheck02" = "1" ]; then
+while [ "$countrycheck" != "1" ]; do
+clear
+printf "%b" "\nSet your Country.\n"
+read -r country00
+clear
+printf "%b" "\nYou said $country00.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no (default)\n"
+read -r countrycheck
+case $countrycheck in
+  1) country01=$country00 ;;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
+esac
+done
+fi
+if [ "$countrycheck02" = "2" ]; then
+countrycheck=1
+country00="America"
+country01=$country00
+fi
+if [ "$countrycheck02" != "1" ] && [ "$countrycheck02" != "2" ]; then
+countrycheck=1
+country00="America"
+country01=$country00
+countrycheck02=1
+fi
+done
+}
+
+set_city(){
+while [ "$citycheck" != "1" ]; do
+clear
+printf "%b" "\nWould you like to set your City? (Default: 2)\n"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No (Country will be 'Los_Angeles')\n"
+printf "%b" "\nNote: Some things like keyboard map and language will be set to U.S/English by default.\n"
+read -r citycheck02
+case $citycheck02 in
+  1) printf "%b" "\nPerfect\n" ;;
+  2) printf "%b" "\nLet's move on then.\n" ;;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
+esac
+if [ "$citycheck02" = "1" ]; then
+while [ "$citycheck" != "1" ]; do
+clear
+printf "%b" "\nSet your City.\n"
+read -r city00
+clear
+printf "%b" "\nYou said $city00.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no (default)\n"
+read -r citycheck
+case $citycheck in
+  1) city01=$city00 ;;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
+esac
+done
+fi
+if [ "$citycheck02" = "2" ]; then
+citycheck=1
+city00="Los_Angeles"
+city01=$city00
+fi
+if [ "$citycheck02" != "1" ] && [ "$citycheck02" != "2" ]; then
+citycheck=1
+city00="Los_Angeles"
+city01=$city00
+citycheck02=1
+fi
+done
+}
+
 set_destination_device(){
 while [ "$drive01passcheck" != "1" ]; do
 clear
@@ -313,43 +389,6 @@ printf "%b" "\n2 - no (default)\n"
 read -r steamosmodepasscheck
 case $steamosmodepasscheck in
   1) steamosmodepass00=$steamosmodepass01 ;;
-  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
-esac
-done
-}
-
-set_desktop_environment(){
-while [ "$desktop01passcheck" != "1" ]; do
-clear
-printf "%b" "\nWhich Desktop Environment would you like? (Default: 1)\n"
-printf "%b" "\n1 - Plasma\n"
-printf "%b" "\n**Alternative Desktop Environments (performance may vary..)**\n"
-printf "%b" "\n2 - Gnome\n"
-printf "%b" "\n3 - Cosmic\n"
-printf "%b" "\n4 - Cinnamon\n"
-printf "%b" "\n5 - Budgie\n"
-printf "%b" "\n6 - XFCE\n"
-read -r desktop01check
-case "$desktop01check" in
-  1) desktop01="plasma";;
-  2) desktop01="gnome";;
-  3) desktop01="cosmic";;
-  4) desktop01="cinnamon";;
-  5) desktop01="budgie";;
-  6) desktop01="xfce";;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n";
-esac
-if [ "$desktop01check" != "1" ] && [ "$desktop01check" != "2" ] && [ "$desktop01check" != "3" ] && [ "$desktop01check" != "4" ] && [ "$desktop01check" != "5" ] && [ "$desktop01check" != "6" ]; then
-desktop01check=1
-desktop01="plasma"
-fi
-clear
-printf "%b" "\nYou said $desktop01.\nIs this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no (default)\n"
-read -r desktop01passcheck
-case $desktop01passcheck in
-  1) desktop0=$desktop01;;
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
@@ -554,9 +593,6 @@ printf "%b" "\nGRUB for Nvidia selected.\n"
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
 sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia-drm.modeset=1"/g' /mnt/etc/default/grub
 fi
-if [ "$desktop0" = "cinnamon" ]; then
-sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia-drm.fbdev=1"/g' /mnt/etc/default/grub
-fi
 if [ "$nvsm0" = "nvsm-on" ]; then
 printf "%b" "\nexport NVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /mnt/etc/skel/.bashrc
 fi
@@ -564,23 +600,17 @@ fi
 if [ "$grub0" = "grub-uefi" ]; then
 
 arch-chroot /mnt pacman -S --noconfirm efivar
-arch-chroot /mnt /bin/bash <<"EOT"
-mkinitcpio -P
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
-EOT
-
+arch-chroot /mnt mkinitcpio -P
+arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 fi
 if [ "$grub0" = "grub-bios" ]; then
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
-arch-chroot /mnt /bin/bash <<"EOT"
-pacman -Sy --noconfirm
-mkinitcpio -P
-EOT
+arch-chroot /mnt pacman -Sy --noconfirm
+arch-chroot /mnt mkinitcpio -P
 arch-chroot /mnt grub-install --target=i386-pc $drive0
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 fi
-
 command8finished="1"
 done
 command8finished="0"
@@ -593,16 +623,13 @@ while [ "$command2finished" != "1" ]; do
 rm -r /mnt/etc/locale.gen
 rm -r /mnt/etc/locale.conf
 rm -r /mnt/etc/vconsole.conf
-
-arch-chroot /mnt /bin/bash <<"EOT"
-ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
-hwclock --systohc
-printf "%b" "\nen_US ISO-8859-1\nen_US.UTF-8 UTF-8\n" >> /etc/locale.gen
-printf "%b" "\nKEYMAP=us\n" >> /etc/vconsole.conf
-printf "%b" "\nLANG=en_US.UTF-8" >> /etc/locale.conf
-export LANG=en_US.UTF-8
-locale-gen
-EOT
+arch-chroot /mnt ln -sf ../usr/share/zoneinfo/"$country01"/"$city01" /etc/localtime
+arch-chroot /mnt hwclock --systohc
+printf "%b" "\nen_US ISO-8859-1\nen_US.UTF-8 UTF-8\n" >> /mnt/etc/locale.gen
+printf "%b" "\nKEYMAP=us\n" >> /mnt/etc/vconsole.conf
+printf "%b" "\nLANG=en_US.UTF-8" >> /mnt/etc/locale.conf
+arch-chroot /mnt export LANG=en_US.UTF-8
+arch-chroot /mnt locale-gen
 
 cp --dereference /etc/resolv.conf /mnt/etc/
 clear
@@ -617,10 +644,8 @@ clear
 mkdir -p /mnt/etc/sudoers.d/
 rm -r /mnt/etc/sudoers.d/wheel
 clear
-arch-chroot /mnt /bin/bash <<"EOT"
-printf "%b\n%%"w"heel ALL=(ALL:ALL) NOPASSWD: ALL\n" "$*" > /etc/sudoers.d/wheel
+printf "%b" "\nwheel ALL=(ALL:ALL) NOPASSWD: ALL\n" > /mnt/etc/sudoers.d/wheel
 mkinitcpio -P
-EOT
 
 }
 
@@ -647,30 +672,11 @@ command3finished="0"
 setup_desktop (){
 # Install Desktop Environment and Java...
 while [ "$command4finished" != "1" ]; do
-if [ "$desktop01" = "plasma" ];then
-selecteddesktop=$kdedesktop
-fi
-if [ "$desktop01" = "gnome" ];then
-selecteddesktop=$gnomedesktop
-fi
-if [ "$desktop01" = "cinnamon" ];then
-selecteddesktop=$cinnamondesktop
-fi
-if [ "$desktop01" = "cosmic" ];then
-selecteddesktop=$cosmicdesktop
-fi
-if [ "$desktop01" = "budgie" ];then
-selecteddesktop=$budgiedesktop
-fi
-if [ "$desktop01" = "xfce" ];then
-selecteddesktop=$xfcedesktop
-fi
-arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
+arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $desktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
 arch-chroot /mnt pacman -Rdd --noconfirm evince
 arch-chroot /mnt usermod -a -G realtime $user01
 arch-chroot /mnt usermod -a -G input $user01
-arch-chroot /mnt usermod -a -G plugdev $user01
 arch-chroot /mnt systemctl --global enable pipewire.service
 arch-chroot /mnt systemctl --global enable pipewire-pulse.service
 arch-chroot /mnt systemctl --global enable wireplumber.service
@@ -678,43 +684,9 @@ arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 arch-chroot /mnt systemctl daemon-reload
 # Desktop Environment specific..
-if [ "$desktop01" = "plasma" ];then
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
-arch-chroot /mnt pacman -Rdd --noconfirm kmix
 arch-chroot /mnt systemctl enable plasmalogin
-fi
-if [ "$desktop01" = "gnome" ];then
-arch-chroot /mnt pacman -Rdd --noconfirm gedit
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-terminal
-arch-chroot /mnt systemctl enable gdm
-fi
-if [ "$desktop01" = "cinnamon" ];then
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-arch-chroot /mnt pacman -Rdd --noconfirm nautilus
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
-arch-chroot /mnt systemctl enable lightdm
-fi
-if [ "$desktop01" = "cosmic" ];then
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
-arch-chroot /mnt systemctl enable cosmic-greeter.service
-fi
-if [ "$desktop01" = "budgie" ];then
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
-arch-chroot /mnt systemctl enable lightdm
-fi
-if [ "$desktop01" = "xfce" ];then
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
-arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
-arch-chroot /mnt systemctl enable lightdm
-fi
+#Enable Autologin of User...
+printf "%b" "[Autologin]\nRelogin=true\nSession=plasma.desktop\nUser=$user01\n" > /mnt/etc/plasmalogin.conf
 command4finished="1"
 done
 }
@@ -761,6 +733,8 @@ printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile bwrap /usr/bin
 printf "%b" "abi <abi/4.0>,\ninclude <tunables/global>\n\nprofile srt-bwrap /home/*/.local/share/Steam/**/srt-bwrap flags=(unconfined) {\n  userns,\n  capability setpcap,\n  /proc/*/uid_map rw,\n  /proc/*/gid_map rw,\n  /proc/*/setgroups rw,\n\n  # Prevent transition to the restrictive unprivileged_userns profile\n  change_profile -> unconfined,\n\n  # Site-specific additions and overrides\n  include if exists <local/srt-bwrap>\n}\n" > /mnt/etc/apparmor.d/srt-bwrap
 arch-chroot /mnt apparmor_parser -r /etc/apparmor.d/bwrap
 arch-chroot /mnt apparmor_parser -r /etc/apparmor.d/srt-bwrap
+#Enable NTSync in OS...
+printf "%b" "\nntsync" > /mnt/etc/modules-load.d/ntsync.conf
 }
 
 setup_branding (){
@@ -871,23 +845,6 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
 clear
-# Additional setup for Cinnamon DE
-if [ "$desktop0" = "cinnamon" ]; then
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y lightdm-settings
-clear
-printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-themes
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-x-icons
-clear
-printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-y-icons
-clear
-printf "%b" "5\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y mint-backgrounds
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y humanity-icon-theme
-clear
-printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y mint-artwork
-clear
-fi
 }
 
 setup_steamos_mode (){
@@ -902,20 +859,6 @@ wget -q -O /mnt/usr/share/applications/SteamOS.desktop https://raw.githubusercon
 arch-chroot /mnt chmod +x /usr/bin/steamos-select-branch /usr/bin/steamos-update /usr/bin/steamos-session-select /usr/bin/gamescope-session /usr/bin/jupiter-biosupdate
 arch-chroot /mnt chmod 644 /usr/share/applications/SteamOS.desktop
 fi
-}
-
-lightdm_fix (){
-clear
-while [ "$command12finished" != "1" ]; do
-if [ "$questionspassed" = "yes" ]; then
-arch-chroot /mnt pacman -Rdd --noconfirm lightdm-settings
-printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /mnt/etc/lightdm/lightdm.conf
-arch-chroot /mnt systemctl enable lightdm
-command12finished="1"
-else
-command12finished="0"
-fi
-done
 }
 
 success_check (){
@@ -958,9 +901,10 @@ set_user_password
 set_root_password
 set_pc_name
 set_drive_name
+set_country
+set_city
 set_destination_device
 set_steamos_mode
-set_desktop_environment
 set_cpu_type
 set_gpu_type
 set_grub_type
@@ -982,9 +926,6 @@ services_starter
 homedir_fix
 setup_yay
 setup_aur
-if [ "$desktop0" = "cinnamon" ]; then
-  lightdm_fix
-fi
 setup_steamos_mode
 success_check
 umount -R /mnt

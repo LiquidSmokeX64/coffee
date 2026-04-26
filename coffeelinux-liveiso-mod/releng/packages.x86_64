@@ -315,7 +315,6 @@ plasma-workspace
 plasma-x11-session
 powertop
 qt6-virtualkeyboard
-sddm
 spectacle
 tk
 wireplumber
@@ -328,7 +327,6 @@ zip
 
 # CoffeeLinux Plasma extras
 xdg-desktop-portal-kde
-sddm-kcm
 polkit-qt6
 polkit-kde-agent
 kvantum

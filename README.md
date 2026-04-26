@@ -45,7 +45,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- **Desktop Environment Selection. Choose from many popular DEs such as Plasma, Gnome, Cosmic, and more.**: 
+- **Plasma Desktop Environment ONLY. For maximum stability and gaming performance (same reasons Valve uses it for the SteamDeck).**: 
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
@@ -62,9 +62,6 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
    6. **Discord Updater Tool**: Manually updates Discord app from official tar.gz file.
 
 To get started, simply download the ISO from the *Releases* page, use Etcher to write it to a USB drive, and proceed as you would with any other Arch ISO installation.
-
-**Known Potential Issues**
-1. Sometimes the ISO does not wipe the destination drive properly (scripted fdisk use bug). 
 
 ------------------------------------
 
