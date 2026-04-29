@@ -597,7 +597,6 @@ command3finished="0"
 
 setup_desktop (){
 # Install Desktop Environment and Java...
-
 selecteddesktop=$kdedesktop
 arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
@@ -618,7 +617,6 @@ arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
 arch-chroot /mnt pacman -Rdd --noconfirm kmix
 arch-chroot /mnt systemctl enable plasmalogin
 command4finished="1"
-done
 }
 
 setup_java (){
