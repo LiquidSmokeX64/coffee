@@ -616,7 +616,6 @@ arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
 arch-chroot /mnt pacman -Rdd --noconfirm kmix
 arch-chroot /mnt systemctl enable plasmalogin
-command4finished="1"
 }
 
 setup_java (){
