@@ -366,6 +366,7 @@ boost
 boost-libs
 bootconfig
 brltty
+btop
 btrfs-progs
 clonezilla
 cloud-init
@@ -395,6 +396,7 @@ fwupd
 fwupd-efi
 gettext
 git
+ghostty
 gpm
 gptfdisk
 grml-zsh-config

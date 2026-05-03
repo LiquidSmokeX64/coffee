@@ -3,6 +3,8 @@
 sleep 3
 #Do system updates to all packages
 pacman -Syu --noconfirm
+pacman -Syy --noconfirm btop
+pacman -Syy --noconfirm ghostty
 #Replace SteamOS Mode specific files
 steamosmodetype00=$(basename -a /usr/bin/steamos-upd*)
 if [ "$steamosmodetype00" = "steamos-update" ]; then
@@ -43,6 +45,8 @@ chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
 #Remove any unwanted files if they exist.
+pacman -Rdd konsole
+pacman -Rdd pamac-aur
 # OS Fixes..
 #Enable NTSync...
 printf "%b" "\nntsync" > /etc/modules-load.d/ntsync.conf
