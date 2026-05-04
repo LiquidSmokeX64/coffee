@@ -5,8 +5,9 @@ sleep 3
 system_updates () {
 #Do system updates to all packages
 clear
-printf "%b" "\nUpdating Arch Linux OS files.."
+printf "%b" "\nUpdating Arch Linux OS files..\n"
 sleep 3
+clear
 pacman -Syu --noconfirm
 pacman -Syy --noconfirm btop
 pacman -Syy --noconfirm ghostty
@@ -14,26 +15,28 @@ clear
 #Add temp user for yay updates
 user01="temp"
 userpass0="password"
-printf "%b" "\nPreparing AUR environment.."
+printf "%b" "\nPreparing AUR environment..\n"
 sleep 3
+clear
 useradd -m -G wheel,audio,video,users,storage,power,rfkill,lp $user01
 printf "%b" "$userpass0\n$userpass0\n" | passwd $user01
 clear
-printf "%b" "\nPreparing to use temporary yay environment.."
+printf "%b" "\nPreparing to use temporary yay environment..\n"
 sleep 3
 #Run yay commands
 clear
-printf "%b" "\nUpdating current AUR applications.."
+printf "%b" "\nUpdating current AUR applications..\n"
 sleep 3
+clear
 sudo -Su "$user01" yay -Syu --noconfirm
 clear
-printf "%b" "\nAdding any new AUR applications.."
+printf "%b" "\nAdding any new AUR applications..\n"
 sleep 3
 clear
 printf "%b" "1\n" | sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y shelly
 clear
 #Remove temporary user
-printf "%b" "\nCleaning up afterwards.."
+printf "%b" "\nCleaning up afterwards..\n"
 sleep 3
 userdel -r $user01
 sudo pkill -u $user01
@@ -48,8 +51,9 @@ clear
 steamos_mode_updates () {
 #Replace SteamOS Mode specific files
 clear
-printf "%b" "\nReplacing SteamOS Mode files.."
+printf "%b" "\nReplacing SteamOS Mode files..\n"
 sleep 3
+clear
 steamosmodetype00=$(basename -a /usr/bin/steamos-upd*)
 if [ "$steamosmodetype00" = "steamos-update" ]; then
 wget -q -O /usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
@@ -71,8 +75,9 @@ clear
 coffeelinux_updates () {
 #Replace CoffeeLinux specific files
 clear
-printf "%b" "\nUpdating CoffeeLinux OS files.."
+printf "%b" "\nUpdating CoffeeLinux OS files..\n"
 sleep 3
+clear
 wget -q -O /usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
 wget -q -O /usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
 wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf
@@ -101,8 +106,9 @@ clear
 gaming_fixes_updater () {
 # OS Fixes..
 clear
-printf "%b" "\nSettinng gaming fixes.."
+printf "%b" "\nSettinng gaming fixes..\n"
 sleep 3
+clear
 #Enable NTSync...
 printf "%b" "\nntsync" > /etc/modules-load.d/ntsync.conf
 #DotNet 4.8 ie: Space Engineers..
@@ -120,8 +126,9 @@ clear
 updater_file_replacer () {
 #Injector-Replacer
 clear
-printf "%b" "\nReplacing updater files.."
+printf "%b" "\nReplacing updater files..\n"
 sleep 3
+clear
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
 clear
@@ -129,9 +136,9 @@ clear
 
 operations_runner () {
 clear
-clear
-printf "%b" "\nStarting System Update procedures.."
+printf "%b" "\nStarting System Update procedures..\n"
 sleep 3
+clear
 system_updates
 steamos_mode_updates
 coffeelinux_updates
