@@ -7,6 +7,7 @@ system_updates () {
 pacman -Syu --noconfirm
 pacman -Syy --noconfirm btop
 pacman -Syy --noconfirm ghostty
+clear
 #Add temp user for yay updates
 user01="temp"
 userpass0="password"
@@ -18,9 +19,11 @@ clear
 printf "%b" "\nPreparing to use temporary yay environment.."
 sleep 3
 #Run yay commands
+clear
 printf "%b" "\nUpdating current AUR applications.."
 sleep 3
 sudo -Su "$user01" yay -Syu --noconfirm
+clear
 printf "%b" "\nAdding any new AUR applications.."
 sleep 3
 clear

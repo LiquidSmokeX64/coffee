@@ -131,6 +131,7 @@ if [ "$programnamecheck02" = "1" ]; then
 #Add temp user for yay usage
 user01="temp"
 userpass0="password"
+clear
 printf "%b" "\nPreparing AUR environment.."
 sleep 3
 useradd -m -G wheel,audio,video,users,storage,power,rfkill,lp $user01
@@ -139,7 +140,9 @@ clear
 printf "%b" "\nPreparing to use temporary AUR environment.."
 sleep 3
 #Run yay commands
+clear
 sudo -Su "$user01" yay -Syy $programname02
+sleep 3
 clear
 #Remove temporary user
 printf "%b" "\nCleaning up afterwards.."
