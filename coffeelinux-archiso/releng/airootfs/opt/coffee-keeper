@@ -13,15 +13,9 @@ pacman -Syy --noconfirm btop
 pacman -Syy --noconfirm ghostty
 clear
 #Add temp user for yay updates
-user01="temp"
-userpass0="password"
+user01=$(logname)
+clear
 printf "%b" "\nPreparing AUR environment..\n"
-sleep 3
-clear
-useradd -m -G wheel,audio,video,users,storage,power,rfkill,lp $user01
-printf "%b" "$userpass0\n$userpass0\n" | passwd $user01
-clear
-printf "%b" "\nPreparing to use temporary AUR environment..\n"
 sleep 3
 #Run yay commands
 clear
@@ -38,9 +32,6 @@ clear
 #Remove temporary user
 printf "%b" "\nCleaning up afterwards..\n"
 sleep 3
-userdel -r $user01
-sudo pkill -u $user01
-sudo Preparing yay environmentuserdel -rf $user01
 clear
 #Remove any unwanted files if they exist.
 pacman -Rdd konsole
