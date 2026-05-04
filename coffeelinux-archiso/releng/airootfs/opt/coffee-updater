@@ -56,7 +56,7 @@ app_manager (){
 while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; do
 clear
 sleep 5
-printf "%b" "\n#### Coffee App Manager Tool 1.1.3 ####\n"
+printf "%b" "\n#### Coffee App Manager Tool 1.1.5 ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 4)\n"
 printf "%b" "\n1 - Install a program\n"
 printf "%b" "\n2 - Install an AUR program\n"
@@ -137,6 +137,8 @@ printf "%b" "$userpass0\n$userpass0\n" | passwd $user01
 sudo -Su "$user01" yay -Syy $programname02
 #Remove temporary user
 userdel -r $user01
+sudo pkill -u $user01
+sudo userdel -rf $user01
 #Continue as normal
 clear
 printf "%b" "\nInstallation finished...\n\n"

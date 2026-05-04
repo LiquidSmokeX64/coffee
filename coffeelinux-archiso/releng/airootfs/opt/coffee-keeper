@@ -16,6 +16,8 @@ printf "%b" "$userpass0\n$userpass0\n" | passwd $user01
 printf "%b" "1\n" | sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y shelly
 #Remove temporary user
 userdel -r $user01
+sudo pkill -u $user01
+sudo userdel -rf $user01
 #Remove any unwanted files if they exist.
 pacman -Rdd konsole
 pacman -Rdd pamac-aur
