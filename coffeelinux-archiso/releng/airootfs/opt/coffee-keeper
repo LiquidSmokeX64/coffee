@@ -28,7 +28,7 @@ clear
 printf "%b" "\nUpdating current AUR applications..\n"
 sleep 3
 clear
-sudo -Su "$user01" yay -Syu --noconfirm
+sudo -Su "$user01" yay -Syu
 clear
 printf "%b" "\nAdding any new AUR applications..\n"
 sleep 3
