@@ -128,7 +128,16 @@ case $programnamecheck02 in
 esac
 clear
 if [ "$programnamecheck02" = "1" ]; then
-yay -Syy $programname02
+#Add temp user for yay usage
+user01="temp"
+userpass0="password"
+useradd -m -G wheel,audio,video,users,storage,power,rfkill,lp $user01
+printf "%b" "$userpass0\n$userpass0\n" | passwd $user01
+#Run yay commands
+sudo -Su "$user01" yay -Syy $programname02
+#Remove temporary user
+userdel -r $user01
+#Continue as normal
 clear
 printf "%b" "\nInstallation finished...\n\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"

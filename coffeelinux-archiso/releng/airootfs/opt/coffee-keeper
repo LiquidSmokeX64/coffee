@@ -1,10 +1,27 @@
 #!/bin/sh
 #Coffee Auto-Updater tool
 sleep 3
+#All systems go..
+system_updates () {
 #Do system updates to all packages
 pacman -Syu --noconfirm
 pacman -Syy --noconfirm btop
 pacman -Syy --noconfirm ghostty
+#Add temp user for yay updates
+user01="temp"
+userpass0="password"
+useradd -m -G wheel,audio,video,users,storage,power,rfkill,lp $user01
+printf "%b" "$userpass0\n$userpass0\n" | passwd $user01
+#Run yay commands
+sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y shelly
+#Remove temporary user
+userdel -r $user01
+#Remove any unwanted files if they exist.
+pacman -Rdd konsole
+pacman -Rdd pamac-aur
+}
+
+steamos_mode_updates () {
 #Replace SteamOS Mode specific files
 steamosmodetype00=$(basename -a /usr/bin/steamos-upd*)
 if [ "$steamosmodetype00" = "steamos-update" ]; then
@@ -21,6 +38,9 @@ if [ "$steamosmodetype01" != "gamescope-session" ]; then
 wget -q -O /usr/bin/gamescope-session https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session
 chmod +x /usr/bin/gamescope-session
 fi
+}
+
+coffeelinux_updates () {
 #Replace CoffeeLinux specific files
 wget -q -O /usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
 wget -q -O /usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
@@ -44,9 +64,9 @@ chmod 644 /usr/share/applications/coffee-updater.desktop /usr/share/applications
 chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
-#Remove any unwanted files if they exist.
-pacman -Rdd konsole
-pacman -Rdd pamac-aur
+}
+
+gaming_fixes_updater () {
 # OS Fixes..
 #Enable NTSync...
 printf "%b" "\nntsync" > /etc/modules-load.d/ntsync.conf
@@ -59,9 +79,22 @@ systemctl restart apparmor
 systemctl disable dhcpcd
 # VM Max Map Count Fix ie: Horizon Zero Dawn..
 printf "%b" "vm.max_map_count=262144" > /etc/sysctl.d/99-vm.max_map_count.conf
-#End OS Fixes..
+}
+
+updater_file_replacer () {
 #Injector-Replacer
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
+}
+
+operations_runner () {
+system_updates
+steamos_mode_updates
+coffeelinux_updates
+gaming_fixes_updater
+updater_file_replacer
+}
+
+operations_runner
 sleep 5
 exit

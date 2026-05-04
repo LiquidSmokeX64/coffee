@@ -818,6 +818,8 @@ command15finished="0"
 }
 
 ## Main Menu...
+
+installer_operations_runner () {
 cp /opt/os-release /etc/
 cp /opt/lsb-release /etc/
 clear
@@ -871,3 +873,7 @@ clear
 configurationcheck00="0"
 fi
 done
+}
+
+installer_operations_runner
+exit
