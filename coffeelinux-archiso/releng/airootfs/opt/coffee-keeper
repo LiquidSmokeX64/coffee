@@ -4,6 +4,9 @@ sleep 3
 #All systems go..
 system_updates () {
 #Do system updates to all packages
+clear
+printf "%b" "\nUpdating Arch Linux OS files.."
+sleep 3
 pacman -Syu --noconfirm
 pacman -Syy --noconfirm btop
 pacman -Syy --noconfirm ghostty
@@ -39,10 +42,14 @@ clear
 #Remove any unwanted files if they exist.
 pacman -Rdd konsole
 pacman -Rdd pamac-aur
+clear
 }
 
 steamos_mode_updates () {
 #Replace SteamOS Mode specific files
+clear
+printf "%b" "\nReplacing SteamOS Mode files.."
+sleep 3
 steamosmodetype00=$(basename -a /usr/bin/steamos-upd*)
 if [ "$steamosmodetype00" = "steamos-update" ]; then
 wget -q -O /usr/bin/steamos-update https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/steamos-update
@@ -58,10 +65,14 @@ if [ "$steamosmodetype01" != "gamescope-session" ]; then
 wget -q -O /usr/bin/gamescope-session https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/steamos/gamescope-session
 chmod +x /usr/bin/gamescope-session
 fi
+clear
 }
 
 coffeelinux_updates () {
 #Replace CoffeeLinux specific files
+clear
+printf "%b" "\nUpdating CoffeeLinux OS files.."
+sleep 3
 wget -q -O /usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
 wget -q -O /usr/share/applications/coffee-filter.desktop https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/share/applications/coffee-filter.desktop
 wget -q -O /opt/pacman-stable.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman-stable.conf
@@ -84,10 +95,14 @@ chmod 644 /usr/share/applications/coffee-updater.desktop /usr/share/applications
 chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
+clear
 }
 
 gaming_fixes_updater () {
 # OS Fixes..
+clear
+printf "%b" "\nSettinng gaming fixes.."
+sleep 3
 #Enable NTSync...
 printf "%b" "\nntsync" > /etc/modules-load.d/ntsync.conf
 #DotNet 4.8 ie: Space Engineers..
@@ -99,22 +114,33 @@ systemctl restart apparmor
 systemctl disable dhcpcd
 # VM Max Map Count Fix ie: Horizon Zero Dawn..
 printf "%b" "vm.max_map_count=262144" > /etc/sysctl.d/99-vm.max_map_count.conf
+clear
 }
 
 updater_file_replacer () {
 #Injector-Replacer
+clear
+printf "%b" "\nReplacing updater files.."
+sleep 3
 wget -q -O /opt/coffee-injector https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-injector
 chmod 755 /opt/coffee-injector
+clear
 }
 
 operations_runner () {
+clear
+clear
+printf "%b" "\nStarting System Update procedures.."
+sleep 3
 system_updates
 steamos_mode_updates
 coffeelinux_updates
 gaming_fixes_updater
 updater_file_replacer
+clear
 }
 
 operations_runner
-sleep 5
+clear
+sleep 3
 exit
