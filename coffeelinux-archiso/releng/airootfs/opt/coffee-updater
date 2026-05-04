@@ -56,7 +56,7 @@ app_manager (){
 while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; do
 clear
 sleep 5
-printf "%b" "\n#### Coffee App Manager Tool 1.1.5 ####\n"
+printf "%b" "\n#### Coffee App Manager Tool 1.1.6 ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 4)\n"
 printf "%b" "\n1 - Install a program\n"
 printf "%b" "\n2 - Install an AUR program\n"
@@ -131,14 +131,23 @@ if [ "$programnamecheck02" = "1" ]; then
 #Add temp user for yay usage
 user01="temp"
 userpass0="password"
+printf "%b" "\nPreparing AUR environment.."
+sleep 3
 useradd -m -G wheel,audio,video,users,storage,power,rfkill,lp $user01
 printf "%b" "$userpass0\n$userpass0\n" | passwd $user01
+clear
+printf "%b" "\nPreparing to use temporary AUR environment.."
+sleep 3
 #Run yay commands
 sudo -Su "$user01" yay -Syy $programname02
+clear
 #Remove temporary user
+printf "%b" "\nCleaning up afterwards.."
+sleep 3
 userdel -r $user01
 sudo pkill -u $user01
-sudo userdel -rf $user01
+sudo Preparing yay environmentuserdel -rf $user01
+clear
 #Continue as normal
 clear
 printf "%b" "\nInstallation finished...\n\n"
