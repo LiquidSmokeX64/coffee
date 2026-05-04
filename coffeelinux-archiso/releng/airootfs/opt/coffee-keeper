@@ -106,7 +106,7 @@ clear
 gaming_fixes_updater () {
 # OS Fixes..
 clear
-printf "%b" "\nSettinng gaming fixes..\n"
+printf "%b" "\nSetting gaming fixes..\n"
 sleep 3
 clear
 #Enable NTSync...
