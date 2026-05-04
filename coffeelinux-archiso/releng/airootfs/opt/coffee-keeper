@@ -21,7 +21,7 @@ clear
 useradd -m -G wheel,audio,video,users,storage,power,rfkill,lp $user01
 printf "%b" "$userpass0\n$userpass0\n" | passwd $user01
 clear
-printf "%b" "\nPreparing to use temporary yay environment..\n"
+printf "%b" "\nPreparing to use temporary AUR environment..\n"
 sleep 3
 #Run yay commands
 clear
