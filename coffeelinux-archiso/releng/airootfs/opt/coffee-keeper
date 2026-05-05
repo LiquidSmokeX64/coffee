@@ -34,8 +34,8 @@ printf "%b" "\nCleaning up afterwards..\n"
 sleep 3
 clear
 #Remove any unwanted files if they exist.
-pacman -Rdd konsole
-pacman -Rdd pamac-aur
+pacman -Rdd --noconfirm konsole
+pacman -Rdd --noconfirm pamac-aur
 clear
 }
 
