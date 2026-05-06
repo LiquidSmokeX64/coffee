@@ -9,10 +9,9 @@ printf "%b" "\nUpdating Arch Linux OS files..\n"
 sleep 3
 clear
 pacman -Syu --noconfirm
-pacman -Syy --noconfirm btop
-pacman -Syy --noconfirm ghostty
+#pacman -Syy --noconfirm btop
 clear
-#Add temp user for yay updates
+#Find a user for yay updates
 user01=$(logname)
 clear
 printf "%b" "\nPreparing AUR environment..\n"
@@ -27,7 +26,7 @@ clear
 printf "%b" "\nAdding any new AUR applications..\n"
 sleep 3
 clear
-printf "%b" "1\n" | sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y shelly
+#printf "%b" "1\n" | sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y shelly
 clear
 #Remove temporary user
 printf "%b" "\nCleaning up afterwards..\n"
@@ -35,7 +34,6 @@ sleep 3
 clear
 #Remove any unwanted files if they exist.
 pacman -Rdd --noconfirm konsole
-pacman -Rdd --noconfirm pamac-aur
 clear
 }
 
