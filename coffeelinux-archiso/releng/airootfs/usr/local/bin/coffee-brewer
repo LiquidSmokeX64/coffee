@@ -690,24 +690,6 @@ arch-chroot /mnt chmod +x /usr/local/bin/coffee-brewer /usr/local/bin/coffee-bar
 chmod 755 /etc/pacman.conf
 }
 
-services_starter(){
-# Startup Services before rebooting.
-clear
-arch-chroot /mnt systemctl disable dhcpcd
-arch-chroot /mnt systemctl enable cronie
-arch-chroot /mnt systemctl enable chronyd
-arch-chroot /mnt systemctl enable NetworkManager
-arch-chroot /mnt systemctl enable firewalld
-arch-chroot /mnt systemctl enable cups
-arch-chroot /mnt systemctl enable bluetooth.service
-arch-chroot /mnt systemctl --global enable pipewire.service
-arch-chroot /mnt systemctl --global enable pipewire-pulse.service
-arch-chroot /mnt systemctl --global enable wireplumber.service
-arch-chroot /mnt systemctl enable rtkit-daemon.service
-arch-chroot /mnt systemctl enable power-profiles-daemon
-arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
-}
-
 homedir_fix (){
 # Fix some Home Directory bugs..
 clear
@@ -723,9 +705,9 @@ command11finished="0"
 setup_yay (){
 # Setup Yay...
 clear
-printf "%b" "Installing yay for AUR support and some extra QoL applications...\nThis may fail due to servers having issues.\nIf it fails you will only be missing a few extras, nothing really important.\n"
-sleep 5
-#Attempt to build yay from source..
+printf "%b" "Installing Yay for AUR support...\n"
+sleep 3
+#Build yay from source..
 arch-chroot /mnt pacman -S --needed --noconfirm git base-devel
 clear
 #Remove old packages..
@@ -742,6 +724,42 @@ arch-chroot /mnt sudo -Su "$user01" makepkg -si --noconfirm --dir /opt/yaybuilde
 clear
 rm -r /mnt/opt/yaybuilder/
 clear
+}
+
+setup_optimization (){
+clear
+printf "%b" "\nPerforming System Optimizations This may take a few minutes...\n"
+sleep 3
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y alhp-keyring
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y alhp-mirrorlist
+mkdir -p /opt/optimization/
+rm -R /opt/optimization/*
+wget -q -O /opt/optimization/pacman.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/optimization/pacman.conf
+cp -f /opt/optimization/pacman.conf /mnt/etc/
+arch-chroot /mnt chmod 755 /etc/pacman.conf
+arch-chroot /mnt pacman -Syu --noconfirm
+clear
+printf "%b" "\nSystem Optimizations Complete...\n"
+sleep 3
+}
+
+services_starter(){
+# Startup Services before rebooting.
+clear
+arch-chroot /mnt systemctl disable dhcpcd
+arch-chroot /mnt systemctl enable cronie
+arch-chroot /mnt systemctl enable chronyd
+arch-chroot /mnt systemctl enable NetworkManager
+arch-chroot /mnt systemctl enable firewalld
+arch-chroot /mnt systemctl enable cups
+arch-chroot /mnt systemctl enable bluetooth.service
+arch-chroot /mnt systemctl --global enable pipewire.service
+arch-chroot /mnt systemctl --global enable pipewire-pulse.service
+arch-chroot /mnt systemctl --global enable wireplumber.service
+arch-chroot /mnt systemctl enable rtkit-daemon.service
+arch-chroot /mnt systemctl enable power-profiles-daemon
+arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 }
 
 setup_aur (){
@@ -849,9 +867,10 @@ setup_java
 setup_gpu
 setup_gaming
 setup_branding
-services_starter
 homedir_fix
 setup_yay
+setup_optimization
+services_starter
 setup_aur
 setup_steamos_mode
 success_check
