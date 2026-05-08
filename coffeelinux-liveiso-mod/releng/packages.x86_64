@@ -285,8 +285,6 @@ zenity
 zstd
 
 #CoffeeLinux Minimal Desktop
-alhp-keyring
-alhp-mirrorlist
 appstream-qt
 bash-completion
 btop
