@@ -129,6 +129,8 @@ xl2tpd
 zsh
 
 #CoffeeLinux Extras
+alpm-keyring
+alpm-mirrorlist
 wget
 gptfdisk
 gvfs
