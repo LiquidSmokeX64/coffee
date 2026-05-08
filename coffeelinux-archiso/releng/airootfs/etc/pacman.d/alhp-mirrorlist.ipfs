@@ -1,0 +1,12 @@
+# To use this follow install instructions under https://github.com/RubenKelevra/pacman.store/blob/master/README.md#usage
+# After you have installed ipfs and added pacman.store, modify your pacman.conf repo entries like https://github.com/RubenKelevra/pacman.store/blob/master/README.md#alhp
+
+# local ipfs gateway
+Server = http://alhp.archlinux.pkg.pacman.store.ipns.localhost:8080/$repo/os/$arch/
+Server = http://alhp.archlinux.pkg.pacman.store.ipns.localhost:8080/$repo/os/$arch/
+Server = http://alhp.archlinux.pkg.pacman.store.ipns.localhost:8080/$repo/os/$arch/
+
+# local ipfs gateway without name resolution
+Server = http://127.0.0.1:8080/ipns/alhp.archlinux.pkg.pacman.store/$repo/os/$arch/
+Server = http://127.0.0.1:8080/ipns/alhp.archlinux.pkg.pacman.store/$repo/os/$arch/
+Server = http://127.0.0.1:8080/ipns/alhp.archlinux.pkg.pacman.store/$repo/os/$arch/
