@@ -51,6 +51,10 @@ sleep 3
 clear
 #Remove any unwanted files if they exist.
 pacman -Rdd --noconfirm konsole
+pacman -Rdd --noconfirm kmix
+pacman -Rdd --noconfirm evince
+pacman -Rdd --noconfirm totem
+pacman -Rdd --noconfirm pamac-aur
 clear
 }
 
