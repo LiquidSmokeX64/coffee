@@ -45,7 +45,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
 
-- **Plasma Desktop Environment ONLY. For maximum stability and gaming performance (same reasons Valve uses it for the SteamDeck).**: 
+- **Desktop Environment Selection. Choose from many popular DEs such as Plasma, Gnome, Cosmic, and more.**: 
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.

@@ -50,11 +50,36 @@ printf "%b" "\nCleaning up afterwards..\n"
 sleep 3
 clear
 #Remove any unwanted files if they exist.
+coffeedesktoptype01=$(basename -a /usr/share/wayland-sessions/plas*)
+if [ "$coffeedesktoptype01" = "plasma.desktop" ]; then
 pacman -Rdd --noconfirm konsole
 pacman -Rdd --noconfirm kmix
 pacman -Rdd --noconfirm evince
 pacman -Rdd --noconfirm totem
 pacman -Rdd --noconfirm pamac-aur
+fi
+coffeedesktoptype00=$(basename -a /usr/share/wayland-sessions/gnome.*)
+if [ "$coffeedesktoptype00" = "gnome.desktop" ]; then
+pacman -Rdd --noconfirm gedit
+pacman -Rdd --noconfirm gnome-terminal
+pacman -Rdd --noconfirm gnome-console
+pacman -Rdd --noconfirm geary
+pacman -Syy --noconfirm pantheon-photos
+pacman -Rdd --noconfirm pamac-aur
+fi
+coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinnamon2*)
+if [ "$coffeedesktoptype02" = "cinnamon2d.desktop" ]; then
+pacman -Rdd --noconfirm gnome-session
+pacman -Rdd --noconfirm lightdm-settings
+pacman -Rdd --noconfirm gnome-console
+pacman -Rdd --noconfirm gnome-terminal
+pacman -Rdd --noconfirm gedit
+pacman -Rdd --noconfirm geary
+pacman -Rdd --noconfirm nautilus
+pacman -Rdd --noconfirm pamac-aur
+printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
+systemctl enable lightdm
+fi
 clear
 }
 
