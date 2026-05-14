@@ -66,6 +66,8 @@ pacman -Rdd --noconfirm gnome-console
 pacman -Rdd --noconfirm geary
 pacman -Syy --noconfirm pantheon-photos
 pacman -Rdd --noconfirm pamac-aur
+#Add any missing packages.
+pacman -Syy --noconfirm file-roller
 fi
 coffeedesktoptype02=$(basename -a /usr/share/xsessions/cinnamon2*)
 if [ "$coffeedesktoptype02" = "cinnamon2d.desktop" ]; then
@@ -77,6 +79,9 @@ pacman -Rdd --noconfirm gedit
 pacman -Rdd --noconfirm geary
 pacman -Rdd --noconfirm nautilus
 pacman -Rdd --noconfirm pamac-aur
+#Add any missing packages.
+pacman -Syy --noconfirm file-roller
+#Add any extra fixes
 printf "%b" "\n[Seat:*]\ngreeter-session=lightdm-slick-greeter\n" >> /etc/lightdm/lightdm.conf
 systemctl enable lightdm
 fi
