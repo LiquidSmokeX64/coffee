@@ -13,7 +13,6 @@ systemctl enable bluetooth.service
 systemctl --global enable pipewire.service
 systemctl --global enable pipewire-pulse.service
 systemctl --global enable wireplumber.service
-systemctl enable rtkit-daemon.service
 printf "%b" "\nFetching the latest version of the update file...\n\n"
 sleep 3
 wget -q -O /opt/coffee-keeper.service https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service
