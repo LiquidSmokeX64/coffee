@@ -1,6 +1,6 @@
 #!/bin/sh
 # CoffeeLinux Update File fetcher
-printf "%b" "\nFetching the latest version of the update file...\n\n"
+printf "%b" "\nFetching the latest version of the update file...\n"
 sleep 3
 wget -q -O /opt/coffee-keeper.service https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service
 wget -q -O /opt/coffee-keeper https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper
@@ -9,7 +9,7 @@ chmod 755 /opt/coffee-keeper
 chmod 755 /lib/systemd/system/coffee-keeper.service
 systemctl enable coffee-keeper.service
 clear
-printf "%b" "\nPreparing to update CoffeeLinux...\n\n"
+printf "%b" "\n\nPreparing to update CoffeeLinux...\n\n"
 sleep 3
 #Run updater script now
 bash /opt/coffee-keeper
