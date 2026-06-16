@@ -287,6 +287,138 @@ case $drive01passcheck in
   1) drive0=$drive01; boot0=$boot01; system0=$system01 ;;
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
+
+while [ "$wipe01passcheck" != "1" ]; do
+printf "%b" "\n"
+printf "%b" "\nWould you like to wipe the drive first? (Default: 1)\n"
+printf "%b" "\n1 - Yes"
+printf "%b" "\n2 - No"
+read -r wipe01check
+case "$wipe01check" in
+  1) wipe01="yes";;
+  2) wipe01="no";;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n";
+esac
+if [ "$wipe01check" != "1" ] && [ "$wipe01check" != "2" ]; then
+wipe01="yes"
+fi
+clear
+printf "%b" "\nYou said $wipe01.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no (default)\n"
+read -r wipe01passcheck
+case $wipe01passcheck in
+  1) wipe0=$wipe01;;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
+esac
+done
+
+if [ "$wipe0" == "no" ]; then
+while [ "$bootpart01passcheck" != "1" ]; do
+printf "%b" "\n"
+printf "%b" "\nPlease set your boot partition number... (Default: 1 / Max 9)\n"
+read -r bootpart01check
+case "$bootpart01check" in
+  1) bootpart02="1";;
+  2) bootpart02="2";;
+  3) bootpart02="3";;
+  4) bootpart02="4";;
+  5) bootpart02="5";;
+  6) bootpart02="6";;
+  7) bootpart02="7";;
+  8) bootpart02="8";;
+  9) bootpart02="9";;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n"; sleep 3 ;
+esac
+
+if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
+bootpart01="$bootpart02"
+boot012="$bootpart01"
+else
+bootpart01="p$bootpart02"
+boot012="$bootpart01"
+fi
+
+clear
+printf "%b" "\nYou said partition $bootpart02.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no (default)\n"
+read -r bootpart01passcheck
+case $bootpart01passcheck in
+  1) boot0=$boot012;;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
+esac
+
+if [ "$bootpart01check" != "1" ] && [ "$bootpart01check" != "2" ] && [ "$bootpart01check" != "3" ] && [ "$bootpart01check" != "4" ] && [ "$bootpart01check" != "5" ] && [ "$bootpart01check" != "6" ] && [ "$bootpart01check" != "7" ] && [ "$bootpart01check" != "8" ] && [ "$bootpart01check" != "9" ]; then
+
+if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
+boot0="1"
+bootpart02="1"
+bootpart01passcheck="1"
+else
+boot0="p1"
+bootpart02="1"
+bootpart01passcheck="1"
+fi
+
+fi
+
+done
+fi
+
+if [ "$wipe0" == "no" ]; then
+while [ "$systempart01passcheck" != "1" ]; do
+printf "%b" "\n"
+printf "%b" "\nPlease set your system partition number... (Default: 2 / Max 10)\n"
+read -r systempart01check
+case "$systempart01check" in
+  2) systempart02="2";;
+  3) systempart02="3";;
+  4) systempart02="4";;
+  5) systempart02="5";;
+  6) systempart02="6";;
+  7) systempart02="7";;
+  8) systempart02="8";;
+  9) systempart02="9";;
+  10) systempart02="10";;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n"; sleep 3 ;
+esac
+
+if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
+systempart01="$systempart02"
+system012="$systempart01"
+else
+systempart01="p$systempart02"
+system012="$systempart01"
+fi
+
+clear
+printf "%b" "\nYou said partition $systenpart02.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no (default)\n"
+read -r systempart01passcheck
+case $systempart01passcheck in
+  1) system0=$system012;;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
+esac
+
+if [ "$systempart01check" != "2" ] && [ "$systempart01check" != "3" ] && [ "$systempart01check" != "4" ] && [ "$systempart01check" != "5" ] && [ "$systempart01check" != "6" ] && [ "$systempart01check" != "7" ] && [ "$systempart01check" != "8" ] && [ "$systempart01check" != "9" ] [ "$systempart01check" != "10" ]; then
+
+if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
+system0="2"
+systempart02="2"
+systempart01passcheck="1"
+else
+system0="p2"
+systempart02="2"
+systempart01passcheck="1"
+fi
+
+fi
+
+done
+fi
+
 done
 }
 
@@ -472,6 +604,7 @@ clear
 while [ "$command1finished" != "1" ]; do
 bootpartitiontype="1"
 systempartitiontype="23"
+if [ "$wipe0" == "yes" ]; then
 printf "%b" "\nWiping Partitions\n"
 sleep 3
 clear
@@ -487,9 +620,19 @@ clear
 printf "%b" "Formatting partitions..."
 sleep 3
 clear
-printf "%b" "g\nn\n1\n\n+2G\nn\n2\n\n\nt\n1\n$bootpartitiontype\nt\n2\n$systempartitiontype\nw\n" | fdisk -W always "$drive0"
+bootpart02="1"
+systempart02="2"
+printf "%b" "nn\n$bootpart02\n\n+2G\nn\n$systempart02\n\n\nt\n$bootpart02\n$bootpartitiontype\nt\n$systempart02\n$systempartitiontype\nw\n" | fdisk -W always "$drive0"
 sleep 3
 clear
+else
+printf "%b" "Formatting partitions..."
+sleep 3
+clear
+printf "%b" "nn\n$bootpart02\n\n+2G\nn\n$systempart02\n\n\nt\n$bootpart02\n$bootpartitiontype\nt\n$systempart02\n$systempartitiontype\nw\n" | fdisk -W always "$drive0"
+sleep 3
+clear
+fi
 mkfs.vfat -F 32 "${drive0}${boot0}"
 sleep 3
 clear
@@ -543,7 +686,12 @@ clear
 while [ "$command8finished" != "1" ]; do
 arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
 sed -i 's/Arch/Coffee/g' /mnt/etc/default/grub
+if [ "$wipe0" == "no" ]; then
+sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g' /mnt/etc/default/grub
+else
 sed -i 's/GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/g' /mnt/etc/default/grub
+sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g' /mnt/etc/default/grub
+fi
 # Safest option: Append parameters to grub.
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
 sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 loglevel=3 rw lsm=landlock lockdown yama integrity apparmor bpf mitigations=off split_lock_detect=off zswap.enabled=0"/g' /mnt/etc/default/grub
@@ -554,9 +702,7 @@ printf "%b" "\nGRUB for Nvidia selected.\n"
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
 sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia-drm.modeset=1"/g' /mnt/etc/default/grub
 fi
-if [ "$desktop0" = "cinnamon" ]; then
 sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia-drm.fbdev=1"/g' /mnt/etc/default/grub
-fi
 if [ "$nvsm0" = "nvsm-on" ]; then
 printf "%b" "\nexport NVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /mnt/etc/skel/.bashrc
 fi
@@ -683,6 +829,7 @@ arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
 arch-chroot /mnt pacman -Rdd --noconfirm kmix
+arch-chroot /mnt pacman -Rdd --noconfirm konsole
 arch-chroot /mnt systemctl enable plasmalogin
 fi
 if [ "$desktop01" = "gnome" ];then
