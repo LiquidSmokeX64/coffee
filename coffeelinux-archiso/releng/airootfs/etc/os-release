@@ -1,6 +1,6 @@
 NAME="CoffeeLinux"
 PRETTY_NAME="Coffee Linux"
-VERSION_ID="39.3.0"
+VERSION_ID="39.3.1"
 VERSION_CODENAME="Keurig"
 ID="arch"
 BUILD_ID="Keurig"

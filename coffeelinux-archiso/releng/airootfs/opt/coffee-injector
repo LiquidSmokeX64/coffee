@@ -1,6 +1,19 @@
 #!/bin/sh
 # CoffeeLinux Update File fetcher
 #Replace service file first.
+systemctl enable --now power-profiles-daemon
+systemctl start power-profiles-daemon
+systemctl disable dhcpcd
+systemctl enable cronie
+systemctl enable chronyd
+systemctl enable NetworkManager
+systemctl enable firewalld
+systemctl enable cups
+systemctl enable bluetooth.service
+systemctl --global enable pipewire.service
+systemctl --global enable pipewire-pulse.service
+systemctl --global enable wireplumber.service
+systemctl enable rtkit-daemon.service
 printf "%b" "\nFetching the latest version of the update file...\n\n"
 sleep 3
 wget -q -O /opt/coffee-keeper.service https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-keeper.service

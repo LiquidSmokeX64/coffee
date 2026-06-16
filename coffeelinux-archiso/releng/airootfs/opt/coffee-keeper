@@ -2,6 +2,20 @@
 #Coffee Auto-Updater tool
 sleep 3
 #All systems go..
+#correct failed services starting...
+systemctl enable --now power-profiles-daemon
+systemctl start power-profiles-daemon
+systemctl disable dhcpcd
+systemctl enable cronie
+systemctl enable chronyd
+systemctl enable NetworkManager
+systemctl enable firewalld
+systemctl enable cups
+systemctl enable bluetooth.service
+systemctl --global enable pipewire.service
+systemctl --global enable pipewire-pulse.service
+systemctl --global enable wireplumber.service
+systemctl enable rtkit-daemon.service
 system_updates () {
 #Do system updates to all packages
 clear
