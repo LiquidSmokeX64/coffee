@@ -43,7 +43,18 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
                     
   (Note: SteamOS Mode on Nvidia GPUs may be buggy or not work at all due to Valve not officially supporting it yet.)
 
-- **Bootloader Options**: Supports both **Grub UEFI** and **Grub BIOS** for flexible boot management.
+- **ALHP Optimized Packages (Optional)**: Arch Linux High Performance x86-64-v3 optimized setup option (Can improve performance in some cases).
+   1. Available during OS Installation, and through CoffeeLinux Manager for post-installation setup.
+  
+- **Disk Options For flexible OS installation**:
+   1. Supports NVME, SDA/B, VDA/B disks.
+   2. Disk wiping options (useful for multi-boot setups).
+   3. Custom Partition Options (useful for multi-boot setups, when wiping is not selected).
+  
+- **Bootloader Options For flexible boot management**:
+   1. Supports both **Grub UEFI** and **Grub BIOS**.
+   2. Hidden or Menu styles (useful for multi-boot setups).
+   3. OS probing choice (useful for multi-boot setups).
 
 - **Desktop Environment Selection. Choose from many popular DEs such as Plasma, Gnome, Cosmic, and more.**: 
 

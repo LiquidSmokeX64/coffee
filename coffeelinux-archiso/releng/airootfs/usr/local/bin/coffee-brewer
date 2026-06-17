@@ -444,6 +444,33 @@ done
 
 }
 
+set_optimized_packages (){
+while [ "$alhp01passcheck" != "1" ]; do
+clear
+printf "%b" "\nWould you like to use ALHP x86-64-v3 optimized sources? (Default: 2)\n"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No\n"
+read -r alhp01check
+case "$alhp01check" in
+  1) alhp01="yes";;
+  2) alhp01="no";;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n";
+esac
+if [ "$alhp01check" != "1" ] && [ "$alhp01check" != "2" ]; then
+alhp01="no"
+fi
+clear
+printf "%b" "\nYou said $alhp01.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no (default)\n"
+read -r alhp01passcheck
+case $alhp01passcheck in
+  1) alhp0=$alhp01;;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
+esac
+done
+}
+
 set_steamos_mode (){
 while [ "$steamosmodepasscheck" != "1" ]; do
 clear
@@ -996,6 +1023,24 @@ rm -r /mnt/opt/yaybuilder/
 clear
 }
 
+setup_optimization (){
+clear
+printf "%b" "\nPerforming System Optimizations This may take a few minutes...\n"
+sleep 3
+clear
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y alhp-keyring
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y alhp-mirrorlist
+mkdir -p /opt/optimization/
+rm -R /opt/optimization/*
+wget -q -O /opt/optimization/pacman.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/optimization/pacman.conf
+cp -f /opt/optimization/pacman.conf /mnt/etc/
+arch-chroot /mnt chmod 755 /etc/pacman.conf
+arch-chroot /mnt pacman -Syu --noconfirm
+clear
+printf "%b" "\nSystem Optimizations Complete...\n"
+sleep 3
+}
+
 services_starter(){
 # Startup Services before rebooting.
 clear
@@ -1131,6 +1176,7 @@ set_root_password
 set_pc_name
 set_drive_name
 set_destination_device
+set_optimized_packages
 set_steamos_mode
 set_desktop_environment
 set_cpu_type
@@ -1152,6 +1198,9 @@ setup_gaming
 setup_branding
 homedir_fix
 setup_yay
+if [ "$alhp0" = "yes" ]; then
+setup_optimization
+fi
 services_starter
 setup_aur
 if [ "$desktop0" = "cinnamon" ]; then
