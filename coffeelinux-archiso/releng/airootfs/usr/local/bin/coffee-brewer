@@ -288,11 +288,13 @@ case $drive01passcheck in
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 
+done
+
 while [ "$wipe01passcheck" != "1" ]; do
-printf "%b" "\n"
+clear
 printf "%b" "\nWould you like to wipe the drive first? (Default: 1)\n"
-printf "%b" "\n1 - Yes"
-printf "%b" "\n2 - No"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No\n"
 read -r wipe01check
 case "$wipe01check" in
   1) wipe01="yes";;
@@ -313,9 +315,9 @@ case $wipe01passcheck in
 esac
 done
 
-if [ "$wipe0" == "no" ]; then
+if [ "$wipe0" != "yes" ]; then
 while [ "$bootpart01passcheck" != "1" ]; do
-printf "%b" "\n"
+clear
 printf "%b" "\nPlease set your boot partition number... (Default: 1 / Max 9)\n"
 read -r bootpart01check
 case "$bootpart01check" in
@@ -339,6 +341,18 @@ bootpart01="p$bootpart02"
 boot012="$bootpart01"
 fi
 
+if [ "$bootpart01check" != "1" ] && [ "$bootpart01check" != "2" ] && [ "$bootpart01check" != "3" ] && [ "$bootpart01check" != "4" ] && [ "$bootpart01check" != "5" ] && [ "$bootpart01check" != "6" ] && [ "$bootpart01check" != "7" ] && [ "$bootpart01check" != "8" ] && [ "$bootpart01check" != "9" ]; then
+
+if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
+boot0="1"
+bootpart02="1"
+else
+boot0="p1"
+bootpart02="1"
+fi
+
+fi
+
 clear
 printf "%b" "\nYou said partition $bootpart02.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
@@ -349,26 +363,12 @@ case $bootpart01passcheck in
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 
-if [ "$bootpart01check" != "1" ] && [ "$bootpart01check" != "2" ] && [ "$bootpart01check" != "3" ] && [ "$bootpart01check" != "4" ] && [ "$bootpart01check" != "5" ] && [ "$bootpart01check" != "6" ] && [ "$bootpart01check" != "7" ] && [ "$bootpart01check" != "8" ] && [ "$bootpart01check" != "9" ]; then
-
-if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
-boot0="1"
-bootpart02="1"
-bootpart01passcheck="1"
-else
-boot0="p1"
-bootpart02="1"
-bootpart01passcheck="1"
-fi
-
-fi
-
 done
 fi
 
-if [ "$wipe0" == "no" ]; then
+if [ "$wipe0" != "yes" ]; then
 while [ "$systempart01passcheck" != "1" ]; do
-printf "%b" "\n"
+clear
 printf "%b" "\nPlease set your system partition number... (Default: 2 / Max 10)\n"
 read -r systempart01check
 case "$systempart01check" in
@@ -392,8 +392,20 @@ systempart01="p$systempart02"
 system012="$systempart01"
 fi
 
+if [ "$systempart01check" != "2" ] && [ "$systempart01check" != "3" ] && [ "$systempart01check" != "4" ] && [ "$systempart01check" != "5" ] && [ "$systempart01check" != "6" ] && [ "$systempart01check" != "7" ] && [ "$systempart01check" != "8" ] && [ "$systempart01check" != "9" ] && [ "$systempart01check" != "10" ]; then
+
+if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
+system0="2"
+systempart02="2"
+else
+system0="p2"
+systempart02="2"
+fi
+
+fi
+
 clear
-printf "%b" "\nYou said partition $systenpart02.\nIs this correct?\n"
+printf "%b" "\nYou said partition $systempart02.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
 printf "%b" "\n2 - no (default)\n"
 read -r systempart01passcheck
@@ -402,24 +414,34 @@ case $systempart01passcheck in
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 
-if [ "$systempart01check" != "2" ] && [ "$systempart01check" != "3" ] && [ "$systempart01check" != "4" ] && [ "$systempart01check" != "5" ] && [ "$systempart01check" != "6" ] && [ "$systempart01check" != "7" ] && [ "$systempart01check" != "8" ] && [ "$systempart01check" != "9" ] [ "$systempart01check" != "10" ]; then
-
-if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
-system0="2"
-systempart02="2"
-systempart01passcheck="1"
-else
-system0="p2"
-systempart02="2"
-systempart01passcheck="1"
-fi
-
-fi
-
 done
 fi
 
+while [ "$scan01passcheck" != "1" ]; do
+clear
+printf "%b" "\nWould you like to scan for other operating systems to add to the bootloader? ie: Windows (Default: 1)\n"
+printf "%b" "\n1 - Yes\n"
+printf "%b" "\n2 - No\n"
+read -r scan01check
+case "$scan01check" in
+  1) scan01="yes";;
+  2) scan01="no";;
+  *) printf "%b" "\nUnrecognized option, selecting default..\n";
+esac
+if [ "$scan01check" != "1" ] && [ "$scan01check" != "2" ]; then
+scan01="yes"
+fi
+clear
+printf "%b" "\nYou said $scan01.\nIs this correct?\n"
+printf "%b" "\n1 - yes\n"
+printf "%b" "\n2 - no (default)\n"
+read -r scan01passcheck
+case $scan01passcheck in
+  1) scan0=$scan01;;
+  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
+esac
 done
+
 }
 
 set_steamos_mode (){
@@ -604,7 +626,7 @@ clear
 while [ "$command1finished" != "1" ]; do
 bootpartitiontype="1"
 systempartitiontype="23"
-if [ "$wipe0" == "yes" ]; then
+if [ "$wipe0" != "no" ]; then
 printf "%b" "\nWiping Partitions\n"
 sleep 3
 clear
@@ -686,10 +708,9 @@ clear
 while [ "$command8finished" != "1" ]; do
 arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
 sed -i 's/Arch/Coffee/g' /mnt/etc/default/grub
-if [ "$wipe0" == "no" ]; then
-sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g' /mnt/etc/default/grub
-else
+if [ "$scan0" != "yes" ]; then
 sed -i 's/GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/g' /mnt/etc/default/grub
+else
 sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g' /mnt/etc/default/grub
 fi
 # Safest option: Append parameters to grub.
