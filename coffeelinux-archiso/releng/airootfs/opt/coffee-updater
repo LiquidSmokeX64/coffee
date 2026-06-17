@@ -5,7 +5,7 @@ system_updater (){
 #Main Menu
 while [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.7 ####\n"
+printf "%b" "\n#### Coffee Linux System Updater Tool 1.1.8 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 3)\n"
 printf "%b" "\n1 - Arch Linux Official\n"
 printf "%b" "\n2 - CoffeeLinux OS update\n"
@@ -30,12 +30,12 @@ printf "%b" "\nCoffeeLinux OS update finished...\n"
 fi
 if [ "$typecheck00" = "3" ]; then
 clear
-printf "%b" "\nExited System Updater successfully...\n\n"
+printf "%b" "\nExited System Updater successfully...\n"
 fi
 
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck100
-printf "%b" "\nYou typed $endcheck100...\n\n"
+printf "%b" "\nYou typed $endcheck100...\n"
 clear
 sleep 5
 
@@ -43,9 +43,9 @@ if [ "$typecheck00" != "1" ] && [ "$typecheck00" != "2" ] && [ "$typecheck00" !=
 typecheck00=3
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck103
-printf "%b" "\nYou typed $endcheck103...\n\n"
+printf "%b" "\nYou typed $endcheck103...\n"
 clear
-printf "%b" "\nExited System Updater successfully...\n\n"
+printf "%b" "\nExited System Updater successfully...\n"
 sleep 5
 fi
 done
@@ -56,7 +56,7 @@ app_manager (){
 while [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; do
 clear
 sleep 5
-printf "%b" "\n#### Coffee App Manager Tool 1.1.7 ####\n"
+printf "%b" "\n#### Coffee App Manager Tool 1.1.8 ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 4)\n"
 printf "%b" "\n1 - Install a program\n"
 printf "%b" "\n2 - Install an AUR program\n"
@@ -73,7 +73,7 @@ esac
 clear
 if [ "$typecheck01" = "1" ]; then
 while [ "$programnamecheck00" != "1" ]; do
-printf "%b" "\nWhat programs would you like to install?\n\n"
+printf "%b" "\nWhat programs would you like to install?\n"
 read -r programname00
 clear
 printf "%b" "\n$programname00. Is this correct? (default: 2)\n"
@@ -90,30 +90,30 @@ clear
 if [ "$programnamecheck00" = "1" ]; then
 sudo pacman -Syy $programname00
 clear
-printf "%b" "\nInstallation finished...\n\n"
+printf "%b" "\nInstallation finished...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck104
-printf "%b" "\nYou typed $endcheck104...\n\n"
+printf "%b" "\nYou typed $endcheck104...\n"
 clear
 sleep 5
 typecheck01=4
 fi
 if [ "$programnamecheck00" = "2" ]; then
 clear
-printf "%b" "\nLets try again...\n\n"
+printf "%b" "\nLets try again...\n"
 sleep 5
 fi
 if [ "$programnamecheck00" != "1" ] && [ "$programnamecheck00" != "2" ]; then
 programnamecheck00=2
 clear
-printf "%b" "\nLets try again...\n\n"
+printf "%b" "\nLets try again...\n"
 sleep 5
 fi
 done
 fi
 if [ "$typecheck01" = "2" ]; then
 while [ "$programnamecheck02" != "1" ]; do
-printf "%b" "\nWhat programs would you like to install?\n\n"
+printf "%b" "\nWhat programs would you like to install?\n"
 read -r programname02
 clear
 printf "%b" "\n$programname02. Is this correct? (default: 2)\n"
@@ -131,7 +131,7 @@ if [ "$programnamecheck02" = "1" ]; then
 #Add temp user for yay usage
 user01=$(logname)
 clear
-printf "%b" "\nPreparing to use temporary AUR environment.."
+printf "%b" "\nPreparing to use temporary AUR environment..\n"
 sleep 3
 #Run yay commands
 clear
@@ -140,30 +140,30 @@ sleep 3
 clear
 #Continue as normal
 clear
-printf "%b" "\nInstallation finished...\n\n"
+printf "%b" "\nInstallation finished...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck105
-printf "%b" "\nYou typed $endcheck105...\n\n"
+printf "%b" "\nYou typed $endcheck105...\n"
 clear
 sleep 5
 typecheck01=4
 fi
 if [ "$programnamecheck02" = "2" ]; then
 clear
-printf "%b" "\nLets try again...\n\n"
+printf "%b" "\nLets try again...\n"
 sleep 5
 fi
 if [ "$programnamecheck02" != "1" ] && [ "$programnamecheck02" != "2" ]; then
 programnamecheck02=2
 clear
-printf "%b" "\nLets try again...\n\n"
+printf "%b" "\nLets try again...\n"
 sleep 5
 fi
 done
 fi
 if [ "$typecheck01" = "3" ]; then
 while [ "$programnamecheck01" != "1" ]; do
-printf "%b" "\nWhat programs would you like to remove?\n\n"
+printf "%b" "\nWhat programs would you like to remove?\n"
 read -r programname01
 clear
 printf "%b" "\n$programname01. Is this correct? (default: 2)\n"
@@ -180,37 +180,37 @@ clear
 if [ "$programnamecheck01" = "1" ]; then
 sudo pacman -Rdd --noconfirm $programname01
 clear
-printf "%b" "\nRemoval finished...\n\n"
+printf "%b" "\nRemoval finished...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck106
-printf "%b" "\nYou typed $endcheck106...\n\n"
+printf "%b" "\nYou typed $endcheck106...\n"
 clear
 sleep 5
 typecheck01=4
 fi
 if [ "$programnamecheck01" = "2" ]; then
 clear
-printf "%b" "\nLets try again...\n\n"
+printf "%b" "\nLets try again...\n"
 sleep 5
 fi
 if [ "$programnamecheck01" != "1" ] && [ "$programnamecheck01" != "2" ]; then
 programnamecheck01=2
 clear
-printf "%b" "\nLets try again...\n\n"
+printf "%b" "\nLets try again...\n"
 sleep 5
 fi
 done
 fi
 if [ "$typecheck01" = "4" ]; then
 clear
-printf "%b" "\nExited App Manager successfully...\n\n"
+printf "%b" "\nExited App Manager successfully...\n"
 sleep 5
 typecheck01=4
 fi
 if [ "$typecheck01" != "1" ] && [ "$typecheck01" != "2" ] && [ "$typecheck01" != "3" ] && [ "$typecheck01" != "4" ]; then
 typecheck01=4
 clear
-printf "%b" "\nExited App Manager successfully...\n\n"
+printf "%b" "\nExited App Manager successfully...\n"
 sleep 5
 fi
 done
@@ -219,13 +219,13 @@ done
 system_info (){
 clear
 sleep 5
-printf "%b" "\nGetting system info now...\n\n"
+printf "%b" "\nGetting system info now...\n"
 fastfetch
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck109
-printf "%b" "\nYou typed $endcheck109...\n\n"
+printf "%b" "\nYou typed $endcheck109...\n"
 clear
-printf "%b" "\nExiting the program now...\n\n"
+printf "%b" "\nExiting the program now...\n"
 sleep 5
 }
 
@@ -235,7 +235,7 @@ sleep 5
 #Main Menu
 while [ "$typecheck08" != "1" ] && [ "$typecheck08" != "2" ] && [ "$typecheck08" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.2.2 ####\n"
+printf "%b" "\n#### Coffee Linux Iso Maker Tool 1.2.3 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 1)\n"
 printf "%b" "\n1 - Create a CoffeeLinux Live GUI Installer iso\n"
@@ -267,9 +267,9 @@ printf "%b" "\nCreated Iso file successfully...\n"
 printf "%b" "\nIso will be placed in Documents folder.\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck109
-printf "%b" "\nYou typed $endcheck109...\n\n"
+printf "%b" "\nYou typed $endcheck109...\n"
 clear
-printf "%b" "\nExiting the program now...\n\n"
+printf "%b" "\nExiting the program now...\n"
 sleep 5
 fi
 if [ "$typecheck08" = "2" ]; then
@@ -289,27 +289,27 @@ printf "%b" "\nCreated Iso file successfully...\n"
 printf "%b" "\nIso will be placed in Documents folder.\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck109
-printf "%b" "\nYou typed $endcheck109...\n\n"
+printf "%b" "\nYou typed $endcheck109...\n"
 clear
-printf "%b" "\nExiting the program now...\n\n"
+printf "%b" "\nExiting the program now...\n"
 sleep 5
 fi
 if [ "$typecheck08" = "3" ]; then
 clear
-printf "%b" "\nExiting the program now...\n\n"
+printf "%b" "\nExiting the program now...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck110
-printf "%b" "\nYou typed $endcheck110...\n\n"
+printf "%b" "\nYou typed $endcheck110...\n"
 clear
 sleep 5
 fi
 if [ "$typecheck08" != "1" ] && [ "$typecheck08" != "2" ] && [ "$typecheck08" != "3" ]; then
 typecheck08=3
 clear
-printf "%b" "\nExiting the program now...\n\n"
+printf "%b" "\nExiting the program now...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck111
-printf "%b" "\nYou typed $endcheck111...\n\n"
+printf "%b" "\nYou typed $endcheck111...\n"
 clear
 sleep 5
 fi
@@ -322,7 +322,7 @@ sleep 5
 #Main Menu
 while [ "$typecheck67" != "1" ] && [ "$typecheck67" != "2" ] && [ "$typecheck67" != "3" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Steam Library Fixer Tool 1.1.6 ####\n"
+printf "%b" "\n#### Coffee Linux Steam Library Fixer Tool 1.1.7 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\n#### PLAY ANY GAME VIA PROTON FIRST ####\n"
 printf "%b" "\nHave you mounted the filesystem with your Library on it? (Default: 3)\n"
@@ -339,11 +339,11 @@ esac
 clear
 if [ "$typecheck67" = "1" ]; then
 while [ "$pathverified" != "1" ]; do
-printf "%b" "\nPlease enter the path to your Steam Library...\n(Do not include final '/')\n\n"
+printf "%b" "\nPlease enter the path to your Steam Library...\n(Do not include final '/')\n"
 read -r steampath
 clear
 printf "%b" "\n$steampath...\n"
-printf "%b" "\nIs this correct?\n\n"
+printf "%b" "\nIs this correct?\n"
 printf "%b" "\n1 - Yes\n"
 printf "%b" "\n2 - No\n"
 read -r pathverified
@@ -355,18 +355,18 @@ esac
 clear
 
 if [ "$pathverified" = "1" ]; then
-printf "%b" "\nFixing Steam path...\n\n"
+printf "%b" "\nFixing Steam path...\n"
 rm -r $steampath/steamapps/compatdata
 ln -s ~/.steam/root/steamapps/compatdata $steampath/steamapps/compatdata
 sudo chmod 777 ~/.steam/root/steamapps/compatdata
 sleep 3
 clear
-printf "%b" "\nFixed paths successfully...\n\n"
+printf "%b" "\nFixed paths successfully...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck116
-printf "%b" "\nYou typed $endcheck116...\n\n"
+printf "%b" "\nYou typed $endcheck116...\n"
 clear
-printf "%b" "\nExiting the program now...\n\n"
+printf "%b" "\nExiting the program now...\n"
 sleep 5
 fi
 done
@@ -375,29 +375,29 @@ fi
 
 if [ "$typecheck67" = "2" ]; then
 clear
-printf "%b" "\nExiting the program now...\n\n"
+printf "%b" "\nExiting the program now...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck117
-printf "%b" "\nYou typed $endcheck117...\n\n"
+printf "%b" "\nYou typed $endcheck117...\n"
 clear
 sleep 5
 fi
 if [ "$typecheck67" = "3" ]; then
 clear
-printf "%b" "\nExiting the program now...\n\n"
+printf "%b" "\nExiting the program now...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck118
-printf "%b" "\nYou typed $endcheck118...\n\n"
+printf "%b" "\nYou typed $endcheck118...\n"
 clear
 sleep 5
 fi
 if [ "$typecheck67" != "1" ] && [ "$typecheck67" != "2" ] && [ "$typecheck67" != "3" ]; then
 typecheck67=3
 clear
-printf "%b" "\nExiting the program now...\n\n"
+printf "%b" "\nExiting the program now...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck119
-printf "%b" "\nYou typed $endcheck119...\n\n"
+printf "%b" "\nYou typed $endcheck119...\n"
 clear
 sleep 5
 fi
@@ -409,7 +409,7 @@ discord_updater (){
 while [ "$typecheck00D" != "1" ] && [ "$typecheck00D" != "2" ]; do
 clear
 sleep 5
-printf "%b" "\n#### Coffee Linux Discord Updater Tool 1.0.3 ####\n"
+printf "%b" "\n#### Coffee Linux Discord Updater Tool 1.0.4 ####\n"
 printf "%b" "\nWhat type of updates do you want? (Default: 2)\n"
 printf "%b" "\n1 - Manual Discord update\n"
 printf "%b" "\n2 - Exit Discord Updater.\n"
@@ -445,13 +445,13 @@ printf "%b" "\nDiscord updater finished..\n"
 typecheck00D=2
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck100D
-printf "%b" "\nYou typed $endcheck100D...\n\n"
+printf "%b" "\nYou typed $endcheck100D...\n"
 clear
 sleep 5
 fi
 if [ "$typecheck00D" = "2" ]; then
 clear
-printf "%b" "\nExited Discord Updater successfully...\n\n"
+printf "%b" "\nExited Discord Updater successfully...\n"
 sleep 5
 typecheck00D=2
 fi
@@ -459,9 +459,9 @@ if [ "$typecheck00D" != "1" ] && [ "$typecheck00D" != "2" ]; then
 typecheck00D=2
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck103D
-printf "%b" "\nYou typed $endcheck103D...\n\n"
+printf "%b" "\nYou typed $endcheck103D...\n"
 clear
-printf "%b" "\nExited Discord Updater successfully...\n\n"
+printf "%b" "\nExited Discord Updater successfully...\n"
 sleep 5
 fi
 done
@@ -470,7 +470,7 @@ done
 #Main Menu
 while [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ] && [ "$typecheck99" != "4" ] && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ]; do
 clear
-printf "%b" "\n#### Coffee Linux Manager Tool 2.2.0 ####\n"
+printf "%b" "\n#### Coffee Linux Manager Tool 2.2.2 ####\n"
 printf "%b" "\n#### DO NOT RUN AS SUDO/ROOT ####\n"
 printf "%b" "\nWhat would you like to do? (Default: 8)\n"
 printf "%b" "\n1 - System Updates\n"
@@ -495,10 +495,10 @@ clear
 
 if [ "$typecheck99" = "7" ]; then
 clear
-printf "%b" "\nExited Coffee Manager successfully...\n\n"
+printf "%b" "\nExited Coffee Manager successfully...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck120
-printf "%b" "\nYou typed $endcheck120...\n\n"
+printf "%b" "\nYou typed $endcheck120...\n"
 clear
 typecheck99=7
 sleep 5
@@ -506,10 +506,10 @@ fi
 if [ "$typecheck99" != "1" ] && [ "$typecheck99" != "2" ] && [ "$typecheck99" != "3" ]  && [ "$typecheck99" != "4" ]  && [ "$typecheck99" != "5" ] && [ "$typecheck99" != "6" ] && [ "$typecheck99" != "7" ]; then
 typecheck99=7
 clear
-printf "%b" "\nExited Coffee Manager successfully...\n\n"
+printf "%b" "\nExited Coffee Manager successfully...\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck121
-printf "%b" "\nYou typed $endcheck121...\n\n"
+printf "%b" "\nYou typed $endcheck121...\n"
 clear
 sleep 5
 fi
