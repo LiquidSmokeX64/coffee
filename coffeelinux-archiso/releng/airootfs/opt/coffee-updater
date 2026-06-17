@@ -359,6 +359,7 @@ printf "%b" "\nFixing Steam path...\n\n"
 rm -r $steampath/steamapps/compatdata
 ln -s ~/.steam/root/steamapps/compatdata $steampath/steamapps/compatdata
 sudo chmod 777 ~/.steam/root/steamapps/compatdata
+sleep 3
 clear
 printf "%b" "\nFixed paths successfully...\n\n"
 printf "%b" "\n#######Press enter to continue.#######.\n"

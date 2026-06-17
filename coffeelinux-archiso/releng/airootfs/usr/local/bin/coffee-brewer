@@ -644,7 +644,7 @@ sleep 3
 clear
 bootpart02="1"
 systempart02="2"
-printf "%b" "nn\n$bootpart02\n\n+2G\nn\n$systempart02\n\n\nt\n$bootpart02\n$bootpartitiontype\nt\n$systempart02\n$systempartitiontype\nw\n" | fdisk -W always "$drive0"
+printf "%b" "g\nn\n$bootpart02\n\n+2G\nn\n$systempart02\n\n\nt\n$bootpart02\n$bootpartitiontype\nt\n$systempart02\n$systempartitiontype\nw\n" | fdisk -W always "$drive0"
 sleep 3
 clear
 else
@@ -996,24 +996,6 @@ rm -r /mnt/opt/yaybuilder/
 clear
 }
 
-#setup_optimization (){
-#clear
-#printf "%b" "\nPerforming System Optimizations This may take a few minutes...\n"
-#sleep 3
-#clear
-#printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y alhp-keyring
-#printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y alhp-mirrorlist
-#mkdir -p /opt/optimization/
-#rm -R /opt/optimization/*
-#wget -q -O /opt/optimization/pacman.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/optimization/pacman.conf
-#cp -f /opt/optimization/pacman.conf /mnt/etc/
-#arch-chroot /mnt chmod 755 /etc/pacman.conf
-#arch-chroot /mnt pacman -Syu --noconfirm
-#clear
-#printf "%b" "\nSystem Optimizations Complete...\n"
-#sleep 3
-#}
-
 services_starter(){
 # Startup Services before rebooting.
 clear
@@ -1170,7 +1152,6 @@ setup_gaming
 setup_branding
 homedir_fix
 setup_yay
-#setup_optimization
 services_starter
 setup_aur
 if [ "$desktop0" = "cinnamon" ]; then

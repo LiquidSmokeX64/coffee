@@ -22,23 +22,6 @@ sleep 3
 clear
 printf "%b" "1\n" | sudo -Su "$user01" yay -Syu --noconfirm
 clear
-#printf "%b" "\nPerforming System Optimizations This may take a few minutes...\n"
-#sleep 3
-#clear
-#printf "%b" "1\n" | sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y alhp-keyring
-#printf "%b" "1\n" | sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y alhp-mirrorlist
-#mkdir -p /opt/optimization/
-#rm -R /opt/optimization/*
-#wget -q -O /opt/optimization/pacman.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/optimization/pacman.conf
-#cp -f /opt/optimization/pacman.conf /etc/
-#chmod 755 /etc/pacman.conf
-#sleep 3
-#clear
-#pacman -Syu --noconfirm
-#clear
-#printf "%b" "\nSystem Optimizations Complete...\n"
-#sleep 3
-#clear
 printf "%b" "\nAdding any new AUR applications..\n"
 sleep 3
 clear
