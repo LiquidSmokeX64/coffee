@@ -952,118 +952,95 @@ clear
 printf "%b" "\vm.max_map_count=262144" > /mnt/etc/sysctl.d/99-vm.max_map_count.conf
 
 # Space Engineers fix.. (Allows DotNet 4.8 to be installed to prefixes via protontricks again)
-arch-chroot /mnt pacman -S --noconfirm apparmor apparmor-profiles
-arch-chroot /mnt systemctl enable apparmor
-
-# Establish local AppArmor directory structures inside the root mount target
-mkdir -p /mnt/etc/apparmor.d/local
-touch /mnt/etc/apparmor.d/local/bwrap /mnt/etc/apparmor.d/local/srt-bwrap
-
-# Deploy the bubblewrap base system override layout using standard unconfined keyword declarations
-mkdir -p /mnt/etc/apparmor.d
-{
-    printf 'abi <abi/3.0>\n'
-    printf 'include <tunables/global>\n\n'
-    printf 'include if exists <local/bwrap>\n\n'
-    printf 'profile /usr/bin/bwrap unconfined {\n'
-    printf '}\n'
-} > /mnt/etc/apparmor.d/bwrap
-
-# Deploy the Steam Runtime container transition rules utilizing certified recursive alternation arrays
-{
-    printf 'abi <abi/3.0>\n'
-    printf 'include <tunables/global>\n\n'
-    printf 'include if exists <local/srt-bwrap>\n\n'
-    printf 'profile /home/*/.local/share/Steam/{,**/}srt-bwrap unconfined {\n'
-    printf '}\n\n'
-    printf 'profile /var/lib/flatpak/{,**/}srt-bwrap unconfined {\n'
-    printf '}\n'
-} > /mnt/etc/apparmor.d/srt-bwrap
-
-# Enforce standard maximum read permissions across both newly deployed configuration templates
-chmod 644 /mnt/etc/apparmor.d/bwrap /mnt/etc/apparmor.d/srt-bwrap
-
-clear
-sleep 3
 
 # ==============================================================================
-# COFFEELINUX INSTALLER: COMPREHENSIVE PERFORMANCE TUNING INSTALL MODULE
+# COFFEELINUX HOTFIX MODULE: OS INSTALLER DIRECT FILE SYSTEM INJECTIONS (/mnt)
 # ==============================================================================
 
-# Route Proton translation engines to utilize fast kernel-level synchronization primitives
-printf "WINE_NTSYNC=1\n" >> /mnt/etc/environment
+# --- PART 1: SECURE APPARMOR / SPACE ENGINEERS FIX ---
+mkdir -p /mnt/etc/apparmor.d/local && touch /mnt/etc/apparmor.d/local/bwrap
+if ! grep -q 'COFFEE_REL_SE_FIX=1' /mnt/etc/apparmor.d/bwrap 2>/dev/null; then
+    {
+        printf '# COFFEE_REL_SE_FIX=1\n'
+        printf 'abi <abi/4.0>,\n'
+        printf 'include <tunables/global>\n\n'
+        printf 'profile bwrap /usr/bin/bwrap flags=(unconfined) {\n'
+        printf '  userns,\n'
+        printf '  include if exists <local/bwrap>\n'
+        printf '}\n'
+    } > /mnt/etc/apparmor.d/bwrap
+    chmod 644 /mnt/etc/apparmor.d/bwrap
+fi
 
-# Force multi-threaded, asynchronous Vulkan compilation sweeps across the Mesa framework
-printf "radv_background_compile=true\n" >> /mnt/etc/environment
+# --- PART 2: PERFORMANCE TUNING MATRIX ---
+if ! grep -q "WINE_NTSYNC" /mnt/etc/environment 2>/dev/null; then
+    printf "\nWINE_NTSYNC=1\n" >> /mnt/etc/environment
+fi
+if ! grep -q "radv_background_compile" /mnt/etc/environment 2>/dev/null; then
+    printf "radv_background_compile=true\n" >> /mnt/etc/environment
+fi
 
-# Create the dedicated sysctl configuration profile path and deploy performance parameters safely
 mkdir -p /mnt/etc/sysctl.d
-{
-    printf "net.core.default_qdisc=fq\n"
-    printf "net.ipv4.tcp_congestion_control=bbr\n"
-    printf "net.ipv4.tcp_fastopen=3\n"
-    printf "kernel.sched_rt_runtime_us=-1\n"
-    printf "kernel.shmmax=34359738368\n"
-    printf "kernel.shmall=8388608\n"
-    printf "vm.vfs_cache_pressure=50\n"
-    printf "vm.swappiness=10\n"
-    printf "vm.dirty_bytes=268435456\n"
-    printf "vm.dirty_background_bytes=134217728\n"
-} >> /mnt/etc/sysctl.d/60-coffeelinux.conf
-chmod 644 /mnt/etc/sysctl.d/60-coffeelinux.conf
+COFFEE_TOTAL_PAGES=$(awk '/MemTotal/{print $2}' /proc/meminfo)
+if [ -n "$COFFEE_TOTAL_PAGES" ]; then
+    SHMMAX_CALC=$((COFFEE_TOTAL_PAGES * 1024))
+    SHMALL_CALC=$((COFFEE_TOTAL_PAGES / 4))
+    {
+        printf "net.core.default_qdisc=fq\n"
+        printf "net.ipv4.tcp_congestion_control=bbr\n"
+        printf "net.ipv4.tcp_fastopen=3\n"
+        printf "kernel.sched_rt_runtime_us=-1\n"
+        printf "kernel.shmmax=%s\n" "$SHMMAX_CALC"
+        printf "kernel.shmall=%s\n" "$SHMALL_CALC"
+        printf "vm.vfs_cache_pressure=50\n"
+        printf "vm.swappiness=10\n"
+        printf "vm.dirty_bytes=268435456\n"
+        printf "vm.dirty_background_bytes=134217728\n"
+    } > /mnt/etc/sysctl.d/60-coffeelinux.conf
+    chmod 644 /mnt/etc/sysctl.d/60-coffeelinux.conf
+fi
 
-# Strip out I/O parsing bottlenecks on modern solid state storage NVMe controllers
 mkdir -p /mnt/etc/udev/rules.d
-printf 'ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="none", ATTR{queue/read_ahead_kb}="4096"\n' >> /mnt/etc/udev/rules.d/60-io.rules
+printf 'ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="none", ATTR{queue/read_ahead_kb}="4096"\n' > /mnt/etc/udev/rules.d/60-io.rules
 
-# Allocate rapid zstd memory compaction algorithms over active system swap space limits directly
 mkdir -p /mnt/etc/systemd
-printf "[zram0]\nzram-size = ram / 2\ncompression-algorithm = zstd\n" > /mnt/etc/systemd/zram-generator.conf
+{
+    printf "[zram0]\n"
+    printf "zram-size = ram / 2\n"
+    printf "compression-algorithm = zstd\n"
+} > /mnt/etc/systemd/zram-generator.conf
 
-# Raise open file ceilings globally to prevent resource starvation crashes inside sprawling Proton environments
 mkdir -p /mnt/etc/security/limits.d
-printf "* soft nofile 524288\n* hard nofile 524288\n" >> /mnt/etc/security/limits.d/60-coffeelinux.conf
+printf "* soft nofile 524288\n* hard nofile 524288\n" > /mnt/etc/security/limits.d/60-coffeelinux.conf
 
-# Audit machine physical system RAM bounds; deploy Transparent Hugepages if capacity exceeds 15GB safely to /etc
-COFFEE_RAM=$(awk '/MemTotal/{print $2}' /proc/meminfo)
-[ "${COFFEE_RAM%%[!0-9]*}" -gt 15728640 ] && { mkdir -p /mnt/etc/tmpfiles.d; printf "w /sys/kernel/mm/transparent_hugepage/enabled - - - - always\n" > /mnt/etc/tmpfiles.d/thp.conf; }
-
-# ==============================================================================
-# INSTALL MODULE COMPLETE - PARAMETERS WILL NATIVELY PARSE ON FIRST HARDWARE BOOT
-# ==============================================================================
-
-# ==============================================================================
-# COFFEELINUX INSTALLER: ZERO-FAILURE AUDIO UNTHROTTLE MODULE
-# ==============================================================================
-
-# Ensure standard low-level ALSA management utilities exist inside the target image
-arch-chroot /mnt pacman -S --noconfirm alsa-utils
-
-# Deploy kernel power-saving audio-pop mitigations safely to the target filesystem
 mkdir -p /mnt/etc/tmpfiles.d
-{
-    printf 'w /sys/module/snd_hda_intel/parameters/power_save - - - - 0\n'
-    printf 'w /sys/module/snd_hda_intel/parameters/power_save_node - - - - N\n'
-} > /mnt/etc/tmpfiles.d/coffeelinux-audio.conf
+if [ -n "$COFFEE_TOTAL_PAGES" ] && [ "$COFFEE_TOTAL_PAGES" -gt 15728640 ]; then
+    printf "w /sys/kernel/mm/transparent_hugepage/enabled - - - - always\n" > /mnt/etc/tmpfiles.d/thp.conf
+else
+    rm -f /mnt/etc/tmpfiles.d/thp.conf
+fi
 
-# Deploy a universal, hardware-agnostic boot service to unthrottle physical mixer slots cleanly
-mkdir -p /mnt/etc/systemd/system
-{
-    printf '[Unit]\n'
-    printf 'Description=CoffeeLinux Global Audio Hardware Gain Initialization\n'
-    printf 'After=alsa-restore.service sound.target\n\n'
-    printf '[Service]\n'
-    printf 'Type=oneshot\n'
-    printf 'ExecStart=/usr/bin/amixer sset Master 100%% unmute\n'
-    printf 'ExecStart=/usr/bin/amixer sset PCM 100%% unmute\n'
-    printf 'ExecStart=/usr/bin/amixer sset Front 100%% unmute\n'
-    printf 'RemainAfterExit=yes\n\n'
-    printf '[Install]\n'
-    printf 'WantedBy=multi-user.target\n'
-} > /mnt/etc/systemd/system/coffeelinux-audio.service
-
-# Force-register the custom initialization target directly into the runtime links
-arch-chroot /mnt systemctl enable coffeelinux-audio.service
+# --- PART 3: AUDIO HARDWARE FIX ---
+mkdir -p /mnt/etc/systemd/system/multi-user.target.wants
+if ! grep -q 'coffeelinux-audio' /mnt/etc/systemd/system/coffeelinux-audio.service 2>/dev/null; then
+    {
+        printf 'w /sys/module/snd_hda_intel/parameters/power_save - - - - 0\n'
+        printf 'w /sys/module/snd_hda_intel/parameters/power_save_node - - - - N\n'
+    } > /mnt/etc/tmpfiles.d/coffeelinux-audio.conf
+    {
+        printf '[Unit]\n'
+        printf 'Description=CoffeeLinux Global Audio Hardware Gain Initialization\n'
+        printf 'After=alsa-restore.service sound.target\n\n'
+        printf '[Service]\n'
+        printf 'Type=oneshot\n'
+        printf 'ExecStart=/bin/sh -c "/usr/bin/amixer sset Master 100%% unmute || true; /usr/bin/amixer sset PCM 100%% unmute || true; /usr/bin/amixer sset Front 100%% unmute || true"\n'
+        printf 'RemainAfterExit=yes\n\n'
+        printf '[Install]\n'
+        printf 'WantedBy=multi-user.target\n'
+    } > /mnt/etc/systemd/system/coffeelinux-audio.service
+    chmod 644 /mnt/etc/systemd/system/coffeelinux-audio.service
+    ln -sf /etc/systemd/system/coffeelinux-audio.service /mnt/etc/systemd/system/multi-user.target.wants/coffeelinux-audio.service
+fi
 
 }
 
