@@ -469,18 +469,18 @@ done
 
 optimization_updater (){
 #Main Menu
-while [ "$typecheck00E" != "1" ] && [ "$typecheck00E" != "2" ]; do
+while [ "$typecheck00E" != "1" ] && [ "$typecheck00E" != "2" ] && [ "$typecheck00E" != "3" ]; do
 clear
 sleep 3
-printf "%b" "\n#### Coffee Linux ALHP Setup Tool 1.0.0 ####\n"
-printf "%b" "\n#### WARNING : THIS IS A ONE WAY PROCEDURE ####\n"
-printf "%b" "\nDo you want to use ALHP x86-64-v3 optimized packages? (Default: 2)\n"
-printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No (Exit).\n"
+printf "%b" "\n#### Coffee Linux ALHP Setup Tool 1.1.0 ####\n"
+printf "%b" "\nWhat would you  like to do? (Default: 3)\n"
+printf "%b" "\n1 - Activate ALHP x86-64-v3 optimized packages Repo\n"
+printf "%b" "\n2 - Deactivate ALHP x86-64-v3 optimized packages Repo (Exit).\n"
+printf "%b" "\n3 - Exit.\n"
 read -r typecheck00E
 case $typecheck00E in
- 1) printf "%b" "\nALHP selected. Running now..\n" ;;
- 2) printf "%b" "\nExit selected. exiting now...\n" ;;
+ 1) printf "%b" "\nAdd selected. Running now..\n" ;;
+ 2) printf "%b" "\nRemove selected. exiting now...\n" ;;
  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;;
 esac
 clear
@@ -512,13 +512,38 @@ clear
 sleep 3
 fi
 if [ "$typecheck00E" = "2" ]; then
+printf "%b" "\nRemoving ALHP Repos...\n"
+user01=$(logname)
+sleep 3
+clear
+printf "%b" "1\n" | sudo pacman -Rdd alhp-keyring
+printf "%b" "1\n" | sudo pacman -Rdd alhp-mirrorlist
+sudo wget -q -O /opt/pacman.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman.conf
+sudo cp -f /opt/pacman.conf /etc/
+sudo chmod 755 /etc/pacman.conf
+sleep 3
+clear
+sudo pacman -Syu --noconfirm
+clear
+printf "%b" "\nSystem Optimizations Complete...\n"
+sleep 3
+clear
+printf "%b" "\nALHP Setup Tool finished..\n"
+typecheck00E=3
+printf "%b" "\n#######Press enter to continue.#######.\n"
+read -r endcheck100E
+printf "%b" "\nYou typed $endcheck100E...\n"
+clear
+sleep 3
+fi
+if [ "$typecheck00E" = "3" ]; then
 clear
 printf "%b" "\nExited ALHP Setup Tool successfully...\n"
 sleep 3
-typecheck00E=2
+typecheck00E=3
 fi
-if [ "$typecheck00E" != "1" ] && [ "$typecheck00E" != "2" ]; then
-typecheck00E=2
+if [ "$typecheck00E" != "1" ] && [ "$typecheck00E" != "2" ] && [ "$typecheck00E" != "3" ]; then
+typecheck00E=3
 printf "%b" "\n#######Press enter to continue.#######.\n"
 read -r endcheck103E
 printf "%b" "\nYou typed $endcheck103E...\n"
