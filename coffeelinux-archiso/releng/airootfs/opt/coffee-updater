@@ -472,10 +472,10 @@ optimization_updater (){
 while [ "$typecheck00E" != "1" ] && [ "$typecheck00E" != "2" ] && [ "$typecheck00E" != "3" ]; do
 clear
 sleep 3
-printf "%b" "\n#### Coffee Linux ALHP Setup Tool 1.1.0 ####\n"
+printf "%b" "\n#### Coffee Linux ALHP Setup Tool 1.1.1 ####\n"
 printf "%b" "\nWhat would you  like to do? (Default: 3)\n"
 printf "%b" "\n1 - Activate ALHP x86-64-v3 optimized packages Repo\n"
-printf "%b" "\n2 - Deactivate ALHP x86-64-v3 optimized packages Repo (Exit).\n"
+printf "%b" "\n2 - Deactivate ALHP x86-64-v3 optimized packages Repo.\n"
 printf "%b" "\n3 - Exit.\n"
 read -r typecheck00E
 case $typecheck00E in
@@ -490,7 +490,10 @@ user01=$(logname)
 sleep 3
 clear
 printf "%b" "1\n" | sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y alhp-keyring
+sleep 3
+clear
 printf "%b" "1\n" | sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y alhp-mirrorlist
+sleep 3
 sudo mkdir -p /opt/optimization/
 sudo rm -R /opt/optimization/*
 sudo wget -q -O /opt/optimization/pacman.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/optimization/pacman.conf
@@ -516,8 +519,8 @@ printf "%b" "\nRemoving ALHP Repos...\n"
 user01=$(logname)
 sleep 3
 clear
-printf "%b" "1\n" | sudo pacman -Rdd alhp-keyring
-printf "%b" "1\n" | sudo pacman -Rdd alhp-mirrorlist
+sudo pacman -Rdd --noconfirm alhp-keyring
+sudo pacman -Rdd --noconfirm alhp-mirrorlist
 sudo wget -q -O /opt/pacman.conf https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/pacman.conf
 sudo cp -f /opt/pacman.conf /etc/
 sudo chmod 755 /etc/pacman.conf
