@@ -748,9 +748,8 @@ if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nGRUB for Nvidia selected.\n"
 # Safest option: Append parameters to grub.
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
-sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia-drm.modeset=1"/g' /mnt/etc/default/grub
+sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.modeset=1 nvidia_drm.fbdev=1"/g' /mnt/etc/default/grub
 fi
-sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia-drm.fbdev=1"/g' /mnt/etc/default/grub
 if [ "$nvsm0" = "nvsm-on" ]; then
 printf "%b" "\nexport NVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /mnt/etc/skel/.bashrc
 fi
@@ -841,22 +840,22 @@ command3finished="0"
 setup_desktop (){
 # Install Desktop Environment and Java...
 while [ "$command4finished" != "1" ]; do
-if [ "$desktop01" = "plasma" ];then
+if [ "$desktop0" = "plasma" ];then
 selecteddesktop=$kdedesktop
 fi
-if [ "$desktop01" = "gnome" ];then
+if [ "$desktop0" = "gnome" ];then
 selecteddesktop=$gnomedesktop
 fi
-if [ "$desktop01" = "cinnamon" ];then
+if [ "$desktop0" = "cinnamon" ];then
 selecteddesktop=$cinnamondesktop
 fi
-if [ "$desktop01" = "cosmic" ];then
+if [ "$desktop0" = "cosmic" ];then
 selecteddesktop=$cosmicdesktop
 fi
-if [ "$desktop01" = "budgie" ];then
+if [ "$desktop0" = "budgie" ];then
 selecteddesktop=$budgiedesktop
 fi
-if [ "$desktop01" = "xfce" ];then
+if [ "$desktop0" = "xfce" ];then
 selecteddesktop=$xfcedesktop
 fi
 arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $selecteddesktop
@@ -872,7 +871,7 @@ arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 arch-chroot /mnt systemctl daemon-reload
 # Desktop Environment specific..
-if [ "$desktop01" = "plasma" ];then
+if [ "$desktop0" = "plasma" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
@@ -880,13 +879,13 @@ arch-chroot /mnt pacman -Rdd --noconfirm kmix
 arch-chroot /mnt pacman -Rdd --noconfirm konsole
 arch-chroot /mnt systemctl enable plasmalogin
 fi
-if [ "$desktop01" = "gnome" ];then
+if [ "$desktop0" = "gnome" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gedit
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-terminal
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-console
 arch-chroot /mnt systemctl enable gdm
 fi
-if [ "$desktop01" = "cinnamon" ];then
+if [ "$desktop0" = "cinnamon" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm nautilus
 arch-chroot /mnt pacman -Rdd --noconfirm gedit
@@ -894,19 +893,19 @@ arch-chroot /mnt pacman -Rdd --noconfirm gnome-console
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-terminal
 arch-chroot /mnt systemctl enable lightdm
 fi
-if [ "$desktop01" = "cosmic" ];then
+if [ "$desktop0" = "cosmic" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
 arch-chroot /mnt systemctl enable cosmic-greeter.service
 fi
-if [ "$desktop01" = "budgie" ];then
+if [ "$desktop0" = "budgie" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
 arch-chroot /mnt systemctl enable lightdm
 fi
-if [ "$desktop01" = "xfce" ];then
+if [ "$desktop0" = "xfce" ];then
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
@@ -1141,6 +1140,10 @@ arch-chroot /mnt systemctl --global enable wireplumber.service
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable power-profiles-daemon
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
+if [ "$desktop0" = "cosmic" ]; then
+arch-chroot /mnt systemctl disable power-profiles-daemon
+arch-chroot /mnt systemctl enable system76.Scheduler.service
+fi
 }
 
 setup_aur (){
