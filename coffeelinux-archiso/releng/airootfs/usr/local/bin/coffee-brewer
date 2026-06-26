@@ -1142,7 +1142,11 @@ arch-chroot /mnt systemctl enable power-profiles-daemon
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 if [ "$desktop0" = "cosmic" ]; then
 arch-chroot /mnt systemctl disable power-profiles-daemon
-arch-chroot /mnt systemctl enable system76.Scheduler.service
+arch-chroot /mnt systemctl mask power-profiles-daemon
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y system76-power
+printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean n  --answerdiff n --answeredit y --answerupgrade y system76-dkms
+arch-chroot /mnt systemctl enable com.system76.Scheduler.service
+arch-chroot /mnt systemctl enable com.system76.PowerDaemon.service
 fi
 }
 
