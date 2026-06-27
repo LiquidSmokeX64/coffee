@@ -122,6 +122,7 @@ chmod 644 /usr/share/applications/coffee-updater.desktop /usr/share/applications
 chmod 755 /lib/systemd/system/coffee-keeper.service
 chmod 644 /etc/issue
 systemctl enable coffee-keeper.service
+timedatectl set-ntp true
 clear
 }
 

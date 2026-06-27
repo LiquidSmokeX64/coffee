@@ -1139,6 +1139,7 @@ arch-chroot /mnt systemctl --global enable pipewire-pulse.service
 arch-chroot /mnt systemctl --global enable wireplumber.service
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable power-profiles-daemon
+arch-chroot /mnt timedatectl set-ntp true
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 if [ "$desktop0" = "cosmic" ]; then
 arch-chroot /mnt systemctl disable power-profiles-daemon
