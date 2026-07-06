@@ -1,12 +1,13 @@
 #!/bin/sh
 # CoffeeLinux Install Script
 #Set Variables..
+
 set_variables(){
 clear
 
 baseapps="iptables dbus-broker-units mkinitcpio texinfo base base-devel dhcpcd iwd linux-zen linux-firmware man-db man-pages nano networkmanager nmap sudo-rs gobject-introspection"
 
-baseapps2="apparmor arch-install-scripts archinstall autogen b43-fwcutter bind boost boost-libs bootconfig brltty btrfs-progs clonezilla cloud-init cpupower cryptsetup darkhttpd dbus ddrescue device-mapper dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize freetype2 fsarchiver fuse2 fwupd fwupd-efi gettext git gpm gptfdisk grml-zsh-config hdparm help2man hyperv jfsutils kitty-terminfo libfido2 libisoburn libusb-compat linux-zen-headers lzop mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mokutil mtools net-tools nfs-utils nftables ntfs-3g ntfsprogs ntp nvme-cli open-iscsi open-vm-tools openconnect openssh openvpn partclone pcsclite perf ppp pptpclient python realtime-privileges refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools system-config-printer systemd systemd-resolvconf tcpdump terminus-font testdisk tmux tpm2-tss ttf-dejavu udev udftools usb_modeswitch usbmuxd usbutils vpnc wget wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd xz zram-generator zsh"
+baseapps2="scx-scheds mold apparmor arch-install-scripts archinstall autogen b43-fwcutter bind boost boost-libs bootconfig brltty btrfs-progs clonezilla cloud-init cpupower cryptsetup darkhttpd dbus ddrescue device-mapper dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize freetype2 fsarchiver fuse2 fwupd fwupd-efi gettext git gpm gptfdisk grml-zsh-config hdparm help2man hyperv jfsutils kitty-terminfo libfido2 libisoburn libusb-compat linux-zen-headers lzop mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mokutil mtools net-tools nfs-utils nftables ntfs-3g ntfsprogs ntp nvme-cli open-iscsi open-vm-tools openconnect openssh openvpn partclone pcsclite perf ppp pptpclient python realtime-privileges refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools system-config-printer systemd systemd-resolvconf tcpdump terminus-font testdisk tmux tpm2-tss ttf-dejavu udev udftools usb_modeswitch usbmuxd usbutils vpnc wget wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd xz zram-generator zsh"
 
 basedesktop="alsa-firmware alsa-lib alsa-plugins alsa-utils archiso archivetools archlinux-wallpaper aria2 at-spi2-core bash-completion bash-language-server bluez-libs bolt btop cabextract chafa chrony clang cmake colord cronie cups dconf ddcutil directx-headers dkms egl-wayland elfutils expat extra-cmake-modules fastfetch firefox firewalld flatpak giflib gimp glfw glib2 glibc glslang gnome-disk-utility gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-update-icon-cache gvfs gvfs-dnssd gvfs-nfs gvfs-smb hicolor-icon-theme hwinfo innoextract libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libpwquality libreoffice-fresh libunwind libva libva-utils libvdpau libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm llvm llvm-libs lm_sensors make meson mpg123 ncurses nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm nullmailer onboard openal opencl-clhpp opencl-headers opencl-icd-loader opengl-man-pages pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon pyside6 python-gobject python-mako rust samba shellcheck showtime sof-firmware tesseract-data-eng ttf-liberation ufw unrar unzip v4l-utils valgrind vlc vlc-plugins-all w3m wireplumber xdg-utils xfconf xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader yaml-cpp zenity zstd"
 
@@ -708,6 +709,12 @@ printf "%b" "KEYMAP=us\n" > /etc/vconsole.conf
 printf "%b" "KEYMAP=us\n" > /mnt/etc/vconsole.conf
 pacstrap /mnt $baseapps
 clear
+
+#Inject Advanced Toolchain Optimizations right after pacstrap
+printf '# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS="-O3 -march=native -pipe -fno-plt -fexceptions -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block"\nCXXFLAGS="${CFLAGS}"\nLDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"\nRUSTFLAGS="-C opt-level=3 -C target-cpu=native"\nMAKEFLAGS="-j$(nproc)"\nCOMPRESSXZ=(xz -c -z --threads=0 -)\nCOMPRESSGZ=(pigz -c -f -n)\nCOMPRESSBZ2=(pbzip2 -c -f)\nCOMPRESSZST=(zstd -c -z -q --threads=0 -)\n' > /mnt/etc/makepkg.conf
+#Write Global Profile Toolchain Environment Overrides
+printf 'export CC=gcc\nexport CXX=g++\nexport CFLAGS="-O3 -march=native -pipe"\nexport CXXFLAGS="-O3 -march=native -pipe"\n' > /mnt/etc/profile.d/coffeelinux-toolchain.sh
+
 # Install second layer base level apps via pacman..
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 clear
@@ -1000,7 +1007,9 @@ if [ -n "$COFFEE_TOTAL_PAGES" ]; then
 fi
 
 mkdir -p /mnt/etc/udev/rules.d
-printf 'ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="none", ATTR{queue/read_ahead_kb}="4096"\n' > /mnt/etc/udev/rules.d/60-io.rules
+printf 'ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="kyber" , ATTR{queue/read_ahead_kb}="4096"\nACTION=="add|change", KERNEL=="sd*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="bfq"\n' > /mnt/etc/udev/rules.d/60-coffeelinux-io.rules
+
+printf 'kernel.watchdog=0\nkernel.nmi_watchdog=0\n' > /mnt/etc/sysctl.d/99-coffeelinux-watchdog.conf
 
 mkdir -p /mnt/etc/systemd
 {
@@ -1141,6 +1150,7 @@ arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable power-profiles-daemon
 arch-chroot /mnt timedatectl set-ntp true
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
+arch-chroot /mnt systemctl enable scx@bcl
 if [ "$desktop0" = "cosmic" ]; then
 arch-chroot /mnt systemctl disable power-profiles-daemon
 arch-chroot /mnt systemctl mask power-profiles-daemon
