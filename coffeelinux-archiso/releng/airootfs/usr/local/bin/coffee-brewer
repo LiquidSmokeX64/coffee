@@ -716,6 +716,10 @@ printf "%b" "# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS=\"-O3 -
 
 arch-chroot /mnt pacman -Sy --noconfirm mold
 
+printf "%b" "export CC=\"gcc\"\nexport CXX=\"g++\"\nexport CFLAGS=\"-O3 -march=native -pipe\"\nexport CXXFLAGS=\"-O3 -march=native -pipe\"\nexport CGO_CFLAGS=\"-O3 -march=native -pipe\"\nexport CGO_CXXFLAGS=\"-O3 -march=native -pipe\"\n" > /mnt/etc/profile.d/coffeelinux-toolchain.sh
+
+printf "%b" "LDFLAGS=\"\${LDFLAGS} -fuse-ld=mold\"\n" >> /mnt/etc/makepkg.conf
+
 # Install second layer base level apps via pacman..
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 clear
