@@ -714,8 +714,6 @@ clear
 
 # 1. Inject Advanced Toolchain Optimizations right after pacstrap
 
-# 1. Write clean compiler proxies
-
 printf "%b" "#!/bin/sh\nexec /usr/bin/gcc -O3 -march=native -pipe -fno-plt -fexceptions '\$@'\n" > /mnt/usr/local/bin/gcc
 chmod 755 /mnt/usr/local/bin/gcc
 
