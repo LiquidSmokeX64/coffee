@@ -710,17 +710,6 @@ printf "%b" "KEYMAP=us\n" > /mnt/etc/vconsole.conf
 pacstrap /mnt $baseapps
 clear
 
-#Inject Advanced Toolchain Optimizations right after pacstrap
-
-# 1. Inject Universal C/C++ Optimizations to load at the absolute end of the directory loop
-printf "%b" "# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS='-O3 -march=native -pipe -fno-plt -fexceptions'\nCXXFLAGS='-O3 -march=native -pipe -fno-plt -fexceptions'\nLDFLAGS='-Wl,-O1 -Wl,--sort-common -Wl,--as-needed -z relro -z now'\n" > /mnt/etc/makepkg.conf.d/zz-coffeelinux-c.conf
-
-# 2. Inject Advanced Rust Optimizations to override any stock upstream templates
-printf "%b" "# -- CoffeeLinux Advanced Rust Optimization --\nRUSTFLAGS='-C opt-level=3 -C target-cpu=native'\n" > /mnt/etc/makepkg.conf.d/zz-coffeelinux-rust.conf
-
-# 3. Swap the thread assignment directly inside the core config file
-sed -i 's/MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/g' /mnt/etc/makepkg.conf
-
 # Install second layer base level apps via pacman..
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 clear
@@ -1016,6 +1005,8 @@ mkdir -p /mnt/etc/udev/rules.d
 printf "%b" "ACTION=='add|change', KERNEL=='nvme[0-9]*', ATTR{queue/scheduler}='kyber', ATTR{queue/read_ahead_kb}='4096'\nACTION=='add|change', KERNEL=='sd*', ATTR{queue/rotational}=='0', ATTR{queue/scheduler}='bfq'\n" > /mnt/etc/udev/rules.d/60-coffeelinux-io.rules
 
 printf "%b" "kernel.watchdog=0\nkernel.nmi_watchdog=0\n" > /mnt/etc/sysctl.d/99-coffeelinux-watchdog.conf
+
+printf "%b" "* - rtprio 99\n* - nice -20\n* - memlock unlimited\n" > /mnt/etc/security/limits.d/60-coffeelinux-priority.conf
 
 mkdir -p /mnt/etc/systemd
 {
