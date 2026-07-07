@@ -1002,7 +1002,8 @@ if [ -n "$COFFEE_TOTAL_PAGES" ]; then
 fi
 
 mkdir -p /mnt/etc/udev/rules.d
-printf "%b" "ACTION=='add|change', KERNEL=='nvme[0-9]*', ATTR{queue/scheduler}='kyber', ATTR{queue/read_ahead_kb}='4096'\nACTION=='add|change', KERNEL=='sd*', ATTR{queue/rotational}=='0', ATTR{queue/scheduler}='bfq'\n" > /mnt/etc/udev/rules.d/60-coffeelinux-io.rules
+
+printf "%b" "ACTION=='add|change', KERNEL=='nvme[0-9]*', ENV{ID_FS_TYPE}!='ntfs', ATTR{queue/scheduler}='kyber', ATTR{queue/read_ahead_kb}='4096'\nACTION=='add|change', KERNEL=='sd*', ENV{ID_FS_TYPE}!='ntfs', ATTR{queue/rotational}=='0', ATTR{queue/scheduler}='bfq'\n" > /mnt/etc/udev/rules.d/60-coffeelinux-io.rules
 
 printf "%b" "kernel.watchdog=0\nkernel.nmi_watchdog=0\n" > /mnt/etc/sysctl.d/99-coffeelinux-watchdog.conf
 
