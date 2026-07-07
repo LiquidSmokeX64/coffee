@@ -712,7 +712,7 @@ clear
 
 #Inject Advanced Toolchain Optimizations right after pacstrap
 
-printf '# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS="-O3 -march=native -pipe -fno-plt -fexceptions"\nCXXFLAGS="-O3 -march=native -pipe -fno-plt -fexceptions"\nLDFLAGS="-Wl,-O1 -Wl,--sort-common -Wl,--as-needed -z relro -z now"\nRUSTFLAGS="-C opt-level=3 -C target-cpu=native"\nMAKEFLAGS="-j$(nproc)"\nCOMPRESSXZ=(xz -c -z --threads=0 -)\nCOMPRESSGZ=(pigz -c -f -n)\nCOMPRESSBZ2=(pbzip2 -c -f)\nCOMPRESSZST=(zstd -c -z -q --threads=0 -)\n' > /mnt/etc/makepkg.conf
+printf "%b" "# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS=\"-O3 -march=native -pipe -fno-plt -fexceptions\"\nCXXFLAGS=\"-O3 -march=native -pipe -fno-plt -fexceptions\"\nLDFLAGS=\"-Wl,-O1 -Wl,--sort-common -Wl,--as-needed -z relro -z now\"\nRUSTFLAGS=\"-C opt-level=3 -C target-cpu=native\"\nMAKEFLAGS=\"-j\$(nproc)\"\nCOMPRESSXZ=(xz -c -z --threads=0 -)\nCOMPRESSGZ=(pigz -c -f -n)\nCOMPRESSBZ2=(pbzip2 -c -f)\nCOMPRESSZST=(zstd -c -z -q --threads=0 -)\n" > /mnt/etc/makepkg.conf
 
 arch-chroot /mnt pacman -Sy --noconfirm mold
 
@@ -1008,8 +1008,9 @@ if [ -n "$COFFEE_TOTAL_PAGES" ]; then
 fi
 
 mkdir -p /mnt/etc/udev/rules.d
-printf 'ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="kyber" , ATTR{queue/read_ahead_kb}="4096"\nACTION=="add|change", KERNEL=="sd*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="bfq"\n' > /mnt/etc/udev/rules.d/60-coffeelinux-io.rules
-printf 'kernel.watchdog=0\nkernel.nmi_watchdog=0\n' > /mnt/etc/sysctl.d/99-coffeelinux-watchdog.conf
+printf "%b" "ACTION==\"add|change\", KERNEL==\"nvme[0-9]*\", ATTR{queue/scheduler}=\"kyber\", ATTR{queue/read_ahead_kb}=\"4096\"\nACTION==\"add|change\", KERNEL==\"sd*\", ATTR{queue/rotational}==\"0\", ATTR{queue/scheduler}=\"bfq\"\n" > /mnt/etc/udev/rules.d/60-coffeelinux-io.rules
+
+printf "%b" "kernel.watchdog=0\nkernel.nmi_watchdog=0\n" > /mnt/etc/sysctl.d/99-coffeelinux-watchdog.conf
 
 mkdir -p /mnt/etc/systemd
 {
