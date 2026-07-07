@@ -712,10 +712,9 @@ clear
 
 #Inject Advanced Toolchain Optimizations right after pacstrap
 
-printf '# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS="-O3 -march=native -pipe -fno-plt -fexceptions"\nCXXFLAGS="${CFLAGS}"\nLDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"\nRUSTFLAGS="-C opt-level=3 -C target-cpu=native"\nMAKEFLAGS="-j$(nproc)"\nCOMPRESSXZ=(xz -c -z --threads=0 -)\nCOMPRESSGZ=(pigz -c -f -n)\nCOMPRESSBZ2=(pbzip2 -c -f)\nCOMPRESSZST=(zstd -c -z -q --threads=0 -)\n' > /mnt/etc/makepkg.conf
+printf '# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS="-O3 -march=native -pipe -fno-plt -fexceptions"\nCXXFLAGS="${CFLAGS}"\nLDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"\nRUSTFLAGS="-C opt-level=3 -C target-cpu=native"\nMAKEFLAGS="-j$(nproc)"\nCOMPRESSXZ=(xz -c -z --threads=0 -)\nCOMPRESSGZ=(pigz -c -f -n)\nCOMPRESSBZ2=(pbzip2 -c -f)\nCOMPRESSZST=(zstd -c -z -q --threads=0 -)\n' > /mnt/etc/makepkg.conf
 
 arch-chroot /mnt pacman -Sy --noconfirm mold
-arch-chroot /mnt ln -sf /usr/bin/mold /usr/local/bin/ld
 
 # Install second layer base level apps via pacman..
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
