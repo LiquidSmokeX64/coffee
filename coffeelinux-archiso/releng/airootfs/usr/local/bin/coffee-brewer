@@ -954,6 +954,8 @@ printf "%b" "\vm.max_map_count=262144" > /mnt/etc/sysctl.d/99-vm.max_map_count.c
 
 # Space Engineers fix.. (Allows DotNet 4.8 to be installed to prefixes via protontricks again)
 
+printf "%b" "\n# CoffeeLinux: Fix Steam right-click focus bugs\nexport STEAM_FRAME_FORCE_COMPATIBILITY=1\n" >> /mnt/etc/bash.bashrc
+
 # ==============================================================================
 # COFFEELINUX HOTFIX MODULE: OS INSTALLER DIRECT FILE SYSTEM INJECTIONS (/mnt)
 # ==============================================================================
