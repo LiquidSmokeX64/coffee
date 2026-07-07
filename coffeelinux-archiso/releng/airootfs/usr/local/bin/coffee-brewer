@@ -711,7 +711,12 @@ pacstrap /mnt $baseapps
 clear
 
 #Inject Advanced Toolchain Optimizations right after pacstrap
-printf '# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS="-O3 -march=native -pipe -fno-plt -fexceptions"\nCXXFLAGS="${CFLAGS}"\nLDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"\nRUSTFLAGS="-C opt-level=3 -C target-cpu=native"\nMAKEFLAGS="-j$(nproc)"\nCOMPRESSXZ=(xz -c -z --threads=0 -)\nCOMPRESSGZ=(pigz -c -f -n)\nCOMPRESSBZ2=(pbzip2 -c -f)\nCOMPRESSZST=(zstd -c -z -q --threads=0 -)\n\n# Append polyhedral loop optimizations only if the builder explicitly targets standard GCC compiler engines\nif [[ "$CC" == "gcc" || "$CC" == "clang" || -z "$CC" ]]; then\n  CFLAGS="${CFLAGS} -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block"\n  CXXFLAGS="${CFLAGS}"\nfi\n' > /mnt/etc/makepkg.conf
+
+printf '# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS="-O3 -march=native -pipe -fno-plt -fexceptions"\nCXXFLAGS="${CFLAGS}"\nLDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"\nRUSTFLAGS="-C opt-level=3 -C target-cpu=native"\nMAKEFLAGS="-j$(nproc)"\nCOMPRESSXZ=(xz -c -z --threads=0 -)\nCOMPRESSGZ=(pigz -c -f -n)\nCOMPRESSBZ2=(pbzip2 -c -f)\nCOMPRESSZST=(zstd -c -z -q --threads=0 -)\n' > /mnt/etc/makepkg.conf
+
+#Create a persistent optimization for packages 
+
+printf 'export CC=gcc\nexport CXX=g++\nexport CFLAGS="-O3 -march=native -pipe"\nexport CXXFLAGS="-O3 -march=native -pipe"\n' > /mnt/etc/profile.d/coffeelinux-toolchain.sh
 
 # Install second layer base level apps via pacman..
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
