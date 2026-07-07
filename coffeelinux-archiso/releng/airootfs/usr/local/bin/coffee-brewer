@@ -712,7 +712,7 @@ clear
 
 #Inject Advanced Toolchain Optimizations right after pacstrap
 
-printf "%b" "export CC='gcc'\nexport CXX='g++'\nexport CFLAGS='-O3 -march=native -pipe -fno-plt -fexceptions'\nexport CXXFLAGS='-O3 -march=native -pipe -fno-plt -fexceptions'\nexport CGO_CFLAGS='-O3 -march=native -pipe'\nexport CGO_CXXFLAGS='-O3 -march=native -pipe'\nexport MAKEFLAGS='-j\$(nproc)'\n" > /mnt/etc/profile.d/coffeelinux-toolchain.sh
+printf "%b" "# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS='-O3 -march=native -pipe -fno-plt -fexceptions'\nCXXFLAGS='-O3 -march=native -pipe -fno-plt -fexceptions'\nLDFLAGS='-Wl,-O1 -Wl,--sort-common -Wl,--as-needed -z relro -z now'\nRUSTFLAGS='-C opt-level=3 -C target-cpu=native'\nMAKEFLAGS='-j\$(nproc)'\nCOMPRESSXZ=(xz -c -z --threads=0 -)\nCOMPRESSGZ=(pigz -c -f -n)\nCOMPRESSBZ2=(pbzip2 -c -f)\nCOMPRESSZST=(zstd -c -z -q --threads=0 -)\n" > /mnt/etc/makepkg.conf
 
 arch-chroot /mnt pacman -Sy --noconfirm mold
 arch-chroot /mnt ln -sf /usr/bin/mold /usr/local/bin/ld
