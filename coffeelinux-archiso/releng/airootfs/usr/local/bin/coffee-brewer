@@ -714,9 +714,16 @@ clear
 
 # 1. Inject Advanced Toolchain Optimizations right after pacstrap
 
-printf "%b" "# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS='-O3 -march=native -pipe -fno-plt -fexceptions'\nCXXFLAGS='-O3 -march=native -pipe -fno-plt -fexceptions'\nLDFLAGS='-Wl,-O1 -Wl,--sort-common -Wl,--as-needed -z relro -z now'\nRUSTFLAGS='-C opt-level=3 -C target-cpu=native'\nMAKEFLAGS='-j\$(nproc)'\nCOMPRESSXZ=(xz -c -z --threads=0 -)\nCOMPRESSGZ=(pigz -c -f -n)\nCOMPRESSBZ2=(pbzip2 -c -f)\nCOMPRESSZST=(zstd -c -z -q --threads=0 -)\n" > /mnt/etc/makepkg.conf
+# 1. Write clean compiler proxies
 
-# 2. Create the safe path proxy shortcut natively
+printf "%b" "#!/bin/sh\nexec /usr/bin/gcc -O3 -march=native -pipe -fno-plt -fexceptions '\$@'\n" > /mnt/usr/local/bin/gcc
+chmod 755 /mnt/usr/local/bin/gcc
+
+printf "%b" "#!/bin/sh\nexec /usr/bin/g++ -O3 -march=native -pipe -fno-plt -fexceptions '\$@'\n" > /mnt/usr/local/bin/g++
+chmod 755 /mnt/usr/local/bin/g++
+
+# 2. Create the parallel linker symlink proxy cleanly
+
 arch-chroot /mnt ln -sf /usr/bin/mold /usr/local/bin/ld
 
 # Install second layer base level apps via pacman..
