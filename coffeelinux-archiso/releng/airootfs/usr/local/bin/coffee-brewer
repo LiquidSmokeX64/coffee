@@ -712,8 +712,9 @@ clear
 
 #Inject Advanced Toolchain Optimizations right after pacstrap
 printf '# -- CoffeeLinux Advanced Toolchain Optimization --\nCFLAGS="-O3 -march=native -pipe -fno-plt -fexceptions -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block"\nCXXFLAGS="${CFLAGS}"\nLDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -fuse-ld=mold"\nRUSTFLAGS="-C opt-level=3 -C target-cpu=native"\nMAKEFLAGS="-j$(nproc)"\nCOMPRESSXZ=(xz -c -z --threads=0 -)\nCOMPRESSGZ=(pigz -c -f -n)\nCOMPRESSBZ2=(pbzip2 -c -f)\nCOMPRESSZST=(zstd -c -z -q --threads=0 -)\n' > /mnt/etc/makepkg.conf
+
 #Write Global Profile Toolchain Environment Overrides
-printf 'export CC=gcc\nexport CXX=g++\nexport CFLAGS="-O3 -march=native -pipe"\nexport CXXFLAGS="-O3 -march=native -pipe"\n' > /mnt/etc/profile.d/coffeelinux-toolchain.sh
+printf 'export CC=gcc\nexport CXX=g++\nexport CFLAGS="-O3 -march=native -pipe"\nexport CXXFLAGS="-O3 -march=native -pipe"\nexport CGO_CFLAGS="-O3 -march=native -pipe"\nexport CGO_CXXFLAGS="-O3 -march=native -pipe"\n' > /mnt/etc/profile.d/coffeelinux-toolchain.sh
 
 # Install second layer base level apps via pacman..
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
@@ -1008,7 +1009,6 @@ fi
 
 mkdir -p /mnt/etc/udev/rules.d
 printf 'ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="kyber" , ATTR{queue/read_ahead_kb}="4096"\nACTION=="add|change", KERNEL=="sd*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="bfq"\n' > /mnt/etc/udev/rules.d/60-coffeelinux-io.rules
-
 printf 'kernel.watchdog=0\nkernel.nmi_watchdog=0\n' > /mnt/etc/sysctl.d/99-coffeelinux-watchdog.conf
 
 mkdir -p /mnt/etc/systemd
