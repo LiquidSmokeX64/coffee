@@ -29,8 +29,6 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **QoL Packages**: Essential packages and dependencies, designed to optimize the experience across a wide range of applications and services. ie: Java, etc.
 
-- **Wayland Focused**: The software stack is built with Wayland functionality in mind (in most cases).
-
 - **GPU Friendly**: AMD or Nvidia GPUs welcome.
 
 - **Gaming Ready**: Wine, Steam, Heroic Games Launcher (Epic/GOG/Amazon), and Discord built in.
@@ -56,7 +54,7 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
    2. Hidden or Menu styles (useful for multi-boot setups).
    3. OS probing choice (useful for multi-boot setups).
 
-- **Desktop Environment Selection. Choose from many popular DEs such as Plasma, Gnome, Cosmic, and more.**: 
+- **Plasma Desktop Environment. For optimal gaming experience.**: 
 
 - **OS level fixes**: Some games and apps require extra push to get running so fixes have been integrated for this such as:
    1. **CPU Mitigations and SplitLock Detection Disabled**: Fixes stuttering with 13th Gen+ Intel CPUs, and some AMD CPUs as well.
