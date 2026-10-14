@@ -396,7 +396,6 @@ fwupd
 fwupd-efi
 gettext
 git
-ghostty
 gpm
 gptfdisk
 grml-zsh-config

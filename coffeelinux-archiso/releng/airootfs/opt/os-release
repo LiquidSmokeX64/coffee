@@ -1,6 +1,6 @@
 NAME="CoffeeLinux"
 PRETTY_NAME="Coffee Linux"
-VERSION_ID="41.0.0"
+VERSION_ID="41.0.1"
 VERSION_CODENAME="Mellow"
 ID="arch"
 BUILD_ID="Mellow"
