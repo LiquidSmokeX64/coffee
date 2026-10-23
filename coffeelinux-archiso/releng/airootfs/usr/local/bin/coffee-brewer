@@ -544,33 +544,6 @@ case $gpu01passcheck in
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
-if [ "$gpu0" = "nvidia" ]; then
-while [ "$nvsm01passcheck" != "1" ]; do
-clear
-printf "%b" "\nWould you like Smooth Motion Enabled [40xx and newer only]? (Default: 1)\n"
-printf "%b" "\n1 - Yes\n"
-printf "%b" "\n2 - No\n"
-read -r nvsmcheck
-case $nvsmcheck in
-  1) nvsm01="nvsm-on" ;;
-  2) nvsm01="nvsm-off" ;;
-  *) printf "%b" "\nUnrecognized option, selecting default..\n" ;
-esac
-if [ "$nvsmcheck" != "1" ] && [ "$nvsmcheck" != "2" ]; then
-nvsmcheck=1
-nvsm01="nvsm-on"
-fi
-clear
-printf "%b" "\nYou said $nvsm01.\nIs this correct?\n"
-printf "%b" "\n1 - yes\n"
-printf "%b" "\n2 - no (default)\n"
-read -r nvsm01passcheck
-case $nvsm01passcheck in
-  1) nvsm0=$nvsm01;;
-  *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
-esac
-done
-fi
 }
 
 set_grub_type(){
@@ -704,9 +677,6 @@ printf "%b" "\nGRUB for Nvidia selected.\n"
 # Safest option: Append parameters to grub.
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
 sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.modeset=1 nvidia_drm.fbdev=1"/g' /mnt/etc/default/grub
-fi
-if [ "$nvsm0" = "nvsm-on" ]; then
-printf "%b" "\nexport NVPRESENT_ENABLE_SMOOTH_MOTION=1" >> /mnt/etc/skel/.bashrc
 fi
 fi
 if [ "$grub0" = "grub-uefi" ]; then
@@ -876,13 +846,24 @@ if ! grep -q 'COFFEE_REL_SE_FIX=1' /mnt/etc/apparmor.d/bwrap 2>/dev/null; then
 fi
 
 # --- PART 2: PERFORMANCE TUNING MATRIX ---
-if ! grep -q "WINE_NTSYNC" /mnt/etc/environment 2>/dev/null; then
-    printf "\nWINE_NTSYNC=1\n" >> /mnt/etc/environment
+if ! grep -q "mesa_glthread" /mnt/etc/environment 2>/dev/null; then
+    printf "\nmesa_glthread=true\n" >> /mnt/etc/environment
+fi
+if ! grep -q "vblank_mode" /mnt/etc/environment 2>/dev/null; then
+    printf "\nvblank_mode=3\n" >> /mnt/etc/environment
 fi
 if ! grep -q "radv_background_compile" /mnt/etc/environment 2>/dev/null; then
-    printf "radv_background_compile=true\n" >> /mnt/etc/environment
+    printf "\nradv_background_compile=true\n" >> /mnt/etc/environment
 fi
-
+if ! grep -q "__GL_SHADER_DISK_CACHE" /mnt/etc/environment 2>/dev/null; then
+    printf "\n__GL_SHADER_DISK_CACHE=1\n" >> /mnt/etc/environment
+fi
+if ! grep -q "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP" /mnt/etc/environment 2>/dev/null; then
+    printf "\n__GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1\n" >> /mnt/etc/environment
+fi
+if ! grep -q "__GL_SHADER_CACHE_SIZE" /mnt/etc/environment 2>/dev/null; then
+    printf "\n__GL_SHADER_CACHE_SIZE=10737418240\n" >> /mnt/etc/environment
+fi
 mkdir -p /mnt/etc/sysctl.d
 COFFEE_TOTAL_PAGES=$(awk '/MemTotal/{print $2}' /proc/meminfo)
 if [ -n "$COFFEE_TOTAL_PAGES" ]; then

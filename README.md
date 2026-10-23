@@ -23,13 +23,11 @@ CoffeeLinux delivers the power of Arch with added ease and convenience. Join us 
 
 - **ZRAM Enabled**: A more modern, efficient alternative to the default ZSWAP, giving back that precious Hard Drive space for more of what you want instead.
 
-- **Nvidia Smooth Motion Enabled**: When activated (by choice) Nvidia Smooth Motion will be enabled within the desktop session. (40xx+ Series GPU Required.)
- 
-  (Note: Smooth Motion must be activated manually in Steam via launch option "NVPRESENT_ENABLE_SMOOTH_MOTION=1 %command%")
-
 - **QoL Packages**: Essential packages and dependencies, designed to optimize the experience across a wide range of applications and services. ie: Java, etc.
 
 - **GPU Friendly**: AMD or Nvidia GPUs welcome.
+
+  (Note: Nvidia Smooth Motion must be activated manually in Steam via launch option "NVPRESENT_ENABLE_SMOOTH_MOTION=1 %command%")
 
 - **Gaming Ready**: Wine, Steam, Heroic Games Launcher (Epic/GOG/Amazon), and Discord built in.
 

@@ -146,11 +146,23 @@ if ! grep -q 'COFFEE_REL_SE_FIX=1' /etc/apparmor.d/bwrap 2>/dev/null; then
 fi
 
 # --- PART 2: PERFORMANCE TUNING MATRIX ---
-if ! grep -q "WINE_NTSYNC" /etc/environment 2>/dev/null; then
-    printf "\nWINE_NTSYNC=1\n" >> /etc/environment
+if ! grep -q "mesa_glthread" /etc/environment 2>/dev/null; then
+    printf "\nmesa_glthread=true\n" >> /etc/environment
+fi
+if ! grep -q "vblank_mode" /etc/environment 2>/dev/null; then
+    printf "\nvblank_mode=3\n" >> /etc/environment
 fi
 if ! grep -q "radv_background_compile" /etc/environment 2>/dev/null; then
-    printf "radv_background_compile=true\n" >> /etc/environment
+    printf "\nradv_background_compile=true\n" >> /etc/environment
+fi
+if ! grep -q "__GL_SHADER_DISK_CACHE" /etc/environment 2>/dev/null; then
+    printf "\n__GL_SHADER_DISK_CACHE=1\n" >> /etc/environment
+fi
+if ! grep -q "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP" /etc/environment 2>/dev/null; then
+    printf "\n__GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1\n" >> /etc/environment
+fi
+if ! grep -q "__GL_SHADER_CACHE_SIZE" /etc/environment 2>/dev/null; then
+    printf "\n__GL_SHADER_CACHE_SIZE=10737418240\n" >> /etc/environment
 fi
 
 mkdir -p /etc/sysctl.d
