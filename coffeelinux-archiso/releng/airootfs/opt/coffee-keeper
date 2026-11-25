@@ -186,7 +186,9 @@ printf 'ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="none"
 mkdir -p /etc/systemd
 {
     printf "[zram0]\n"
+    printf "zram-size = ram\n"
     printf "compression-algorithm = zstd\n"
+    printf "swap-priority = 60\n"
 } > /etc/systemd/zram-generator.conf
 
 mkdir -p /etc/security/limits.d
@@ -215,7 +217,7 @@ mkdir -p /etc/systemd/system
 if ! grep -q 'coffeelinux-audio' /etc/systemd/system/coffeelinux-audio.service 2>/dev/null; then
     {
         printf 'w /sys/module/snd_hda_intel/parameters/power_save - - - - 0\n'
-        printf 'w /sys/module/snd_hda_intel/parameters/power_save_node - - - - N\n'
+        printf 'w /sys/module/snd_hda_intel/parameters/power_save_controller - - - - N\n'
     } > /etc/tmpfiles.d/coffeelinux-audio.conf
     {
         printf '[Unit]\n'
