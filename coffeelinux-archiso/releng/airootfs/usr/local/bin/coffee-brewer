@@ -1,17 +1,31 @@
 #!/bin/sh
+# CoffeeLinux Install Script
+#Set Variables..
+
 set_variables(){
 clear
+
 baseapps="iptables dbus-broker-units mkinitcpio texinfo base base-devel dhcpcd iwd linux-zen linux-firmware man-db man-pages mold nano networkmanager nmap sudo-rs gobject-introspection"
+
 baseapps2="scx-scheds apparmor arch-install-scripts archinstall autogen b43-fwcutter bind boost boost-libs bootconfig brltty btrfs-progs clonezilla cloud-init cpupower cryptsetup darkhttpd dbus ddrescue device-mapper dhclient diffutils dmidecode dmraid dnsmasq dosfstools e2fsprogs edk2-shell efibootmgr efitools exfatprogs f2fs-tools fatresize freetype2 fsarchiver fuse2 fwupd fwupd-efi gettext git gpm gptfdisk grml-zsh-config hdparm help2man hyperv jfsutils kitty-terminfo libfido2 libisoburn libusb-compat linux-zen-headers lzop mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mokutil mtools net-tools nfs-utils nftables ntfs-3g ntfsprogs ntp nvme-cli open-iscsi open-vm-tools openconnect openssh openvpn partclone pcsclite perf ppp pptpclient python realtime-privileges refind reflector rp-pppoe rsync rxvt-unicode-terminfo sbctl sbsigntools screen sdparm sg3_utils smartmontools sof-firmware squashfs-tools system-config-printer systemd systemd-resolvconf tcpdump terminus-font testdisk tmux tpm2-tss ttf-dejavu udev udftools usb_modeswitch usbmuxd usbutils vpnc wget wireless-regdb wireless_tools wpa_supplicant xfsprogs xl2tpd xz zram-generator zsh"
-basedesktop="bluez bluez-utils speech-dispatcher alsa-firmware alsa-lib alsa-plugins alsa-utils archiso archivetools archlinux-wallpaper aria2 at-spi2-core bash-completion bash-language-server bluez-libs bolt btop cabextract chafa chrony clang cmake colord cronie cups dconf ddcutil directx-headers dkms egl-wayland elfutils expat extra-cmake-modules fastfetch firefox firewalld flatpak giflib gimp glfw glib2 glibc glslang gnome-disk-utility gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-update-icon-cache gvfs gvfs-dnssd gvfs-nfs gvfs-smb hicolor-icon-theme hwinfo innoextract libcec libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libpwquality libreoffice-fresh libunwind libva libva-utils libvdpau libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm llvm llvm-libs lm_sensors make meson mpg123 ncurses nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm nullmailer onboard openal opencl-clhpp opencl-headers opencl-icd-loader opengl-man-pages pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon pyside6 python-gobject python-mako rust samba shellcheck showtime sof-firmware tesseract-data-eng ttf-liberation ufw unrar unzip v4l-utils valgrind vlc vlc-plugins-all w3m wireplumber xdg-utils xfconf xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader yaml-cpp zenity zstd"
-kdedesktop="lib32-pipewire lib32-libpulse konsole appstream-qt ark kde-applications-meta kdevelop-python kpmcore kscreen kvantum phonon-qt6 phonon-qt6-vlc plasma plasma-keyboard plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace polkit-kde-agent polkit-qt6 qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard xdg-desktop-portal-kde"
+
+basedesktop="lib32-pipewire lib32-libpulse bluez bluez-utils speech-dispatcher alsa-firmware alsa-lib alsa-plugins alsa-utils archiso archivetools archlinux-wallpaper aria2 at-spi2-core bash-completion bash-language-server bluez-libs bolt btop cabextract chafa chrony clang cmake colord cronie cups dconf ddcutil directx-headers dkms egl-wayland elfutils expat extra-cmake-modules fastfetch firefox firewalld flatpak giflib gimp glfw glib2 glibc glslang gnome-disk-utility gnu-free-fonts gnutls go gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamer gtk-update-icon-cache gvfs gvfs-dnssd gvfs-nfs gvfs-smb hicolor-icon-theme hwinfo innoextract libcec libclc libdrm libelf libglvnd libjpeg-turbo libldap libnotify libomxil-bellagio libpng libpulse libpwquality libreoffice-fresh libunwind libva libva-utils libvdpau libxcomposite libxdamage libxinerama libxml2 libxrandr libxshmfence libxslt libxxf86vm llvm llvm-libs lm_sensors make meson mpg123 ncurses nm-connection-editor noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra npm nullmailer onboard openal opencl-clhpp opencl-headers opencl-icd-loader opengl-man-pages pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse power-profiles-daemon pyside6 python-gobject python-mako rust samba shellcheck showtime sof-firmware tesseract-data-eng ttf-liberation ufw unrar unzip v4l-utils valgrind vlc vlc-plugins-all w3m wireplumber xdg-utils xfconf xorg xorg-apps xorg-server xorg-xwayland xorgproto xreader yaml-cpp zenity zstd"
+
+kdedesktop="konsole appstream-qt ark kde-applications-meta kdevelop-python kpmcore kscreen kvantum phonon-qt6 phonon-qt6-vlc plasma plasma-keyboard plasma-meta plasma-nm plasma-wayland-protocols plasma-workspace polkit-kde-agent polkit-qt6 qt6 qt6-multimedia-ffmpeg qt6-virtualkeyboard xdg-desktop-portal-kde"
+
 javaapps="jre-openjdk"
+
 amdcpu="amd-ucode"
+
 intelcpu="intel-ucode intel-speed-select"
-nvidiagpudrivers="lib32-vulkan-icd-loader lib32-nvidia-utils lib32-opencl-nvidia nvidia-open-dkms opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader vulkan-tools"
+
+nvidiagpudrivers="lib32-vulcan-icd-loader lib32-nvidia-utils lib32-opencl-nvidia nvidia-open-dkms opencl-nvidia nvidia-utils nvidia-settings vulkan-validation-layers vkd3d vulkan-icd-loader vulkan-tools"
+
 amdgpudrivers="lib32-mesa libva-mesa-driver mesa mesa-utils vulkan-mesa-layers lib32-vulkan-radeon vulkan-radeon xf86-video-amdgpu vulkan-validation-layers vkd3d vulkan-icd-loader corectrl vulkan-tools opencl-mesa"
+
 gamingapps="discord mangohud gamescope gamemode steam wine wine-gecko wine-mono winetricks"
 }
+
 set_username(){
 while [ "$usercheck" != "1" ]; do
 clear
@@ -53,6 +67,7 @@ usercheck02=1
 fi
 done
 }
+
 set_user_password(){
 while [ "$userpasscheck" != "1" ]; do
 clear
@@ -94,6 +109,7 @@ userpasscheck=1
 fi
 done
 }
+
 set_root_password(){
 while [ "$rootpasscheck" != "1" ]; do
 clear
@@ -135,6 +151,7 @@ rootpasscheck=1
 fi
 done
 }
+
 set_pc_name(){
 while [ "$namepasscheck" != "1" ]; do
 clear
@@ -178,6 +195,7 @@ fi
 done
 hostname0=$name0
 }
+
 set_drive_name(){
 while [ "$name2passcheck" != "1" ]; do
 clear
@@ -221,6 +239,7 @@ fi
 done
 drivename0=$name1
 }
+
 set_destination_device(){
 while [ "$drive01passcheck" != "1" ]; do
 clear
@@ -259,7 +278,9 @@ case $drive01passcheck in
   1) drive0=$drive01; boot0=$boot01; system0=$system01 ;;
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
+
 done
+
 while [ "$wipe01passcheck" != "1" ]; do
 clear
 printf "%b" "\nWould you like to wipe the drive first? (Default: 1)\n"
@@ -284,6 +305,7 @@ case $wipe01passcheck in
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
+
 if [ "$wipe0" != "yes" ]; then
 while [ "$bootpart01passcheck" != "1" ]; do
 clear
@@ -301,6 +323,7 @@ case "$bootpart01check" in
   9) bootpart02="9";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n"; sleep 3 ;
 esac
+
 if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
 bootpart01="$bootpart02"
 boot012="$bootpart01"
@@ -308,7 +331,9 @@ else
 bootpart01="p$bootpart02"
 boot012="$bootpart01"
 fi
+
 if [ "$bootpart01check" != "1" ] && [ "$bootpart01check" != "2" ] && [ "$bootpart01check" != "3" ] && [ "$bootpart01check" != "4" ] && [ "$bootpart01check" != "5" ] && [ "$bootpart01check" != "6" ] && [ "$bootpart01check" != "7" ] && [ "$bootpart01check" != "8" ] && [ "$bootpart01check" != "9" ]; then
+
 if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
 boot0="1"
 bootpart02="1"
@@ -316,7 +341,9 @@ else
 boot0="p1"
 bootpart02="1"
 fi
+
 fi
+
 clear
 printf "%b" "\nYou said partition $bootpart02.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
@@ -326,8 +353,10 @@ case $bootpart01passcheck in
   1) boot0=$boot012;;
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
+
 done
 fi
+
 if [ "$wipe0" != "yes" ]; then
 while [ "$systempart01passcheck" != "1" ]; do
 clear
@@ -345,6 +374,7 @@ case "$systempart01check" in
   10) systempart02="10";;
   *) printf "%b" "\nUnrecognized option, selecting default..\n"; sleep 3 ;
 esac
+
 if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
 systempart01="$systempart02"
 system012="$systempart01"
@@ -352,7 +382,9 @@ else
 systempart01="p$systempart02"
 system012="$systempart01"
 fi
+
 if [ "$systempart01check" != "2" ] && [ "$systempart01check" != "3" ] && [ "$systempart01check" != "4" ] && [ "$systempart01check" != "5" ] && [ "$systempart01check" != "6" ] && [ "$systempart01check" != "7" ] && [ "$systempart01check" != "8" ] && [ "$systempart01check" != "9" ] && [ "$systempart01check" != "10" ]; then
+
 if [ "$drive0" != "/dev/nvme0n1" ] && [ "$drive0" != "/dev/nvme1n1" ]; then
 system0="2"
 systempart02="2"
@@ -360,7 +392,9 @@ else
 system0="p2"
 systempart02="2"
 fi
+
 fi
+
 clear
 printf "%b" "\nYou said partition $systempart02.\nIs this correct?\n"
 printf "%b" "\n1 - yes\n"
@@ -370,8 +404,10 @@ case $systempart01passcheck in
   1) system0=$system012;;
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
+
 done
 fi
+
 while [ "$scan01passcheck" != "1" ]; do
 clear
 printf "%b" "\nWould you like to scan for other operating systems to add to the bootloader? ie: Windows (Default: 1)\n"
@@ -396,7 +432,9 @@ case $scan01passcheck in
   *) printf "%b" "\nLet's retry\n" ; sleep 3 ;
 esac
 done
+
 }
+
 set_optimized_packages (){
 while [ "$alhp01passcheck" != "1" ]; do
 clear
@@ -423,6 +461,7 @@ case $alhp01passcheck in
 esac
 done
 }
+
 set_steamos_mode (){
 while [ "$steamosmodepasscheck" != "1" ]; do
 clear
@@ -450,6 +489,7 @@ case $steamosmodepasscheck in
 esac
 done
 }
+
 set_cpu_type(){
 while [ "$cpu01passcheck" != "1" ]; do
 clear
@@ -477,6 +517,7 @@ case $cpu01passcheck in
 esac
 done
 }
+
 set_gpu_type(){
 while [ "$gpu01passcheck" != "1" ]; do
 clear
@@ -504,6 +545,7 @@ case $gpu01passcheck in
 esac
 done
 }
+
 set_grub_type(){
 while [ "$grub01passcheck" != "1" ]; do
 clear
@@ -531,8 +573,10 @@ case $grub01passcheck in
 esac
 done
 }
+
 setup_drive (){
 clear
+# Wipe the drive and reformat it for use..
 while [ "$command1finished" != "1" ]; do
 bootpartitiontype="1"
 systempartitiontype="23"
@@ -582,31 +626,40 @@ command1finished="1"
 done
 command1finished="0"
 }
+
 setup_core (){
+# Install base level apps via pacstrap..
 while [ "$pacstrapfinished" != "1" ]; do
 mkdir -p /mnt/etc/
 printf "%b" "KEYMAP=us\n" > /etc/vconsole.conf
 printf "%b" "KEYMAP=us\n" > /mnt/etc/vconsole.conf
 pacstrap /mnt $baseapps
 clear
+
+# Install second layer base level apps via pacman..
 arch-chroot /mnt pacman -Sy --noconfirm $baseapps2
 clear
+# Setup ZRAM perameters for ZRAM Generator..
 printf "%b" "\n[zram0]\nzram-size=ram\ncompression-algorithm=zstd\nswap-priority=60\n" > /mnt/usr/lib/systemd/zram-generator.conf
 clear
 pacstrapfinished="1"
 done
 pacstrapfinished="0"
 }
+
 setup_cpu (){
 if [ "$cpu0" = "intel" ]; then
+# Add CPU specific packages here...
 clear
 arch-chroot /mnt pacman -Sy --noconfirm $intelcpu
 else
 arch-chroot /mnt pacman -Sy --noconfirm $amdcpu
 fi
 }
+
 setup_bootloader (){
 clear
+# Setup GRUB Bootloader and adjust it as needed based on GPU and type.
 while [ "$command8finished" != "1" ]; do
 arch-chroot /mnt pacman -S --noconfirm libadwaita grub os-prober breeze-grub terminus-font
 sed -i 's/Arch/Coffee/g' /mnt/etc/default/grub
@@ -615,22 +668,26 @@ sed -i 's/GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/g' /mnt/etc/default/
 else
 sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g' /mnt/etc/default/grub
 fi
+# Safest option: Append parameters to grub.
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
 sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 loglevel=3 rw lsm=landlock lockdown yama integrity apparmor bpf mitigations=off split_lock_detect=off zswap.enabled=0"/g' /mnt/etc/default/grub
 fi
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nGRUB for Nvidia selected.\n"
+# Safest option: Append parameters to grub.
 if grep -q '^GRUB_CMDLINE_LINUX_DEFAULT=' /mnt/etc/default/grub; then
 sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"$/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.modeset=1 nvidia_drm.fbdev=1"/g' /mnt/etc/default/grub
 fi
 fi
 if [ "$grub0" = "grub-uefi" ]; then
+
 arch-chroot /mnt pacman -S --noconfirm efivar
 arch-chroot /mnt /bin/bash <<"EOT"
 mkinitcpio -P
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 EOT
+
 fi
 if [ "$grub0" = "grub-bios" ]; then
 arch-chroot /mnt pacman -Rdd --noconfirm grub2-editor-frameworks
@@ -641,16 +698,20 @@ EOT
 arch-chroot /mnt grub-install --target=i386-pc $drive0
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 fi
+
 command8finished="1"
 done
 command8finished="0"
 }
+
 setup_locale (){
 clear
+# Preset Locale because it can be set in the OS.
 while [ "$command2finished" != "1" ]; do
 rm -r /mnt/etc/locale.gen
 rm -r /mnt/etc/locale.conf
 rm -r /mnt/etc/vconsole.conf
+
 arch-chroot /mnt /bin/bash <<"EOT"
 ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 hwclock --systohc
@@ -660,13 +721,16 @@ printf "%b" "\nLANG=en_US.UTF-8" >> /etc/locale.conf
 export LANG=en_US.UTF-8
 locale-gen
 EOT
+
 cp --dereference /etc/resolv.conf /mnt/etc/
 clear
 command2finished="1"
 done
 command2finished="0"
 }
+
 setup_sudo (){
+# Add all users to passwordless sudo (helps during OS installation)..
 clear
 mkdir -p /mnt/etc/sudoers.d/
 rm -r /mnt/etc/sudoers.d/wheel
@@ -675,23 +739,31 @@ arch-chroot /mnt /bin/bash <<"EOT"
 printf "%b\n%%"w"heel ALL=(ALL:ALL) NOPASSWD: ALL\n" "$*" > /etc/sudoers.d/wheel
 mkinitcpio -P
 EOT
+
 }
+
 setup_users (){
 while [ "$command3finished" != "1" ]; do
 clear
+# Send pacman info to new OS install..
 cp /etc/pacman.conf /mnt/etc/pacman.conf
+# Add users to the new OS...
 printf "%b" "$userpass1\n$userpass1\n" | arch-chroot /mnt passwd
 arch-chroot /mnt useradd -m -G wheel,audio,video,users,storage,power,rfkill,lp $user01
 printf "%b" "$userpass0\n$userpass0\n" | arch-chroot /mnt passwd $user01
-printf "%b" "$hostname0\n" > /mnt/etc/hostname
+# Create localhost...
+printf "%b" "$hostname0\n" >> /mnt/etc/hostname
 printf "%b" "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname0\n" >> /mnt/etc/hosts
+# Generate fstab file
 genfstab -U /mnt >> /mnt/etc/fstab
 clear
 command3finished="1"
 done
 command3finished="0"
 }
+
 setup_desktop (){
+# Install Desktop Environment and Java...
 while [ "$command4finished" != "1" ]; do
 arch-chroot /mnt pacman -Sy --noconfirm $basedesktop $kdedesktop
 arch-chroot /mnt pacman -Rdd --noconfirm totem
@@ -705,6 +777,7 @@ arch-chroot /mnt systemctl --global enable wireplumber.service
 arch-chroot /mnt systemctl enable rtkit-daemon.service
 arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 arch-chroot /mnt systemctl daemon-reload
+# Desktop Environment specific..
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
@@ -713,12 +786,15 @@ arch-chroot /mnt systemctl enable plasmalogin
 command4finished="1"
 done
 }
+
 setup_java (){
 arch-chroot /mnt pacman -Sy --noconfirm $javaapps
 java1="$(arch-chroot /mnt sudo -Su "$user01" archlinux-java get 2>/dev/null)"
 arch-chroot /mnt archlinux-java set "$java1"
 }
+
 setup_gpu (){
+# Setup GPU drivers...
 clear
 if [ "$gpu0" = "nvidia" ]; then
 printf "%b" "\nNvidia GPU selected..\n"
@@ -734,15 +810,27 @@ arch-chroot /mnt pacman -Sy --noconfirm corectrl
 fi
 clear
 }
+
 setup_gaming () {
+# Install Gaming Apps...
 clear
 arch-chroot /mnt pacman -Sy --noconfirm $gamingapps
 clear
 rm /mnt/usr/share/applications/steam-native.desktop
 rm /mnt/usr/share/applications/stoken-gui-small.desktop
 clear
+# Horizon Zero Dawn Remastered CTD Fix.. (Works for other things too)
 printf "vm.max_map_count=262144\n" > /mnt/etc/sysctl.d/99-vm.max_map_count.conf
+
+# Space Engineers fix.. (Allows DotNet 4.8 to be installed to prefixes via protontricks again)
+
 printf "%b" "\n# CoffeeLinux: Fix Steam right-click focus bugs\nexport STEAM_FRAME_FORCE_COMPATIBILITY=1\n" >> /mnt/etc/bash.bashrc
+
+# ==============================================================================
+# COFFEELINUX HOTFIX MODULE: OS INSTALLER DIRECT FILE SYSTEM INJECTIONS (/mnt)
+# ==============================================================================
+
+# --- PART 1: SECURE APPARMOR / SPACE ENGINEERS FIX ---
 mkdir -p /mnt/etc/apparmor.d/local && touch /mnt/etc/apparmor.d/local/bwrap
 if ! grep -q 'COFFEE_REL_SE_FIX=1' /mnt/etc/apparmor.d/bwrap 2>/dev/null; then
     {
@@ -756,6 +844,8 @@ if ! grep -q 'COFFEE_REL_SE_FIX=1' /mnt/etc/apparmor.d/bwrap 2>/dev/null; then
     } > /mnt/etc/apparmor.d/bwrap
     chmod 644 /mnt/etc/apparmor.d/bwrap
 fi
+
+# --- PART 2: PERFORMANCE TUNING MATRIX ---
 if ! grep -q "radv_background_compile" /mnt/etc/environment 2>/dev/null; then
     printf "\nradv_background_compile=true\n" >> /mnt/etc/environment
 fi
@@ -787,23 +877,30 @@ if [ -n "$COFFEE_TOTAL_PAGES" ]; then
     } > /mnt/etc/sysctl.d/60-coffeelinux.conf
     chmod 644 /mnt/etc/sysctl.d/60-coffeelinux.conf
 fi
+
 mkdir -p /mnt/etc/udev/rules.d
+
 printf "%b" "* - rtprio 99\n* - nice -20\n* - memlock unlimited\n" > /mnt/etc/security/limits.d/60-coffeelinux-priority.conf
+
 mkdir -p /mnt/etc/systemd
 {
     printf "[zram0]\n"
     printf "zram-size = ram\n"
     printf "compression-algorithm = zstd\n"
-    printf "swap-priority = 60\n"
+	printf "swap-priority = 60\n"
 } > /mnt/etc/systemd/zram-generator.conf
+
 mkdir -p /mnt/etc/security/limits.d
 printf "* soft nofile 524288\n* hard nofile 524288\n" > /mnt/etc/security/limits.d/60-coffeelinux.conf
+
 mkdir -p /mnt/etc/tmpfiles.d
 if [ -n "$COFFEE_TOTAL_PAGES" ] && [ "$COFFEE_TOTAL_PAGES" -gt 15728640 ]; then
     printf "w /sys/kernel/mm/transparent_hugepage/enabled - - - - always\n" > /mnt/etc/tmpfiles.d/thp.conf
 else
     rm -f /mnt/etc/tmpfiles.d/thp.conf
 fi
+
+# --- PART 3: AUDIO HARDWARE FIX ---
 mkdir -p /mnt/etc/systemd/system/multi-user.target.wants
 if ! grep -q 'coffeelinux-audio' /mnt/etc/systemd/system/coffeelinux-audio.service 2>/dev/null; then
     {
@@ -824,9 +921,13 @@ if ! grep -q 'coffeelinux-audio' /mnt/etc/systemd/system/coffeelinux-audio.servi
     chmod 644 /mnt/etc/systemd/system/coffeelinux-audio.service
     ln -sf /etc/systemd/system/coffeelinux-audio.service /mnt/etc/systemd/system/multi-user.target.wants/coffeelinux-audio.service
 fi
+
 }
+
 setup_branding (){
+# Setup CoffeeLinux specific creations and such...
 clear
+#Setup CoffeeLinux Apps...
 wget -q -O /mnt/usr/local/bin/coffee-barista https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-barista
 wget -q -O /mnt/usr/local/bin/coffee-filter https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/usr/local/bin/coffee-filter
 wget -q -O /mnt/opt/coffee-updater https://raw.githubusercontent.com/LiquidSmokeX64/coffee/master/coffeelinux-archiso/releng/airootfs/opt/coffee-updater
@@ -849,7 +950,9 @@ cp /usr/local/bin/coffee-barista /mnt/usr/local/bin/
 arch-chroot /mnt chmod +x /usr/local/bin/coffee-brewer /usr/local/bin/coffee-barista
 chmod 755 /etc/pacman.conf
 }
+
 homedir_fix (){
+# Fix some Home Directory bugs..
 clear
 while [ "$command11finished" != "1" ]; do
 printf "%b" "\nAttempting to fix the home directory automatically now...\n"
@@ -859,15 +962,20 @@ command11finished="1"
 done
 command11finished="0"
 }
+
 setup_yay (){
+# Setup Yay...
 clear
 printf "%b" "Installing Yay for AUR support...\n"
 sleep 3
+#Build yay from source..
 arch-chroot /mnt pacman -S --needed --noconfirm git base-devel
 clear
+#Remove old packages..
 rm -r /mnt/opt/yay-1*
 rm -r /mnt/opt/yay-debug*
 clear
+# Clone and build the packages...
 arch-chroot /mnt sudo -Su root mkdir -p /opt/yaybuilder/
 arch-chroot /mnt sudo -Su root chmod 777 /opt/yaybuilder
 arch-chroot /mnt sudo -Su root chmod u+x /opt/yaybuilder
@@ -878,6 +986,7 @@ clear
 rm -r /mnt/opt/yaybuilder/
 clear
 }
+
 setup_optimization (){
 clear
 printf "%b" "\nPerforming System Optimizations This may take a few minutes...\n"
@@ -892,6 +1001,7 @@ cp -f /opt/optimization/pacman.conf /mnt/etc/
 arch-chroot /mnt chmod 755 /etc/pacman.conf
 arch-chroot /mnt pacman -Syu --noconfirm
 clear
+# Desktop Environment specific..
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-session
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-text-editor
 arch-chroot /mnt pacman -Rdd --noconfirm gnome-photos
@@ -900,7 +1010,9 @@ clear
 printf "%b" "\nSystem Optimizations Complete...\n"
 sleep 3
 }
+
 services_starter(){
+# Startup Services before rebooting.
 clear
 arch-chroot /mnt systemctl disable dhcpcd
 arch-chroot /mnt systemctl enable cronie
@@ -919,7 +1031,10 @@ arch-chroot /mnt systemctl enable systemd-zram-setup@zram0.service
 arch-chroot /mnt systemctl enable scx.service
 arch-chroot /mnt systemctl --global enable speech-dispatcher.socket
 }
+
 setup_aur (){
+
+# Add AUR Gaming Extras..
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y protontricks
 clear
@@ -929,17 +1044,20 @@ printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffme
 clear
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y heroic-games-launcher
 clear
+# Add AUR System Extras..
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y shelly
 clear
 printf "%b" "2\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y github-desktop
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a --answerdiff n --answeredit y --answerupgrade y ast-firmware
 clear
+# Add additional fix for XDG Directories..
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-environment
 clear
 printf "%b" "1\n" | arch-chroot /mnt sudo -Su "$user01" yay --noconfirm --diffmenu=false --noremovemake --answerclean a  --answerdiff n --answeredit y --answerupgrade y xdg-autostart
 clear
 }
+
 setup_steamos_mode (){
 clear
 if [ "$steamosmodepass00" = "steamosmode-on" ]; then
@@ -953,9 +1071,11 @@ arch-chroot /mnt chmod +x /usr/bin/steamos-select-branch /usr/bin/steamos-update
 arch-chroot /mnt chmod 644 /usr/share/applications/SteamOS.desktop
 fi
 }
+
 success_check (){
 cp /opt/os-release /mnt/etc/
 cp /opt/lsb-release /mnt/etc/
+# Ensure all went well...
 clear
 while [ "$command15finished" != "1" ] && [ "$rebootcheck" != "1" ] && [ "$rebootcheck" != "2" ]; do
 printf "%b" "\nDid the installer complete successfully? (Default: 1)\n"
@@ -980,6 +1100,9 @@ command15finished="1"
 done
 command15finished="0"
 }
+
+## Main Menu...
+
 installer_operations_runner () {
 cp /opt/os-release /etc/
 cp /opt/lsb-release /etc/
@@ -1039,5 +1162,6 @@ configurationcheck00="0"
 fi
 done
 }
+
 installer_operations_runner
 exit
